@@ -3,5 +3,6 @@
     "cSpell.words": [
         "pseudospin",
         "wavefunction"
-    ]
+    ],
+    "editor.rulers": [80]
 }
