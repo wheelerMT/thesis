@@ -1,6 +1,7 @@
 {
     "latex-workshop.latex.outDir": ".build",
     "cSpell.words": [
-        "pseudospin"
+        "pseudospin",
+        "wavefunction"
     ]
 }
