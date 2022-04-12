@@ -2,7 +2,8 @@
     "latex-workshop.latex.outDir": ".build",
     "cSpell.words": [
         "pseudospin",
-        "wavefunction"
+        "wavefunction",
+        "Zurek"
     ],
     "editor.rulers": [80]
 }
