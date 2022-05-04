@@ -33,7 +33,66 @@ component~\cite{Eto2011,Kasamatsu2016}.
 We relate this discovery to the interesting 
 dynamics we observe at early time.
 
-\section{Mapping of Spin-1 to Spin-1/2}
+\section{The spin-1 easy-plane polar phase}
+As we saw in \textcolor{red}{relevant part}, the spin-1 condensate with polar
+interactions supports a polar ground state.
+This state can be categorized in two different ways:
+The first consists of the nematic director being aligned with the $z$-axis,
+which is referred to as the easy-axis polar (EAP) phase.
+This phase is stable for $p=0$ and $q>0$.
+The second case consists of the director being in the $xy$-plane, which is
+referred to as the easy-plane polar (EPP) phase.
+This phase is stable for $p=0$ and $q<0$.
+The representative wavefunction for the EPP phase can be written as
+\begin{equation}
+    \psi_\mathrm{EPP} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+        1 \\ 0 \\ 1
+    \end{pmatrix}.
+    \label{eq:EPP_wavefunction}
+\end{equation}
+This state has only the outer two components occupied, requiring an empty
+middle component.
+Due to this fact, this representative wavefunction can be mapped to a
+two-component system.
+
+\subsection{Mapping the EPP phase onto a two-component system}
+To begin the mapping procedure, we first construct the time-independent
+GPEs for the spin-1 system with a wavefunction that assumes an empty middle
+component:
+\begin{equation}
+    \begin{aligned}
+        \left[-\frac{\hbar^2\nabla^2}{2M}
+        + (c_0 + c_2)|\psi_1|^2 + (c_0 - c_2)|\psi_{-1}|^2 
+        + q - \mu\right]\psi_1 &= 0, \\
+        \left[-\frac{\hbar^2\nabla^2}{2M}
+        + (c_0 + c_2)|\psi_{-1}|^2 + (c_0 - c_2)|\psi_1|^2 
+        + q - \mu\right]\psi_{-1} &= 0,
+    \end{aligned}
+    \label{eq:EPP-time-independent-GPEs}
+\end{equation}
+where $\mu$ is the chemical potential of the system and we have taken $p=0$.
+
+Similarly, the time-independent GPEs for the two component system are
+\begin{equation}
+    \begin{aligned}
+        \left(-\frac{\hbar^2\nabla^2}{2m_1} + g_1|\psi_1|^2
+        +g_{12}|\psi_2|^2 - \mu_1\right)\psi_1 &= 0, \\
+        \left(-\frac{\hbar^2\nabla^2}{2m_2} + g_2|\psi_2|^2
+        +g_{12}|\psi_1|^2 - \mu_2\right)\psi_2 &= 0.
+    \end{aligned}
+    \label{eq:two-comp-time-independent-gpes}
+\end{equation}
+Using these time-independent equations, we can map the two-component system
+to that of the spin-1 by comparing the coefficients with
+Eq.~\eqref{eq:EPP-time-independent-GPEs}.
+Doing this we find
+\begin{equation}
+    g_1=g_2=c_0+c_2, \enskip g_{12} = c_0-c_2, \enskip \mu_1=\mu_2=\tilde{\mu}, 
+    \enskip m_1=m_2=M,
+\end{equation}
+where $\tilde{\mu} = \mu - q$.
+Therefore, for the specific cases defined above, the two-component system maps
+directly to that of the spin-1 system.
 
 \section{Half-quantum vortices in spin-1/2}
 
