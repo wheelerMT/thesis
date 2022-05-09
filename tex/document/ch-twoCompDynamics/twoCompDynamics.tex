@@ -33,6 +33,8 @@ component~\cite{Eto2011,Kasamatsu2016}.
 We relate this discovery to the interesting 
 dynamics we observe at early time.
 
+\section{Two-component Gross-Pitaevskii equations}
+
 \section{The spin-1 easy-plane polar phase}
 As we saw in \textcolor{red}{relevant part}, the spin-1 condensate with polar
 interactions supports a polar ground state.
@@ -95,6 +97,51 @@ Therefore, for the specific cases defined above, the two-component system maps
 directly to that of the spin-1 system.
 
 \section{Half-quantum vortices in spin-1/2}
+Scalar BECs only support one type of vortex, namely, the singly-quantized
+vortex.
+Two-component BECs allow a novel vortex configuration otherwise unseen in
+scalar BECs: The two-component half-quantum 
+vortex (HQV).
+The half-quantum vortex is unique such that the circulation of the vortex is
+quantized in units of $\kappa / 2$ where $\kappa=h/m$ [REFS].
+To construct such a vortex, we start by defining the pseudospin-1/2
+wavefunction:
+\begin{equation}
+    \twovec{\psi_1}{\psi_2} 
+    = \twovec{|\psi_1|e^{i\theta_1}}{|\psi_2|e^{i\theta_2}}
+    = e^{\Theta}\twovec{|\psi_1|e^{i\Phi}}{|\psi_2|e^{i\Phi}},
+    \label{eq:pseudospin-1/2-wavefunction}
+\end{equation}
+where $\theta_j=\mathrm{Arg}(\psi_j)$ for $j=1,2$ and
+\begin{equation}
+    \Theta = \frac{\theta_1 + \theta_2}{2}, \enskip 
+    \Phi = \frac{\theta_1 - \theta_2}{2}.
+\end{equation}
+Gradients in $\Theta$ are associated with a total, superfluid mass current
+whereas gradients in $\Phi$ are associated with a pseudospin currents.
+\textcolor{red}{Do I want to elaborate on this further? Potentially by looking
+at actual expressions for mass and pseudospin current in two-component BECs.}
+Now consider a vortex state which consists of a phase singularity in the $psi_1$
+component, where about the singularity $\theta_1$ winds by $2\pi$ and $\theta_2$
+remains unchanged, i.e. it is a smooth phase field.
+Such a state can be written as
+\begin{equation}
+    \twovec{\psi_1}{\psi_2} 
+    = \twovec{|\psi_1|e^{i\varphi}}{|\psi_2|}
+    = e^{\varphi/2}\twovec{|\psi_1|e^{i\varphi/2}}{|\psi_2|e^{-i\varphi/2}},
+\end{equation}
+where $\varphi$ is the azimuthal angle around the vortex core.
+By comparing the above to~\eqref{eq:pseudospin-1/2-wavefunction} we see that
+the vortex is described by a $\pi$ change in $\Theta$ with a simultaneous $\pi$
+change in $\Phi$ along a closed path about the vortex.
+As $\Theta$ is associated with a total mass current, such a vortex state is
+referred to as a half-quantum vortex\footnote{This vortex is topologically
+distinct from HQVs that arise in the A and polar phases of superfluid $^3$He
+[REFS] and the polar phase of spin-1 BECs [REFS].}
+\par
+
+
+
 
 \section{Numerical setup}
 
