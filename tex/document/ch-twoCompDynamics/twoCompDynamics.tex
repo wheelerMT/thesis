@@ -33,8 +33,6 @@ component~\cite{Eto2011,Kasamatsu2016}.
 We relate this discovery to the interesting 
 dynamics we observe at early time.
 
-\section{Two-component Gross-Pitaevskii equations}
-
 \section{The spin-1 easy-plane polar phase}
 As we saw in \textcolor{red}{relevant part}, the spin-1 condensate with polar
 interactions supports a polar ground state.
@@ -120,7 +118,7 @@ where $\theta_j=\mathrm{Arg}(\psi_j)$ for $j=1,2$ and
 Gradients in $\Theta$ are associated with a total, superfluid mass current
 whereas gradients in $\Phi$ are associated with a pseudospin currents.
 \textcolor{red}{Do I want to elaborate on this further? Potentially by looking
-at actual expressions for mass and pseudospin current in two-component BECs.}
+at actual expressions for mass and pseudospin current in two-component BECs.} \\
 Now consider a vortex state which consists of a phase singularity in the $psi_1$
 component, where about the singularity $\theta_1$ winds by $2\pi$ and $\theta_2$
 remains unchanged, i.e. it is a smooth phase field.
@@ -137,16 +135,35 @@ change in $\Phi$ along a closed path about the vortex.
 As $\Theta$ is associated with a total mass current, such a vortex state is
 referred to as a half-quantum vortex\footnote{This vortex is topologically
 distinct from HQVs that arise in the A and polar phases of superfluid $^3$He
-[REFS] and the polar phase of spin-1 BECs [REFS].}
+[REFS] and the polar phase of spin-1 BECs [REFS].}.
 \par
 
+\section{Half-quantum vortex relaxation dynamics}
+\subsection{Numerical setup}
+To begin studying the relaxation dynamics of HQVs in a turbulent system, we
+numerically solve the two-component Gross-Pitaevskii equations in dimensionless
+form using a split-step method [JAVANAINEN REF] 
+(\textcolor{red}{see Appendix for details of dimensionless form)}:
+\begin{equation}
+    \begin{aligned}
+        i\frac{\partial \psi_1}{\partial t} &= (-\nabla^2 + g|\psi_1|^2
+        + \gamma|\psi_2|^2)\psi_1, \\
+        i\frac{\partial \psi_2}{\partial t} &= (-\nabla^2 + g|\psi_2|^2
+        + \gamma|\psi_1|^2)\psi_2.
+    \end{aligned}
+\end{equation}
+where we have assumed each component has the same atomic mass and inter-species
+interaction strength.
+The key parameter is the ratio of inter- to intra-species interaction
+\begin{equation}
+    \gamma = \frac{g_{12}}{g}.
+\end{equation}
+We consider the case $0 < \gamma < 1$ with all interactions repulsive such that
+the condensate is stable against the separation of the components.
 
 
+\subsection{Investigating the kinetic energy spectrum}
 
-\section{Numerical setup}
+\subsection{Temporal aspects of decay}
 
-\section{Investigating the kinetic energy spectrum}
-
-\section{Temporal aspects of decay}
-
-\section{Inter-vortex interaction between HQVs}
+\subsection{Inter-vortex interaction between HQVs}
