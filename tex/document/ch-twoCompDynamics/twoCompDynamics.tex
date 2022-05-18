@@ -119,7 +119,7 @@ Gradients in $\Theta$ are associated with a total, superfluid mass current
 whereas gradients in $\Phi$ are associated with a pseudospin currents.
 \textcolor{red}{Do I want to elaborate on this further? Potentially by looking
 at actual expressions for mass and pseudospin current in two-component BECs.} \\
-Now consider a vortex state which consists of a phase singularity in the $psi_1$
+Now consider a vortex state which consists of a phase singularity in the $\psi_1$
 component, where about the singularity $\theta_1$ winds by $2\pi$ and $\theta_2$
 remains unchanged, i.e. it is a smooth phase field.
 Such a state can be written as
@@ -139,11 +139,10 @@ distinct from HQVs that arise in the A and polar phases of superfluid $^3$He
 \par
 
 \section{Half-quantum vortex relaxation dynamics}
-\subsection{Numerical setup}
 To begin studying the relaxation dynamics of HQVs in a turbulent system, we
 numerically solve the two-component Gross-Pitaevskii equations in dimensionless
-form using a split-step method [JAVANAINEN REF] 
-(\textcolor{red}{see Appendix for details of dimensionless form)}:
+form
+(\textcolor{red}{see Appendix for details of dimensionless form}):
 \begin{equation}
     \begin{aligned}
         i\frac{\partial \psi_1}{\partial t} &= (-\nabla^2 + g|\psi_1|^2
@@ -151,6 +150,7 @@ form using a split-step method [JAVANAINEN REF]
         i\frac{\partial \psi_2}{\partial t} &= (-\nabla^2 + g|\psi_2|^2
         + \gamma|\psi_1|^2)\psi_2.
     \end{aligned}
+    \label{eq:dimensionless-two-comp-GPEs}
 \end{equation}
 where we have assumed each component has the same atomic mass and inter-species
 interaction strength.
@@ -159,10 +159,84 @@ The key parameter is the ratio of inter- to intra-species interaction
     \gamma = \frac{g_{12}}{g}.
 \end{equation}
 We consider the case $0 < \gamma < 1$ with all interactions repulsive such that
-the condensate is stable against the separation of the components.
+the condensate is stable against the separation of the components. \\
+The inter- and intra-component interactions give rise to two important length
+scales within the system.
+These are, respectively, associated with variations in the total superfluid
+density and the difference in density between the components.
+The density and spin healing lengths are then defined as~\cite{Eto2011}
+\begin{equation}
+    \xi_d = \frac{\hbar}{\sqrt{2mgn_0}}, \qquad 
+    \xi_s = \xi_d \sqrt{\frac{1 + \gamma}{1 - \gamma}},
+    \label{eq:healing-lengths}
+\end{equation}
+where $n_0$ is the background number density of each component in a uniform
+system.
+The size of the HQV core can be understood from the energetic hierarchy of
+these healing lengths.
+Since a HQV consists of a phase singularity in one component and not the other,
+the core is free to fill with the atoms of the other component.
+This corresponds to spatial variations in the $z$-component of the pseudospin,
+the size of which is set by the spin healing length, $\xi_s$.
+The vortex core is able to expand when $\xi_s \lesssim \xi_d$, which lowers
+the total energy.
+We see from Eq.~\eqref{eq:healing-lengths} that $\gamma$ directly determines
+the core sizes within our systems.
+Similar energetic hierarchies exist in spinor BECs, which can facilitate
+deformations of vortex cores such as the splitting of singly quantized vortices
+into fractional vortices [REFS].
 
+\subsection{Numerical setup}
+We solve Eq.~\eqref{eq:dimensionless-two-comp-GPEs} on a periodic domain with 
+$N_s^2=1024^2$ grid points which has dimensionless area $L^2=N_s^2$ with side
+length $L=N_s$.
+We take $N=3.2\times10^9$ atoms per component and fix dimensionless $g=L^2/4N$.
+The dimensionless density healing length is then fixed at
+$\xi_d=N_s/\sqrt{gN}=2$ in our system.
+We wish to explore the effect of the inter-component interaction by varying
+$\gamma$ within the range $0 < \gamma < 1$.\par
+
+The initial state is constructed as follows.
+We wish to construct $48^2$ vortices in each component.
+To do this we start with a grid of vortex positions such that the 
+$i$-th vortex is to be imprinted at position $(x_i, y_i)$.
+We repeat the same procedure for the other component, however to avoid
+overlapping vortex positions, we offset this grid in both $x$ and $y$ whilst
+preserving the grid structure.
+To facilitate a random distribution of vortices and subsequently turbulent
+dynamics, we then displace each position by some small amount 
+$(x_i, y_i) \rightarrow (x_i \delta + x_i, y_i + \delta y_i)$, where 
+$\delta x_i, \delta y_i < 3\xi_d$.
+The vortices are then constructed as an alternating $2\pi$ winding of the
+component phase about each vortex position using the method described
+in~\cite{Billam2014}.
+We imprint the vortices using a short imaginary time propagation of
+Eq.~\eqref{eq:dimensionless-two-comp-GPEs} whilst keeping the phase profile
+fixed so as to not alter the positions of the vortices.
+This results in an initially turbulent system of HQVs.
+The HQV cores correspond to a density depletion in one component at the position
+of the phase singularity with a corresponding density peak at the same position
+in the other component (see Fig.~\ref{fig:initial-vortex-state}).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \caption{Density of $\psi_1$ component in a $100\xi_d\times100\xi_d$
+    subregion of the initial state after imaginary time propagation.
+    We see the HQVs in this component by the density depletion.
+    The density peaks correspond to the location of HQV cores in the other
+    component, which have been filled by atoms in this component.}
+    \label{fig:initial-vortex-state}
+\end{figure}
+Previous work has shown that clustering of vortices can lead to anomalously
+slow coarsening dynamics~\cite{Karl2017} and thus constructing the initial
+state this way ensures that there is no clustering of like-signed vortices.
+From this initial state, the system evolves according to
+Eq.~\eqref{eq:dimensionless-two-comp-GPEs}.
+Two HQVs in the same component with opposite winding can annihilate, leading to
+a decay of the total vortex number within the system.
 
 \subsection{Investigating the kinetic energy spectrum}
+We begin by investing spatial aspects of the relaxation dynamics.
 
 \subsection{Temporal aspects of decay}
 
