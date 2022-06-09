@@ -107,13 +107,14 @@ wavefunction:
 \begin{equation}
     \twovec{\psi_1}{\psi_2} 
     = \twovec{|\psi_1|e^{i\theta_1}}{|\psi_2|e^{i\theta_2}}
-    = e^{\Theta}\twovec{|\psi_1|e^{i\Phi}}{|\psi_2|e^{i\Phi}},
+    = e^{i\Theta}\twovec{|\psi_1|e^{i\Phi}}{|\psi_2|e^{-i\Phi}},
     \label{eq:pseudospin-1/2-wavefunction}
 \end{equation}
 where $\theta_j=\mathrm{Arg}(\psi_j)$ for $j=1,2$ and
 \begin{equation}
     \Theta = \frac{\theta_1 + \theta_2}{2}, \enskip 
     \Phi = \frac{\theta_1 - \theta_2}{2}.
+    \label{eq:Theta-Phi}
 \end{equation}
 Gradients in $\Theta$ are associated with a total, superfluid mass current
 whereas gradients in $\Phi$ are associated with a pseudospin currents.
@@ -353,7 +354,14 @@ Finally, the total occupation number of the system is given as
 \begin{figure}
     \centering
     \includegraphics{example-image-c}
-    \caption{}
+    \caption{Occupation numbers for the quantum pressure (purple diamonds),
+    incompressible (red diamonds), and compressible (blue diamonds)
+    contributions for $\gamma=0.6$.
+    The total occupation number (black diamonds) is obtained from the
+    sum of each contribution.
+    The total occupation number has two distinct scaling: a $k^{-2}$ 
+    (dotted line) in the ultra-violet region, and a $k^{-4}$ scaling
+    (dashed line) in the infrared.}
     \label{fig:kinetic-energy-spectra}
 \end{figure}
 We plot the occupation number for each energy contribution, as well as total
@@ -382,6 +390,68 @@ negligible effects on the spatial aspects of the relaxation dynamics, and shows
 quantitatively similar behaviour to some turbulent scalar BEC systems
 containing scalar vortices.
 
-\subsection{Temporal aspects of decay}
+\subsection{Spin spectra?}
 
+\subsection{Temporal aspects of decay}
+To measure the temporal aspect of the relaxation dynamics, we wish to
+construct correlation functions.
+Since our pseudo-spinor order parameter is composed of a mass part and a spin
+part (c.f. Eq.~\eqref{eq:Theta-Phi}), it is natural to then construct both a
+mass and spin correlation function.\par
+To begin, we need to identify appropriate quantities that serve as order
+parameters for our system.
+By taking motivation from the EPP phase in spinor BECs, one such quantity is
+the planar tensor~\cite{Symes2017}
+\begin{equation}
+    \mathsf{Q} = \mqty(Q_{xx} & Q_{xy} \\ Q_{xy} & -Q_{xx}),
+\end{equation}
+where $Q_{xx} = \mathrm{Re}(\psi_1^*\psi_2)$ and
+$Q_{xx} = \mathrm{Im}(\psi_1^*\psi_2)$, showing this quantity depends on the
+relative phase coherence of the two components.
+The eigenvalues of $\mathsf{Q}$ are given by
+\{$-\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|$\}, where
+$\alpha=-2\psi_1\psi_2$.
+If we consider the general wavefunction defined in
+Eq.~\eqref{eq:pseudospin-1/2-wavefunction}, then evaluating $\mathsf{Q}$ and
+$\alpha$ gives
+\begin{equation}
+    Q_{xx} = |\psi_1||\psi_2|\cos({2\Phi}), \qquad 
+    Q_{xy} = -|\psi_1||\psi_2|\sin({2\Phi}),
+\end{equation}
+\begin{equation}
+    \alpha = -2|\psi_1||\psi_2|e^{2i\Theta}.
+\end{equation}
+This shows that $\mathsf{Q}$ is sensitive to phase of the spin,
+$\Phi$, whereas $\alpha$ is dependent upon the global phase, $\Theta$.\\
+Armed with these quantities, we can then construct correlation functions related
+to the mass and spin parts of our pseudo-spinor order parameter.
+These are defined, respectively, as
+\begin{equation}
+    G_\Theta = \frac{1}{n^2}\langle \alpha^*(\vb{0})\alpha(\vb{r}) \rangle,
+\end{equation}
+\begin{equation}
+    G_\Phi(\vb{r}, t) = 
+    \frac{2}{n^2}\mathrm{Tr}
+    [\langle \mathsf{Q}(\vb{0})\mathsf{Q}(\vb{r})\rangle],
+\end{equation}
+where $\langle \cdot \rangle$ denotes ensemble averaging.
+By exploiting the fact that our system is homogeneous, we can replace ensemble
+averages with spatial averages.
+To obtain the 1D spectrum, we perform an angular integration in k-space.
+The spin correlation function is then computed as
+\begin{equation}
+    G_\Phi(r, t) = \int d\Omega_k \int \frac{d^2\vb{x}'}{L^2}
+    \frac{2}{n^2}\mathrm{Tr}
+    [\langle \mathsf{Q}(\vb{x'})\mathsf{Q}(\vb{x}' + \vb{r})\rangle],
+\end{equation}
+where $\int d\Omega_k$ denotes integration over the k-space angle, whilst
+$\int d^2\vb{x}'/L^2$ is spatial averaging.
+We perform the same averaging for the mass correlation function. \par
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-c}
+    \label{fig:correlation-functions}
+    \caption{}
+\end{figure}
 \subsection{Inter-vortex interaction between HQVs}
