@@ -449,9 +449,31 @@ $\int d^2\vb{x}'/L^2$ is spatial averaging.
 We perform the same averaging for the mass correlation function. \par
 
 \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{example-image-c}
-    \label{fig:correlation-functions}
-    \caption{}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{
+            gfx/ch-twoCompDynamics/correlations.pdf}
+        \caption{}
+        \label{fig:correlation-functions}
+    \end{subfigure}\\
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{
+            gfx/ch-twoCompDynamics/correlation_lengths.pdf}
+        \caption{}
+        \label{fig:correlation-lengths}
+    \end{subfigure}
 \end{figure}
+Fig.~\ref{fig:correlation-functions} shows both correlation functions for
+$\gamma=0.6$ for various times through the simulation.
+We see that as time increases, the correlation functions extend over larger
+distances which indicates that the respective domains are growing over time,
+showing long range order is being established.\\
+From these correlation functions we may extract a correlation length, $L_\delta$
+with $\delta \in \{\Theta, \Phi\}$, that enables us to determine a length scale
+over which the correlation function decays.
+We take the correlation length to be the value at which the corresponding
+correlation function decays to a quarter of its value at
+$r=0$: $G_\delta(L_\delta, t) = \frac{1}{4}G_\delta(0, t)$.
+
 \subsection{Inter-vortex interaction between HQVs}
