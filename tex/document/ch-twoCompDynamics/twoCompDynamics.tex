@@ -187,7 +187,7 @@ Similar energetic hierarchies exist in spinor BECs, which can facilitate
 deformations of vortex cores such as the splitting of singly quantized vortices
 into fractional vortices [REFS].
 
-\subsection{Numerical setup}
+\subsection{Numerical setup}\label{sec:numerical-setup}
 We solve Eq.~\eqref{eq:dimensionless-two-comp-GPEs} on a periodic domain with 
 $N_s^2=1024^2$ grid points which has dimensionless area $L^2=N_s^2$ with side
 length $L=N_s$.
@@ -456,13 +456,20 @@ We perform the same averaging for the mass correlation function. \par
         \caption{}
         \label{fig:correlation-functions}
     \end{subfigure}\\
-    \begin{subfigure}{\textwidth}
+    \begin{subfigure}{0.5\textwidth}
         \centering
-        \includegraphics[width=0.5\textwidth]{
+        \includegraphics[width=\textwidth]{
             gfx/ch-twoCompDynamics/correlation_lengths.pdf}
         \caption{}
         \label{fig:correlation-lengths}
     \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-a}
+        \caption{}
+        \label{fig:scalar-vortex-lengths}
+    \end{subfigure}
+    \caption{}
 \end{figure}
 Fig.~\ref{fig:correlation-functions} shows both correlation functions for
 $\gamma=0.6$ for various times through the simulation.
@@ -475,5 +482,108 @@ over which the correlation function decays.
 We take the correlation length to be the value at which the corresponding
 correlation function decays to a quarter of its value at
 $r=0$: $G_\delta(L_\delta, t) = \frac{1}{4}G_\delta(0, t)$.
+Using the correlation length, we can determine whether the correlation functions
+exhibit dynamical scaling, which implies the form of the functions remains
+self-similar at different times throughout the simulation.
+This means the function collapses to a universal, time-independent function
+when scaled by the correlation length: $H_\delta(r) = G(r/L_\delta(t), t)$.
+The insets of Fig.~\ref{fig:correlation-functions} shows the scaling of the
+correlation functions when scaled by the respective correlation length.
+This confirms that the correlation functions within our system do exhibit
+dynamical scaling. \textcolor{red}{Reference to other systems where dynamical
+scaling is also seen?} \par
+Fig.~\ref{fig:correlation-lengths} shows the correlation lengths for
+$\gamma=0.3$, $\gamma=0.6$, and $\gamma=0.8$ as functions of time.
+We see that at late times in the evolution, all correlation lengths tend to a
+universal $t^\frac{1}{5}$ scaling.
+However, the early-time dynamics is remarkably different for the various
+$\gamma$.
+As $\gamma$ increases, there is a faster growth of the correlation lengths at
+early times, which signifies the correlation length being $\gamma$-dependent.
+\par
+We investigate this behaviour by considering the total vortex number of the
+system as a function of time.
+We can then extract the mean distance between the vortices as
+$\ell_d=1/\sqrt{N_\mathrm{vort}}$, where $N_\mathrm{vort}$ is the total number
+of vortices in the two components.
+In a scalar BEC containing an initially large number of vortices, it has been
+observed that $\ell_d \sim t^\beta$~\cite{Karl2017}, where $\beta$ characterizes
+the annihilation rate of vortices.
+In particular, there were two scaling observed: Firstly, a $\beta=1/5$ scaling
+after some short period of evolution.
+This scaling is included in Fig.~\ref{fig:correlation-lengths} as a comparison.
+Secondly, after a much longer period of evolution, a $\beta=1/2$ scaling
+emerges.
+This second scaling can be delayed if the initial vortex distribution is
+highly clustered~\cite{Karl2017}.
+Fig.~\ref{fig:scalar-vortex-lengths} is a reproduction of both the early- and
+late-time scaling of the mean vortex distance, $\ell_d$, for a scalar system
+using the parameters of~\cite{Karl2017}.
+We consider three initial conditions: Firstly, we constructed a grid of vortices
+analogous to our two-component system (see Sec.~\ref{sec:numerical-setup}).
+Secondly, we considered a random distribution of vortices; one with noise
+added to the energy spectrum, and one without.
+We see that at early and intermediate times, there is a clear $t^{1/5}$ scaling
+in all of the initial states tested.
+Furthermore, at late times we recover the $t^{1/2}$ scaling for all initial
+states.
+This indicates the scaling is robust and insensitive to the initial conditions.
+\par
+Motivated by this previous work in scalar BECs, we conduct a similar analysis
+on our two-component system containing HQVs, and determine how $\gamma$ affects
+the vortex decay rate.
+In particular, we consider the early-time evolution in which
+Fig.~\ref{fig:correlation-lengths} suggests interesting dynamics.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{}
+    \label{fig:vortex-number}
+\end{figure}
+The total vortex number is plotted in Fig.~\ref{fig:vortex-number} for
+$\gamma=0.3$, $\gamma=0.7$, and $\gamma=0.9$.
+We see that for $\gamma=0.3$, the vortex decay rate is mostly consistent
+throughout the evolution, which tends to a $t^{-2/5}$ ($\ell_d \sim t^{1/5}$)
+scaling at later times.
+More interesting dynamics is revealed for $\gamma=0.7, 0.9$ where two different
+scaling regimes emerge at early times ($2.5\times10^2\xi_d^2 \lesssim t/\tau
+\lesssim 2.5\times10^3\xi_d^2$) with $N_\mathrm{vort} \sim t^{-1}$ for
+$\gamma=0.7$ and $N_\mathrm{vort} \sim t^{-3/2}$ for $\gamma=0.9$.
+After the initial differing early-time dynamics, the systems then tend to a
+universal $t^{-2/5}$ scaling, which corresponds to $\ell_d\sim t^{1/5}$ similar
+to the scalar BEC simulation shown.
+These results show a better fit to the theoretical $t^{1/5}$ scaling than 
+indicated by the correlation lengths shown in
+Fig.~\ref{fig:correlation-lengths}.
+This further suggests that $L_{\Phi,\Theta}$ differs slightly from $\ell_d$,
+even though the growth of the correlation lengths is driven by vortex
+annihilation.
+Fig.~\ref{fig:vortex-number} only extends up to $t/\tau=5\times 10^4\xi_d^2$,
+and we therefore expect to see a universal transition to
+$N_\mathrm{vort}\sim t^{-1}$ ($\ell_d\sim t^{1/2}$) at much later times for
+sufficiently small $\gamma$.
+For large $\gamma$, due to the rapid annihilation of vortices at early times,
+there may not be enough vortices left within the system to facilitate the
+transition to the $N_\mathrm{vort} \sim t^{-1}$ regime.
+\par
+We wish to investigate further the affect of $\gamma$ on the initial decay
+rate of the vortices.
+We can model the vortex decay rate as a simple kinetic-like equation of the form
+\begin{equation}
+    \pdv{N_\mathrm{vort}}{t} \sim N_\mathrm{vort}^\eta,
+\end{equation}
+where $\eta > 1$.
+The form of this equation states that the decay rate of the vortices is
+dependent on the total number of vortices facilitating the annihilation.
+Using this simple model, we are able to extract a scaling for the total vortex
+number as
+\begin{equation}
+    N_\mathrm{vort} \sim t^{-2/z},
+\end{equation}
+where $z=-2(1-\eta)$.
+An exponent of $z=2$ corresponds to a two-body collision process, in which
+only two vortices are required to complete an annihilation.
+On the contrary, an exponent of $z=5$ corresponds to a three-body collision
+process, where three vortices are necessary to facilitate an annihilation.
 
 \subsection{Inter-vortex interaction between HQVs}
