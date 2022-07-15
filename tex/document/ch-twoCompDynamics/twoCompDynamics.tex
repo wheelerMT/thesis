@@ -220,7 +220,7 @@ of the phase singularity with a corresponding density peak at the same position
 in the other component (see Fig.~\ref{fig:initial-vortex-state}).
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \includegraphics{gfx/ch-twoCompDynamics/init_state.pdf}
     \caption{Density of $\psi_1$ component in a $100\xi_d\times100\xi_d$
     subregion of the initial state after imaginary time propagation.
     We see the HQVs in this component by the density depletion.
@@ -240,7 +240,7 @@ a decay of the total vortex number within the system.
 We first investigate how $\gamma$ affects the HQVs within our systems.
 \begin{figure}
     \centering
-    \includegraphics{example-image-b}
+    \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/densVort.pdf}
     \caption{Density (a)-(c) and pseudo-vorticity (d)-(f) of the $\psi_1$
     component in a $256\xi_d \times 256\xi_d$ subregion at a time 
     $t/\tau=2.5\times 10^4\xi_d^2$ for $\gamma=0.1$ (left),
@@ -351,9 +351,9 @@ Finally, the total occupation number of the system is given as
     + \psi_2^*(k)\psi_2(k).
 \end{equation}
 
-\begin{figure}
+\begin{figure}[t!]
     \centering
-    \includegraphics{example-image-c}
+    \includegraphics[scale=0.75]{gfx/ch-twoCompDynamics/spectra.pdf}
     \caption{Occupation numbers for the quantum pressure (purple diamonds),
     incompressible (red diamonds), and compressible (blue diamonds)
     contributions for $\gamma=0.6$.
@@ -536,8 +536,11 @@ In particular, we consider the early-time evolution in which
 Fig.~\ref{fig:correlation-lengths} suggests interesting dynamics.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{example-image-b}
-    \caption{}
+    \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/vortex_number.pdf}
+    \caption{Total vortex number as a function of time for $\gamma=0.3,0.7,0.9$
+    (red circles). Larger $\gamma$ leads to a faster decay rate of vortices at
+    early times due to the rapid annihilation of opposite-signed vortices
+    within the same component.}
     \label{fig:vortex-number}
 \end{figure}
 The total vortex number is plotted in Fig.~\ref{fig:vortex-number} for
@@ -579,11 +582,36 @@ Using this simple model, we are able to extract a scaling for the total vortex
 number as
 \begin{equation}
     N_\mathrm{vort} \sim t^{-2/z},
+    \label{eq:vortex-number-scaling}
 \end{equation}
 where $z=-2(1-\eta)$.
 An exponent of $z=2$ corresponds to a two-body collision process, in which
 only two vortices are required to complete an annihilation.
 On the contrary, an exponent of $z=5$ corresponds to a three-body collision
 process, where three vortices are necessary to facilitate an annihilation.
+\begin{figure}[t!]
+    \centering
+    \includegraphics{gfx/ch-twoCompDynamics/gamma_vs_expo.pdf}
+    \caption{The exponent $z$ in Eq.~\eqref{eq:vortex-number-scaling} as a
+    function of $\gamma$.
+    We see that after $\gamma \gtrsim 0.6$ a rapid decrease of the exponent
+    occurs, signalling a rapid change in vortex dynamics.}
+    \label{fig:exponent-vs-gamma}
+\end{figure}
+Fig.~\ref{fig:exponent-vs-gamma} shows the exponent, $z$, as a function of
+$\gamma$ where $z$ is extracted within the time interval
+$2.5 \times 10^2\xi_d^2 < t/\tau < 2.5\times10^3\xi_d^2$.
+We see a rapid decrease of the exponent after $\gamma \gtrsim 0.6$, in which
+Fig.~\ref{fig:vortex-number} shows the rapid annihilation of vortices is
+prevalent.
+The decrease of the exponent in our simulations signals an additional vortex
+interaction mechanism not present in scalar BEC systems.
 
-\subsection{Inter-vortex interaction between HQVs}
+\subsection{HQV dipole dynamics}
+Numerous studies have been conducted to try and understand the inter-vortex
+forces between HQVs in a two-component systems~\cite{Eto2011, Kasamatsu2016}.
+In particular, Kasamatsu {\it et. al.}~\cite{Kasamatsu2016} tried to derive a
+point vortex model to explain the dynamics shown in
+Fig.~\ref{fig:exponent-vs-gamma}.
+We can discern more about the dynamics of these HQVs by considering a dipole
+of opposite circulation within the same component.
