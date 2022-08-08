@@ -31,8 +31,8 @@ transition, and different systems belonging to the same universality class share
 the same critical exponents.
 \textcolor{red}{Examples of different exponents for different classes? Links
 to refs that calculate values?}
-In contrast, the constants $\xi_0$ and $\tau_0$ are determined by the details
-of the system. \par
+In contrast, the constants $\xi_0$ and $\tau_0$ are determined by the
+microscopic details of the system. \par
 The KZM describes the dynamics of crossing the critical point when $\lambda$ 
 is continually varied.
 We assume the form of a linear quench, such that the control parameter can be
@@ -92,7 +92,7 @@ $\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
     the critical point is approached, the equilibrium relaxation time
     (blue line) diverges, and the order parameter can no longer follow the 
     ground state, leading to frozen dynamics in the interval
-    $t \in [-\hat{t}, \hat{t}]$}
+    $t \in [-\hat{t}, \hat{t}]$}. Figure reproduced from~\cite{delCampo2013}.
     \label{fig:adiabatic-impulse}
 \end{figure}
 
@@ -121,10 +121,50 @@ length at $\hat{t}$:
     \hat{\xi} \equiv \xi(\hat{t}) 
     = \xi_0 \left(\frac{\tau_Q}{\tau_0}\right)^\frac{\nu}{1 + z\nu}.
 \end{equation}
-
-
+Using this length scale, we can predict the density of defects, $n_d$, by
+the ratio of the size of the defects $\hat{\xi}^d$ and the size of the domains
+$\hat{\xi}^D$
+\begin{equation}
+    n_d \sim \frac{\hat{\xi}^d}{\hat{\xi}^D}=\frac{1}{\xi_0^{D-d}}
+    \left(\frac{\tau_0}{\tau_Q}\right)^{(D-d)\frac{\nu}{1 + z\nu}},
+\end{equation}
+where $D$ and $d$ are the dimensions of space and the defects, respectively.
+In a 3D superfluid containing quantum vortices, $D=3$ and $d=1$.
+If we assume the mean-field predictions for the exponents
+($z=2$, $\nu=\frac{1}{2}$), then the density of defects scales as
+\begin{equation}
+    n_d \propto \tau_Q^{-\frac{1}{2}}.
+\end{equation}
+\textcolor{red}{Experimentally there have been different observations giving
+$n_d \propto \tau_Q^{-1/3}$. You can use `Model-F' exponents $\nu=3/2, z=3/2$
+in the above equation to recover this result.}
 
 \subsection{The generalized Kibble-Zurek mechanism}
+
+\subsection{The KZM in spin-1 BECs}
+As shown in \textcolor{red}{relevant section}, there are four ground states
+phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
+antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
+state phase has an associated symmetry.
+The Kibble-Zurek mechanism can be studied in spin-1 BECs by considering how
+the change of a control parameter causes the order parameter to change from 
+one ground state to another.
+As it does this, the symmetry of the system is spontaneously broken, and hence
+the Kibble-Zurek theory can be applied.
+
+Spin-1 BECs support numerous first- and second-order phase transitions
+when the linear, $p$, or quadratic, $q$, Zeeman shifts are
+ramped across a critical point~\cite{Kawaguchi2012}.
+A second-order transition is characterised by the derivative of the energy with
+respect to $p$ and $q$ change continuously across the transition.
+For example, in a spin-1 BEC with polar interactions, the ground state is in
+the antiferromagnetic state for $|p|/c_2n<1$ and $q/c_2n<0$ which has energy
+$\epsilon = q - \frac{p^2}{2c_2n}-\frac{1}{2}c_0n$.
+As $p$ is ramped across the critical point at $|p|/c_2n=1$, the ground state
+becomes the ferromagnetic state with energy
+$\epsilon = -p + q + \frac{1}{2}(c_0 - c_2)n$.
+We see the derivatives of the two energies are continuous at the critical point,
+and hence this is a second-order phase transition.
 
 \section{Broken-axisymmetry to ferromagnetic quench}
 
