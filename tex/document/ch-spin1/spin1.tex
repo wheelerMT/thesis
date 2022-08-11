@@ -3,7 +3,7 @@
 
 \section{Introduction}
 
-\section{The Kibble-Zurek mechanism}
+\section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
 control parameter, $\lambda$, is ramped across a phase transition that occurs
 at the critical point, $\lambda_c$.
@@ -15,7 +15,7 @@ of the equilibrium correlation length
 and an equilibrium relaxation time
 \begin{equation}
     \tau(\epsilon) = \frac{\tau_0}{|\epsilon|^{z\nu}},
-    \label{eq:equil-relax-time}
+    \label{eq: equil-relax-time}
 \end{equation}
 where
 \begin{equation}
@@ -44,14 +44,14 @@ which is symmetric about the critical point so that the reduced distance
 parameter is defined as
 \begin{equation}
     \epsilon(t) = \frac{t}{\tau_Q}
-    \label{eq:time-dependent-epsilon}
+    \label{eq: time-dependent-epsilon}
 \end{equation}
 for a quench time $\tau_Q$.
 Here, $t \in [-\tau_Q, \tau_Q]$, where the critical point is reached at $t=0$.
-From Eq.~\eqref{eq:equil-relax-time}, we see that far from the critical point
+From Eq.~\eqref{eq: equil-relax-time}, we see that far from the critical point
 ($|\lambda| \gg \lambda_c \implies |\epsilon| \gg 1$ ) the equilibrium
 relaxation time is small compared to the time taken to reach the critical point
-[Eq.~\eqref{eq:time-dependent-epsilon}]; which implies the dynamics is
+[Eq.~\eqref{eq: time-dependent-epsilon}]; which implies the dynamics is
 adiabatic.
 Conversely, as we approach the critical point ($\epsilon \rightarrow 0$), the
 equilibrium relaxation time diverges and the dynamics of the system freeze,
@@ -60,7 +60,7 @@ As the critical point is passed, the system can once again resume the adiabatic
 dynamics as the equilibrium relaxation time no longer diverges.
 This then splits the dynamics into three parts as $\epsilon(t)$ is ramped from
 $\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
-(see Fig.~\ref{fig:adiabatic-impulse} for a schematic representation).
+(see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -93,7 +93,7 @@ $\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
     (blue line) diverges, and the order parameter can no longer follow the 
     ground state, leading to frozen dynamics in the interval
     $t \in [-\hat{t}, \hat{t}]$}. Figure reproduced from~\cite{delCampo2013}.
-    \label{fig:adiabatic-impulse}
+    \label{fig: adiabatic-impulse}
 \end{figure}
 
 The extent of the frozen region can be estimated by comparing the equilibrium
@@ -104,6 +104,7 @@ relaxation time with the time elapsed after the critical point
 Solving the above equation yields the freeze-out time $\hat{t}$:
 \begin{equation}
     \hat{t} \sim (\tau_0\tau_Q^{z\nu})^{\frac{1}{1+z\nu}}.
+    \label{eq: freeze-out-time}
 \end{equation}
 In the time interval $t \in [-\hat{t}, \hat{t}]$, the order parameter cannot
 keep up with the change of the control parameter and therefore lags
@@ -120,6 +121,7 @@ length at $\hat{t}$:
 \begin{equation}
     \hat{\xi} \equiv \xi(\hat{t}) 
     = \xi_0 \left(\frac{\tau_Q}{\tau_0}\right)^\frac{\nu}{1 + z\nu}.
+    \label{eq: KZM-domain-size}
 \end{equation}
 Using this length scale, we can predict the density of defects, $n_d$, by
 the ratio of the size of the defects $\hat{\xi}^d$ and the size of the domains
@@ -141,7 +143,7 @@ in the above equation to recover this result.}
 
 \subsection{The generalized Kibble-Zurek mechanism}
 
-\subsection{The KZM in spin-1 BECs}
+\subsection{The Kibble-Zurek mechanism in spin-1 BECs}
 As shown in \textcolor{red}{relevant section}, there are four ground states
 phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
 antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
@@ -167,9 +169,95 @@ We see the derivatives of the two energies are continuous at the critical point,
 and hence this is a second-order phase transition.
 
 \section{Broken-axisymmetry to ferromagnetic quench}
+The KZM typically concerns second-order phase transitions. However, recent
+work has been conducted in condensed matter systems which investigate
+the KZM across first-order transitions~\cite{Qiu2020}.
+We aim to extend this research and present results for
+the first-order transition between the broken-axisymmetry and
+ferromagnetic phases.
 
-\subsection{Numerical set up}
-\subsection{Scaling of FM domains}
+We start from the broken-axisymmetry (BA) wavefunction with $p=0$
+\begin{equation}
+    \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
+    \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
+    \label{eq: BA-initial-wavefunction}
+\end{equation}
+where $Q(t)=q(t)/|c_2|n$.
+The BA wavefunction is the ground state for $c_2 < 0$ and $0 < Q < 2$.
+There exists a critical point at $Q=0$ where the ground state changes from
+the BA phase to the ferromagnetic phase.
+We perform 1D simulations on a grid of $N_x = 16384$ grid points with a grid
+spacing of $\Delta_x = 0.125$.
+We perturb the initial BA state by adding small noise, $\delta_m$, to each
+component where $|\delta_m| \ll 1$.
+We generate the real and imaginary parts of $\delta_m$ for each grid point
+using the probability distribution
+$p(x) = e^{-x^2/2\sigma^2}(\sqrt{2\pi}\sigma)^{-1}$.
+We choose $\sigma=10^{-4}$ so that we start close to the BA ground state.
+
+\section{Phase boundaries in the ferromagnetic phase}
+As the system is quenched across the critical point at $Q=0$, the ground state
+changes to the ferromagnetic phase.
+The order parameter for this phase takes the form $\zeta=(1,0,0)^T$ or 
+$\zeta=(0,0,1)^T$ depending on the orientation of the spin.
+From Eq.~\eqref{eq: BA-initial-wavefunction} we have
+$\psi_{\pm 1} = \frac{1}{2}$ and $\psi_0 = \frac{\sqrt{2}}{2}$ at $Q=0$.
+The question that remains is: Which state will the system choose after
+the critical point is passed?
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
+    \caption{Plots of $|\psi_1|^2$ (top) $|\psi_0|^2$ (middle) and
+    $|\psi_{-1}|^2$ (bottom) as a function of time for a $256\xi_s$
+    spatial subregion of the condensate for $\tau_Q=5000\tau$.}
+    \label{fig: BA-FM-densities}
+\end{figure}
+Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
+component for a quench time $\tau_Q=5000\tau$.
+As the Zeeman shift is quenched, we see the density of the $\psi_0$ component
+linearly decrease as the $\psi_{\pm 1}$ components increase.
+After the critical point at $t/\tau=0$ is passed there is a freeze-out time
+(see Sec.~\ref{sec:the-KZM}) before the system crosses into the ferromagnetic
+phase.
+During this new phase, we see the formation of ferromagnetic domain walls
+(characterised by the bright density peaks) in the $\psi_{\pm 1}$ components as
+the order parameter adjusts to the new ground state.
+These domains are spatially separated and where there is zero density in one of
+the components, there is maximal density in the other so that overall the total
+density $n=\sum_m\psi_m^*\psi_m$ is uniform.
+
+The KZM predicts in Eq.~\eqref{eq: KZM-domain-size} that the size of the domains
+grow as the quench time increases.
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_width.pdf}
+        \caption{}
+        \label{fig: BA-FM-domain-width-comparison}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_onset.pdf}
+        \caption{}
+        \label{fig: BA-FM-domain-onset}
+    \end{subfigure}
+    \caption{(a): Density profile of the $\psi_1$ component across an average
+    domain in a simulation with $\tau_Q=2500$ (black line) and
+    $\tau_q=10000$ (red line).
+    (b): Time evolution of $|\psi_1|^2$ for a $256\xi_s$ spatial subregion
+    for $\tau_Q=5000$ (top) and $\tau_Q=10000$ (bottom).}
+\end{figure}
+Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
+for two different simulations with $\tau_Q=2500$ and $\tau_Q=10000$.
+We see that the longer quench time produces domains that have a
+larger width than those of faster quenches, supporting the Kibble-Zurek theory.
+In addition, we plot the time evolution of $|\psi_1|^2$ for $\tau_Q=5000$ and
+$\tau_Q=10000$ in Fig.~\ref{fig: BA-FM-domain-onset}.
+We see the ferromagnetic domain formation is delayed in the simulation
+with a longer quench time, which supports the prediction in
+Eq.~\eqref{eq: freeze-out-time}.
+
+\section{Power-law scaling near the critical point}
 
 \section{Bogoliubov analysis of the broken-axisymmetry phase}
 \subsection{Calculating relevant modes}
