@@ -210,7 +210,7 @@ the critical point is passed?
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
     \caption{Plots of $|\psi_1|^2$ (top) $|\psi_0|^2$ (middle) and
     $|\psi_{-1}|^2$ (bottom) as a function of time for a $256\xi_s$
-    spatial subregion of the condensate for $\tau_Q=5000\tau$.}
+    spatial subregion of the condensate for $\tau_Q=2500\tau$.}
     \label{fig: BA-FM-densities}
 \end{figure}
 Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
@@ -242,10 +242,10 @@ grow as the quench time increases.
         \label{fig: BA-FM-domain-onset}
     \end{subfigure}
     \caption{(a): Density profile of the $\psi_1$ component across an average
-    domain in a simulation with $\tau_Q=2500$ (black line) and
+    domain in a simulation with $\tau_Q=2500\tau$ (black line) and
     $\tau_q=10000$ (red line).
     (b): Time evolution of $|\psi_1|^2$ for a $256\xi_s$ spatial subregion
-    for $\tau_Q=5000$ (top) and $\tau_Q=10000$ (bottom).}
+    for $\tau_Q=5000\tau$ (top) and $\tau_Q=10000\tau$ (bottom).}
 \end{figure}
 Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
 for two different simulations with $\tau_Q=2500$ and $\tau_Q=10000$.
@@ -257,9 +257,143 @@ We see the ferromagnetic domain formation is delayed in the simulation
 with a longer quench time, which supports the prediction in
 Eq.~\eqref{eq: freeze-out-time}.
 
+One can count the number of ferromagnetic domains in the system and see the
+dependence on $\tau_Q$.
+To do this, we developed a numerical algorithm that counts the number of
+density peaks in each component and sums the result to give the total number of
+domains, $N_d$.
+We calculate this quantity at time $t/\tau=\tau_Q/2$ in each simulation, to
+ensure that the domains are frozen and avoid the early-time coarsening
+taking place which could affect the total number of domains present.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
+    \caption{The number of ferromagnetic domains as a function of the
+    quench time. Each point represents 50 simulations and the
+    errorbar gives one standard deviation. Overlaid are the scaling lines
+    $\tau_Q^{-1/3}$ (black dashed line) and $\tau_Q^{-1/5}$ (red dotted line).}
+    \label{fig: FM-domains-scaling}
+\end{figure}
+In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
+as a function of the quench time with 50 ensemble runs for each simulation.
+We see that there is not a uniform scaling throughout all quench times tested.
+Faster quenches indicate a steeper power-law scaling of the number of domains
+that approaches $N_d\sim\tau_Q^{-1/3}$.
+As the quench time slows, a deviation from this scaling takes place at
+approximately $\tau_Q\approx 3\times10^3\tau$, where the scaling of the domains
+approaches $N_d\sim\tau_Q^{-1/5}$.
+\textcolor{red}{I guess the question now is: why is there a deviation?
+Is the larger domain size (due to slower quench times) affecting the scaling?
+Is it a consequence of the grid size? Can the $1/3$ scaling be linked to KZ
+theory?}
+
 \section{Power-law scaling near the critical point}
 
-\section{Bogoliubov analysis of the broken-axisymmetry phase}
-\subsection{Calculating relevant modes}
+\subsection{Bogoliubov theory in spin-1 BECs}
+Bogoliubov analysis is an indispensable tool for determining the stability of
+states within BEC systems [REFS to Bogoliubov papers?].
+\textcolor{red}{I plan to have details regarding the derivation of the
+Bogoliubov energies etc. but for now I will just list them for the BA phase.}
 
+The Bogoliubov energies for mode $\vb{k}$ and component $m$ for the
+broken-axisymmetry phase are:
+\begin{equation}
+    E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)},
+    \label{eq: zero-mode-energy}
+\end{equation}
+\begin{equation}
+    E_{\vb{k}, \pm} = \sqrt{\epsilon_{\vb{k}} + n(c_0 + c_2)\epsilon_{\vb{k}} 
+    + 2(c_2n)^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
+    \label{eq: pmone-mode-energy}
+\end{equation}
+where $\epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, $\tilde{q} = -q/(2c_2n)$ and
+\begin{equation}
+    \Lambda_{\vb{k}} = \sqrt{[(c_0+3c_2)n\epsilon_{\vb{k}} 
+    + 2(c_2n)^2(1-\tilde{q}^2)] 
+    - 4c_2(c_0+2c_2)n^2\tilde{q}^2\epsilon_{\vb{k}}^2}.
+\end{equation}
+The imaginary part of the above energies becoming non-zero signals an
+instability present in that respective mode.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/ch-spin1/dens_spin_energies.pdf}
+    \caption{Real and imaginary parts of the energies in
+    Eqs.~\eqref{eq: zero-mode-energy}-\eqref{eq: pmone-mode-energy} in a
+    parameter space of mode $\vb{k}$ and $Q=q/|c_2|n$.}
+    \label{fig: dens-spin-energies}
+\end{figure}
+Fig.~\ref{fig: dens-spin-energies} shows the real and imaginary parts of the
+above energies in a parameter space of $(\vb{k}, Q)$.
+Firstly, one sees the growth of the $\mathrm{Im}(E_{\vb{k}, -})$ energy
+when $|Q| > 2$.
+When $Q>2$, the lowest energy of the system is achieved by having the condensate
+become polar ($\zeta^P=(0,1,0)^T$).
+\textcolor{red}{Why is there an instability for $Q<-2$? Did we ever put our
+finger on this? Mirkhalaf~\cite{Mirkhalaf2021} has a plot that shows the
+critical point between the BA to FM phase is at $Q = -2$. We're 
+seeing the transition at $Q=0$ however. In our simulations we only quench
+from Q=1 to Q=-1, should we just include that range instead?}
+Secondly, we see the growth of the $\mathrm{Im}(E_{\vb{k}, {f_z}})$ mode when
+$Q<0$.
+This signals the change from the broken-axisymmetry phase to the ferromagnetic
+phase and hence is the relevant mode in our system.
+
+\subsection{Observation of power-law scaling}
+Since we know the relevant unstable mode within our system, we can investigate
+power-law scaling near the critical point.
+To begin, we start with the fluctuation operator associated with the
+Bogoliubov spectrum $E_{\vb{k}, fz}$
+\begin{equation}
+    \hat{a}_{\vb{k}, {f_z}} = \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1} 
+    - \hat{a}_{\vb{k}, -1}),
+    \label{eq: fz-fluctuation-operator}
+\end{equation}
+where $\hat{a}_{\vb{k}, \pm1}$ is the annihilation operator for a spin-1 boson
+with wave number $\vb{k}$ in component $m=\pm1$.
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin1/1d_BA-FM_5000_fluctuation_diff.pdf}
+        \caption{}
+        \label{fig: fluctuation-diff}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_Qa_scaling.pdf}
+        \caption{}
+        \label{fig: Q_a-scaling}
+    \end{subfigure}
+    \caption{(a): The modulus of the fluctuation operator in
+    Eq.~\eqref{eq: fz-fluctuation-operator} for $\vb{k}=1$ and $\tau_Q=5000$.
+    The plot shown is obtained by averaging over all runs in the ensemble.
+    (b): The critical value $Q_a$ as a function of the quench time.
+    }
+\end{figure}
+Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
+of $\tau_Q=5000$ with $\vb{k}=1$.
+The quantity remains zero until after the critical point is passed, where
+a rapid period of growth occurs.
+This onset of this growth corresponds to the ferromagnetic domains forming
+within the system (see Fig.~\ref{fig: BA-FM-densities}).
+Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
+$\hat{t}$, which is the time when $|\hat{a}_{\vb{k}, {f_z}}|$ first exceeds
+1\% of its maximum value: $|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
+0.01\times \mathrm{max}|\hat{a}_{\vb{k}, {f_z}}(t)|$.
+For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain $\hat{t}=598\tau$.
+Using this time, we can extract the critical value of $Q$ that this growth
+occurs at, $Q(\hat{t}) = Q_a$.
+Fig.~\ref{fig: Q_a-scaling} shows $Q_a$ as a function of the quench time.
+We see a clear power-law scaling of $Q_a \propto \tau_Q^{-\frac{1}{2}}$ for
+all values of $\tau_Q$ tested.
+This exponent differs from observed results in previous works investigating
+second-order phase transitions~\cite{Damski2007, Anquez2016, Swislocki2013}
+where an exponent of $-1/3$ is observed.
+Our observation of a $-1/2$ exponent signifies a deviation from
+the Kibble-Zurek theory which appears to be a consequence of our transition
+being first-order.
+
+\subsection{Deriving the observed power-law scaling}
+We wish to rigorously derive the scaling obtained in
+Fig.~\ref{fig: Q_a-scaling}.
+We follow a process similar
 \section{Other quench results? 2D?}
