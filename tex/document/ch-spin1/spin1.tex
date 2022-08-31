@@ -1,4 +1,4 @@
-\chapter{The KZM across a first-order phase transition in a spin-1 BEC}
+\chapter{The Kibble-Zurek mechanism in a spin-1 BEC}
 
 
 \section{Introduction}
@@ -141,9 +141,61 @@ If we assume the mean-field predictions for the exponents
 $n_d \propto \tau_Q^{-1/3}$. You can use `Model-F' exponents $\nu=3/2, z=3/2$
 in the above equation to recover this result.}
 
-\subsection{The generalized Kibble-Zurek mechanism}
+\section{Extending the KZM to first-order phase transitions}
 
-\subsection{The Kibble-Zurek mechanism in spin-1 BECs}
+\subsection{Extracting critical exponents}
+
+\subsection{Bogoliubov theory in spin-1 BECs}
+Bogoliubov analysis is an indispensable tool for determining the stability of
+states within BEC systems [REFS to Bogoliubov papers?].
+\textcolor{red}{I plan to have details regarding the derivation of the
+Bogoliubov energies etc. but for now I will just list them for the BA phase.}
+
+The Bogoliubov energies for mode $\vb{k}$ and component $m$ for the
+broken-axisymmetry phase are:
+\begin{equation}
+    E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)},
+    \label{eq: zero-mode-energy}
+\end{equation}
+\begin{equation}
+    E_{\vb{k}, \pm} = \sqrt{\epsilon_{\vb{k}} + n(c_0 + c_2)\epsilon_{\vb{k}} 
+    + 2(c_2n)^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
+    \label{eq: pmone-mode-energy}
+\end{equation}
+where $\epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, $\tilde{q} = -q/(2c_2n)$ and
+\begin{equation}
+    \Lambda_{\vb{k}} = \sqrt{[(c_0+3c_2)n\epsilon_{\vb{k}} 
+    + 2(c_2n)^2(1-\tilde{q}^2)] 
+    - 4c_2(c_0+2c_2)n^2\tilde{q}^2\epsilon_{\vb{k}}^2}.
+\end{equation}
+The imaginary part of the above energies becoming non-zero signals an
+instability present in that respective mode.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/ch-spin1/dens_spin_energies.pdf}
+    \caption{Real and imaginary parts of the energies in
+    Eqs.~\eqref{eq: zero-mode-energy}-\eqref{eq: pmone-mode-energy} in a
+    parameter space of mode $\vb{k}$ and $Q=q/|c_2|n$.}
+    \label{fig: dens-spin-energies}
+\end{figure}
+Fig.~\ref{fig: dens-spin-energies} shows the real and imaginary parts of the
+above energies in a parameter space of $(\vb{k}, Q)$.
+Firstly, one sees the growth of the $\mathrm{Im}(E_{\vb{k}, -})$ energy
+when $|Q| > 2$.
+When $Q>2$, the lowest energy of the system is achieved by having the condensate
+become polar ($\zeta^P=(0,1,0)^T$).
+\textcolor{red}{Why is there an instability for $Q<-2$? Did we ever put our
+finger on this? Mirkhalaf~\cite{Mirkhalaf2021} has a plot that shows the
+critical point between the BA to FM phase is at $Q = -2$. We're 
+seeing the transition at $Q=0$ however. In our simulations we only quench
+from Q=1 to Q=-1, should we just include that range instead?}
+Secondly, we see the growth of the $\mathrm{Im}(E_{\vb{k}, {f_z}})$ mode when
+$Q<0$.
+This signals the change from the broken-axisymmetry phase to the ferromagnetic
+phase and hence is the relevant mode in our system.
+
+
+\section{The KZM across a second-order phase transition}
 As shown in \textcolor{red}{relevant section}, there are four ground states
 phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
 antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
@@ -168,7 +220,10 @@ $\epsilon = -p + q + \frac{1}{2}(c_0 - c_2)n$.
 We see the derivatives of the two energies are continuous at the critical point,
 and hence this is a second-order phase transition.
 
-\section{Broken-axisymmetry to ferromagnetic quench}
+\subsection{Polar to broken-axisymmetry quench}
+
+\section{The KZM across a first-order phase transition}
+\subsection{Broken-axisymmetry to ferromagnetic quench}
 The KZM typically concerns second-order phase transitions. However, recent
 work has been conducted in condensed matter systems which investigate
 the KZM across first-order transitions~\cite{Qiu2020}.
@@ -195,7 +250,7 @@ using the probability distribution
 $p(x) = e^{-x^2/2\sigma^2}(\sqrt{2\pi}\sigma)^{-1}$.
 We choose $\sigma=10^{-4}$ so that we start close to the BA ground state.
 
-\section{Phase boundaries in the ferromagnetic phase}
+\subsection{Phase boundaries in the ferromagnetic phase}
 As the system is quenched across the critical point at $Q=0$, the ground state
 changes to the ferromagnetic phase.
 The order parameter for this phase takes the form $\zeta=(1,0,0)^T$ or 
@@ -287,58 +342,7 @@ Is the larger domain size (due to slower quench times) affecting the scaling?
 Is it a consequence of the grid size? Can the $1/3$ scaling be linked to KZ
 theory?}
 
-\section{Power-law scaling near the critical point}
-
-\subsection{Bogoliubov theory in spin-1 BECs}
-Bogoliubov analysis is an indispensable tool for determining the stability of
-states within BEC systems [REFS to Bogoliubov papers?].
-\textcolor{red}{I plan to have details regarding the derivation of the
-Bogoliubov energies etc. but for now I will just list them for the BA phase.}
-
-The Bogoliubov energies for mode $\vb{k}$ and component $m$ for the
-broken-axisymmetry phase are:
-\begin{equation}
-    E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)},
-    \label{eq: zero-mode-energy}
-\end{equation}
-\begin{equation}
-    E_{\vb{k}, \pm} = \sqrt{\epsilon_{\vb{k}} + n(c_0 + c_2)\epsilon_{\vb{k}} 
-    + 2(c_2n)^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
-    \label{eq: pmone-mode-energy}
-\end{equation}
-where $\epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, $\tilde{q} = -q/(2c_2n)$ and
-\begin{equation}
-    \Lambda_{\vb{k}} = \sqrt{[(c_0+3c_2)n\epsilon_{\vb{k}} 
-    + 2(c_2n)^2(1-\tilde{q}^2)] 
-    - 4c_2(c_0+2c_2)n^2\tilde{q}^2\epsilon_{\vb{k}}^2}.
-\end{equation}
-The imaginary part of the above energies becoming non-zero signals an
-instability present in that respective mode.
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=\textwidth]{gfx/ch-spin1/dens_spin_energies.pdf}
-    \caption{Real and imaginary parts of the energies in
-    Eqs.~\eqref{eq: zero-mode-energy}-\eqref{eq: pmone-mode-energy} in a
-    parameter space of mode $\vb{k}$ and $Q=q/|c_2|n$.}
-    \label{fig: dens-spin-energies}
-\end{figure}
-Fig.~\ref{fig: dens-spin-energies} shows the real and imaginary parts of the
-above energies in a parameter space of $(\vb{k}, Q)$.
-Firstly, one sees the growth of the $\mathrm{Im}(E_{\vb{k}, -})$ energy
-when $|Q| > 2$.
-When $Q>2$, the lowest energy of the system is achieved by having the condensate
-become polar ($\zeta^P=(0,1,0)^T$).
-\textcolor{red}{Why is there an instability for $Q<-2$? Did we ever put our
-finger on this? Mirkhalaf~\cite{Mirkhalaf2021} has a plot that shows the
-critical point between the BA to FM phase is at $Q = -2$. We're 
-seeing the transition at $Q=0$ however. In our simulations we only quench
-from Q=1 to Q=-1, should we just include that range instead?}
-Secondly, we see the growth of the $\mathrm{Im}(E_{\vb{k}, {f_z}})$ mode when
-$Q<0$.
-This signals the change from the broken-axisymmetry phase to the ferromagnetic
-phase and hence is the relevant mode in our system.
-
-\subsection{Observation of power-law scaling}
+\subsection{Power-law scaling near the critical point}
 Since we know the relevant unstable mode within our system, we can investigate
 power-law scaling near the critical point.
 To begin, we start with the fluctuation operator associated with the
@@ -392,8 +396,4 @@ Our observation of a $-1/2$ exponent signifies a deviation from
 the Kibble-Zurek theory which appears to be a consequence of our transition
 being first-order.
 
-\subsection{Deriving the observed power-law scaling}
-We wish to rigorously derive the scaling obtained in
-Fig.~\ref{fig: Q_a-scaling}.
-We follow a process similar
 \section{Other quench results? 2D?}
