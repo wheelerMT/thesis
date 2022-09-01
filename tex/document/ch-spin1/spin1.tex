@@ -10,57 +10,59 @@ at the critical point, $\lambda_c$.
 A continuous second-order phase transition can be characterized by a divergence
 of the equilibrium correlation length
 \begin{equation}
-    \xi(\epsilon) = \frac{\xi_0}{|\epsilon|^z},
+    \xi(\epsilon) \sim |\epsilon|^{-\nu},
 \end{equation}
 and an equilibrium relaxation time
 \begin{equation}
-    \tau(\epsilon) = \frac{\tau_0}{|\epsilon|^{z\nu}},
+    \tau(\epsilon) \sim \xi^z \sim |\epsilon|^{-\nu z},
     \label{eq: equil-relax-time}
 \end{equation}
 where
 \begin{equation}
-    \epsilon - \frac{\lambda_c - \lambda}{\lambda_c}
+    \epsilon = \frac{\lambda - \lambda_c}{\lambda_c}
 \end{equation}
-is a reduced distance parameter.
-The system is initially prepared in a high-symmetry phase $(\epsilon < 0)$ but 
-breaks that symmetry as the critical point is crossed $(\epsilon > 0)$.
+is a dimensionless distance from the critical point.
+The equilibrium relaxation time $\tau$ describes the time it takes for the
+system to react to an external change of a parameter.
+In a quantum phase transition, the relaxation time is set by the inverse of an
+energy gap $\Delta$ between the ground state and the first excited state [REFS]
+\begin{equation}
+    \tau \simeq \Delta^{-1}.
+\end{equation}
+As we approach the critical point, the energy gap vanishes as
+\begin{equation}
+    \Delta \sim |\epsilon|^{\nu z}.
+\end{equation}
+
+
+The system is initially prepared in a high-symmetry phase $(\epsilon > 0)$ but 
+breaks that symmetry as the critical point is crossed $(\epsilon < 0)$.
 In the above equations, the exponents $z$ and $\nu$ are the dynamical and
 correlation length critical exponents, respectively.
 These exponents are determined by the universality class of the phase
-transition, and different systems belonging to the same universality class share
-the same critical exponents.
-\textcolor{red}{Examples of different exponents for different classes? Links
-to refs that calculate values?}
-In contrast, the constants $\xi_0$ and $\tau_0$ are determined by the
-microscopic details of the system. \par
+transition~\cite{Sachdev2011}, and different systems belonging to the same
+universality class share the same critical exponents. \par
+
 The KZM describes the dynamics of crossing the critical point when $\lambda$ 
 is continually varied.
-We assume the form of a linear quench, such that the control parameter can be
-written as
+We assume the form of a linear quench (cases concerning non-linear quenches are
+discussed in Refs.~\cite{Barankov2008,Mondal2009}), such that the control
+parameter can be written as
 \begin{equation}
     \lambda(t) = \lambda_c - \epsilon(t),
 \end{equation}
-which is symmetric about the critical point so that the reduced distance
-parameter is defined as
+where the distance to the critical point is
 \begin{equation}
     \epsilon(t) = \frac{t}{\tau_Q}
     \label{eq: time-dependent-epsilon}
 \end{equation}
 for a quench time $\tau_Q$.
+This form gives a transition rate $|\dot{\epsilon}/{\epsilon}|=t^{-1}$ which
+diverges as we approach the critical point.
 Here, $t \in [-\tau_Q, \tau_Q]$, where the critical point is reached at $t=0$.
-From Eq.~\eqref{eq: equil-relax-time}, we see that far from the critical point
-($|\lambda| \gg \lambda_c \implies |\epsilon| \gg 1$ ) the equilibrium
-relaxation time is small compared to the time taken to reach the critical point
-[Eq.~\eqref{eq: time-dependent-epsilon}]; which implies the dynamics is
-adiabatic.
-Conversely, as we approach the critical point ($\epsilon \rightarrow 0$), the
-equilibrium relaxation time diverges and the dynamics of the system freeze,
-known as critical slowing down.
-As the critical point is passed, the system can once again resume the adiabatic
-dynamics as the equilibrium relaxation time no longer diverges.
-This then splits the dynamics into three parts as $\epsilon(t)$ is ramped from
-$\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
-(see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
+The dynamics of the system can be broken into three stages as $\epsilon$ is
+ramped from $\epsilon > 0$ to $\epsilon < 0$: adiabatic, frozen, and adiabatic
+again (see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -80,7 +82,7 @@ $\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
         \draw[dotted] (1, 0) -- (1, 1);
         \draw[dotted] (-1, 0) -- (-1, 1);
         \node at (0, 4.5) {Frozen};
-        \node at (2.5, 2) {$\epsilon/\dot{\epsilon}$};
+        \node at (2.5, 2) {$|\epsilon/\dot{\epsilon}|$};
         \node at (2.2, 3.5) {Adiabatic};
         \node at (-2.2, 3.5) {Adiabatic};
         \node at (0, -0.2) {$0$};
@@ -92,54 +94,46 @@ $\epsilon(t) < 0 $ to $\epsilon(t) > 0$: adiabatic, frozen, and adiabatic again
     the critical point is approached, the equilibrium relaxation time
     (blue line) diverges, and the order parameter can no longer follow the 
     ground state, leading to frozen dynamics in the interval
-    $t \in [-\hat{t}, \hat{t}]$}. Figure reproduced from~\cite{delCampo2013}.
+    $t \in [-\hat{t}, \hat{t}]$}.
     \label{fig: adiabatic-impulse}
 \end{figure}
-
-The extent of the frozen region can be estimated by comparing the equilibrium
-relaxation time with the time elapsed after the critical point
+Far from the critical point, the equilibrium relaxation time is small compared
+to the inverse transition rate $|\epsilon/\dot{\epsilon}|$, meaning the system
+adiabatically follows the instantaneous ground state for $\epsilon(t)$.
+This stage of adiabaticity lasts until the instant
 \begin{equation}
-    \tau(t) \approx \left|\frac{\epsilon}{\dot{\epsilon}}\right|=t.
+    \tau \approx |\epsilon/\dot{\epsilon}|=t.
 \end{equation}
-Solving the above equation yields the freeze-out time $\hat{t}$:
+Solving this equation yields the freeze-out time, $\hat{t}$:
 \begin{equation}
-    \hat{t} \sim (\tau_0\tau_Q^{z\nu})^{\frac{1}{1+z\nu}}.
-    \label{eq: freeze-out-time}
+    \hat{t} \sim \tau_Q^\frac{z\nu}{1 + z\nu}.
 \end{equation}
-In the time interval $t \in [-\hat{t}, \hat{t}]$, the order parameter cannot
-keep up with the change of the control parameter and therefore lags
-behind the equilibrium value, $\hat{\epsilon}$, defined as
+After this point is passed, however, the relaxation time diverges and the system
+can no longer keep up with the externally imposed changes.
+The system then enters the so-called impulse regime, where the dynamics are
+frozen and remains in this regime until $-\hat{t}$, when the relaxation
+time becomes faster than the transition rate once again.
+The consequence of the impulse region, however, is that the system arrives at
+$-\hat{t}$, which is in a broken-symmetry phase, whilst remaining
+in the state set at $\hat{t}$, which is in a symmetric phase.
+This state at $\hat{t}$ then becomes the initial state for the last adiabatic
+stage of evolution beginning at $-\hat{t}$.
+At this point, the system is no longer in its current ground state and rectifies
+this by breaking the symmetry of the initial state.
+This results in the formation of distinct domains in the system whose size is
+set by the value of the equilibrium correlation length at the freeze-out time
 \begin{equation}
-    \hat{\epsilon} \equiv |\epsilon(\hat{t})| \sim 
-    \left(\frac{\tau_0}{\tau_Q}\right)^\frac{1}{1+z\nu}.
+    \hat{\xi}=\xi(\hat{t}) \sim \tau_Q^{\frac{\nu}{1 + z\nu}}.
 \end{equation}
-
-As the symmetry of the system is broken, disconnected regions form which
-have a spontaneously chosen value of the order parameter.
-The size of these domains is set by the value of the equilibrium correlation
-length at $\hat{t}$:
+If the system supports topological defects such as vortices, then the defect
+density is given by
 \begin{equation}
-    \hat{\xi} \equiv \xi(\hat{t}) 
-    = \xi_0 \left(\frac{\tau_Q}{\tau_0}\right)^\frac{\nu}{1 + z\nu}.
-    \label{eq: KZM-domain-size}
+    n_d \simeq \hat{\xi}^{-d} \sim \tau_Q^{\frac{-d\nu}{1+d\nu}},
 \end{equation}
-Using this length scale, we can predict the density of defects, $n_d$, by
-the ratio of the size of the defects $\hat{\xi}^d$ and the size of the domains
-$\hat{\xi}^D$
-\begin{equation}
-    n_d \sim \frac{\hat{\xi}^d}{\hat{\xi}^D}=\frac{1}{\xi_0^{D-d}}
-    \left(\frac{\tau_0}{\tau_Q}\right)^{(D-d)\frac{\nu}{1 + z\nu}},
-\end{equation}
-where $D$ and $d$ are the dimensions of space and the defects, respectively.
-In a 3D superfluid containing quantum vortices, $D=3$ and $d=1$.
-If we assume the mean-field predictions for the exponents
-($z=2$, $\nu=\frac{1}{2}$), then the density of defects scales as
-\begin{equation}
-    n_d \propto \tau_Q^{-\frac{1}{2}}.
-\end{equation}
-\textcolor{red}{Experimentally there have been different observations giving
-$n_d \propto \tau_Q^{-1/3}$. You can use `Model-F' exponents $\nu=3/2, z=3/2$
-in the above equation to recover this result.}
+where $d$ is the number of spatial dimensions.
+This is a key result of the Kibble-Zurek mechanism and provides a
+foundation in testing the KZM in BEC systems~\cite{Damski2007, Swislocki2013,
+Anquez2016, Saito2007_1, Saito2007_2}.
 
 \section{Extending the KZM to first-order phase transitions}
 
