@@ -1,7 +1,13 @@
 {
     "latex-workshop.latex.outDir": ".build",
     "cSpell.words": [
+        "adiabaticity",
+        "Berker",
+        "Damski",
+        "Mirkhalaf",
         "pseudospin",
+        "QDCP",
+        "Uchino",
         "wavefunction",
         "Zurek"
     ],
