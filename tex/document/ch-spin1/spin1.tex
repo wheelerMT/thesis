@@ -2,12 +2,75 @@
 
 
 \section{Introduction}
+Nonequilibrium phase transitions arise in many areas of physics, ranging from
+cosmology to condensed matter~\cite{Polkovnikov2011}.
+Unlike its classical counterpart, a quantum phase transition (QPT) is a
+zero-temperature transition driven by quantum fluctuations~\cite{Sachdev2011}.
+In such a transition, a fundamental change of ground state occurs as an external
+parameter is varied across the quantum critical point.
+As this critical point is passed, the timescale governing the dynamics diverges,
+resulting in the system no longer adiabatically following the ground state.
+This non-adiabatic evolution breaks the symmetry of the system, which typically
+results in the formation of topological defects.
+The Kibble-Zurek mechanism (KZM) is a theory that describes the resulting
+dynamics and predicts the scaling properties of the excitations from the details
+of the universality class of the transition.
+It was first introduced by Kibble in the context of the topology of cosmic
+strings in the early universe~\cite{Kibble1976, Kibble1980}, before being
+extended by Zurek to condensed matter systems~\cite{Zurek1985, Zurek1993,
+Zurek1996}.
+
+
+The standard KZ theory is very general, and can be applied to any continuous
+phase transition.
+The robustness of the theory has seen it successfully applied to both classical
+[REFS] and quantum~\cite{Dziarmaga2005, Damski2005, Lamacraft2007} phase
+transitions.
+Whilst the theory has had great success in applications to continuous,
+second-order transitions, direct application to discontinuous transitions
+does not give an accurate description of observed scaling laws.
+Recently, there has been the first experimental evidence of the existence of
+scaling laws for a first-order QPT~\cite{Qiu2020}, where standard KZ theory
+failed to predict the observed scaling.
+However, the KZM was generalised by considering the energy gap between the
+metastable state and its first corresponding excited state, which then gave an
+accurate prediction of the observed scaling laws.
+There is current interest in trying to generalize the KZM and applying it to
+discontinuous transitions and deriving appropriate scaling
+laws~\cite{Divakaran2008, Suzuki2015}.
+
+Fisher and Berker, in the classical case, first discussed a particular type of
+discontinuous, first-order transition and introduced the notion of a
+discontinuous critical point (DCP)~\cite{Fisher1982}.
+The DCP separates two distinct phases, characterized by a discontinuous jump
+in the order parameter.
+Despite the discontinuity, the transition can still be characterized by a
+diverging length scale and hence critical exponents can be derived.
+This framework was then extended to the quantum case, specifying the conditions
+for a quantum discontinuous critical point (QDCP)~\cite{Suzuki2015}.
+The QDCP leads to a prediction of the scaling of the defect density that is
+modified from the typical KZ scenario.
+
+
+Spinor Bose-Einstein condensates (BECs) offer a highly controllable platform
+for studying nonequilibrium physics, ranging from topological
+defects~\cite{Lovegrove2014, Borgh2016} to quantum
+quenches~\cite{Symes2017, Prufer2018, Schmied2019}.
+\textcolor{red}{More references/topics?}
+In addition, their rich phase diagram has seen the KZM applied both numerically
+and experimentally in various continuous phase transitions~\cite{Damski2007,
+Saito2007A, Saito2007B, Swislocki2013, Witkowska2013, Anquez2016}.
+For a ferromagnetic spin-1 BEC, there exists a first-order QPT between a
+three-component broken-axisymmetry (BA) phase and a ferromagnetic (FM) phase,
+making this system an ideal platform for investigating the KZM across
+discontinuous transitions.
+
 
 \section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
 control parameter, $\lambda$, is ramped across a phase transition that occurs
 at the critical point, $\lambda_c$.
-A continuous second-order phase transition can be characterized by a divergence
+A continuous, second-order phase transition can be characterized by a divergence
 of the equilibrium correlation length
 \begin{equation}
     \xi(\epsilon) \sim |\epsilon|^{-\nu},
@@ -21,7 +84,7 @@ where
 \begin{equation}
     \epsilon = \frac{\lambda - \lambda_c}{\lambda_c}
 \end{equation}
-is a dimensionless distance from the critical point.
+is the dimensionless distance from the critical point.
 The equilibrium relaxation time $\tau$ describes the time it takes for the
 system to react to an external change of a parameter.
 In a quantum phase transition, the relaxation time is set by the inverse of an
@@ -35,7 +98,7 @@ As we approach the critical point, the energy gap vanishes as
 \end{equation}
 
 
-The system is initially prepared in a high-symmetry phase $(\epsilon > 0)$ but 
+The system is initially prepared in a high-symmetry phase $(\epsilon > 0)$, but 
 breaks that symmetry as the critical point is crossed $(\epsilon < 0)$.
 In the above equations, the exponents $z$ and $\nu$ are the dynamical and
 correlation length critical exponents, respectively.
