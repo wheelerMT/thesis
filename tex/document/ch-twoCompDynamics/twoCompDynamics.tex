@@ -37,16 +37,7 @@ The study of QT in BECs can be separated into two distinct categories: 1) forced
 turbulence where a statistically stationary state is established; 2) decaying
 turbulence where a non-equilibrium initial condition, typically involving
 vortices, relaxes towards equilibrium. 
-Here, we numerically investigate the spatial and temporal properties of the
-relaxation dynamics of a non-equilibrium initial state in a two-dimensional
-two-component system containing HQVs. 
-Using a pseudospin interpretation, we compute the temporal scaling of the
-correlation functions associated with the spin- and mass-superfluid ordering. 
-We relate these to the vortex decay rate and analyse how this depends on the
-intra-component interaction strength.
-We contrast our observations for this system with similar simulations that have
-been performed for scalar BECs and reported in ~\cite{Schole2012,
-Nowak2012,Karl2017}.
+
 
 As we have seen \textcolor{red}{IN RELEVANT PART}, the two-component BEC can be 
 treated as a pseudospin-1/2 system. 
@@ -58,35 +49,37 @@ Our interest is in studying the scaling laws that govern the decay rate of the
 vortices, and consequently the growth of the length scales associated with 
 domains in the system, whilst varying the ratio of inter- to intra-species 
 interactions. 
-We study these scales by starting from an initially turbulent state full of 
-HQVs and subsequently letting the system relax in time. 
+We study these scales by starting from an initially turbulent state containing
+HQVs and subsequently letting the system relax in time.
 Upon relaxation, vortices will annihilate leading to domain growth within 
 the system.
 To extract the appropriate length scales of these domains, we construct 
-correlation functions originally defined for an antiferromagnetic spin-1 
-system~\cite{Symes2017}.
-
-These correlation functions then allow us to extract relevant length scales 
-associated with spin and mass order. 
+correlation functions, originally defined for an antiferromagnetic spin-1 
+system~\cite{Symes2017}, which then allow us to extract relevant length scales
+associated with spin and mass order.
 By investigating these length scales temporally, we reveal interesting, 
 novel dynamics occurring at early times for a sufficiently high ratio of 
 inter- to intra-species interactions. 
 This result is then confirmed by considering the total vortex number of the 
 system. 
-\par
-Recent work has alluded to fascinating inter-vortex forces arising between HQVs 
-of opposite winding within the same condensate 
-component~\cite{Eto2011,Kasamatsu2016}.
-We relate this discovery to the interesting 
-dynamics we observe at early times.
+Furthermore, we contrast our observations for this system with similar
+simulations that have been performed for scalar BECs and reported
+in ~\cite{Schole2012, Nowak2012, Karl2017}.
+Finally, we discuss how our observations of anomalous vortex decay can be
+explained by relating to previous work~\cite{Eto2011, Kasamatsu2016}.
 
-\section{The spin-1 easy-plane polar phase}
-As we saw in \textcolor{red}{relevant part}, the spin-1 condensate with polar
-interactions supports a polar ground state.
-This state can be categorized in two different ways:
+
+\section{Two-component BEC as a pseudospinor}
+\subsection{Easy-plane polar phase}
+The two-component BEC can be regarded as a `pseudospin-1/2' system as it can be
+mapped directly to a certain configuration of the spin-1 condensate.
+Recall that the spin-1 condensate with polar interactions $(c_2 > 0)$ supports a
+polar ground state with $|\vb{F}|=0$.
+This state can be categorized in two different ways depending on the orientation
+of the nematic director.
 The first consists of the nematic director being aligned with the $z$-axis,
 which is referred to as the easy-axis polar (EAP) phase.
-This phase is stable for $p=0$ and $q>0$.
+This phase is stable for $p=0$ and $q>0$ \textcolor{red}{See relevant section?}.
 The second case consists of the director being in the $xy$-plane, which is
 referred to as the easy-plane polar (EPP) phase.
 This phase is stable for $p=0$ and $q<0$.
@@ -97,9 +90,7 @@ The representative wavefunction for the EPP phase can be written as
     \end{pmatrix}.
     \label{eq:EPP_wavefunction}
 \end{equation}
-This state has only the outer two components occupied, requiring an empty
-middle component.
-Due to this fact, this representative wavefunction can be mapped to a
+Since the middle component is empty, we can map this spinor directly onto a
 two-component system.
 
 \subsection{Mapping the EPP phase onto a two-component system}
@@ -138,24 +129,24 @@ By doing this we find
     \enskip m_1=m_2=M,
 \end{equation}
 where $\tilde{\mu} = \mu - q$.
-Therefore, for the specific cases defined above, the two-component system maps
-directly to that of the spin-1 system.
+This directly relates the two-component BEC to the EPP phase of a spin-1
+condensate.
+Note that this mapping only holds when the inter-species interactions, chemical
+potentials and masses of the atomic species in the two-component BEC are equal.
+\textcolor{red}{Links to papers that discuss this particular type of
+two-component BEC?}
+
 
 \section{Half-quantum vortices in spin-1/2}
-Scalar BECs only support one type of vortex, namely, the singly-quantized
-vortex.
-Two-component BECs allow a novel vortex configuration otherwise unseen in
-scalar BECs: The two-component half-quantum 
-vortex (HQV).
-The half-quantum vortex is unique such that the circulation of the vortex is
-quantized in units of $\kappa / 2$ where $\kappa=h/m$ [REFS].
+The pseudospinor nature of the two-component system allows for a novel vortex
+structure otherwise unseen in scalar BECs.
 To construct such a vortex, we start by defining the pseudospin-1/2
 wavefunction:
 \begin{equation}
-    \twovec{\psi_1}{\psi_2} 
-    = \twovec{|\psi_1|e^{i\theta_1}}{|\psi_2|e^{i\theta_2}}
-    = e^{i\Theta}\twovec{|\psi_1|e^{i\Phi}}{|\psi_2|e^{-i\Phi}},
-    \label{eq:pseudospin-1/2-wavefunction}
+    \mqty(\psi_1 \\ \psi_2) = 
+    \mqty(|\psi_1|e^{i\theta_1} \\ |\psi_2|e^{i\theta_2}) = 
+    e^{i\Theta}\mqty(|\psi_1|e^{i\Phi} \\ |\psi_2|e^{-i\Phi}),
+    \label{eq:pseudospin-1/2-wavefunction}  
 \end{equation}
 where $\theta_j=\mathrm{Arg}(\psi_j)$ for $j=1,2$ and
 \begin{equation}
@@ -166,7 +157,7 @@ where $\theta_j=\mathrm{Arg}(\psi_j)$ for $j=1,2$ and
 Gradients in $\Theta$ are associated with a total, superfluid mass current
 whereas gradients in $\Phi$ are associated with pseudospin currents.
 \textcolor{red}{Do I want to elaborate on this further? Potentially by looking
-at actual expressions for mass and pseudospin current in two-component BECs.} \\
+at actual expressions for mass and pseudospin current in two-component BECs.}
 Now consider a vortex state which consists of a phase singularity in the
 $\psi_1$ component such that about the singularity $\theta_1$ winds by $2\pi$
 and $\theta_2$ remains unchanged, i.e. it is a smooth phase field.
@@ -177,14 +168,22 @@ Such a state can be written as
     = e^{\varphi/2}\twovec{|\psi_1|e^{i\varphi/2}}{|\psi_2|e^{-i\varphi/2}},
 \end{equation}
 where $\varphi$ is the azimuthal angle around the vortex core.
-By comparing the above to~\eqref{eq:pseudospin-1/2-wavefunction} we see that
-the vortex is described by a $\pi$ change in $\Theta$ with a simultaneous $\pi$
-change in $\Phi$ along a closed path about the vortex.
-As $\Theta$ is associated with a total mass current, such a vortex state is
-referred to as a half-quantum vortex\footnote{This vortex is topologically
-distinct from HQVs that arise in the A and polar phases of superfluid $^3$He
-[REFS] and the polar phase of spin-1 BECs [REFS].}.
-\par
+By comparing the above to Eq.~\eqref{eq:pseudospin-1/2-wavefunction}, we have
+$\Theta=\Phi=\varphi/2$.
+Using the fact the velocity is related to phase $\vb{v}=\hbar/m\grad\Theta$,
+the circulation is then given by
+\begin{equation}
+    \oint_C\vb{v}\cdot d\vb{\ell} = q\frac{\kappa}{2},
+\end{equation}
+where $q$ denotes the charge of the vortex and $\kappa=\hbar/m$ is the quantum
+of circulation.
+Traversing a point about the vortex shows the circulation is quantised in units
+of $\kappa/2$, half the usual circulation of $U(1)$ vortices in scalar BECs [REFs?].
+Since this vortex carries half the circulation of a $U(1)$ vortex, such a vortex
+state is referred to as a half-quantum vortex\footnote{This vortex is 
+topologically distinct from HQVs that arise in the A and polar phases of
+superfluid $^3$He~\cite{Autti2016} and the polar phase of spin-1
+BECs~\cite{Leonhardt2000, Seo2015}.}.
 
 \section{Half-quantum vortex relaxation dynamics}
 To begin studying the relaxation dynamics of HQVs in a turbulent system, we
@@ -659,6 +658,12 @@ Numerous studies have been conducted to try and understand the inter-vortex
 forces between HQVs in two-component systems~\cite{Eto2011, Kasamatsu2016}.
 In particular, Kasamatsu {\it et. al.}~\cite{Kasamatsu2016} tried to derive a
 point vortex model to explain the dynamics shown in
-Fig.~\ref{fig:exponent-vs-gamma}.
-We can discern more about the dynamics of these HQVs by considering a dipole
-of opposite circulation within the same component.
+Fig.~\ref{fig:exponent-vs-gamma} but found that the model failed to accurately
+predict in vortex dynamics.
+We can discern more about the dynamics of these HQVs by considering dipole
+motion.
+
+
+As a simple test case, I consider two HQVs of opposite winding within the same
+component.
+The vortices are placed in a uniform system
