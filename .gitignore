@@ -278,3 +278,4 @@ TSWLatexianTemp*
 # Build folder
 .build/
 out/
+.idea/
