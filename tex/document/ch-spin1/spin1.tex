@@ -68,8 +68,8 @@ discontinuous transitions.
 
 \section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
-control parameter, $\lambda$, is ramped across a phase transition that occurs
-at the critical point, $\lambda_c$.
+control parameter, \( \lambda \), is ramped across a phase transition that occurs
+at the critical point, \( \lambda_c \).
 A continuous, second-order phase transition can be characterized by a divergence
 of the equilibrium correlation length
 \begin{equation}
@@ -85,10 +85,10 @@ where
     \epsilon = \frac{\lambda - \lambda_c}{\lambda_c}
 \end{equation}
 is the dimensionless distance from the critical point.
-The equilibrium relaxation time $\tau$ describes the time it takes for the
+The equilibrium relaxation time \( \tau \) describes the time it takes for the
 system to react to an external change of a parameter.
 In a quantum phase transition, the relaxation time is set by the inverse of an
-energy gap $\Delta$ between the ground state and the first excited state [REFS]
+energy gap \( \Delta \) between the ground state and the first excited state [REFS]
 \begin{equation}
     \tau \simeq \Delta^{-1}.
 \end{equation}
@@ -98,15 +98,15 @@ As we approach the critical point, the energy gap vanishes as
 \end{equation}
 
 
-The system is initially prepared in a high-symmetry phase $(\epsilon > 0)$, but 
-breaks that symmetry as the critical point is crossed $(\epsilon < 0)$.
-In the above equations, the exponents $z$ and $\nu$ are the dynamical and
+The system is initially prepared in a high-symmetry phase \(  \epsilon > 0 \), but 
+breaks that symmetry as the critical point is crossed \(  \epsilon < 0 \).
+In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical and
 correlation length critical exponents, respectively.
 These exponents are determined by the universality class of the phase
 transition~\cite{Sachdev2011}, and different systems belonging to the same
 universality class share the same critical exponents. \par
 
-The KZM describes the dynamics of crossing the critical point when $\lambda$ 
+The KZM describes the dynamics of crossing the critical point when \( \lambda \) 
 is continually varied.
 We assume the form of a linear quench (cases concerning non-linear quenches are
 discussed in Refs.~\cite{Barankov2008,Mondal2009}), such that the control
@@ -119,19 +119,21 @@ where the distance to the critical point is
     \epsilon(t) = \frac{t}{\tau_Q}
     \label{eq: time-dependent-epsilon}
 \end{equation}
-for a quench time $\tau_Q$.
-This form gives a transition rate $|\dot{\epsilon}/{\epsilon}|=t^{-1}$ which
+for a quench time \( \tau_Q \).
+This form gives a transition rate \( |\dot{\epsilon}/{\epsilon}|=t^{-1} \) which
 diverges as we approach the critical point.
-Here, $t \in [-\tau_Q, \tau_Q]$, where the critical point is reached at $t=0$.
-The dynamics of the system can be broken into three stages as $\epsilon$ is
-ramped from $\epsilon > 0$ to $\epsilon < 0$: adiabatic, frozen, and adiabatic
-again (see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
+Here, \( t \in [-\tau_Q, \tau_Q] \), where the critical point is reached at
+\( t=0 \).
+The dynamics of the system can be broken into three stages as \( \epsilon \) is
+ramped from \( \epsilon > 0 \) to \( \epsilon < 0 \): adiabatic, frozen, and
+adiabatic again (see Fig.~\ref{fig: adiabatic-impulse} for a schematic
+representation).
 \begin{figure}
     \centering
     \begin{tikzpicture}
         \filldraw[color=blue!60, fill=blue!5, rounded corners] (-1.3, -0.5) 
         rectangle (1.3, 4.8);
-        \draw[->] (-4, 0) -- (4, 0) node[right] {$t$};
+        \draw[->] (-4, 0) -- (4, 0) node[right] {\( t \)};
         \draw[->] (0, 0) -- (0, 4) node[above] {$\tau$};
         \draw[scale=1, domain=-3:3, dashed, variable=\x, red] plot 
         ({\x}, {abs(\x)});
@@ -139,8 +141,8 @@ again (see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
         ({\x}, {\x^(-1)});
         \draw[scale=1, domain=-3.5:-0.25, smooth, variable=\x, blue] plot 
         ({\x}, {abs(\x^(-1))});
-        \node at (1, -0.2) {$\hat{t}$};
-        \node at (-1, -0.2) {$\hat{t}$};
+        \node at (1, -0.2) {\( \hat{t} \)};
+        \node at (-1, -0.2) {\( \hat{t} \)};
         \node at (-1.2, -0.22) {$-$};
         \draw[dotted] (1, 0) -- (1, 1);
         \draw[dotted] (-1, 0) -- (-1, 1);
@@ -151,24 +153,23 @@ again (see Fig.~\ref{fig: adiabatic-impulse} for a schematic representation).
         \node at (0, -0.2) {$0$};
     \end{tikzpicture}
     \caption{A schematic representation of the dynamics of a system during a
-    linear quench. The system starts in a high-symmetry phase ($t>0$) and is
-    quenched across a critical point to a low symmetry phase ($t < 0$) by the
-    reduced control parameter (red dashed line) $\epsilon(t)=t/\tau_q$. As
-    the critical point is approached, the equilibrium relaxation time
+    linear quench. The system starts in a high-symmetry phase (\( t > 0 \)) and
+    is quenched across a critical point to a low symmetry phase (\( t < 0 \)) by
+    the reduced control parameter (red dashed line) \( \epsilon(t) = t/\tau_q \).
+    As the critical point is approached, the equilibrium relaxation time
     (blue line) diverges, and the order parameter can no longer follow the 
     ground state, leading to frozen dynamics in the interval
-    $t \in [-\hat{t}, \hat{t}]$}.
-    \label{fig: adiabatic-impulse}
+    \( t \in [-\hat{t}, \hat{t}] \)}.\label{fig: adiabatic-impulse}
 \end{figure}
 Far from the critical point, the equilibrium relaxation time is small compared
-to the inverse transition rate $|\epsilon/\dot{\epsilon}|$, meaning the system
-adiabatically follows the instantaneous ground state for $\epsilon(t)$.
+to the inverse transition rate \( |\epsilon/\dot{\epsilon}| \), meaning the system
+adiabatically follows the instantaneous ground state for \( \epsilon(t) \).
 This stage of adiabaticity lasts until the instant
 \begin{equation}
     \tau \approx |\epsilon/\dot{\epsilon}|=t.
     \label{eq: freeze-out-equal}
 \end{equation}
-Solving this equation yields the freeze-out time, $\hat{t}$:
+Solving this equation yields the freeze-out time, \( \hat{t} \):
 \begin{equation}
     \hat{t} \sim \tau_Q^\frac{z\nu}{1 + z\nu}.
     \label{eq: freeze-out-scaling}
@@ -176,13 +177,13 @@ Solving this equation yields the freeze-out time, $\hat{t}$:
 After this point is passed, however, the relaxation time diverges and the system
 can no longer keep up with the externally imposed changes.
 The system then enters the so-called impulse regime, where the dynamics are
-frozen and remains in this regime until $-\hat{t}$, when the relaxation
+frozen and remains in this regime until \( -\hat{t} \), when the relaxation
 time becomes faster than the transition rate once again.
 The consequence of the impulse region, however, is that the system arrives at
-$-\hat{t}$, which is in a broken-symmetry phase, whilst remaining
-in the state set at $\hat{t}$, which is in a symmetric phase.
-This state at $\hat{t}$ then becomes the initial state for the last adiabatic
-stage of evolution beginning at $-\hat{t}$.
+\( -\hat{t} \), which is in a broken-symmetry phase, whilst remaining
+in the state set at \( \hat{t} \), which is in a symmetric phase.
+This state at \( \hat{t} \) then becomes the initial state for the last adiabatic
+stage of evolution beginning at \( -\hat{t} \).
 At this point, the system is no longer in its current ground state and rectifies
 this by breaking the symmetry of the initial state.
 This results in the formation of distinct domains in the system whose size is
@@ -196,10 +197,10 @@ density is given by
 \begin{equation}
     n_d \simeq \hat{\xi}^{-d} \sim \tau_Q^{\frac{-d\nu}{1+z\nu}},
 \end{equation}
-where $d$ is the number of spatial dimensions.
+where \( d \) is the number of spatial dimensions.
 This is a key result of the Kibble-Zurek mechanism and provides a
 foundation in testing the KZM in BEC systems~\cite{Damski2007, Swislocki2013,
-Anquez2016, Saito2007_1, Saito2007_2}.
+Anquez2016, Saito2007A, Saito2007B}.
 
 \section{Extending the KZM to first-order phase transitions}
 The Kibble-Zurek mechanism was first derived and extensively studied in the
@@ -210,16 +211,16 @@ This DCP results in a discontinuity in the order parameter as the critical point
 is passed.
 Despite this, the transition can still be characterised by a diverging length
 scale, and hence, critical exponents can be derived.
-Suzuki {\it et. al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
+Suzuki {\it et.\ al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
 the quantum case and established the quantum discontinuous critical point
 (QDCP).
 
-Let us consider a system that contains a critical point at $\Gamma = \Gamma_c$,
-where $\Gamma$ is a tunable parameter and contains the presence of a
-symmetry-breaking field, $h$.
+Let us consider a system that contains a critical point at
+\( \Gamma = \Gamma_c \), where \( \Gamma \) is a tunable parameter and contains
+the presence of a symmetry-breaking field, \( h \).
 For one to have a QDCP five conditions need to be satisfied.
-Firstly, the energy density $\epsilon(\Gamma, h)$ must be a continuous function
-of $\Gamma$ and $h$ across the critical point
+Firstly, the energy density \( \epsilon(\Gamma, h) \) must be a continuous
+function of \( \Gamma \) and \( h \) across the critical point
 \begin{equation}
     \epsilon(\Gamma_c + 0, 0) = \epsilon(\Gamma_c - 0, 0).
     \label{eq: continuous-energy-cond}
@@ -228,25 +229,25 @@ The derivative of this energy density, however, is discontinuous
 \begin{equation}
     \pdv{\epsilon(\Gamma_c + 0, 0)}{t} \neq \pdv{\epsilon(\Gamma_c - 0, 0)}{t}.
 \end{equation}
-The order parameter $m(\Gamma, h)$, where $m=-\pdv{\epsilon(\Gamma, h)}{h}$
+The order parameter \( m(\Gamma, h) \), where
+\( m=-\pdv{\epsilon(\Gamma, h)}{h} \)
 \textcolor{red}{where does this come from?},
-has a discontinuous jump as a function of $\Gamma$ as the critical point is
+has a discontinuous jump as a function of \( \Gamma \) as the critical point is
 passed
 \begin{equation}
     |m(\Gamma_c - 0, 0)| > m(\Gamma_c + 0, 0)| = 0,
 \end{equation}
-whilst also having a discontinuous jump as a function of $h$
+whilst also having a discontinuous jump as a function of \( h \)
 \begin{equation}
     |m(\Gamma_c, \pm 0)| > 0.
 \end{equation}
 Finally, we require that the derivative of the energy density be bounded as
-$\Gamma \rightarrow \Gamma_c \pm 0$
+\( \Gamma \rightarrow \Gamma_c \pm 0 \)
 \begin{equation}
     \left|\pdv{\epsilon(\Gamma_c \pm 0, 0)}{\Gamma}\right| < \infty.
     \label{eq: bounded-energy-derivative-cond}
 \end{equation}
-These five conditions encapsulate a QDCP.
-
+These five conditions encapsulate a QDCP\@.
 
 \subsection{BA to FM transition as a QDCP}
 Let us now consider a specific example.
@@ -254,15 +255,16 @@ We are interested in the phase transition that occurs between the
 broken-axisymmetry (BA) and ferromagnetic (FM) phases.
 The energy densities for the two states are given by~\cite{Kawaguchi2012}
 \begin{equation}
-    \epsilon_\mathrm{BA} = \frac{(-p^2 + q^2 +2qc_2n)^2}{8c_2nq^2} 
+    \epsilon_\mathrm{BA} = \frac{{(-p^2 + q^2 +2qc_2n)}^2}{8c_2nq^2} 
     + \frac{1}{2}c_0n, \qquad
     \epsilon_\mathrm{FM_{\pm}} = \mp p + q + \frac{1}{2}n(c_0 + c_2),
 \end{equation}
-where $\epsilon_\mathrm{FM_{\pm}}$ corresponds to the energy density in the
-FM phase for the spinor $\zeta = (1, 0, 0)^T$ (+) and $\zeta = (0, 0, 1)^T$ (-).
-One sees that at the critical point $q=q_c=0$ and $p=0$ the energy is
+where \( \epsilon_\mathrm{FM_{\pm}} \) corresponds to the energy density in the
+FM phase for the spinor \( \zeta = {(1, 0, 0)}^T \) (+) and
+\( \zeta = {(0, 0, 1)}^T \) (-).
+One sees that at the critical point \( q=q_c=0 \) and \( p=0 \) the energy is
 continuous.
-The derivative of the above energies with respect to $q$ yields
+The derivative of the above energies with respect to \( q \) yields
 \begin{equation}
     \pdv{\epsilon_\mathrm{BA}}{q} = 
     \frac{1}{4c_2n}\left(q - \frac{p^4}{q^3}\right) - \frac{p^2}{q^2}
@@ -270,7 +272,7 @@ The derivative of the above energies with respect to $q$ yields
     \qquad
     \pdv{\epsilon_\mathrm{FM_{\pm}}}{q} = 1.
 \end{equation}
-Indeed, there is a discontinuity in these derivatives at $q=p=0$, however,
+Indeed, there is a discontinuity in these derivatives at \( q=p=0 \), however,
 they still remain bounded.
 The relevant order parameter for this transition is given by
 \begin{equation}
@@ -278,27 +280,27 @@ The relevant order parameter for this transition is given by
     \qquad
     m_{\mathrm{FM}_{\pm}} = \pm 1.
 \end{equation}
-which is precisely the local magnetisation, $F_z$, in both phases
+which is precisely the local magnetisation, \( F_z \), in both phases
 (\textcolor{red}{Link to the section discussing ground states}).
-Again, one sees that at the critical point and for $p=0$ the order parameter
+Again, one sees that at the critical point and for \( p=0 \) the order parameter
 becomes zero in the BA phase whilst becoming non-zero in the FM phase.
-In addition, as the linear Zeeman shift $p$ is varied both above and below
+In addition, as the linear Zeeman shift \( p \) is varied both above and below
 zero the order parameter becomes non-zero.
 We have shown that the BA to FM phase transition satisfies all conditions
-specified in Eqs.
-\eqref{eq: continuous-energy-cond}-\eqref{eq: bounded-energy-derivative-cond}
-and therefore is a QDCP.
+specified in Eqs.~\eqref{eq: continuous-energy-cond}
+-\eqref{eq: bounded-energy-derivative-cond}
+and therefore is a QDCP\@.
 
 \subsection{Predicting the density of defects}
-Suzuki {\it et. al.}~\cite{Suzuki2015} extended the prediction of the density
-of defects obtained from the KZM and applied it to a general QDCP.
+Suzuki {\it et.\ al.}~\cite{Suzuki2015} extended the prediction of the density
+of defects obtained from the KZM and applied it to a general QDCP\@.
 The density of defects was shown to scale as
 \begin{equation}
     n_d \sim \tau_Q^{-d(2-\alpha_+)/(3-\alpha_+)z},
 \end{equation}
-where $d$ is the dimensionality of the system and $\alpha_+$ and $z$ are
-critical exponents.
-For the BA to FM transition one has $\alpha_+=1$, $z=2$
+where \( d \) is the dimensionality of the system and \( \alpha_+ \) and
+\(  z \) are critical exponents.
+For the BA to FM transition one has \( \alpha_+=1 \), \( z=2 \)
 (\textcolor{red}{see appendix for detailed derivation of these critical
 exponents}).
 In the case of a 1D system, the density of defects then scales as
@@ -314,22 +316,23 @@ Here, we aim to use Bogoliubov analysis to determine the relevant mode in the
 BA to FM phase transition.
 
 \textcolor{red}{Is it worth have a detailed derivation of the
-Bogoliubov energies etc. or just link to Uchino paper and be done?}
-The Bogoliubov energies for mode $\vb{k}$ and component $m$ for the
+Bogoliubov energies etc.\ or just link to Uchino paper and be done?}
+The Bogoliubov energies for mode \( \vb{k} \) and component \( m \) for the
 broken-axisymmetry phase are~\cite{Uchino2010}:
 \begin{equation}
     E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)},
     \label{eq: zero-mode-energy}
 \end{equation}
 \begin{equation}
-    E_{\vb{k}, \pm} = \sqrt{\epsilon_{\vb{k}} + n(c_0 + c_2)\epsilon_{\vb{k}} 
-    + 2(c_2n)^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
+    E_{{\vb{k}}, \pm} = \sqrt{\epsilon_{\vb{k}} + n(c_0 + c_2)\epsilon_{\vb{k}} 
+    + 2{(c_2n)}^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
     \label{eq: pmone-mode-energy}
 \end{equation}
-where $\epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, $\tilde{q} = -q/(2c_2n)$ and
+where \( \epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, \( \tilde{q} = -q/(2c_2n) \)
+and
 \begin{equation}
-    \Lambda_{\vb{k}} = \sqrt{[(c_0+3c_2)n\epsilon_{\vb{k}} 
-    + 2(c_2n)^2(1-\tilde{q}^2)]^2 
+    \Lambda_{\vb{k}} = \sqrt{{[(c_0+3c_2)n\epsilon_{\vb{k}} 
+    + 2{(c_2n)}^2(1-\tilde{q}^2)]}^2 
     - 4c_2(c_0+2c_2)n^2\tilde{q}^2\epsilon_{\vb{k}}^2}.
 \end{equation}
 The imaginary part of the above energies becoming non-zero signals an
@@ -339,22 +342,22 @@ instability present in that respective mode.
     \includegraphics[width=\textwidth]{gfx/ch-spin1/dens_spin_energies.pdf}
     \caption{Real and imaginary parts of the energies in
     Eqs.~\eqref{eq: zero-mode-energy}-\eqref{eq: pmone-mode-energy} in a
-    parameter space of mode $\vb{k}$ and $Q=q/|c_2|n$.}
-    \label{fig: dens-spin-energies}
+    parameter space of mode \( \vb{k} \) and
+    \( Q=q/|c_2|n \).\label{fig: dens-spin-energies}}
 \end{figure}
 Fig.~\ref{fig: dens-spin-energies} shows the real and imaginary parts of the
-above energies in a parameter space of $(\vb{k}, Q)$.
-Firstly, one sees the growth of the $\mathrm{Im}(E_{\vb{k}, -})$ energy
-when $|Q| > 2$.
-When $Q>2$, the lowest energy of the system is achieved by having the condensate
-become polar ($\zeta^P=(0,1,0)^T$).
+above energies in a parameter space of \( (\vb{k}, Q) \).
+Firstly, one sees the growth of the \( \mathrm{Im}(E_{\vb{k}, -}) \) energy
+when \( |Q| > 2 \).
+When \( Q>2 \), the lowest energy of the system is achieved by having the
+condensate become polar (\( \zeta^P={(0,1,0)}^T \)).
 Hence, this instability is formed from a phase transition between the polar
 and BA phases.
-\textcolor{red}{The instability at $Q < -2$ pops out from the uniform mode
+\textcolor{red}{The instability at \( Q < -2 \) pops out from the uniform mode
 approximation, but does this signal the instability generated from the BA
-to FM phase transition? If so, what does $E_{f_{z}}$ represent?}
-Secondly, we see the growth of the $\mathrm{Im}(E_{\vb{k}, {f_z}})$ mode when
-$Q<0$.
+to FM phase transition? If so, what does \( E_{f_{z}} \) represent?}
+Secondly, we see the growth of the \( \mathrm{Im}(E_{\vb{k}, {f_z}}) \) mode
+when \( Q<0 \).
 This signals the change from the broken-axisymmetry phase to the ferromagnetic
 phase and hence is the relevant mode in our system.
 
@@ -369,13 +372,12 @@ To begin, we start with a wavefunction close to the BA state
     \qquad
     \psi_0 = \frac{1}{2}\sqrt{2 + Q_0} + \delta \psi_0(t),
 \end{equation}
-where $0 < Q_0 < 2$ is a constant and $|\delta\psi_m| \ll 1$.
-\textcolor{red}{Was the reason for using $Q_0$ instead of $Q(t)$ because
-the BA ground state is defined for fixed $Q$?}
+where \( 0 < Q_0 < 2 \) is a constant and \( |\delta\psi_m| \ll 1 \).
+\textcolor{red}{Was the reason for using \( Q_0 \) instead of \( Q(t) \) because
+the BA ground state is defined for fixed \( q \)?}
 Substituting the above expressions in the stationary GPEs
 (\textcolor{red}{link to section}) in the absence of a trapping potential and
-keeping leading order terms in $\delta\psi$ we
-arrive at the equations:
+keeping leading order terms in \( \delta\psi \) we arrive at the equations:
 \begin{equation}
     \begin{aligned}
         i\pdv{\delta\psi_1}{t} &= \left[-\frac{\nabla^2}{2} + q - \mu 
@@ -407,8 +409,8 @@ Therefore, we subtract the above equations from each other to obtain
     i\pdv{G_y}{t} = \left[-\frac{\nabla^2}{2} - c_2\left(Q 
     - \frac{Q_0}{2}\right)\right]G_y - \frac{c_2Q_0}{2}G_y^*,
 \end{equation}
-where $G_y = \delta\psi_1 - \delta\psi_{-1}$, $Q=q/|c_2|n$, and we have used the
-fact that $\mu = c_0 + c_2(2-Q_0)/2$.
+where \( G_y = \delta\psi_1 - \delta\psi_{-1} \), \( Q=q/|c_2|n \), and we have
+used the fact that \( \mu = c_0 + c_2(2-Q_0)/2 \).
 To solve the above equation we transform to Fourier space and split the equation
 into real and imaginary parts, leading to the matrix equation
 \begin{equation}
@@ -417,9 +419,9 @@ into real and imaginary parts, leading to the matrix equation
                                 \mqty(a_y \\ b_y),
 \end{equation}
 \textcolor{red}{Why can we drop partial derivatives?}
-where $a_y = \int \mathrm{Re}(G_y)e^{ikx} \, \dd x$ and
-$y_y = \int \mathrm{Im}(G_y)e^{ikx} \, \dd x$.
-To solve the above equation, we derive the equation for $\dv[2]{a_y}{t}$
+where \( a_y = \int \mathrm{Re}(G_y)e^{ikx} \, \dd x \) and
+\( y_y = \int \mathrm{Im}(G_y)e^{ikx} \, \dd x \).
+To solve the above equation, we derive the equation for \( \dv[2]{a_y}{t} \)
 which leads to
 \begin{equation}
     \dv[2]{a_y}{t} = -\frac{2c_2\dot{Q}}{k^2 - 2c_2(Q-Q_0)}\dv{a_y}{t} 
@@ -428,8 +430,9 @@ which leads to
 \end{equation}
 \textcolor{red}{Why can we ignore the first derivative term again?}\\
 To simplify further, we are interested in sufficiently large systems such that
-$k^2/\tau_Q \ll 1 / \tau_Q^2$.
-Using this assumption and taking $Q_0=0$ at the critical point we are left with
+\( k^2/\tau_Q \ll 1 / \tau_Q^2 \).
+Using this assumption and taking \(Q_0=0 \) at the critical point we are left
+with
 \begin{equation}
     \dv[2]{a_y}{t} = \frac{\dot{Q}}{Q}\dv{a_y}{t} - c_2^2Q^2a_y.
 \end{equation}
@@ -437,21 +440,22 @@ Solving the above equation yields
 \begin{equation}
     a_y = \frac{1}{C}e^{C\lambda t} + D,
 \end{equation}
-where $C, D$ are constants of integration and $\lambda =(|c_2|/\tau_Q)^{1/2}$.
-Expanding the above equation and keeping the leading order term in $t$ we
+where \( C, D \) are constants of integration and
+\( \lambda ={(|c_2|/\tau_Q)}^{1/2} \).
+Expanding the above equation and keeping the leading order term in \( t \) we
 arrive at
 \begin{equation}
-    a_y \sim \left(\frac{|c_2|}{\tau_Q}\right)^{\frac{1}{2}}t.
+    a_y \sim {\left(\frac{|c_2|}{\tau_Q}\right)}^{\frac{1}{2}}t.
 \end{equation}
-We therefore conclude that $a_y$ scales as $\tau_Q^{-1/2}$ at the critical
-point.
+We therefore conclude that \( a_y \) scales as \( \tau_Q^{-1/2} \) at the
+critical point.
 This provides a useful test for confirming scaling laws observed in numerical
 simulations.
 
 \textcolor{red}{This is {\bf without} getting rid of the first derivative.
 If you get rid of the derivative you are left with Weber's equation. Which
-I think you can still show that $a_y$ scales like $\tau_Q^{-1/2}$ but it's a
-little more complicated.}
+I think you can still show that \( a_y \) scales like \( \tau_Q^{-1/2} \)
+but it's a little more complicated.}
 
 \section{The KZM across a second-order phase transition}
 As shown in \textcolor{red}{relevant section}, there are four ground states
@@ -465,29 +469,21 @@ As it does this, the symmetry of the system is spontaneously broken, and hence
 the Kibble-Zurek theory can be applied.
 
 Spin-1 BECs support numerous first- and second-order phase transitions
-when the linear, $p$, or quadratic, $q$, Zeeman shifts are
+when the linear, \( p \), or quadratic, \( q \), Zeeman shifts are
 ramped across a critical point~\cite{Kawaguchi2012}.
 A second-order transition is characterised by the derivative of the energy with
-respect to $p$ and $q$ change continuously across the transition
+respect to \( p \) and \( q \) change continuously across the transition
 \textcolor{red}{? (Is there other conditions on a second-order transition?)}.
-% For example, in a spin-1 BEC with polar interactions, the ground state is in
-% the antiferromagnetic state for $|p|/c_2n<1$ and $q/c_2n<0$ which has energy
-% $\epsilon = q - \frac{p^2}{2c_2n}-\frac{1}{2}c_0n$.
-% As $p$ is ramped across the critical point at $|p|/c_2n=1$, the ground state
-% becomes the ferromagnetic state with energy
-% $\epsilon = -p + q + \frac{1}{2}(c_0 - c_2)n$.
-% We see the derivatives of the two energies are continuous at the critical point,
-% and hence this is a second-order phase transition.
 In this section, we aim to test the predictions of the Kibble-Zurek mechanism
-for a second-order phase transition in a spin-1 BEC.
+for a second-order phase transition in a spin-1 BEC\@.
 
 \subsection{Polar to broken-axisymmetry quench}
 Motivated by previous work~\cite{Damski2007}, we will investigate the
 Kibble-Zurek mechanism across the second-order phase transition occurring
-between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC.
-The polar phase is the energetic ground state when $Q=q/|c_2|n > 2$.
-The critical point $Q=2$ represents the second-order phase transition to the
-BA phase.
+between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
+The polar phase is the energetic ground state when \( Q=q/|c_2|n > 2 \).
+The critical point \( Q = 2 \) represents the second-order phase transition to
+the BA phase.
 The BA phase contains three Bogoliubov modes~\cite{Uchino2010}, but only one
 is non-zero in the long wavelength limit.
 This mode is gapped, and has the scaling form
@@ -502,37 +498,38 @@ We assume the form of a linear quench
     Q(t) = 2 - \frac{t}{\tau_Q},
     \label{eq: time-dep-Q-damski}
 \end{equation}
-where $\tau_Q$ is the quench time.
-To investigate Kibble-Zurek scaling, we consider the freeze-out time, $\hat{t}$,
+where \( \tau_Q \) is the quench time.
+To investigate Kibble-Zurek scaling, we consider the freeze-out time, \( \hat{t} \),
 which occurs when the equilibrium relaxation time is equal to the rate of change
 of the control parameter [see Eq.~\eqref{eq: freeze-out-equal}].
 Using the above equation and considering sufficiently slow quenches
-($\tau_Q \gg 1$), this leads to
+(\(\tau_Q \gg 1\)), this leads to
 \begin{equation}
     \hat{t} \sim \tau_Q^{\frac{1}{3}}.
 \end{equation}
-\textcolor{red}{I've tried deriving this and I am getting stuck...}
+\textcolor{red}{I've tried deriving this and I am getting stuck\ldots}
 
-We now analyze the resulting dynamics when linearly decreasing $Q$ according to
+We now analyze the resulting dynamics when linearly decreasing \( q \) according to
 Eq.~\eqref{eq: time-dep-Q-damski}.
-We start from the polar phase ($t < 0$) and end the simulation precisely at
-$Q=0$ ($t=2\tau_Q$) in the BA phase.
+We start from the polar phase (\( t < 0 \)) and end the simulation precisely at
+\( Q = 0 \) (\( t=2\tau_Q \)) in the BA phase.
 We start from an initial polar wavefunction that is slightly perturbed:
 \begin{equation}
     \psi = \left(\delta\psi_1, \frac{1}{\sqrt{L}} + \delta\psi_0,
     \delta\psi_{-1}\right),
     \label{eq: peturbed-polar-initi-state}
 \end{equation}
-where $|\delta\psi_m| \ll 1 / \sqrt{L}$ are small noise terms and $L$ is the
-length.
+where \( |\delta\psi_m| \ll 1 / \sqrt{L} \) are small noise terms and \( L \) is
+the length.
 The real and imaginary parts of these terms at individual grid points are drawn
 from the probability distribution
-$p(x) = \exp(-x^2/2\sigma^2)/\sqrt{2\pi}\sigma$.
-To ensure we remain close to the polar ground state, we take $\sigma=10^{-4}$.
+\( p(x) = \exp(-x^2/2\sigma^2)/\sqrt{2\pi}\sigma \).
+To ensure we remain close to the polar ground state, we take
+\( \sigma=10^{-4} \).
 
-We consider a 1D system with $N_x = 2048$ grid points with $L=78$.
-We choose dimensionless spin-independent interaction $c_0=1.4\times10^5$ and 
-$c_0/c_2 = -222$.
+We consider a 1D system with \(N_x = 2048\) grid points with \(L=78\).
+We choose dimensionless spin-independent interaction \(c_0=1.4\times10^5\) and 
+\(c_0/c_2 = -222\).
 We start with the initial state in Eq.~\eqref{eq: peturbed-polar-initi-state}
 and integrate the spin-1 Gross-Pitaevskii equations~\cite{Symes2016}.
 
@@ -546,44 +543,44 @@ transverse magnetisation
 \begin{equation}
     M_\perp = \int f_x^2 + f_y^2 \, dz,
 \end{equation}
-where $f_x$ and $f_y$ are the $x, y$ components of the condensate spin vector,
-respectively.
+where \(f_x\) and \(f_y \) are the \(x, y\) components of the condensate spin
+vector, respectively.
 In the polar phase this quantity is zero, but becomes non-zero in the BA limit
-where it is $M_\perp = (1 - Q^2/4)/L$.
+where it is \(M_\perp = (1 - Q^2/4)/L\).
 \begin{figure}[htb]
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/magnetisation_vs_Q.pdf}
-        \caption{}
-        \label{subfig: magnetisation-vs-Q}
+        \caption{\label{subfig: magnetisation-vs-Q}}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/t-hat_vs_tau_q.pdf}
-        \caption{}
-        \label{subfig: t-hat-vs-tau-q}
+        \caption{\label{subfig: t-hat-vs-tau-q}}
     \end{subfigure}
-    \caption{(a) The transverse magnetisation as a function of $Q(t)$ for
-    $\tau_Q=11$. Plotted are the numerical values (black line) and the
+    \caption{(a) The transverse magnetisation as a function of \( Q(t) \) for
+    \(\tau_Q=11\).
+    Plotted are the numerical values (black line) and the
     analytical prediction (red line).
-    (b) The extracted value of $\hat{t}$ versus the quench time. Overlaid is
-    the power-law scaling $\tau_Q^{1/3}$.}
+    (b) The extracted value of \( \hat{t} \) versus the quench time. Overlaid is
+    the power-law scaling \(\tau_Q^{1/3}\).}
 \end{figure}
 Fig.~\ref{subfig: magnetisation-vs-Q} shows a typical evolution of the
-transverse magnetisation for $\tau_Q = 11$.
-One sees that after the critical pont is crossed at $Q=2$, the transverse
+transverse magnetisation for \(\tau_Q = 11\).
+One sees that after the critical pont is crossed at \( Q = 2 \), the transverse
 magnetisation grows in a non-trivial fashion.
 This growth starts precisely after the system exits the freeze-out stage, which
-occurs at $t=\hat{t}$.
+occurs at \(t=\hat{t}\).
 The magnetisation then grows rapidly, exceeding the analytical prediction in
 places, and begins to oscillate with the amplitude decaying over time.
 Using this quantity, we can test the Kibble-Zurek prediction in
 Eq.~\eqref{eq: freeze-out-scaling}.
-We define $\hat{t}$ as the instant $M_\perp L$ intersects 1\% of its maximum
-value $M_\perp L = 1$.
-Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of $\hat{t}$ for a
-range of $\tau_Q$.
-We see an unambiguous power-law scaling of $\tau_Q^{1/3}$ for $\tau_Q \geq 10$.
-The gradual departure from the $\hat{t} \sim \tau_Q^{1/3}$ scaling indicates
+We define \( \hat{t} \) as the instant \(M_\perp L\) intersects 1\% of its maximum
+value \(M_\perp L = 1\).
+Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \hat{t} \) for a
+range of \( \tau_Q \).
+We see an unambiguous power-law scaling of \(\tau_Q^{1/3}\) for
+\(\tau_Q \geq 10\).
+The gradual departure from the \(\hat{t} \sim \tau_Q^{1/3}\) scaling indicates
 that the quench has to be sufficiently slow to capture the Kibble-Zurek scaling.
 We note that the choice of 1\% here is arbitrary.
 We tested a range of values up to a maximum of 10\%, and obtain quantitatively
@@ -598,56 +595,57 @@ We aim to extend this research and present results for
 the first-order transition between the broken-axisymmetry and
 ferromagnetic phases.
 
-We start from the broken-axisymmetry (BA) wavefunction with $p=0$
+We start from the broken-axisymmetry (BA) wavefunction with \( p=0 \)
 \begin{equation}
     \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
     \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
     \label{eq: BA-initial-wavefunction}
 \end{equation}
-where $Q(t)=q(t)/|c_2|n$.
-The BA wavefunction is the ground state for $c_2 < 0$ and $0 < Q < 2$.
-There exists a critical point at $Q=0$ where the ground state changes from
+where \(Q(t)=q(t)/|c_2|n\).
+The BA wavefunction is the ground state for \(c_2 < 0\) and \(0 < Q < 2\).
+There exists a critical point at \( Q = 0 \) where the ground state changes from
 the BA phase to the ferromagnetic phase.
-We perform 1D simulations on a grid of $N_x = 16384$ grid points with a grid
-spacing of $\Delta_x = 0.125$.
-We perturb the initial BA state by adding small noise, $\delta_m$, to each
-component where $|\delta_m| \ll 1$.
-We generate the real and imaginary parts of $\delta_m$ for each grid point
+We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
+spacing of \(\Delta_x = 0.125\).
+We perturb the initial BA state by adding small noise, \(\delta_m\), to each
+component where \(|\delta_m| \ll 1\).
+We generate the real and imaginary parts of \(\delta_m\) for each grid point
 using the probability distribution
-$p(x) = e^{-x^2/2\sigma^2}(\sqrt{2\pi}\sigma)^{-1}$.
-We choose $\sigma=10^{-4}$ so that we start close to the BA ground state.
+\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\).
+We choose \(\sigma=10^{-4}\) so that we start close to the BA ground state.
 
 \subsection{Phase boundaries in the ferromagnetic phase}
-As the system is quenched across the critical point at $Q=0$, the ground state
+As the system is quenched across the critical point at \( Q = 0 \), the ground state
 changes to the ferromagnetic phase.
-The order parameter for this phase takes the form $\zeta=(1,0,0)^T$ or 
-$\zeta=(0,0,1)^T$ depending on the orientation of the spin.
+The order parameter for this phase takes the form \(\zeta={(1,0,0)}^T\) or 
+\(\zeta={(0,0,1)}^T\) depending on the orientation of the spin.
 From Eq.~\eqref{eq: BA-initial-wavefunction} we have
-$\psi_{\pm 1} = \frac{1}{2}$ and $\psi_0 = \frac{\sqrt{2}}{2}$ at $Q=0$.
+\(\psi_{\pm 1} = \frac{1}{2}\) and \(\psi_0 = \frac{\sqrt{2}}{2}\) at
+\( Q = 0 \).
 The question that remains is: Which state will the system choose after
 the critical point is passed?
 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
-    \caption{Plots of $|\psi_1|^2$ (top) $|\psi_0|^2$ (middle) and
-    $|\psi_{-1}|^2$ (bottom) as a function of time for a $256\xi_s$
-    spatial subregion of the condensate for $\tau_Q=2500\tau$.}
-    \label{fig: BA-FM-densities}
+    \caption{Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
+    \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
+    spatial subregion of the condensate for
+    \( \tau_Q=2500\tau \).\label{fig: BA-FM-densities}}
 \end{figure}
 Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
-component for a quench time $\tau_Q=5000\tau$.
-As the Zeeman shift is quenched, we see the density of the $\psi_0$ component
-linearly decrease as the $\psi_{\pm 1}$ components increase.
-After the critical point at $t/\tau=0$ is passed there is a freeze-out time
+component for a quench time \( \tau_Q=5000\tau \).
+As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
+linearly decrease as the \(\psi_{\pm 1}\) components increase.
+After the critical point at \(t/\tau=0\) is passed there is a freeze-out time
 (see Sec.~\ref{sec:the-KZM}) before the system crosses into the ferromagnetic
 phase.
 During this new phase, we see the formation of ferromagnetic domain walls
-(characterised by the bright density peaks) in the $\psi_{\pm 1}$ components as
-the order parameter adjusts to the new ground state.
+(characterised by the bright density peaks) in the \(\psi_{\pm 1}\) components
+as the order parameter adjusts to the new ground state.
 These domains are spatially separated and where there is zero density in one of
 the components, there is maximal density in the other so that overall the total
-density $n=\sum_m\psi_m^*\psi_m$ is uniform.
+density \(n=\sum_m\psi_m^*\psi_m\) is uniform.
 
 The KZM predicts in Eq.~\eqref{eq: KZM-domain-size} that the size of the domains
 grow as the quench time increases.
@@ -655,36 +653,34 @@ grow as the quench time increases.
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_width.pdf}
-        \caption{}
-        \label{fig: BA-FM-domain-width-comparison}
+        \caption{\label{fig: BA-FM-domain-width-comparison}}
     \end{subfigure}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_onset.pdf}
-        \caption{}
-        \label{fig: BA-FM-domain-onset}
+        \caption{\label{fig: BA-FM-domain-onset}}
     \end{subfigure}
-    \caption{(a): Density profile of the $\psi_1$ component across an average
-    domain in a simulation with $\tau_Q=2500\tau$ (black line) and
-    $\tau_q=10000$ (red line).
-    (b): Time evolution of $|\psi_1|^2$ for a $256\xi_s$ spatial subregion
-    for $\tau_Q=5000\tau$ (top) and $\tau_Q=10000\tau$ (bottom).}
+    \caption{(a): Density profile of the \(\psi_1\) component across an average
+    domain in a simulation with \(\tau_Q=2500\tau \) (black line) and
+    \(\tau_q=10000\) (red line).
+    (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial subregion
+    for \( \tau_Q=5000\tau \) (top) and \(\tau_Q=10000\tau \) (bottom).}
 \end{figure}
 Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
-for two different simulations with $\tau_Q=2500$ and $\tau_Q=10000$.
+for two different simulations with \(\tau_Q=2500\) and \(\tau_Q=10000\).
 We see that the longer quench time produces domains that have a
 larger width than those of faster quenches, supporting the Kibble-Zurek theory.
-In addition, we plot the time evolution of $|\psi_1|^2$ for $\tau_Q=5000$ and
-$\tau_Q=10000$ in Fig.~\ref{fig: BA-FM-domain-onset}.
+In addition, we plot the time evolution of \(|\psi_1|^2\) for \(\tau_Q=5000\) and
+\(\tau_Q=10000\) in Fig.~\ref{fig: BA-FM-domain-onset}.
 We see the ferromagnetic domain formation is delayed in the simulation
 with a longer quench time, which supports the prediction in
 Eq.~\eqref{eq: freeze-out-scaling}.
 
 One can count the number of ferromagnetic domains in the system and see the
-dependence on $\tau_Q$.
+dependence on \( \tau_Q \).
 To do this, we developed a numerical algorithm that counts the number of
 density peaks in each component and sums the result to give the total number of
-domains, $N_d$.
-We calculate this quantity at time $t/\tau=\tau_Q/2$ in each simulation, to
+domains, \(N_d\).
+We calculate this quantity at time \(t/\tau=\tau_Q/2\) in each simulation, to
 ensure that the domains are frozen and avoid the early-time coarsening
 taking place which could affect the total number of domains present.
 \begin{figure}
@@ -693,73 +689,73 @@ taking place which could affect the total number of domains present.
     \caption{The number of ferromagnetic domains as a function of the
     quench time. Each point represents 50 simulations and the
     error bar gives one standard deviation. Overlaid are the scaling lines
-    $\tau_Q^{-1/3}$ (black dashed line) and $\tau_Q^{-1/5}$ (red dotted line).}
-    \label{fig: FM-domains-scaling}
+    \(\tau_Q^{-1/3}\) (black dashed line) and \(\tau_Q^{-1/5}\)
+    (red dotted line).\label{fig: FM-domains-scaling}}
 \end{figure}
 In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
 as a function of the quench time with 50 ensemble runs for each simulation.
 We see that there is not a uniform scaling throughout all quench times tested.
 Faster quenches indicate a steeper power-law scaling of the number of domains
-that approaches $N_d\sim\tau_Q^{-1/3}$.
+that approaches \(N_d\sim\tau_Q^{-1/3}\).
 As the quench time slows, a deviation from this scaling takes place at
-approximately $\tau_Q\approx 3\times10^3\tau$, where the scaling of the domains
-approaches $N_d\sim\tau_Q^{-1/5}$.
+approximately \(\tau_Q\approx 3\times10^3\tau \), where the scaling of the
+domains approaches \(N_d\sim\tau_Q^{-1/5}\).
 \textcolor{red}{I guess the question now is: why is there a deviation?
 Is the larger domain size (due to slower quench times) affecting the scaling?
-Is it a consequence of the grid size? Can the $1/3$ scaling be linked to KZ
+Is it a consequence of the grid size? Can the \(1/3\) scaling be linked to KZ
 theory?}
 
 \subsection{Power-law scaling near the critical point}
 Since we know the relevant unstable mode within our system, we can investigate
 power-law scaling near the critical point.
 To begin, we start with the fluctuation operator associated with the
-Bogoliubov spectrum $E_{\vb{k}, fz}$
+Bogoliubov spectrum \(E_{\vb{k}, fz}\)
 \begin{equation}
     \hat{a}_{\vb{k}, {f_z}} = \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1} 
     - \hat{a}_{\vb{k}, -1}),
     \label{eq: fz-fluctuation-operator}
 \end{equation}
-where $\hat{a}_{\vb{k}, \pm1}$ is the annihilation operator for a spin-1 boson
-with wave number $\vb{k}$ in component $m=\pm1$.
+where \(\hat{a}_{\vb{k}, \pm1}\) is the annihilation operator for a spin-1 boson
+with wave number \( \vb{k} \) in component \(m=\pm1\).
 \begin{figure}[tb]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-spin1/1d_BA-FM_5000_fluctuation_diff.pdf}
-        \caption{}
-        \label{fig: fluctuation-diff}
+        \caption{\label{fig: fluctuation-diff}}
     \end{subfigure}
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_Qa_scaling.pdf}
-        \caption{}
-        \label{fig: Q_a-scaling}
+        \caption{\label{fig: Q_a-scaling}}
     \end{subfigure}
     \caption{(a): The modulus of the fluctuation operator in
-    Eq.~\eqref{eq: fz-fluctuation-operator} for $\vb{k}=1$ and $\tau_Q=5000$.
+    Eq.~\eqref{eq: fz-fluctuation-operator} for \(\vb{k}=1\) and
+    \(\tau_Q=5000\).
     The plot shown is obtained by averaging over all runs in the ensemble.
-    (b): The critical value $Q_a$ as a function of the quench time.
+    (b): The critical value \(Q_a\) as a function of the quench time.
     }
 \end{figure}
 Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
-of $\tau_Q=5000$ with $\vb{k}=1$.
+of \(\tau_Q=5000\) with \(\vb{k}=1\).
 The quantity remains zero until after the critical point is passed, where
 a rapid period of growth occurs.
 This onset of this growth corresponds to the ferromagnetic domains forming
 within the system (see Fig.~\ref{fig: BA-FM-densities}).
 Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
-$\hat{t}$, which is the time when $|\hat{a}_{\vb{k}, {f_z}}|$ first exceeds
-1\% of its maximum value: $|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
-0.01\times \mathrm{max}|\hat{a}_{\vb{k}, {f_z}}(t)|$.
-For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain $\hat{t}=598\tau$.
-Using this time, we can extract the critical value of $Q$ that this growth
-occurs at, $Q(\hat{t}) = Q_a$.
-Fig.~\ref{fig: Q_a-scaling} shows $Q_a$ as a function of the quench time.
-We see a clear power-law scaling of $Q_a \propto \tau_Q^{-\frac{1}{2}}$ for
-all values of $\tau_Q$ tested.
+\( \hat{t} \), which is the time when \(|\hat{a}_{\vb{k}, {f_z}}|\) first exceeds
+1\% of its maximum value: \(|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
+0.01\times \max|\hat{a}_{\vb{k}, {f_z}}(t)|\).
+For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
+\(\hat{t}=598\tau \).
+Using this time, we can extract the critical value of \( q \) that this growth
+occurs at, \(Q(\hat{t}) = Q_a\).
+Fig.~\ref{fig: Q_a-scaling} shows \(Q_a\) as a function of the quench time.
+We see a clear power-law scaling of \(Q_a \propto \tau_Q^{-\frac{1}{2}}\) for
+all values of \( \tau_Q \) tested.
 This exponent differs from observed results in previous works investigating
 second-order phase transitions~\cite{Damski2007, Anquez2016, Swislocki2013}
-where an exponent of $-1/3$ is observed.
-Our observation of a $-1/2$ exponent signifies a deviation from
+where an exponent of \(-1/3\) is observed.
+Our observation of a \(-1/2\) exponent signifies a deviation from
 the Kibble-Zurek theory which appears to be a consequence of our transition
 being first-order.
 
