@@ -1,4 +1,35 @@
-\include{tex/preamble/preamble}
+\documentclass[twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amsthm, amssymb, graphicx}
+\usepackage{geometry}  % For margins, read documentation for more options
+\usepackage{physics}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+    
+\usepackage[Glenn]{fncychap}
+
+\usepackage[style=numeric]{biblatex}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+
+% Commands
+\newcommand{\twovec}[2]{\ensuremath{\begin{pmatrix}#1\\#2\end{pmatrix}}}
+
+\addbibresource{bib/references.bib}
+
+\title{Structure \& Dynamics of Topological Defects in Spinor Bose-Einstein
+Condensates\\
+{\Large University of East Anglia}}
+\author{Matt Wheeler}
+\date{December 2021}
 
 \begin{document}
 
@@ -12,16 +43,17 @@ Acknowledgements go here.
 
 \tableofcontents
 
-\include{tex/document/ch-introductions/Introduction}
-\include{tex/document/ch-elementsBEC/elementsBEC}
-\include{tex/document/ch-groundStateSymmetries/groundStateSymmetries}
-\include{tex/document/ch-twoCompDynamics/twoCompDynamics}
-\include{tex/document/ch-spin1/spin1}
-\include{tex/document/ch-spin2/spin2}
-\include{tex/document/ch-conclusions/conclusions}
+\include{tex/ch-introductions/Introduction}
+\include{tex/ch-elementsBEC/elementsBEC}
+\include{tex/ch-groundStateSymmetries/groundStateSymmetries}
+\include{tex/ch-twoCompDynamics/twoCompDynamics}
+\include{tex/ch-spin1/spin1}
+\include{tex/ch-spin2/spin2}
+\include{tex/ch-conclusions/conclusions}
 
 \appendix
-\include{tex/document/ch-appendices/appendix}
+\include{tex/ch-appendices/appendix}
 
-\printbibliography
+\printbibliography{}
+
 \end{document}
