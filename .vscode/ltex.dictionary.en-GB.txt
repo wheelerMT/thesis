@@ -1,2 +1,6 @@
 HQVs
 BECs
+Majorana
+ch-groundStateSymmetries
+gfx
+int

@@ -1,6 +1,6 @@
-\chapter{Ground states, symmetries and defects}
+\chapter{Ground states, symmetries, and defects}
 In this chapter we investigate the ground states of spinor BECs obtained through
-minimizing the corresponding mean-field energy functionals.
+minimizing the corresponding mean-field energy functional.
 In particular, we investigate the symmetry properties using both Majorana and
 spherical harmonic representations.
 Furthermore, we construct the phase diagrams for conserved and non-conserved
@@ -18,15 +18,143 @@ distinctions between the two.
 
 \section{Spin-1}
 
-\subsection{Spherical harmonic representation}
-
-\subsection{Majorana representation}
-
 \subsection{Ground states in a uniform system}
 
-\subsection{Ground states with conserved magnetization}
+For a spin-1 system, the interacting part of the energy functional contains
+two independent non-linear interaction terms (\textcolor{red}{See relevant
+section constructing interacting Hamiltonian}), given by
+\begin{equation}
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1|\vb{F}|^2 dx.
+\end{equation}
+Since the density term remains fixed for a given normalised ground state, the
+spin magnitude is the only relevant term when computing the ground state.
+For ferromagnetic interactions (\(c_1 < 0 \)), the energy is minimised when
+the spin magnitude is maximised, i.e., \(|\vb{F}| = n\).
+A representative spinor for a ferromagnetic ground state is then
+\begin{equation}
+    \zeta^\mathrm{FM} = \mqty(1 \\ 0 \\ 0).
+\end{equation}
+In the absence of a magnetic field, the energy of a given spinor is degenerate
+with respect to a global \(U(1)\) phase \(e^{i\theta}\) and an \(SO(3)\) spin
+rotation, parameterized by three Euler angles \(\alpha, \beta \),
+and \(\gamma \).
+A general spin rotation represents rotations around the \(z-y-z\) axes:
+\(U(\alpha, \beta, \gamma) = e^{-i\alpha F_z}e^{-i\beta F_y}e^{-i\gamma F_z}\).
+In explicit matrix form, this becomes
+\begin{equation}
+    U(\alpha, \beta, \gamma) = \mqty(
+        e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
+        -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta &
+        e^{-i(\alpha - \gamma)}\sin^2\frac{\beta}{2} \\
+        \frac{e^{-i\gamma}}{\sqrt{2}}\sin\beta &
+        \cos\beta &
+        -\frac{e^{i\gamma}}{\sqrt{2}}\sin\beta \\
+        e^{i(\alpha - \gamma)}\cos^2\frac{\beta}{2} &
+        \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta &
+        e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
+    ).
+\end{equation}
+The general ferromagnetic wave function is constructed by
+\begin{equation}
+    \psi^\mathrm{FM} = 
+    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} = 
+    \sqrt{n}e^{i(\theta - \gamma)}\mqty(
+        e^{-i\alpha}\cos^2\frac{\beta}{2} \\
+        \frac{1}{\sqrt{2}}\sin\beta \\
+        e^{i\alpha}\sin^2\frac{\beta}{2}
+        ).
+\end{equation}
 
-\subsection{Stationary solutions}
+For polar interactions (\(c_1 > 0\)), the energy is minimised by having the
+spin magnitude vanish \(|F|=0\).
+A representative polar spinor is
+\begin{equation}
+    \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
+\end{equation}
+Similar to the FM case, a general polar wave function is given by
+\begin{equation}
+    \psi^\mathrm{P} = 
+    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} = 
+    \sqrt{n}e^{i\theta}\mqty(
+        -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
+        \cos\beta \\
+        \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
+        ).
+\end{equation}
+Thus, in the absence of a magnetic field, there are two ground states in a
+spin-1 system: polar and ferromagnetic, depending on the sign of the
+spin-dependent interaction term, \(c_1\).
+
+The presence of an external magnetic field drastically changes the valid ground
+states of the spin-1 system.
+\begin{figure}
+    \includegraphics[width=0.49\textwidth]
+    {gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf}
+    \caption{\label{fig: GS-phase-diagram}}
+\end{figure}
+Fig.~\ref{fig: GS-phase-diagram} shows the ground state phase diagram for spin-1
+BECs with \(c_1 < 0\) and \(c_1 > 0\) in the presence of a magnetic field.
+
+
+\subsection{Ground states with conserved magnetisation}
+
+\subsection{Spherical harmonic representation}
+To visualise the symmetries of ground states it is useful to view the spherical
+harmonic representation, given by
+\begin{equation}
+    \Psi(\hat{s}) = \sum_m\psi_m Y_f^m(\hat{s}),
+\end{equation}
+where \(\hat{s}\) is a unit vector in 3D spin space, and \(Y_f^m \) are the
+spherical harmonics for a spin-\(f\) state.
+The symmetry can be visualised with a surface plot of \(|\Psi(\hat{s})|^2\),
+where the surface colour is represented by the argument of \(\Psi(\hat{s})\).
+
+The orientation of the spherical harmonics corresponds to the condensate spin,
+and so as the spin vector rotates, the orientation of spherical harmonics
+rotates to match.
+In addition, the colour of the spherical harmonics corresponds to the global
+phase, \( \theta \).
+Therefore, the spherical harmonics give an accurate description of the
+physical symmetries of the wave function, along with a pictorial representation
+of how the phase is changing.
+Throughout this thesis we will use the spherical harmonics to construct a
+picture of what is happening to the wave function at different locations in
+space, where the symmetry of the wave function can rapidly transform in a
+non-trivial manner.
+
+In spin-1, there are three \(f = 1\) spherical harmonics given by
+\begin{align}
+    Y_1^0(\theta, \phi) &= \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
+    Y_1^{\pm 1}(\theta, \phi) &= 
+    \frac{1}{2}\sqrt{\frac{3}{2\pi}}e^{\pm i \phi}\sin\theta.
+\end{align}
+The spherical harmonic representations of the spin-1 polar and ferromagnetic
+ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
+\begin{figure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/FM-spherical.png}
+        \caption{\(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/polar-spherical.png}
+        \caption{\(\zeta^\mathrm{P}={(0, 1, 0)}^T\)}
+    \end{subfigure}
+    \caption{Spherical harmonics of polar and FM ground states
+    here.
+    (a): The spin-1 ferromagnetic ground state with
+    \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
+    The black arrow represents the direction of the condensate magnetisation.
+    (b): The spin-1 polar ground state with
+    \(\zeta^\mathrm{P}={(0, 1, 0)}^T\).
+    The arrow represents the orientation of the nematic director,
+    \(\hat{\vb{d}}\).\label{fig: spin-1-spherical-harmonics}
+    \textcolor{red}{Add colour bar. Fix weird thing above polar spherical
+    harmonic.}}
+\end{figure}
+
+\subsection{Majorana representation}
 
 \section{Spin-2}
 
@@ -36,7 +164,7 @@ distinctions between the two.
 
 \subsection{Ground states in a uniform system}
 
-\subsection{Ground states with conserved magnetization}
+\subsection{Ground states with conserved magnetisation}
 
 \subsection{Stationary solutions}
 
