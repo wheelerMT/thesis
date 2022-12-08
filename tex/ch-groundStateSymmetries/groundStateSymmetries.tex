@@ -70,6 +70,7 @@ spin magnitude vanish \(|F|=0\).
 A representative polar spinor is
 \begin{equation}
     \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
+    \label{eq: EAP-spinor}
 \end{equation}
 Similar to the FM case, a general polar wave function is given by
 \begin{equation}
@@ -87,15 +88,128 @@ spin-dependent interaction term, \(c_1\).
 
 The presence of an external magnetic field drastically changes the valid ground
 states of the spin-1 system.
-\begin{figure}
-    \includegraphics[width=0.49\textwidth]
-    {gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf}
-    \caption{\label{fig: GS-phase-diagram}}
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (sodium) at (0, 0)
+        {\includegraphics[width=0.38\textwidth]
+        {gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf}};
+        \node[anchor=south west, inner sep=0] (rubidium) at (8, 0)
+        {\includegraphics[width=0.38\textwidth]
+        {gfx/ch-groundStateSymmetries/ground_states_fm_int_spin1.pdf}};
+        
+        \begin{scope}[x={($0.1*(sodium.south east)$)},
+                      y={($0.1*(sodium.north west)$)}]
+            \draw[->, thick] (0,5)--(10.3,5) node[right]{$\frac{q}{c_1n}$};
+            \draw[->, thick] (4.97,0)--(4.97,10.3) node[above]{$\frac{p}{c_1n}$};
+            \draw[-] (6.1, 4.8) -- (6.1, 5.2);
+            \node[anchor = south west] at (6.5, 3)
+            {\scriptsize $p^2=2c_1nq$};
+            \draw[->, thick] (6.6, 3.1) -- (6.25,2.55);
+            \node at (4.8, 7.75) {\scriptsize $1$};
+            \node at (4.7, 2.25) {\scriptsize -$1$};
+            \node at (6.1, 4.5) {\scriptsize 1/2};
+            \node[anchor=south west] at (0.8, 8.2)
+            {\textcolor{white}{Ferromagnetic (I)}};
+            \node[anchor=south west] at (0.8, 0.5)
+            {\textcolor{white}{Ferromagnetic (II)}};
+            \node[anchor=south west] at (0.1, 4.9)
+            {\textcolor{white}{\small Antiferromagnetic}};
+            \node[anchor=south west] at (2.1, 3.8)
+            {\textcolor{white}{(III)}};
+            \node[anchor=south west] at (6.5, 4.9)
+            {\textcolor{white}{Polar (IV)}};
+            \node[anchor=south west] at (3.8, -1.5) {\large $c_1 > 0$};
+        \end{scope}
+        \begin{scope}[x={($0.1*(sodium.south east)$)},
+            y={($0.1*(sodium.north west)$)}]
+            \draw[->, thick] (18.9,5)--(24.2,5) node[right]{$\frac{q}{|c_1|n}$};
+            \draw[->, thick] (18.9,0)--(18.9,10.3) node[above]
+            {$\frac{p}{|c_1|n}$};
+            \node[anchor=south west] at (18.8, 8.6) 
+            {\scriptsize $p^2=q^2-2|c_1|nq$};
+            \draw[->, thick] (19.3, 8.8) -- (21.5, 6.2);
+            \node[anchor=south west, inner sep=0, rotate=-38] at (19, 4.2)
+            {\scriptsize $p=-q$};
+            \node[anchor=south west, inner sep=0, rotate=38] at (19.1, 5.3)
+            {\scriptsize $p=q$};
+            \node[anchor=south west, inner sep=0] at (21.2, 4.5)
+            {\scriptsize $2$};
+            \node[anchor=south west] at (14.8, 6.5)
+            {\textcolor{white}{Ferromagnetic (I)}};
+            \node[anchor=south west] at (14.8, 1.5)
+            {\textcolor{white}{Ferromagnetic (II)}};
+            \node[anchor=south west] at (19.7, 4.9)
+            {\textcolor{white}{BA}};
+            \node[anchor=south west] at (19.7, 3.8)
+            {\textcolor{white}{(V)}};
+            \node[anchor=south west] at (21.7, 4.9)
+            {\textcolor{white}{Polar}};
+            \node[anchor=south west] at (21.7, 3.8)
+            {\textcolor{white}{(IV)}};
+            \node[anchor=south west] at (18., -1.5) {\large $c_1 < 0$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{\label{fig: GS-phase-diagram}Ground state phase diagrams of spin-1
+    BECs for polar (\(c_1 > 0\)) and ferromagnetic (\(c_1 < 0\)) interactions
+    in a parameter space of \((p, q)\).
+    Solid or dashed white lines represent discontinuous and continuous phase
+    transitions, respectively.}
 \end{figure}
 Fig.~\ref{fig: GS-phase-diagram} shows the ground state phase diagram for spin-1
-BECs with \(c_1 < 0\) and \(c_1 > 0\) in the presence of a magnetic field.
+BECs with \(c_1 > 0\) (left) and \(c_1 < 0\) (right) in the presence of a
+magnetic field.
+The full derivation of the ground state phase diagram can be found in recent
+reviews~\cite{Kawaguchi2012, StamperKurn2013}.
+There are five total ground states shown in Fig.~\ref{fig: GS-phase-diagram},
+which are summarised in Table.~\ref{tab: spin-1-ground-states}.
+\begin{table}
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        Ground state & Spinor, \(\zeta^T\) & Magnetisation, \(M_z\) \\
+        \midrule
+        Ferromagnetic (I) & \((1, 0, 0)\) & 1\\
+        Ferromagnetic (II) & \((0, 0, 1)\) & -1\\
+        Antiferromagnetic (III) & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
+        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\) \\
+        Polar (IV) & \((0, 1, 0)\) & 0 \\
+        Broken-axisymmetry (V) & Eq.~\eqref{eq: BA-spinor}
+        & \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: spin-1-ground-states}Summary of the ground state
+    phases in a spin-1 BEC with their respective spinors and magnetisation.}
+\end{table}
+There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
+and \(F_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(F_z=-1\) (state II),
+depending on the sign of the linear Zeeman shift \(p\).
+For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
+(state III) with
+\begin{equation}
+    \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
+    \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
+\end{equation}
+and \(F_z = p/(c_1n)\).
+A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
+\(F_z = 0\).
+Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
+ferromagnetic interactions that has the form
+\begin{equation}
+    \begin{aligned}
+        \zeta_{\pm 1} &= 
+                    \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}}, \\
+        \zeta_0 &= \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}},
+    \end{aligned}
+    \label{eq: BA-spinor}
+\end{equation}
+which has a magnetisation that tilts against the quantisation axis
+\begin{equation}
+    F_z = \frac{p(-p^2 + q^2 + 2qc_1n)}{2c_1nq^2}.
+\end{equation}
 
-
+The above picture computes the ground states without explicitly conserving
+magnetisation.
 \subsection{Ground states with conserved magnetisation}
 
 \subsection{Spherical harmonic representation}

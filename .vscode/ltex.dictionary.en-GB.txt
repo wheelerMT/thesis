@@ -4,3 +4,7 @@ Majorana
 ch-groundStateSymmetries
 gfx
 int
+broken-axisymmetry
+Eq
+Broken-axisymmetry
+Eqs
