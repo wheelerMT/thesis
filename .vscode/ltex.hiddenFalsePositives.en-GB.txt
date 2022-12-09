@@ -2,3 +2,4 @@
 {"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\Q[width=] gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf Fig.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_GB","sentence":"^\\Q[width=] gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf Fig.\\E$"}
 {"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\Q[width=0.49] gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf Fig.\\E$"}
+{"rule":"TOO_LONG_PARAGRAPH","sentence":"^\\QHowever, if we enforce that magnetisation be conserved, then the ground state phase diagram changes even further.\\E$"}

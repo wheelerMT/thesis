@@ -24,7 +24,7 @@ For a spin-1 system, the interacting part of the energy functional contains
 two independent non-linear interaction terms (\textcolor{red}{See relevant
 section constructing interacting Hamiltonian}), given by
 \begin{equation}
-    E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1|\vb{F}|^2 dx.
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1|\vb{F}|^2 d\vb{r}.
 \end{equation}
 Since the density term remains fixed for a given normalised ground state, the
 spin magnitude is the only relevant term when computing the ground state.
@@ -162,12 +162,12 @@ magnetic field.
 The full derivation of the ground state phase diagram can be found in recent
 reviews~\cite{Kawaguchi2012, StamperKurn2013}.
 There are five total ground states shown in Fig.~\ref{fig: GS-phase-diagram},
-which are summarised in Table.~\ref{tab: spin-1-ground-states}.
+which are summarised in Table~\ref{tab: spin-1-ground-states}.
 \begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
-        Ground state & Spinor, \(\zeta^T\) & Magnetisation, \(M_z\) \\
+        Ground state & Spinor, \(\zeta^T\) & \(F_z\) \\
         \midrule
         Ferromagnetic (I) & \((1, 0, 0)\) & 1\\
         Ferromagnetic (II) & \((0, 0, 1)\) & -1\\
@@ -190,7 +190,7 @@ For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
     \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
-and \(F_z = p/(c_1n)\).
+and \(F_z = p/(c_1n)\), which consists of 
 A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
 \(F_z = 0\).
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
@@ -207,10 +207,15 @@ which has a magnetisation that tilts against the quantisation axis
 \begin{equation}
     F_z = \frac{p(-p^2 + q^2 + 2qc_1n)}{2c_1nq^2}.
 \end{equation}
+These five ground states fully encapsulate the phase diagram of spin-1 BECs
+in a magnetic field.
 
+\subsection{Ground states with conserved magnetisation}
 The above picture computes the ground states without explicitly conserving
 magnetisation.
-\subsection{Ground states with conserved magnetisation}
+However, if we enforce that magnetisation be conserved, then the ground state
+phase diagram changes even further.
+
 
 \subsection{Spherical harmonic representation}
 To visualise the symmetries of ground states it is useful to view the spherical
@@ -269,8 +274,71 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
 \end{figure}
 
 \subsection{Majorana representation}
+An alternative description to visualising the symmetries of spinor BECs is
+through the use of the Majorana representation~\cite{Majorana1932,Bloch1945},
+where a spin-\(f\) system can be represented as \(2f\) points on the Bloch
+sphere.
+The points on the sphere are numerically calculated as the \(2f\) roots
+\(z_j\) of the polynomial equation
+\begin{equation}
+    P^{(f)}(z) = \sum_{\alpha = 0}^{2f}
+    \sqrt{\mqty(2f \\ \alpha)}\zeta_{f-\alpha}^*z^\alpha=0,
+\end{equation}
+where each root represents a stereographic mapping
+\(z_j=\tan(\theta/2)e^{i\phi}\) of the spherical coordinates \((\theta, \phi)\).
+For spin-1, the polynomial becomes
+\begin{equation}
+    P^{(1)}(z) = \zeta_1^*z^2+\sqrt{2}\zeta_0^*z+\zeta_{-1}^*.
+\end{equation}
+The disadvantage of this representation is that one is not able to see the
+condensate phase.
+
+The Majorana representations for the states shown in
+Fig.~\ref{fig: spin-1-spherical-harmonics} are shown in
+Fig.~\ref{fig: spin-1-majorana}.
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{example-image}
+    \caption{\label{fig: spin-1-majorana}Majorana representations go here.}
+\end{figure}
 
 \section{Spin-2}
+The interacting Hamiltonian for the spin-2 system is given by
+\begin{equation}
+    E_\mathrm{int} = \int c_0n^2 + c_1|\vb{F}|^2+c_2|A_{20}|^2.
+\end{equation}
+As before, the density remains fixed for any normalised ground state and so
+different ground states arise from the competition between the spin-
+and singlet-dependent interaction strengths.
+If we first consider \(c_1, c_2 < 0\), then the energy functional is minimised
+when both the spin density and singlet-duo amplitude are maximised: \(|F|=2n\)
+and \(|A_{20}|=n/5\).
+Such a state is ferromagnetic with spin \(|F|=2n\), which we call the FM-2
+state.
+There also exists a ferromagnetic state with spin \(|F|=n\), denoted as the FM-1
+state.
+This state is not the ground state since the FM-2 state has lower
+energy.
+However, it should be noted that the FM-1 state can remain stable in
+certain situations, such as in the cores of vortices (see
+Chapter~\ref{chap: spin-2}).
+The representative spinors for the spin-2 ferromagnetic states have the form
+\begin{equation}
+    \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
+    \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
+\end{equation}
+As in the spin-1 case, the energy of a given spinor in the absence of a magnetic
+field is degenerate following the application of a global \(U(1)\) phase and an
+\(SO(3)\) spin rotation.
+In a spin-2 system, a general spin rotation is instead represented as a
+\(5\times 5\) matrix of the form
+\begin{equation}
+    U(\alpha, \beta, \gamma) = \mqty(
+        e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S 
+        & \sqrt{6}e^{-2i\alpha}C^2S^2 & -2e^{-i(2\alpha-\gamma)}CS^3
+        & e^{-2i(\alpha + \gamma)}S^4
+    ),
+\end{equation}
 
 \subsection{Spherical harmonic representation}
 
