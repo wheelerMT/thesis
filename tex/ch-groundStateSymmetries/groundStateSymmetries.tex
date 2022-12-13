@@ -253,26 +253,35 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
 \begin{figure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/FM-spherical.png}
-        \caption{\(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
+        {gfx/ch-groundStateSymmetries/FM-spherical.pdf}
+        \caption{\label{subfig: spin-1-FM-spherical}
+            \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/polar-spherical.png}
-        \caption{\(\zeta^\mathrm{P}={(0, 1, 0)}^T\)}
+        {gfx/ch-groundStateSymmetries/polar-spherical.pdf}
+        \caption{\label{subfig: spin-1-polar-spherical}
+        \(\zeta^\mathrm{P}={(0, 1, 0)}^T\)}
     \end{subfigure}
-    \caption{Spherical harmonics of polar and FM ground states
-    here.
+    \caption{\label{fig: spin-1-spherical-harmonics}
+    Spherical harmonics representation of the ferromagnetic and polar order
+    parameters in a spin-1 BEC.\@
     (a): The spin-1 ferromagnetic ground state with
     \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
     The black arrow represents the direction of the condensate magnetisation.
     (b): The spin-1 polar ground state with
-    \(\zeta^\mathrm{P}={(0, 1, 0)}^T\).
-    The arrow represents the orientation of the nematic director,
-    \(\hat{\vb{d}}\).\label{fig: spin-1-spherical-harmonics}
-    \textcolor{red}{Add colour bar. Fix weird thing above polar spherical
-    harmonic.}}
+    \(\zeta^\mathrm{P}={(0, 1, 0)}^T\) where the nematic director
+    \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
+    The order parameter remains unchanged about \(\pi/2\) rotations about the
+    \(C_2\) axis.}
 \end{figure}
+We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
+the \(z\)-axis.
+The polar state has two nematic lobes which have a \(\pi \) phase difference.
+These lobes are aligned along an axis of symmetry given by the nematic director,
+\(\hat{\vb{d}}\).
+There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
+rotations preserve the symmetry.
 
 \subsection{Majorana representation}
 An alternative description to visualising the symmetries of spinor BECs is
@@ -382,7 +391,7 @@ We see that the energy functional is minimised when the spin is minimised
 \(|\vb{F}| = 0\) but the singlet-duo amplitude is maximised
 \(|A_{20}|^2 = n/5\).
 Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
-or biaxial nematic (BN)
+or biaxial nematic (BN), described by the spinors
 \begin{equation}
     \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0), \qquad
     \zeta^\mathrm{BN} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
@@ -440,8 +449,8 @@ The general wave function is given as
     ).
 \end{equation}
 
-In addition to the three-component cyclic state, there is another two-component
-state that is useful for understanding the general cyclic state:
+In addition to the three-component cyclic state, there is also a two-component
+cyclic state that is useful for understanding the general cyclic state:
 \begin{equation}
     \psi^\mathrm{C-2} = \sqrt{\frac{n}{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
 \end{equation}
@@ -486,8 +495,9 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
 \end{figure}
 
 \subsection{Spherical harmonic representation}
-The mapping of the order parameter in the spin-2 case follows the same equation
-as in the spin-1 case, i.e., Eq.~\eqref{eq: spherical-harmonics}.
+The mapping of the order parameter onto spherical harmonics in the spin-2 case
+follows the same equation as in the spin-1 case, i.e.,
+Eq.~\eqref{eq: spherical-harmonics}.
 For the spin-2 system, however, we have five \(f=2\) spherical harmonics given
 by
 \begin{align}
@@ -501,52 +511,99 @@ The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
 \begin{figure}
     \centering
+    \vspace{-2cm}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/FM-2-spherical.pdf}
-        \caption{FM-2: \(\zeta={(1, 0, 0, 0, 0)}^T\)}
+        \caption{\label{subfig: FM-2-spherical}
+        FM-2: \(\zeta={(1, 0, 0, 0, 0)}^T\)
+        }
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/FM-1-spherical.pdf}
-        \caption{FM-1: \(\zeta={(0, 1, 0, 0, 0)}^T\)}
+        \caption{\label{subfig: FM-1-spherical}
+        FM-1: \(\zeta={(0, 1, 0, 0, 0)}^T\)}
     \end{subfigure}\\
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/UN-spherical.pdf}
-        \caption{UN:\@ \(\zeta={(0, 0, 1, 0, 0)}^T\)}
+        \caption{\label{subfig: UN-spherical}
+        UN:\@ \(\zeta={(0, 0, 1, 0, 0)}^T\)}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/BN-spherical.pdf}
-        \caption{BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
+        \caption{\label{subfig: BN-spherical}
+            BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
     \end{subfigure}\\
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/C1-spherical.pdf}
-        \caption{Cyclic-1:\@ \(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)}
+        \caption{\label{subfig: C-1-spherical}
+        Cyclic-1:\@ \(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/C2-spherical.pdf}
-        \caption{Cyclic-2:\@ \(\zeta={(1, 0, 0, \sqrt{2}, 1)}^T/\sqrt{3}\)}
+        \caption{\label{subfig: C-2-spherical}
+        Cyclic-2:\@ \(\zeta={(1, 0, 0, \sqrt{2}, 1)}^T/\sqrt{3}\)}
     \end{subfigure}
     \caption{\label{fig: spin-2-spherical-harmonics}Spherical harmonic
     representations for different ground states in a spin-2 system.
     (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and \(|F|=n\),
-    respectively. Arrows indicate the direction of magnetisation.
-    (c) and (d): the nematic ground states.
-    (e) and (f): the cyclic states. Arrows indicate an axis of three-fold
-    \((C_3)\) symmetry.}
+    respectively, where the arrows indicate the direction of magnetisation.
+    (c): the uniaxial nematic state where \(\hat{\vb{d}}\) is the nematic
+    director. THe order parameter remains unchanged about \(\pi \) rotations
+    about the \(C_2\) axis.
+    (d): the biaxial nematic state. The order parameter is symmetric under
+    \(\pi/2\) rotations about the \(C_4\) axis.
+    Additionally, there is a two-fold symmetry about the \(C_2, C_2'\) axes.
+    (e) and (f): the cyclic states which have a two- and three-fold symmetry
+    about the \(C_2, C_3\) axes, respectively.
+    \textcolor{red}{Colour bars.}}
 \end{figure}
 
+It is clear from Figs~\ref{subfig: FM-2-spherical}
+and~\ref{subfig: FM-1-spherical} that the ferromagnetic order parameters have
+an \(SO(2)\) symmetry about the \(z\)-axis.
+The UN phase as shown in Fig.~\ref{subfig: UN-spherical} differs slightly from
+the polar phase of spin-1 (see Fig.~\ref{subfig: spin-1-polar-spherical}) in
+that the nematic lobes have the same phase.
+This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
+leaves the order parameter unchanged.
+In addition, like the ferromagnetic states, this order parameter also has an
+\(SO(2)\) symmetry about the \(z\)-axis.
+The BN phase, shown in Fig.~\ref{subfig: BN-spherical}, breaks the \(SO(2)\)
+symmetry due to the perpendicular nematic lobes, which have a \(\pi \) phase
+difference.
+The symmetry of the order parameter is preserved under \(\pi/4\) rotations
+abotu the \(C_4\) axis.
+In addition, the BN order parameter is invariant under \(\pi \) rotations about
+both the \(C_2\) and \(C_2'\) axes.
+Finally, the cyclic order parameter, shown in Figs.~\ref{subfig: C-1-spherical}
+and~\ref{subfig: C-2-spherical}, have the symmetry of a tetrahedron.
+Each nematic lobe has a two-fold symmetry about the \(C_2\) axis.
+Furthermore, the order parameter has a three-fold symmetry about the \(C_3\)
+axis.
+In Fig.~\ref{subfig: C-1-spherical}, this axis is the \((1, 1, 1)\)-axis,
+whereas in Fig.~\ref{subfig: C-2-spherical}, it is aligned along the \(z\)-axis.
+Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
+parameter.
+
 \subsection{Majorana representation}
-
-\subsection{Ground states in a uniform system}
-
-\subsection{Ground states with conserved magnetisation}
-
-\subsection{Stationary solutions}
+In the spin-2 system, we compute the \(2f=4\) roots of the complex polynomial
+\begin{equation}
+    P^{(2)}(z) = \zeta_2^*z^4 + 2\zeta_1^*z^3 + \sqrt{6}\zeta_0^*z^2
+    + 2\zeta_{-1}^*z + \zeta_{-2}^*.
+\end{equation}
+The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
+are shown in Fig.~\ref{fig: spin-2-Majorana}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{example-image}
+    \caption{\label{fig: spin-2-Majorana}}
+\end{figure}
 
 \section{Vortices in spinor BECs}
 
