@@ -222,6 +222,7 @@ To visualise the symmetries of ground states it is useful to view the spherical
 harmonic representation, given by
 \begin{equation}
     \Psi(\hat{s}) = \sum_m\psi_m Y_f^m(\hat{s}),
+    \label{eq: spherical-harmonics}
 \end{equation}
 where \(\hat{s}\) is a unit vector in 3D spin space, and \(Y_f^m \) are the
 spherical harmonics for a spin-\(f\) state.
@@ -310,9 +311,10 @@ The interacting Hamiltonian for the spin-2 system is given by
 As before, the density remains fixed for any normalised ground state and so
 different ground states arise from the competition between the spin-
 and singlet-dependent interaction strengths.
-If we first consider \(c_1, c_2 < 0\), then the energy functional is minimised
-when both the spin density and singlet-duo amplitude are maximised: \(|F|=2n\)
-and \(|A_{20}|=n/5\).
+
+If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
+minimised when  the spin density is maximised \(|F|=2n\)
+and the singlet-duo amplitude is minimised \(|A_{20}|=0\).
 Such a state is ferromagnetic with spin \(|F|=2n\), which we call the FM-2
 state.
 There also exists a ferromagnetic state with spin \(|F|=n\), denoted as the FM-1
@@ -327,20 +329,216 @@ The representative spinors for the spin-2 ferromagnetic states have the form
     \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
     \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
 \end{equation}
+
 As in the spin-1 case, the energy of a given spinor in the absence of a magnetic
 field is degenerate following the application of a global \(U(1)\) phase and an
 \(SO(3)\) spin rotation.
 In a spin-2 system, a general spin rotation is instead represented as a
 \(5\times 5\) matrix of the form
-\begin{equation}
-    U(\alpha, \beta, \gamma) = \mqty(
+\begin{multline}   
+    U(\alpha, \beta, \gamma) \\
+     = \mqty(
         e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S 
         & \sqrt{6}e^{-2i\alpha}C^2S^2 & -2e^{-i(2\alpha-\gamma)}CS^3
         & e^{-2i(\alpha + \gamma)}S^4
+        \\
+        2e^{-i(\alpha+2\gamma)}C^3S & e^{-i(\alpha+\gamma)}C^2(C^2-3S^2)
+        & -\sqrt{\frac{3}{8}}e^{-i\alpha}\sin 2\beta
+        & -e^{-i(\alpha-\gamma)}S^2(S^2-3C^2) & -2e^{-i(\alpha-2\gamma)}CS^3
+        \\
+        \sqrt{6}e^{-2i\gamma}C^2S^2 & \sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
+        & \frac{1}{4}(1+3\cos 2\beta)
+        & -\sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
+        & \sqrt{6}e^{2i\gamma}C^2S^2
+        \\
+        2e^{i(\alpha-2\gamma)}CS^3 & -e^{i(\alpha-\gamma)}S^2(S^2-3C^2)
+        & \sqrt{\frac{3}{8}}e^{i\alpha}\sin 2\beta
+        & e^{i(\alpha-\gamma)}C^2(C^2-3S^2) & -2e^{i(\alpha+2\gamma)}C^3S
+        \\
+        e^{2i(\alpha - \gamma)}C^4 & 2e^{i(2\alpha-\gamma)}CS^3 
+        & \sqrt{6}e^{2i\alpha}C^2S^2 & 2e^{i(2\alpha+\gamma)}C^3S
+        & e^{2i(\alpha + \gamma)}C^4
+    ),
+\end{multline}
+where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
+\textcolor{red}{Need to fix size of matrix so no overflow.}
+
+Following the same procedure as the spin-1 case and applying the above spin
+rotation with a global phase \(\theta \) and condensate density \(n\) yields the
+general FM-2 spinor
+\begin{equation}
+    \psi^\mathrm{FM} = \sqrt{n}e^{i\theta'}\mqty(
+        e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
+        2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
+        \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
+        2e^{i\alpha}\cos\frac{\beta}{2} \sin^3\frac{\beta}{2} \\
+        e^{2i\alpha} \sin^4\frac{\beta}{2}
     ),
 \end{equation}
+where \(\theta'=\theta-2\gamma \).
+
+Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
+We see that the energy functional is minimised when the spin is minimised
+\(|\vb{F}| = 0\) but the singlet-duo amplitude is maximised
+\(|A_{20}|^2 = n/5\).
+Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
+or biaxial nematic (BN)
+\begin{equation}
+    \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0), \qquad
+    \zeta^\mathrm{BN} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
+\end{equation}
+In the absence of a magnetic field, these two states are degenerate.
+The general wave function for the UN state is
+\begin{equation}
+    \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\theta}\mqty(
+        e^{-2i\alpha} \sin^2\beta \\
+        -2e^{-i\alpha} \sin\beta \cos\beta \\
+        \sqrt{\frac{2}{3}}(3\cos^2\beta - 1) \\
+        2e^{i\alpha} \sin\beta \cos\beta \\
+        e^{2i\alpha} \sin^2\beta
+    ),
+\end{equation}
+and for the BN
+\begin{equation}
+    \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\theta} \mqty(
+        e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
+                            - i\cos\beta\sin 2\gamma\right] \\
+        e^{-i\alpha}\sin\beta(\cos\beta\cos 2\beta - i\sin 2\gamma) \\
+        \sqrt{\frac{3}{2}}\sin^2\beta \cos 2\gamma \\
+        -e^{i\alpha}\sin\beta(\cos\beta\cos 2\gamma + i\sin 2\gamma) \\
+        e^{2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
+                            + i\cos\beta\sin 2\gamma\right]
+    ).
+\end{equation}
+
+Now consider \(c_1, c_2 > 0\).
+The energy functional is minimised when both the spin magnitude and singlet-duo
+amplitude is minimised: \(|\vb{F}| = 0, |A_{20}|^2=0\).
+Such a state is referred to as the cyclic state and has the representative
+spinor
+\begin{equation}
+    \zeta^\mathrm{C-1} = \frac{1}{2}\mqty(1 \\ 0 \\ i\sqrt{2} \\ 0 \\ 1).
+    \label{eq: C-1-spinor}
+\end{equation}
+The general wave function is given as
+\begin{equation}
+    \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\theta} \mqty(
+        e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
+        + e^{-2i(\alpha-\gamma)}S^4
+        \\
+        2e^{-i(\alpha+2\gamma)}C^3S - \frac{\sqrt{3}}{2}ie^{-i\alpha}\sin 2\beta
+        - 2e^{-i(\alpha-2\gamma)}CS^3
+        \\
+        \sqrt{6}e^{-2i\gamma}C^2S^2 + i\frac{\sqrt{2}}{4}(1+3\cos 2\beta)
+        + \sqrt{6}e^{2i\gamma}C^2S^2
+        \\
+        2e^{i(\alpha-2\gamma)}CS^3 + \frac{\sqrt{3}}{2}ie^{i\alpha}\sin 2\beta
+        - 2e^{i(\alpha+2\gamma)}C^3S
+        \\
+        e^{2i(\alpha-\gamma)}S^4 + 2i\sqrt{3}e^{2i\alpha}C^2S^2
+        + e^{2i(\alpha+\gamma)}C^4
+    ).
+\end{equation}
+
+In addition to the three-component cyclic state, there is another two-component
+state that is useful for understanding the general cyclic state:
+\begin{equation}
+    \psi^\mathrm{C-2} = \sqrt{\frac{n}{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
+\end{equation}
+which is obtained from Eq.~\eqref{eq: C-1-spinor} via the spin rotation
+\begin{equation}
+    \psi^{C-2} = e^{-i\pi}e^{i\frac{\pi}{4}F_z}
+    \exp\left[-i\frac{F_x-F_y}{\sqrt{2}}
+    \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\psi^\mathrm{C-1}.
+\end{equation}
+
+Finally, for the case of \(c_1, c_2 < 0\), there is a competition between
+the ferromagnetic and nematic phases.
+For this case the energy functional is minimised by either having maximal spin
+density and \(|A_{20}|^2 = 0\) as in the ferromagnetic phase, or by having
+minimal spin density and \(|A_{20}|^2 = n/5\) as in the nematic phase.
+This leads to a phase boundary at \(c_2n=20c_1n\).
+The ground states of the spin-2 system in a parameter space of \((c_1, c_2)\)
+are summarised in Fig.~\ref{fig: spin-2-ground-states}.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (diagram) at (0, 0)
+        {\includegraphics[width=0.5\textwidth]
+        {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
+        \draw[->, thick, anchor=south west] (7.4, 2.86) -- (7.7, 2.86)
+        node[right] {$c_1n$};
+        \draw[->, thick, anchor=south west] (3.785, 5.57) -- (3.785, 5.87)
+        node[above] {$c_2n$};
+        \draw[-, thick, anchor=south west] (0, 2.86) -- (3.785, 2.86);
+        \node at (5.5, 4) {\textcolor{white}{Cyclic}};
+        \node at (2, 4) {\textcolor{white}{Ferromagnetic}};
+        \node at (5.2, 1.4) {\textcolor{white}{Nematic}};
+        \node[anchor=south east] at (3.75, 2.86) {\textcolor{white}{0}};
+        \node[anchor=south west, rotate=52] at (2.1, 0.5)
+        {\textcolor{white}{\(c_2n=20c_1n\)}};
+    \end{tikzpicture}
+    \caption{\label{fig: spin-2-ground-states}Ground state phase diagram for
+    spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
+    magnetic field.
+    White dashed lines indicate a first-order phase transition region between
+    the phases.}
+\end{figure}
 
 \subsection{Spherical harmonic representation}
+The mapping of the order parameter in the spin-2 case follows the same equation
+as in the spin-1 case, i.e., Eq.~\eqref{eq: spherical-harmonics}.
+For the spin-2 system, however, we have five \(f=2\) spherical harmonics given
+by
+\begin{align}
+    Y_2^0(\theta, \phi) &= \frac{1}{4}\sqrt{\frac{5}{\pi}}(3\cos^2\theta - 1),\\
+    Y_2^{\pm 1}(\theta, \phi) &= 
+    \mp \frac{1}{2}\sqrt{\frac{15}{2\pi}}e^{\pm i\phi}\sin\theta\cos\theta, \\
+    Y_2^{\pm 2}(\theta, \phi) &=
+    \frac{1}{4}\sqrt{\frac{15}{2\pi}}e^{\pm 2i\phi}\sin^2\theta.
+\end{align}
+The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
+are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/FM-2-spherical.pdf}
+        \caption{FM-2: \(\zeta={(1, 0, 0, 0, 0)}^T\)}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/FM-1-spherical.pdf}
+        \caption{FM-1: \(\zeta={(0, 1, 0, 0, 0)}^T\)}
+    \end{subfigure}\\
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/UN-spherical.pdf}
+        \caption{UN:\@ \(\zeta={(0, 0, 1, 0, 0)}^T\)}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/BN-spherical.pdf}
+        \caption{BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
+    \end{subfigure}\\
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/C1-spherical.pdf}
+        \caption{Cyclic-1:\@ \(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/C2-spherical.pdf}
+        \caption{Cyclic-2:\@ \(\zeta={(1, 0, 0, \sqrt{2}, 1)}^T/\sqrt{3}\)}
+    \end{subfigure}
+    \caption{\label{fig: spin-2-spherical-harmonics}Spherical harmonic
+    representations for different ground states in a spin-2 system.
+    (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and \(|F|=n\),
+    respectively. Arrows indicate the direction of magnetisation.
+    (c) and (d): the nematic ground states.
+    (e) and (f): the cyclic states. Arrows indicate an axis of three-fold
+    \((C_3)\) symmetry.}
+\end{figure}
 
 \subsection{Majorana representation}
 
