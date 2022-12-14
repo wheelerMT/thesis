@@ -55,7 +55,7 @@ In explicit matrix form, this becomes
     ).
 \end{equation}
 The general ferromagnetic wave function is constructed by
-\begin{equation}
+\begin{equation}\label{eq: FM-representative-spinor}
     \psi^\mathrm{FM} = 
     \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} = 
     \sqrt{n}e^{i(\theta - \gamma)}\mqty(
@@ -68,12 +68,11 @@ The general ferromagnetic wave function is constructed by
 For polar interactions (\(c_1 > 0\)), the energy is minimised by having the
 spin magnitude vanish \(|F|=0\).
 A representative polar spinor is
-\begin{equation}
+\begin{equation}\label{eq: EAP-spinor}
     \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
-    \label{eq: EAP-spinor}
 \end{equation}
 Similar to the FM case, a general polar wave function is given by
-\begin{equation}
+\begin{equation}\label{eq: polar-representative-spinor}
     \psi^\mathrm{P} = 
     \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} = 
     \sqrt{n}e^{i\theta}\mqty(
@@ -344,7 +343,7 @@ field is degenerate following the application of a global \(U(1)\) phase and an
 \(SO(3)\) spin rotation.
 In a spin-2 system, a general spin rotation is instead represented as a
 \(5\times 5\) matrix of the form
-\begin{multline}   
+\begin{multline}\label{eq: spin-2-rotation-matrix}
     U(\alpha, \beta, \gamma) \\
      = \mqty(
         e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S 
@@ -375,7 +374,7 @@ where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
 Following the same procedure as the spin-1 case and applying the above spin
 rotation with a global phase \(\theta \) and condensate density \(n\) yields the
 general FM-2 spinor
-\begin{equation}
+\begin{equation}\label{eq: FM-2-representative-spinor}
     \psi^\mathrm{FM} = \sqrt{n}e^{i\theta'}\mqty(
         e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
         2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
@@ -398,7 +397,7 @@ or biaxial nematic (BN), described by the spinors
 \end{equation}
 In the absence of a magnetic field, these two states are degenerate.
 The general wave function for the UN state is
-\begin{equation}
+\begin{equation}\label{eq: UN-representative-spinor}
     \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\theta}\mqty(
         e^{-2i\alpha} \sin^2\beta \\
         -2e^{-i\alpha} \sin\beta \cos\beta \\
@@ -408,7 +407,7 @@ The general wave function for the UN state is
     ),
 \end{equation}
 and for the BN
-\begin{equation}
+\begin{equation}\label{eq: BN-representative-spinor}
     \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\theta} \mqty(
         e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
                             - i\cos\beta\sin 2\gamma\right] \\
@@ -554,7 +553,7 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
     (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and \(|F|=n\),
     respectively, where the arrows indicate the direction of magnetisation.
     (c): the uniaxial nematic state where \(\hat{\vb{d}}\) is the nematic
-    director. THe order parameter remains unchanged about \(\pi \) rotations
+    director. The order parameter remains unchanged about \(\pi \) rotations
     about the \(C_2\) axis.
     (d): the biaxial nematic state. The order parameter is symmetric under
     \(\pi/2\) rotations about the \(C_4\) axis.
@@ -578,7 +577,7 @@ The BN phase, shown in Fig.~\ref{subfig: BN-spherical}, breaks the \(SO(2)\)
 symmetry due to the perpendicular nematic lobes, which have a \(\pi \) phase
 difference.
 The symmetry of the order parameter is preserved under \(\pi/4\) rotations
-abotu the \(C_4\) axis.
+about the \(C_4\) axis.
 In addition, the BN order parameter is invariant under \(\pi \) rotations about
 both the \(C_2\) and \(C_2'\) axes.
 Finally, the cyclic order parameter, shown in Figs.~\ref{subfig: C-1-spherical}
@@ -602,13 +601,103 @@ are shown in Fig.~\ref{fig: spin-2-Majorana}.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{example-image}
-    \caption{\label{fig: spin-2-Majorana}}
+    \caption{\label{fig: spin-2-Majorana}Majorana representation goes here.}
 \end{figure}
 
-\section{Vortices in spinor BECs}
+\section{Topological defects in spinor BECs}
+Unlike scalar BECs, which only support a \(U(1)\) vortex, spinor BECs have a
+rich diagram of vortices.
+Generally, the properties of vortices are determined by visualising how the
+order parameter changes around a closed loop about the vortex.
+In a scalar BEC, the single-value condition of the wave function is satisfied
+by having the density vanish along the core.
+In a spinor system, however, the condition can instead be satisfied by lifting
+the system out of the ground state within the vortex core.
+This leads to novel vortices such as fractional vortices in the
+cyclic~\cite{Semenoff2007,Huhtamaki2009} and nematic
+phases~\cite{Leonhardt2000, Seo2015}.
+In this section we introduce some families of vortices that can occur
+in both spin-1 and spin-2 systems.
 
 \subsection{Spin-1}
-\subsubsection{The spin-1 half-quantum vortex}
+We start with the polar phase of a spin-1 condensate, with the representative
+spinor defined as in Eq.~\eqref{eq: polar-representative-spinor}.
+Unlike the scalar BEC, a singly quantised vortex in the polar phase does not
+represent the lowest unit of circulation.
+Instead, the polar phase allows for a vortex where the global phase only winds
+by \(\pi \) about the vortex core.
+This \(\pi \) rotation is then coupled with a \(\pi \) spin rotation to the
+nematic director \(\hat{\vb{d}}\) to keep the order parameter single valued.
+
+If we consider a vortex that is oriented along the \(z\)-axis and the nematic
+director is oriented in the \((x, y)\)-plane, then such a vortex corresponds to
+the choice of \(\theta=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
+Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
+\begin{equation}
+    \psi^\mathrm{HQV} = \sqrt{\frac{n}{2}} \mqty(
+        -1 \\
+        0 \\
+        e^{i\varphi}
+    ),
+    \label{eq: polar-HQV}
+\end{equation}
+where \(\varphi \) is the azimuthal angle about the vortex core.
+Such a vortex is referred to as a half-quantum vortex (HQV) due to carrying
+half the typical circulation of a scalar \(U(1)\) vortex.
+Similar, but topologically distinct vortices arise in the A phase of
+superfluid \( ^3\)He~\cite{Salomaa1985, Salomaa1987}.
+
+In experiment, for the vortex constructed as in Eq.~\eqref{eq: polar-HQV}, the
+vortex consists of density depletion along the core in the \(\psi_{-1}\)
+component, where the phase winding is located.
+This core is then filled with atoms of the \(\psi_1 \) component, which lifts
+the core out of the polar phase and into the ferromagnetic phase.
+Fig.~\ref{subfig: polar-HQV} shows the spherical harmonic representation of the
+HQV.\@
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/polar-HQV.pdf}
+        \caption{\label{subfig: polar-HQV}}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/polar-HQV.pdf}
+        \caption{\label{subfig: coreless-vortex}}
+    \end{subfigure}
+    \caption{Spherical harmonic representation of the spin-1 polar HQV defined by
+    Eq.~\eqref{eq: polar-HQV}.
+    A complete circuit of the vortex results in a \(\pi \) spin rotation of
+    the nematic director coupled with a \(\pi \) change to the condensate phase.
+    }
+\end{figure}
+
+The ferromagnetic phase has the unique property that circulation is not
+quantised~\cite{Kawaguchi2012}.
+This leads to both singular and non-singular defects present in this phase.
+Here, we discuss a particular type of non-singular vortex called the coreless
+vortex~\cite{Martikainen2002, Leanhardt2003}
+
+From Eq.~\eqref{eq: FM-representative-spinor}, a coreless vortex is constructed
+using the choice of \(\theta-\gamma = \alpha= \varphi \) and having
+\(\beta = \beta(\rho)\) be a function of the radial coordinates, \(\rho \):
+\begin{equation}
+    \psi^\mathrm{coreless} = \sqrt{n}\mqty(
+        \cos^2\frac{\beta}{2} \\
+        \frac{e^{i\varphi}}{\sqrt{2}}\sin\beta \\
+        e^{2i\varphi}\sin^2\frac{\beta}{2}
+    ).
+\end{equation}
+The single-valued condition of the wave function is satisfied by choosing
+\(\beta \) such that \(\beta(r=0) = 0\) and \(\beta(r=r_0) = \pi \), where
+\(r_0\) is the radius of the system.
+This choice of \(\beta \) results in a vortex-free configuration at \(r=0\),
+which then terminates on a doubly-quantised vortex at \(r=r_0\).
+A spherical harmonic representation of the coreless vortex is shown in
+Fig.~\ref{subfig: coreless-vortex}.
+We see that the coreless vortex takes on a characteristic fountain-like texture
+of the condensate spin vector.
 
 \subsection{Spin-2}
 
