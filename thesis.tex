@@ -1,4 +1,4 @@
-\documentclass[a4paper, oneside]{memoir}
+\documentclass[a4paper, oneside, 11pt]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amsfonts, amsthm, amssymb, graphicx}
 \usepackage{geometry}  % For margins, read documentation for more options
@@ -23,6 +23,7 @@
 
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
+\OnehalfSpacing{}
 
 % Commands
 \newcommand{\twovec}[2]{\ensuremath{\begin{pmatrix}#1\\#2\end{pmatrix}}}
@@ -96,7 +97,7 @@ Acknowledgements go here.
 \appendix
 \include{tex/ch-appendices/appendix}
 
-\backmatter
+\backmatter{}
 \printbibliography{}
 
 \end{document}

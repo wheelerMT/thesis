@@ -28,12 +28,14 @@ section constructing interacting Hamiltonian}), given by
 \end{equation}
 Since the density term remains fixed for a given normalised ground state, the
 spin magnitude is the only relevant term when computing the ground state.
+
 For ferromagnetic interactions (\(c_1 < 0 \)), the energy is minimised when
 the spin magnitude is maximised, i.e., \(|\vb{F}| = n\).
 A representative spinor for a ferromagnetic ground state is then
 \begin{equation}
     \zeta^\mathrm{FM} = \mqty(1 \\ 0 \\ 0).
 \end{equation}
+
 In the absence of a magnetic field, the energy of a given spinor is degenerate
 with respect to a global \(U(1)\) phase \(e^{i\theta}\) and an \(SO(3)\) spin
 rotation, parameterized by three Euler angles \(\alpha, \beta \),
@@ -54,6 +56,7 @@ In explicit matrix form, this becomes
         e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
     ).
 \end{equation}
+
 The general ferromagnetic wave function is constructed by
 \begin{equation}\label{eq: FM-representative-spinor}
     \psi^\mathrm{FM} = 
@@ -81,6 +84,7 @@ Similar to the FM case, a general polar wave function is given by
         \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
         ).
 \end{equation}
+
 Thus, in the absence of a magnetic field, there are two ground states in a
 spin-1 system: polar and ferromagnetic, depending on the sign of the
 spin-dependent interaction term, \(c_1\).
@@ -180,18 +184,22 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
     \caption{\label{tab: spin-1-ground-states}Summary of the ground state
     phases in a spin-1 BEC with their respective spinors and magnetisation.}
 \end{table}
+
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
 and \(F_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(F_z=-1\) (state II),
 depending on the sign of the linear Zeeman shift \(p\).
+
 For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
 (state III) with
 \begin{equation}
     \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
-and \(F_z = p/(c_1n)\), which consists of 
+and \(F_z = p/(c_1n)\).
+
 A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
 \(F_z = 0\).
+
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 ferromagnetic interactions that has the form
 \begin{equation}
@@ -216,9 +224,11 @@ However, if we enforce that magnetisation be conserved, then the ground state
 phase diagram changes even further.
 
 
-\subsection{Spherical harmonic representation}
-To visualise the symmetries of ground states it is useful to view the spherical
-harmonic representation, given by
+\subsection{Graphical representation}
+To visualise the symmetries of ground states it is useful to define graphical
+representations.
+The first to consider is the spherical harmonic, which maps the order parameter
+onto spherical harmonics using the relation
 \begin{equation}
     \Psi(\hat{s}) = \sum_m\psi_m Y_f^m(\hat{s}),
     \label{eq: spherical-harmonics}
@@ -274,6 +284,7 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     The order parameter remains unchanged about \(\pi/2\) rotations about the
     \(C_2\) axis.}
 \end{figure}
+
 We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
 the \(z\)-axis.
 The polar state has two nematic lobes which have a \(\pi \) phase difference.
@@ -282,7 +293,6 @@ These lobes are aligned along an axis of symmetry given by the nematic director,
 There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
 rotations preserve the symmetry.
 
-\subsection{Majorana representation}
 An alternative description to visualising the symmetries of spinor BECs is
 through the use of the Majorana representation~\cite{Majorana1932,Bloch1945},
 where a spin-\(f\) system can be represented as \(2f\) points on the Bloch
@@ -295,7 +305,7 @@ The points on the sphere are numerically calculated as the \(2f\) roots
 \end{equation}
 where each root represents a stereographic mapping
 \(z_j=\tan(\theta/2)e^{i\phi}\) of the spherical coordinates \((\theta, \phi)\).
-For spin-1, the polynomial becomes
+For the spin-1 system, the polynomial is
 \begin{equation}
     P^{(1)}(z) = \zeta_1^*z^2+\sqrt{2}\zeta_0^*z+\zeta_{-1}^*.
 \end{equation}
@@ -314,7 +324,8 @@ Fig.~\ref{fig: spin-1-majorana}.
 \section{Spin-2}
 The interacting Hamiltonian for the spin-2 system is given by
 \begin{equation}
-    E_\mathrm{int} = \int c_0n^2 + c_1|\vb{F}|^2+c_2|A_{20}|^2.
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1|\vb{F}|^2+c_2|A_{20}|^2
+    d\vb{r}.
 \end{equation}
 As before, the density remains fixed for any normalised ground state and so
 different ground states arise from the competition between the spin-
@@ -474,17 +485,20 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
         \node[anchor=south west, inner sep=0] (diagram) at (0, 0)
         {\includegraphics[width=0.5\textwidth]
         {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
-        \draw[->, thick, anchor=south west] (7.4, 2.86) -- (7.7, 2.86)
-        node[right] {$c_1n$};
-        \draw[->, thick, anchor=south west] (3.785, 5.57) -- (3.785, 5.87)
-        node[above] {$c_2n$};
-        \draw[-, thick, anchor=south west] (0, 2.86) -- (3.785, 2.86);
-        \node at (5.5, 4) {\textcolor{white}{Cyclic}};
-        \node at (2, 4) {\textcolor{white}{Ferromagnetic}};
-        \node at (5.2, 1.4) {\textcolor{white}{Nematic}};
-        \node[anchor=south east] at (3.75, 2.86) {\textcolor{white}{0}};
-        \node[anchor=south west, rotate=52] at (2.1, 0.5)
-        {\textcolor{white}{\(c_2n=20c_1n\)}};
+        \begin{scope}[x={($0.1*(diagram.south east)$)},
+            y={($0.1*(diagram.north west)$)}]
+            \draw[->, thick, anchor=south west] (9.8, 5) -- (10.1, 5)
+            node[right] {$c_1n$};
+            \draw[->, thick, anchor=south west] (5, 9.7) -- (5, 10.1)
+            node[above] {$c_2n$};
+            \draw[-, thick, anchor=south west] (0.21, 5) -- (4.98, 5);
+            \node at (7.5, 7) {\textcolor{white}{Cyclic}};
+            \node at (2.5, 7) {\textcolor{white}{Ferromagnetic}};
+            \node at (7, 2) {\textcolor{white}{Nematic}};
+            \node[anchor=south east] at (5, 5) {\textcolor{white}{0}};
+            \node[anchor=south west, rotate=53] at (2.7, 0.7)
+            {\textcolor{white}{\(c_2n=20c_1n\)}};
+        \end{scope}
     \end{tikzpicture}
     \caption{\label{fig: spin-2-ground-states}Ground state phase diagram for
     spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
@@ -493,7 +507,7 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
     the phases.}
 \end{figure}
 
-\subsection{Spherical harmonic representation}
+\subsection{Graphical representation}
 The mapping of the order parameter onto spherical harmonics in the spin-2 case
 follows the same equation as in the spin-1 case, i.e.,
 Eq.~\eqref{eq: spherical-harmonics}.
@@ -565,7 +579,12 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
 
 It is clear from Figs~\ref{subfig: FM-2-spherical}
 and~\ref{subfig: FM-1-spherical} that the ferromagnetic order parameters have
-an \(SO(2)\) symmetry about the \(z\)-axis.
+the same \(SO(2)\) symmetry about the \(z\)-axis as the spin-1 case.
+However, the difference between the FM-2 phase of the spin-2 system and the FM
+phase of the spin-1 system is apparent in the phase: the FM-2 state winds by
+\(4\pi \) about the spherical harmonic as opposed to \(2\pi \)
+(see Fig.~\ref{subfig: spin-1-FM-spherical}).
+
 The UN phase as shown in Fig.~\ref{subfig: UN-spherical} differs slightly from
 the polar phase of spin-1 (see Fig.~\ref{subfig: spin-1-polar-spherical}) in
 that the nematic lobes have the same phase.
@@ -573,6 +592,7 @@ This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
 leaves the order parameter unchanged.
 In addition, like the ferromagnetic states, this order parameter also has an
 \(SO(2)\) symmetry about the \(z\)-axis.
+
 The BN phase, shown in Fig.~\ref{subfig: BN-spherical}, breaks the \(SO(2)\)
 symmetry due to the perpendicular nematic lobes, which have a \(\pi \) phase
 difference.
@@ -580,6 +600,7 @@ The symmetry of the order parameter is preserved under \(\pi/4\) rotations
 about the \(C_4\) axis.
 In addition, the BN order parameter is invariant under \(\pi \) rotations about
 both the \(C_2\) and \(C_2'\) axes.
+
 Finally, the cyclic order parameter, shown in Figs.~\ref{subfig: C-1-spherical}
 and~\ref{subfig: C-2-spherical}, have the symmetry of a tetrahedron.
 Each nematic lobe has a two-fold symmetry about the \(C_2\) axis.
@@ -590,8 +611,9 @@ whereas in Fig.~\ref{subfig: C-2-spherical}, it is aligned along the \(z\)-axis.
 Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
 parameter.
 
-\subsection{Majorana representation}
-In the spin-2 system, we compute the \(2f=4\) roots of the complex polynomial
+The mapping of the spin-2 system onto the Majorana representation follows a
+similar procedure to the spin-1 case.
+In this system, we compute the \(2f=4\) roots of the complex polynomial
 \begin{equation}
     P^{(2)}(z) = \zeta_2^*z^4 + 2\zeta_1^*z^3 + \sqrt{6}\zeta_0^*z^2
     + 2\zeta_{-1}^*z + \zeta_{-2}^*.
@@ -694,6 +716,7 @@ The single-valued condition of the wave function is satisfied by choosing
 \(r_0\) is the radius of the system.
 This choice of \(\beta \) results in a vortex-free configuration at \(r=0\),
 which then terminates on a doubly-quantised vortex at \(r=r_0\).
+
 A spherical harmonic representation of the coreless vortex is shown in
 Fig.~\ref{subfig: coreless-vortex}.
 We see that the coreless vortex takes on a characteristic fountain-like texture

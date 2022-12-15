@@ -7,3 +7,4 @@
 {"rule":"THREE_NN","sentence":"^\\QThe equilibrium relaxation time \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q describes the time it takes for the system to react to an external change of a parameter.\\E$"}
 {"rule":"A_INFINITIVE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q), such that the control parameter can be written as \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, where the distance to the critical point is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for a quench time \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"A_INFINITIVE","sentence":"^\\QWe assume the form of a linear quench \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is the quench time.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qsubsection subsection\\E$"}
