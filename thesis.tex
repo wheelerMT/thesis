@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[a4paper, oneside]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amsfonts, amsthm, amssymb, graphicx}
 \usepackage{geometry}  % For margins, read documentation for more options
@@ -13,7 +13,7 @@
     pdfpagemode=FullScreen,
     }
     
-\usepackage[Glenn]{fncychap}
+% \usepackage[Glenn]{fncychap}
 \usepackage{booktabs}
 \usepackage[style=numeric]{biblatex}
 \usepackage{caption}
@@ -21,10 +21,49 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
+
 % Commands
 \newcommand{\twovec}[2]{\ensuremath{\begin{pmatrix}#1\\#2\end{pmatrix}}}
 
 \addbibresource{bib/references.bib}
+
+% Define chapter style
+\usepackage{color, calc, soul, fourier}
+\definecolor{nicered}{rgb}{.647,.129,.149}
+\makeatletter
+\newlength\dlf@normtxtw
+\setlength\dlf@normtxtw{\textwidth}
+\def\myhelvetfont{\def\sfdefault{mdput}}
+\newsavebox{\feline@chapter}
+\newcommand\feline@chapter@marker[1][4cm]{%
+\sbox\feline@chapter{%
+\resizebox{!}{#1}{\fboxsep=1pt%
+\colorbox{nicered}{\color{white}\bfseries\sffamily\thechapter}%
+}}%
+\rotatebox{90}{%
+\resizebox{%
+\heightof{\usebox{\feline@chapter}}+\depthof{\usebox{\feline@chapter}}}%
+{!}{\scshape\so\@chapapp}}\quad%
+\raisebox{\depthof{\usebox{\feline@chapter}}}{\usebox{\feline@chapter}}%
+}
+\newcommand\feline@chm[1][4cm]{%
+\sbox\feline@chapter{\feline@chapter@marker[#1]}%
+\makebox[0pt][l]{% aka \rlap
+\makebox[1cm][r]{\usebox\feline@chapter}%
+}}
+\makechapterstyle{daleif1}{
+\renewcommand\chapnamefont{\normalfont\Large\scshape\raggedleft\so}
+\renewcommand\chaptitlefont{\normalfont\huge\bfseries\scshape\color{nicered}}
+\renewcommand\chapternamenum{}
+\renewcommand\printchaptername{}
+\renewcommand\printchapternum{\null\hfill\feline@chm[2.5cm]\par}
+\renewcommand\afterchapternum{\par\vskip\midchapskip}
+\renewcommand\printchaptertitle[1]{\chaptitlefont\raggedleft ##1\par}
+}
+\makeatother
+\chapterstyle{daleif1}
 
 \title{Structure \& Dynamics of Topological Defects in Spinor Bose-Einstein
 Condensates\\
@@ -36,6 +75,7 @@ Condensates\\
 
 \maketitle
 
+\frontmatter
 \chapter*{Abstract}
 Put the big abstract here.
 
@@ -44,6 +84,7 @@ Acknowledgements go here.
 
 \tableofcontents
 
+\mainmatter{}
 \include{tex/ch-introductions/Introduction}
 \include{tex/ch-elementsBEC/elementsBEC}
 \include{tex/ch-groundStateSymmetries/groundStateSymmetries}
@@ -55,6 +96,7 @@ Acknowledgements go here.
 \appendix
 \include{tex/ch-appendices/appendix}
 
+\backmatter
 \printbibliography{}
 
 \end{document}
