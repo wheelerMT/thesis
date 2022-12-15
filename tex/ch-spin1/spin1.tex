@@ -1,4 +1,4 @@
-\chapter{The Kibble-Zurek mechanism in a spin-1 BEC}
+\chapter{Generalised Kibble-Zurek scaling in a spin-1 BEC}
 
 
 \section{Introduction}
@@ -23,9 +23,9 @@ Zurek1996}.
 
 The standard KZ theory is very general, and can be applied to any continuous
 phase transition.
-The robustness of the theory has seen it successfully applied to both classical
-[REFS] and quantum~\cite{Dziarmaga2005, Damski2005, Lamacraft2007} phase
-transitions.
+The robustness of the theory has seen it successfully applied to both
+classical~\cite{Donadello2016,Beugnon2017} and
+quantum~\cite{Dziarmaga2005, Damski2005, Lamacraft2007} phase transitions.
 Whilst the theory has had great success in applications to continuous,
 second-order transitions, direct application to discontinuous transitions
 does not give an accurate description of observed scaling laws.
@@ -35,7 +35,7 @@ failed to predict the observed scaling.
 However, the KZM was generalised by considering the energy gap between the
 metastable state and its first corresponding excited state, which then gave an
 accurate prediction of the observed scaling laws.
-There is current interest in trying to generalize the KZM and applying it to
+There is current interest in trying to generalise the KZM and applying it to
 discontinuous transitions and deriving appropriate scaling
 laws~\cite{Divakaran2008, Suzuki2015}.
 
@@ -51,9 +51,8 @@ for a quantum discontinuous critical point (QDCP)~\cite{Suzuki2015}.
 The QDCP leads to a prediction of the scaling of the defect density that is
 modified from the typical KZ scenario.
 
-
 Spinor Bose-Einstein condensates (BECs) offer a highly controllable platform
-for studying nonequilibrium physics, ranging from topological
+for studying non-equilibrium physics, ranging from topological
 defects~\cite{Lovegrove2014, Borgh2016} to quantum
 quenches~\cite{Symes2017, Prufer2018, Schmied2019}.
 \textcolor{red}{More references/topics?}
@@ -64,7 +63,6 @@ For a ferromagnetic spin-1 BEC, there exists a first-order QPT between a
 three-component broken-axisymmetry (BA) phase and a ferromagnetic (FM) phase,
 making this system an ideal platform for investigating the KZM across
 discontinuous transitions.
-
 
 \section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
@@ -98,10 +96,10 @@ As we approach the critical point, the energy gap vanishes as
 \end{equation}
 
 
-The system is initially prepared in a high-symmetry phase \(  \epsilon > 0 \), but 
-breaks that symmetry as the critical point is crossed \(  \epsilon < 0 \).
-In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical and
-correlation length critical exponents, respectively.
+The system is initially prepared in a high-symmetry phase \(  \epsilon > 0 \),
+but breaks that symmetry as the critical point is crossed \(  \epsilon < 0 \).
+In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical
+and correlation length critical exponents, respectively.
 These exponents are determined by the universality class of the phase
 transition~\cite{Sachdev2011}, and different systems belonging to the same
 universality class share the same critical exponents. \par
@@ -161,6 +159,7 @@ representation).
     ground state, leading to frozen dynamics in the interval
     \( t \in [-\hat{t}, \hat{t}] \)}.\label{fig: adiabatic-impulse}
 \end{figure}
+
 Far from the critical point, the equilibrium relaxation time is small compared
 to the inverse transition rate \( |\epsilon/\dot{\epsilon}| \), meaning the system
 adiabatically follows the instantaneous ground state for \( \epsilon(t) \).
@@ -211,7 +210,7 @@ This DCP results in a discontinuity in the order parameter as the critical point
 is passed.
 Despite this, the transition can still be characterised by a diverging length
 scale, and hence, critical exponents can be derived.
-Suzuki \textit{et.\ al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
+Suzuki \textit{et al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
 the quantum case and established the quantum discontinuous critical point
 (QDCP).
 
@@ -278,7 +277,7 @@ The relevant order parameter for this transition is given by
 \begin{equation}
     m_\mathrm{BA} = \frac{p(p^2 - q^2 - 2qc_2n)}{8c_2nq},
     \qquad
-    m_{\mathrm{FM}_{\pm}} = \pm 1.
+    m_{\mathrm{FM}_{\pm}} = \pm 1,
 \end{equation}
 which is precisely the local magnetisation, \( F_z \), in both phases
 (\textcolor{red}{Link to the section discussing ground states}).
@@ -292,7 +291,7 @@ specified in Eqs.~\eqref{eq: continuous-energy-cond}
 and therefore is a QDCP\@.
 
 \subsection{Predicting the density of defects}
-Suzuki \textit{et.\ al.}~\cite{Suzuki2015} extended the prediction of the density
+Suzuki \textit{et al.}~\cite{Suzuki2015} extended the prediction of the density
 of defects obtained from the KZM and applied it to a general QDCP\@.
 The density of defects was shown to scale as
 \begin{equation}
@@ -328,7 +327,7 @@ broken-axisymmetry phase are~\cite{Uchino2010}:
     + 2{(c_2n)}^2(1 - \tilde{q}^2) \pm \Lambda_{\vb{k}}},
     \label{eq: pmone-mode-energy}
 \end{equation}
-where \( \epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M$, \( \tilde{q} = -q/(2c_2n) \)
+where \( \epsilon_{\vb{k}} = \hbar^2\vb{k}^2 / 2M \), \( \tilde{q} = -q/(2c_2n) \)
 and
 \begin{equation}
     \Lambda_{\vb{k}} = \sqrt{{[(c_0+3c_2)n\epsilon_{\vb{k}} 
@@ -366,7 +365,7 @@ Having identified the relevant mode of the transition, we now follow a procedure
 similar to Damski~\cite{Damski2007} and analytically determine the scaling
 behaviour of the system near the critical point.
 
-To begin, we start with a wavefunction close to the BA state
+To begin, we start with a wave function close to the BA state
 \begin{equation}
     \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q_0} + \delta\psi_{\pm 1}(t),
     \qquad
@@ -454,7 +453,7 @@ simulations.
 
 \textcolor{red}{This is without getting rid of the first derivative.
 If you get rid of the derivative you are left with Weber's equation. Which
-I think you can still show that \( a_y \) scales like \( \tau_Q^{-1/2} \)
+I think you can still show that \( a_y \) scales like \( \tau_Q^{-1/2} \),
 but it's a little more complicated.}
 
 \section{The KZM across a second-order phase transition}
@@ -509,11 +508,11 @@ Using the above equation and considering sufficiently slow quenches
 \end{equation}
 \textcolor{red}{I've tried deriving this and I am getting stuck\ldots}
 
-We now analyze the resulting dynamics when linearly decreasing \( q \) according to
+We now analyse the resulting dynamics when linearly decreasing \( q \) according to
 Eq.~\eqref{eq: time-dep-Q-damski}.
 We start from the polar phase (\( t < 0 \)) and end the simulation precisely at
 \( Q = 0 \) (\( t=2\tau_Q \)) in the BA phase.
-We start from an initial polar wavefunction that is slightly perturbed:
+We start from an initial polar wave function that is slightly perturbed:
 \begin{equation}
     \psi = \left(\delta\psi_1, \frac{1}{\sqrt{L}} + \delta\psi_0,
     \delta\psi_{-1}\right),
@@ -566,7 +565,7 @@ where it is \(M_\perp = (1 - Q^2/4)/L\).
 \end{figure}
 Fig.~\ref{subfig: magnetisation-vs-Q} shows a typical evolution of the
 transverse magnetisation for \(\tau_Q = 11\).
-One sees that after the critical pont is crossed at \( Q = 2 \), the transverse
+One sees that after the critical point is crossed at \( Q = 2 \), the transverse
 magnetisation grows in a non-trivial fashion.
 This growth starts precisely after the system exits the freeze-out stage, which
 occurs at \(t=\hat{t}\).
@@ -595,14 +594,14 @@ We aim to extend this research and present results for
 the first-order transition between the broken-axisymmetry and
 ferromagnetic phases.
 
-We start from the broken-axisymmetry (BA) wavefunction with \( p=0 \)
+We start from the broken-axisymmetry (BA) wave function with \( p=0 \)
 \begin{equation}
     \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
     \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
     \label{eq: BA-initial-wavefunction}
 \end{equation}
 where \(Q(t)=q(t)/|c_2|n\).
-The BA wavefunction is the ground state for \(c_2 < 0\) and \(0 < Q < 2\).
+The BA wave function is the ground state for \(c_2 < 0\) and \(0 < Q < 2\).
 There exists a critical point at \( Q = 0 \) where the ground state changes from
 the BA phase to the ferromagnetic phase.
 We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
@@ -693,7 +692,7 @@ taking place which could affect the total number of domains present.
     (red dotted line).\label{fig: FM-domains-scaling}}
 \end{figure}
 In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
-as a function of the quench time with 50 ensemble runs for each simulation.
+as a function of the quench time with fifty ensemble runs for each simulation.
 We see that there is not a uniform scaling throughout all quench times tested.
 Faster quenches indicate a steeper power-law scaling of the number of domains
 that approaches \(N_d\sim\tau_Q^{-1/3}\).

@@ -10,3 +10,12 @@ Broken-axisymmetry
 Eqs
 BN
 coreless
+Gross-Pitaevskii
+Kibble-Zurek
+Zurek
+Berker
+Refs
+Bogoliubov
+Uchino
+Damski
+GPEs
