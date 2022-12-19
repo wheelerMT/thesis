@@ -462,13 +462,14 @@ The general wave function is given as
 In addition to the three-component cyclic state, there is also a two-component
 cyclic state that is useful for understanding the general cyclic state:
 \begin{equation}
-    \psi^\mathrm{C-2} = \sqrt{\frac{n}{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
+    \zeta^\mathrm{C-2} = \frac{1}{\sqrt{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
+    \label{eq: C-2-spinor}
 \end{equation}
 which is obtained from Eq.~\eqref{eq: C-1-spinor} via the spin rotation
 \begin{equation}
-    \psi^{C-2} = e^{-i\pi}e^{i\frac{\pi}{4}F_z}
+    \zeta^{C-2} = e^{-i\pi}e^{i\frac{\pi}{4}F_z}
     \exp\left[-i\frac{F_x-F_y}{\sqrt{2}}
-    \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\psi^\mathrm{C-1}.
+    \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^\mathrm{C-1}.
 \end{equation}
 
 Finally, for the case of \(c_1, c_2 < 0\), there is a competition between
@@ -621,7 +622,7 @@ The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-Majorana}.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{example-image}
+    \includegraphics[width=0.5\textwidth]{example-image}
     \caption{\label{fig: spin-2-Majorana}Majorana representation goes here.}
 \end{figure}
 
@@ -687,7 +688,7 @@ HQV.\@
         {gfx/ch-groundStateSymmetries/coreless.pdf}
         \caption{\label{subfig: coreless-vortex}}
     \end{subfigure}
-    \caption{Spherical harmonic representation of vortices in a spin-1 BEC.
+    \caption{Spherical harmonic representation of vortices in a spin-1 BEC.\@
     (a): Spin-1 polar HQV defined by Eq.~\eqref{eq: polar-HQV}.
     A complete circuit of the vortex results in a \(\pi \) spin rotation of
     the nematic director coupled with a \(\pi \) change to the condensate phase.
@@ -720,13 +721,113 @@ This choice of \(\beta \) results in a vortex-free configuration at \(r=0\),
 which then terminates on a doubly-quantised vortex at \(r=r_0\).
 
 A spherical harmonic representation of the coreless vortex is shown in
-Fig.~\ref{subfig: coreless-vortex}.
-We see that the coreless vortex takes on a characteristic fountain-like texture
-of the condensate spin vector.
+Fig.~\ref{subfig: coreless-vortex}, where the characteristic fountain-like
+spin texture is apparent.
 
 \subsection{Spin-2}
+Spin-2 BECs offer an even richer diagram of topological defects than their
+spin-1 counterparts.
+We start with the UN phase, as given by
+Eq.~\eqref{eq: UN-representative-spinor}.
+Unlike the spin-1 polar phase, the UN phase does not support fractional vortices
+with mass circulation.
+This is apparent from the spherical harmonic representation given in
+Fig.~\ref{subfig: UN-spherical}, where the \(\mathbb{Z}_2\) symmetry about the
+\(C_2\) axis is not coupled to the condensate phase, \(\theta \).
+This phase instead accommodates a spin vortex, i.e., a vortex which carries only
+spin circulation.
+Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
+the choice \(\theta=0, \alpha=-\varphi/2, \beta=\pi/2\):
+\begin{equation}
+    \psi^\mathrm{SV} = \frac{\sqrt{6n}}{4}\mqty(
+        e^{i\varphi} \\
+        0 \\
+        -\sqrt{\frac{2}{3}} \\
+        0 \\ e^{-i\varphi}
+    ).
+\end{equation}
+The spherical harmonic representation of this vortex state is shown in
+Fig.~\ref{subfig: UN-spin-vortex}.
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/UN-spin-vortex.pdf}
+        \caption{\label{subfig: UN-spin-vortex}}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/BN-HQV.pdf}
+        \caption{\label{subfig: BN-HQV}}
+    \end{subfigure}
+    \caption{Spherical harmonic representation of select vortices in the spin-2
+    nematic phases.
+    (a): A spin vortex in the UN phase. A complete circuit of the vortex
+    results in a \(\pi \) winding of the condensate spin vector, with no change
+    to the condensate phase.
+    (b): One type of half-quantum vortex in the BN phase.
+    The condensate phase winds by \(\pi \) about the vortex core which is
+    coupled to a \(\pi / 2\) spin rotation.}
+\end{figure}
+As the core of the vortex is traversed, the spin vector winds by \(\pi \) about
+the axis perpendicular to the nematic director, \(\hat{\vb{d}}\).
 
-\subsubsection{The ferromagnetic phase}
-\subsubsection{The cyclic phase}
-\subsubsection{The uniaxial-nematic phase}
-\subsubsection{The biaxial-nematic phase}
+The BN phase is the simplest order parameter that supports non-abelian defects,
+i.e., defects whose topological charges do not commute~\cite{Mermin1979}.
+One of the simplest defects in this phase is the half-quantum vortex.
+However, this is topologically distinct from that of the spin-1 polar case.
+Such a vortex can be constructed from Eq.~\eqref{eq: BN-representative-spinor}
+using the choice \(\theta=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
+\begin{equation}
+    \psi^\mathrm{1/2-1/4} = \sqrt{\frac{n}{2}}\mqty(
+        1 \\
+        0 \\
+        0 \\
+        0 \\
+        e^{i\varphi}
+    ).
+\end{equation}
+The spherical harmonic representation of this vortex is shown in
+Fig.~\ref{subfig: BN-HQV}.
+It is the clear the condensate phase winds by \(\pi \) about the vortex core,
+which is also coupled to a \(\pi / 2\) spin rotation.
+This configuration is sometimes denoted a \(1/2-1/4\) vortex, where the \(1/2\)
+and \(1/4\) denote the phase and spin rotation angles, respectively.
+
+This is not the only type of HQV that the BN phase supports.
+For example, there exists a pure spin vortex (\(0 - 1/2\) vortex) and a HQV
+that is also coupled to a \(\pi \) spin rotation
+(\(1/2-1/2\) vortex)~\cite{Kawaguchi2012}.
+
+Finally, the cyclic phase also allows for fractional vortices.
+However, the circulation in this phase is quantised in units of \(\kappa / 3\),
+leading to \(1/3\) and \(2/3\) vortices.
+These vortices are constructed by applying a condensate phase and general spin
+rotation to Eq.~\eqref{eq: C-2-spinor}.
+A \(1/3\) vortex is constructed from the choice
+\(\theta = -\alpha = \varphi/3 \) with \(\gamma = 0\).
+Similarly, a \(2/3\) vortex is constructed by choosing \(\theta = 2\varphi/3\),
+\(\alpha = \varphi/3\) and \(\gamma=0\).
+The result is a phase winding in the \(\psi_2\) and \(\psi_{-1}\) components
+for the \(1/3\) and \(2/3\) vortices, respectively:
+\begin{equation}
+    \psi^{1/3} = \sqrt{\frac{n}{3}}\mqty(e^{i\varphi} \\ 0 \\ 0 \\ \sqrt{2}\\0),
+    \qquad
+    \psi^{2/3} = \sqrt{\frac{n}{3}}\mqty(1 \\ 0 \\ 0 \\\sqrt{2}e^{i\varphi}\\0).
+\end{equation}
+Spherical harmonic representations are plotted in
+Fig.~\ref{fig: cyclic-fractional-spherical}.
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/one-third-vortex.pdf}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/two-third-vortex.pdf}
+        \caption{}
+    \end{subfigure}
+    \caption{\label{fig: cyclic-fractional-spherical}}
+\end{figure}
