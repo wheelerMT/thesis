@@ -3,15 +3,58 @@
 In this chapter we provide the theoretical background to understand the 
 dynamics of ultracold atomic gases.
 
-
 \section{Single-particle Hamiltonian}
+Spinor systems comprise particles with total spin \(f\).
+This implies there are \(2f + 1\) possible spin states along a given spin
+quantisation axis.
+Such a state is denoted \(\ket{f, m} \), where
+\(m \in \{-f, -f+1, \ldots, 0, \ldots, f - 1, f\} \) denotes the magnetic
+sublevel for total spin \( f\).
 
-\section{Interacting Hamiltonian}
+A general spin-\(f\) state is described by the (\(2f+1\))-component wave
+function \(\psi \), defined as \(\ket{\psi} = \sum_m\psi_m\ket{f, m}\).
+In the spin-1 case, we have \(\psi = {(\psi_1, \psi_0, \psi_{-1})}^T\), and for
+the spin-2 case \(\psi = {(\psi_2, \psi_1, \psi_0, \psi_{-1}, \psi_{-2})}^T\).
 
-\subsection{Scalar BEC interactions}
+We start by first introducing the single-particle Hamiltonian for spinor BECs.
+We assume a system of identical bosons of mass \(M\) and spin \(f\).
+When a magnetic field is applied to a spinor system, the field causes energy
+shifts in spin components.
+When this field is aligned along the spin quantisation axis, linear, \(p\), and
+quadratic, \(q\), Zeeman shifts arise.
+In such a case, the single-particle (non-interacting) Hamiltonian is given
+by~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: single-particle-Hamiltonian}
+    H_0 = \int d\vb{r}\sum_{m,m'=-f}^{f} \psi_m^\dagger \left[
+        -\frac{\hbar^2}{2M}\nabla^2 + V(\vb{r}) - pm + qm^2\right]\psi_{m'},
+\end{equation}
+where \(V(\vb{r})\) is a trapping potential.
+Throughout most of this thesis we assume that the magnetic field applied is
+uniform, such that the Zeeman shifts are constant.
+In Chapter~\ref{chap: spin-1}, however, we introduce a time-dependent field
+such that the quadratic Zeeman shift has a time-dependence.
+Despite the time-dependence, the quadratic Zeeman shift is still spatially
+uniform.
 
-\subsection{The two-component interaction Hamiltonian}
+It becomes apparent from Eq.~\eqref{eq: single-particle-Hamiltonian} that the
+quadratic shift uniformly alters the energetic separation between the
+\(\psi_{\pm 1}\) and \(\psi_0\) components.
+Conversely, the linear shift maintains the separation.
 
-\subsection{The spin-1 interaction Hamiltonian}
+\section{Scalar BEC interactions}
+The many-body nature of BEC systems leads to interactions that arise between
+particles.
+We begin by first discussing the interactions arising in the simplest BEC: the
+scalar BEC.
+We consider a gas of identical bosons, described by the complex order parameter,
+\(\psi \).
+Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) is given by
+\begin{equation}
+    E_\mathrm{int} = .
+\end{equation}
 
-\subsection{The spin-2 interaction Hamiltonian}
+\section{Spinor BEC interaction Hamiltonian}
+
+\subsection{Spin-1 interaction Hamiltonian}
+
+\subsection{Spin-2 interaction Hamiltonian}
