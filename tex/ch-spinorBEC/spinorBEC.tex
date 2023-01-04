@@ -1,7 +1,13 @@
 \chapter{Spinor Bose-Einstein condensates}
 
-In this chapter we provide the theoretical background to understand the 
-dynamics of ultracold atomic gases.
+In this chapter we provide the theoretical background necessary to understand
+the dynamics of ultracold atomic gases.
+In particular, we introduce the Hamiltonians of both scalar and spinor BEC
+systems.
+We start with the simplest case of the scalar BEC, which has one non-linear
+interaction term.
+Then, by introducing the spin degrees of freedom, we introduce the extra
+interactions present in spinor BECs.
 
 \section{Single-particle Hamiltonian}
 Spinor systems comprise particles with total spin \(f\).
@@ -44,14 +50,34 @@ Conversely, the linear shift maintains the separation.
 \section{Scalar BEC interactions}
 The many-body nature of BEC systems leads to interactions that arise between
 particles.
-We begin by first discussing the interactions arising in the simplest BEC: the
-scalar BEC.
+We begin by first discussing the interactions arising in the simplest BEC\@: the
+scalar BEC\@.
 We consider a gas of identical bosons, described by the complex order parameter,
 \(\psi \).
-Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) is given by
-\begin{equation}
-    E_\mathrm{int} = .
+Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) are modelled by
+\begin{equation}\label{eq: scalar-interactions}
+    E_\mathrm{int} = \frac{1}{2}\int \int d\vb{r}_1d\vb{r}_2\,
+    \psi^\dagger(\vb{r}_1)\psi^\dagger(\vb{r}_2)
+    V_\mathrm{scat}(\vb{r}_1-\vb{r}_2)\psi(\vb{r}_1)\psi(\vb{r}_2),
 \end{equation}
+where \(V_\mathrm{scat}\) describes the two-body interaction potential.
+
+To describe the low-energy dynamics of the dilute Bose gas, with most atoms
+occupying the ground state, we are free to neglect particles with high momenta
+and instead replace the two-body potential with an effective contact interaction
+between particles:
+\begin{equation}
+    V_\mathrm{scat}(\vb{r}_1 - \vb{r}_2) = g_s\delta(\vb{r}_1 - \vb{r}_2),
+\end{equation}
+where \(g_s=4\pi\hbar^2a_s/M\) is the interaction strength for \(s\)-wave
+scattering length \(a_s\) and atomic mass \(M\).
+Substituting the above contact potential into
+Eq.~\eqref{eq: scalar-interactions} results in the scalar interaction
+\begin{equation}
+    E_\mathrm{scalar} = \frac{g_s}{2}\int d\vb{r} n^2,
+\end{equation}
+where we have used the relation \(n = \psi^\dagger \psi \) for condensate
+density \(n\).
 
 \section{Spinor BEC interaction Hamiltonian}
 
