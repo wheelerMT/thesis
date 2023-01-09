@@ -412,7 +412,7 @@ velocities for the incompressible (i), compressible (c), and quantum pressure
     \end{aligned}
 \end{equation}
 Here, the incompressible and compressible parts of the velocity field are
-extracted from a Helmholtz decomposition [REF] which splits the velocity into a 
+extracted from a Helmholtz decomposition which splits the velocity into a 
 divergence-free incompressible part, \(\nabla \cdot \vb{v}^i = 0\), and an 
 irrotational, compressible part, \(\nabla \times \vb{v}^c=\vb{0}\).
 Hence, in Fourier space, the kinetic energy spectrum can be calculated by
@@ -448,17 +448,18 @@ Finally, the total occupation number of the system is given as
     contributions for \(\gamma=0.6\).
     The total occupation number (black diamonds) is obtained from the sum of
     each contribution.
-    The total occupation number has two distinct scalings: a \(k^{-2}\) 
-    (dotted line) in the ultra-violet region, and a \(k^{-4}\) scaling
+    The total occupation number has two distinct scaling: a \(k^{-2}\) 
+    (dotted line) in the ultraviolet region, and a \(k^{-4}\) scaling
     (dashed line) in the infrared.\label{fig:kinetic-energy-spectra}}
 \end{figure}
 We plot the occupation number for each energy contribution, as well as total
 occupation number, at a late time for \(\gamma=0.6\) in
 Fig.~\ref{fig:kinetic-energy-spectra}.
-The total occupation number exhibits two different scalings: A \(k^{-4}\) in the
+The total occupation number exhibits two different scaling: A \(k^{-4}\) in the
 ultraviolet (UV), and \(k^{-2}\) in the infrared (IR). 
-The same scalings have been found in some 2D, turbulent, scalar BEC systems
-containing scalar vortices [REFS].
+The same scaling have been found in some 2D, turbulent, scalar BEC systems
+containing scalar vortices~\cite{Nowak2012}.
+
 The decomposition of the kinetic energy into its respective contributions
 allows us to see that the incompressible contribution dominates the spectrum
 in the IR region, and is therefore responsible for the transition to the
@@ -468,22 +469,27 @@ the system. \textcolor{red}{Elaborate? Why exactly?}
 Similarly, we see it is both the compressible and quantum pressure contributions
 that dominate in the UV region, facilitating the transition to the \(k^{-2}\)
 scaling.
-This \(k^{-2}\) scaling is characteristic of weak-wave turbulence [REFS].
-
+This \(k^{-2}\) scaling is characteristic of weak-wave
+turbulence~\cite{Zakharov1992}.
+\textcolor{red}{How in-depth do I have to go into the theory of turbulence
+here?}
 This scaling of the kinetic energy was observed throughout all values of
-\(\gamma \) tested, indicating that it is quantitatively insensitive to variations
-in \(\gamma \).
+\(\gamma \) tested, indicating that it is quantitatively insensitive to
+variations in \(\gamma \).
+
 The investigation into the kinetic energy spectrum reveals that \(\gamma \) has
-negligible effects on the spatial aspects of the relaxation dynamics, and shows
-quantitatively similar behaviour to some turbulent scalar BEC systems
-containing scalar vortices.
+negligible effects on the spatial aspects of the relaxation dynamics.
+In addition, it shows that, despite containing a different type of vortex, the
+dynamics follow quantitatively similar behaviour to some turbulent scalar BEC
+systems containing scalar vortices.
 
 \subsection{Temporal aspects of decay}
 To measure the temporal aspect of the relaxation dynamics, we wish to
 construct correlation functions.
 Since our pseudo-spinor order parameter is composed of a mass part and a spin
-part (c.f. Eq.~\eqref{eq: Theta-Phi}), it is natural to then construct both a
-mass and spin correlation function.\par
+part [c.f. Eq.~\eqref{eq: Theta-Phi}], it is natural to then construct both a
+mass and spin correlation function.
+
 To begin, we need to identify appropriate quantities that serve as order
 parameters for our system.
 By taking motivation from the EPP phase in spinor BECs, one such quantity is
@@ -492,12 +498,11 @@ the planar tensor~\cite{Symes2017}
     \mathsf{Q} = \mqty(Q_{xx} & Q_{xy} \\ Q_{xy} & -Q_{xx}),
 \end{equation}
 where \(Q_{xx} = \mathrm{Re}(\psi_1^*\psi_2)\) and
-\(Q_{xx} = \mathrm{Im}(\psi_1^*\psi_2)\), showing this quantity depends on the
-relative phase coherence of the two components.
+\(Q_{xx} = \mathrm{Im}(\psi_1^*\psi_2)\).
 The eigenvalues of \(\mathsf{Q}\) are given by
-\{ \(-\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\) \}, where
+\( \left\{-\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\right\} \), where
 \(\alpha=-2\psi_1\psi_2\).
-If we consider the general wavefunction defined in
+If we consider the general wave function defined in
 Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, then evaluating \(\mathsf{Q}\) and
 \(\alpha \) gives
 \begin{equation}
@@ -551,10 +556,12 @@ We perform the same averaging for the mass correlation function.
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{example-image-a}
+        \includegraphics[height=0.8\textwidth,width=0.8\textwidth]{
+            gfx/ch-twoCompDynamics/scalar_vortex.pdf}
         \caption{\label{fig:scalar-vortex-lengths}}
     \end{subfigure}
-    \caption{}
+    \caption{\textcolor{red}{Plot size needs fixing. Will split these into
+    separate plots I think.}}
 \end{figure}
 Fig.~\ref{fig:correlation-functions} shows both correlation functions for
 \(\gamma=0.6\) for various times through the simulation.
