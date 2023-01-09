@@ -8,3 +8,4 @@
 {"rule":"A_INFINITIVE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q), such that the control parameter can be written as \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, where the distance to the critical point is \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q for a quench time \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"A_INFINITIVE","sentence":"^\\QWe assume the form of a linear quench \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q where \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is the quench time.\\E$"}
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qsubsection subsection\\E$"}
+{"rule":"FILL_OF_WITH","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q correspond to atoms in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q component that have filled the core of an HQV in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q component.\\E$"}
