@@ -1,6 +1,5 @@
 \chapter{Relaxation dynamics of half-quantum vortices}
 
-\section{Introduction}
 Since the realization of superfluidity, quantum turbulence (QT) has been studied
 in systems ranging from superfluid liquid
 Helium~\cite{Barenghi2014, Walmsley2014} to quasi-particle
@@ -234,7 +233,7 @@ form
         i\frac{\partial \psi_2}{\partial t} &= (-\nabla^2 + g|\psi_2|^2
         + \gamma|\psi_1|^2)\psi_2.
     \end{aligned}
-    \label{eq:dimensionless-two-comp-GPEs}
+    \label{eq: dimensionless-two-comp-GPEs}
 \end{equation}
 where we have assumed each component has the same atomic mass and interspecies
 interaction strength.
@@ -272,7 +271,7 @@ deformations of vortex cores such as the splitting of singly quantised vortices
 into fractional vortices~\cite{Seo2015}.
 
 \subsection{Numerical setup}\label{sec:numerical-setup}
-We solve Eq.~\eqref{eq:dimensionless-two-comp-GPEs} on a periodic domain with 
+We solve Eq.~\eqref{eq: dimensionless-two-comp-GPEs} on a periodic domain with 
 \(N_s^2=1024^2\) grid points which has dimensionless area \(L^2=N_s^2\) with
 side length \(L=N_s\).
 We take \(N=3.2\times10^9\) atoms per component and fix dimensionless
@@ -298,7 +297,7 @@ component phase about each vortex position using the method described
 in~\cite{Billam2014}.
 
 We imprint the vortices using a short imaginary time propagation of
-Eq.~\eqref{eq:dimensionless-two-comp-GPEs} whilst keeping the phase profile
+Eq.~\eqref{eq: dimensionless-two-comp-GPEs} whilst keeping the phase profile
 fixed to not alter the positions of the vortices.
 This results in an initially turbulent system of HQVs.
 The HQV cores correspond to a density depletion in one component at the position
@@ -319,7 +318,7 @@ Previous work has shown that clustering of vortices can lead to anomalously
 slow coarsening dynamics~\cite{Karl2017} and thus constructing the initial
 state this way ensures that there is no clustering of like-signed vortices.
 From this initial state, the system evolves according to
-Eq.~\eqref{eq:dimensionless-two-comp-GPEs}.
+Eq.~\eqref{eq: dimensionless-two-comp-GPEs}.
 Two HQVs in the same component with opposite winding can annihilate, leading to
 a decay of the total vortex number within the system.
 
@@ -580,6 +579,7 @@ exhibit dynamical scaling, which implies the form of the functions remains
 self-similar at different times throughout the simulation.
 This means the function collapses to a universal, time-independent function
 when scaled by the correlation length: \(H_\delta(r) = G(r/L_\delta(t), t)\).
+
 The insets of Fig.~\ref{fig:correlation-functions} show the scaling of the
 correlation functions when scaled by the respective correlation length.
 This confirms that the correlation functions within our system do exhibit
@@ -593,7 +593,7 @@ However, the early-time dynamics are remarkably different for the various
 \(\gamma \).
 As \(\gamma \) increases, there is a faster growth of the correlation lengths at
 early times, which signifies the correlation length being \(\gamma \)-dependent.
-\par
+
 We investigate this behaviour by considering the total vortex number of
 the system as a function of time.
 We can then extract the mean distance between the vortices as
@@ -609,6 +609,7 @@ Secondly, after a much longer period of evolution, a \(\beta=1/2\) scaling
 emerges.
 This second scaling can be delayed if the initial vortex distribution is
 highly clustered~\cite{Karl2017}.
+
 Fig.~\ref{fig:scalar-vortex-lengths} is a reproduction of both the early- and
 late-time scaling of the mean vortex distance, \(\ell_d\), for a scalar system
 using the parameters of~\cite{Karl2017}.
@@ -617,11 +618,11 @@ analogous to our two-component system (see Sec.~\ref{sec:numerical-setup}).
 Secondly, we considered a random distribution of vortices; one with noise
 added to the energy spectrum, and one without.
 We see that at early and intermediate times, there is a clear \(t^{1/5}\)
-scaling in all of the initial states tested.
+scaling in all the initial states tested.
 Furthermore, at late times we recover the \(t^{1/2}\) scaling for all initial
 states.
 This indicates the scaling is robust and insensitive to the initial conditions.
-\par
+
 Motivated by this previous work in scalar BECs, we conduct a similar analysis
 on our two-component system containing HQVs, and determine how \(\gamma \)
 affects the vortex decay rate.
@@ -646,8 +647,9 @@ different scaling regimes emerge at early times
 (\(2.5\times10^2\xi_d^2 \lesssim t/\tau \lesssim 2.5\times10^3\xi_d^2\)) with
 \(N_\mathrm{vort} \sim t^{-1}\) for \(\gamma=0.7\) and
 \(N_\mathrm{vort} \sim t^{-3/2}\) for \(\gamma=0.9\).
+
 After the initial differing early-time dynamics, the systems then tend to a
-universal \(t^{-2/5}\) scaling, which corresponds to \(\ell_d\sim t^{1/5}$
+universal \(t^{-2/5}\) scaling, which corresponds to \(\ell_d\sim t^{1/5}\)
 similar to the scalar BEC simulation shown.
 These results show a better fit to the theoretical \(t^{1/5}\) scaling than 
 indicated by the correlation lengths shown in
@@ -655,7 +657,7 @@ Fig.~\ref{fig:correlation-lengths}.
 This further suggests that \(L_{\Phi,\Theta}\) differs slightly from \(\ell_d\),
 even though the growth of the correlation lengths is driven by vortex
 annihilation.
-Fig.~\ref{fig:vortex-number} only extends up to \(t/\tau=5\times 10^4\xi_d^2$,
+Fig.~\ref{fig:vortex-number} only extends up to \(t/\tau=5\times 10^4\xi_d^2\),
 and we expect to see a universal transition to
 \(N_\mathrm{vort}\sim t^{-1}\) (\(\ell_d\sim t^{1/2}\)) at much later times for
 sufficiently small \(\gamma \).
@@ -702,16 +704,36 @@ The decrease of the exponent in our simulations signals an additional vortex
 interaction mechanism not present in scalar BEC systems.
 
 \subsection{HQV dipole dynamics}
-Numerous studies have been conducted to try and understand the inter-vortex
+Numerous studies have been conducted to try to understand the inter-vortex
 forces between HQVs in two-component systems~\cite{Eto2011, Kasamatsu2016}.
-In particular, Kasamatsu \textit{et.\ al.}~\cite{Kasamatsu2016} tried to derive a
+In particular, Kasamatsu \textit{et al.}~\cite{Kasamatsu2016} tried to derive a
 point vortex model to explain the dynamics shown in
-Fig.~\ref{fig:exponent-vs-gamma} but found that the model failed to accurately
-predict in vortex dynamics.
-We can discern more about the dynamics of these HQVs by considering dipole
-motion.
+Fig.~\ref{fig:exponent-vs-gamma}, but found that the model failed to accurately
+predict the resulting vortex dynamics.
 
-
+To discern more about the dynamics of these HQVs, we perform analysis similar to
+Ref.~\cite{Kasamatsu2016} and consider the motion of a HQV dipole.
 As a simple test case, I consider two HQVs of opposite winding within the same
 component.
-The vortices are placed in a uniform system
+The vortices are placed in a uniform system, with an initial separation of
+\(3\xi_d\), then evolved using Eq.~\eqref{eq: dimensionless-two-comp-GPEs}.
+We perform multiple simulations, each time varying \(\gamma\), and recording the
+motion of the dipole.
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=10cm,height=10cm,
+            xmin=-3,xmax=3,ymin=0,ymax=10,
+            xlabel={\(x/a_s\)},
+            ylabel={\(y/a_s\)},
+            ]
+          \addplot[blue,mark=circle,samples=100, domain=-1.0:1.0] {-x^2 + 5};
+          \addplot[red,mark=circle,samples=100, domain=-1.0:1.0] {-4*x^2 + 4};
+          \end{axis}
+    \end{tikzpicture}
+\end{figure}
+Results of the dipole motion are plotted in
+% Fig.~\ref{fig: two-comp-dipole-motion}.
+

@@ -9,7 +9,39 @@ interaction term.
 Then, by introducing the spin degrees of freedom, we introduce the extra
 interactions present in spinor BECs.
 
-\section{Single-particle Hamiltonian}
+\section{Scalar BEC interactions}
+The many-body nature of BEC systems leads to interactions that arise between
+particles.
+We begin by first discussing the interactions arising in the simplest BEC\@: the
+scalar BEC\@.
+We consider a gas of identical bosons, described by the complex order parameter,
+\(\psi \).
+Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) are modelled by
+\begin{equation}\label{eq: scalar-interactions}
+    E_\mathrm{int} = \frac{1}{2}\int \int d\vb{r}_1d\vb{r}_2\,
+    \psi^\dagger(\vb{r}_1)\psi^\dagger(\vb{r}_2)
+    V_\mathrm{scat}(\vb{r}_1-\vb{r}_2)\psi(\vb{r}_1)\psi(\vb{r}_2),
+\end{equation}
+where \(V_\mathrm{scat}\) describes the two-body interaction potential.
+
+In the s-wave scattering limit, which is applicable in a dilute gas at low
+energies, we are free to neglect particles with high momenta
+and instead replace the two-body potential with an effective contact interaction
+between particles:
+\begin{equation}
+    V_\mathrm{scat}(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
+\end{equation}
+where \(g=4\pi\hbar^2a_s/M\) is the interaction strength for s-wave
+scattering length \(a_s\) and atomic mass \(M\).
+Substituting the above contact potential into
+Eq.~\eqref{eq: scalar-interactions} results in the scalar interaction
+\begin{equation}
+    E_\mathrm{scalar} = \frac{g_s}{2}\int d\vb{r} n^2,
+\end{equation}
+where we have used the relation \(n = \psi^\dagger \psi \) for condensate
+density \(n\).
+
+\section{Spinor BEC interactions}
 Spinor systems comprise particles with total spin \(f\).
 This implies there are \(2f + 1\) possible spin states along a given spin
 quantisation axis.
@@ -22,6 +54,44 @@ function \(\psi \), defined as \(\ket{\psi} = \sum_m\psi_m\ket{f, m}\).
 In the spin-1 case, we have \(\psi = {(\psi_1, \psi_0, \psi_{-1})}^T\), and for
 the spin-2 case \(\psi = {(\psi_2, \psi_1, \psi_0, \psi_{-1}, \psi_{-2})}^T\).
 
+Two identical spin-\(f\) bosons (integer spin) can collide to form a total spin
+of \(\EuScript{F} = 0, 2, \ldots, 2f\) depending on the orientation of the
+particles, with \(\EuScript{M} \equiv m+m' \in
+\{-\EuScript{F}, \ldots, \EuScript{F}\}\).
+In the s-wave scattering limit, where angular momentum is strictly conserved,
+the total spin of two interacting particles must be even.
+Due to the rotational symmetry, the scattering lengths depend only on the total
+spin \(\EuScript{F}\), implying there are \(f + 1\) different scattering lengths
+\(a_0, a_2, \ldots, a_{2f}\).
+
+In a spinor BEC, the effective contact interaction is generalised to include
+contributions from all spin channels as
+\begin{equation}
+    V_\mathrm{int} = \delta(\vb{r_1} - \vb{r_2})\frac{4\pi\hbar^2}{2m}
+    \sum_{\EuScript{F}=0, 2, \ldots, 2f}a_\EuScript{F}\vb{P}_\EuScript{F},
+\end{equation}
+where \(\vb{P}_\EuScript{F}\) is the projection operator which projects a pair
+of atoms into a total spin \(\EuScript{F}\) state, defined as
+\begin{equation}
+    \vb{P}_\EuScript{F} = \sum_{m=-\EuScript{F}}^{\EuScript{F}}
+    \ket{\EuScript{F}, \EuScript{M}}\bra{\EuScript{F}, \EuScript{M}}.
+\end{equation}
+For identical bosons, \(\sum_\EuScript{F=0}^{2f}\vb{P}_\EuScript{F} = 1\).
+
+\subsection{Spin-1 interaction Hamiltonian}
+To calculate the spin-dependent mean-field interaction potential, it is common
+to re-write the projection operators as products of the single-particle spin
+operators.
+For a spin-1 condensate, the decompositions are given
+as~\cite{Kawaguchi2012, StamperKurn2013}
+\begin{equation}
+    \vb{P}_0 = \frac{1}{3}(1 - \vb{F}_1 \cdot \vb{F}_2), \qquad
+    \vb{P}_2 = \frac{1}{3}(2 + \vb{F_1 \cdot \vb{F}_2}).
+\end{equation}
+
+\subsection{Spin-2 interaction Hamiltonian}
+
+\subsection{Single-particle Hamiltonian}
 We start by first introducing the single-particle Hamiltonian for spinor BECs.
 We assume a system of identical bosons of mass \(M\) and spin \(f\).
 When a magnetic field is applied to a spinor system, the field causes energy
@@ -47,40 +117,8 @@ quadratic shift uniformly alters the energetic separation between the
 \(\psi_{\pm 1}\) and \(\psi_0\) components.
 Conversely, the linear shift maintains the separation.
 
-\section{Scalar BEC interactions}
-The many-body nature of BEC systems leads to interactions that arise between
-particles.
-We begin by first discussing the interactions arising in the simplest BEC\@: the
-scalar BEC\@.
-We consider a gas of identical bosons, described by the complex order parameter,
-\(\psi \).
-Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) are modelled by
-\begin{equation}\label{eq: scalar-interactions}
-    E_\mathrm{int} = \frac{1}{2}\int \int d\vb{r}_1d\vb{r}_2\,
-    \psi^\dagger(\vb{r}_1)\psi^\dagger(\vb{r}_2)
-    V_\mathrm{scat}(\vb{r}_1-\vb{r}_2)\psi(\vb{r}_1)\psi(\vb{r}_2),
-\end{equation}
-where \(V_\mathrm{scat}\) describes the two-body interaction potential.
+\section{Spinor Gross-Pitaevskii equations}
 
-To describe the low-energy dynamics of the dilute Bose gas, with most atoms
-occupying the ground state, we are free to neglect particles with high momenta
-and instead replace the two-body potential with an effective contact interaction
-between particles:
-\begin{equation}
-    V_\mathrm{scat}(\vb{r}_1 - \vb{r}_2) = g_s\delta(\vb{r}_1 - \vb{r}_2),
-\end{equation}
-where \(g_s=4\pi\hbar^2a_s/M\) is the interaction strength for \(s\)-wave
-scattering length \(a_s\) and atomic mass \(M\).
-Substituting the above contact potential into
-Eq.~\eqref{eq: scalar-interactions} results in the scalar interaction
-\begin{equation}
-    E_\mathrm{scalar} = \frac{g_s}{2}\int d\vb{r} n^2,
-\end{equation}
-where we have used the relation \(n = \psi^\dagger \psi \) for condensate
-density \(n\).
+\section{Conserved quantities}
 
-\section{Spinor BEC interaction Hamiltonian}
-
-\subsection{Spin-1 interaction Hamiltonian}
-
-\subsection{Spin-2 interaction Hamiltonian}
+\section{Need to include healing lengths}
