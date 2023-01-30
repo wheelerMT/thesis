@@ -89,7 +89,7 @@ to relate the projection operators to products of the single-particle spin
 operators.
 For a spin-1 condensate, the composition law of the angular momentum
 gives~\cite{Kawaguchi2012, StamperKurn2013}
-\begin{equation}
+\begin{equation}\label{eq: composition-law}
     \vb{F}_1 \cdot \vb{F}_2 = \frac{1}{2}\left[(\vb{F}_1 + \vb{F}_2)^2
     - \vb{F}_1^2 - \vb{F}_2^2\right] = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
     -f(f+1),
@@ -144,6 +144,48 @@ lengths which are comparable in magnitude experimentally, the spin-dependent
 interaction strength is usually much smaller than the spin-independent strength.
 
 \subsection{Spin-2 interaction Hamiltonian}
+For an \(f=2\) spinor condensate, we now have \(\EuScript{F}=0,2,4\) spin
+channels.
+For a spin-2 condensate, Eq.~\eqref{eq: composition-law} now gives
+\begin{equation}
+    \vb{F}_1 \cdot \vb{F}_2 = \sum_{\EuScript{F} = 0}^{2f}
+    \lambda_\EuScript{F}\vb{P}_\EuScript{F} = -6\vb{P}_0-3\vb{P}_2+4\vb{P}_4.
+\end{equation}
+Using the above equation and the completeness relation in
+Eq.~\eqref{eq: completeness-relation}, one can write \(\vb{P}_2\) and
+\(\vb{P}_4\) in terms of \(\vb{P}_0\) and \(\vb{F}_1 \cdot \vb{F}_2\):
+\begin{equation}
+    \vb{P}_2 = \frac{1}{7}(4 - \vb{F}_1 \cdot \vb{F}_2 - 10\vb{P}_0), \qquad
+    \vb{P}_4 = \frac{1}{7}(3 + \vb{F}_1 \cdot \vb{F}_2 + 3\vb{P}_0).
+\end{equation}
+From Eq.~\eqref{eq: spin-f-interaction-potential}, the spin-2 interaction
+potential takes the form
+\begin{equation}
+    V_\mathrm{int}\delta(\vb{r}_1-\vb{r}_2)(c_0+c_1\vb{F}_1 \cdot \vb{F}_2 
+    +c_2\vb{P}_0),
+\end{equation}
+where \(c_0=(4g_2+3g_4)/7\), \(c_1=(g_4-g_2)/7\), and
+\(c_2=(7g_0-10g_2+3g_4)/7\).
+Both \(c_0\) and \(c_1\) are the spin-independent and -dependent interaction
+strengths, respectively, analogous to the spin-1 system.
+Due to the extra degree of freedom in the spin-2 system, a new interaction term,
+\(c_2\), describing the spin-singlet interaction arises.
+
+The spin-2 interaction Hamiltonian is given as
+\begin{equation}
+    H_\mathrm{int} = \frac{1}{2}\int d\vb{r}\left(c_0n^2+c_1|\vb{F}|^2
+    +c_2|A_{20}|^2\right),
+\end{equation}
+where \(|A_{20}|^2\) is the spin-singlet duo amplitude, defined in terms of
+the condensate wave function as
+\begin{equation}
+    A_{20} = \frac{1}{\sqrt{5}}\left(\psi_0^2-2\psi_1\psi_{-1}
+    +2\psi_2\psi_{-2}\right).
+\end{equation}
+For \(c_2 > 0\), it becomes energetically favourable to minimise the
+spin-singlet amplitude, i.e., \(|A_{20}|^2 = 0\).
+Conversely, for interactions where \(c_2 < 0\), the energy is minimised by
+maximising the amplitude \(|A_{20}|^2=n/5\).
 
 \subsection{Single-particle Hamiltonian}
 We start by first introducing the single-particle Hamiltonian for spinor BECs.
