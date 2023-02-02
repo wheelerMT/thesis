@@ -10,3 +10,4 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qsubsection subsection\\E$"}
 {"rule":"FILL_OF_WITH","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q correspond to atoms in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q component that have filled the core of an HQV in the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q component.\\E$"}
 {"rule":"SENTENCE_FRAGMENT","sentence":"^\\QIf we consider the general wave function defined in Eq.\\E$"}
+{"rule":"EN_COMPOUNDS","sentence":"^\\QAdditionally, the interaction terms are given as \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, which describe the intra-species and inter-species interaction strengths, respectively.\\E$"}

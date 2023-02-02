@@ -1,47 +1,143 @@
-\chapter{Spinor Bose-Einstein condensates}
+\chapter{Mathematical models of Bose-Einstein condensates}
 
 In this chapter we provide the theoretical background necessary to understand
 the dynamics of ultracold atomic gases.
-In particular, we introduce the Hamiltonians of both scalar and spinor BEC
-systems.
-We start with the simplest case of the scalar BEC, which has one non-linear
-interaction term.
-Then, by introducing the spin degrees of freedom, we introduce the extra
-interactions present in spinor BECs.
+We start by introducing the most simple form of a Bose-Einstein condensate,
+the scalar condensate.
+This lays the framework for building to more complex systems.
+We then go on to discuss the two-component condensate, where additional
+interactions arise between atoms of differing components.
+Finally, we construct the framework needed to understand spinor BECs, which is
+the main basis of this thesis.
 
 \section{Scalar Bose-Einstein condensates}
-The many-body nature of BEC systems leads to interactions that arise between
-particles.
-We begin by first discussing the interactions arising in the simplest BEC\@: the
-scalar BEC\@.
-We consider a gas of identical bosons, described by the complex order parameter,
-\(\psi \).
-Collisions of two particles at location \(\vb{r}_1, \vb{r}_2\) are modelled by
-\begin{equation}\label{eq: scalar-interactions}
-    E_\mathrm{int} = \frac{1}{2}\int \int d\vb{r}_1d\vb{r}_2\,
-    \psi^\dagger(\vb{r}_1)\psi^\dagger(\vb{r}_2)
-    V_\mathrm{scat}(\vb{r}_1-\vb{r}_2)\psi(\vb{r}_1)\psi(\vb{r}_2),
+\section{Mean-field description}
+A system of \(N\) particles interacting through binary collisions is described
+by an \(N\)-body Schr\"{o}dinger equation, given as
+\begin{equation}
+    i\hbar \pdv{}{t}\Psi(\vb{r}_1;\ldots;\vb{r}_N, t) = 
+    \hat{H}_N\Psi(\vb{r}_1;\ldots;\vb{r}_N, t),
 \end{equation}
-where \(V_\mathrm{scat}\) describes the two-body interaction potential.
+where the \(N\)-body Hamiltonian operator is given by
+\begin{equation}
+    \hat{H}_N = -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
+    + \sum_{i \neq j}V(\vb{r}_i - \vb{r}_j).
+\end{equation}
+The first sum of the above equation represents the kinetic energy operator,
+whilst the second describes the two-body potential operator.
+This description, however, becomes unwieldy when trying to model the number of
+particles associated with typical BEC experiments.
 
-In the s-wave scattering limit, which is applicable in a dilute gas at low
-energies, we are free to neglect particles with high momenta
-and instead replace the two-body potential with an effective contact interaction
-between particles:
+Instead, we model the system using a mean-field theory, in which we make two
+assumptions.
+Firstly, the dilute nature of a BEC justifies that any binary interaction
+between two particles at positions \(\vb{r}_1, \vb{r}_2\) takes the form of
+a contact interaction modelled by the following delta function:
 \begin{equation}
-    V_\mathrm{scat}(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
+    V(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
 \end{equation}
-where \(g=4\pi\hbar^2a_s/M\) is the interaction strength for s-wave
-scattering length \(a_s\) and atomic mass \(M\).
-Substituting the above contact potential into
-Eq.~\eqref{eq: scalar-interactions} results in the scalar interaction
+where \(g\) represents an interaction coefficient.
+Secondly, we assume that, for sufficiently low temperatures, the system
+undergoes Bose-Einstein condensation, and all particles of
+the system occupy the same quantum state.
+This implies that each particle is described by the same single-particle wave
+function and hence the system can be described by a macroscopic wave function
+\(\psi(\vb{r}, t)\) for position \(\vb{r}\) and time \(t\).
+Additionally, the field \(\psi\) is scalar since each particle shares the same
+phase and quantum state.
+This approximation is only valid in the limit of zero temperature, where there
+are no particles contributing to thermal or quantum fluctuations beyond the
+classical field.
+
+\subsection{The Gross-Pitaevskii equation}
+The preceding assumptions form the basis of constructing the underlying equation
+that governs the dynamics of Bose-Einstein condensate systems: the
+Gross-Pitaevskii equation (GPE):
+\begin{equation}\label{eq: scalar-GPE}
+    i\hbar \pdv{\psi(\vb{r}, t)}{t} = \left(-\frac{\hbar^2}{2m}\nabla^2
+    + V(\vb{r}, t) +g|\psi(\vb{r}, t)|^2\right)\psi(\vb{r}, t),
+\end{equation}
+where \(V(\vb{r}, t)\) is a trapping potential.
+
+The first two terms on the right-hand side describe the energy of a single
+particle in an external potential.
+The third term accounts for the interactions within the condensate, where
+\(g=4\pi \hbar^2a_s/m\) is the interaction strength of the condensate for
+s-wave scattering length \(a_s\) and atomic mass \(m\).
+For \(g>0\) the interactions are repulsive and for \(g < 0\) attractive.
+When \(g=0\) there are no interactions present and the system reduces to the
+Schr\"{o}dinger equation.
+
+The wave function of the system is normalised to the number of particles
 \begin{equation}
-    E_\mathrm{scalar} = \frac{g_s}{2}\int d\vb{r} n^2,
+    \int |\psi(\vb{r}, t)|^2 d\vb{r} = N.
 \end{equation}
-where we have used the relation \(n = \psi^\dagger \psi \) for condensate
-density \(n\).
+The total mass of the condensate is given as \(M=mN\), where \(N\) is provided
+by the above normalisation condition.
+
+The energy of the system is
+\begin{equation}
+    E = \int d^3\vb{r} \left[\frac{\hbar^2}{2m}|\nabla\Psi|^2
+    + V|\psi|^2 + \frac{g}{2}|\psi|^4\right]
+    = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
+\end{equation}
+where \(E_\mathrm{kin}, E_\mathrm{pot}\) and \(E_\mathrm{int}\) describes the
+kinetic, potential, and interaction energies, respectively.
 
 \section{Two-component Bose-Einstein condensates}
+We now generalise part of the theory introduced in the previous section to
+describe multi-component condensates.
+The time-dependent coupled Gross-Pitaevskii equations each describe a condensate
+similar to the standard GPE, but now with an additional non-linear term that
+describes the interactions of atoms between condensate components.
+The coupled GPEs are given as
+\begin{equation}
+    \begin{aligned}
+        i\hbar \pdv{\psi_1(\vb{r}, t)}{t} &= 
+        \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V(\vb{r}, t)
+        + g_1|\psi_1(\vb{r}, t)|^2 
+        + g_{12}|\psi_2(\vb{r}, t)|^2\right]\psi_1(\vb{r}, t) \\
+        i\hbar \pdv{\psi_2(\vb{r}, t)}{t} &= 
+        \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V(\vb{r}, t)
+        + g_2|\psi_2(\vb{r}, t)|^2 
+        + g_{12}|\psi_1(\vb{r}, t)|^2\right]\psi_2(\vb{r}, t),
+    \end{aligned}
+\end{equation}
+where \(\psi_j(\vb{r}, t)\) describes component \(j\) with atomic mass \(m_j\)
+for \(j=1, 2\) and \(V(\vb{r}, t)\) is an external trapping potential.
+Additionally, the interaction terms are given as
+\begin{equation}
+    g_j = \frac{4\pi \hbar^2a_j}{2m_j}, \qquad
+    g_{12} = g_{21} = \frac{2\pi\hbar^2(m_1+m_2)a_{12}}{m_1m_2},
+\end{equation}
+which describe the intra-species and inter-species interaction strengths,
+respectively.
+Similar to the scalar case, the wave function of each component is normalised
+to the number of atoms of that component
+\begin{equation}
+    \int |\psi_j|^2 d^3\vb{r} = N_j.
+\end{equation}
+
+The total energy of the two-component system is composed of the contributions
+from each component as
+\begin{equation}
+    \begin{aligned}
+        E &= \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
+        + V|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}\\
+        &+ \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
+        + V|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}\\
+        &+ \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] d^3\vb{r}.
+    \end{aligned}
+\end{equation}
+
+\subsection{Miscible and immiscible regimes}
+Two-component condensates can either be miscible or immiscible, depending on
+the interactions present within the system.
+Here, we derive the immiscibility criterion for two-component condensates
+following the procedure in Ref.~\cite{Ao1998}.
+
+We start by assuming, for simplicity, a homogenous system with
+\(V(\vb{r}, t)=0\) but with hard barriers at the edge of the system.
 
 \section{Spinor Bose-Einstein condensates}
 Spinor systems comprise particles with total spin \(f\).
