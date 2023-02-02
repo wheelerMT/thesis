@@ -77,7 +77,7 @@ by the above normalisation condition.
 
 The energy of the system is
 \begin{equation}
-    E = \int d^3\vb{r} \left[\frac{\hbar^2}{2m}|\nabla\Psi|^2
+    E = \int d^3\vb{r} \left[\frac{\hbar^2}{2m}|\nabla\psi|^2
     + V|\psi|^2 + \frac{g}{2}|\psi|^4\right]
     = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
 \end{equation}
@@ -410,8 +410,8 @@ Conversely, the linear shift maintains the separation.
 Combing the results of the previous sections, the energy functional of a spin-1
 BEC is given as~\cite{Kawaguchi2012}
 \begin{equation}\label{eq: spin-1-energy-functional}
-    E = \int \left[\sum_{m=-1}^1\psi_m^*\left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) - pm + qm^2\right]\psi_m + \frac{c_0}{2}n^2
+    E = \int \left[\sum_{m=-1}^1\psi_m^*\left(-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) - pm + qm^2\right)\psi_m + \frac{c_0}{2}n^2
     + \frac{c_1}{2}|\vb{F}|^2\right] d^3\vb{r},
 \end{equation}
 where \(n(\vb{r}) = \sum_{m=-1}^{1}|\psi_m(\vb{r})|^2\) is the total particle
@@ -433,7 +433,7 @@ representation as
 Substituting Eq.~\eqref{eq: spin-1-Pauli-matrices} into
 Eq.~\eqref{eq: spinor-spin-vector} gives the exact expressions of the spin-1
 spin vectors:
-\begin{align}
+\begin{align}\label{eq: spin-1-spin-vectors}
     F_x &= \frac{1}{\sqrt{2}} \left(\psi_1^*\psi_0 + \psi_0^*(\psi_1+\psi_{-1})
     + \psi_{-1}^*\psi_0\right)\\
     F_y &= \frac{i}{\sqrt{2}}\left(-\psi_1^*\psi_0 + \psi_0^*(\psi_1-\psi_{-1})
@@ -445,12 +445,104 @@ The spin-1 Gross-Pitaevskii equations are derived, though lengthy, from the
 variational derivative of the energy functional in
 Eq.~\eqref{eq: spin-1-energy-functional} as \(i\hbar\delta E/\delta \psi_m^*\).
 This results in
-\begin{equation}
+\begin{equation}\label{eq: spin-1-GPEs}
     i\hbar \pdv{\psi_m}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r})
     - pm + qm^2 + c_0n\right]\psi_m 
     + c_1\sum_{m'=-1}^{1}\vb{F}\cdot \vb{f}_{mm'}\psi_{m'},
 \end{equation}
 which describe the mean-field evolution of spin-1 Bose-Einstein condensates.
 
+Time-independent equations are found through the substitution
+\(\psi_m = \psi_m(\vb{r})e^{-i\mu t/\hbar}\), where \(\mu\) is the chemical
+potential.
+Substituting into Eq.~\eqref{eq: spin-1-GPEs} and writing the equation for
+each component explicitly gives
+\begin{align}
+    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) - p + q + c_0n + c_1F_z
+    - \mu\right]\psi_1 + \frac{c_1}{\sqrt{2}}F_-\psi_0 &= 0 \\
+    \frac{c_1}{\sqrt{2}}F_+\psi_1 + \left[-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) + c_0n - \mu\right]\psi_0 + \frac{c_1}{\sqrt{2}}F_-\psi_{-1}
+    &= 0 \\
+    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + p + q + c_0n - c_1F_z
+    - \mu\right]\psi_{-1} + \frac{c_1}{\sqrt{2}}F_+\psi_0 &= 0,
+\end{align}
+where \(F_{\pm} = F_x \pm iF_y\).
+These equations can be solved to reveal more on the ground states and stationary
+solutions of spinor BECs, which forms the basis of
+Chapter~\ref{chap: ground-states}.
+
 \subsection{Spin-2}
+The spin-2 energy functional is written as~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: spin-2-energy-functional}
+    E = \int \left[\sum_{m=-2}^{2}\psi_m^* \left(-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) -pm + qm^2\right)\psi_m + \frac{c_0}{2}n^2
+    + \frac{c_1}{2}|\vb{F}|^2 + \frac{c_2}{2}|A_{20}|^2\right] d^3\vb{r}.
+\end{equation}
+The spin-2 Pauli matrices are given in irreducible representation as
+\begin{equation*}
+    \vb{f}_x = \mqty(0 & 1  & 0 & 0 & 0 \\
+    1 & 0 & \sqrt{\frac{3}{2}} & 0 & 0 \\
+    0 & \sqrt{\frac{3}{2}} & 0 & \sqrt{\frac{3}{2}} & 0 \\
+    0 & 0 & \sqrt{\frac{3}{2}} & 0 & 1 \\
+    0 & 0 & 0 & 1 & 0), \qquad
+    \vb{f}_y = \mqty(0 & -i  & 0 & 0 & 0 \\
+    i & 0 & -i\sqrt{\frac{3}{2}} & 0 & 0 \\
+    0 & i\sqrt{\frac{3}{2}} & 0 & -i\sqrt{\frac{3}{2}} & 0 \\
+    0 & 0 & i\sqrt{\frac{3}{2}} & 0 & -i \\
+    0 & 0 & 0 & i & 0),
+\end{equation*}
+\begin{equation}
+    \vb{f}_z = \mqty(2 & 0 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & -1 & 0 \\
+    0 & 0 & 0 & 0 & -2).
+\end{equation}
+
+Similar to the spin-1 case, the GPEs are obtained through the variational
+derivative of Eq.~\eqref{eq: spin-2-energy-functional}, resulting in
+five coupled equations that model the mean-field dynamics of spin-2
+Bose-Einstein condensates.
+\begin{align}
+    i\hbar\pdv{\psi_{\pm 2}}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) \mp 2p + 4q + c_0n \pm 2c_1F_z - \mu\right]\psi_{\pm 2}
+    + c_1F_{\mp}\psi_{\pm 1} + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^* \\
+    i\hbar\pdv{\psi_{\pm 1}}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) \mp p + q + c_0n \pm c_1F_z - \mu\right]\psi_{\pm 1}
+    + c_1\left(\frac{\sqrt{6}}{2}F_{\mp}\psi_0 + F_{\pm}\psi_{\pm 2}\right)
+    - \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 1}^* \\
+    i\hbar\pdv{\psi_0}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) + c_0n - \mu\right]\psi_0
+    + \frac{\sqrt{6}}{2}c_1\left(F_+\psi_1 + F_-\psi_{-1}\right) 
+    + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^*,
+\end{align}
+where the spin vectors are given as
+\begin{align}\label{eq: spin-2-spin-vectors}
+    F_+ = F_-^* &= 2(\psi_2^*\psi_1 + \psi_{-1}^*\psi_{-2}) 
+    + \sqrt{6}(\psi_1^*\psi_0 + \psi_0^*\psi_{-1}), \\
+    F_z &= 2(|\psi_2|^2 - |\psi_{-2}|^2) + |\psi_1|^2 - |\psi_{-1}|^2.
+\end{align}
+
+Following the same procedure as in the spin-1 case, the time-independent GPEs
+can be found through the substitution
+\(\psi_m(\vb{r}, t) = \psi_m(\vb{r})e^{-\mu t/\hbar}\).
+\textcolor{red}{Worth listing time-independent GPEs for spin-2 case?}
+
 \subsection{Conserved quantities}
+In spinor BECs, there are three conserved quantities.
+Firstly, the total energy of the system
+[Eq.~\eqref{eq: spin-1-energy-functional} and
+Eq.~\eqref{eq: spin-2-energy-functional}] is conserved.
+In addition, the total atom number of the condensate
+\begin{equation}
+    N = \int \sum_m |\psi_m|^2 d^3\vb{r}
+\end{equation}
+is also conserved.
+Different from the scalar case, however, is the additional conservation of the
+\(z\)-component of the magnetisation
+\begin{equation}
+    M_z = \int F_z d^3\vb{r},
+\end{equation}
+where \(F_z\) is given in Eq.~\eqref{eq: spin-1-spin-vectors} or
+Eq.~\eqref{eq: spin-2-spin-vectors} for the spin-1 and spin-2 cases,
+respectively.
