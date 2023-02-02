@@ -11,7 +11,7 @@ Finally, we construct the framework needed to understand spinor BECs, which is
 the main basis of this thesis.
 
 \section{Scalar Bose-Einstein condensates}
-\section{Mean-field description}
+\subsection{Mean-field description}
 A system of \(N\) particles interacting through binary collisions is described
 by an \(N\)-body Schr\"{o}dinger equation, given as
 \begin{equation}
@@ -91,14 +91,14 @@ The time-dependent coupled Gross-Pitaevskii equations each describe a condensate
 similar to the standard GPE, but now with an additional non-linear term that
 describes the interactions of atoms between condensate components.
 The coupled GPEs are given as
-\begin{equation}
+\begin{equation}\label{eq: two-component-GPEs}
     \begin{aligned}
         i\hbar \pdv{\psi_1(\vb{r}, t)}{t} &= 
-        \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V(\vb{r}, t)
+        \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r}, t)
         + g_1|\psi_1(\vb{r}, t)|^2 
         + g_{12}|\psi_2(\vb{r}, t)|^2\right]\psi_1(\vb{r}, t) \\
         i\hbar \pdv{\psi_2(\vb{r}, t)}{t} &= 
-        \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V(\vb{r}, t)
+        \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r}, t)
         + g_2|\psi_2(\vb{r}, t)|^2 
         + g_{12}|\psi_1(\vb{r}, t)|^2\right]\psi_2(\vb{r}, t),
     \end{aligned}
@@ -118,14 +118,31 @@ to the number of atoms of that component
     \int |\psi_j|^2 d^3\vb{r} = N_j.
 \end{equation}
 
+The time-independent GPEs are obtained through the substitution
+\(\psi_j(\vb{r}, t)=\psi_j(\vb{r})e^{-i\mu_j t/\hbar}\) in
+Eq.~\eqref{eq: two-component-GPEs}, yielding
+\begin{equation}\label{eq: time-indep-two-component-GPEs}
+    \begin{aligned}
+        \mu_1\psi_1(\vb{r}) &= 
+        \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r})
+        + g_1|\psi_1(\vb{r})|^2 
+        + g_{12}|\psi_2(\vb{r})|^2\right]\psi_1(\vb{r}) \\
+        \mu_2\psi_2(\vb{r}) &= 
+        \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r})
+        + g_2|\psi_2(\vb{r})|^2 
+        + g_{12}|\psi_1(\vb{r})|^2\right]\psi_2(\vb{r}),
+    \end{aligned}
+\end{equation}
+where \(\mu_j\) is the chemical potential of component \(j\).
+
 The total energy of the two-component system is composed of the contributions
 from each component as
 \begin{equation}
     \begin{aligned}
         E &= \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
-        + V|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}\\
+        + V_1|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}\\
         &+ \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
-        + V|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}\\
+        + V_2|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}\\
         &+ \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] d^3\vb{r}.
     \end{aligned}
 \end{equation}
@@ -136,8 +153,85 @@ the interactions present within the system.
 Here, we derive the immiscibility criterion for two-component condensates
 following the procedure in Ref.~\cite{Ao1998}.
 
-We start by assuming, for simplicity, a homogenous system with
-\(V(\vb{r}, t)=0\) but with hard barriers at the edge of the system.
+We start by assuming, for simplicity, a square-well trapping potential with
+\(V(\vb{r}) = 0\) inside the well and setting \(V\) to be infinitely large
+outside.
+Assuming a stationary solution and hence neglecting the kinetic energy
+terms, Eq.~\eqref{eq: time-indep-two-component-GPEs} reduce to
+\begin{equation}
+    \begin{aligned}
+        \mu_1 &= g_1|\psi_1|^2 + g_{12}|\psi_2|^2, \\
+        \mu_2 &= g_2|\psi_2|^2 + g_{12}|\psi_1|^2.
+    \end{aligned}
+\end{equation}
+
+Inside the trap the densities of each component can be re-written as
+\(n_j=N_j/V\), where \(V\) is the volume of the condensate.
+The above equations then reduce to \(g_1n_1 + g_{12}n_2 = \mu_1\) and
+\(g_2n_2 + g_{12}n_1 = \mu_2\), and the energy becomes
+\begin{equation}
+    E_\mathrm{misc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
+    + 2g_{12}\frac{N_1N_2}{V}\right].
+\end{equation}
+Provided \(g_{12}\) is small enough, any variation to this state will increase
+the system energy, implying that this state is stable.
+When \(g_{12}\) gets large enough, however, it can be shown that there exists
+a state with a lower energy.
+
+Let us consider an immiscible regime, where the two condensates do not spatially
+overlap.
+The volume of condensate \(j\) is given as \(V_j\) and the densities
+subsequently become \(n_j=N_j/V_j\).
+Eqs.~\eqref{eq: time-indep-two-component-GPEs} become \(g_j n_j = \mu_j\) with
+total energy
+\begin{equation}\label{eq: immiscible-energy}
+    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V_1}
+    + g_2\frac{N_2^2}{V_2}\right].
+\end{equation}
+Minimising the above energy with respect to \(V_1\) or \(V_2\) with
+\(V=V_1+V_2\) results in the expressions for the volume of each component
+\begin{equation}
+    V_1 = \frac{1}{1 + \sqrt{g_2/g_1}(N_2/N_1)}V,
+\end{equation}
+\begin{equation}
+    V_2 = \frac{1}{1 + \sqrt{g_1/g_2}(N_1/N_2)}V.
+\end{equation}
+The corresponding densities then become
+\begin{equation}
+    \begin{aligned}
+        n_1 = \left(1 + \sqrt{\frac{g_2}{g_1}}\frac{N_2}{N_1}\right)
+        \frac{N_1}{V},
+        n_2 = \left(1 + \sqrt{\frac{g_1}{g_2}}\frac{N_1}{N_2}\right)
+        \frac{N_2}{V}.
+    \end{aligned}
+\end{equation}
+Substituting the above densities into the expression for the total energy
+in Eq.~\eqref{eq: immiscible-energy} yields
+\begin{equation}
+    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
+    + 2\sqrt{g_1g_2}\frac{N_1N_2}{V}\right].
+\end{equation}
+
+The difference between the energies of the miscible and immiscible phases
+is
+\begin{equation}
+    \Delta E = E_\mathrm{misc} - E_\mathrm{immisc} = (g_{12} - \sqrt{g_1g_2})
+    \frac{N_1N_2}{V}
+\end{equation}
+Therefore, the condition \(g_{12} > \sqrt{g_1g_2}\) reveals that for large
+enough inter-species interactions the system favours an immiscible phase
+over a miscible one.
+This criterion only depends on the interactions within the system, and is not
+affected by condensate particle numbers or size.
+Fig.~\ref{fig: miscible-vs-immiscible} shows the boundary between the two
+phases for \(g_1=1\) in a parameter space of \(g_2, g_{12}\).
+\begin{figure}
+    \centering
+    \includegraphics{gfx/ch-theory/miscible_vs_immiscible.pdf}
+    \caption{\label{fig: miscible-vs-immiscible}Boundary between the miscible
+    and immiscible regimes for a two-component condensate with \(g_1=1\).}
+\end{figure}
+
 
 \section{Spinor Bose-Einstein condensates}
 Spinor systems comprise particles with total spin \(f\).
@@ -188,7 +282,7 @@ operators.
 For a spin-1 condensate, the composition law of the angular momentum
 gives~\cite{Kawaguchi2012, StamperKurn2013}
 \begin{equation}\label{eq: composition-law}
-    \vb{F}_1 \cdot \vb{F}_2 = \frac{1}{2}\left[(\vb{F}_1 + \vb{F}_2)^2
+    \vb{F}_1 \cdot \vb{F}_2 = \frac{1}{2}\left[{(\vb{F}_1 + \vb{F}_2)}^2
     - \vb{F}_1^2 - \vb{F}_2^2\right] = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
     -f(f+1),
 \end{equation}
@@ -312,7 +406,51 @@ quadratic shift uniformly alters the energetic separation between the
 Conversely, the linear shift maintains the separation.
 
 \section{Spinor Gross-Pitaevskii equations}
+\subsection{Spin-1}
+Combing the results of the previous sections, the energy functional of a spin-1
+BEC is given as~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: spin-1-energy-functional}
+    E = \int \left[\sum_{m=-1}^1\psi_m^*\left[-\frac{\hbar^2\nabla^2}{2M}
+    + V(\vb{r}) - pm + qm^2\right]\psi_m + \frac{c_0}{2}n^2
+    + \frac{c_1}{2}|\vb{F}|^2\right] d^3\vb{r},
+\end{equation}
+where \(n(\vb{r}) = \sum_{m=-1}^{1}|\psi_m(\vb{r})|^2\) is the total particle
+density of the system.
+Here, \(\vb{F}=(F_x, F_y, F_z)\) is the spin density vector, defined as
+\begin{equation}\label{eq: spinor-spin-vector}
+    F_\nu(\vb{r}) = \sum_{m,m'=-1}^{1}\psi_m^*(\vb{r}){(\vb{f}_\nu)}_{mm'}
+    \psi_{m'}(\vb{r}), \qquad (\nu=x, y, z).
+\end{equation}
+The spin-1 Pauli matrices \(\vb{f}_\mu\) are given in the irreducible
+representation as
+\begin{equation}\label{eq: spin-1-Pauli-matrices}
+    \vb{f}_x = \frac{1}{\sqrt{2}}\mqty(0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0),
+    \qquad
+    \vb{f}_y = \frac{i}{\sqrt{2}}\mqty(0 & -1 & 0 \\ 1 & 0 & -1 \\ 0 & 1 & 0),
+    \qquad
+    \vb{f}_z = \mqty(1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1).
+\end{equation}
+Substituting Eq.~\eqref{eq: spin-1-Pauli-matrices} into
+Eq.~\eqref{eq: spinor-spin-vector} gives the exact expressions of the spin-1
+spin vectors:
+\begin{align}
+    F_x &= \frac{1}{\sqrt{2}} \left(\psi_1^*\psi_0 + \psi_0^*(\psi_1+\psi_{-1})
+    + \psi_{-1}^*\psi_0\right)\\
+    F_y &= \frac{i}{\sqrt{2}}\left(-\psi_1^*\psi_0 + \psi_0^*(\psi_1-\psi_{-1})
+    +\psi_{-1}^*\psi_0\right) \\
+    F_z &= |\psi_1|^2-|\psi_{-1}|^2.
+\end{align}
 
-\section{Conserved quantities}
+The spin-1 Gross-Pitaevskii equations are derived, though lengthy, from the
+variational derivative of the energy functional in
+Eq.~\eqref{eq: spin-1-energy-functional} as \(i\hbar\delta E/\delta \psi_m^*\).
+This results in
+\begin{equation}
+    i\hbar \pdv{\psi_m}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r})
+    - pm + qm^2 + c_0n\right]\psi_m 
+    + c_1\sum_{m'=-1}^{1}\vb{F}\cdot \vb{f}_{mm'}\psi_{m'},
+\end{equation}
+which describe the mean-field evolution of spin-1 Bose-Einstein condensates.
 
-\section{Need to include healing lengths}
+\subsection{Spin-2}
+\subsection{Conserved quantities}
