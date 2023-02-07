@@ -724,16 +724,42 @@ motion of the dipole.
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-            width=10cm,height=10cm,
-            xmin=-3,xmax=3,ymin=0,ymax=10,
+            width=10cm,height=7.5cm,
+            xmin=-3,xmax=3,ymin=0,ymax=5,
             xlabel={\(x/a_s\)},
             ylabel={\(y/a_s\)},
             ]
-          \addplot[blue,mark=circle,samples=100, domain=-1.0:1.0] {-x^2 + 5};
-          \addplot[red,mark=circle,samples=100, domain=-1.0:1.0] {-4*x^2 + 4};
+          \addplot[only marks,blue,mark=square,samples=50, domain=-1.0:1.0]
+          {-2*x^2 + 2};
+          \addplot[only marks,red,mark=triangle,samples=50, domain=-1.0:1.0]
+          {-4*x^2 + 4};
+          \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
+          ({-1}, {5 * x});
+          \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
+          ({1}, {5 * x});
+
+          \addlegendentry{$\gamma = 0.8$}
+          \addlegendentry{$\gamma = 0.6$}
+          \addlegendentry{$\gamma = 0.3$}
           \end{axis}
     \end{tikzpicture}
+    \caption{\label{fig: HQV-dipole-motion}Pictorial representation of the
+    motion of HQV dipoles in a two-component condensate, where the dipole is
+    located in the \(\psi_1\) component.
+    Increasing the ratio of inter- to intra-species interactions (\(\gamma\))
+    results in a dramatic change of dipole motion.
+    For sufficiently strong \(\gamma\), the vortices move together and
+    annihilate.
+    Figure referenced from~\cite{Kasamatsu2016}.}
 \end{figure}
-Results of the dipole motion are plotted in
-% Fig.~\ref{fig: two-comp-dipole-motion}.
-
+Results of the dipole motion for \(\gamma=0.3, 0.6, 0.8\) are plotted in
+Fig.~\ref{fig: HQV-dipole-motion}.
+We see clearly that an increase in \(\gamma\) dramatically changes the motion
+of the dipole.
+For \(\gamma>=0.6\), the dipoles clearly move together and undergo annihilation.
+For weaker \(\gamma\), the two dipoles move in parallel, similar to
+the behaviour observed for dipoles consisting of scalar \(\mathrm{U}(1)\)
+vortices.
+The strength of \(\gamma\) also determines the rate at which the vortices
+annihilate, as seen by the largest \(\gamma\) tested, which shows the
+annihilation happening over a shorter length scale.
