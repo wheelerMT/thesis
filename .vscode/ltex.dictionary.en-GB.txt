@@ -25,3 +25,7 @@ pseudospin
 Kawaguchi
 Kasamatsu
 Pauli
+UN-BN
+SQV-SQV
+C-BN
+Skyrmions
