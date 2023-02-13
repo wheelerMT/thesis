@@ -15,7 +15,7 @@ the main basis of this thesis.
 A system of \(N\) particles interacting through binary collisions is described
 by an \(N\)-body Schr\"{o}dinger equation, given as
 \begin{equation}
-    i\hbar \pdv{}{t}\Psi(\vb{r}_1;\ldots;\vb{r}_N, t) = 
+    i\hbar \pdv{}{t}\Psi(\vb{r}_1;\ldots;\vb{r}_N, t) =
     \hat{H}_N\Psi(\vb{r}_1;\ldots;\vb{r}_N, t),
 \end{equation}
 where the \(N\)-body Hamiltonian operator is given by
@@ -78,7 +78,7 @@ by the above normalisation condition.
 The energy of the system is
 \begin{equation}
     E = \int d^3\vb{r} \left[\frac{\hbar^2}{2m}|\nabla\psi|^2
-    + V|\psi|^2 + \frac{g}{2}|\psi|^4\right]
+        + V|\psi|^2 + \frac{g}{2}|\psi|^4\right]
     = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
 \end{equation}
 where \(E_\mathrm{kin}, E_\mathrm{pot}\) and \(E_\mathrm{int}\) describes the
@@ -93,14 +93,14 @@ describes the interactions of atoms between condensate components.
 The coupled GPEs are given as
 \begin{equation}\label{eq: two-component-GPEs}
     \begin{aligned}
-        i\hbar \pdv{\psi_1(\vb{r}, t)}{t} &= 
+        i\hbar \pdv{\psi_1(\vb{r}, t)}{t} & =
         \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r}, t)
-        + g_1|\psi_1(\vb{r}, t)|^2 
+            + g_1|\psi_1(\vb{r}, t)|^2
         + g_{12}|\psi_2(\vb{r}, t)|^2\right]\psi_1(\vb{r}, t) \\
-        i\hbar \pdv{\psi_2(\vb{r}, t)}{t} &= 
+        i\hbar \pdv{\psi_2(\vb{r}, t)}{t} & =
         \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r}, t)
-        + g_2|\psi_2(\vb{r}, t)|^2 
-        + g_{12}|\psi_1(\vb{r}, t)|^2\right]\psi_2(\vb{r}, t),
+            + g_2|\psi_2(\vb{r}, t)|^2
+            + g_{12}|\psi_1(\vb{r}, t)|^2\right]\psi_2(\vb{r}, t),
     \end{aligned}
 \end{equation}
 where \(\psi_j(\vb{r}, t)\) describes component \(j\) with atomic mass \(m_j\)
@@ -123,14 +123,14 @@ The time-independent GPEs are obtained through the substitution
 Eq.~\eqref{eq: two-component-GPEs}, yielding
 \begin{equation}\label{eq: time-indep-two-component-GPEs}
     \begin{aligned}
-        \mu_1\psi_1(\vb{r}) &= 
+        \mu_1\psi_1(\vb{r}) & =
         \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r})
-        + g_1|\psi_1(\vb{r})|^2 
+            + g_1|\psi_1(\vb{r})|^2
         + g_{12}|\psi_2(\vb{r})|^2\right]\psi_1(\vb{r}) \\
-        \mu_2\psi_2(\vb{r}) &= 
+        \mu_2\psi_2(\vb{r}) & =
         \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r})
-        + g_2|\psi_2(\vb{r})|^2 
-        + g_{12}|\psi_1(\vb{r})|^2\right]\psi_2(\vb{r}),
+            + g_2|\psi_2(\vb{r})|^2
+            + g_{12}|\psi_1(\vb{r})|^2\right]\psi_2(\vb{r}),
     \end{aligned}
 \end{equation}
 where \(\mu_j\) is the chemical potential of component \(j\).
@@ -139,11 +139,11 @@ The total energy of the two-component system is composed of the contributions
 from each component as
 \begin{equation}
     \begin{aligned}
-        E &= \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
-        + V_1|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}\\
-        &+ \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
-        + V_2|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}\\
-        &+ \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] d^3\vb{r}.
+        E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
+        + V_1|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}   \\
+          & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
+        + V_2|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}   \\
+          & + \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] d^3\vb{r}.
     \end{aligned}
 \end{equation}
 
@@ -160,8 +160,8 @@ Assuming a stationary solution and hence neglecting the kinetic energy
 terms, Eq.~\eqref{eq: time-indep-two-component-GPEs} reduce to
 \begin{equation}
     \begin{aligned}
-        \mu_1 &= g_1|\psi_1|^2 + g_{12}|\psi_2|^2, \\
-        \mu_2 &= g_2|\psi_2|^2 + g_{12}|\psi_1|^2.
+        \mu_1 & = g_1|\psi_1|^2 + g_{12}|\psi_2|^2, \\
+        \mu_2 & = g_2|\psi_2|^2 + g_{12}|\psi_1|^2.
     \end{aligned}
 \end{equation}
 
@@ -171,7 +171,7 @@ The above equations then reduce to \(g_1n_1 + g_{12}n_2 = \mu_1\) and
 \(g_2n_2 + g_{12}n_1 = \mu_2\), and the energy becomes
 \begin{equation}
     E_\mathrm{misc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
-    + 2g_{12}\frac{N_1N_2}{V}\right].
+        + 2g_{12}\frac{N_1N_2}{V}\right].
 \end{equation}
 Provided \(g_{12}\) is small enough, any variation to this state will increase
 the system energy, implying that this state is stable.
@@ -186,7 +186,7 @@ Eqs.~\eqref{eq: time-indep-two-component-GPEs} become \(g_j n_j = \mu_j\) with
 total energy
 \begin{equation}\label{eq: immiscible-energy}
     E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V_1}
-    + g_2\frac{N_2^2}{V_2}\right].
+        + g_2\frac{N_2^2}{V_2}\right].
 \end{equation}
 Minimising the above energy with respect to \(V_1\) or \(V_2\) with
 \(V=V_1+V_2\) results in the expressions for the volume of each component
@@ -209,7 +209,7 @@ Substituting the above densities into the expression for the total energy
 in Eq.~\eqref{eq: immiscible-energy} yields
 \begin{equation}
     E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
-    + 2\sqrt{g_1g_2}\frac{N_1N_2}{V}\right].
+        + 2\sqrt{g_1g_2}\frac{N_1N_2}{V}\right].
 \end{equation}
 
 The difference between the energies of the miscible and immiscible phases
@@ -229,7 +229,7 @@ phases for \(g_1=1\) in a parameter space of \(g_2, g_{12}\).
     \centering
     \includegraphics{gfx/ch-theory/miscible_vs_immiscible.pdf}
     \caption{\label{fig: miscible-vs-immiscible}Boundary between the miscible
-    and immiscible regimes for a two-component condensate with \(g_1=1\).}
+        and immiscible regimes for a two-component condensate with \(g_1=1\).}
 \end{figure}
 
 
@@ -283,11 +283,11 @@ For a spin-1 condensate, the composition law of the angular momentum
 gives~\cite{Kawaguchi2012, StamperKurn2013}
 \begin{equation}\label{eq: composition-law}
     \vb{F}_1 \cdot \vb{F}_2 = \frac{1}{2}\left[{(\vb{F}_1 + \vb{F}_2)}^2
-    - \vb{F}_1^2 - \vb{F}_2^2\right] = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
+        - \vb{F}_1^2 - \vb{F}_2^2\right] = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
     -f(f+1),
 \end{equation}
 where \(\vb{F}_i\) is the spin operator for atom \(i\).
-From here we can construct the relation \(\vb{F}_1 \cdot \vb{F}_2 = 
+From here we can construct the relation \(\vb{F}_1 \cdot \vb{F}_2 =
 \sum_{\EuScript{F} = 0}^{2f}\lambda_\EuScript{F}\vb{P}_\EuScript{F}\), where
 \(\lambda_\EuScript{F} = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
 -f(f+1)\).
@@ -353,7 +353,7 @@ Eq.~\eqref{eq: completeness-relation}, one can write \(\vb{P}_2\) and
 From Eq.~\eqref{eq: spin-f-interaction-potential}, the spin-2 interaction
 potential takes the form
 \begin{equation}
-    V_\mathrm{int}\delta(\vb{r}_1-\vb{r}_2)(c_0+c_1\vb{F}_1 \cdot \vb{F}_2 
+    V_\mathrm{int}\delta(\vb{r}_1-\vb{r}_2)(c_0+c_1\vb{F}_1 \cdot \vb{F}_2
     +c_2\vb{P}_0),
 \end{equation}
 where \(c_0=(4g_2+3g_4)/7\), \(c_1=(g_4-g_2)/7\), and
@@ -411,8 +411,8 @@ Combing the results of the previous sections, the energy functional of a spin-1
 BEC is given as~\cite{Kawaguchi2012}
 \begin{equation}\label{eq: spin-1-energy-functional}
     E = \int \left[\sum_{m=-1}^1\psi_m^*\left(-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) - pm + qm^2\right)\psi_m + \frac{c_0}{2}n^2
-    + \frac{c_1}{2}|\vb{F}|^2\right] d^3\vb{r},
+        + V(\vb{r}) - pm + qm^2\right)\psi_m + \frac{c_0}{2}n^2
+        + \frac{c_1}{2}|\vb{F}|^2\right] d^3\vb{r},
 \end{equation}
 where \(n(\vb{r}) = \sum_{m=-1}^{1}|\psi_m(\vb{r})|^2\) is the total particle
 density of the system.
@@ -434,11 +434,11 @@ Substituting Eq.~\eqref{eq: spin-1-Pauli-matrices} into
 Eq.~\eqref{eq: spinor-spin-vector} gives the exact expressions of the spin-1
 spin vectors:
 \begin{align}\label{eq: spin-1-spin-vectors}
-    F_x &= \frac{1}{\sqrt{2}} \left(\psi_1^*\psi_0 + \psi_0^*(\psi_1+\psi_{-1})
-    + \psi_{-1}^*\psi_0\right)\\
-    F_y &= \frac{i}{\sqrt{2}}\left(-\psi_1^*\psi_0 + \psi_0^*(\psi_1-\psi_{-1})
-    +\psi_{-1}^*\psi_0\right) \\
-    F_z &= |\psi_1|^2-|\psi_{-1}|^2.
+    F_x & = \frac{1}{\sqrt{2}} \left(\psi_1^*\psi_0 + \psi_0^*(\psi_1+\psi_{-1})
+    + \psi_{-1}^*\psi_0\right)                                                   \\
+    F_y & = \frac{i}{\sqrt{2}}\left(-\psi_1^*\psi_0 + \psi_0^*(\psi_1-\psi_{-1})
+    +\psi_{-1}^*\psi_0\right)                                                    \\
+    F_z & = |\psi_1|^2-|\psi_{-1}|^2.
 \end{align}
 
 The spin-1 Gross-Pitaevskii equations are derived, though lengthy, from the
@@ -447,7 +447,7 @@ Eq.~\eqref{eq: spin-1-energy-functional} as \(i\hbar\delta E/\delta \psi_m^*\).
 This results in
 \begin{equation}\label{eq: spin-1-GPEs}
     i\hbar \pdv{\psi_m}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r})
-    - pm + qm^2 + c_0n\right]\psi_m 
+        - pm + qm^2 + c_0n\right]\psi_m
     + c_1\sum_{m'=-1}^{1}\vb{F}\cdot \vb{f}_{mm'}\psi_{m'},
 \end{equation}
 which describe the mean-field evolution of spin-1 Bose-Einstein condensates.
@@ -459,12 +459,12 @@ Substituting into Eq.~\eqref{eq: spin-1-GPEs} and writing the equation for
 each component explicitly gives
 \begin{align}
     \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) - p + q + c_0n + c_1F_z
-    - \mu\right]\psi_1 + \frac{c_1}{\sqrt{2}}F_-\psi_0 &= 0 \\
+    - \mu\right]\psi_1 + \frac{c_1}{\sqrt{2}}F_-\psi_0    & = 0  \\
     \frac{c_1}{\sqrt{2}}F_+\psi_1 + \left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) + c_0n - \mu\right]\psi_0 + \frac{c_1}{\sqrt{2}}F_-\psi_{-1}
-    &= 0 \\
+        + V(\vb{r}) + c_0n - \mu\right]\psi_0 + \frac{c_1}{\sqrt{2}}F_-\psi_{-1}
+                                                          & = 0  \\
     \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + p + q + c_0n - c_1F_z
-    - \mu\right]\psi_{-1} + \frac{c_1}{\sqrt{2}}F_+\psi_0 &= 0,
+    - \mu\right]\psi_{-1} + \frac{c_1}{\sqrt{2}}F_+\psi_0 & = 0,
 \end{align}
 where \(F_{\pm} = F_x \pm iF_y\).
 These equations can be solved to reveal more on the ground states and stationary
@@ -504,23 +504,24 @@ derivative of Eq.~\eqref{eq: spin-2-energy-functional}, resulting in
 five coupled equations that model the mean-field dynamics of spin-2
 Bose-Einstein condensates.
 \begin{align}
-    i\hbar\pdv{\psi_{\pm 2}}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) \mp 2p + 4q + c_0n \pm 2c_1F_z - \mu\right]\psi_{\pm 2}
-    + c_1F_{\mp}\psi_{\pm 1} + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^* \\
-    i\hbar\pdv{\psi_{\pm 1}}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) \mp p + q + c_0n \pm c_1F_z - \mu\right]\psi_{\pm 1}
+    i\hbar\pdv{\psi_{\pm 2}}{t} & = \left[-\frac{\hbar^2\nabla^2}{2M}
+        + V(\vb{r}) \mp 2p + 4q + c_0n \pm 2c_1F_z - \mu\right]\psi_{\pm 2}
+    + c_1F_{\mp}\psi_{\pm 1} + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^*
+    \label{eq: spin-2-GPEs-pm2}                                            \\
+    i\hbar\pdv{\psi_{\pm 1}}{t} & = \left[-\frac{\hbar^2\nabla^2}{2M}
+        + V(\vb{r}) \mp p + q + c_0n \pm c_1F_z - \mu\right]\psi_{\pm 1}
     + c_1\left(\frac{\sqrt{6}}{2}F_{\mp}\psi_0 + F_{\pm}\psi_{\pm 2}\right)
-    - \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 1}^* \\
-    i\hbar\pdv{\psi_0}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) + c_0n - \mu\right]\psi_0
-    + \frac{\sqrt{6}}{2}c_1\left(F_+\psi_1 + F_-\psi_{-1}\right) 
-    + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^*,
+    - \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 1}^* \label{eq: spin-2-GPEs-pm1} \\
+    i\hbar\pdv{\psi_0}{t}       & = \left[-\frac{\hbar^2\nabla^2}{2M}
+        + V(\vb{r}) + c_0n - \mu\right]\psi_0
+    + \frac{\sqrt{6}}{2}c_1\left(F_+\psi_1 + F_-\psi_{-1}\right)
+    + \frac{c_2}{\sqrt{2}}A_{20}\psi_{\mp 2}^*, \label{eq: spin-2-GPEs-0}
 \end{align}
 where the spin vectors are given as
 \begin{align}\label{eq: spin-2-spin-vectors}
-    F_+ = F_-^* &= 2(\psi_2^*\psi_1 + \psi_{-1}^*\psi_{-2}) 
-    + \sqrt{6}(\psi_1^*\psi_0 + \psi_0^*\psi_{-1}), \\
-    F_z &= 2(|\psi_2|^2 - |\psi_{-2}|^2) + |\psi_1|^2 - |\psi_{-1}|^2.
+    F_+ = F_-^* & = 2(\psi_2^*\psi_1 + \psi_{-1}^*\psi_{-2})
+    + \sqrt{6}(\psi_1^*\psi_0 + \psi_0^*\psi_{-1}),                             \\
+    F_z         & = 2(|\psi_2|^2 - |\psi_{-2}|^2) + |\psi_1|^2 - |\psi_{-1}|^2.
 \end{align}
 
 Following the same procedure as in the spin-1 case, the time-independent GPEs
@@ -531,8 +532,8 @@ can be found through the substitution
 \subsection{Conserved quantities}
 In spinor BECs, there are three conserved quantities.
 Firstly, the total energy of the system
-[Eq.~\eqref{eq: spin-1-energy-functional} and
-Eq.~\eqref{eq: spin-2-energy-functional}] is conserved.
+    [Eq.~\eqref{eq: spin-1-energy-functional} and
+        Eq.~\eqref{eq: spin-2-energy-functional}] is conserved.
 In addition, the total atom number of the condensate
 \begin{equation}
     N = \int \sum_m |\psi_m|^2 d^3\vb{r}
