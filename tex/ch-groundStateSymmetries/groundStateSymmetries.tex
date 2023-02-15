@@ -8,7 +8,7 @@ magnetisation.
 Finally, we construct some topological defects present in these systems.
 
 There are numerous references (e.g., see~\cite{Ciobanu2000, Zhang2003,
-Kawaguchi2012, StamperKurn2013}) that already provide most of these results,
+    Kawaguchi2012, StamperKurn2013}) that already provide most of these results,
 but we reproduce them here to provide reference for subsequent chapters.
 Furthermore, there are subtleties between the phase diagrams of spinor BECs
 in the presence of conserved magnetisation that is not widely reported, so we
@@ -22,7 +22,7 @@ distinctions between the two.
 
 For a spin-1 system, the interacting part of the energy functional contains
 two independent non-linear interaction terms (\textcolor{red}{See relevant
-section constructing interacting Hamiltonian}), given by
+    section constructing interacting Hamiltonian}), given by
 \begin{equation}
     E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1|\vb{F}|^2 d\vb{r}.
 \end{equation}
@@ -45,27 +45,27 @@ A general spin rotation represents rotations around the \(z-y-z\) axes:
 In explicit matrix form, this becomes
 \begin{equation}
     U(\alpha, \beta, \gamma) = \mqty(
-        e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
-        -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta &
-        e^{-i(\alpha - \gamma)}\sin^2\frac{\beta}{2} \\
-        \frac{e^{-i\gamma}}{\sqrt{2}}\sin\beta &
-        \cos\beta &
-        -\frac{e^{i\gamma}}{\sqrt{2}}\sin\beta \\
-        e^{i(\alpha - \gamma)}\cos^2\frac{\beta}{2} &
-        \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta &
-        e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
+    e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
+    -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta &
+    e^{-i(\alpha - \gamma)}\sin^2\frac{\beta}{2} \\
+    \frac{e^{-i\gamma}}{\sqrt{2}}\sin\beta &
+    \cos\beta &
+    -\frac{e^{i\gamma}}{\sqrt{2}}\sin\beta \\
+    e^{i(\alpha - \gamma)}\cos^2\frac{\beta}{2} &
+    \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta &
+    e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
     ).
 \end{equation}
 
 The general ferromagnetic wave function is constructed by
 \begin{equation}\label{eq: FM-representative-spinor}
-    \psi^\mathrm{FM} = 
-    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} = 
+    \psi^\mathrm{FM} =
+    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} =
     \sqrt{n}e^{i(\theta - \gamma)}\mqty(
-        e^{-i\alpha}\cos^2\frac{\beta}{2} \\
-        \frac{1}{\sqrt{2}}\sin\beta \\
-        e^{i\alpha}\sin^2\frac{\beta}{2}
-        ).
+    e^{-i\alpha}\cos^2\frac{\beta}{2} \\
+    \frac{1}{\sqrt{2}}\sin\beta \\
+    e^{i\alpha}\sin^2\frac{\beta}{2}
+    ).
 \end{equation}
 
 For polar interactions (\(c_1 > 0\)), the energy is minimised by having the
@@ -76,13 +76,13 @@ A representative polar spinor is
 \end{equation}
 Similar to the FM case, a general polar wave function is given by
 \begin{equation}\label{eq: polar-representative-spinor}
-    \psi^\mathrm{P} = 
-    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} = 
+    \psi^\mathrm{P} =
+    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} =
     \sqrt{n}e^{i\theta}\mqty(
-        -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
-        \cos\beta \\
-        \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
-        ).
+    -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
+    \cos\beta \\
+    \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
+    ).
 \end{equation}
 
 Thus, in the absence of a magnetic field, there are two ground states in a
@@ -96,13 +96,13 @@ states of the spin-1 system.
     \begin{tikzpicture}
         \node[anchor=south west, inner sep=0] (sodium) at (0, 0)
         {\includegraphics[width=0.38\textwidth]
-        {gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf}};
+            {gfx/ch-groundStateSymmetries/ground_states_polar_int_spin1.pdf}};
         \node[anchor=south west, inner sep=0] (rubidium) at (8, 0)
         {\includegraphics[width=0.38\textwidth]
-        {gfx/ch-groundStateSymmetries/ground_states_fm_int_spin1.pdf}};
-        
+            {gfx/ch-groundStateSymmetries/ground_states_fm_int_spin1.pdf}};
+
         \begin{scope}[x={($0.1*(sodium.south east)$)},
-                      y={($0.1*(sodium.north west)$)}]
+                y={($0.1*(sodium.north west)$)}]
             \draw[->, thick] (0,5)--(10.3,5) node[right]{$\frac{q}{c_1n}$};
             \draw[->, thick] (4.97,0)--(4.97,10.3) node[above]{$\frac{p}{c_1n}$};
             \draw[-] (6.1, 4.8) -- (6.1, 5.2);
@@ -125,11 +125,11 @@ states of the spin-1 system.
             \node[anchor=south west] at (3.8, -1.5) {\large $c_1 > 0$};
         \end{scope}
         \begin{scope}[x={($0.1*(sodium.south east)$)},
-            y={($0.1*(sodium.north west)$)}]
+                y={($0.1*(sodium.north west)$)}]
             \draw[->, thick] (19.3,5)--(24.5,5) node[right]{$\frac{q}{|c_1|n}$};
             \draw[->, thick] (19.3,0)--(19.3,10.3) node[above]
             {$\frac{p}{|c_1|n}$};
-            \node[anchor=south west] at (19.2, 8.6) 
+            \node[anchor=south west] at (19.2, 8.6)
             {\scriptsize $p^2=q^2-2|c_1|nq$};
             \draw[->, thick] (19.7, 8.8) -- (21.9, 6.2);
             \node[anchor=south west, inner sep=0, rotate=-38] at (19.3, 4.)
@@ -154,10 +154,10 @@ states of the spin-1 system.
         \end{scope}
     \end{tikzpicture}
     \caption{\label{fig: GS-phase-diagram}Ground state phase diagrams of spin-1
-    BECs for polar (\(c_1 > 0\)) and ferromagnetic (\(c_1 < 0\)) interactions
-    in a parameter space of \((p, q)\).
-    Solid or dashed white lines represent discontinuous and continuous phase
-    transitions, respectively.}
+        BECs for polar (\(c_1 > 0\)) and ferromagnetic (\(c_1 < 0\)) interactions
+        in a parameter space of \((p, q)\).
+        Solid or dashed white lines represent discontinuous and continuous phase
+        transitions, respectively.}
 \end{figure}
 Fig.~\ref{fig: GS-phase-diagram} shows the ground state phase diagram for spin-1
 BECs with \(c_1 > 0\) (left) and \(c_1 < 0\) (right) in the presence of a
@@ -170,19 +170,19 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
     \centering
     \begin{tabular}{ccc}
         \toprule
-        Ground state & Spinor, \(\zeta^T\) & \(F_z\) \\
+        Ground state                          & Spinor, \(\zeta^T\)                      & \(F_z\) \\
         \midrule
-        Ferromagnetic (I) & \((1, 0, 0)\) & 1\\
-        Ferromagnetic (II) & \((0, 0, 1)\) & -1\\
-        Antiferromagnetic (III) & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
-        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\) \\
-        Polar (IV) & \((0, 1, 0)\) & 0 \\
-        Broken-axisymmetry (V) & Eq.~\eqref{eq: BA-spinor}
-        & \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\) \\
+        Ferromagnetic (I)                     & \((1, 0, 0)\)                            & 1       \\
+        Ferromagnetic (II)                    & \((0, 0, 1)\)                            & -1      \\
+        Antiferromagnetic (III)               & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
+        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\)                                 \\
+        Polar (IV)                            & \((0, 1, 0)\)                            & 0       \\
+        Broken-axisymmetry (V)                & Eq.~\eqref{eq: BA-spinor}
+                                              & \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\)            \\
         \bottomrule
     \end{tabular}
     \caption{\label{tab: spin-1-ground-states}Summary of the ground state
-    phases in a spin-1 BEC with their respective spinors and magnetisation.}
+        phases in a spin-1 BEC with their respective spinors and magnetisation.}
 \end{table}
 
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
@@ -204,9 +204,9 @@ Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 ferromagnetic interactions that has the form
 \begin{equation}
     \begin{aligned}
-        \zeta_{\pm 1} &= 
-                    \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}}, \\
-        \zeta_0 &= \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}},
+        \zeta_{\pm 1} & =
+        \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}},              \\
+        \zeta_0       & = \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}},
     \end{aligned}
     \label{eq: BA-spinor}
 \end{equation}
@@ -223,9 +223,9 @@ magnetisation.
 However, if we enforce that magnetisation be conserved, then the ground state
 phase diagram changes even further.
 \textcolor{red}{This section is a maybe.
-I do think it would be very
-nice to have, though I am apprehensive about how much work it would take to
-construct.}
+    I do think it would be very
+    nice to have, though I am apprehensive about how much work it would take to
+    construct.}
 
 
 \subsection{Graphical representation}
@@ -257,8 +257,8 @@ non-trivial manner.
 
 In spin-1, there are three \(f = 1\) spherical harmonics given by
 \begin{align}
-    Y_1^0(\theta, \phi) &= \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
-    Y_1^{\pm 1}(\theta, \phi) &= 
+    Y_1^0(\theta, \phi)       & = \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
+    Y_1^{\pm 1}(\theta, \phi) & =
     \frac{1}{2}\sqrt{\frac{3}{2\pi}}e^{\pm i \phi}\sin\theta.
 \end{align}
 The spherical harmonic representations of the spin-1 polar and ferromagnetic
@@ -268,7 +268,7 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/FM-spherical.pdf}
         \caption{\label{subfig: spin-1-FM-spherical}
-            \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
+        \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
     \end{subfigure}
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
@@ -288,7 +288,7 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     The order parameter remains unchanged about \(\pi/2\) rotations about the
     \(C_2\) axis.
     \textcolor{red}{Will also add spherical harmonics for states with
-    magnetisation.}}
+        magnetisation.}}
 \end{figure}
 
 We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
@@ -362,27 +362,27 @@ In a spin-2 system, a general spin rotation is instead represented as a
 \(5\times 5\) matrix of the form
 \begin{multline}\label{eq: spin-2-rotation-matrix}
     U(\alpha, \beta, \gamma) \\
-     = \mqty(
-        e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S 
-        & \sqrt{6}e^{-2i\alpha}C^2S^2 & -2e^{-i(2\alpha-\gamma)}CS^3
-        & e^{-2i(\alpha + \gamma)}S^4
-        \\
-        2e^{-i(\alpha+2\gamma)}C^3S & e^{-i(\alpha+\gamma)}C^2(C^2-3S^2)
-        & -\sqrt{\frac{3}{8}}e^{-i\alpha}\sin 2\beta
-        & -e^{-i(\alpha-\gamma)}S^2(S^2-3C^2) & -2e^{-i(\alpha-2\gamma)}CS^3
-        \\
-        \sqrt{6}e^{-2i\gamma}C^2S^2 & \sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
-        & \frac{1}{4}(1+3\cos 2\beta)
-        & -\sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
-        & \sqrt{6}e^{2i\gamma}C^2S^2
-        \\
-        2e^{i(\alpha-2\gamma)}CS^3 & -e^{i(\alpha-\gamma)}S^2(S^2-3C^2)
-        & \sqrt{\frac{3}{8}}e^{i\alpha}\sin 2\beta
-        & e^{i(\alpha-\gamma)}C^2(C^2-3S^2) & -2e^{i(\alpha+2\gamma)}C^3S
-        \\
-        e^{2i(\alpha - \gamma)}C^4 & 2e^{i(2\alpha-\gamma)}CS^3 
-        & \sqrt{6}e^{2i\alpha}C^2S^2 & 2e^{i(2\alpha+\gamma)}C^3S
-        & e^{2i(\alpha + \gamma)}C^4
+    = \mqty(
+    e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S
+    & \sqrt{6}e^{-2i\alpha}C^2S^2 & -2e^{-i(2\alpha-\gamma)}CS^3
+    & e^{-2i(\alpha + \gamma)}S^4
+    \\
+    2e^{-i(\alpha+2\gamma)}C^3S & e^{-i(\alpha+\gamma)}C^2(C^2-3S^2)
+    & -\sqrt{\frac{3}{8}}e^{-i\alpha}\sin 2\beta
+    & -e^{-i(\alpha-\gamma)}S^2(S^2-3C^2) & -2e^{-i(\alpha-2\gamma)}CS^3
+    \\
+    \sqrt{6}e^{-2i\gamma}C^2S^2 & \sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
+    & \frac{1}{4}(1+3\cos 2\beta)
+    & -\sqrt{\frac{3}{8}}e^{-i\gamma}\sin 2\beta
+    & \sqrt{6}e^{2i\gamma}C^2S^2
+    \\
+    2e^{i(\alpha-2\gamma)}CS^3 & -e^{i(\alpha-\gamma)}S^2(S^2-3C^2)
+    & \sqrt{\frac{3}{8}}e^{i\alpha}\sin 2\beta
+    & e^{i(\alpha-\gamma)}C^2(C^2-3S^2) & -2e^{i(\alpha+2\gamma)}C^3S
+    \\
+    e^{2i(\alpha - \gamma)}C^4 & 2e^{i(2\alpha-\gamma)}CS^3
+    & \sqrt{6}e^{2i\alpha}C^2S^2 & 2e^{i(2\alpha+\gamma)}C^3S
+    & e^{2i(\alpha + \gamma)}C^4
     ),
 \end{multline}
 where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
@@ -393,11 +393,11 @@ rotation with a global phase \(\theta \) and condensate density \(n\) yields the
 general FM-2 spinor
 \begin{equation}\label{eq: FM-2-representative-spinor}
     \psi^\mathrm{FM} = \sqrt{n}e^{i\theta'}\mqty(
-        e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
-        2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
-        \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
-        2e^{i\alpha}\cos\frac{\beta}{2} \sin^3\frac{\beta}{2} \\
-        e^{2i\alpha} \sin^4\frac{\beta}{2}
+    e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
+    2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
+    \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
+    2e^{i\alpha}\cos\frac{\beta}{2} \sin^3\frac{\beta}{2} \\
+    e^{2i\alpha} \sin^4\frac{\beta}{2}
     ),
 \end{equation}
 where \(\theta'=\theta-2\gamma \).
@@ -416,23 +416,23 @@ In the absence of a magnetic field, these two states are degenerate.
 The general wave function for the UN state is
 \begin{equation}\label{eq: UN-representative-spinor}
     \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\theta}\mqty(
-        e^{-2i\alpha} \sin^2\beta \\
-        -2e^{-i\alpha} \sin\beta \cos\beta \\
-        \sqrt{\frac{2}{3}}(3\cos^2\beta - 1) \\
-        2e^{i\alpha} \sin\beta \cos\beta \\
-        e^{2i\alpha} \sin^2\beta
+    e^{-2i\alpha} \sin^2\beta \\
+    -2e^{-i\alpha} \sin\beta \cos\beta \\
+    \sqrt{\frac{2}{3}}(3\cos^2\beta - 1) \\
+    2e^{i\alpha} \sin\beta \cos\beta \\
+    e^{2i\alpha} \sin^2\beta
     ),
 \end{equation}
 and for the BN
 \begin{equation}\label{eq: BN-representative-spinor}
     \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\theta} \mqty(
-        e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
-                            - i\cos\beta\sin 2\gamma\right] \\
-        e^{-i\alpha}\sin\beta(\cos\beta\cos 2\beta - i\sin 2\gamma) \\
-        \sqrt{\frac{3}{2}}\sin^2\beta \cos 2\gamma \\
-        -e^{i\alpha}\sin\beta(\cos\beta\cos 2\gamma + i\sin 2\gamma) \\
-        e^{2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
-                            + i\cos\beta\sin 2\gamma\right]
+    e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
+        - i\cos\beta\sin 2\gamma\right] \\
+    e^{-i\alpha}\sin\beta(\cos\beta\cos 2\beta - i\sin 2\gamma) \\
+    \sqrt{\frac{3}{2}}\sin^2\beta \cos 2\gamma \\
+    -e^{i\alpha}\sin\beta(\cos\beta\cos 2\gamma + i\sin 2\gamma) \\
+    e^{2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
+        + i\cos\beta\sin 2\gamma\right]
     ).
 \end{equation}
 
@@ -448,20 +448,20 @@ spinor
 The general wave function is given as
 \begin{equation}
     \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\theta} \mqty(
-        e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
-        + e^{-2i(\alpha-\gamma)}S^4
-        \\
-        2e^{-i(\alpha+2\gamma)}C^3S - \frac{\sqrt{3}}{2}ie^{-i\alpha}\sin 2\beta
-        - 2e^{-i(\alpha-2\gamma)}CS^3
-        \\
-        \sqrt{6}e^{-2i\gamma}C^2S^2 + i\frac{\sqrt{2}}{4}(1+3\cos 2\beta)
-        + \sqrt{6}e^{2i\gamma}C^2S^2
-        \\
-        2e^{i(\alpha-2\gamma)}CS^3 + \frac{\sqrt{3}}{2}ie^{i\alpha}\sin 2\beta
-        - 2e^{i(\alpha+2\gamma)}C^3S
-        \\
-        e^{2i(\alpha-\gamma)}S^4 + 2i\sqrt{3}e^{2i\alpha}C^2S^2
-        + e^{2i(\alpha+\gamma)}C^4
+    e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
+    + e^{-2i(\alpha-\gamma)}S^4
+    \\
+    2e^{-i(\alpha+2\gamma)}C^3S - \frac{\sqrt{3}}{2}ie^{-i\alpha}\sin 2\beta
+    - 2e^{-i(\alpha-2\gamma)}CS^3
+    \\
+    \sqrt{6}e^{-2i\gamma}C^2S^2 + i\frac{\sqrt{2}}{4}(1+3\cos 2\beta)
+    + \sqrt{6}e^{2i\gamma}C^2S^2
+    \\
+    2e^{i(\alpha-2\gamma)}CS^3 + \frac{\sqrt{3}}{2}ie^{i\alpha}\sin 2\beta
+    - 2e^{i(\alpha+2\gamma)}C^3S
+    \\
+    e^{2i(\alpha-\gamma)}S^4 + 2i\sqrt{3}e^{2i\alpha}C^2S^2
+    + e^{2i(\alpha+\gamma)}C^4
     ).
 \end{equation}
 
@@ -475,7 +475,7 @@ which is obtained from Eq.~\eqref{eq: C-1-spinor} via the spin rotation
 \begin{equation}
     \zeta^{C-2} = e^{-i\pi}e^{i\frac{\pi}{4}F_z}
     \exp\left[-i\frac{F_x-F_y}{\sqrt{2}}
-    \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^\mathrm{C-1}.
+        \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^\mathrm{C-1}.
 \end{equation}
 
 Finally, for the case of \(c_1, c_2 < 0\), there is a competition between
@@ -491,9 +491,9 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
     \begin{tikzpicture}
         \node[anchor=south west, inner sep=0] (diagram) at (0, 0)
         {\includegraphics[width=0.5\textwidth]
-        {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
+            {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
         \begin{scope}[x={($0.1*(diagram.south east)$)},
-            y={($0.1*(diagram.north west)$)}]
+                y={($0.1*(diagram.north west)$)}]
             \draw[->, thick, anchor=south west] (9.8, 5) -- (10.1, 5)
             node[right] {$c_1n$};
             \draw[->, thick, anchor=south west] (5, 9.7) -- (5, 10.1)
@@ -508,10 +508,10 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
         \end{scope}
     \end{tikzpicture}
     \caption{\label{fig: spin-2-ground-states}Ground state phase diagram for
-    spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
-    magnetic field.
-    White dashed lines indicate a first-order phase transition region between
-    the phases.}
+        spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
+        magnetic field.
+        White dashed lines indicate a first-order phase transition region between
+        the phases.}
 \end{figure}
 
 \subsection{Graphical representation}
@@ -521,10 +521,10 @@ Eq.~\eqref{eq: spherical-harmonics}.
 For the spin-2 system, however, we have five \(f=2\) spherical harmonics given
 by
 \begin{align}
-    Y_2^0(\theta, \phi) &= \frac{1}{4}\sqrt{\frac{5}{\pi}}(3\cos^2\theta - 1),\\
-    Y_2^{\pm 1}(\theta, \phi) &= 
-    \mp \frac{1}{2}\sqrt{\frac{15}{2\pi}}e^{\pm i\phi}\sin\theta\cos\theta, \\
-    Y_2^{\pm 2}(\theta, \phi) &=
+    Y_2^0(\theta, \phi)       & = \frac{1}{4}\sqrt{\frac{5}{\pi}}(3\cos^2\theta - 1), \\
+    Y_2^{\pm 1}(\theta, \phi) & =
+    \mp \frac{1}{2}\sqrt{\frac{15}{2\pi}}e^{\pm i\phi}\sin\theta\cos\theta,           \\
+    Y_2^{\pm 2}(\theta, \phi) & =
     \frac{1}{4}\sqrt{\frac{15}{2\pi}}e^{\pm 2i\phi}\sin^2\theta.
 \end{align}
 The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
@@ -554,7 +554,7 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
         \includegraphics[width=\textwidth]
         {gfx/ch-groundStateSymmetries/BN-spherical.pdf}
         \caption{\label{subfig: BN-spherical}
-            BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
+        BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
     \end{subfigure}\\
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
@@ -569,18 +569,18 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
         Cyclic-2:\@ \(\zeta={(1, 0, 0, \sqrt{2}, 1)}^T/\sqrt{3}\)}
     \end{subfigure}
     \caption{\label{fig: spin-2-spherical-harmonics}Spherical harmonic
-    representations for different ground states in a spin-2 system.
-    (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and \(|F|=n\),
-    respectively, where the arrows indicate the direction of magnetisation.
-    (c): the uniaxial nematic state where \(\hat{\vb{d}}\) is the nematic
-    director. The order parameter remains unchanged about \(\pi \) rotations
-    about the \(C_2\) axis.
-    (d): the biaxial nematic state. The order parameter is symmetric under
-    \(\pi/2\) rotations about the \(C_4\) axis.
-    Additionally, there is a two-fold symmetry about the \(C_2, C_2'\) axes.
-    (e) and (f): the cyclic states which have a two- and three-fold symmetry
-    about the \(C_2, C_3\) axes, respectively.
-    \textcolor{red}{Colour bars.}}
+        representations for different ground states in a spin-2 system.
+        (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and \(|F|=n\),
+        respectively, where the arrows indicate the direction of magnetisation.
+        (c): the uniaxial nematic state where \(\hat{\vb{d}}\) is the nematic
+        director. The order parameter remains unchanged about \(\pi \) rotations
+        about the \(C_2\) axis.
+        (d): the biaxial nematic state. The order parameter is symmetric under
+        \(\pi/2\) rotations about the \(C_4\) axis.
+        Additionally, there is a two-fold symmetry about the \(C_2, C_2'\) axes.
+        (e) and (f): the cyclic states which have a two- and three-fold symmetry
+        about the \(C_2, C_3\) axes, respectively.
+        \textcolor{red}{Colour bars.}}
 \end{figure}
 
 It is clear from Figs~\ref{subfig: FM-2-spherical}
@@ -647,7 +647,7 @@ phases~\cite{Leonhardt2000, Seo2015}.
 In this section we introduce some families of vortices that can occur
 in both spin-1 and spin-2 systems.
 
-\subsection{Spin-1}
+\subsection{Spin-1}\label{sec: vortices-spin-1}
 We start with the polar phase of a spin-1 condensate, with the representative
 spinor defined as in Eq.~\eqref{eq: polar-representative-spinor}.
 Unlike the scalar BEC, a singly quantised vortex in the polar phase does not
@@ -663,9 +663,9 @@ the choice of \(\theta=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
 Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
 \begin{equation}
     \psi^\mathrm{HQV} = \sqrt{\frac{n}{2}} \mqty(
-        -1 \\
-        0 \\
-        e^{i\varphi}
+    -1 \\
+    0 \\
+    e^{i\varphi}
     ),
     \label{eq: polar-HQV}
 \end{equation}
@@ -695,13 +695,13 @@ HQV.\@
         \caption{\label{subfig: coreless-vortex}}
     \end{subfigure}
     \caption{Spherical harmonic representation of vortices in a spin-1 BEC.\@
-    (a): Spin-1 polar HQV defined by Eq.~\eqref{eq: polar-HQV}.
-    A complete circuit of the vortex results in a \(\pi \) spin rotation of
-    the nematic director coupled with a \(\pi \) change to the condensate phase.
-    (b): Ferromagnetic coreless vortex.
-    The vortex takes on a characteristic fountain-like texture of the condensate
-    spin vector. \textcolor{red}{Make FM spherical harmonics
-    bigger. Maybe another inner ring?}
+        (a): Spin-1 polar HQV defined by Eq.~\eqref{eq: polar-HQV}.
+        A complete circuit of the vortex results in a \(\pi \) spin rotation of
+        the nematic director coupled with a \(\pi \) change to the condensate phase.
+        (b): Ferromagnetic coreless vortex.
+        The vortex takes on a characteristic fountain-like texture of the condensate
+        spin vector. \textcolor{red}{Make FM spherical harmonics
+            bigger. Maybe another inner ring?}
     }
 \end{figure}
 
@@ -716,9 +716,9 @@ using the choice of \(\theta-\gamma = \alpha= \varphi \) and having
 \(\beta = \beta(\rho)\) be a function of the radial coordinate, \(\rho \):
 \begin{equation}
     \psi^\mathrm{coreless} = \sqrt{n}\mqty(
-        \cos^2\frac{\beta}{2} \\
-        \frac{e^{i\varphi}}{\sqrt{2}}\sin\beta \\
-        e^{2i\varphi}\sin^2\frac{\beta}{2}
+    \cos^2\frac{\beta}{2} \\
+    \frac{e^{i\varphi}}{\sqrt{2}}\sin\beta \\
+    e^{2i\varphi}\sin^2\frac{\beta}{2}
     ).
 \end{equation}
 The single-valued condition of the wave function is satisfied by choosing
@@ -731,7 +731,7 @@ A spherical harmonic representation of the coreless vortex is shown in
 Fig.~\ref{subfig: coreless-vortex}, where the characteristic fountain-like
 spin texture is apparent.
 
-\subsection{Spin-2}
+\subsection{Spin-2}\label{sec: vortices-spin-2}
 Spin-2 BECs offer an even richer diagram of topological defects than their
 spin-1 counterparts.
 We start with the UN phase, as given by
@@ -747,10 +747,10 @@ Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
 the choice \(\theta=0, \alpha=-\varphi/2, \beta=\pi/2\):
 \begin{equation}
     \psi^\mathrm{SV} = \frac{\sqrt{6n}}{4}\mqty(
-        e^{i\varphi} \\
-        0 \\
-        -\sqrt{\frac{2}{3}} \\
-        0 \\ e^{-i\varphi}
+    e^{i\varphi} \\
+    0 \\
+    -\sqrt{\frac{2}{3}} \\
+    0 \\ e^{-i\varphi}
     ).
 \end{equation}
 The spherical harmonic representation of this vortex state is shown in
@@ -768,13 +768,13 @@ Fig.~\ref{subfig: UN-spin-vortex}.
         \caption{\label{subfig: BN-HQV}}
     \end{subfigure}
     \caption{Spherical harmonic representation of select vortices in the spin-2
-    nematic phases.
-    (a): A spin vortex in the UN phase. A complete circuit of the vortex
-    results in a \(\pi \) winding of the condensate spin vector, with no change
-    to the condensate phase.
-    (b): One type of half-quantum vortex in the BN phase.
-    The condensate phase winds by \(\pi \) about the vortex core which is
-    coupled to a \(\pi / 2\) spin rotation.}
+        nematic phases.
+        (a): A spin vortex in the UN phase. A complete circuit of the vortex
+        results in a \(\pi \) winding of the condensate spin vector, with no change
+        to the condensate phase.
+        (b): One type of half-quantum vortex in the BN phase.
+        The condensate phase winds by \(\pi \) about the vortex core which is
+        coupled to a \(\pi / 2\) spin rotation.}
 \end{figure}
 As the core of the vortex is traversed, the spin vector winds by \(\pi \) about
 the axis perpendicular to the nematic director, \(\hat{\vb{d}}\).
@@ -787,11 +787,11 @@ Such a vortex can be constructed from Eq.~\eqref{eq: BN-representative-spinor}
 using the choice \(\theta=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
 \begin{equation}
     \psi^\mathrm{1/2-1/4} = \sqrt{\frac{n}{2}}\mqty(
-        1 \\
-        0 \\
-        0 \\
-        0 \\
-        e^{i\varphi}
+    1 \\
+    0 \\
+    0 \\
+    0 \\
+    e^{i\varphi}
     ).
 \end{equation}
 The spherical harmonic representation of this vortex is shown in
@@ -837,10 +837,10 @@ Fig.~\ref{fig: cyclic-fractional-spherical}.
         \caption{}
     \end{subfigure}
     \caption{\label{fig: cyclic-fractional-spherical}Spherical harmonic
-    representations of cyclic fractional vortices.
-    (a): The \(\frac{1}{3}\) vortex. A complete circuit reveals a \(2\pi/3\)
-    winding of the condensate phase, coupled with a \(\pi/2\) spin rotation.
-    (b): The \(\frac{2}{3}\) vortex. Similarly, a complete circuit of the vortex
-    results in a \(4\pi/3\) winding of the condensate phase, again coupled to
-    a \(\pi/2\) spin rotation.}
+        representations of cyclic fractional vortices.
+        (a): The \(\frac{1}{3}\) vortex. A complete circuit reveals a \(2\pi/3\)
+        winding of the condensate phase, coupled with a \(\pi/2\) spin rotation.
+        (b): The \(\frac{2}{3}\) vortex. Similarly, a complete circuit of the vortex
+        results in a \(4\pi/3\) winding of the condensate phase, again coupled to
+        a \(\pi/2\) spin rotation.}
 \end{figure}
