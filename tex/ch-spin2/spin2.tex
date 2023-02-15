@@ -154,37 +154,219 @@ Eqs.~\eqref{eq: spin-2-stationary-zeta2}-\eqref{eq: spin-2-stationary-zetam2}
 and Eqs.~\eqref{eq: spin-2-stationary-zeta1}
 -~\eqref{eq: spin-2-stationary-zetam1}, respectively, as
 \begin{align}
-    \mqty(4q + 2\beta -\tilde{\mu} & \alpha                    \\
+    \mqty(4q + 2\beta -\tilde{\mu} & \alpha                           \\
     \alpha^*                       & 4q - 2\beta -\tilde{\mu})
-    \mqty(\zeta_2                                              \\
-    \zeta_{-2}^*)                  & = 0, \label{eq: D2}       \\
-    \mqty(q + \beta -\tilde{\mu}   & -\alpha                   \\
+    \mqty(\zeta_2                                                     \\
+    \zeta_{-2}^*)                  & = 0, \label{eq: zeta-pm2-matrix} \\
+    \mqty(q + \beta -\tilde{\mu}   & -\alpha                          \\
     -\alpha^*                      & q - \beta -\tilde{\mu})
-    \mqty(\zeta_1                                              \\
-    \zeta_{-1}^*)                  & = 0, \label{eq: D1}
+    \mqty(\zeta_1                                                     \\
+    \zeta_{-1}^*)                  & = 0, \label{eq: zeta-pm1-matrix}
 \end{align}
 with Eq.~\eqref{eq: spin-2-stationary-zeta0} being recast as
 \begin{equation}\label{eq: spin-2-stationary-zeta0-recast}
     (\alpha - \tilde{\mu})\zeta_0 = 0.
 \end{equation}
+Here, \(\tilde{\mu} = \mu - c_0n\), \(\alpha = c_2na_{20}/\sqrt{5}\) and
+\(\beta = c_1nf_z - p\).
 The stationary solutions are then classified according to the determinant of
 the coefficient matrices of the above equations.
 Explicitly, these are
 \begin{align}
-    D_2 & = {(4q-\tilde{\mu})}^2 -4\beta^2 - |\alpha|^2,  \\
-    D_1 & = {(q - \tilde{\mu})}^2 - \beta^2 - |\alpha|^2.
+    D_2 & = {(4q-\tilde{\mu})}^2 -4\beta^2 - |\alpha|^2, \label{eq: D2}  \\
+    D_1 & = {(q - \tilde{\mu})}^2 - \beta^2 - |\alpha|^2. \label{eq: D1}
 \end{align}
 From these determinants and Eq.~\eqref{eq: spin-2-stationary-zeta0-recast},
 we can derive stationary solutions that interpolate between different ground
 states of the spin-2 system.
 
+\subsection{Ferromagnetic to biaxial nematic}
 Consider the case \(D_1 \neq 0\) and \(D_2 = 0\).
 If \(D_1 \neq 0\), then Eq.~\eqref{eq: D1} implies \(\zeta_1=\zeta_{-1} = 0\).
 Additionally, if \(\alpha \neq \tilde{\mu}\),
 then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
+\textcolor{red}{Rest of derivation here.}
+
+The resulting stationary solution has the form
+\begin{equation}\label{eq: FM-BN-interpolating-spinor}
+    \zeta_\mathrm{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    \sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where \(f_z = p / [(c_1-c_2/20)n]\) gives the longitudinal magnetisation.
+One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
+the ferromagnetic state with spin \(f_z = \pm 2\).
+Alternatively, the solution becomes the BN state when \(p=0\).
+Therefore, this spinor provides an interpolating solution between the
+ferromagnetic and BN phases, which is controlled by the linear Zeeman shift,
+\(p\).
+
+Defect states that span the interface can be constructed from the steady state
+solutions by applying a condensate phase \(\phi \) and spin rotation defined by
+Euler angles (\(\alpha, \beta, \gamma \))
+[see Eq.~\eqref{eq: spin-2-rotation-matrix}].
+In this Chapter we focus only on a small subset of the possible defects present
+in the spin-2 system.
+
+We start from the interpolating spinor between the FM and BN phases in
+Eq.~\eqref{eq: FM-BN-interpolating-spinor}.
+The simplest vortex case to consider is that of a singular, singly quantised
+vortex (SQV) on both sides of the interface.
+Such a vortex is formed of a \(2\pi \) winding of the condensate phase about
+the vortex core.
+This winding is achieved by letting \(\phi = \varphi \), where \(\varphi \) is
+the azimuthal angle about the core and letting the Euler angles be constant.
+This resulting interpolating spinor then reads
+\begin{equation}
+    \zeta_\mathrm{FM-BN}^\mathrm{SQV} =
+    \mqty(e^{i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where we have taken \(\alpha=\beta=\gamma=0\) for simplicity.
+Despite being characterised by the same phase winding on both sides of the
+interface, each SQV represents an entirely different object due to the
+differing topologies on either side.
+
+Another solution connecting different vortex states can be obtained from the
+above by removing the winding from one of the \(\zeta_{\pm 2}\) components.
+For example, if \(f_z\) interpolates from \(f_z=0\) to \(f_z=2\) and the winding
+was removed from the \(\zeta_{-2}\) component, this solution would then connect
+an SQV on the FM side to a half-quantum vortex (HQV) on the BN side.
+For that same state, if the winding was instead removed from the \(\zeta_{2}\)
+component, then the HQV on the BN side would continuously connect to a
+vortex-free state on the FM side.
+
+Spinor BECs support the non-dissipative flow of condensate spin, which gives
+rise to vortex structures that carry a spin circulation, referred to as a spin
+vortex.
+Such vortices arise in all phases of the spin-2 BEC\@.
+An interpolating solution involving a spin vortex can be constructed through the
+choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
+singular SQV on the FM side which connecting to a BN spin vortex.
+The resulting spinor reads
+\begin{equation}
+    \zeta_\mathrm{FM-BN}^\mathrm{SQV-SV} =
+    \mqty(e^{-i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where we have chosen \(\beta = 0\).
+
+As seen in Sec.~\ref{sec: vortices-spin-1}, the FM phase of a spin-1 BEC can
+host a non-singular, coreless vortex that has a characteristic fountain-like
+spin texture.
+A coreless vortex can also be constructed in the spin-2 system following a
+similar procedure and having \(\beta=\beta(\rho)\) be a monotonically increasing
+function of the radial coordinate \(\rho = \sqrt{x^2 + y^2}\).
+This, in addition to choosing the Euler angles
+\(\phi - 2\gamma = 2\alpha = 2\varphi \) leads to the interpolating spinor
+(\(\gamma=0\))
+\begin{equation}
+    \zeta_\mathrm{FM-BN}^\mathrm{coreless} = \mqty(
+    C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
+    2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
+        - CS^3\sqrt{1-f_z/2}\right] \\
+    e^{2i\varphi}\sqrt{6}C^2S^2\left[\sqrt{1+f_z/2}
+        + \sqrt{1-f_z/2} \right] \\
+    2e^{3i\varphi}\left[CS^3\sqrt{1+f_z/2}
+        - C^3S\sqrt{1-f_z/2}\right] \\
+    e^{4i\varphi}\left[S^4\sqrt{1+f_z/2} + C^4\sqrt{1-f_z/2} \right]
+    ),
+\end{equation}
+where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
+In the FM limit (\(f_z=2\)), one recovers the spin-2 coreless vortex given as
+\begin{equation}
+    \zeta^\mathrm{coreless} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
+    e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
+    ).
+\end{equation}
+The spinor in the cyclic limit (\(f_z=0\)) reads
+\begin{equation}\label{eq: double-quantised-cyclic}
+    \zeta^\mathrm{DQV} = \mqty(
+    C^4 + S^4 \\
+    2e^{i\varphi}CS\left[C^2-S^2\right] \\
+    2e^{2i\varphi}\sqrt{6}C^2S^2 \\
+    2e^{3i\varphi}CS\left[S^2 - C^2\right] \\
+    e^{4i\varphi}\left[C^4 + S^4\right]).
+\end{equation}
+It is not immediately obvious from the form of the spinor the type of vortex
+present on the cyclic side of the interface.
+To investigate the vortex state, we plot the spherical harmonics of the state
+defined in Eq.~\eqref{eq: double-quantised-cyclic} in
+Fig.~\ref{fig: coreless-doubly-quantised}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{\label{fig: coreless-doubly-quantised} Spherical harmonic
+        representation of both the initial coreless and DQV goes here.}
+\end{figure}
+
+\subsection{Cyclic to ferromagnetic}
+An additional stationary solution can be found by considering \(D_1=D_2=0\).
+Eq.~\eqref{eq: D2} and Eq.~\eqref{eq: D1} can then be solved exactly, to yield
+\begin{equation}
+    \tilde{\mu} = \pm \sqrt{4q^2 + |\alpha|^2}.
+\end{equation}
+If \(q \neq 0\), then \(\tilde{\mu} \neq \alpha \) which implies \(\zeta_0=0\)
+from Eq.~\eqref{eq: spin-2-stationary-zeta0-recast}.
+Zero transverse magnetisation then implies we have
+\(0 = 2c_1n(\zeta_2^*\zeta_{1} + \zeta_{-1}^*\zeta_{-2})\).
+\textcolor{red}{Rest of derivation here.}
+
+The final solution reads
+\begin{equation}
+    \zeta^\mathrm{C-FM} = \mqty(\sqrt{\frac{1 + f_z}{3}} \\ 0 \\ 0 \\
+    \sqrt{\frac{2 - f_z}{3}} \\ 0),
+\end{equation}
+where \(f_z = (p - q) / (c_1n)\).
+At zero magnetisation, \(f_z = 0\), this solution is precisely the two-component
+cyclic state.
+The solution also interpolates between different ferromagnetic states depending
+on the magnetisation.
+If \(f_z = -1\) one recovers an FM-1 solution.
+Conversely, \(f_z = 2\) yields the FM-2 solution.
+This spinor there provides an interpolating solution between the cyclic and
+ferromagnetic phases.
+
+\subsection{Cyclic to nematic}
+Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
+Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
+\(\zeta_0\) can be non-zero.
+\textcolor{red}{Rest of derivation here.}
+
+The resulting solution reads
+\begin{equation}\label{eq: C-N-interpolating-spinor}
+    \zeta^\mathrm{C-N} = \mqty(\frac{\sqrt{1 + \eta}}{2} \\ 0 \\
+    i\sqrt{\frac{1 - \eta}{2}} \\ 0 \\ \frac{\sqrt{1 + \eta}}{2}),
+\end{equation}
+where \(\eta = -10q/(c_2n)\).
+The quadratic Zeeman shift can be used to interpolate the above solution between
+different phases.
+At \(q = 0\) the above solution becomes the three component cyclic
+\(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
+The sign of the quadratic Zeeman shift determines which nematic state is chosen.
+If \(q = -c_2n/10\) then the solution becomes biaxial nematic
+\(\zeta_\mathrm{BN} = {(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
+In the opposite limit of \(q = c_2n/10\) then the system is in the uniaxial
+nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
+
+\subsection{Uniaxial nematic to biaxial nematic}
 
 
-\subsection{Dynamical stability}
+The final solution reads
+\begin{equation}
+    \zeta^\mathrm{UN-BN} = \mqty(\sqrt{\frac{1 - \eta^2}{2}} \\ 0 \\ \eta \\ 0 \\
+    \sqrt{\frac{1 - \eta^2}{2}}),
+\end{equation}
+where \(\eta = \sqrt{[1 + 10q/(c_2n)]/2}\).
+This solution depends only on the quadratic Zeeman shift, which can alter the
+spinor between phases.
+When \(q = c_2n / 10\) the system is in the uniaxial nematic phase.
+In the opposite limit when \(q = -c_2n/10\) the system is in the biaxial
+nematic phase.
+This spinor therefore provides interpolating solutions between the uniaxial
+nematic and biaxial nematic phases, engineered through manipulation of the
+Zeeman shifts.
+
+\section{Dynamical stability of interface solutions}
 
 \section{Numerical investigations of defect crossing physics}
 \subsection{Uniaxial nematic to biaxial nematic interface}
