@@ -259,7 +259,7 @@ function of the radial coordinate \(\rho = \sqrt{x^2 + y^2}\).
 This, in addition to choosing the Euler angles
 \(\phi - 2\gamma = 2\alpha = 2\varphi \) leads to the interpolating spinor
 (\(\gamma=0\))
-\begin{equation}
+\begin{equation}\label{eq: FM-BN-coreless-DQV}
     \zeta_\mathrm{FM-BN}^\mathrm{coreless} = \mqty(
     C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
     2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
@@ -273,13 +273,16 @@ This, in addition to choosing the Euler angles
 \end{equation}
 where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
 In the FM limit (\(f_z=2\)), one recovers the spin-2 coreless vortex given as
-\begin{equation}
+\begin{equation}\label{eq: FM-BN-coreless}
     \zeta^\mathrm{coreless} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
     e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
     ).
 \end{equation}
+The spherical harmonic representation of this vortex is plotted in
+Fig.~\ref{subfig: coreless-initial}, where the characteristic fountain-like
+texture becomes apparent.
 The spinor in the cyclic limit (\(f_z=0\)) reads
-\begin{equation}\label{eq: double-quantised-cyclic}
+\begin{equation}\label{eq: FM-BN-DQV}
     \zeta^\mathrm{DQV} = \mqty(
     C^4 + S^4 \\
     2e^{i\varphi}CS\left[C^2-S^2\right] \\
@@ -290,14 +293,102 @@ The spinor in the cyclic limit (\(f_z=0\)) reads
 It is not immediately obvious from the form of the spinor the type of vortex
 present on the cyclic side of the interface.
 To investigate the vortex state, we plot the spherical harmonics of the state
-defined in Eq.~\eqref{eq: double-quantised-cyclic} in
-Fig.~\ref{fig: coreless-doubly-quantised}.
+defined in Eq.~\eqref{eq: FM-BN-DQV} in
+Fig.~\ref{subfig: DQV-initial}.
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{example-image-a}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}
+        \caption{\label{subfig: coreless-initial}}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}
+        \caption{\label{subfig: DQV-initial}}
+    \end{subfigure}
     \caption{\label{fig: coreless-doubly-quantised} Spherical harmonic
-        representation of both the initial coreless and DQV goes here.}
+        representation of the vortex configurations on each side of the FM-BN
+        interface defined in Eq.~\eqref{eq: FM-BN-coreless-DQV}.
+        (a): Spin-2 FM coreless vortex given by Eq.~\eqref{eq: FM-BN-coreless}.
+        (b): Doubly quantised vortex on the BN side of the interface, given by
+        Eq.~\eqref{eq: FM-BN-DQV}.
+        \textcolor{red}{Current DQV is for cyclic case, update to BN.}}
 \end{figure}
+By tracing a point about the vortex line, the phase changes by a total of
+\(4\pi \) indicating a doubly quantised vortex.
+
+\subsection{Uniaxial nematic to biaxial nematic}
+Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
+Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
+\(\zeta_0\) can be non-zero.
+\textcolor{red}{Rest of derivation here.}
+
+The final solution reads
+\begin{equation}
+    \zeta^\mathrm{UN-BN} = \mqty(
+    \frac{\sqrt{1 - \eta}}{2} \\
+    0 \\
+    \sqrt{\frac{1 + \eta}{2}} \\
+    0 \\
+    \frac{\sqrt{1 - \eta}}{2}
+    ),
+\end{equation}
+where \(\eta = 10q /|c_2|n \in [-1, 1]\).
+This solution depends only on the quadratic Zeeman shift, which can alter the
+spinor between phases.
+When \(q = c_2n / 10\) the system is in the uniaxial nematic phase.
+In the opposite limit when \(q = -c_2n/10\) the system is in the biaxial
+nematic phase.
+This spinor therefore provides interpolating solutions between the uniaxial
+nematic and biaxial nematic phases, engineered through manipulation of the
+Zeeman shifts.
+
+The energy of the above state reads \(\epsilon = 2q + c_0n/2 - 10q^2/c_2n\).
+Comparing this energy with that of the UN phase
+\(\epsilon_\mathrm{UN} = (c_0+c_2/5)n/2\) reveals that this interface is stable
+for \(|q| \leq |c_2|n/10\).
+
+The consequence of a spatially-dependent \(\eta \) is revealed from the spin
+singlet-duo and -trio amplitudes.
+Upon substitution of the above equation into \textcolor{red}{Define duo and trio
+    amplitudes, more than likely in theory chapter} yields
+\begin{equation}
+    \begin{aligned}
+        |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\theta
+        + \eta^2 + 1\right],                                                     \\
+        |A_{30}|^2 & = \frac{1+\eta}{4} \left[3\left(\eta ^2-1\right) \cos\theta
+            + \eta(5 \eta -8) + 5\right],
+    \end{aligned}
+\end{equation}
+where \(\theta = \chi_2 + \chi_{-2} - 2\chi_0\) and \(\chi_j = Arg(\psi_j)\) for
+component \(j=-2, 0, 2\).
+We plot both the singlet-duo and -trio amplitudes in
+Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{example-image-a}
+    \caption{\label{fig: UN-BN-duo-trio} Contour of singlet-duo and -trio
+        amplitude goes here.}
+\end{figure}
+
+
+\subsection{Cyclic to nematic}
+The resulting solution reads
+\begin{equation}\label{eq: C-N-interpolating-spinor}
+    \zeta^\mathrm{C-N} = \mqty(\frac{\sqrt{1 + \eta}}{2} \\ 0 \\
+    i\sqrt{\frac{1 - \eta}{2}} \\ 0 \\ \frac{\sqrt{1 + \eta}}{2}),
+\end{equation}
+where \(\eta = -10q/(c_2n)\).
+The quadratic Zeeman shift can be used to interpolate the above solution between
+different phases.
+At \(q = 0\) the above solution becomes the three component cyclic
+\(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
+The sign of the quadratic Zeeman shift determines which nematic state is chosen.
+If \(q = -c_2n/10\) then the solution becomes biaxial nematic
+\(\zeta_\mathrm{BN} = {(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
+In the opposite limit of \(q = c_2n/10\) then the system is in the uniaxial
+nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
 
 \subsection{Cyclic to ferromagnetic}
 An additional stationary solution can be found by considering \(D_1=D_2=0\).
@@ -325,46 +416,6 @@ If \(f_z = -1\) one recovers an FM-1 solution.
 Conversely, \(f_z = 2\) yields the FM-2 solution.
 This spinor there provides an interpolating solution between the cyclic and
 ferromagnetic phases.
-
-\subsection{Cyclic to nematic}
-Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
-Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
-\(\zeta_0\) can be non-zero.
-\textcolor{red}{Rest of derivation here.}
-
-The resulting solution reads
-\begin{equation}\label{eq: C-N-interpolating-spinor}
-    \zeta^\mathrm{C-N} = \mqty(\frac{\sqrt{1 + \eta}}{2} \\ 0 \\
-    i\sqrt{\frac{1 - \eta}{2}} \\ 0 \\ \frac{\sqrt{1 + \eta}}{2}),
-\end{equation}
-where \(\eta = -10q/(c_2n)\).
-The quadratic Zeeman shift can be used to interpolate the above solution between
-different phases.
-At \(q = 0\) the above solution becomes the three component cyclic
-\(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
-The sign of the quadratic Zeeman shift determines which nematic state is chosen.
-If \(q = -c_2n/10\) then the solution becomes biaxial nematic
-\(\zeta_\mathrm{BN} = {(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
-In the opposite limit of \(q = c_2n/10\) then the system is in the uniaxial
-nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
-
-\subsection{Uniaxial nematic to biaxial nematic}
-
-
-The final solution reads
-\begin{equation}
-    \zeta^\mathrm{UN-BN} = \mqty(\sqrt{\frac{1 - \eta^2}{2}} \\ 0 \\ \eta \\ 0 \\
-    \sqrt{\frac{1 - \eta^2}{2}}),
-\end{equation}
-where \(\eta = \sqrt{[1 + 10q/(c_2n)]/2}\).
-This solution depends only on the quadratic Zeeman shift, which can alter the
-spinor between phases.
-When \(q = c_2n / 10\) the system is in the uniaxial nematic phase.
-In the opposite limit when \(q = -c_2n/10\) the system is in the biaxial
-nematic phase.
-This spinor therefore provides interpolating solutions between the uniaxial
-nematic and biaxial nematic phases, engineered through manipulation of the
-Zeeman shifts.
 
 \section{Dynamical stability of interface solutions}
 
