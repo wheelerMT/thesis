@@ -238,7 +238,7 @@ vortex-free state on the FM side.
 Spinor BECs support the non-dissipative flow of condensate spin, which gives
 rise to vortex structures that carry a spin circulation, referred to as a spin
 vortex.
-Such vortices arise in all phases of the spin-2 BEC\@.
+Such vortices arise in all phases of the spin-2 BEC [REF].
 An interpolating solution involving a spin vortex can be constructed through the
 choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
 singular SQV on the FM side which connecting to a BN spin vortex.
@@ -325,8 +325,8 @@ Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
 \textcolor{red}{Rest of derivation here.}
 
 The final solution reads
-\begin{equation}
-    \zeta^\mathrm{UN-BN} = \mqty(
+\begin{equation}\label{eq: UN-BN-interpolating-spinor}
+    \zeta_\mathrm{UN-BN} = \mqty(
     \frac{\sqrt{1 - \eta}}{2} \\
     0 \\
     \sqrt{\frac{1 + \eta}{2}} \\
@@ -344,15 +344,25 @@ This spinor therefore provides interpolating solutions between the uniaxial
 nematic and biaxial nematic phases, engineered through manipulation of the
 quadratic Zeeman shift.
 
-The energy of the above state reads \(\epsilon = 2q + c_0n/2 - 10q^2/c_2n\).
+To determine the stability of this interpolating spinor, we compare the energy
+per particle given by~\cite{Kawaguchi2012}
+\begin{equation}
+    E_\mathrm{part} = \sum_{m=-2}^{2}(-pm + qm^2)|\zeta_m|^2 + \frac{c_0n}{2}
+    + \frac{c_1n}{2}|\vb{f}|^2 + \frac{c_2n}{2}|a_{00}|^2.
+\end{equation}
+The energy of the interpolating spinor given in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor} reads
+\(E^\mathrm{UN-BN}_\mathrm{part} = 2q + c_0n/2 - 10q^2/c_2n\)
+\textcolor{red}{Messy notation}.
 Comparing this energy with that of the UN phase
-\(\epsilon_\mathrm{UN} = (c_0+c_2/5)n/2\) reveals that this interface is stable
-for \(|q| \leq |c_2|n/10\).
+\(E^\mathrm{UN}_\mathrm{part} = (c_0+c_2/5)n/2\) reveals that this interface is
+stable for \(|q| \leq |c_2|n/10\).
 
 The consequence of a spatially-dependent \(\eta \) is revealed from the spin
 singlet-duo and -trio amplitudes.
-Upon substitution of the above equation into \textcolor{red}{Define duo and trio
-    amplitudes, more than likely in theory chapter} yields
+Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into
+\textcolor{red}{Define duo and trio amplitudes, more than likely in theory
+    chapter} yields
 \begin{equation}
     \begin{aligned}
         |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\theta
@@ -368,10 +378,94 @@ We plot both the singlet-duo and -trio amplitudes in
 Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{example-image-a}
-    \caption{\label{fig: UN-BN-duo-trio} Contour of singlet-duo and -trio
-        amplitude goes here.}
+    \includegraphics[width=0.75\textwidth]{gfx/ch-spin2/a20-a30-varying.png}
+    \caption{\label{fig: UN-BN-duo-trio} Spin singlet-duo (left) and -trio
+        (right) amplitudes for the interpolating spinor in
+        Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
+        Due to the spatially-dependent \(\eta \), this spinor continuously
+        interpolates between the UN, BN, and cyclic phases depending on the
+        relative phase difference between the components.}
 \end{figure}
+We see that this spinor interpolates between the different phases of UN, BN and
+cyclic depending on both \(\eta \) and the relative phase difference
+\(\theta \).
+For example, if one were to maintain \(\theta=0\) and interpolate \(\eta \),
+then there would be multiple transitions between the UN (\(|a_{00}|^2 = 1\)) and
+BN (\(|a_{00}|^2 = 0\)) phases.
+As we shall see in the numerical investigation of such an interface, this has
+profound effects on the structure of topological defects connecting across
+the interface.
+
+From the interpolating spinor in Eq.~\eqref{eq: UN-BN-interpolating-spinor} we
+can construct various topological defect crossing solutions.
+The simplest case is the connection of SQVs on either side of the interface.
+Such a connection is realised by the choice \(\phi = \varphi \) whilst keeping
+the Euler angles constant.
+A representative example with \(\alpha = \gamma = 0\) is given by
+\begin{equation}
+    \zeta^\mathrm{SQV}_\mathrm{UN-BN} =
+    \frac{e^{i\varphi}}{8}\begin{pmatrix}
+        \sqrt{6} D_+ \sin ^2\beta _0 + 2D_- \left(\cos^2\beta _0+1\right) \\
+        -2 \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0                  \\
+        \sqrt{2}\left[ \sqrt{3} D_- \sin ^2\beta _0 -2D_+
+        \left(1-3 \cos^2 \beta _0\right)\right]                           \\
+        2 \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0                   \\
+        \sqrt{6} D_+ \sin ^2\beta _0+D_- \left(\cos^2\beta _0+1\right)
+    \end{pmatrix},
+    \label{eq: UN-BN-SQV-SQV}
+\end{equation}
+where \(D_{\pm} = \sqrt{1 \pm \eta}\) and \(\beta=\beta_0\) is an arbitrary
+constant.
+The explicit form of the above equation in the UN
+(\(D_+ = \sqrt{2}, D_- = 0\)) and BN (\(D_0 = 0, D_- = \sqrt{2}\)) limits
+is given, respectively, as
+\begin{equation}
+    \zeta_\mathrm{UN}^\mathrm{SQV} =  \frac{e^{i\varphi}}{4}\mqty(
+    \sqrt{3}\sin^2\beta_0 \\
+    \sqrt{6}\sin2\beta_0 \\
+    -2(1 - 3\cos^2\beta_0) \\
+    -\sqrt{6}\sin2\beta_0 \\
+    \sqrt{3}\sin^2\beta_0
+    ), \qquad
+    \zeta_\mathrm{BN}^\mathrm{SQV} =  \frac{e^{i\varphi}}{4}\mqty(
+    \sqrt{2}(\cos^2\beta_0 + 1) \\
+    -\sqrt{2}\sin2\beta_0 \\
+    2\sqrt{3}\sin^2\beta_0 \\
+    \sqrt{2}\sin2\beta_0 \\
+    \sqrt{2}(\cos^2\beta_0 + 1)
+    ).
+\end{equation}
+One can see that upon the substitution of \(\beta_0 = 0\) in the above spinors,
+we recover the SQV case in both the UN
+\(\zeta_\text{SQV} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
+\(\zeta_\text{SQV} = {(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\) limits.
+It is important to note that, despite being characterised by the same phase
+winding, the SQVs on either side of the interface represent entirely different
+objects due to the differing topologies of the UN and BN phases.
+
+Spin vortices can be connected across the interface by choosing
+\(\alpha=\varphi, \beta=\beta_0 \) and \(\phi = \gamma = 0\), resulting in the
+spinor
+\begin{equation}\label{eq: UN-BN-SV-SV-spinor}
+    \zeta_\mathrm{SV} =
+    \frac{1}{8}\begin{pmatrix}
+        e^{-2i\varphi}\left[\sqrt{6} D_+ \sin ^2\beta _0
+        + 2D_- \left(\cos^2\beta _0+1\right)\right]                   \\
+        -2e^{-i\varphi} \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0 \\
+        \sqrt{2}\left[ \sqrt{3} D_- \sin ^2\beta _0
+        - 2D_+ \left(1-3 \cos^2 \beta _0\right)\right]                \\
+        2 e^{i\varphi}\left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0   \\
+        e^{2i\varphi}\left[\sqrt{6} D_+ \sin ^2\beta _0
+            + 2D_- \left(\cos^2\beta _0+1\right)\right]
+    \end{pmatrix}.
+\end{equation}
+In particular, spin vortices arise in both components for
+\(\beta_0 \neq 0, \pi \), where the spin vortex in each phase carries opposite
+the spin winding of the other spin vortex.
+For the specific cases of \(\beta_0 = 0, \pi \),
+Eq.~\eqref{eq: UN-BN-SV-SV-spinor} instead results in a spin vortex in the BN
+phase that continuously connects to a vortex-free state in the UN limit.
+
 
 
 \subsection{Cyclic to nematic}
