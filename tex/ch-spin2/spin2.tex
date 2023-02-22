@@ -437,8 +437,8 @@ is given, respectively, as
 \end{equation}
 One can see that upon the substitution of \(\beta_0 = 0\) in the above spinors,
 we recover the SQV case in both the UN
-\(\zeta_\text{SQV} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
-\(\zeta_\text{SQV} = {(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\) limits.
+\(\zeta^\mathrm{SQV} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
+\(\zeta^\mathrm{SQV} = {(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\) limits.
 It is important to note that, despite being characterised by the same phase
 winding, the SQVs on either side of the interface represent entirely different
 objects due to the differing topologies of the UN and BN phases.
@@ -447,7 +447,7 @@ Spin vortices can be connected across the interface by choosing
 \(\alpha=\varphi, \beta=\beta_0 \) and \(\phi = \gamma = 0\), resulting in the
 spinor
 \begin{equation}\label{eq: UN-BN-SV-SV-spinor}
-    \zeta_\mathrm{SV} =
+    \zeta^\mathrm{SV} =
     \frac{1}{8}\begin{pmatrix}
         e^{-2i\varphi}\left[\sqrt{6} D_+ \sin ^2\beta _0
         + 2D_- \left(\cos^2\beta _0+1\right)\right]                   \\
@@ -466,17 +466,32 @@ For the specific cases of \(\beta_0 = 0, \pi \),
 Eq.~\eqref{eq: UN-BN-SV-SV-spinor} instead results in a spin vortex in the BN
 phase that continuously connects to a vortex-free state in the UN limit.
 
+In addition to line defects, i.e., vortices, it is also possible to construct
+point defects that terminate at the topological interface.
+The possibility in the UN-BN interface is that of a monopole, which is
+characterised by a spherically symmetric dependence of the nematic axis
+\(\vb{\hat{d}} = (\cos\varphi \sin\theta, \sin\varphi \sin\theta, \cos\theta)\),
+where \(\theta \) is the polar angle in spherical coordinates.
+The monopole solution is derived from Eq.~\eqref{eq: UN-BN-interpolating-spinor}
+using the substitution \(\beta = \theta \) and \(\alpha=\varphi \).
+\textcolor{red}{Would quite like an image of the initial state somehow.}
 
 
 \subsection{Cyclic to nematic}
-The resulting solution reads
+A steady-state solution that interpolates between the nematic and cyclic phases
+can be found by including phase coefficients in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor}, namely
 \begin{equation}\label{eq: C-N-interpolating-spinor}
-    \zeta^\mathrm{C-N} = \mqty(\frac{\sqrt{1 + \eta}}{2} \\ 0 \\
-    i\sqrt{\frac{1 - \eta}{2}} \\ 0 \\ \frac{\sqrt{1 + \eta}}{2}),
+    \zeta^\mathrm{C-N} = \mqty(
+    e^{i\chi_2}\frac{\sqrt{1 + \eta}}{2} \\
+    0 \\
+    e^{i\chi_0}\sqrt{\frac{1 - \eta}{2}} \\
+    0 \\
+    e^{i\chi_{-2}}\frac{\sqrt{1 + \eta}}{2}),
 \end{equation}
-where \(\eta = -10q/(c_2n)\).
+where \(\eta = 10q/(|c_2|n)\).
 The quadratic Zeeman shift can be used to interpolate the above solution between
-different phases.
+the different phases.
 At \(q = 0\) the above solution becomes the three component cyclic
 \(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
 The sign of the quadratic Zeeman shift determines which nematic state is chosen.
