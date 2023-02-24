@@ -22,7 +22,7 @@ ax.set_ylim(-0.1, 2.1)
 ax.plot(r, mod_f, "k", label=r"$|\langle\hat{\mathbf{F}}(\rho)\rangle|$")
 ax.plot(r, mod_a30_C_FM, "k--", label=r"$|A_{30}(\rho)|^2$")
 
-ax.set_xlabel(r"$\psi$")
+ax.set_xlabel(r"$\rho$")
 ax.set_ylabel("Value")
 ax.set_yticks([0, 1, 2])
 ax.set_yticklabels(["0", "1", "2"])
