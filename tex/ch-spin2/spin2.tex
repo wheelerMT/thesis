@@ -318,7 +318,7 @@ Fig.~\ref{subfig: DQV-initial}.
 By tracing a point about the vortex line, the phase changes by a total of
 \(4\pi \) indicating a doubly quantised vortex.
 
-\subsection{Uniaxial nematic to biaxial nematic}
+\subsection{Uniaxial nematic to biaxial nematic}\label{subsec: UN-BN-defects}
 Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
 Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
 \(\zeta_0\) can be non-zero.
@@ -653,15 +653,16 @@ in Fig.~\ref{subfig: C-FM-FM2-coreless},~\ref{subfig: C-FM-FM1-coreless}.
     \end{subfigure}
     \caption{\label{fig: C-FM-coreless-initial-states}Spherical harmonic
         representation of the interface in Eq.~\eqref{eq: C-FM-coreless-general}.
-        (a) and (b): Coreless vortex in the FM-2 and FM-1 limit, respectively, given
-        by Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
+        (a) and (b): Coreless vortex in the FM-2 and FM-1 limit, respectively,
+        given by Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
         (c): Doubly quantised vortex in the cyclic limit, given by
         Eq.~\eqref{eq: C-FM-DQV-cyclic-limit}.}
 \end{figure}
 The resulting spinor in the cyclic limit is
 \begin{equation}\label{eq: C-FM-DQV-cyclic-limit}
     \zeta^\text{DQV}
-    = (\zeta^\text{|F|=2}_\text{cl} + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}) / 3.
+    = \left(\zeta^\text{|F|=2}_\text{cl}
+    + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}\right) / 3.
 \end{equation}
 The spherical harmonic representation of this cyclic state is plotted in
 Fig.~\ref{subfig: C-FM-cyclic-DQV}.
@@ -669,6 +670,152 @@ By tracing a point about the vortex core, the condensate phase winds by a total
 of \(4\pi \), indicating that this is a doubly-quantised vortex.
 
 \section{Numerical investigations of defect crossing physics}
+In this section we numerically investigate some topological interfaces defined
+in the preceding section, along with a subset of the possible defect
+connections.
+
+Our numerical setup is as follows.
+We numerically evolve the spin-2 GPEs defined in
+Eqs.~\eqref{eq: spin-2-GPEs-pm2} -~\eqref{eq: spin-2-GPEs-0} using a symplectic
+integrator~\cite{SymesNumeric2017} using a purely isotropic trapping potential
+\(V=M\omega^2r^2/2\).
+We simulate the energy loss during experiments by introducing a phenomenological
+damping coefficient, \(\gamma \), through the substitution
+\(t \rightarrow (1-i\gamma)t\).
+In all simulations considered, we choose \(\gamma = 1e-2\).
+We perform our simulations on a 3D of \(N_s^3=128^3\) points, with side lengths
+\(L = 20\ell \), where \({(\ell =\hbar/M\omega)}^{1/2}\) is the (isotropic)
+harmonic oscillator length.
+We choose parameters that correspond to a \(^{87}\)Rb
+condensate~\cite{Klausen2001} with \(c_0n=1.32\times10^4\hbar\omega\ell^3\),
+\(c_0/c_1=90.7\), and \(c_0/c_2=-102\), where the ground state is predicted to
+be nematic.
+In each simulation, we perform a small spin rotation to the initial state to
+avoid components that are identically zero.
+Additionally, when constructing states with defects, the position of each defect
+is perturbed slightly to avoid artificial stability when placed at exactly the
+centre of the trap.
+
+
 \subsection{Uniaxial nematic to biaxial nematic interface}
+The first interface we consider is that between the UN and BN phases, considered
+in Sec.~\ref{subsec: UN-BN-defects}.
+Since the UN and BN phases are energetically degenerate in the absence of a
+magnetic field, we introduce a spatially-dependent quadratic Zeeman shift
+\(q(z)\) such that \(q(z) > 0\) on the UN side and \(q(z) < 0\) on the BN side,
+to lift the degeneracy.
+The quadratic Zeeman shift linearly interpolates over a small transition region,
+which we take to be small compared to the spin-dependent healing lengths.
+
+Our investigation begins with that of the SQV-SQV connection, where the initial
+state is constructed as in Eq.~\eqref{eq: UN-BN-SQV-SQV} with \(\beta_0=0\).
+To imprint the vortices, we perform a short imaginary time propagation, then
+proceed to numerically evolve the spin-2 GPEs.
+
+The dynamics of this connection is split into two distinct parts.
+Firstly, upon evolution, the two overlapping SQVs spatially separate due to an
+instability occurring at the interface \(z \approx 0\).
+Each SQV then connects to a vortex-free state on the other side of the
+interface (\textcolor{red}{Figure showing this potentially}).
+
+After the initial separation, the cores of the vortices fill with atoms
+occupying different ground states, drastically altering the order parameter
+symmetry within the cores (see Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}).
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{Spatial separation.}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_UN.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_BN.png}
+        \caption{}
+    \end{subfigure}\\
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{Plot showing FM regions.}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{Pure imaginary time plot showing SQV splitting on BN side.}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{Maybe not needed.}
+    \end{subfigure}
+    \caption{\label{fig: UN-BN-SQV-SQV-singlets}Transverse cuts of
+    \(|A_{30}|^2\) for the SQV-SQV connection given in
+    Eq.~\eqref{eq: UN-BN-SQV-SQV} at \(\bar{t} = 300\) on the UN (a) and BN (b)
+    sides of the interface.
+    Overlaid are the spherical harmonics showing the non-trivial change of the
+    order parameter symmetry.}
+\end{figure}
+In the UN case, the initially empty core fills with atoms occupying both the
+cyclic and BN phases, generating a topological interface within the core itself.
+This likely arises due to the differing phases factors between the wave function
+components, as seen in Fig.~\ref{fig: UN-BN-duo-trio}.
+
+The SQV on the BN undergoes a similar filling of the empty vortex core.
+This time, the core fills with atoms in the UN, FM, and cyclic phases, also
+generating an interface within the core.
+The outer UN core is occupied by two small FM regions with
+\(|\langle \hat{F} \rangle| = 2\), in addition to a larger, central cyclic
+region \textcolor{red}{Plots highlighting the FM regions, hard to see from
+    current plot}.
+Spherical harmonics constructed about the core reveal that the phase winds by
+\(\pi \) about these FM regions, accompanied by a \(\pi/2\) rotation of the
+condensate spin vector.
+The development of this composite core structure signifies the start of a
+splitting process, whereby the SQV is expected to split into two HQVs.
+Since our system has no rotation to stabilise the vortices, the timescales
+considered here reveal that both vortices eventually leave the condensate
+cloud.
+Additionally, the SQV on the BN side of the interface will leave the condensate
+before the splitting into two HQVs has occurred.
+However, Fig.~\textcolor{red}{relevant fig} shows a purely imaginary time
+simulation of the initial state in Eq.~\eqref{eq: UN-BN-SQV-SQV} with
+\(\beta_0 = 0\) showing the resulting HQVs after the initial SQV has split.
+
+We next investigate the spin vortex connection, using the initial state in
+Eq.~\eqref{eq: UN-BN-SV-SV-spinor} with \(\beta_0=0\).
+\textcolor{red}{Need to do simulation of this. May or may not include,
+    depending on result.}
+
+We can also investigate a vortex connection that terminates on the interface.
+We start with the initial state in Eq.~\eqref{eq: UN-BN-SQV-SQV} with
+\(\beta_0=0\), and artificially remove the winding from the middle component.
+The result is a SQV in the BN phase that smoothly connects to a vortex-free
+state in the UN phase.
+The resulting spin magnitude and singlet-trio amplitude after purely
+imaginary-time relaxation are plotted in Fig.~\ref{fig: UN-BN-VF-SQV}.
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.33\textwidth}
+        \includegraphics[width=\textwidth]{example-image}
+        \caption{}
+    \end{subfigure}
+    \caption{\label{fig: UN-BN-VF-SQV} UN-BN VF-SQV plots go here.}
+\end{figure}
+We see that the initial SQV on the BN side has undergone a splitting process
+into two HQVs, each of which terminate at the interface.
+The cores of the HQVs are easily identified from the
+\(|\langle \hat{\vb{F}} \rangle = 2\) cores.
+Similar splitting of an SQV into HQVs has been observed in the polar phase of
+spin-1 condensates~\cite{Seo2015, Xiao2021}.
+
 \subsection{Cyclic to ferromagnetic interface}
 \subsection{Cyclic to biaxial nematic interface}
