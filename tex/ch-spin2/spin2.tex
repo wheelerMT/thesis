@@ -825,5 +825,49 @@ leaving the condensate.
 \textcolor{red}{Monopole?}
 
 \subsection{Cyclic to ferromagnetic interface}
+We numerically investigate vortex connections across a topological interface
+between the cyclic and FM-2 phases, given by
+Eq.~\eqref{eq: C-FM-interpolating-spinor}.
+Since our numerical simulations use parameters that predict a nematic ground
+state, we introduce a spatially-dependent \(c_1\) term such that \(c0/c_1=90.7\)
+on the cyclic side but \(c_0/c_1=-90.7\) on the FM side, effectively changing
+the sign of the \(c_1\) term.
+Now, in the FM region, the parameters ensure that the FM region remains stable.
+Despite the cyclic state not being the predicted ground state, the interface
+is observed to remain stable for the timescales considered in our simulations.
+
+We firstly investigate the connection of a third vortex in the cyclic phase
+connecting to a singular SQV in the FM-2 phase using
+Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = \varphi/3\) and
+\(\phi=\varphi/3\) as the initial state.
+The initial state is then propagated using a short imaginary-time evolution to
+imprint the vortex cores.
+From here we switch to complex-time using a damping coefficient of
+\(\gamma=10^{-2}\).
+
+The resulting spin magnitude is plotted in Fig.~\ref{fig: C-FM-third-SQV} where
+non-trivial core structures emerge.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[inner sep=0pt] (plot1) at (0,0)
+        {\includegraphics[width=0.49\textwidth]
+            {gfx/ch-spin2/C-FM=2_third-SQV_spinMag.pdf}};
+        \node[inner sep=0pt] (plot2) at (4, 0)
+        {\includegraphics[width=0.4\textwidth, height=0.42\textwidth]
+            {gfx/ch-spin2/C-FM=2_third-SQV_spinMag_spherical.pdf}};
+        \node[rectangle, draw=black, minimum width=0.5cm, minimum height=0.5cm]
+        (rec) at (0, 0.75) {};
+        \draw[-, dashed] (rec.north west) -- (plot2.north west) {};
+        \draw[-, dashed] (rec.south west) -- (plot2.south west) {};
+
+        \draw[-, thick] (plot2.south east) -- (plot2.north east) {};
+        \draw[-, thick] (plot2.south east) -- (plot2.south west) {};
+        \draw[-, thick] (plot2.south west) -- (plot2.north west) {};
+        \draw[-, thick] (plot2.north west) -- (plot2.north east) {};
+    \end{tikzpicture}
+    \caption{\label{fig: C-FM-third-SQV}\textcolor{red}{\(|A_{20}|^2\) plot
+    too.}}
+\end{figure}
 
 \subsection{Cyclic to biaxial nematic interface}
