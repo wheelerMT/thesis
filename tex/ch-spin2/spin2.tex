@@ -918,19 +918,40 @@ Here we focus only on the cyclic to FM-2 limit.
         \node[cylinder, draw, fill=black, opacity=0.5, minimum height=2.8cm,
             rotate=90] (c_dqv) at (0, 0) {};
         % \draw [-stealth] (-5, 0) -- (0, 0);
+
         \node[inner sep=0pt] (spinmag_dqv) at (5, 0)
         {\includegraphics[width=0.3\textwidth]
-            {gfx/ch-spin2/C-FM=2_coreless_spinMag_cyclic.pdf}};
+            {gfx/ch-spin2/C-FM=2_coreless_cyclic_spin_mag.pdf}};
+
         \node[inner sep=0pt] (third_spherical) at (10, 1.5)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_third_spherical.pdf}};
         \node[cylinder, draw, fill=green, opacity=0.5, minimum height=2.8cm,
             rotate=90] (c_third) at (10, 1.5) {};
+        \node[rectangle, draw, minimum width=0.5cm, minimum height=0.5cm,
+            dashed, green]
+        (third_small_rec) at (5.65, 0.78) {};
+        \node[rectangle, draw, minimum width=4.4cm, minimum height=2.9cm,
+            green] (third_big_rec) at (10, 1.6) {};
+        \draw[-, dashed, green]
+        (third_big_rec.north west) -- (third_small_rec.north west) {};
+        \draw[-, dashed, green]
+        (third_big_rec.south west) -- (third_small_rec.south east) {};
+
         \node[inner sep=0pt] (third_spherical) at (10, -1.5)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_2third_spherical.pdf}};
         \node[cylinder, draw, fill=red, opacity=0.5, minimum height=2.8cm,
             rotate=90] (c_2third) at (10, -1.5) {};
+        \node[rectangle, draw, dashed, minimum width=0.9cm,
+            minimum height=0.9cm, rotate=45, opacity=0.5, red]
+        (2third_small_rec) at (5.05, 0.15) {};
+        \node[rectangle, draw, minimum width=4.4cm, minimum height=2.9cm,
+            red] (2third_big_rec) at (10, -1.4) {};
+        \draw[-, dashed, red]
+        (2third_big_rec.north west) -- (2third_small_rec.south east) {};
+        \draw[-, dashed, red]
+        (2third_big_rec.south west) -- (2third_small_rec.south west) {};
     \end{tikzpicture}
     \caption{}
 \end{figure}
