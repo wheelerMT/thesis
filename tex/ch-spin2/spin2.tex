@@ -845,22 +845,20 @@ imprint the vortex cores.
 From here we switch to complex-time using a damping coefficient of
 \(\gamma=10^{-2}\).
 
-The resulting spin magnitude is plotted in Fig.~\ref{fig: C-FM-third-SQV} where
-non-trivial core structures emerge.
-\begin{figure}
+The resulting spin magnitude and spin-singlet duo amplitude are plotted in
+Fig.~\ref{fig: C-FM-third-SQV}.
+\begin{figure}[htb!]
     \centering
     \begin{tikzpicture}
-        \node[inner sep=0pt] (plot0) at (-2,0)
+
+        \node[inner sep=0pt] (plot1) at (-5,0)
         {\includegraphics[width=0.33\textwidth]
-            {gfx/ch-spin2/C-FM=2_third-SQV_singlet_duo.pdf}};
-        \node[inner sep=0pt] (plot1) at (0,0)
-        {\includegraphics[width=0.33\textwidth]
-            {gfx/ch-spin2/C-FM=2_third-SQV_spinMag.pdf}};
-        \node[inner sep=0pt] (plot2) at (4, 0)
-        {\includegraphics[width=0.3\textwidth, height=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_third-SQV_spin_mag.pdf}};
+        \node[inner sep=0pt] (plot2) at (-0.6, 0.25)
+        {\includegraphics[width=0.25\textwidth, height=0.25\textwidth]
             {gfx/ch-spin2/C-FM=2_third-SQV_spinMag_spherical.pdf}};
         \node[rectangle, draw=black, minimum width=0.5cm, minimum height=0.5cm]
-        (rec) at (0, 0.75) {};
+        (rec) at (-4.9, 0.75) {};
         \draw[-, dashed] (rec.north west) -- (plot2.north west) {};
         \draw[-, dashed] (rec.south west) -- (plot2.south west) {};
 
@@ -868,9 +866,72 @@ non-trivial core structures emerge.
         \draw[-, thick] (plot2.south east) -- (plot2.south west) {};
         \draw[-, thick] (plot2.south west) -- (plot2.north west) {};
         \draw[-, thick] (plot2.north west) -- (plot2.north east) {};
-    \end{tikzpicture}
-    \caption{\label{fig: C-FM-third-SQV}\textcolor{red}{\(|A_{20}|^2\) plot
-    too.}}
-\end{figure}
 
+        \node[inner sep=0pt] (plot0) at (3.8,0)
+        {\includegraphics[width=0.33\textwidth]
+            {gfx/ch-spin2/C-FM=2_third-SQV_singlet_trio.pdf}};
+        % Labels
+        \node at (-5.15, -2.5) {(a)};
+        \node at (-0.5, -2.5) {(b)};
+        \node at (3.95, -2.5) {(c)};
+    \end{tikzpicture}
+    \caption{\label{fig: C-FM-third-SQV}Third vortex to SQV connection in an
+    interface between the cyclic and FM-2 phases given by
+    Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = -\varphi/3\)
+    and \(\phi = \varphi/3\) at \(\bar{t} = 50\).
+    (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
+    The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
+    \(\spinmag = 1\) core which extends throughout the FM region.
+    (b): Zoomed transverse cut of \(\spinmag \) inside the core in the FM
+    region.
+    Overlaid are the spherical harmonics showing the non-trivial change
+    of order parameter symmetry inside the core.
+    (c): Longitudinal cut of \(|A_{30}|^2\) at \(y/\ell=0\).
+    Cyclic regions are identified from \(|A_{30}|^2=2\).}
+\end{figure}
+Here, \(\spinmag \) reveals non-trivial core structures emerging.
+Clearly one can see the third vortex on the cyclic side of the interface
+(\(z/\ell < 0\)) evidenced by the \(\spinmag = 1\) core.
+However, this \(\spinmag = 1\) region then extends throughout the longitudinal
+extent of the condensate, and penetrates into the FM region.
+The initial SQV of the FM side has developed a composite core structure.
+Inside is the \(\spinmag = 1\) region, which is encased in a cyclic shell as
+seen from the \(|A_{30}|^2=2\) regions.
+The spherical harmonics reveal the non-trivial change of order parameter
+symmetry within the composite core.
+Far away from the vortex core, the system then interpolates back to the FM-2
+phase.
+Note that the composite core structure was predicted analytically in
+Fig.~\ref{fig: C-FM-analytical-spin-singlet}.
+
+Instead of considering only singular vortices, we can also investigate the
+coreless vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
+We choose this as the initial state, with \(\beta = \pi(1 + \tanh(\rho-1))/2\)
+to model the required monotonically increasing function.
+Here we focus only on the cyclic to FM-2 limit.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[inner sep=0pt] (initial_dqv) at (0, 0)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}};
+        \node[cylinder, draw, fill=black, opacity=0.5, minimum height=2.8cm,
+            rotate=90] (c_dqv) at (0, 0) {};
+        % \draw [-stealth] (-5, 0) -- (0, 0);
+        \node[inner sep=0pt] (spinmag_dqv) at (5, 0)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_spinMag_cyclic.pdf}};
+        \node[inner sep=0pt] (third_spherical) at (10, 1.5)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_cyclic_third_spherical.pdf}};
+        \node[cylinder, draw, fill=green, opacity=0.5, minimum height=2.8cm,
+            rotate=90] (c_third) at (10, 1.5) {};
+        \node[inner sep=0pt] (third_spherical) at (10, -1.5)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_cyclic_2third_spherical.pdf}};
+        \node[cylinder, draw, fill=red, opacity=0.5, minimum height=2.8cm,
+            rotate=90] (c_2third) at (10, -1.5) {};
+    \end{tikzpicture}
+    \caption{}
+\end{figure}
 \subsection{Cyclic to biaxial nematic interface}
