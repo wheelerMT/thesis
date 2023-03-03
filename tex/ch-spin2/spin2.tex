@@ -906,23 +906,36 @@ Fig.~\ref{fig: C-FM-analytical-spin-singlet}.
 
 Instead of considering only singular vortices, we can also investigate the
 coreless vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
-We choose this as the initial state, with \(\beta = \pi(1 + \tanh(\rho-1))/2\)
-to model the required monotonically increasing function.
-Here we focus only on the cyclic to FM-2 limit.
+We choose this as the initial state, with
+\(\beta = \pi\left(1 + \tanh(\rho-1)\right)/2\) to model the required
+monotonically increasing function.
+Here we focus only on the cyclic to FM-2 limit, but equivalently the cyclic to
+FM-1 limit can be chosen by an appropriate choice of \(p\) and \(q\) that
+interpolates \(f_z\) between \(-1\) and \(0\).
+We perform purely imaginary-time simulations to simulate energy relaxation.
 \begin{figure}
     \centering
     \begin{tikzpicture}
-        \node[inner sep=0pt] (initial_dqv) at (0, 0)
+        % DQV
+        \node[inner sep=0pt] (initial_dqv) at (0.4, 0)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}};
-        \node[cylinder, draw, fill=black, opacity=0.5, minimum height=2.8cm,
-            rotate=90] (c_dqv) at (0, 0) {};
-        % \draw [-stealth] (-5, 0) -- (0, 0);
+        \node[cylinder, draw, fill=black, opacity=0.5, minimum height=3cm,
+            rotate=90] (c_dqv) at (0.4, 0) {};
 
+        % Colour bar
+        \node[rotate=90] at (-2.15, 0.2)
+        {\includegraphics[width=0.15\textwidth, height=0.015\textheight]
+            {gfx/colourbars/hsv_colourbar.pdf}};
+        \node[rotate=90] at (-2.15, -1.8) {Arg(\(Z\)) = 0};
+        \node[rotate=90] at (-2.15, 1.7) {\(2\pi \)};
+
+        % Spin mag
         \node[inner sep=0pt] (spinmag_dqv) at (5, 0)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_spin_mag.pdf}};
 
+        % Third spherical
         \node[inner sep=0pt] (third_spherical) at (10, 1.5)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_third_spherical.pdf}};
@@ -938,6 +951,7 @@ Here we focus only on the cyclic to FM-2 limit.
         \draw[-, dashed, green]
         (third_big_rec.south west) -- (third_small_rec.south east) {};
 
+        % Two-third spherical
         \node[inner sep=0pt] (third_spherical) at (10, -1.5)
         {\includegraphics[width=0.3\textwidth]
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_2third_spherical.pdf}};
@@ -952,7 +966,56 @@ Here we focus only on the cyclic to FM-2 limit.
         (2third_big_rec.north west) -- (2third_small_rec.south east) {};
         \draw[-, dashed, red]
         (2third_big_rec.south west) -- (2third_small_rec.south west) {};
+
+        % Labels
+        \node at (0.4, -2.3) {(a)};
+        \node at (5, -2.3) {(b)};
+        \node at (8.2, 2.7) {(c)};
+        \node at (8.2, -0.3) {(d)};
     \end{tikzpicture}
-    \caption{}
+    \caption{\label{fig: C-FM-coreless-cyclic}Schematic representation of the
+        splitting process occurring on the cyclic side of the interface
+        (\(z/\ell < 0\)) given by the state in
+        Eq.~\eqref{eq: C-FM-coreless-general}.
+        (a): Spherical harmonic representation of the initial doubly quantised
+        vortex line. By traversing a point about the vortex line, the condensate
+        phase is seen to wind by \(4\pi \).
+        (b) Transverse cut of \(\spinmag \) at \(z/\ell \approx -3\) after
+        imaginary-time evolution at \(\bar{t} = 1.5\) showing the splitting of
+        the initial doubly quantised vortex into fractional vortices.
+        The one-third and two-third vortices are clearly identified from the
+        \(\spinmag = 1\) and \(\spinmag = 2\) regions, respectively.
+        (c) and (d): Spherical harmonic representations about the one-third and
+        two-third vortices, respectively.
+        The spherical harmonics shows the non-trivial change of the order
+        parameter symmetry as we move away from the vortex cores.}
 \end{figure}
+We start by discussing the dynamics of the doubly quantised vortex on the cyclic
+side of the interface, shown in Fig.~\ref{fig: C-FM-coreless-cyclic}.
+As expected for a doubly quantised vortex line, it very rapidly undergoes a
+splitting process.
+In this case, it splits into four one-third vortices, evidenced by the
+\(\spinmag = 1\) regions.
+In addition, the large \(\spinmag = 2\) region indicates the core of a two-third
+vortex.
+\textcolor{red}{Why different sizes? Set by different healing lengths?}
+Analysis of the spherical harmonics in Fig.~\ref{fig: C-FM-coreless-cyclic}c,d
+shows the non-trivial order parameter symmetry both within and outside the
+vortex cores.
+By following the spherical harmonics about the vortex cores, the condensate
+phase changes by \(2\pi/3\) and \(4\pi/3\) confirming that these structures are
+one-third and two-third vortices.
+Due to the energy relaxation, the one-third vortices quickly leave the
+condensate.
+However, the two-third vortex first undergoes a further splitting process into
+two one-third vortices, which then proceed to exit the condensate cloud.
+
+The initial coreless vortex on the FM side of the interface also undergoes a
+complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
+\begin{figure}
+    \centering
+    \caption{\label{fig: C-FM-coreless-FM}}
+\end{figure}
+
+
 \subsection{Cyclic to biaxial nematic interface}
