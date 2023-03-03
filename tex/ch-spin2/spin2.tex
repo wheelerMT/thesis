@@ -1014,8 +1014,57 @@ The initial coreless vortex on the FM side of the interface also undergoes a
 complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
 \begin{figure}
     \centering
-    \caption{\label{fig: C-FM-coreless-FM}}
-\end{figure}
+    \begin{tikzpicture}
+        % DQV
+        \node[inner sep=0pt] (initial_coreless) at (0.4, 0)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}};
 
+        % Colour bar
+        \node[rotate=90] at (-2.15, 0.2)
+        {\includegraphics[width=0.15\textwidth, height=0.015\textheight]
+            {gfx/colourbars/hsv_colourbar.pdf}};
+        \node[rotate=90] at (-2.15, -1.8) {Arg(\(Z\)) = 0};
+        \node[rotate=90] at (-2.15, 1.7) {\(2\pi \)};
+
+        % Spin mag
+        \node[inner sep=0pt] (spinmag_coreless) at (5, 0)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_FM_spin_mag.pdf}};
+
+        % After splitting
+        \node[inner sep=0pt] (initial_dqv) at (10, 0)
+        {\includegraphics[width=0.3\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_FM_after_spherical.pdf}};
+
+        \node[rectangle, draw, minimum width=0.5cm, minimum height=0.5cm]
+        (small_rec) at (5.35, -0.13) {};
+        \node[rectangle, draw, minimum width=4.4cm, minimum height=2.3cm]
+        (big_rec) at (10, 0) {};
+        \draw[-, dashed] (big_rec.north west) -- (small_rec.north east) {};
+        \draw[-, dashed] (big_rec.south west) -- (small_rec.south east) {};
+    \end{tikzpicture}
+    \caption{\label{fig: C-FM-coreless-FM}Schematic representation of the
+        splitting process occurring on the FM side of the interface
+        (\(z/\ell > 0\)) of the state in Eq.~\eqref{eq: C-FM-coreless-general}.
+        (a): Spherical harmonic representation of the initial coreless vortex,
+        defined explicitly in Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
+        (b) Transverse cut of \(\spinmag \) at \(z/\ell \approx 3\) after
+        complex-time evolution at \(\bar{t} = 1.5\).
+        The singular vortex structures can be seen from the
+        \(\spinmag \approx 1\) cores.
+        (c): Spherical harmonic representation of the internal structure of
+        the singular vortex, showing the non-trivial symmetry within the core.}
+\end{figure}
+The coreless structure is observed to split into four singular vortices,
+observed from transverse cuts of \(\spinmag \).
+Analysis of the spherical harmonics reveal the non-trivial symmetry within
+the singular vortex cores.
+As in the case on the cyclic side, these vortices rapidly leave the condensate
+due to the energy relaxation.
+
+On both sides of the interface the vortex structures are observed to terminate
+at the interface itself, and do not connect in a way that is observed in the
+SQV to one-third vortex connection (see Fig.~\ref{fig: C-FM-third-SQV}).
 
 \subsection{Cyclic to biaxial nematic interface}
