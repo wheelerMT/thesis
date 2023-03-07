@@ -723,38 +723,55 @@ occupying different ground states, drastically altering the order parameter
 symmetry within the cores (see Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}).
 \begin{figure}
     \centering
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]{example-image}
-        \caption{Spatial separation.}
-    \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_UN.png}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_BN.png}
-        \caption{}
-    \end{subfigure}\\
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]{example-image}
-        \caption{Plot showing FM regions.}
-    \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]{example-image}
-        \caption{Pure imaginary time plot showing SQV splitting on BN side.}
-    \end{subfigure}
-    \begin{subfigure}{0.33\textwidth}
-        \includegraphics[width=\textwidth]{example-image}
-        \caption{Maybe not needed.}
-    \end{subfigure}
-    \caption{\label{fig: UN-BN-SQV-SQV-singlets}Transverse cuts of
-    \(|A_{30}|^2\) for the SQV-SQV connection given in
-    Eq.~\eqref{eq: UN-BN-SQV-SQV} at \(\bar{t} = 300\) on the UN (a) and BN (b)
-    sides of the interface.
-    Overlaid are the spherical harmonics showing the non-trivial change of the
-    order parameter symmetry.}
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.33\textwidth]
+            {gfx/ch-spin2/UN-BN_SQV-SQV_longitudinal_a30.pdf}};
+
+        \node at (5, 2.2) {\includegraphics[width=0.33\textwidth]
+            {gfx/ch-spin2/UN-BN_SQV-SQV_a30_UN.pdf}};
+
+        \node at (5, -2.7) {\includegraphics[width=0.33\textwidth]
+            {gfx/ch-spin2/UN-BN_SQV-SQV_a30_BN.pdf}};
+
+        \node at (10, 2.35) {\includegraphics[width=0.26\textwidth]
+            {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_UN.png}};
+        \node[rectangle, draw=black, minimum width=0.55cm,
+            minimum height=0.55cm]
+        (UN_small_rec) at (5.05, 2.45) {};
+        \node[rectangle, draw=black, minimum width=3.8cm,
+            minimum height=3.8cm]
+        (UN_big_rec) at (10, 2.33) {};
+        \draw[-, dashed] (UN_big_rec.north west) -- (UN_small_rec.north west){};
+        \draw[-, dashed] (UN_big_rec.south west) -- (UN_small_rec.south west){};
+
+        \node at (10, -2.58) {\includegraphics[width=0.26\textwidth]
+            {gfx/ch-spin2/UN-BN_SQV-SQV_singletTrio_BN.png}};
+        \node[rectangle, draw=black, minimum width=0.55cm,
+            minimum height=0.55cm]
+        (BN_small_rec) at (5.1, -2.52) {};
+        \node[rectangle, draw=black, minimum width=3.8cm,
+            minimum height=3.8cm]
+        (BN_big_rec) at (10, -2.57) {};
+        \draw[-, dashed] (BN_big_rec.north west) -- (BN_small_rec.north west){};
+        \draw[-, dashed] (BN_big_rec.south west) -- (BN_small_rec.south west){};
+
+        \node at (0, -2.5) {(a)};
+        \node at (5, -0.3) {(b)};
+        \node at (5, -5.2) {(c)};
+        \node at (10, -0.3) {(d)};
+        \node at (10, -5.2) {(e)};
+    \end{tikzpicture}
+    \caption{\label{fig: UN-BN-SQV-SQV-singlets}Spin singlet-trio amplitude for
+        the UN-BN SQV-SQV connection given in Eq.~\eqref{eq: UN-BN-SQV-SQV} at
+        \(\bar{t} = 300\).
+        (a): Longitudinal cut showing the spatial separation of the two vortex
+        lines.
+        (b) and (c): Transverse cut on the UN (\(z/\ell = 3.125\)) and BN
+        (\(z/\ell = -3.125\)) sides, respectively, showing the SQVs and their
+        composite core structure.
+        (d) and (e): Magnified transverse cuts with an overlay of the spherical
+        harmonics, showing the non-trivial change of symmetry of the order
+        parameter within the vortex cores.}
 \end{figure}
 In the UN case, the initially empty core fills with atoms occupying both the
 cyclic and BN phases, generating a topological interface within the core itself.
@@ -870,6 +887,7 @@ Fig.~\ref{fig: C-FM-third-SQV}.
         \node[inner sep=0pt] (plot0) at (3.8,0)
         {\includegraphics[width=0.33\textwidth]
             {gfx/ch-spin2/C-FM=2_third-SQV_singlet_trio.pdf}};
+
         % Labels
         \node at (-5.15, -2.5) {(a)};
         \node at (-0.5, -2.5) {(b)};
