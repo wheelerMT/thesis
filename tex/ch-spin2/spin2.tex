@@ -376,7 +376,7 @@ singular string in the BN phase.
 
 \subsection{Cyclic to nematic}
 A steady-state solution that interpolates between the nematic and cyclic phases
-can be found by choosing \(\chi = \chi_2 + \chi_{-2} + 2\chi_0 = \pi\) in
+can be found by choosing \(\chi = \chi_2 + \chi_{-2} + 2\chi_0 = \pi \) in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor}, namely
 \begin{equation}\label{eq: C-N-interpolating-spinor}
     \zeta^\mathrm{C-N} = \mqty(
@@ -421,8 +421,32 @@ cyclic limit as \(D_+ = 1\) and \(D_- = 0\).
 In addition to these connections, one can also construct an alternative
 connection between spin vortices that arises due to a shared symmetry between
 the cyclic and BN phases.
-In particular, the common axis of symmetry is given by \(\hat{\vb{e}} =
-(\hat{\vb{x}} + \hat{\vb{y}}) / \sqrt{2}\).
+In particular, the common axis of symmetry is given by \(\hat{\vb{e}}_{(1,1,0)}=
+(\hat{\vb{x}} + \hat{\vb{y}}) / \sqrt{2}\) (see \(C_2'\) axis in
+Fig.~\ref{subfig: BN-spherical}).
+A spin rotation around this axis is given by
+\begin{equation}\label{eq: C-BN-sv-rot}
+    \hat{U}\left(\hat{\vb{e}}_{(1,1,0)}, \delta\right) =
+    \exp{-i\frac{\hat{F}_x + \hat{F}_y}{\sqrt{2}}\delta},
+\end{equation}
+where \(\delta \) is an angle.
+This spin rotation with \(\delta = \varphi \), along with \(\tau=0\), can then
+be applied to the interpolating in Eq.~\eqref{eq: C-N-interpolating-spinor} to
+produce
+\begin{equation}\label{eq: C-BN-SV2-SV2}
+    \zeta_\text{sv} = \frac{1}{4}\mqty(
+    2 D_- \cos \varphi+ \sqrt{3} D_+ \sin ^2\varphi \\
+    2 e^{\frac{i \pi }{4}} \sin \varphi \left(
+    -D_-+\sqrt{3} D_+ \cos \varphi\right)\\
+    i D_+ (3 \cos2\varphi+1)/\sqrt{2}\\
+    2 e^{\frac{i \pi }{4}} \sin \varphi \left(
+    \sqrt{3} D_+ \cos \varphi+ D_-\right)\\
+    2 D_- \cos \varphi-\sqrt{3} D_+ \sin ^2\varphi
+    ),
+\end{equation}
+which yields integer spin vortices in both the cyclic and nematic limits.
+The same spinor can be constructed from Eq.~\eqref{eq: spin-rotation-action}
+with \(\alpha=-\gamma=\pi/4\) and \(\beta = \varphi \).
 
 \subsection{Cyclic to ferromagnetic}
 An additional stationary solution can be found by considering \(D_1=D_2=0\).
