@@ -180,144 +180,6 @@ From these determinants and Eq.~\eqref{eq: spin-2-stationary-zeta0-recast},
 we can derive stationary solutions that interpolate between different ground
 states of the spin-2 system.
 
-\subsection{Ferromagnetic to biaxial nematic}
-Consider the case \(D_1 \neq 0\) and \(D_2 = 0\).
-If \(D_1 \neq 0\), then Eq.~\eqref{eq: D1} implies \(\zeta_1=\zeta_{-1} = 0\).
-Additionally, if \(\alpha \neq \tilde{\mu}\),
-then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
-\textcolor{red}{Rest of derivation here.}
-
-The resulting stationary solution has the form
-\begin{equation}\label{eq: FM-BN-interpolating-spinor}
-    \zeta_\mathrm{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    \sqrt{\frac{1 - f_z/2}{2}}),
-\end{equation}
-where \(f_z = p / [(c_1-c_2/20)n]\) gives the longitudinal magnetisation.
-One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
-the ferromagnetic state with spin \(f_z = \pm 2\).
-Alternatively, the solution becomes the BN state when \(p=0\).
-Therefore, this spinor provides an interpolating solution between the
-ferromagnetic and BN phases, which is controlled by the linear Zeeman shift,
-\(p\).
-
-Defect states that span the interface can be constructed from the steady state
-solutions by applying a condensate phase \(\phi \) and spin rotation defined by
-Euler angles (\(\alpha, \beta, \gamma \))
-[see Eq.~\eqref{eq: spin-2-rotation-matrix}].
-In this Chapter we focus only on a small subset of the possible defects present
-in the spin-2 system.
-
-We start from the interpolating spinor between the FM and BN phases in
-Eq.~\eqref{eq: FM-BN-interpolating-spinor}.
-The simplest vortex case to consider is that of a singular, singly quantised
-vortex (SQV) on both sides of the interface.
-Such a vortex is formed of a \(2\pi \) winding of the condensate phase about
-the vortex core.
-This winding is achieved by letting \(\phi = \varphi \), where \(\varphi \) is
-the azimuthal angle about the core and letting the Euler angles be constant.
-This resulting interpolating spinor then reads
-\begin{equation}
-    \zeta_\mathrm{FM-BN}^\mathrm{SQV} =
-    \mqty(e^{i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
-\end{equation}
-where we have taken \(\alpha=\beta=\gamma=0\) for simplicity.
-Despite being characterised by the same phase winding on both sides of the
-interface, each SQV represents an entirely different object due to the
-differing topologies on either side.
-
-Another solution connecting different vortex states can be obtained from the
-above by removing the winding from one of the \(\zeta_{\pm 2}\) components.
-For example, if \(f_z\) interpolates from \(f_z=0\) to \(f_z=2\) and the winding
-was removed from the \(\zeta_{-2}\) component, this solution would then connect
-an SQV on the FM side to a half-quantum vortex (HQV) on the BN side.
-For that same state, if the winding was instead removed from the \(\zeta_{2}\)
-component, then the HQV on the BN side would continuously connect to a
-vortex-free state on the FM side.
-
-Spinor BECs support the non-dissipative flow of condensate spin, which gives
-rise to vortex structures that carry a spin circulation, referred to as a spin
-vortex.
-Such vortices arise in all phases of the spin-2 BEC [REF].
-An interpolating solution involving a spin vortex can be constructed through the
-choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
-singular SQV on the FM side which connecting to a BN spin vortex.
-The resulting spinor reads
-\begin{equation}
-    \zeta_\mathrm{FM-BN}^\mathrm{SQV-SV} =
-    \mqty(e^{-i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
-\end{equation}
-where we have chosen \(\beta = 0\).
-
-As seen in Sec.~\ref{sec: vortices-spin-1}, the FM phase of a spin-1 BEC can
-host a non-singular, coreless vortex that has a characteristic fountain-like
-spin texture.
-A coreless vortex can also be constructed in the spin-2 system following a
-similar procedure and having \(\beta=\beta(\rho)\) be a monotonically increasing
-function of the radial coordinate \(\rho = \sqrt{x^2 + y^2}\).
-This, in addition to choosing the Euler angles
-\(\phi - 2\gamma = 2\alpha = 2\varphi \) leads to the interpolating spinor
-(\(\gamma=0\))
-\begin{equation}\label{eq: FM-BN-coreless-DQV}
-    \zeta_\mathrm{FM-BN}^\mathrm{coreless} = \mqty(
-    C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
-    2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
-        - CS^3\sqrt{1-f_z/2}\right] \\
-    e^{2i\varphi}\sqrt{6}C^2S^2\left[\sqrt{1+f_z/2}
-        + \sqrt{1-f_z/2} \right] \\
-    2e^{3i\varphi}\left[CS^3\sqrt{1+f_z/2}
-        - C^3S\sqrt{1-f_z/2}\right] \\
-    e^{4i\varphi}\left[S^4\sqrt{1+f_z/2} + C^4\sqrt{1-f_z/2} \right]
-    ),
-\end{equation}
-where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
-In the FM limit (\(f_z=2\)), one recovers the spin-2 coreless vortex given as
-\begin{equation}\label{eq: FM-BN-coreless}
-    \zeta^\mathrm{coreless} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
-    e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
-    ).
-\end{equation}
-The spherical harmonic representation of this vortex is plotted in
-Fig.~\ref{subfig: coreless-initial}, where the characteristic fountain-like
-texture becomes apparent.
-The spinor in the cyclic limit (\(f_z=0\)) reads
-\begin{equation}\label{eq: FM-BN-DQV}
-    \zeta^\mathrm{DQV} = \mqty(
-    C^4 + S^4 \\
-    2e^{i\varphi}CS\left[C^2-S^2\right] \\
-    2e^{2i\varphi}\sqrt{6}C^2S^2 \\
-    2e^{3i\varphi}CS\left[S^2 - C^2\right] \\
-    e^{4i\varphi}\left[C^4 + S^4\right]).
-\end{equation}
-It is not immediately obvious from the form of the spinor the type of vortex
-present on the cyclic side of the interface.
-To investigate the vortex state, we plot the spherical harmonics of the state
-defined in Eq.~\eqref{eq: FM-BN-DQV} in
-Fig.~\ref{subfig: DQV-initial}.
-\begin{figure}
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}
-        \caption{\label{subfig: coreless-initial}}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}
-        \caption{\label{subfig: DQV-initial}}
-    \end{subfigure}
-    \caption{\label{fig: coreless-doubly-quantised} Spherical harmonic
-        representation of the vortex configurations on each side of the FM-BN
-        interface defined in Eq.~\eqref{eq: FM-BN-coreless-DQV}.
-        (a): Spin-2 FM coreless vortex given by Eq.~\eqref{eq: FM-BN-coreless}.
-        (b): Doubly quantised vortex on the BN side of the interface, given by
-        Eq.~\eqref{eq: FM-BN-DQV}.
-        \textcolor{red}{Current DQV is for cyclic case, update to BN.}}
-\end{figure}
-By tracing a point about the vortex line, the phase changes by a total of
-\(4\pi \) indicating a doubly quantised vortex.
-
 \subsection{Uniaxial nematic to biaxial nematic}\label{subsec: UN-BN-defects}
 Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
 Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
@@ -327,14 +189,15 @@ Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
 The final solution reads
 \begin{equation}\label{eq: UN-BN-interpolating-spinor}
     \zeta_\mathrm{UN-BN} = \mqty(
-    \frac{\sqrt{1 - \eta}}{2} \\
+    e^{i\chi_2}\frac{\sqrt{1 - \eta}}{2} \\
     0 \\
-    \sqrt{\frac{1 + \eta}{2}} \\
+    e^{i\chi_0}\sqrt{\frac{1 + \eta}{2}} \\
     0 \\
-    \frac{\sqrt{1 - \eta}}{2}
+    e^{i\chi_{-2}}\frac{\sqrt{1 - \eta}}{2}
     ),
 \end{equation}
-where \(\eta = 10q /|c_2|n \in [-1, 1]\).
+where \(\eta = 10q /|c_2|n \in [-1, 1]\) and \(\chi_m = \text{Arg}(\zeta_m)\)
+for component \(m\).
 This solution depends only on the quadratic Zeeman shift, which can alter the
 spinor between phases.
 When \(q = c_2n / 10\) the system is in the uniaxial nematic phase.
@@ -372,8 +235,7 @@ Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into
             + \eta(5 \eta -8) + 5\right],
     \end{aligned}
 \end{equation}
-where \(\theta = \chi_2 + \chi_{-2} - 2\chi_0\) and \(\chi_j = Arg(\psi_j)\) for
-component \(j=-2, 0, 2\).
+where \(\theta = \chi_2 + \chi_{-2} - 2\chi_0\).
 We plot both the singlet-duo and -trio amplitudes in
 Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
 \begin{figure}
@@ -396,45 +258,48 @@ As we shall see in the numerical investigation of such an interface, this has
 profound effects on the structure of topological defects connecting across
 the interface.
 
-From the interpolating spinor in Eq.~\eqref{eq: UN-BN-interpolating-spinor} we
-can construct various topological defect crossing solutions.
-The simplest case is the connection of SQVs on either side of the interface.
-Such a connection is realised by the choice \(\phi = \varphi \) whilst keeping
+Defect states that span the interface can be constructed by applying a
+condensate phase \(\tau \) and spin rotation defined by
+Euler angles (\(\alpha, \beta, \gamma \))
+[see Eq.~\eqref{eq: spin-2-rotation-matrix}] as
+\begin{equation}\label{eq: spin-rotation-action}
+    \zeta = e^{i\tau}\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B},
+\end{equation}
+where \(\zeta^\text{A-B}\) represents an interpolating spinor between ground
+state A and B of a spin-2 BEC\@.
+
+In this Chapter we focus only on a small subset of the possible defects present
+in the spin-2 system.
+The first case we consider is the connection of SQVs on either side of the
+interface, defined as a \(2\pi \) winding of the condensate phase, \(\tau \).
+Such a connection is realised by the choice \(\tau = \varphi \) whilst keeping
 the Euler angles constant.
 A representative example with \(\alpha = \gamma = 0\) is given by
-\begin{equation}
-    \zeta^\mathrm{SQV}_\mathrm{UN-BN} =
-    \frac{e^{i\varphi}}{8}\begin{pmatrix}
-        \sqrt{6} D_+ \sin ^2\beta _0 + 2D_- \left(\cos^2\beta _0+1\right) \\
-        -2 \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0                  \\
-        \sqrt{2}\left[ \sqrt{3} D_- \sin ^2\beta _0 -2D_+
-        \left(1-3 \cos^2 \beta _0\right)\right]                           \\
-        2 \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0                   \\
-        \sqrt{6} D_+ \sin ^2\beta _0+D_- \left(\cos^2\beta _0+1\right)
+\begin{align}\label{eq: UN-BN-SQV-SQV}
+    \zeta_\text{sqv}^\text{UN-BN} & =
+    \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sqv}
+    + D_-\zeta^\text{BN}_\text{sqv}\right),                       \\
+    \zeta^\text{UN}_\text{sqv}    & =
+    \sqrt{\frac38}e^{i\varphi}
+    \begin{pmatrix}
+        \sin^2\beta_0                                   \\
+        \sin (2 \beta _0)                               \\
+        \frac{1}{\sqrt{6}}\left(1+3\cos^2\beta_0\right) \\
+        - \sin (2 \beta _0)                             \\
+        \sin^2\beta_0
+    \end{pmatrix}, \\
+    \zeta^\text{BN}_\text{sqv}    & =
+    \frac{1}{\sqrt{8}}e^{i\varphi}
+    \begin{pmatrix}
+        \cos^2\beta_0 + 1     \\
+        - \sin (2 \beta _0)   \\
+        \sqrt{6}\sin^2\beta_0 \\
+        \sin (2 \beta _0)     \\
+        \cos^2\beta_0 + 1
     \end{pmatrix},
-    \label{eq: UN-BN-SQV-SQV}
-\end{equation}
+\end{align}
 where \(D_{\pm} = \sqrt{1 \pm \eta}\) and \(\beta=\beta_0\) is an arbitrary
 constant.
-The explicit form of the above equation in the UN
-(\(D_+ = \sqrt{2}, D_- = 0\)) and BN (\(D_0 = 0, D_- = \sqrt{2}\)) limits
-is given, respectively, as
-\begin{equation}
-    \zeta_\mathrm{UN}^\mathrm{SQV} =  \frac{e^{i\varphi}}{4}\mqty(
-    \sqrt{3}\sin^2\beta_0 \\
-    \sqrt{6}\sin2\beta_0 \\
-    -2(1 - 3\cos^2\beta_0) \\
-    -\sqrt{6}\sin2\beta_0 \\
-    \sqrt{3}\sin^2\beta_0
-    ), \qquad
-    \zeta_\mathrm{BN}^\mathrm{SQV} =  \frac{e^{i\varphi}}{4}\mqty(
-    \sqrt{2}(\cos^2\beta_0 + 1) \\
-    -\sqrt{2}\sin2\beta_0 \\
-    2\sqrt{3}\sin^2\beta_0 \\
-    \sqrt{2}\sin2\beta_0 \\
-    \sqrt{2}(\cos^2\beta_0 + 1)
-    ).
-\end{equation}
 One can see that upon the substitution of \(\beta_0 = 0\) in the above spinors,
 we recover the SQV case in both the UN
 \(\zeta^\mathrm{SQV} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
@@ -443,22 +308,50 @@ It is important to note that, despite being characterised by the same phase
 winding, the SQVs on either side of the interface represent entirely different
 objects due to the differing topologies of the UN and BN phases.
 
-Spin vortices can be connected across the interface by choosing
-\(\alpha=\varphi, \beta=\beta_0 \) and \(\phi = \gamma = 0\), resulting in the
-spinor
-\begin{equation}\label{eq: UN-BN-SV-SV-spinor}
-    \zeta^\mathrm{SV} =
-    \frac{1}{8}\begin{pmatrix}
-        e^{-2i\varphi}\left[\sqrt{6} D_+ \sin ^2\beta _0
-        + 2D_- \left(\cos^2\beta _0+1\right)\right]                   \\
-        -2e^{-i\varphi} \left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0 \\
-        \sqrt{2}\left[ \sqrt{3} D_- \sin ^2\beta _0
-        - 2D_+ \left(1-3 \cos^2 \beta _0\right)\right]                \\
-        2 e^{i\varphi}\left(D_--\sqrt{3} D_+\right) \sin 2 \beta _0   \\
-        e^{2i\varphi}\left[\sqrt{6} D_+ \sin ^2\beta _0
-            + 2D_- \left(\cos^2\beta _0+1\right)\right]
-    \end{pmatrix}.
-\end{equation}
+One can, instead, construct a defect crossing solution that connects a vortex
+on one side of the interface to a vortex-free region on the other side.
+By selectively removing the winding (equivalent to setting \(\varphi=0\)) from,
+say, \(\zeta^\text{UN}_\text{sqv}\), we are left with an SQV on the BN side
+which smoothly interpolates to a vortex-free region in the UN phase.
+Similarly, removing the winding from \(\zeta^\text{BN}_\text{sqv}\) connects an
+SQV on the UN side to a vortex-free region on the BN side.
+These interpolating solutions parameterise the filling of vortex cores when
+\(\xi_a > \xi_d\).
+In such a case, we now have a radial dependence on the interpolating parameters
+\(D_{\pm}\).
+For example, for an SQV in the BN phase can be predicted to fill with atoms in
+the UN phase when \(D_-(0) = 0, D_+(0) = \sqrt{2}\) and change back to the BN
+phase away from the vortex core \(D_-(\vb{r}_\perp) = \sqrt{2}, D_+(0) = 0\).
+\textcolor{red}{Need to get my head around this as it is not immediately clear
+    to me.}
+
+Spin vortices, which carry a spin circulation only
+(see Sec.~\ref{sec: vortices-spin-2}), can be connected across the interface by
+choosing \(\alpha=\varphi, \beta=\beta_0 \) and \(\tau = \gamma = 0\) in
+Eq.~\ref{eq: spin-rotation-action}, resulting in the spinor
+\begin{align}\label{eq: UN-BN-SV-SV-spinor}
+     & \zeta_\text{sv} =  \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sv}
+    + D_-\zeta^\text{BN}_\text{sv}\right),
+    \\
+     & \zeta^\text{UN}_\text{sv} =
+    \sqrt{\frac38}
+    \begin{pmatrix}
+        \exp(-i\varphi)\sin^2\beta_0                    \\
+        \exp(-i\frac{\varphi}{2})\sin 2 \beta _0        \\
+        \frac{1}{\sqrt{6}}\left(1+3\cos^2\beta_0\right) \\
+        -\exp(i\frac{\varphi}{2}) \sin 2 \beta _0       \\
+        \exp(i\varphi)\sin^2\beta_0
+    \end{pmatrix}, \label{eq: UN-SV-spinor}               \\
+     & \zeta^\text{BN}_\text{sv} =
+    \frac{1}{\sqrt{8}}
+    \begin{pmatrix}
+        \exp(-i\varphi)\left(\cos^2\beta_0 + 1\right)                        \\
+        - \exp(-i\frac{\varphi}{2})\sin 2 \beta _0                           \\
+        \sqrt{6}\sin^2\beta_0                                                \\
+        \exp(i\frac{\varphi}{2})\sin 2 \beta _0                              \\
+        \exp(i\varphi)\left(\cos^2\beta_0 + 1\right)\label{eq: BN-SV-spinor} \\
+    \end{pmatrix},
+\end{align}
 In particular, spin vortices arise in both components for
 \(\beta_0 \neq 0, \pi \), where the spin vortex in each phase carries opposite
 the spin winding of the other spin vortex.
@@ -472,22 +365,26 @@ The possibility in the UN-BN interface is that of a monopole, which is
 characterised by a spherically symmetric dependence of the nematic axis
 \(\vb{\hat{d}} = (\cos\varphi \sin\theta, \sin\varphi \sin\theta, \cos\theta)\),
 where \(\theta \) is the polar angle in spherical coordinates.
-The monopole solution is derived from Eq.~\eqref{eq: UN-BN-interpolating-spinor}
-using the substitution \(\beta = \theta \) and \(\alpha=\varphi \).
-\textcolor{red}{Would quite like an image of the initial state somehow.}
 
+A monopole solution in the UN phase is derived from Eq.~\eqref{eq: UN-SV-spinor}
+using the substitution \(\beta = \theta \) and \(\alpha=\varphi \).
+Applying this same rotation to the interpolating spinor in
+Eq.~\eqref{eq: UN-BN-SV-SV-spinor} results in a point monopole in the UN limit
+which terminates as a hedgehog structure of the nematic axis surrounding a
+singular string in the BN phase.
+\textcolor{red}{Would quite like an image of the initial state somehow.}
 
 \subsection{Cyclic to nematic}
 A steady-state solution that interpolates between the nematic and cyclic phases
-can be found by including phase coefficients in
+can be found by choosing \(\chi = \chi_2 + \chi_{-2} + 2\chi_0 = \pi\) in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor}, namely
 \begin{equation}\label{eq: C-N-interpolating-spinor}
     \zeta^\mathrm{C-N} = \mqty(
-    e^{i\chi_2}\frac{\sqrt{1 + \eta}}{2} \\
+    \frac{\sqrt{1 + \eta}}{2} \\
     0 \\
-    e^{i\chi_0}\sqrt{\frac{1 - \eta}{2}} \\
+    \sqrt{\frac{1 - \eta}{2}} \\
     0 \\
-    e^{i\chi_{-2}}\frac{\sqrt{1 + \eta}}{2}),
+    \frac{\sqrt{1 + \eta}}{2}),
 \end{equation}
 where \(\eta = 10q/(|c_2|n)\).
 The quadratic Zeeman shift can be used to interpolate the above solution between
@@ -500,13 +397,32 @@ If \(q = -c_2n/10\) then the solution becomes biaxial nematic
 In the opposite limit of \(q = c_2n/10\) then the system is in the uniaxial
 nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
 
-One can construct all the defect states considered in the UN-BN interface
-using this interpolating spinor between the cyclic and nematic phases.
-To do so, we simply replace \(D_+ \rightarrow iD_+\) in
-Eq.~\eqref{eq: UN-BN-SQV-SQV}, where the cyclic limit is identified as
-\(D_+=D_-=1\).
-In addition to those states, one can construct \textcolor{red}{Integer spin
-    vortices?}
+The uniform mean-field energy of Eq.~\eqref{eq: C-N-interpolating-spinor} reads
+\begin{equation}
+    \mathcal{E}^\text{C-N} = \frac{c_2n}{10}\eta^2 + 2q(1 - \eta).
+\end{equation}
+The energy becomes minimised at \(\eta = 10q/c_2n\) for \(c_2 > 0\) and fixed
+\(q\).
+Since the interpolating spinor \(\zeta^\text{C-N}\) is a function of \(q\) only
+the stability of the interface is guaranteed since \(\mathcal{E}^\text{C-N} =
+2q-10q^2/c_2 \leq \mathcal{E}^\text{C}, \mathcal{E}^\text{UN},
+\mathcal{E}^\text{BN}\) for \(|q| < c_2n/10\).
+
+Here, for simplicity, we focus on an interface between the cyclic and BN phases
+which is achieved from a longitudinally-dependent quadratic Zeeman shift
+\(q(z)\) which varies from \(q = 0\) at the cyclic phase to \(q = -c_2n/10\)
+at the BN side.
+
+Firstly, one can construct the SQV-SQV and SV-SV connections considered in the
+UN-BN interface for this interface upon the substitution
+\(D_+ \rightarrow iD_+\) in Eq.~\eqref{eq: UN-BN-SQV-SQV} and identifying the
+cyclic limit as \(D_+ = 1\) and \(D_- = 0\).
+
+In addition to these connections, one can also construct an alternative
+connection between spin vortices that arises due to a shared symmetry between
+the cyclic and BN phases.
+In particular, the common axis of symmetry is given by \(\hat{\vb{e}} =
+(\hat{\vb{x}} + \hat{\vb{y}}) / \sqrt{2}\).
 
 \subsection{Cyclic to ferromagnetic}
 An additional stationary solution can be found by considering \(D_1=D_2=0\).
@@ -555,20 +471,20 @@ Eq.~\eqref{eq: C-FM-interpolating-spinor} yields (\(\beta = 0\))
 \end{equation}
 where \(D_2 = \sqrt{1 + f_z}\) and
 \(D_{-1} = \sqrt{2 - f_z}\).
-Now, combinations of \(\phi \) and \(\alpha+\gamma \) yields different phase
+Now, combinations of \(\tau \) and \(\alpha+\gamma \) yields different phase
 vortices.
 Since the cyclic phase supports fractional vortices
 (see Sec. \textcolor{red}{Section}), we are able to construct a myriad of
 different connections from this interpolating spinor.
-For example, the choice \(\alpha+\gamma=-\varphi/3\) and \(\phi=\varphi/3\)
+For example, the choice \(\alpha+\gamma=-\varphi/3\) and \(\tau=\varphi/3\)
 results in a singular SQV in the FM-2 limit (\(D_2 = 1, D_{-1} = 0\)),
 a third vortex in the cyclic limit (\(D_2 = \sqrt{1/3}, D_{-1} = \sqrt{2/3}\)),
 and a vortex-free state in the FM-1 limit (\(D_2 = 0, D_{-1} = 1\)).
-Instead, by choosing \(\alpha + \gamma = \varphi/3\) and \(\phi = 2\varphi/3\)
+Instead, by choosing \(\alpha + \gamma = \varphi/3\) and \(\tau = 2\varphi/3\)
 we have a vortex-free state in the FM-2 limit, a two-third vortex in the cyclic
 limit, and a singular SQV in the FM-1 limit.
 A case constructing SQVs in all three limits is given by \(\alpha+\gamma = 0\)
-and \(\phi = \varphi \).
+and \(\tau = \varphi \).
 
 One can use the general spinor in Eq.~\eqref{eq: C-FM-general-spinor} to
 analytically examine the vortex core structures when \(D_{2,{-1}}\) are
@@ -604,7 +520,7 @@ To construct the characteristic fountain-like spin texture, we choose a
 monotonically increasing function of \(\beta=\beta(\rho)\).
 The order-parameter is then kept single-valued by a combined winding of the
 condensate phase coupled to a winding of the spin vector, achieved by
-\(\phi'=2\alpha=2\varphi \), where \(\phi'=\phi-2\gamma \).
+\(\tau'=2\alpha=2\varphi \), where \(\tau'=\tau-2\gamma \).
 Applying such a rotation to the general spinor in
 Eq.~\eqref{eq: C-FM-interpolating-spinor} yields
 \begin{equation}\label{eq: C-FM-coreless-general}
@@ -668,6 +584,137 @@ The spherical harmonic representation of this cyclic state is plotted in
 Fig.~\ref{subfig: C-FM-cyclic-DQV}.
 By tracing a point about the vortex core, the condensate phase winds by a total
 of \(4\pi \), indicating that this is a doubly-quantised vortex.
+
+\subsection{Ferromagnetic to biaxial nematic}
+Consider the case \(D_1 \neq 0\) and \(D_2 = 0\).
+If \(D_1 \neq 0\), then Eq.~\eqref{eq: D1} implies \(\zeta_1=\zeta_{-1} = 0\).
+Additionally, if \(\alpha \neq \tilde{\mu}\),
+then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
+\textcolor{red}{Rest of derivation here.}
+
+The resulting stationary solution has the form
+\begin{equation}\label{eq: FM-BN-interpolating-spinor}
+    \zeta_\mathrm{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    \sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where \(f_z = p / [(c_1-c_2/20)n]\) gives the longitudinal magnetisation.
+One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
+the ferromagnetic state with spin \(f_z = \pm 2\).
+Alternatively, the solution becomes the BN state when \(p=0\).
+Therefore, this spinor provides an interpolating solution between the
+ferromagnetic and BN phases, which is controlled by the linear Zeeman shift,
+\(p\).
+
+We start from the interpolating spinor between the FM and BN phases in
+Eq.~\eqref{eq: FM-BN-interpolating-spinor}.
+The simplest vortex case to consider is that of a singular, singly quantised
+vortex (SQV) on both sides of the interface.
+Such a vortex is formed of a \(2\pi \) winding of the condensate phase about
+the vortex core.
+This winding is achieved by letting \(\tau = \varphi \), where \(\varphi \) is
+the azimuthal angle about the core and letting the Euler angles be constant.
+This resulting interpolating spinor then reads
+\begin{equation}
+    \zeta_\mathrm{FM-BN}^\mathrm{SQV} =
+    \mqty(e^{i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where we have taken \(\alpha=\beta=\gamma=0\) for simplicity.
+Despite being characterised by the same phase winding on both sides of the
+interface, each SQV represents an entirely different object due to the
+differing topologies on either side.
+
+Another solution connecting different vortex states can be obtained from the
+above by removing the winding from one of the \(\zeta_{\pm 2}\) components.
+For example, if \(f_z\) interpolates from \(f_z=0\) to \(f_z=2\) and the winding
+was removed from the \(\zeta_{-2}\) component, this solution would then connect
+an SQV on the FM side to a half-quantum vortex (HQV) on the BN side.
+For that same state, if the winding was instead removed from the \(\zeta_{2}\)
+component, then the HQV on the BN side would continuously connect to a
+vortex-free state on the FM side.
+
+Spinor BECs support the non-dissipative flow of condensate spin, which gives
+rise to vortex structures that carry a spin circulation, referred to as a spin
+vortex.
+Such vortices arise in all phases of the spin-2 BEC [REF].
+An interpolating solution involving a spin vortex can be constructed through the
+choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
+singular SQV on the FM side which connecting to a BN spin vortex.
+The resulting spinor reads
+\begin{equation}
+    \zeta_\mathrm{FM-BN}^\mathrm{SQV-SV} =
+    \mqty(e^{-i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+\end{equation}
+where we have chosen \(\beta = 0\).
+
+As seen in Sec.~\ref{sec: vortices-spin-1}, the FM phase of a spin-1 BEC can
+host a non-singular, coreless vortex that has a characteristic fountain-like
+spin texture.
+A coreless vortex can also be constructed in the spin-2 system following a
+similar procedure and having \(\beta=\beta(\rho)\) be a monotonically increasing
+function of the radial coordinate \(\rho = \sqrt{x^2 + y^2}\).
+This, in addition to choosing the Euler angles
+\(\tau - 2\gamma = 2\alpha = 2\varphi \) leads to the interpolating spinor
+(\(\gamma=0\))
+\begin{equation}\label{eq: FM-BN-coreless-DQV}
+    \zeta_\mathrm{FM-BN}^\mathrm{coreless} = \mqty(
+    C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
+    2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
+        - CS^3\sqrt{1-f_z/2}\right] \\
+    e^{2i\varphi}\sqrt{6}C^2S^2\left[\sqrt{1+f_z/2}
+        + \sqrt{1-f_z/2} \right] \\
+    2e^{3i\varphi}\left[CS^3\sqrt{1+f_z/2}
+        - C^3S\sqrt{1-f_z/2}\right] \\
+    e^{4i\varphi}\left[S^4\sqrt{1+f_z/2} + C^4\sqrt{1-f_z/2} \right]
+    ),
+\end{equation}
+where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
+In the FM limit (\(f_z=2\)), one recovers the spin-2 coreless vortex given as
+\begin{equation}\label{eq: FM-BN-coreless}
+    \zeta^\mathrm{coreless} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
+    e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
+    ).
+\end{equation}
+The spherical harmonic representation of this vortex is plotted in
+Fig.~\ref{subfig: coreless-initial}, where the characteristic fountain-like
+texture becomes apparent.
+The spinor in the cyclic limit (\(f_z=0\)) reads
+\begin{equation}\label{eq: FM-BN-DQV}
+    \zeta^\mathrm{DQV} = \mqty(
+    C^4 + S^4 \\
+    2e^{i\varphi}CS\left[C^2-S^2\right] \\
+    2e^{2i\varphi}\sqrt{6}C^2S^2 \\
+    2e^{3i\varphi}CS\left[S^2 - C^2\right] \\
+    e^{4i\varphi}\left[C^4 + S^4\right]).
+\end{equation}
+It is not immediately obvious from the form of the spinor the type of vortex
+present on the cyclic side of the interface.
+To investigate the vortex state, we plot the spherical harmonics of the state
+defined in Eq.~\eqref{eq: FM-BN-DQV} in
+Fig.~\ref{subfig: DQV-initial}.
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}
+        \caption{\label{subfig: coreless-initial}}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}
+        \caption{\label{subfig: DQV-initial}}
+    \end{subfigure}
+    \caption{\label{fig: coreless-doubly-quantised} Spherical harmonic
+        representation of the vortex configurations on each side of the FM-BN
+        interface defined in Eq.~\eqref{eq: FM-BN-coreless-DQV}.
+        (a): Spin-2 FM coreless vortex given by Eq.~\eqref{eq: FM-BN-coreless}.
+        (b): Doubly quantised vortex on the BN side of the interface, given by
+        Eq.~\eqref{eq: FM-BN-DQV}.
+        \textcolor{red}{Current DQV is for cyclic case, update to BN.}}
+\end{figure}
+By tracing a point about the vortex line, the phase changes by a total of
+\(4\pi \) indicating a doubly quantised vortex.
 
 \section{Numerical investigations of defect crossing physics}
 In this section we numerically investigate some topological interfaces defined
@@ -855,7 +902,7 @@ is observed to remain stable for the timescales considered in our simulations.
 We firstly investigate the connection of a third vortex in the cyclic phase
 connecting to a singular SQV in the FM-2 phase using
 Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = \varphi/3\) and
-\(\phi=\varphi/3\) as the initial state.
+\(\tau=\varphi/3\) as the initial state.
 The initial state is then propagated using a short imaginary-time evolution to
 imprint the vortex cores.
 From here we switch to complex-time using a damping coefficient of
@@ -895,7 +942,7 @@ Fig.~\ref{fig: C-FM-third-SQV}.
     \caption{\label{fig: C-FM-third-SQV}Third vortex to SQV connection in an
     interface between the cyclic and FM-2 phases given by
     Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = -\varphi/3\)
-    and \(\phi = \varphi/3\) at \(\bar{t} = 50\).
+    and \(\tau = \varphi/3\) at \(\bar{t} = 50\).
     (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
     The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
     \(\spinmag = 1\) core which extends throughout the FM region.
@@ -1083,5 +1130,3 @@ due to the energy relaxation.
 On both sides of the interface the vortex structures are observed to terminate
 at the interface itself, and do not connect in a way that is observed in the
 SQV to one-third vortex connection (see Fig.~\ref{fig: C-FM-third-SQV}).
-
-\subsection{Cyclic to biaxial nematic interface}
