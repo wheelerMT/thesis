@@ -188,7 +188,7 @@ Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
 
 The final solution reads
 \begin{equation}\label{eq: UN-BN-interpolating-spinor}
-    \zeta_\mathrm{UN-BN} = \mqty(
+    \zeta^\text{UN-BN} = \mqty(
     e^{i\chi_2}\frac{\sqrt{1 - \eta}}{2} \\
     0 \\
     e^{i\chi_0}\sqrt{\frac{1 + \eta}{2}} \\
@@ -462,7 +462,7 @@ Zero transverse magnetisation then implies we have
 
 The final solution reads
 \begin{equation}\label{eq: C-FM-interpolating-spinor}
-    \zeta^\mathrm{C-FM} = \frac{1}{\sqrt{3}}\mqty(
+    \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\mqty(
     \sqrt{1 + f_z} \\
     0 \\
     0 \\
@@ -548,7 +548,7 @@ condensate phase coupled to a winding of the spin vector, achieved by
 Applying such a rotation to the general spinor in
 Eq.~\eqref{eq: C-FM-interpolating-spinor} yields
 \begin{equation}\label{eq: C-FM-coreless-general}
-    \zeta^\text{cl} = \frac{1}{\sqrt{3}}\left(D_2\zeta^\text{|F|=2}_\text{cl}
+    \zeta_\text{cl} = \frac{1}{\sqrt{3}}\left(D_2\zeta^\text{|F|=2}_\text{cl}
     + D_{-1}\zeta^\text{|F|=1}_\text{cl}\right),
 \end{equation}
 where
@@ -600,7 +600,7 @@ in Fig.~\ref{subfig: C-FM-FM2-coreless},~\ref{subfig: C-FM-FM1-coreless}.
 \end{figure}
 The resulting spinor in the cyclic limit is
 \begin{equation}\label{eq: C-FM-DQV-cyclic-limit}
-    \zeta^\text{DQV}
+    \zeta_\text{dqv}
     = \left(\zeta^\text{|F|=2}_\text{cl}
     + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}\right) / 3.
 \end{equation}
@@ -618,13 +618,13 @@ then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
 
 The resulting stationary solution has the form
 \begin{equation}\label{eq: FM-BN-interpolating-spinor}
-    \zeta_\mathrm{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
+    \zeta^\text{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
     \sqrt{\frac{1 - f_z/2}{2}}),
 \end{equation}
 where \(f_z\) gives the longitudinal magnetisation.
 The energy of this interpolating spinor reads
 \begin{equation}\label{eq: FM-BN-energy}
-    \mathcal{E}^\mathrm{FM-BN} = \frac{1}{2}\left(c_1-\frac{c_2}{20}\right)f_z^2
+    \mathcal{E}^\text{FM-BN} = \frac{1}{2}\left(c_1-\frac{c_2}{20}\right)f_z^2
     - p f_z + 4q + \frac{c_2}{10},
 \end{equation}
 which is minimised precisely when \(f_z = p / [(c_1-c_2/20)n]\) provided that
@@ -632,7 +632,6 @@ which is minimised precisely when \(f_z = p / [(c_1-c_2/20)n]\) provided that
 Substitution of \(f_z = p / [(c_1-c_2/20)n]\) into Eq.~\eqref{eq: FM-BN-energy}
 reveals that \(\mathcal{E}^\text{FM-BN} \leq \mathcal{E}^\text{BN},
 \mathcal{E}^{f_z=\pm 2}\) for \(|p| < (2c_1-c_2/10)n\).
-
 
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
 the ferromagnetic state with spin \(f_z = \pm 2\).
@@ -649,7 +648,7 @@ This winding is achieved by letting \(\tau = \varphi \), where \(\varphi \) is
 the azimuthal angle about the core and letting the Euler angles be constant.
 This resulting interpolating spinor then reads
 \begin{equation}
-    \zeta_\mathrm{FM-BN}^\mathrm{SQV} =
+    \zeta^\mathrm{FM-BN}_\mathrm{sqv} =
     \mqty(e^{i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
     e^{i\varphi}D_-),
 \end{equation}
@@ -675,7 +674,7 @@ choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
 singular SQV on the FM side which connects to a BN spin vortex.
 The resulting spinor reads
 \begin{equation}
-    \zeta_\mathrm{FM-BN}^\mathrm{SQV-SV} =
+    \zeta^\text{FM-BN}_\text{sqv-sv} =
     \mqty(e^{-i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
     e^{i\varphi}D_-),
 \end{equation}
@@ -685,8 +684,8 @@ a spin vortex in the BN limit \(D_+ = D_- = 1/\sqrt{2}\)
 
 We can also construct defect crossing solutions consisting of a spin-2 FM
 (Dirac) monopole.
-Such a state is realised from the choice \(\tau'=2\alpha=2\varphi \) and choosing
-\(\beta = \theta \) where \(\theta \) is the polar angle.
+Such a state is realised from the choice \(\tau'=2\alpha=2\varphi \) and
+choosing \(\beta = \theta \) where \(\theta \) is the polar angle.
 The resulting spinor reads
 \begin{align}\label{eq: C-FM-Dirac}
     \zeta_\text{D}          & = \frac{1}{\sqrt{2}}
@@ -728,7 +727,7 @@ This, in addition to choosing the Euler angles
 \(\tau - 2\gamma = 2\alpha = 2\varphi \) leads to the interpolating spinor
 (\(\gamma=0\))
 \begin{equation}\label{eq: FM-BN-coreless-DQV}
-    \zeta_\mathrm{FM-BN}^\mathrm{coreless} = \mqty(
+    \zeta^\text{FM-BN}_\text{cl} = \mqty(
     C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
     2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
         - CS^3\sqrt{1-f_z/2}\right] \\
@@ -751,7 +750,7 @@ Fig.~\ref{subfig: coreless-initial}, where the characteristic fountain-like
 texture becomes apparent.
 The spinor in the cyclic limit (\(f_z=0\)) reads
 \begin{equation}\label{eq: FM-BN-DQV}
-    \zeta^\mathrm{DQV} = \mqty(
+    \zeta_\mathrm{dqv} = \mqty(
     C^4 + S^4 \\
     2e^{i\varphi}CS\left[C^2-S^2\right] \\
     2e^{2i\varphi}\sqrt{6}C^2S^2 \\
