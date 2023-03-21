@@ -621,34 +621,45 @@ The resulting stationary solution has the form
     \zeta_\mathrm{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
     \sqrt{\frac{1 - f_z/2}{2}}),
 \end{equation}
-where \(f_z = p / [(c_1-c_2/20)n]\) gives the longitudinal magnetisation.
+where \(f_z\) gives the longitudinal magnetisation.
+The energy of this interpolating spinor reads
+\begin{equation}\label{eq: FM-BN-energy}
+    \mathcal{E}^\mathrm{FM-BN} = \frac{1}{2}\left(c_1-\frac{c_2}{20}\right)f_z^2
+    - p f_z + 4q + \frac{c_2}{10},
+\end{equation}
+which is minimised precisely when \(f_z = p / [(c_1-c_2/20)n]\) provided that
+\(c_1 \geq c_2/20\) for fixed \(p\) and \(q\).
+Substitution of \(f_z = p / [(c_1-c_2/20)n]\) into Eq.~\eqref{eq: FM-BN-energy}
+reveals that \(\mathcal{E}^\text{FM-BN} \leq \mathcal{E}^\text{BN},
+\mathcal{E}^{f_z=\pm 2}\) for \(|p| < (2c_1-c_2/10)n\).
+
+
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
 the ferromagnetic state with spin \(f_z = \pm 2\).
 Alternatively, the solution becomes the BN state when \(p=0\).
 Therefore, this spinor provides an interpolating solution between the
-ferromagnetic and BN phases, which is controlled by the linear Zeeman shift,
-\(p\).
+ferromagnetic and BN phases, which is controlled by a longitudinal dependence of
+the linear Zeeman shift, \(p(z)\).
 
 We start from the interpolating spinor between the FM and BN phases in
-Eq.~\eqref{eq: FM-BN-interpolating-spinor}.
-The simplest vortex case to consider is that of a singular, singly quantised
-vortex (SQV) on both sides of the interface.
-Such a vortex is formed of a \(2\pi \) winding of the condensate phase about
-the vortex core.
+Eq.~\eqref{eq: FM-BN-interpolating-spinor} and construct various defect states.
+The simplest vortex case to consider is that of a singular SQVs on both sides of
+the interface.
 This winding is achieved by letting \(\tau = \varphi \), where \(\varphi \) is
 the azimuthal angle about the core and letting the Euler angles be constant.
 This resulting interpolating spinor then reads
 \begin{equation}
     \zeta_\mathrm{FM-BN}^\mathrm{SQV} =
-    \mqty(e^{i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+    \mqty(e^{i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}D_-),
 \end{equation}
-where we have taken \(\alpha=\beta=\gamma=0\) for simplicity.
+where \(D_\pm = \sqrt{(1 \pm f_z) / 2}\), and we have taken
+\(\alpha=\beta=\gamma=0\) for simplicity.
 Despite being characterised by the same phase winding on both sides of the
 interface, each SQV represents an entirely different object due to the
 differing topologies on either side.
 
-Another solution connecting different vortex states can be obtained from the
+Another solution involving fractional vortices can be obtained from the
 above by removing the winding from one of the \(\zeta_{\pm 2}\) components.
 For example, if \(f_z\) interpolates from \(f_z=0\) to \(f_z=2\) and the winding
 was removed from the \(\zeta_{-2}\) component, this solution would then connect
@@ -657,20 +668,55 @@ For that same state, if the winding was instead removed from the \(\zeta_{2}\)
 component, then the HQV on the BN side would continuously connect to a
 vortex-free state on the FM side.
 
-Spinor BECs support the non-dissipative flow of condensate spin, which gives
-rise to vortex structures that carry a spin circulation, referred to as a spin
-vortex.
-Such vortices arise in all phases of the spin-2 BEC [REF].
-An interpolating solution involving a spin vortex can be constructed through the
+The interface between FM and BN phases allows for the connection of SQVs and
+spin vortices.
+Such an interpolating solution can be constructed through the
 choice of \(\varphi=\gamma=0\) and \(\alpha=\varphi/2\) which results in a
-singular SQV on the FM side which connecting to a BN spin vortex.
+singular SQV on the FM side which connects to a BN spin vortex.
 The resulting spinor reads
 \begin{equation}
     \zeta_\mathrm{FM-BN}^\mathrm{SQV-SV} =
-    \mqty(e^{-i\varphi}\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    e^{i\varphi}\sqrt{\frac{1 - f_z/2}{2}}),
+    \mqty(e^{-i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}D_-),
 \end{equation}
 where we have chosen \(\beta = 0\).
+This results in a singular SQV in both FM limits \(D_+ = 0 \vee D_- = 0\) and
+a spin vortex in the BN limit \(D_+ = D_- = 1/\sqrt{2}\)
+
+We can also construct defect crossing solutions consisting of a spin-2 FM
+(Dirac) monopole.
+Such a state is realised from the choice \(\tau'=2\alpha=2\varphi \) and choosing
+\(\beta = \theta \) where \(\theta \) is the polar angle.
+The resulting spinor reads
+\begin{align}\label{eq: C-FM-Dirac}
+    \zeta_\text{D}          & = \frac{1}{\sqrt{2}}
+    \left( D_+\zeta^{F_z=2}_\text{D}+ D_-\zeta^{F_z=-2}_\text{D}\right), \\
+    \zeta^{f_z=2}_\text{D}  & =
+    \mqty(
+    \exp(-4i\varphi) \cos^4 \frac{\theta}{2}                             \\
+    2\exp(-3i\varphi) \cos^3 \frac{\theta}{2} \sin \frac{\theta}{2}      \\
+    \sqrt{6}e^{2i\varphi}\cos^2\frac{\theta}{2}\sin^2\frac{\theta}{2}    \\
+    2\exp(-i\varphi) \sin^3 \frac{\theta}{2} \cos \frac{\theta}{2}       \\
+    \sin^4\frac{\theta}{2}
+    \label{eq: C-BN-dirac2}
+    ),                                                                   \\
+    \zeta^{f_z=-2}_\text{D} & =
+    \mqty(
+    \exp(-4i\varphi) \sin^4 \frac{\theta}{2}                             \\
+    2\exp(-3i\varphi) \sin^3 \frac{\theta}{2} \cos \frac{\theta}{2}      \\
+    \sqrt{6}e^{2i\varphi}\cos^2\frac{\theta}{2}\sin^2\frac{\theta}{2}    \\
+    2\exp(-i\varphi) \cos^3 \frac{\theta}{2} \sin \frac{\theta}{2}       \\
+    \cos^4\frac{\theta}{2}
+    \label{eq: C-BN-dirac-2}
+    ),
+\end{align}
+where \(\zeta_D^{f_z = \pm 2}\) give the spin-2 generalisation of the
+predicted spin-1 Dirac monopole~\cite{Savage2003}.
+Such a monopole consists of a radial hedgehog texture of the condensate spin
+that terminates at the end of a doubly quantised vortex line.
+In the BN limit, one can show the resulting defect deforms into the BN hedgehog
+that was introduced in the monopole connection of
+Sec.~\ref{subsec: UN-BN-defects}.
 
 As seen in Sec.~\ref{sec: vortices-spin-1}, the FM phase of a spin-1 BEC can
 host a non-singular, coreless vortex that has a characteristic fountain-like
