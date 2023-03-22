@@ -210,16 +210,22 @@ quadratic Zeeman shift.
 To determine the stability of this interpolating spinor, we compare the energy
 per particle given by~\cite{Kawaguchi2012}
 \begin{equation}
-    E_\mathrm{part} = \sum_{m=-2}^{2}(-pm + qm^2)|\zeta_m|^2 + \frac{c_0n}{2}
-    + \frac{c_1n}{2}|\vb{f}|^2 + \frac{c_2n}{2}|a_{00}|^2.
+    \mathcal{E}^\text{UN-BN} = \mathcal{H}[\Psi^\text{UN-BN}] - \frac{c_0n}{2},
 \end{equation}
+where \(\mathcal{H} = \mathcal{H}_0 + \mathcal{H}_\text{int}\) is the spin-2
+Hamiltonian density where \(\mathcal{H}_0\) and \(\mathcal{H}_\text{int}\)
+are defined in Eq.~\eqref{eq: single-particle-Hamiltonian} and
+Eq.~\eqref{eq: spin-2-interacting-Hamiltonian}, respectively.
 The energy of the interpolating spinor given in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor} reads
-\(E^\mathrm{UN-BN}_\mathrm{part} = 2q + c_0n/2 - 10q^2/c_2n\)
-\textcolor{red}{Messy notation}.
+\(\mathcal{E}^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\)
 Comparing this energy with that of the UN phase
-\(E^\mathrm{UN}_\mathrm{part} = (c_0+c_2/5)n/2\) reveals that this interface is
-stable for \(|q| \leq |c_2|n/10\).
+\(\mathcal{E}^\text{UN} = c_2n/10\) and the BN phase
+\(\mathcal{E}^\text{BN} = c_2n/10 + 4q\) reveals that the ground state is UN for
+\(q \geq 0\) and BN for \(q \leq 0\).
+Therefore, the UN-BN interface can be stabilised through careful choice of
+a longitudinal quadratic Zeeman shift \(q(z)\) such that \(q(z)\) changes
+sign at some transverse plane, which we take to be \(z=0\).
 
 The consequence of a spatially-dependent \(\eta \) is revealed from the spin
 singlet-duo and -trio amplitudes.
@@ -470,7 +476,7 @@ The final solution reads
     0
     ),
 \end{equation}
-where \(f_z = (p - q) / (c_1n)\) gives the \(z\)-component of the spin vector.
+where \(f_z\) gives the \(z\)-component of the spin vector.
 At zero magnetisation, \(f_z = 0\), this solution is precisely the two-component
 cyclic state.
 The solution also interpolates between different ferromagnetic states depending
@@ -481,6 +487,18 @@ Conversely, \(f_z = 2\) yields the FM-2 solution
 \(\zeta_\text{FM-2} = {(1, 0, 0, 0, 0)}^T\).
 This spinor therefore provides a family of interpolating solutions between the
 cyclic and both ferromagnetic phases.
+
+The uniform mean-field energy of the above spinor reads
+\begin{equation}
+    \mathcal{E}^\text{C-FM} = \frac{c_1 n}{2} f_z^2 - (p-q)f_z +2q,
+\end{equation}
+which becomes minimised upon the choice \(f_z = (p-q)/c_1n\) for \(c_1 > 0\) and
+fixed \(p, q\).
+Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
+appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\).
+The interface is expected to be stable within the range
+\(-c_1n \leq p \leq 2c_1n\) since \(\mathcal{E}^\text{C-FM} \leq
+\mathcal{E}^\text{C}=0, \mathcal{E}^{f_z=1} = c_1n/2 + p\).
 
 Applying a phase and a general spin rotation to the spinor in
 Eq.~\eqref{eq: C-FM-interpolating-spinor} yields (\(\beta = 0\))
@@ -618,8 +636,9 @@ then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
 
 The resulting stationary solution has the form
 \begin{equation}\label{eq: FM-BN-interpolating-spinor}
-    \zeta^\text{FM-BN} = \mqty(\sqrt{\frac{1 + f_z/2}{2}} \\ 0 \\ 0 \\ 0 \\
-    \sqrt{\frac{1 - f_z/2}{2}}),
+    \zeta^\text{FM-BN} = \frac{1}{\sqrt{2}}\mqty(
+    \sqrt{1 + \frac{f_z}{2}} \\ 0 \\ 0 \\ 0 \\
+    \sqrt{1 - \frac{f_z}{2}}),
 \end{equation}
 where \(f_z\) gives the longitudinal magnetisation.
 The energy of this interpolating spinor reads
@@ -649,10 +668,10 @@ the azimuthal angle about the core and letting the Euler angles be constant.
 This resulting interpolating spinor then reads
 \begin{equation}
     \zeta^\mathrm{FM-BN}_\mathrm{sqv} =
-    \mqty(e^{i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
+    \frac{1}{\sqrt{2}}\mqty(e^{i\varphi}D_+ \\ 0 \\ 0 \\ 0 \\
     e^{i\varphi}D_-),
 \end{equation}
-where \(D_\pm = \sqrt{(1 \pm f_z) / 2}\), and we have taken
+where \(D_\pm = \sqrt{1 \pm f_z / 2}\), and we have taken
 \(\alpha=\beta=\gamma=0\) for simplicity.
 Despite being characterised by the same phase winding on both sides of the
 interface, each SQV represents an entirely different object due to the
@@ -666,6 +685,13 @@ an SQV on the FM side to a half-quantum vortex (HQV) on the BN side.
 For that same state, if the winding was instead removed from the \(\zeta_{2}\)
 component, then the HQV on the BN side would continuously connect to a
 vortex-free state on the FM side.
+Such a solution for the latter connection is achieved by
+\(\alpha + \gamma = \varphi / 4\) and \(\tau=\varphi / 2\) which yields
+\begin{equation}
+    \zeta^\mathrm{FM-BN}_\mathrm{vf-sqv} =
+    \frac{1}{\sqrt{2}}\mqty(D_+ \\ 0 \\ 0 \\ 0 \\
+    e^{i\varphi}D_-).
+\end{equation}
 
 The interface between FM and BN phases allows for the connection of SQVs and
 spin vortices.
