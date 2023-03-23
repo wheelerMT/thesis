@@ -275,6 +275,9 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
+# MATLAB
+.asv
+
 # Build folder
 .build/
 out/
