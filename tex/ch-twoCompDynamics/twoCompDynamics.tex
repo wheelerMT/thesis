@@ -7,9 +7,9 @@ condensates in solid-state systems~\cite{Kreil2018}.
 Due to their unprecedented experimental accessibility, QT in Bose-Einstein
 condensates (BECs) in dilute, ultra-cold atomic gases have attracted
 considerable theoretical~\cite{Kobayashi2007,Numasato2010, Reeves2013,
-Billam2014,Simula2014,Baggaley2018} and
+    Billam2014,Simula2014,Baggaley2018} and
 experimental~\cite{Henn2009,Kwon2014,Seo2017,Navon2019,Gauthier2019,
-Johnstone2019} interest in both 2D and 3D configurations.
+    Johnstone2019} interest in both 2D and 3D configurations.
 In a scalar BEC, the QT state is made up of many vortices with quantised
 circulation.
 The collective behaviour of the vortices plays a key role
@@ -20,13 +20,13 @@ exhibit the characteristic Kolmogorov power-law spectrum~\cite{Kobayashi2005}.
 In contrast to the scalar superfluids, multi-component and spinor BECs are
 described by multi-component order parameters and allow for a wider range of
 topological defects, which give rise to novel dynamics~\cite{Kasamatsu2016,
-Weiss2019,Kobayashi2009,Kasamatsu2005}.
+    Weiss2019,Kobayashi2009,Kasamatsu2005}.
 Consequently, there has been increasing interest in the properties of QT and
 non-equilibrium dynamics in such
 systems~\cite{Salman2009, Schmied2019, Karl2013, Prufer2018, Hofmann2014}.
 The simplest non-scalar topological excitation appears in a two-component BEC,
 described by two complex fields, as the appearance of a phase singularity in
-only one component. 
+only one component.
 When the atomic mass and mean density of the components are equal, such vortices
 are often referred to as half-quantum vortices (HQVs), due to their similarities
 with vortices carrying half a quantum of superfluid circulation in superfluid
@@ -35,30 +35,30 @@ The study of QT in BECs can be separated into two distinct categories.
 Firstly, there is forced turbulence, where a statistically stationary state is
 established.
 Secondly, there is decaying turbulence, where a non-equilibrium initial
-condition, typically involving vortices, relaxes towards equilibrium. 
+condition, typically involving vortices, relaxes towards equilibrium.
 
 The multi-component nature of the two-component BEC gives rise to novel defects,
-such as a half-quantum vortex, otherwise unseen in scalar condensates. 
-In this chapter, we investigate the relaxation dynamics of half-quantum vortices 
-(HQVs) in a two-dimensional, two-component condensate. 
-Our interest is in studying the scaling laws that govern the decay rate of the 
-vortices, and consequently the growth of the length scales associated with 
-domains in the system, whilst varying the ratio of inter- to intra-species 
-interactions. 
+such as a half-quantum vortex, otherwise unseen in scalar condensates.
+In this chapter, we investigate the relaxation dynamics of half-quantum vortices
+(HQVs) in a two-dimensional, two-component condensate.
+Our interest is in studying the scaling laws that govern the decay rate of the
+vortices, and consequently the growth of the length scales associated with
+domains in the system, whilst varying the ratio of inter- to intra-species
+interactions.
 We study these scales by starting from an initially turbulent state containing
 HQVs and subsequently letting the system relax in time.
-Upon relaxation, vortices will annihilate leading to domain growth within 
+Upon relaxation, vortices will annihilate leading to domain growth within
 the system.
 
-To extract the appropriate length scales of these domains, we construct 
-correlation functions, originally defined for an antiferromagnetic spin-1 
+To extract the appropriate length scales of these domains, we construct
+correlation functions, originally defined for an antiferromagnetic spin-1
 system~\cite{Symes2017}, which then allow us to extract relevant length scales
 associated with spin and mass order.
-By investigating these length scales temporally, we reveal interesting, 
-novel dynamics occurring at early times for a sufficiently high ratio of 
-inter- to intra-species interactions. 
-This result is then confirmed by considering the total vortex number of the 
-system. 
+By investigating these length scales temporally, we reveal interesting,
+novel dynamics occurring at early times for a sufficiently high ratio of
+inter- to intra-species interactions.
+This result is then confirmed by considering the total vortex number of the
+system.
 Furthermore, we contrast our observations for this system with similar
 simulations that have been performed for scalar BECs and reported
 in~\cite{Schole2012, Nowak2012, Karl2017}.
@@ -96,26 +96,26 @@ component:
 \begin{equation}
     \begin{aligned}
         \left[-\frac{\hbar^2\nabla^2}{2M}
-        + (c_0 + c_2)|\psi_1|^2 + (c_0 - c_2)|\psi_{-1}|^2 
-        + q - \mu\right]\psi_1 &= 0, \\
+            + (c_0 + c_2)|\psi_1|^2 + (c_0 - c_2)|\psi_{-1}|^2
+        + q - \mu\right]\psi_1    & = 0, \\
         \left[-\frac{\hbar^2\nabla^2}{2M}
-        + (c_0 + c_2)|\psi_{-1}|^2 + (c_0 - c_2)|\psi_1|^2 
-        + q - \mu\right]\psi_{-1} &= 0,
+            + (c_0 + c_2)|\psi_{-1}|^2 + (c_0 - c_2)|\psi_1|^2
+        + q - \mu\right]\psi_{-1} & = 0,
     \end{aligned}
     \label{eq:EPP-time-independent-GPEs}
 \end{equation}
 where \( \mu \) is the chemical potential of the system, and we have taken
 \( p=0 \).
 \textcolor{red}{What happens if \(p \neq 0\)? Can we just absorb into chemical
-potential? Or perhaps the mapping is only valid precisely if \(p = 0\).}
+    potential? Or perhaps the mapping is only valid precisely if \(p = 0\).}
 
 Similarly, the time-independent GPEs for the two-component system are
 \begin{equation}
     \begin{aligned}
         \left(-\frac{\hbar^2\nabla^2}{2m_1} + g_1|\psi_1|^2
-        +g_{12}|\psi_2|^2 - \mu_1\right)\psi_1 &= 0, \\
+        +g_{12}|\psi_2|^2 - \mu_1\right)\psi_1 & = 0, \\
         \left(-\frac{\hbar^2\nabla^2}{2m_2} + g_2|\psi_2|^2
-        +g_{12}|\psi_1|^2 - \mu_2\right)\psi_2 &= 0.
+        +g_{12}|\psi_1|^2 - \mu_2\right)\psi_2 & = 0.
     \end{aligned}
     \label{eq:two-comp-time-independent-gpes}
 \end{equation}
@@ -124,7 +124,7 @@ to that of the spin-1 by comparing the coefficients with
 Eq.~\eqref{eq:EPP-time-independent-GPEs}.
 By doing this we find
 \begin{equation}
-    g_1=g_2=c_0+c_2, \enskip g_{12} = c_0-c_2, \enskip \mu_1=\mu_2=\tilde{\mu}, 
+    g_1=g_2=c_0+c_2, \enskip g_{12} = c_0-c_2, \enskip \mu_1=\mu_2=\tilde{\mu},
     \enskip m_1=m_2=M,
 \end{equation}
 where \( \tilde{\mu} = \mu - q \).
@@ -133,8 +133,8 @@ condensate.
 Note that this mapping only holds when the interspecies interactions, chemical
 potentials and masses of the atomic species in the two-component BEC are equal.
 \textcolor{red}{Links to papers that discuss this particular type of
-two-component BEC?\@ This evidently must be two-component BECs of the same atomic
-species.}
+    two-component BEC?\@ This evidently must be two-component BECs of the same
+    atomic species.}
 
 
 \section{Two-component hydrodynamic properties and vortices}
@@ -143,14 +143,14 @@ system allows for a novel vortex structure otherwise unseen in scalar BECs.
 To construct such a vortex, we begin by defining the pseudospin-1/2
 wave function:
 \begin{equation}
-    \mqty(\psi_1 \\ \psi_2) = 
-    \mqty(|\psi_1|e^{i\theta_1} \\ |\psi_2|e^{i\theta_2}) = 
+    \mqty(\psi_1 \\ \psi_2) =
+    \mqty(|\psi_1|e^{i\theta_1} \\ |\psi_2|e^{i\theta_2}) =
     e^{i\Theta}\mqty(|\psi_1|e^{i\Phi} \\ |\psi_2|e^{-i\Phi}),
-    \label{eq: pseudospin-1/2-wavefunction}  
+    \label{eq: pseudospin-1/2-wavefunction}
 \end{equation}
 where \( \theta_j=\mathrm{Arg}(\psi_j) \) for \( j=1,2 \) and
 \begin{equation}\label{eq: Theta-Phi}
-    \Theta = \frac{\theta_1 + \theta_2}{2}, \qquad 
+    \Theta = \frac{\theta_1 + \theta_2}{2}, \qquad
     \Phi = \frac{\theta_1 - \theta_2}{2}.
 \end{equation}
 
@@ -190,8 +190,8 @@ The difference of the two mass currents can be interpreted as a pseudospin
 current, and therefore gradients in \(\Phi \) are associated with this
 pseudospin current.
 \textcolor{red}{Feel like this is quite vague. I have tried constructing the
-spin current as done in Kawaguchi, however the resulting algebra is messy and
-doesn't reveal anything.}
+    spin current as done in Kawaguchi, however the resulting algebra is messy
+    and doesn't reveal anything.}
 
 Now consider a vortex state which consists of a phase singularity in the
 \(\psi_1 \) component such that about the singularity \( \theta_1 \) winds by
@@ -199,7 +199,7 @@ Now consider a vortex state which consists of a phase singularity in the
 field.
 Such a state can be written as
 \begin{equation}
-    \twovec{\psi_1}{\psi_2} 
+    \twovec{\psi_1}{\psi_2}
     = \twovec{|\psi_1|e^{i\varphi}}{|\psi_2|}
     = e^{\varphi/2}\twovec{|\psi_1|e^{i\varphi/2}}{|\psi_2|e^{-i\varphi/2}},
 \end{equation}
@@ -216,10 +216,10 @@ Traversing a point about the vortex shows the circulation is quantised in units
 of \(\kappa/2\), half the usual circulation of \( U(1) \) vortices in scalar
 BECs.
 Since this vortex carries half the circulation of a \( U(1) \) vortex, such a
-vortex state is referred to as a half-quantum vortex\footnote{This vortex is 
-topologically distinct from HQVs that arise in the A and polar phases of
-superfluid \(^3\)He~\cite{Autti2016} and the polar phase of spin-1
-BECs~\cite{Leonhardt2000, Seo2015}.}.
+vortex state is referred to as a half-quantum vortex\footnote{This vortex is
+    topologically distinct from HQVs that arise in the A and polar phases of
+    superfluid \(^3\)He~\cite{Autti2016} and the polar phase of spin-1
+    BECs~\cite{Leonhardt2000, Seo2015}.}.
 
 \section{Half-quantum vortex relaxation dynamics}
 To begin studying the relaxation dynamics of HQVs in a turbulent system, we
@@ -228,9 +228,9 @@ form
 (\textcolor{red}{see Appendix for details of dimensionless form}):
 \begin{equation}
     \begin{aligned}
-        i\frac{\partial \psi_1}{\partial t} &= (-\nabla^2 + g|\psi_1|^2
-        + \gamma|\psi_2|^2)\psi_1, \\
-        i\frac{\partial \psi_2}{\partial t} &= (-\nabla^2 + g|\psi_2|^2
+        i\frac{\partial \psi_1}{\partial t} & = (-\nabla^2 + g|\psi_1|^2
+        + \gamma|\psi_2|^2)\psi_1,                                       \\
+        i\frac{\partial \psi_2}{\partial t} & = (-\nabla^2 + g|\psi_2|^2
         + \gamma|\psi_1|^2)\psi_2.
     \end{aligned}
     \label{eq: dimensionless-two-comp-GPEs}
@@ -241,8 +241,8 @@ The key parameter is the ratio of inter- to intra-species interaction
 \begin{equation}
     \gamma = \frac{g_{12}}{g}.
 \end{equation}
-We consider the case \(0 < \gamma < 1\) with all interactions repulsive such that
-the condensate is stable against the separation of the components.
+We consider the case \(0 < \gamma < 1\) with all interactions repulsive such
+that the condensate is stable against the separation of the components.
 
 The inter- and intra-component interactions give rise to two important length
 scales within the system.
@@ -250,7 +250,7 @@ These are, respectively, associated with variations in the total superfluid
 density and the difference in density between the components.
 The density and spin healing lengths are then defined as~\cite{Eto2011}
 \begin{equation}
-    \xi_d = \frac{\hbar}{\sqrt{2mgn_0}}, \qquad 
+    \xi_d = \frac{\hbar}{\sqrt{2mgn_0}}, \qquad
     \xi_s = \xi_d \sqrt{\frac{1 + \gamma}{1 - \gamma}},
     \label{eq:healing-lengths}
 \end{equation}
@@ -271,7 +271,7 @@ deformations of vortex cores such as the splitting of singly quantised vortices
 into fractional vortices~\cite{Seo2015}.
 
 \subsection{Numerical setup}\label{sec:numerical-setup}
-We solve Eq.~\eqref{eq: dimensionless-two-comp-GPEs} on a periodic domain with 
+We solve Eq.~\eqref{eq: dimensionless-two-comp-GPEs} on a periodic domain with
 \(N_s^2=1024^2\) grid points which has dimensionless area \(L^2=N_s^2\) with
 side length \(L=N_s\).
 We take \(N=3.2\times10^9\) atoms per component and fix dimensionless
@@ -283,14 +283,14 @@ We wish to explore the effect of the inter-component interaction by varying
 
 The initial state is constructed as follows.
 We construct \(48^2\) vortices in the initial state of each component.
-To do this we start with a grid of vortex positions such that the 
+To do this we start with a grid of vortex positions such that the
 \(i\)-th vortex is to be imprinted at position \((x_i, y_i)\).
 We repeat the same procedure for the other component.
 However, to avoid overlapping vortex positions, we offset this grid in both
 \(x\) and \(y\) whilst preserving the grid structure.
 To facilitate a random distribution of vortices and subsequently turbulent
-dynamics, we then displace each position by some small amount 
-\((x_i, y_i) \rightarrow (x_i + \delta x_i, y_i + \delta y_i)\), where 
+dynamics, we then displace each position by some small amount
+\((x_i, y_i) \rightarrow (x_i + \delta x_i, y_i + \delta y_i)\), where
 \(\delta x_i, \delta y_i < 3\xi_d\).
 The vortices are then constructed as an alternating \( 2\pi \) winding of the
 component phase about each vortex position using the method described
@@ -306,12 +306,13 @@ in the other component (see Fig.~\ref{fig:initial-vortex-state}).
 \begin{figure}
     \centering
     \includegraphics{gfx/ch-twoCompDynamics/init_state.pdf}
-    \caption{Density of \(\psi_1 \) component in a \(100\xi_d\times100\xi_d\)
-    subregion of the initial state after imaginary time propagation.
-    We see the HQVs in this component by the density depletion.
-    The density peaks correspond to the location of HQV cores in the other
-    component, which have been filled by atoms in this
-    component.\label{fig:initial-vortex-state}}
+    \caption[Initial state containing half-quantum vortices]
+    {Density of \(\psi_1 \) component in a \(100\xi_d\times100\xi_d\)
+        subregion of the initial state after imaginary time propagation.
+        We see the HQVs in this component by the density depletion.
+        The density peaks correspond to the location of HQV cores in the other
+        component, which have been filled by atoms in this
+        component.\label{fig:initial-vortex-state}}
 \end{figure}
 
 Previous work has shown that clustering of vortices can lead to anomalously
@@ -327,16 +328,18 @@ We first investigate how \(\gamma \) affects the HQVs within our systems.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/densVort.pdf}
-    \caption{Density (a)- (c) and pseudo-vorticity (d)- (f) of the \(\psi_1 \)
-    component in a \(256\xi_d \times 256\xi_d\) subregion at a time 
-    \(t/\tau=2.5\times 10^4\xi_d^2\) for \(\gamma=0.1\) (left),
-    \(\gamma=0.6\) (middle), and \(\gamma=0.8\) (right).
-    The density depletions correspond to HQVs in this component.
-    For \(\gamma \gtrsim 0.6\), density peaks reveal the locations of HQVs with
-    the phase singularity in the other component where the cores have filled
-    with atoms in this component.
-    Vortices with positive (blue) and negative (red) circulation are
-    identifiable in the pseudo-vorticity field.\label{fig:density-pseudo-vort}}
+    \caption[Density and pseudo-vorticity of at late simulation time for various
+        \(\gamma \)]
+    {\label{fig:density-pseudo-vort}Density (a)- (c) and pseudo-vorticity
+        (d)- (f) of the \(\psi_1 \) component in a \(256\xi_d \times 256\xi_d\)
+        subregion at a time \(t/\tau=2.5\times 10^4\xi_d^2\) for \(\gamma=0.1\)
+        (left), \(\gamma=0.6\) (middle), and \(\gamma=0.8\) (right).
+        The density depletions correspond to HQVs in this component.
+        For \(\gamma \gtrsim 0.6\), density peaks reveal the locations of HQVs
+        with the phase singularity in the other component where the cores have
+        filled with atoms in this component.
+        Vortices with positive (blue) and negative (red) circulation are
+        identifiable in the pseudo-vorticity field.}
 \end{figure}
 Fig.~\ref{fig:density-pseudo-vort} shows the density field of the \(\psi_1 \)
 component for \(\gamma = 0.1, 0.6, 0.8\).
@@ -384,19 +387,19 @@ We start with the kinetic energy of the two-component system which is written
 in terms of the density \(n_j\) and velocity \(\vb{v}_j\) of the \(j\)-th
 component (\( j=1,2 \)) as
 \begin{equation}
-    E_\mathrm{kin} = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2 
+    E_\mathrm{kin} = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2
     + |\nabla\sqrt{n_2}|^2)
-    + \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2 
+    + \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2
     + |\sqrt{n_2}\vb{v}_2|^2).
 \end{equation}
 The kinetic energy can be further decomposed into quantum pressure
 (\( E^q\)) and classical velocity (\(E^v\)) contributions:
 \begin{equation}
-    E^v = \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2 
+    E^v = \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2
     + |\sqrt{n_2}\vb{v}_2|^2),
 \end{equation}
 \begin{equation}
-    E^q = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2 
+    E^q = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2
     + |\nabla\sqrt{n_2}|^2).
 \end{equation}
 
@@ -405,14 +408,14 @@ velocities for the incompressible (i), compressible (c), and quantum pressure
 (q) parts as
 \begin{equation}
     \begin{aligned}
-        \vb{w}^{i, c} &= \sqrt{n_1}\vb{v}_1^{i, c} + \sqrt{n_1}\vb{v}_1^{i, c}
+        \vb{w}^{i, c} & = \sqrt{n_1}\vb{v}_1^{i, c} + \sqrt{n_1}\vb{v}_1^{i, c}
         \\
-        \vb{w}^q &= 2 (\nabla \sqrt{n_1} + \nabla \sqrt{n_2}).
+        \vb{w}^q      & = 2 (\nabla \sqrt{n_1} + \nabla \sqrt{n_2}).
     \end{aligned}
 \end{equation}
 Here, the incompressible and compressible parts of the velocity field are
-extracted from a Helmholtz decomposition which splits the velocity into a 
-divergence-free incompressible part, \(\nabla \cdot \vb{v}^i = 0\), and an 
+extracted from a Helmholtz decomposition which splits the velocity into a
+divergence-free incompressible part, \(\nabla \cdot \vb{v}^i = 0\), and an
 irrotational, compressible part, \(\nabla \times \vb{v}^c=\vb{0}\).
 Hence, in Fourier space, the kinetic energy spectrum can be calculated by
 taking the Fourier transform of the generalized velocities and integrating over
@@ -422,8 +425,8 @@ the \(k\)-space angle as
     |\tilde{\vb{w}}^\delta(\vb{k})|^2
     \qquad (\delta = i, c, q),
 \end{equation}
-where \(\tilde{\vb{w}}^\delta \) denotes the Fourier transform of the generalised
-velocity \(\vb{w}^\delta \) for wave number \(k=|\vb{k}|\).
+where \(\tilde{\vb{w}}^\delta \) denotes the Fourier transform of the
+generalised velocity \(\vb{w}^\delta \) for wave number \(k=|\vb{k}|\).
 The total kinetic energy is then given by the sum of each contribution,
 integrated over all \(k\)
 \begin{equation}
@@ -435,27 +438,29 @@ The occupation numbers of each contribution are extracted as
 \end{equation}
 Finally, the total occupation number of the system is given as
 \begin{equation}
-    n(k) = \int_{0}^{2\pi} d\Omega_k \psi_1^*(k)\psi_1(k) 
+    n(k) = \int_{0}^{2\pi} d\Omega_k \psi_1^*(k)\psi_1(k)
     + \psi_2^*(k)\psi_2(k).
 \end{equation}
 
 \begin{figure}[t!]
     \centering
     \includegraphics[scale=0.75]{gfx/ch-twoCompDynamics/spectra.pdf}
-    \caption{Occupation numbers for the quantum pressure (purple diamonds),
-    incompressible (red diamonds), and compressible (blue diamonds)
-    contributions for \(\gamma=0.6\).
-    The total occupation number (black diamonds) is obtained from the sum of
-    each contribution.
-    The total occupation number has two distinct scaling: a \(k^{-2}\) 
-    (dotted line) in the ultraviolet region, and a \(k^{-4}\) scaling
-    (dashed line) in the infrared.\label{fig:kinetic-energy-spectra}}
+    \caption[Occupation numbers for quantum pressure, incompressible and
+        compressible contributions]
+    {Occupation numbers for the quantum pressure (purple diamonds),
+        incompressible (red diamonds), and compressible (blue diamonds)
+        contributions for \(\gamma=0.6\).
+        The total occupation number (black diamonds) is obtained from the sum of
+        each contribution.
+        The total occupation number has two distinct scaling: a \(k^{-2}\)
+        (dotted line) in the ultraviolet region, and a \(k^{-4}\) scaling
+        (dashed line) in the infrared.\label{fig:kinetic-energy-spectra}}
 \end{figure}
 We plot the occupation number for each energy contribution, as well as total
 occupation number, at a late time for \(\gamma=0.6\) in
 Fig.~\ref{fig:kinetic-energy-spectra}.
 The total occupation number exhibits two different scaling: A \(k^{-4}\) in the
-ultraviolet (UV), and \(k^{-2}\) in the infrared (IR). 
+ultraviolet (UV), and \(k^{-2}\) in the infrared (IR).
 The same scaling have been found in some 2D, turbulent, scalar BEC systems
 containing scalar vortices~\cite{Nowak2012}.
 
@@ -471,7 +476,7 @@ scaling.
 This \(k^{-2}\) scaling is characteristic of weak-wave
 turbulence~\cite{Zakharov1992}.
 \textcolor{red}{How in-depth do I have to go into the theory of turbulence
-here?}
+    here?}
 This scaling of the kinetic energy was observed throughout all values of
 \(\gamma \) tested, indicating that it is quantitatively insensitive to
 variations in \(\gamma \).
@@ -505,7 +510,7 @@ If we consider the general wave function defined in
 Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, then evaluating \(\mathsf{Q}\) and
 \(\alpha \) gives
 \begin{equation}
-    Q_{xx} = |\psi_1||\psi_2|\cos({2\Phi}), \qquad 
+    Q_{xx} = |\psi_1||\psi_2|\cos({2\Phi}), \qquad
     Q_{xy} = -|\psi_1||\psi_2|\sin({2\Phi}),
 \end{equation}
 \begin{equation}
@@ -522,7 +527,7 @@ These are defined, respectively, as
     G_\Theta = \frac{1}{n^2}\langle \alpha^*(\vb{0})\alpha(\vb{r}) \rangle,
 \end{equation}
 \begin{equation}
-    G_\Phi(\vb{r}, t) = 
+    G_\Phi(\vb{r}, t) =
     \frac{2}{n^2}\mathrm{Tr}
     [\langle \mathsf{Q}(\vb{0})\mathsf{Q}(\vb{r})\rangle],
 \end{equation}
@@ -560,7 +565,7 @@ We perform the same averaging for the mass correlation function.
         \caption{\label{fig:scalar-vortex-lengths}}
     \end{subfigure}
     \caption{\textcolor{red}{Plot size needs fixing. Will split these into
-    separate plots I think.}}
+            separate plots I think.}}
 \end{figure}
 Fig.~\ref{fig:correlation-functions} shows both correlation functions for
 \(\gamma=0.6\) for various times through the simulation.
@@ -584,7 +589,7 @@ The insets of Fig.~\ref{fig:correlation-functions} show the scaling of the
 correlation functions when scaled by the respective correlation length.
 This confirms that the correlation functions within our system do exhibit
 dynamical scaling. \textcolor{red}{Reference to other systems where dynamical
-scaling is also seen?} \par
+    scaling is also seen?} \par
 Fig.~\ref{fig:correlation-lengths} shows the correlation lengths for
 \(\gamma=0.3\), \(\gamma=0.6\), and \(\gamma=0.8\) as functions of time.
 We see that at late times in the evolution, all correlation lengths tend to a
@@ -631,11 +636,12 @@ Fig.~\ref{fig:correlation-lengths} suggests interesting dynamics.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/vortex_number.pdf}
-    \caption{Total vortex number as a function of time for
-    \(\gamma=0.3,0.7,0.9\) (red circles).
-    Larger \(\gamma \) leads to a faster decay rate of vortices at
-    early times due to the rapid annihilation of opposite-signed vortices
-    within the same component.\label{fig:vortex-number}}
+    \caption[Total vortex number as a function of time]
+    {Total vortex number as a function of time for
+        \(\gamma=0.3,0.7,0.9\) (red circles).
+        Larger \(\gamma \) leads to a faster decay rate of vortices at
+        early times due to the rapid annihilation of opposite-signed vortices
+        within the same component.\label{fig:vortex-number}}
 \end{figure}
 The total vortex number is plotted in Fig.~\ref{fig:vortex-number} for
 \(\gamma=0.3\), \(\gamma=0.7\), and \(\gamma=0.9\).
@@ -651,7 +657,7 @@ different scaling regimes emerge at early times
 After the initial differing early-time dynamics, the systems then tend to a
 universal \(t^{-2/5}\) scaling, which corresponds to \(\ell_d\sim t^{1/5}\)
 similar to the scalar BEC simulation shown.
-These results show a better fit to the theoretical \(t^{1/5}\) scaling than 
+These results show a better fit to the theoretical \(t^{1/5}\) scaling than
 indicated by the correlation lengths shown in
 Fig.~\ref{fig:correlation-lengths}.
 This further suggests that \(L_{\Phi,\Theta}\) differs slightly from \(\ell_d\),
@@ -688,11 +694,12 @@ process, where three vortices are necessary to facilitate annihilation.
 \begin{figure}[t!]
     \centering
     \includegraphics{gfx/ch-twoCompDynamics/gamma_vs_expo.pdf}
-    \caption{The exponent \( z \) in Eq.~\eqref{eq:vortex-number-scaling} as a
-    function of \(\gamma \).
-    We see that after \(\gamma \gtrsim 0.6\) a rapid decrease of the exponent
-    occurs, signalling a rapid change in vortex
-    dynamics.\label{fig:exponent-vs-gamma}}
+    \caption[Critical exponent as a function of \(\gamma\)]
+    {The exponent \( z \) in Eq.~\eqref{eq:vortex-number-scaling} as a
+        function of \(\gamma \).
+        We see that after \(\gamma \gtrsim 0.6\) a rapid decrease of the exponent
+        occurs, signalling a rapid change in vortex
+        dynamics.\label{fig:exponent-vs-gamma}}
 \end{figure}
 Fig.~\ref{fig:exponent-vs-gamma} shows the exponent, \( z \), as a function of
 \(\gamma \) where \( z \) is extracted within the time interval
@@ -717,49 +724,50 @@ As a simple test case, I consider two HQVs of opposite winding within the same
 component.
 The vortices are placed in a uniform system, with an initial separation of
 \(3\xi_d\), then evolved using Eq.~\eqref{eq: dimensionless-two-comp-GPEs}.
-We perform multiple simulations, each time varying \(\gamma\), and recording the
-motion of the dipole.
+We perform multiple simulations, each time varying \(\gamma \), and recording
+the motion of the dipole.
 
 \begin{figure}
     \centering
     \begin{tikzpicture}
         \begin{axis}[
-            width=10cm,height=7.5cm,
-            xmin=-3,xmax=3,ymin=0,ymax=5,
-            xlabel={\(x/a_s\)},
-            ylabel={\(y/a_s\)},
+                width=10cm,height=7.5cm,
+                xmin=-3,xmax=3,ymin=0,ymax=5,
+                xlabel={\(x/a_s\)},
+                ylabel={\(y/a_s\)},
             ]
-          \addplot[only marks,blue,mark=square,samples=50, domain=-1.0:1.0]
-          {-2*x^2 + 2};
-          \addplot[only marks,red,mark=triangle,samples=50, domain=-1.0:1.0]
-          {-4*x^2 + 4};
-          \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
-          ({-1}, {5 * x});
-          \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
-          ({1}, {5 * x});
+            \addplot[only marks,blue,mark=square,samples=50, domain=-1.0:1.0]
+            {-2*x^2 + 2};
+            \addplot[only marks,red,mark=triangle,samples=50, domain=-1.0:1.0]
+            {-4*x^2 + 4};
+            \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
+            ({-1}, {5 * x});
+            \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
+            ({1}, {5 * x});
 
-          \addlegendentry{$\gamma = 0.8$}
-          \addlegendentry{$\gamma = 0.6$}
-          \addlegendentry{$\gamma = 0.3$}
-          \end{axis}
+            \addlegendentry{$\gamma = 0.8$}
+            \addlegendentry{$\gamma = 0.6$}
+            \addlegendentry{$\gamma = 0.3$}
+        \end{axis}
     \end{tikzpicture}
-    \caption{\label{fig: HQV-dipole-motion}Pictorial representation of the
-    motion of HQV dipoles in a two-component condensate, where the dipole is
-    located in the \(\psi_1\) component.
-    Increasing the ratio of inter- to intra-species interactions (\(\gamma\))
-    results in a dramatic change of dipole motion.
-    For sufficiently strong \(\gamma\), the vortices move together and
-    annihilate.
-    Figure referenced from~\cite{Kasamatsu2016}.}
+    \caption[Schematic representation of dipole motion for various \(\gamma \)]
+    {\label{fig: HQV-dipole-motion}Pictorial representation of the
+        motion of HQV dipoles in a two-component condensate, where the dipole is
+        located in the \(\psi_1\) component.
+        Increasing the ratio of inter- to intra-species interactions
+        (\(\gamma \)) results in a dramatic change of dipole motion.
+        For sufficiently strong \(\gamma \), the vortices move together and
+        annihilate.
+        Figure referenced from~\cite{Kasamatsu2016}.}
 \end{figure}
 Results of the dipole motion for \(\gamma=0.3, 0.6, 0.8\) are plotted in
 Fig.~\ref{fig: HQV-dipole-motion}.
-We see clearly that an increase in \(\gamma\) dramatically changes the motion
+We see clearly that an increase in \(\gamma \) dramatically changes the motion
 of the dipole.
 For \(\gamma>=0.6\), the dipoles clearly move together and undergo annihilation.
-For weaker \(\gamma\), the two dipoles move in parallel, similar to
+For weaker \(\gamma \), the two dipoles move in parallel, similar to
 the behaviour observed for dipoles consisting of scalar \(\mathrm{U}(1)\)
 vortices.
-The strength of \(\gamma\) also determines the rate at which the vortices
-annihilate, as seen by the largest \(\gamma\) tested, which shows the
+The strength of \(\gamma \) also determines the rate at which the vortices
+annihilate, as seen by the largest \(\gamma \) tested, which shows the
 annihilation happening over a shorter length scale.
