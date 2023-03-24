@@ -755,14 +755,14 @@ This, in addition to choosing the Euler angles
 (\(\gamma=0\))
 \begin{equation}\label{eq: FM-BN-coreless-DQV}
     \zeta^\text{FM-BN}_\text{cl} = \mqty(
-    C^4\sqrt{1+f_z/2} + S^4\sqrt{1-f_z/2} \\
-    2e^{i\varphi}\left[C^3S\sqrt{1+f_z/2}
-        - CS^3\sqrt{1-f_z/2}\right] \\
-    e^{2i\varphi}\sqrt{6}C^2S^2\left[\sqrt{1+f_z/2}
-        + \sqrt{1-f_z/2} \right] \\
-    2e^{3i\varphi}\left[CS^3\sqrt{1+f_z/2}
-        - C^3S\sqrt{1-f_z/2}\right] \\
-    e^{4i\varphi}\left[S^4\sqrt{1+f_z/2} + C^4\sqrt{1-f_z/2} \right]
+    C^4D_+ + S^4D_- \\
+    2e^{i\varphi}\left[C^3SD_+
+        - CS^3D_-\right] \\
+    e^{2i\varphi}\sqrt{6}C^2S^2\left[D_+
+        + D_- \right] \\
+    2e^{3i\varphi}\left[CS^3D_+
+        - C^3SD_-\right] \\
+    e^{4i\varphi}\left[S^4D_+ + C^4D_- \right]
     ),
 \end{equation}
 where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
@@ -773,9 +773,9 @@ In the FM limit (\(f_z=2\)), one recovers the spin-2 coreless vortex given as
     ).
 \end{equation}
 The spherical harmonic representation of this vortex is plotted in
-Fig.~\ref{subfig: coreless-initial}, where the characteristic fountain-like
-texture becomes apparent.
-The spinor in the cyclic limit (\(f_z=0\)) reads
+Fig.~\ref{fig: C-FM-coreless-initial-states}, where the characteristic
+fountain-like texture becomes apparent.
+The spinor in the BN limit (\(f_z=0\)) reads
 \begin{equation}\label{eq: FM-BN-DQV}
     \zeta_\mathrm{dqv} = \mqty(
     C^4 + S^4 \\
@@ -785,29 +785,29 @@ The spinor in the cyclic limit (\(f_z=0\)) reads
     e^{4i\varphi}\left[C^4 + S^4\right]).
 \end{equation}
 It is not immediately obvious from the form of the spinor the type of vortex
-present on the cyclic side of the interface.
-To investigate the vortex state, we plot the spherical harmonics of the state
-defined in Eq.~\eqref{eq: FM-BN-DQV} in
-Fig.~\ref{subfig: DQV-initial}.
+present on the BN side of the interface.
+However, the spherical harmonics reveal that this is a doubly quantised vortex
+in the BN limit (see Fig.~\ref{fig: BN-DQV}).
 \begin{figure}
     \centering
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}
-        \caption{\label{subfig: coreless-initial}}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}
-        \caption{\label{subfig: DQV-initial}}
-    \end{subfigure}
-    \caption{\label{fig: coreless-doubly-quantised} Spherical harmonic
-        representation of the vortex configurations on each side of the FM-BN
-        interface defined in Eq.~\eqref{eq: FM-BN-coreless-DQV}.
-        (a): Spin-2 FM coreless vortex given by Eq.~\eqref{eq: FM-BN-coreless}.
-        (b): Doubly quantised vortex on the BN side of the interface, given by
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.5\textwidth]
+            {gfx/ch-spin2/BN_DQV.pdf}};
+        \node[cylinder, draw, fill=black, opacity=0.5, minimum height=4cm,
+            rotate=90] (c_dqv) at (0, 0) {};
+
+        % Colour bar
+        \node[rotate=90] at (-4.15, 0.4)
+        {\includegraphics[width=0.15\textwidth, height=0.015\textheight]
+            {gfx/colourbars/hsv_colourbar.pdf}};
+        \node[rotate=90] at (-4.15, -1.6) {Arg(\(Z\)) = 0};
+        \node[rotate=90] at (-4.15, 1.9) {\(2\pi \)};
+    \end{tikzpicture}
+    \caption{\label{fig: BN-DQV} Spherical harmonic
+        representation of the vortex configuration given by
         Eq.~\eqref{eq: FM-BN-DQV}.
-        \textcolor{red}{Current DQV is for cyclic case, update to BN.}}
+        We see that the winding of the condensate phase by \(4\pi \) about the
+        core indicates this is a doubly quantised vortex.}
 \end{figure}
 By tracing a point about the vortex line, the phase changes by a total of
 \(4\pi \) indicating a doubly quantised vortex.
@@ -859,7 +859,7 @@ The dynamics of this connection is split into two distinct parts.
 Firstly, upon evolution, the two overlapping SQVs spatially separate due to an
 instability occurring at the interface \(z \approx 0\).
 Each SQV then connects to a vortex-free state on the other side of the
-interface (\textcolor{red}{Figure showing this potentially}).
+interface shown in Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}a.
 
 After the initial separation, the cores of the vortices fill with atoms
 occupying different ground states, drastically altering the order parameter
