@@ -9,9 +9,64 @@ by treating them as a collection of particles~\cite{Bose1924}.
 Einstein firstly helped Bose publish his work, before later going on to
 generalise the theory by applying it to a system of \(N\)-interacting
 bosons~\cite{Einstein1925}.
+This then led to the Bose-Einstein distribution, which describes the
+statistics of bosons over single-particle energy states:
+\begin{equation}\label{eq: Bose-Einstein-distribution}
+    f(\epsilon_i) = \frac{1}{e^{(\epsilon_i-\mu)/k_B T} - 1},
+\end{equation}
+where \(\epsilon_i\) is the energy of level \(i\), \(\mu \) is the chemical
+potential, \(k_B\) is the Boltzmann constant, and \(T\) is the temperature.
 
+Since the total number of particles is conserved, the chemical potential enters
+the above distribution.
+The chemical potential itself is calculated from the total particle number \(N\)
+and \(T\) by the condition that the total number of particles be equal to the
+sum of the particles in the individual levels.
+Mathematically, \(N\) is written as
+\begin{equation}
+    N = \sum_i N_i = \sum_i g(\epsilon_i)f(\epsilon_i),
+\end{equation}
+where \(N_i\) gives the mean occupation of level \(i\) and \(g(\epsilon_i)\)
+gives the degeneracy of level \(i\) (i.e., the number of distinct states with
+energy level \(\epsilon_i\)).
+
+As \(T \rightarrow 0\), Eq.~\eqref{eq: Bose-Einstein-distribution} diverges,
+which implies that the total excited state capacity has to decrease to keep
+the number of particles fixed.
+At the precise point where the total excited states cannot accommodate the total
+number of particles, Bose-Einstein condensation occurs.
+At \(T=0\), all atoms must occupy the lowest energy level of the system, called
+the ground state.
+
+The critical temperature at which Bose-Einstein condensation occurs can be
+derived as follows.
+Let us consider a system of non-interacting bosons at thermal equilibrium at
+temperature \(T\).
+According to de Broglie, particles behave like waves and as such have an
+associated wavelength termed the de Broglie wavelength.
+This wavelength characterises the length scale of the particles localised
+wave packet, and is conventionally written as
+\begin{equation}
+    \lambda_\text{dB} = \frac{h}{\sqrt{2\pi mk_B T}},
+\end{equation}
+where \(h\) is Planck's constant and \(m\) is the mass of the particle.
+Since \(\lambda_\text{dB} \propto 1 / sqrt{T}\), high temperatures (\(T > T_c\))
+imply that the de Broglie wavelength is small compared to the average
+inter-particle spacing.
+In this limit, the system exhibits classical, particle-like behaviour and the
+particles closely follow the Boltzmann distribution.
+Conversely, as the temperature decreases, the de Broglie wavelength associated
+with each particle grows.
+At some critical temperature, \(T_c\), the wavelengths of each particle become
+comparable to the average inter-particle spacing and as such individual
+particles become indistinguishable.
+At this point the system exhibits quantum behaviour, and the particles form a
+degenerate gas.
+
+\subsection{Experimental realisation}
 The first realisation of a Bose-Einstein condensate occurred in 1995, where the
-group of E. A. Cornell, C.E. Wieman, and W. Ketterle successfully cooled
+group of E. A. Cornell, C.E. Wieman, and W. Ketterle successfully
+\textcolor{red}{wrong! Some were Rb some were Na.} cooled
 \( ^{87}\text{Rb}\) atoms to near absolute zero and observed Bose-Einstein
 condensation~\cite{Anderson1995}, earning them the 2001 Nobel Prize in Physics.
 This pioneering work gave birth to a whole new field of research, one which is
