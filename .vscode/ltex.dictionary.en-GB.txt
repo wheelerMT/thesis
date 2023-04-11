@@ -50,3 +50,6 @@ KZM
 QDCP
 ch-introduction
 Lovegrove
+Borgh
+Ruostekoski
+Baio
