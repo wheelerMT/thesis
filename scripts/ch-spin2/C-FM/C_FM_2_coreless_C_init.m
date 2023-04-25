@@ -1,7 +1,3 @@
-% Create the wave function
-% Create the spherical harmonics
-% Map and plot spherical harmonics to circle
-
 nx = 128;
 ny = 128;
 nz = 128;
@@ -14,7 +10,7 @@ y = (-ny/2:ny/2-1) * dy;
 z = (-nz/2:nz/2-1) * dz;
 [X, Y, Z] = meshgrid(x, y, z);
 
-file = '../../../../../../../thesis_code/data/spin-2/6f_C-FM=2_coreless.hdf5';
+file = '../../../../../../../thesis_code/data/spin-2/5f_C-FM=2_coreless.hdf5';
 frame = 1;
 psiP2 = squeeze(h5read(file, '/wavefunction/psiP2').r(frame, :, :, :) ...
     + 1j * h5read(file, '/wavefunction/psiP2').i(frame, :, :, :));
@@ -76,56 +72,18 @@ Y_2p0 = 0.25 * sqrt(5 / pi) * (3 * cos(theta).^2 - 1);
 Y_2m1 = 0.5 * sqrt(15 / (2*pi)) * exp(-1j * phi).* sin(theta).*cos(theta);
 Y_2m2 = 0.25 * sqrt(15 / (2*pi)).* exp(-2j * phi).* sin(theta).^2;
 
-z_lim = 84;
-scale = 3.2;
-
-%% Centre point
-initial_x_lim = 64;
-initial_y_lim = 64;
-zsph = zetaP2(initial_x_lim, initial_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(initial_x_lim, initial_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(initial_x_lim, initial_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(initial_x_lim, initial_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(initial_x_lim, initial_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-
-xx = abs(zsph).^2.*sin(theta).*cos(phi); 
-yy = abs(zsph).^2.*sin(theta).*sin(phi);
-zz = abs(zsph).^2.*cos(theta);
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
+z_lim = 44;
+scale = 3.3;
 
 %% First ring
-lower_x_lim = 62;
+lower_x_lim = 60;
 middle_x_lim = 64;
-upper_x_lim = 66;
-lower_y_lim = 62;
+upper_x_lim = 68;
+lower_y_lim = 60;
 middle_y_lim = 64;
-upper_y_lim = 66;
-plot_angle = 0;
+upper_y_lim = 68;
+plot_angle = pi;
 radius = 7;
-
-% for i = lower_x_lim:upper_x_lim
-%     for j = lower_y_lim:upper_y_lim
-%         zsph = zetaP2(i, j, z_lim).* Y_2p2 ...
-%         + zetaP1(i, j, z_lim).* Y_2p1 ...
-%         + zeta0(i, j, z_lim).* Y_2p0 ...
-%         + zetaM1(i, j, z_lim).* Y_2m1 ...
-%         + zetaM2(i, j, z_lim).* Y_2m2;
-%         zsph = zsph * scale;
-%         xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-%             + X(i, j, z_lim);
-%         yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-%             + Y(i, j, z_lim);
-%         zz = abs(zsph).^2.*cos(theta) + Z(i, j, z_lim);
-%         h = surf(xx, yy, zz,angle(zsph));
-%         set(h, 'LineStyle','none')
-%         hold on;
-%     end
-% end
 
 zsph = zetaP2(lower_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
     + zetaP1(lower_x_lim, lower_y_lim, z_lim).* Y_2p1 ...
@@ -138,7 +96,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -156,7 +114,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -173,7 +131,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -190,7 +148,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -207,7 +165,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -224,7 +182,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -241,7 +199,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -270,13 +228,13 @@ plot(xunit, yunit, 'k-', 'LineWidth', 1);
 hold on;
 
 %% Outer ring
-lower_x_lim = 58;
+lower_x_lim = 56;
 middle_x_lim = 64;
-upper_x_lim = 70;
-lower_y_lim = 58;
+upper_x_lim = 72;
+lower_y_lim = 56;
 middle_y_lim = 64;
-upper_y_lim = 70;
-plot_angle = 0;
+upper_y_lim = 72;
+plot_angle = pi;
 radius = 14;
 
 zsph = zetaP2(lower_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
@@ -290,7 +248,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -308,7 +266,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -325,7 +283,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -342,7 +300,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -359,7 +317,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -376,7 +334,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -393,7 +351,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -410,7 +368,7 @@ xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
 yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
     + radius * sin(plot_angle);
 zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle + 2 * pi / 8;
+plot_angle = plot_angle - 2 * pi / 8;
 
 h = surf(xx,yy,zz,angle(zsph));
 set(h, 'LineStyle','none')
@@ -423,6 +381,7 @@ plot(xunit, yunit, 'k-', 'LineWidth', 1);
 hold on;
 
 axis off;
+view(-25, 30);
 colormap(hsv);
 clim([-pi pi]);
 camlight left
@@ -430,4 +389,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 
-% exportgraphics(gca, '../../../gfx/ch-spin2/FM-1_coreless_init_state.pdf')
+exportgraphics(gca, '../../../gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf')

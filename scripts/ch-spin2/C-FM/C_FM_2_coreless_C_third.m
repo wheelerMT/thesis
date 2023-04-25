@@ -1,7 +1,3 @@
-% Create the wave function
-% Create the spherical harmonics
-% Map and plot spherical harmonics to circle
-
 nx = 128;
 ny = 128;
 nz = 128;
@@ -76,12 +72,12 @@ Y_2p0 = 0.25 * sqrt(5 / pi) * (3 * cos(theta).^2 - 1);
 Y_2m1 = 0.5 * sqrt(15 / (2*pi)) * exp(-1j * phi).* sin(theta).*cos(theta);
 Y_2m2 = 0.25 * sqrt(15 / (2*pi)).* exp(-2j * phi).* sin(theta).^2;
 
-z_lim = 84;
+z_lim = 44;
 scale = 3.3;
 
 %% Centre point
-initial_x_lim = 74;
-initial_y_lim = 74;
+initial_x_lim = 48;
+initial_y_lim = 48;
 zsph = zetaP2(initial_x_lim, initial_y_lim, z_lim).* Y_2p2 ...
     + zetaP1(initial_x_lim, initial_y_lim, z_lim).* Y_2p1 ...
     + zeta0(initial_x_lim, initial_y_lim, z_lim).* Y_2p0 ...
@@ -99,12 +95,12 @@ hold on;
 
 
 %% First ring
-lower_x_lim = 72;
-middle_x_lim = 74;
-upper_x_lim = 76;
-lower_y_lim = 72;
-middle_y_lim = 74;
-upper_y_lim = 76;
+lower_x_lim = 44;
+middle_x_lim = 48;
+upper_x_lim = 52;
+lower_y_lim = 44;
+middle_y_lim = 48;
+upper_y_lim = 52;
 plot_angle = pi;
 radius = 7;
 
@@ -251,12 +247,12 @@ plot(xunit, yunit, 'k-', 'LineWidth', 1);
 hold on;
 
 %% Outer ring
-lower_x_lim = 70;
-middle_x_lim = 74;
-upper_x_lim = 78;
-lower_y_lim = 70;
-middle_y_lim = 74;
-upper_y_lim = 78;
+lower_x_lim = 40;
+middle_x_lim = 48;
+upper_x_lim = 56;
+lower_y_lim = 40;
+middle_y_lim = 48;
+upper_y_lim = 56;
 plot_angle = pi;
 radius = 14;
 
@@ -412,4 +408,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 
-exportgraphics(gca, '../../../gfx/ch-spin2/C-FM=2_coreless_FM_after_spherical.pdf')
+exportgraphics(gca, '../../../gfx/ch-spin2/C-FM=2_coreless_cyclic_third_spherical.pdf')
