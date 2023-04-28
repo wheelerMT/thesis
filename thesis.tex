@@ -70,15 +70,41 @@
 \makeatother
 \chapterstyle{daleif1}
 
-\title{From non-equilibrium phase transitions to topological interfaces in
-spinor Bose-Einstein condensates\\
-{\Large University of East Anglia}}
-\author{Matt Wheeler}
-\date{\today}
+% \title{From non-equilibrium phase transitions to topological interfaces in
+% spinor Bose-Einstein condensates}
+% \author{Matt Wheeler}
+% \date{\today}
+
+\newlength\drop
+\makeatletter
+\newcommand*\titleM{\begingroup% Misericords, T&H p 153
+\setlength\drop{0.08\textheight}
+\centering
+\vspace*{\drop}
+{\LARGE\bfseries From non-equilibrium phase transitions to topological interfaces
+in spinor Bose-Einstein condensates}\\[\baselineskip]
+\vspace*{\drop}
+{\Large Matthew Wheeler}\par
+\vspace*{\drop}
+{A thesis presented for the degree of Doctor of Philosophy}\\
+\vspace*{1.4\drop}
+\includegraphics[width=0.75\textwidth]{gfx/UEA_logo.png}\\
+{Physics, Faculty of Science\\ Norwich, UK \\ 2023}\\
+\vspace*{2.2\drop}
+{\small \copyright \ This copy of the thesis has been supplied on condition that
+anyone who  consults it is understood to recognise that its copyright rests with
+the author and that use of any information derived therefrom must be in
+accordance with current UK Copyright Law.
+In addition, any quotation or extract must include full attribution.}
+\endgroup}
+\makeatother
 
 \begin{document}
 
-\maketitle
+\begin{titlingpage}
+    \titleM
+\end{titlingpage}
+
 \thispagestyle{empty}
 
 \frontmatter

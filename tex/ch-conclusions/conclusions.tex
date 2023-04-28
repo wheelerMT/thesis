@@ -37,14 +37,119 @@ investigating the inter-vortex forces~\cite{Eto2011, Kasamatsu2016}.
 The larger \(\gamma \) increased the core sizes of the vortices, which in turn
 meant that the inter-vortex separation was smaller.
 This then meant that a new, attractive force otherwise unseen in scalar
-vortices dominated, and caused the HQVs to move together and annihilate.
+vortices dominated, and caused the HQVs to move together and annihilate,
+leading to the anomalous scaling.
 
+In chapter 5 we investigated the Kibble-Zurek mechanism across a first-order
+phase transition in a spin-1 BEC\@.
+In particular, we started from the broken-axisymmetry phase of a condensate with
+ferromagnetic interactions, then proceeded to quench the quadratic Zeeman shift,
+\(q\), which caused the ground state of the condensate to become ferromagnetic.
+Firstly, we analytically constructed scaling laws using a modified Kibble-Zurek
+mechanism that accounted for our discontinuous phase transition, using theory
+developed for a discontinuous critical point~\cite{Suzuki2015}.
+This led to a prediction of the scaling of the density of defects as
+\(\tau_Q^{-1/4}\), where \(\tau_Q\) is the quench rate, which is noticeably
+different from the traditional scaling of \(\tau_Q^{-1/3}\) seen across
+second-order transitions~\cite{Damski2007, Anquez2016}.
+In addition, we analytically derived the scaling properties near the critical
+point, which came out to be \(\tau_Q^{-1/2}\).
+We then carried out numerical investigations of this phase transition.
+The numerics confirmed the formation of ferromagnetic domains in the system
+after the critical point of \(q_c=0\) was crossed.
+The size of these domains was indeed confirmed to depend on the quench rate,
+\(\tau_Q\).
+Using the simulations, we then calculated the total number of ferromagnetic
+domains in the system at the end of the simulation for each quench rate tested.
+We found that for sufficiently slow quenches (\(\tau_Q \lesssim 2\times 10^3\))
+the scaling of the defect density obeyed the predicted \(\tau_Q^{-1/4}\)
+scaling.
+However, at faster quench rates this scaling broke down, and instead approached
+a scaling close to \(\tau_Q^{-1/5}\).
+\textcolor{red}{We revealed that this phenomenon is due to\ldots}
+The scaling near the critical point was also calculated, and agreed perfectly
+with our predicted scaling of \(\tau_Q^{-1/2}\).
+Finally, we also tested our predicted scaling laws in a system that crossed
+two phase transitions, i.e., going through the polar to broken-axisymmetry to
+the FM phases.
+Despite passing through two phase transitions, with one of them being
+second-order, the scaling of the defect density at late times was qualitatively
+similar to that observed just crossing one phase transition.
+
+Chapter 6 was concerned with investigating topological interfaces in spin-2
+BECs.
+We derive stationary solutions of the spin-2 Gross-Pitaevskii equations that
+provided interpolating solutions between different ground state manifolds.
+We then discussed the energetic stability of each of the interfaces, and how
+they can be manipulated with both linear and quadratic Zeeman shifts.
+From here, we progressed into a discussion regarding the connection of
+topological defects across such interfaces.
+Numerous types of defects were considered ranging from singly quantised
+vortices (SQVs), spin vortices, fractional vortices, coreless vortices, and even
+monopole point defects.
+The remainder of the chapter presented numerical work investigating different
+interfaces and interesting vortex connections across them.
+In a uniaxial-nematic to biaxial-nematic (UN-BN) interface we showed that SQVs
+initially connected across the interface spatially separate.
+After doing so, composite core structures develop which are filled with a
+variety of different phases.
+In addition, we showed that a SQV in the BN phase connected to a vortex free
+state in the UN phase would split into HQVs.
+A monopole point defect was also constructed on the UN side of the interface,
+which smoothly terminated on a singly quantised spin vortex line in the BN
+phase.
+Finally, we investigated both fractional and coreless vortices across a cyclic
+to ferromagnetic (C-FM) interface.
+In particular, we observed a SQV on the FM side smoothly connecting to a
+third vortex on the cyclic side of the interface.
+The \(\spinmag=1\) core of the third vortex extended through the FM region,
+which was topologically protected by having a cyclic shell encapsulating the
+vortex core.
+The coreless vortex on the FM side was revealed to connect to a doubly quantised
+vortex (DQV) line in the cyclic region.
+Numerical results showed complex splitting behaviour from this connection.
+In particular, the initial DQV on the cyclic side split into four third
+vortices alongside a central two-third vortex.
+On the FM side, the coreless vortex is observed to split into four singular
+vortex structures.
 
 \section{Future work}
 
 \subsection{Two-component system}
+Our numerical investigation of the relaxation dynamics of HQVs revealed
+interesting behaviour unseen in similar relaxation studies involving scalar
+condensates~\cite{Karl2017}.
+In particular, a clear attractive force between the vortices dominates at
+sufficiently high \(\gamma \), so a logical next step is to determine the cause
+of this attractive force.
+In fact, recently theoretical work has shed more light on the
+topic~\cite{Richaud2022}.
+They showed that the atoms filling the large cores of the HQVs act as a pinning
+potential, driving the HQVs to collide.
+This work therefore explains previously observed numerical simulations of HQV
+dynamics in these systems~\cite{Eto2011, Kasamatsu2016}, and provides a
+better insight into our observed decay laws.
+
+In addition, experimental work has already been conducted investigating the
+relaxation dynamics of HQVs in a spin-1 BEC~\cite{Seo2016}.
+However, corresponding numerical investigations of the decay rate of the
+vortices has not been carried out, and it would indeed be interesting to see
+whether there is overlap with our pseudospin-1/2 work.
 
 \subsection{Spin-1 Kibble-Zurek}
+A natural extension of this work would be to a spin-2 system, which contains
+further second-order and first-order phase transitions.
+For example, a prime candidate for a first-order transition would be between the
+nematic and ferromagnetic regimes, which could be achieved similarly to our
+current work by quenching the magnetic field.
+
+\textcolor{red}{What else?}
 
 \subsection{Spin-2 interface problems}
+Naturally, there are numerous other topological defect connections one can
+extend from our current work.
+However, a more beneficial direction may be in trying to recreate the
+topological interfaces created in both our work and previous spin-1
+work~\cite{Borgh2012, Borgh2013, Borgh2014}, which so far has remained elusive.
 
+\textcolor{red}{What else?}
