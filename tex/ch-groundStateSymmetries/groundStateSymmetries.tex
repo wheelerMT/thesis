@@ -192,7 +192,7 @@ depending on the sign of the linear Zeeman shift \(p\).
 
 For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
 (state III) with
-\begin{equation}
+\begin{equation}\label{eq: AFM-spinor}
     \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
@@ -279,14 +279,20 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     \end{subfigure}\\
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]
+        {gfx/ch-groundStateSymmetries/AFM-spherical.pdf}
+        \caption{\label{subfig: spin-1-AFM-spherical}
+            \(\zeta^\mathrm{AFM} \) given in Eq.~\eqref{eq: AFM-spinor}.}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth, height=0.65\textwidth]
         {gfx/ch-groundStateSymmetries/BA-spherical.pdf}
         \caption{\label{subfig: spin-1-BA-spherical}
             \(\zeta^\mathrm{BA}\) given in Eq.~\eqref{eq: BA-spinor}.}
     \end{subfigure}
     \caption[Spherical harmonic representation of spin-1 ground states]
     {\label{fig: spin-1-spherical-harmonics}
-    Spherical harmonics representation of the ferromagnetic and polar order
-    parameters in a spin-1 BEC.\@
+    Spherical harmonics representation of the ground state phases available in a
+    spin-1 BEC.\@
     (a): The spin-1 ferromagnetic ground state with
     \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
     The black arrow represents the direction of the condensate magnetisation.
@@ -295,8 +301,11 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
     The order parameter remains unchanged about \(\pi/2\) rotations about the
     \(C_2\) axis.
-    \textcolor{red}{Will also add spherical harmonics for states with
-        magnetisation.}}
+    (c): The anti-ferromagnetic state given by Eq.~\eqref{eq: AFM-spinor}.
+    Note that for this state the direction of the spin vector is aligned with
+    the magnetic field.
+    (d): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor}.
+    The direction of the spin is tilted away from the magnetic field axis.}
 \end{figure}
 
 We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
