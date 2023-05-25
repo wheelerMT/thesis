@@ -276,7 +276,7 @@ TSWLatexianTemp*
 *.lpz
 
 # MATLAB
-.asv
+*.asv
 
 # Build folder
 .build/
