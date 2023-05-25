@@ -778,21 +778,22 @@ the choice \(\theta=0, \alpha=-\varphi/2, \beta=\pi/2\):
     ).
 \end{equation}
 The spherical harmonic representation of this vortex state is shown in
-Fig.~\ref{subfig: UN-spin-vortex}.
+Fig.~\ref{fig: SV-HQV}a.
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/UN-spin-vortex.pdf}
-        \caption{\label{subfig: UN-spin-vortex}}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/BN-HQV.pdf}
-        \caption{\label{subfig: BN-HQV}}
-    \end{subfigure}
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/UN-spin-vortex.pdf}};
+        \node at (7.3, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/BN-HQV.pdf}};
+        \node at (3.0, -2) {\includegraphics{gfx/colourbars/compiled_hsv.pdf}};
+
+        % Labels
+        \node at (-0.8, -2.2) {(a)};
+        \node at (7.2, -2.2) {(b)};
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of spin-2 vortices]
-    {Spherical harmonic representation of select vortices in the spin-2
+    {\label{fig: SV-HQV}Spherical harmonic representation of select vortices in the spin-2
         nematic phases.
         (a): A spin vortex in the UN phase. A complete circuit of the vortex
         results in a \(\pi \) winding of the condensate spin vector, with no
@@ -801,6 +802,28 @@ Fig.~\ref{subfig: UN-spin-vortex}.
         The condensate phase winds by \(\pi \) about the vortex core which is
         coupled to a \(\pi / 2\) spin rotation.}
 \end{figure}
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}{0.49\textwidth}
+%         \includegraphics[width=\textwidth]
+%         {gfx/ch-groundStateSymmetries/UN-spin-vortex.pdf}
+%         \caption{\label{subfig: UN-spin-vortex}}
+%     \end{subfigure}
+%     \begin{subfigure}{0.49\textwidth}
+%         \includegraphics[width=\textwidth]
+%         {gfx/ch-groundStateSymmetries/BN-HQV.pdf}
+%         \caption{\label{subfig: BN-HQV}}
+%     \end{subfigure}
+%     \caption[Spherical harmonic representation of spin-2 vortices]
+%     {Spherical harmonic representation of select vortices in the spin-2
+%         nematic phases.
+%         (a): A spin vortex in the UN phase. A complete circuit of the vortex
+%         results in a \(\pi \) winding of the condensate spin vector, with no
+%         change to the condensate phase.
+%         (b): One type of half-quantum vortex in the BN phase.
+%         The condensate phase winds by \(\pi \) about the vortex core which is
+%         coupled to a \(\pi / 2\) spin rotation.}
+% \end{figure}
 As the core of the vortex is traversed, the spin vector winds by \(\pi \) about
 the axis perpendicular to the nematic director, \(\hat{\vb{d}}\).
 
@@ -820,7 +843,7 @@ using the choice \(\theta=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
     ).
 \end{equation}
 The spherical harmonic representation of this vortex is shown in
-Fig.~\ref{subfig: BN-HQV}.
+Fig.~\ref{fig: SV-HQV}b.
 It is the clear the condensate phase winds by \(\pi \) about the vortex core,
 which is also coupled to a \(\pi / 2\) spin rotation.
 This configuration is sometimes denoted a \(1/2-1/4\) vortex, where the \(1/2\)
