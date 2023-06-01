@@ -340,9 +340,33 @@ Fig.~\ref{fig: spin-1-spherical-harmonics} are shown in
 Fig.~\ref{fig: spin-1-majorana}.
 \begin{figure}
     \centering
-    \includegraphics[scale=0.5]{example-image}
+    \begin{tikzpicture}
+        \node at (0, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-Majorana.pdf}};
+        \node at (4.5, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/polar-Majorana.pdf}};
+        \node at (9, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/AFM-Majorana.pdf}};
+        \node at (11.8, 0) {
+            \includegraphics{gfx/colourbars/compiled_jet_majorana.pdf}};
+
+        \node at (0, -2) {(a)};
+        \node at (4.5, -2) {(b)};
+        \node at (9, -2) {(c)};
+
+        \node at (0, 2) {\(\zeta={(1, 0, 0)}^T\)};
+        \node at (4.5, 2) {\(\zeta={(0, 1, 0)}^T\)};
+        \node at (9, 2) {\(\zeta={(1, 0, 1)}^T/\sqrt{2}\)};
+    \end{tikzpicture}
     \caption[Majorana representation of spin-1 ground states]
-    {\label{fig: spin-1-majorana}Majorana representations go here.}
+    {\label{fig: spin-1-majorana}Majorana representations of spin-1 ground
+    states. The colour of the points represent \(\cos\theta =
+    (1-|z|^2)/(1+|z|^2)\).
+    A number next to a point represents the root when the polynomial
+    \(P_\psi^1(z)\) has an \(n\)-multiple root.
+    (a): Ferromagnetic state with \(\zeta={(1, 0, 0)}^T\).
+    (b): Polar state with \(\zeta={(0, 1, 0)}^T\).
+    (c): AFM state with \(\zeta={(1, 0, 1)}^T/\sqrt{2}\).}
 \end{figure}
 
 \section{Spin-2}
