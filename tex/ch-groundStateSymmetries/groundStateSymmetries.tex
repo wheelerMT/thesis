@@ -1,19 +1,20 @@
 \chapter{Ground states, symmetries, and defects}\label{chap: ground-states}
-In this chapter we investigate the ground states of spinor BECs obtained through
-minimizing the corresponding mean-field energy functional.
-In particular, we investigate the symmetry properties using both Majorana and
-spherical harmonic representations.
-Furthermore, we construct the phase diagrams for conserved and non-conserved
-magnetisation.
-Finally, we construct some topological defects present in these systems.
-
+Spinor BECs offer a rich phase diagram, where the ground states of each system
+exhibit different symmetry properties.
+In this chapter we investigate the ground states of spin-1 and spin-2 BECs,
+which are obtained by minimizing the corresponding mean-field energy functional.
+In particular, we construct the phase diagram for both cases in the presence
+of magnetisation.
+Additionally, we investigate the symmetry properties of each ground state
+using different graphical representations: namely Majorana and spherical
+harmonics.
+Finally, we construct a list of topological defects that can arise in spinor
+BECs.
+Using the spherical harmonic representation of the order parameter, we are able
+to visualise each defect state.
 There are numerous references (e.g., see~\cite{Ciobanu2000, Zhang2003,
     Kawaguchi2012, StamperKurn2013}) that already provide most of these results,
 but we reproduce them here to provide reference for subsequent chapters.
-Furthermore, there are subtleties between the phase diagrams of spinor BECs
-in the presence of conserved magnetisation that is not widely reported, so we
-construct both phase diagrams (conserved and non-conserved) here to clarify
-distinctions between the two.
 
 
 \section{Spin-1}\label{sec: ground-states-spin-1}
@@ -37,7 +38,7 @@ A representative spinor for a ferromagnetic ground state is then
 \end{equation}
 
 In the absence of a magnetic field, the energy of a given spinor is degenerate
-with respect to a global \(U(1)\) phase \(e^{i\theta}\) and an \(SO(3)\) spin
+with respect to a global \(U(1)\) phase \(e^{i\tau}\) and an \(SO(3)\) spin
 rotation, parameterized by three Euler angles \(\alpha, \beta \),
 and \(\gamma \).
 A general spin rotation represents rotations around the \(z-y-z\) axes:
@@ -56,12 +57,11 @@ In explicit matrix form, this becomes
     e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
     ).
 \end{equation}
-
 The general ferromagnetic wave function is constructed by
 \begin{equation}\label{eq: FM-representative-spinor}
     \psi^\mathrm{FM} =
-    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} =
-    \sqrt{n}e^{i(\theta - \gamma)}\mqty(
+    \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} =
+    \sqrt{n}e^{i(\tau - \gamma)}\mqty(
     e^{-i\alpha}\cos^2\frac{\beta}{2} \\
     \frac{1}{\sqrt{2}}\sin\beta \\
     e^{i\alpha}\sin^2\frac{\beta}{2}
@@ -74,11 +74,11 @@ A representative polar spinor is
 \begin{equation}\label{eq: EAP-spinor}
     \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
 \end{equation}
-Similar to the FM case, a general polar wave function is given by
+Similar to the FM case, a general polar wave function is constructed as
 \begin{equation}\label{eq: polar-representative-spinor}
     \psi^\mathrm{P} =
-    \sqrt{n}e^{i\theta}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} =
-    \sqrt{n}e^{i\theta}\mqty(
+    \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} =
+    \sqrt{n}e^{i\tau}\mqty(
     -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
     \cos\beta \\
     \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
@@ -88,9 +88,8 @@ Similar to the FM case, a general polar wave function is given by
 Thus, in the absence of a magnetic field, there are two ground states in a
 spin-1 system: polar and ferromagnetic, depending on the sign of the
 spin-dependent interaction term, \(c_1\).
-
-The presence of an external magnetic field drastically changes the valid ground
-states of the spin-1 system.
+The presence of an external magnetic field, however, drastically changes the
+valid ground states of the spin-1 system.
 \begin{figure}[htb]
     \centering
     \begin{tikzpicture}
@@ -189,7 +188,8 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
 and \(F_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(F_z=-1\) (state II),
 depending on the sign of the linear Zeeman shift \(p\).
-
+A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
+\(F_z = 0\).
 For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
 (state III) with
 \begin{equation}\label{eq: AFM-spinor}
@@ -197,12 +197,10 @@ For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
 and \(F_z = p/(c_1n)\).
-
-A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
-\(F_z = 0\).
-
+At \(p=0\), this state transforms into the easy-plane polar phase, i.e., state
+IV with the nematic director in the \(xy\)-plane.
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
-ferromagnetic interactions that has the form
+\(c_1 > 0\) which has a spinor of the form
 \begin{equation}
     \begin{aligned}
         \zeta_{\pm 1} & =
@@ -236,14 +234,14 @@ The orientation of the spherical harmonics corresponds to the condensate spin,
 and so as the spin vector rotates, the orientation of spherical harmonics
 rotates to match.
 In addition, the colour of the spherical harmonics corresponds to the global
-phase, \( \theta \).
+phase, \( \tau \).
 Therefore, the spherical harmonics give an accurate description of the
 physical symmetries of the wave function, along with a pictorial representation
 of how the phase is changing.
 Throughout this thesis we will use the spherical harmonics to construct a
 picture of what is happening to the wave function at different locations in
 space, where the symmetry of the wave function can rapidly transform in a
-non-trivial manner.
+non-trivial manner (see Chapter~\ref{chap: spin-2}).
 
 In spin-1, there are three \(f = 1\) spherical harmonics given by
 \begin{align}
@@ -425,10 +423,10 @@ In a spin-2 system, a general spin rotation is instead represented as a
 where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
 
 Following the same procedure as the spin-1 case and applying the above spin
-rotation with a global phase \(\theta \) and condensate density \(n\) yields the
+rotation with a global phase \(\tau \) and condensate density \(n\) yields the
 general FM-2 spinor
 \begin{equation}\label{eq: FM-2-representative-spinor}
-    \psi^\mathrm{FM} = \sqrt{n}e^{i\theta'}\mqty(
+    \psi^\mathrm{FM} = \sqrt{n}e^{i\tau'}\mqty(
     e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
     2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
     \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
@@ -436,7 +434,7 @@ general FM-2 spinor
     e^{2i\alpha} \sin^4\frac{\beta}{2}
     ),
 \end{equation}
-where \(\theta'=\theta-2\gamma \).
+where \(\tau'=\tau-2\gamma \).
 
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
 We see that the energy functional is minimised when the spin is minimised
@@ -451,7 +449,7 @@ or biaxial nematic (BN), described by the spinors
 In the absence of a magnetic field, these two states are degenerate.
 The general wave function for the UN state is
 \begin{equation}\label{eq: UN-representative-spinor}
-    \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\theta}\mqty(
+    \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\tau}\mqty(
     e^{-2i\alpha} \sin^2\beta \\
     -2e^{-i\alpha} \sin\beta \cos\beta \\
     \sqrt{\frac{2}{3}}(3\cos^2\beta - 1) \\
@@ -461,7 +459,7 @@ The general wave function for the UN state is
 \end{equation}
 and for the BN
 \begin{equation}\label{eq: BN-representative-spinor}
-    \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\theta} \mqty(
+    \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\tau} \mqty(
     e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
         - i\cos\beta\sin 2\gamma\right] \\
     e^{-i\alpha}\sin\beta(\cos\beta\cos 2\beta - i\sin 2\gamma) \\
@@ -483,7 +481,7 @@ spinor
 \end{equation}
 The general wave function is given as
 \begin{equation}
-    \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\theta} \mqty(
+    \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\tau} \mqty(
     e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
     + e^{-2i(\alpha-\gamma)}S^4
     \\
@@ -747,7 +745,7 @@ nematic director \(\hat{\vb{d}}\) to keep the order parameter single valued.
 
 If we consider a vortex that is oriented along the \(z\)-axis and the nematic
 director is oriented in the \((x, y)\)-plane, then such a vortex corresponds to
-the choice of \(\theta=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
+the choice of \(\tau=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
 Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
 \begin{equation}
     \psi^\mathrm{HQV} = \sqrt{\frac{n}{2}} \mqty(
@@ -804,7 +802,7 @@ Here, we discuss a particular type of non-singular vortex called the coreless
 vortex~\cite{Martikainen2002, Leanhardt2003}.
 
 From Eq.~\eqref{eq: FM-representative-spinor}, a coreless vortex is constructed
-using the choice of \(\theta-\gamma = \alpha= \varphi \) and having
+using the choice of \(\tau-\gamma = \alpha= \varphi \) and having
 \(\beta = \beta(\rho)\) be a function of the radial coordinate, \(\rho \):
 \begin{equation}
     \psi^\mathrm{coreless} = \sqrt{n}\mqty(
@@ -831,11 +829,11 @@ Unlike the spin-1 polar phase, the UN phase does not support fractional vortices
 with mass circulation.
 This is apparent from the spherical harmonic representation given in
 Fig.~\ref{fig: spin-2-spherical-harmonics}c, where the \(\mathbb{Z}_2\) symmetry
-about the \(C_2\) axis is not coupled to the condensate phase, \(\theta \).
+about the \(C_2\) axis is not coupled to the condensate phase, \(\tau \).
 This phase instead accommodates a spin vortex, i.e., a vortex which carries only
 spin circulation.
 Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
-the choice \(\theta=0, \alpha=-\varphi/2, \beta=\pi/2\):
+the choice \(\tau=0, \alpha=-\varphi/2, \beta=\pi/2\):
 \begin{equation}
     \psi^\mathrm{SV} = \frac{\sqrt{6n}}{4}\mqty(
     e^{i\varphi} \\
@@ -877,7 +875,7 @@ i.e., defects whose topological charges do not commute~\cite{Mermin1979}.
 One of the simplest defects in this phase is the half-quantum vortex.
 However, this is topologically distinct from that of the spin-1 polar case.
 Such a vortex can be constructed from Eq.~\eqref{eq: BN-representative-spinor}
-using the choice \(\theta=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
+using the choice \(\tau=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
 \begin{equation}
     \psi^\mathrm{1/2-1/4} = \sqrt{\frac{n}{2}}\mqty(
     1 \\
@@ -905,8 +903,8 @@ leading to \(1/3\) and \(2/3\) vortices.
 These vortices are constructed by applying a condensate phase and general spin
 rotation to Eq.~\eqref{eq: C-2-spinor}.
 A \(1/3\) vortex is constructed from the choice
-\(\theta = -\alpha = \varphi/3 \) with \(\gamma = 0\).
-Similarly, a \(2/3\) vortex is constructed by choosing \(\theta = 2\varphi/3\),
+\(\tau = -\alpha = \varphi/3 \) with \(\gamma = 0\).
+Similarly, a \(2/3\) vortex is constructed by choosing \(\tau = 2\varphi/3\),
 \(\alpha = \varphi/3\) and \(\gamma=0\).
 The result is a phase winding in the \(\psi_2\) and \(\psi_{-1}\) components
 for the \(1/3\) and \(2/3\) vortices, respectively:
