@@ -265,30 +265,36 @@ In spin-1, there are three \(f = 1\) spherical harmonics given by
 The spherical harmonic representations of the spin-1 polar and ferromagnetic
 ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
 \begin{figure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/FM-spherical.pdf}
-        \caption{\label{subfig: spin-1-FM-spherical}
-        \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/polar-spherical.pdf}
-        \caption{\label{subfig: spin-1-polar-spherical}
-        \(\zeta^\mathrm{P}={(0, 1, 0)}^T\)}
-    \end{subfigure}\\
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/AFM-spherical.pdf}
-        \caption{\label{subfig: spin-1-AFM-spherical}
-            \(\zeta^\mathrm{AFM} \) given in Eq.~\eqref{eq: AFM-spinor}.}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth, height=0.65\textwidth]
-        {gfx/ch-groundStateSymmetries/BA-spherical.pdf}
-        \caption{\label{subfig: spin-1-BA-spherical}
-            \(\zeta^\mathrm{BA}\) given in Eq.~\eqref{eq: BA-spinor}.}
-    \end{subfigure}
+    \begin{tikzpicture}
+        % Plots
+        \node at (0, 0) {\includegraphics[width=0.49\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-spherical.pdf}};
+        \node at (7.2, 0) {\includegraphics[scale=0.55]
+            {gfx/ch-groundStateSymmetries/polar-spherical.pdf}};
+        \node at (0, -5) {\includegraphics[width=0.49\textwidth]
+            {gfx/ch-groundStateSymmetries/AFM-spherical.pdf}};
+        \node at (7.2, -5) {\includegraphics[width=0.49\textwidth]
+            {gfx/ch-groundStateSymmetries/BA-spherical.pdf}};
+
+        % Colour bar
+        \node at (4, 0) {\includegraphics[angle=90]
+            {gfx/colourbars/compiled_hsv.pdf}};
+
+        % Labels
+        \node at (0, -2.) {(a)};
+        \node at (7.2, -2.) {(b)};
+        \node at (0, -7.2) {(c)};
+        \node at (7.2, -7.2) {(d)};
+
+        % Spinors
+        \node at (0, 3) {\(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)};
+        \node at (7.2, 3) {\(\zeta^\mathrm{P}={(0, 1, 0)}^T\)};
+        \node at (0, -2.5) {\(\zeta^\mathrm{AFM} \) given in
+            Eq.~\eqref{eq: AFM-spinor}};
+        \node at (7.2, -2.5) {\(\zeta^\mathrm{BA}\) given in
+            Eq.~\eqref{eq: BA-spinor}};
+
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of spin-1 ground states]
     {\label{fig: spin-1-spherical-harmonics}
     Spherical harmonics representation of the ground state phases available in a
@@ -575,43 +581,40 @@ The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/FM-2-spherical.pdf}
-        \caption{\label{subfig: FM-2-spherical}
-        FM-2: \(\zeta={(1, 0, 0, 0, 0)}^T\)
-        }
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/FM-1-spherical.pdf}
-        \caption{\label{subfig: FM-1-spherical}
-        FM-1: \(\zeta={(0, 1, 0, 0, 0)}^T\)}
-    \end{subfigure}\\
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/UN-spherical.pdf}
-        \caption{\label{subfig: UN-spherical}
-        UN:\@ \(\zeta={(0, 0, 1, 0, 0)}^T\)}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/BN-spherical.pdf}
-        \caption{\label{subfig: BN-spherical}
-        BN:\@ \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)}
-    \end{subfigure}\\
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/C1-spherical.pdf}
-        \caption{\label{subfig: C-1-spherical}
-        Cyclic-1:\@ \(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/C2-spherical.pdf}
-        \caption{\label{subfig: C-2-spherical}
-        Cyclic-2:\@ \(\zeta={(1, 0, 0, \sqrt{2}, 1)}^T/\sqrt{3}\)}
-    \end{subfigure}
+    \begin{tikzpicture}
+        % Plots
+        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-2-spherical.pdf}};
+        \node at (7.2, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-1-spherical.pdf}};
+        \node at (0, -6) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/UN-spherical.pdf}};
+        \node at (7.2, -6) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/BN-spherical.pdf}};
+        \node at (0, -12) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/C1-spherical.pdf}};
+        \node at (7.2, -12) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/C2-spherical.pdf}};
+
+        % Colour bars
+        \node at (3.2, -13.6) {\includegraphics{gfx/colourbars/compiled_hsv.pdf}};
+
+        % Labels
+        \node at (0, -2) {(a)};
+        \node at (7.2, -2) {(b)};
+        \node at (0, -8) {(c)};
+        \node at (7.2, -8) {(d)};
+        \node at (0, -14) {(e)};
+        \node at (7.2, -14) {(f)};
+
+        % Spinors
+        \node at (0, 2.5) {\(\zeta={(1, 0, 0, 0, 0)}^T\)};
+        \node at (7.2, 2.5) {\(\zeta={(0, 1, 0, 0, 0)}^T\)};
+        \node at (0, -3.2) {\(\zeta={(0, 0, 1, 0, 0)}^T\)};
+        \node at (7.2, -3.2) {\(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)};
+        \node at (0, -9.5) {\(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)};
+        \node at (7.2, -9.5) {\(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\)};
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of spin-2 ground states]
     {\label{fig: spin-2-spherical-harmonics}Spherical harmonic
         representations for different ground states in a spin-2 system.
@@ -629,37 +632,41 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
     }
 \end{figure}
 
-It is clear from Figs~\ref{subfig: FM-2-spherical}
-and~\ref{subfig: FM-1-spherical} that the ferromagnetic order parameters have
-the same \(SO(2)\) symmetry about the \(z\)-axis as the spin-1 case.
+It is clear from Figs~\ref{fig: spin-2-spherical-harmonics}a
+and~\ref{fig: spin-2-spherical-harmonics}b that the ferromagnetic order
+parameters have the same \(SO(2)\) symmetry about the \(z\)-axis as the spin-1
+case.
 However, the difference between the FM-2 phase of the spin-2 system and the FM
 phase of the spin-1 system is apparent in the phase: the FM-2 state winds by
 \(4\pi \) about the spherical harmonic as opposed to \(2\pi \)
-(see Fig.~\ref{subfig: spin-1-FM-spherical}).
+(see Fig.~\ref{fig: spin-1-spherical-harmonics}a).
 
-The UN phase as shown in Fig.~\ref{subfig: UN-spherical} differs slightly from
-the polar phase of spin-1 (see Fig.~\ref{subfig: spin-1-polar-spherical}) in
-that the nematic lobes have the same phase.
+The UN phase as shown in Fig.~\ref{fig: spin-2-spherical-harmonics}c differs
+slightly from the polar phase of spin-1 (see
+Fig.~\ref{fig: spin-1-spherical-harmonics}b) in that the nematic lobes have the
+same phase.
 This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
 leaves the order parameter unchanged.
 In addition, like the ferromagnetic states, this order parameter also has an
 \(SO(2)\) symmetry about the \(z\)-axis.
 
-The BN phase, shown in Fig.~\ref{subfig: BN-spherical}, breaks the \(SO(2)\)
-symmetry due to the perpendicular nematic lobes, which have a \(\pi \) phase
-difference.
+The BN phase, shown in Fig.~\ref{fig: spin-2-spherical-harmonics}d, breaks the
+\(SO(2)\) symmetry due to the perpendicular nematic lobes, which have a \(\pi \)
+phase difference.
 The symmetry of the order parameter is preserved under \(\pi/4\) rotations
 about the \(C_4\) axis.
 In addition, the BN order parameter is invariant under \(\pi \) rotations about
 both the \(C_2\) and \(C_2'\) axes.
 
-Finally, the cyclic order parameter, shown in Figs.~\ref{subfig: C-1-spherical}
-and~\ref{subfig: C-2-spherical}, have the symmetry of a tetrahedron.
+Finally, the cyclic order parameter, shown in
+Figs.~\ref{fig: spin-2-spherical-harmonics}e
+and~\ref{fig: spin-2-spherical-harmonics}f, have the symmetry of a tetrahedron.
 Each nematic lobe has a two-fold symmetry about the \(C_2\) axis.
 Furthermore, the order parameter has a three-fold symmetry about the \(C_3\)
 axis.
-In Fig.~\ref{subfig: C-1-spherical}, this axis is the \((1, 1, 1)\)-axis,
-whereas in Fig.~\ref{subfig: C-2-spherical}, it is aligned along the \(z\)-axis.
+In Fig.~\ref{fig: spin-2-spherical-harmonics}e, this axis is the
+\((1, 1, 1)\)-axis, whereas in Fig.~\ref{fig: spin-2-spherical-harmonics}f,
+it is aligned along the \(z\)-axis.
 Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
 parameter.
 
@@ -674,9 +681,55 @@ The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-Majorana}.
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image}
+    \begin{tikzpicture}
+        % First row
+        \node at (0, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-2-Majorana.pdf}};
+        \node at (4.5, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/FM-1-Majorana.pdf}};
+        \node at (9, 0){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/UN-Majorana.pdf}};
+        \node at (11.8, -2.5) {
+            \includegraphics{gfx/colourbars/compiled_jet_majorana.pdf}};
+
+        \node at (0, -2) {(a)};
+        \node at (4.5, -2) {(b)};
+        \node at (9, -2) {(c)};
+
+        \node at (0, 2) {\(\zeta={(1, 0, 0, 0, 0)}^T\)};
+        \node at (4.5, 2) {\(\zeta={(0, 1, 0, 0, 0)}^T\)};
+        \node at (9, 2) {\(\zeta={(0, 0, 1, 0, 0)}^T\)};
+
+        % Second row
+        \node at (0, -5){\includegraphics[width=0.3\textwidth]
+            {gfx/ch-groundStateSymmetries/BN-Majorana.pdf}};
+        \node at (4.5, -5){\includegraphics[width=0.265\textwidth]
+            {gfx/ch-groundStateSymmetries/C1-Majorana.pdf}};
+        \node at (9, -5){\includegraphics[width=0.275\textwidth]
+            {gfx/ch-groundStateSymmetries/C2-Majorana.pdf}};
+
+        \node at (0, -7) {(d)};
+        \node at (4.5, -7) {(e)};
+        \node at (9, -7) {(f)};
+
+        \node at (0, -3) {\(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)};
+        \node at (4.5, -3) {\(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)};
+        \node at (9, -3) {\(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\)};
+    \end{tikzpicture}
     \caption[Majorana representation of spin-2 ground states]
-    {\label{fig: spin-2-Majorana}Majorana representation goes here.}
+    {\label{fig: spin-2-Majorana}Majorana representation of spin-2 ground
+    states.
+    As in the spin-1 case, the colour of the points represent \(\cos\theta =
+    (1-|z|^2)/(1+|z|^2)\), whilst a number next to a point represents the root
+    when the polynomial \(P_\psi^1(z)\) has an \(n\)-multiple root.
+    (a): FM-2 state with \(\zeta={(1, 0, 0, 0, 0)}^T\).
+    (b): FM-1 state with \(\zeta={(0, 1, 0, 0, 0)}^T\).
+    (c): UN state with \(\zeta={(0, 0, 1, 0, 0)}^T\).
+    (d): BN state with \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
+    (e): Three-component cyclic state with
+    \(\zeta={(1, 0, i\sqrt{2}, 0, i)}^T/2\).
+    (f): Two-component cyclic state with
+    \(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\).}
 \end{figure}
 
 \section{Topological defects in spinor BECs}
@@ -727,22 +780,25 @@ vortex consists of density depletion along the core in the \(\psi_{-1}\)
 component, where the phase winding is located.
 This core is then filled with atoms of the \(\psi_1 \) component, which lifts
 the core out of the polar phase and into the ferromagnetic phase.
-Fig.~\ref{subfig: polar-HQV} shows the spherical harmonic representation of the
-HQV.\@
+Fig.~\ref{fig: spin-1-vortices}a shows the spherical harmonic representation of
+the HQV\@.
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/polar-HQV.pdf}
-        \caption{\label{subfig: polar-HQV}}
-    \end{subfigure}
-    \begin{subfigure}{0.44\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/coreless.pdf}
-        \caption{\label{subfig: coreless-vortex}}
-    \end{subfigure}
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/polar-HQV.pdf}};
+        \node at (7.2, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/coreless.pdf}};
+        \node at (-3.6, -0.2) {\includegraphics[angle=90]
+            {gfx/colourbars/compiled_hsv.pdf}};
+
+        % Labels
+        \node at (0, -3) {(a)};
+        \node at (7.2, -3) {(b)};
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of spin-1 vortices]
-    {Spherical harmonic representation of vortices in a spin-1 BEC.\@
+    {\label{fig: spin-1-vortices}Spherical harmonic representation of vortices
+        in a spin-1 BEC\@.
         (a): Spin-1 polar HQV defined by Eq.~\eqref{eq: polar-HQV}.
         A complete circuit of the vortex results in a \(\pi \) spin rotation of
         the nematic director coupled with a \(\pi \) change to the condensate
@@ -774,9 +830,8 @@ The single-valued condition of the wave function is satisfied by choosing
 \(r_0\) is the radius of the system.
 This choice of \(\beta \) results in a vortex-free configuration at \(r=0\),
 which then terminates on a doubly-quantised vortex at \(r=r_0\).
-
 A spherical harmonic representation of the coreless vortex is shown in
-Fig.~\ref{subfig: coreless-vortex}, where the characteristic fountain-like
+Fig.~\ref{fig: spin-1-vortices}b, where the characteristic fountain-like
 spin texture is apparent.
 
 \subsection{Spin-2}\label{sec: vortices-spin-2}
@@ -787,8 +842,8 @@ Eq.~\eqref{eq: UN-representative-spinor}.
 Unlike the spin-1 polar phase, the UN phase does not support fractional vortices
 with mass circulation.
 This is apparent from the spherical harmonic representation given in
-Fig.~\ref{subfig: UN-spherical}, where the \(\mathbb{Z}_2\) symmetry about the
-\(C_2\) axis is not coupled to the condensate phase, \(\theta \).
+Fig.~\ref{fig: spin-2-spherical-harmonics}c, where the \(\mathbb{Z}_2\) symmetry
+about the \(C_2\) axis is not coupled to the condensate phase, \(\theta \).
 This phase instead accommodates a spin vortex, i.e., a vortex which carries only
 spin circulation.
 Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
@@ -826,28 +881,6 @@ Fig.~\ref{fig: SV-HQV}a.
         The condensate phase winds by \(\pi \) about the vortex core which is
         coupled to a \(\pi / 2\) spin rotation.}
 \end{figure}
-% \begin{figure}
-%     \centering
-%     \begin{subfigure}{0.49\textwidth}
-%         \includegraphics[width=\textwidth]
-%         {gfx/ch-groundStateSymmetries/UN-spin-vortex.pdf}
-%         \caption{\label{subfig: UN-spin-vortex}}
-%     \end{subfigure}
-%     \begin{subfigure}{0.49\textwidth}
-%         \includegraphics[width=\textwidth]
-%         {gfx/ch-groundStateSymmetries/BN-HQV.pdf}
-%         \caption{\label{subfig: BN-HQV}}
-%     \end{subfigure}
-%     \caption[Spherical harmonic representation of spin-2 vortices]
-%     {Spherical harmonic representation of select vortices in the spin-2
-%         nematic phases.
-%         (a): A spin vortex in the UN phase. A complete circuit of the vortex
-%         results in a \(\pi \) winding of the condensate spin vector, with no
-%         change to the condensate phase.
-%         (b): One type of half-quantum vortex in the BN phase.
-%         The condensate phase winds by \(\pi \) about the vortex core which is
-%         coupled to a \(\pi / 2\) spin rotation.}
-% \end{figure}
 As the core of the vortex is traversed, the spin vector winds by \(\pi \) about
 the axis perpendicular to the nematic director, \(\hat{\vb{d}}\).
 
@@ -898,16 +931,16 @@ Spherical harmonic representations are plotted in
 Fig.~\ref{fig: cyclic-fractional-spherical}.
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/one-third-vortex.pdf}
-        \caption{}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-groundStateSymmetries/two-third-vortex.pdf}
-        \caption{}
-    \end{subfigure}
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/one-third-vortex.pdf}};
+        \node at (7.3, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-groundStateSymmetries/two-third-vortex.pdf}};
+        \node at (3, -2) {\includegraphics{gfx/colourbars/compiled_hsv.pdf}};
+
+        \node at (0, -2.2) {(a)};
+        \node at (7.2, -2.2) {(b)};
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of cyclic fractional vortices]
     {\label{fig: cyclic-fractional-spherical}Spherical harmonic
         representations of cyclic fractional vortices.
