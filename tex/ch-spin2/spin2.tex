@@ -117,13 +117,15 @@ Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
 
 The final solution reads
 \begin{equation}\label{eq: UN-BN-interpolating-spinor}
-    \zeta^\text{UN-BN} = \mqty(
-    e^{i\chi_2}\frac{\sqrt{1 - \eta}}{2} \\
+    \zeta^\text{UN-BN} = \frac{1}{2}\mqty(
+    e^{i\chi_2}D_- \\
     0 \\
-    e^{i\chi_0}\sqrt{\frac{1 + \eta}{2}} \\
+    e^{i\chi_0}\sqrt{2}D_+ \\
     0 \\
-    e^{i\chi_{-2}}\frac{\sqrt{1 - \eta}}{2}
+    e^{i\chi_{-2}}D_-
     ),
+    \qquad
+    D_{\pm} = \sqrt{1 +\pm \eta},
 \end{equation}
 where \(\eta = 10q /|c_2|n \in [-1, 1]\) and \(\chi_m = \text{Arg}(\zeta_m)\)
 for component \(m\).
@@ -183,7 +185,7 @@ Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
         Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
         Due to the spatially-dependent \(\eta \), this spinor continuously
         interpolates between the UN, BN, and cyclic phases depending on the
-        relative phase difference between the components.}
+        relative phase difference \(\chi=\chi_2+\chi_{-2}-2\chi_0\).}
 \end{figure}
 We see that this spinor interpolates between the different phases of UN, BN and
 cyclic depending on both \(\eta \) and the relative phase difference
@@ -226,7 +228,7 @@ A representative example with \(\alpha = \gamma = 0\) is given by
         \sin^2\beta_0
     \end{pmatrix}, \\
     \zeta^\text{BN}_\text{sqv}    & =
-    \frac{1}{\sqrt{8}}e^{i\varphi}
+    \frac{e^{i\varphi}}{\sqrt{8}}
     \begin{pmatrix}
         \cos^2\beta_0 + 1     \\
         - \sin (2 \beta _0)   \\
@@ -265,7 +267,7 @@ phase away from the vortex core \(D_-(\vb{r}_\perp) = \sqrt{2}, D_+(0) = 0\).
 Spin vortices, which carry a spin circulation only
 (see Sec.~\ref{sec: vortices-spin-2}), can be connected across the interface by
 choosing \(\alpha=\varphi, \beta=\beta_0 \) and \(\tau = \gamma = 0\) in
-Eq.~\ref{eq: spin-rotation-action}, resulting in the spinor
+Eq.~\eqref{eq: spin-rotation-action}, resulting in the spinor
 \begin{align}\label{eq: UN-BN-SV-SV-spinor}
      & \zeta_\text{sv} =  \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sv}
     + D_-\zeta^\text{BN}_\text{sv}\right),
@@ -273,20 +275,20 @@ Eq.~\ref{eq: spin-rotation-action}, resulting in the spinor
      & \zeta^\text{UN}_\text{sv} =
     \sqrt{\frac38}
     \begin{pmatrix}
-        \exp(-i\varphi)\sin^2\beta_0                    \\
-        \exp(-i\frac{\varphi}{2})\sin 2 \beta _0        \\
-        \frac{1}{\sqrt{6}}\left(1+3\cos^2\beta_0\right) \\
-        -\exp(i\frac{\varphi}{2}) \sin 2 \beta _0       \\
-        \exp(i\varphi)\sin^2\beta_0
+        e^{-2i\varphi}\sin^2\beta_0                     \\
+        e^{-i\varphi}\sin 2 \beta _0                    \\
+        \frac{1}{\sqrt{6}}\left(1+3\cos 2\beta_0\right) \\
+        -e^{i\varphi} \sin 2 \beta _0                   \\
+        e^{2i\varphi}\sin^2\beta_0
     \end{pmatrix}, \label{eq: UN-SV-spinor}               \\
      & \zeta^\text{BN}_\text{sv} =
     \frac{1}{\sqrt{8}}
     \begin{pmatrix}
-        \exp(-i\varphi)\left(\cos^2\beta_0 + 1\right)                        \\
-        - \exp(-i\frac{\varphi}{2})\sin 2 \beta _0                           \\
-        \sqrt{6}\sin^2\beta_0                                                \\
-        \exp(i\frac{\varphi}{2})\sin 2 \beta _0                              \\
-        \exp(i\varphi)\left(\cos^2\beta_0 + 1\right)\label{eq: BN-SV-spinor} \\
+        e^{-2i\varphi}\left(\cos^2\beta_0 + 1\right) \\
+        - e^{-i\varphi}\sin 2 \beta _0               \\
+        \sqrt{6}\sin^2\beta_0                        \\
+        e^{i\varphi}\sin 2 \beta _0                  \\
+        e^{2i\varphi}\left(\cos^2\beta_0 + 1\right)
     \end{pmatrix},
 \end{align}
 In particular, spin vortices arise in both components for
@@ -317,11 +319,12 @@ can be found by choosing \(\chi = \chi_2 + \chi_{-2} + 2\chi_0 = \pi \) in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor}, namely
 \begin{equation}\label{eq: C-N-interpolating-spinor}
     \zeta^\mathrm{C-N} = \mqty(
-    \frac{\sqrt{1 + \eta}}{2} \\
+    e^{i\chi_2}D_- \\
     0 \\
-    \sqrt{\frac{1 - \eta}{2}} \\
+    ie^{i\chi_0}\sqrt{2}D_+ \\
     0 \\
-    \frac{\sqrt{1 + \eta}}{2}),
+    e^{i\chi_{-2}}D_-),
+    \quad D_\pm = \sqrt{1\pm\eta},
 \end{equation}
 where \(\eta = 10q/(|c_2|n)\).
 The quadratic Zeeman shift can be used to interpolate the above solution between
@@ -370,18 +373,29 @@ where \(\delta \) is an angle.
 This spin rotation with \(\delta = \varphi \), along with \(\tau=0\), can then
 be applied to the interpolating in Eq.~\eqref{eq: C-N-interpolating-spinor} to
 produce
-\begin{equation}\label{eq: C-BN-SV2-SV2}
-    \zeta_\text{sv} = \frac{1}{4}\mqty(
-    2 D_- \cos \varphi+ \sqrt{3} D_+ \sin ^2\varphi \\
-    2 e^{\frac{i \pi }{4}} \sin \varphi \left(
-    -D_-+\sqrt{3} D_+ \cos \varphi\right)\\
-    i D_+ (3 \cos2\varphi+1)/\sqrt{2}\\
-    2 e^{\frac{i \pi }{4}} \sin \varphi \left(
-    \sqrt{3} D_+ \cos \varphi+ D_-\right)\\
-    2 D_- \cos \varphi-\sqrt{3} D_+ \sin ^2\varphi
+\begin{gather}
+    \zeta_\mathrm{sv} = \frac{1}{\sqrt{2}}\left(
+    iD_+\zeta^\mathrm{UN}_\mathrm{sv} +
+    D_-\zeta^\mathrm{BN}_\mathrm{sv}
+    \right), \label{eq: C-BN-SV-SV-spinor} \\
+    \zeta^\mathrm{UN}_\mathrm{sv} = \sqrt{\frac{3}{8}}
+    \mqty(
+    \sin^2 \varphi \\
+    e^{\frac{i\pi }{4}} \sin 2\varphi \\
+    \frac{i}{\sqrt{6}}\left(1 + 3\cos 2\varphi \right)\\
+    e^{-\frac{i \pi }{4}} \sin2 \varphi \\
+    -\sin^2 \varphi
+    ), \\
+    \zeta^\mathrm{BN}_\mathrm{sv} = \frac{1}{\sqrt{2}}
+    \mqty(
+    \cos \varphi \\
+    e^{-\frac{3i\pi }{4}} \sin \varphi \\
+    0\\
+    e^{-\frac{i \pi }{4}} \sin \varphi \\
+    \cos \varphi
     ),
-\end{equation}
-which yields integer spin vortices in both the cyclic and nematic limits.
+\end{gather}
+which yields integer spin vortices in the cyclic and both nematic limits.
 The same spinor can be constructed from Eq.~\eqref{eq: spin-rotation-action}
 with \(\alpha=-\gamma=\pi/4\) and \(\beta = \varphi \).
 
@@ -400,12 +414,17 @@ Zero transverse magnetisation then implies we have
 The final solution reads
 \begin{equation}\label{eq: C-FM-interpolating-spinor}
     \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\mqty(
-    \sqrt{1 + f_z} \\
+    e^{i\chi_2}D_2 \\
     0 \\
     0 \\
-    \sqrt{2 - f_z} \\
+    e^{i\chi_{-1}}D_{-1} \\
     0
-    ),
+    ), \qquad
+    \mqty{
+        D_2 = \sqrt{1 + f_z} \\
+        D_{-1} = \sqrt{2 - f_z}
+    }
+    ,
 \end{equation}
 where \(f_z\) gives the \(z\)-component of the spin vector.
 At zero magnetisation, \(f_z = 0\), this solution is precisely the two-component
@@ -503,26 +522,31 @@ Eq.~\eqref{eq: C-FM-interpolating-spinor} yields
     + D_{-1}\zeta^\text{|F|=1}_\text{cl}\right),
 \end{equation}
 where
-\begin{equation}\label{eq: C-FM-coreless-FM-limits}
+\begin{align}\label{eq: C-FM-coreless-FM-limits}
     \zeta^{|F|=2}_\text{cl} =
     \mqty(
-    \cos^4\frac{\beta}{2} \\
-    2e^{i\varphi}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2} \\
-    \sqrt{6}e^{2i\varphi}\cos^2\frac{\beta}{2}\sin^2\frac{\beta}{2} \\
-    2e^{3i\varphi}\cos\frac{\beta}{2}\sin^3\frac{\beta}{2} \\
-    e^{4i\varphi}\sin^4\frac{\beta}{2}
-    ), \qquad
+    \cos^4\frac{\beta(\rho)}{2}                                        \\
+    2e^{i\varphi}\cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2}  \\
+    \sqrt{6}e^{2i\varphi}\cos^2\frac{\beta(\rho)}{2}\sin^2
+    \frac{\beta(\rho)}{2}                                              \\
+    2e^{3i\varphi}\cos\frac{\beta(\rho)}{2}\sin^3\frac{\beta(\rho)}{2} \\
+    e^{4i\varphi}\sin^4\frac{\beta(\rho)}{2}
+    ),
+\end{align}
+\begin{align}
     \zeta^{|F|=1}_\text{cl} =
     \mqty(
-    -\cos\frac{\beta}{2}\sin^3\frac{\beta}{2} \\
-    e^{i\varphi}\sin^2\frac{\beta}{2}\left(\cos^2\frac{\beta}{2}
-    -\sin^2\frac{\beta}{2}\right) \\
-    -\sqrt{\frac{3}{8}}e^{2i\varphi}\sin2\beta \\
-    e^{3i\varphi}\cos^2\frac{\beta}{2}\left(\cos^2\frac{\beta}{2}
-    -3\sin^2\frac{\beta}{2}\right) \\
-    2e^{4i\varphi}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2}
+    -2\cos\frac{\beta(\rho)}{2}\sin^3\frac{\beta(\rho)}{2}         \\
+    e^{i\varphi}\sin^2\frac{\beta(\rho)}{2}\left(3\cos^2
+    \frac{\beta(\rho)}{2}-\sin^2\frac{\beta(\rho)}{2}\right)       \\
+    \sqrt{6}e^{2i\varphi}\left(\cos\frac{\beta(\rho)}{2}\sin^3
+    \frac{\beta(\rho)}{2}
+    - \cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2} \right) \\
+    e^{3i\varphi}\cos^2\frac{\beta(\rho)}{2}\left(\cos^2
+    \frac{\beta(\rho)}{2}-3\sin^2\frac{\beta(\rho)}{2}\right)      \\
+    2e^{4i\varphi}\cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2}
     )
-\end{equation}
+\end{align}
 represent coreless vortices in both the FM-2 and FM-1 limits, respectively.
 The spherical harmonic representation of these coreless vortices are shown
 in Fig.~\ref{subfig: C-FM-FM2-coreless},~\ref{subfig: C-FM-FM1-coreless}.
@@ -546,7 +570,8 @@ in Fig.~\ref{subfig: C-FM-FM2-coreless},~\ref{subfig: C-FM-FM1-coreless}.
     \caption[Spherical harmonic representation of a coreless vortex connection
         across a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-coreless-initial-states}Spherical harmonic
-        representation of the interface in Eq.~\eqref{eq: C-FM-coreless-general}.
+        representation of the topological defects obtained in the cyclic, FM-1,
+        and FM-2 limits in Eq.~\eqref{eq: C-FM-coreless-general}.
         (a) and (b): Coreless vortex in the FM-2 and FM-1 limit, respectively,
         given by Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
         (c): Doubly quantised vortex in the cyclic limit, given by
@@ -573,8 +598,12 @@ then Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0 = 0\).
 The resulting stationary solution has the form
 \begin{equation}\label{eq: FM-BN-interpolating-spinor}
     \zeta^\text{FM-BN} = \frac{1}{\sqrt{2}}\mqty(
-    \sqrt{1 + \frac{f_z}{2}} \\ 0 \\ 0 \\ 0 \\
-    \sqrt{1 - \frac{f_z}{2}}),
+    e^{i\chi_2} D_+ \\
+    0 \\
+    0 \\
+    0 \\
+    e^{i\chi_{-2}}D_-),
+    \quad D_\pm =\sqrt{1 \pm \frac{f_z}{2}},
 \end{equation}
 where \(f_z\) gives the longitudinal magnetisation.
 The energy of this interpolating spinor reads
@@ -741,10 +770,11 @@ in the BN limit (see Fig.~\ref{fig: BN-DQV}).
     \caption[Spherical harmonic representation of a biaxial nematic doubly
         quantised vortex]
     {\label{fig: BN-DQV} Spherical harmonic
-        representation of the vortex configuration given by
+        representation of the BN vortex configuration given by
         Eq.~\eqref{eq: FM-BN-DQV}.
-        We see that the winding of the condensate phase by \(4\pi \) about the
-        core indicates this is a doubly quantised vortex.}
+        A \(4\pi \) winding of the condensate phase about the core indicates
+        this is a doubly quantised vortex, coupled with a non-trivial rotation
+        of the condensate spin.}
 \end{figure}
 By tracing a point about the vortex line, the phase changes by a total of
 \(4\pi \) indicating a doubly quantised vortex.
@@ -905,10 +935,15 @@ imaginary-time relaxation are plotted in Fig.~\ref{fig: UN-BN-VF-SQV}.
         \caption{}
     \end{subfigure}
     \caption[Dynamics of a singly quantised vortex to vortex-free connection in
-        a uniaxial nematic to biaxial nematic interface]
+    a uniaxial nematic to biaxial nematic interface]
     {\label{fig: UN-BN-VF-SQV} Vortex-free to SQV connection defined
-        by Eq.~\eqref{eq: UN-BN-SQV-SQV} with \(\beta=0\) and artificially
-        removing the winding from the middle component.}
+    by Eq.~\eqref{eq: UN-BN-SQV-SQV} with \(\beta=0\) and no winding in the
+    middle component.
+    (a): Spin magnitude at \(\bar{t}=5\). The HQV cores are identified where
+    \(\spinmag = 2\).
+    (b): Spin-singlet trio amplitude at \(\bar{t} = 5\). A cyclic region is
+    revealed where \(|A_{30}|^2 = 2\), which arises due to phase differences
+    (see Fig~\ref{fig: UN-BN-duo-trio}).}
 \end{figure}
 The dynamics of this connection closely resembles what the later dynamics of the
 BN side of the SQV-SQV connection would look like, provided that the vortices
