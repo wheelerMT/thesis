@@ -65,5 +65,8 @@ plot = ax.imshow(
 constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01, location="left")
 ax.yaxis.tick_right()
 constz_cbar.set_ticks([0, 1, 2])
-constz_cbar.set_ticklabels(["0", "1", "2"])
+constz_cbar.set_ticklabels([r"$0$", r"$1$", r"$2$"])
+constz_cbar.set_label(r"$|A_{30}|^2$")
+
 plt.savefig("gfx/ch-spin2/UN-BN_SQV-SQV_a30_UN.pdf", bbox_inches="tight")
+plt.show()
