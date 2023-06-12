@@ -28,26 +28,6 @@ zetap2, zetap1, zeta0, zetam1, zetam2 = helper.normalise_wfn(
     psip2, psip1, psi0, psim1, psim2
 )
 
-path = Path("../../../../../../../thesis_code/data/spin-2")
-filename = "49f_UN-BN_VF-SQV.hdf5"
-
-# Load data
-data = h5py.File(path / filename, "r")
-x, y, z = data["grid/x"], data["grid/y"], data["grid/z"]
-X, Y, Z = np.meshgrid(x, y, z, indexing="ij")
-dx, dy, dz = x[1] - x[0], y[1] - y[0], z[1] - z[0]
-
-frame = -1
-psip2 = data["wavefunction/psiP2"][:, :, :, frame]
-psip1 = data["wavefunction/psiP1"][:, :, :, frame]
-psi0 = data["wavefunction/psi0"][:, :, :, frame]
-psim1 = data["wavefunction/psiM1"][:, :, :, frame]
-psim2 = data["wavefunction/psiM2"][:, :, :, frame]
-
-zetap2, zetap1, zeta0, zetam1, zetam2 = helper.normalise_wfn(
-    psip2, psip1, psi0, psim1, psim2
-)
-
 # Tophat for smoothing plots
 sigma = 0.5
 c0 = 1.32e4
@@ -82,5 +62,6 @@ plot = ax.imshow(
 ax.plot([-7, 7], [0, 0], "w--", linewidth=3)
 constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01, location="right")
 constz_cbar.set_ticks([0, 1, 2])
-constz_cbar.set_ticklabels(["0", "1", "2"])
+constz_cbar.set_ticklabels([r"$0$", r"$1$", r"$2$"])
+constz_cbar.set_label(r"$|A_{30}|^2$")
 plt.savefig("gfx/ch-spin2/UN-BN_VF-SQV_a30.pdf", bbox_inches="tight")
