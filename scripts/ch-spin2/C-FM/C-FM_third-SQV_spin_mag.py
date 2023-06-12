@@ -59,5 +59,6 @@ ax.yaxis.tick_right()
 constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01, location="left")
 constz_cbar.set_ticks([0, 1, 2])
 constz_cbar.set_ticklabels([r"$0$", r"$1$", r"$2$"])
+constz_cbar.set_label(r"$|\langle \hat{\mathbf{F}}\rangle|$")
 
 plt.savefig("gfx/ch-spin2/C-FM=2_third-SQV_spin_mag.pdf", bbox_inches="tight")

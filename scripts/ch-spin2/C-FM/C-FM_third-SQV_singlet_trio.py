@@ -62,6 +62,7 @@ ax.plot([-7, 7], [0, 0], "w--", linewidth=3)
 constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01)
 constz_cbar.set_ticks([0, 1, 2])
 constz_cbar.set_ticklabels([r"$0$", r"$1$", r"$2$"])
+constz_cbar.set_label(r"$|A_{30}|^2$")
 
 plt.savefig(
     "gfx/ch-spin2/C-FM=2_third-SQV_singlet_trio.pdf", bbox_inches="tight"
