@@ -1,4 +1,43 @@
 \chapter{Vortex connections across topological interfaces}\label{chap: spin-2}
+Topological interfaces may form at the phase boundary between topologically
+distinct phases that are described by different order parameters.
+In such an interface, the phases can exist in a coherent and order medium, in
+which the different symmetries connect smoothly across the boundary.
+Such interfaces arise in many areas of physics, such as the context of domain
+walls in the early universe~\cite{Zeldovich1975,Kibble1976,Kibble1980}, where
+they may form the termination points of cosmic strings~\cite{Vilenkin1985},
+brane models in superstring theory~\cite{Dvali1999,Sarangi2002,Gudnason2015},
+the \(A\)--\(B\) phase boundary in superfluid liquid \(^3\)He~\cite{
+    Osheroff1977,Yip1986,Salomaa1987,Finne2006,Bradley2007,Volovik2009}, via
+atomic Bose-Einstein condensates (BECs)~\cite{Takeuchi2006,Kasamatsu2010,
+    Borgh2012,Borgh2013, Borgh2014,Kaneda2014}, and even quantum
+chromodynamics~\cite{Alford2001,Cipriani2012,Eto2014}.
+The differing order parameter symmetry on each side of the interface implies
+that families of vastly different defects and textures may exist, and therefore
+cannot cross the interface unchanged.
+Instead, the defect must either terminate at the boundary, or continuously
+and non-trivially connect to an object representing a different topology on the
+other side of the interface.
+
+Since Spinor BECs carry a rich phase diagram which support a wide family of
+topological defects exhibiting different order parameter symmetries, they become
+an ideal test bed for investigating interface physics~\cite{Borgh2012,Borgh2013,
+    Borgh2014}.
+Such defects include singular vortices carrying both integer~\cite{Yip1999,
+    Isoshima2002,Mizushima2002a,Zhou2003,Sadler2006,Semenoff2007,Kobayashi2009,
+    Lovegrove2012,Lovegrove2016,Borgh2016a,Weiss2019,Xiao2021,Xiao2022} and
+fractional~\cite{Leonhardt2000,Ji2008,Seo2015,Semenoff2007,Lovegrove2012,
+    Lovegrove2016,Borgh2016a,Borgh2017,Xiao2021,Xiao2022} charges, as well as
+non-singular vortices (2D Skyrmions)~\cite{Ohmi1998, Ho1998, Mizushima2002,
+    Martikainen2002, Leanhardt2003, Mizushima2004, Choi2012, Choi2012a,
+    Lovegrove2014,Weiss2019}, wall-vortex complexes~\cite{Kang2019,
+    Takeuchi2021}, and monopoles~\cite{Stoof2001,
+    Savage2003,Ruostekoski2003,Pietila2009,Ray2014,Ray2015,Ollikainen2017,
+    Mithun2022}.
+In addition, non-Abelian defects, whose charges depend on other defects within
+the system, may arise when the medium on either or both sides of the interface
+exhibits point-group order parameter symmetry~\cite{Xiao2022}.
+
 In this chapter, we both analytically and numerically investigate the physics
 of topological defects when connected across topological interfaces in spin-2
 Bose-Einstein condensates.
@@ -21,16 +60,85 @@ Our results suggest the spin-2 Bose-Einstein condensates as experimentally
 accessible test beds for interface physics with all combinations of continuous
 and discrete symmetries, as well as phases supporting non-Abelian defects.
 
-\section{Introduction to topological interfaces}
-
 \section{Interface crossing solutions in a spin-2 BEC}
+In a continuous spinor superfluid, it is possible for distinct phases with
+varying order parameter symmetry to coexist.
+This situation can arise, for example, due to energy relaxation in vortex core
+structures~\cite{Ruostekoski2003,Lovegrove2012,Lovegrove2016,Borgh2016,
+    Borgh2016a, Weiss2019,Xiao2021,Xiao2022}.
+In a spin-2 BEC, the three contributions to the interaction energy each give
+rise to a healing length, which describe, respectively, the distance over which
+perturbations of the superfluid density, condensate spin, and singlet duo
+amplitude heal to the bulk value:
+\begin{equation}
+    \xi_d=\ell \sqrt{\frac{\hbar\omega}{2nc_0}},
+    \enskip \xi_F=\ell \sqrt{\frac{\hbar\omega}{2n|c_1|}},
+    \enskip \xi_a=\ell \sqrt{\frac{\hbar\omega}{2n|c_2|}},
+    \label{eq: spin-2-healing-lengths}
+\end{equation}
+where \(\ell = {(\hbar/M\omega)}^{1/2}\) is the harmonic oscillator length.
+Typically, \(\xi_F,\xi_a > \xi_d\), allowing the core of singular vortices
+to reduce its energy by expanding and filling with a different superfluid
+phase~\cite{Ruostekoski2003}.
+The condensate wave function then smoothly interpolates between the coexisting
+phases in the bulk superfluid and the defect core, establishing a topological
+interface between them.
+
+It is also possible to design a topological interface to divide a continuous
+superfluid into spatially distinct bulk regions with various order parameter
+symmetries.
+This can be done, for instance, by spatially varying the Hamiltonian's
+parameters, causing the condensate to seek a different ground state in each
+region.
+If the parameter fluctuation is sufficiently acute, then the wave function will
+interpolate between the bulk phases across a distance given by the appropriate
+healing length.
+
+In addition, as proposed for the spin-1 system~\cite{Borgh2014}, linear \(p\)
+and quadratic \(q\) Zeeman shifts form the basis for engineering interpolating
+solutions that model the topological interface.
+Such steady-state solutions are found from the mean-field Hamiltonian density
+functional in Eq. (\textcolor{red}{No full spin-2 Hamiltonian in paper, either
+    put here or back in Chapter 2}) for a uniform system in the presence of an
+external magnetic field using the relation \(\delta \mathcal{H}
+/ \delta \zeta_m^*=0\).
+This yields~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: spin-2-GPEs-time-reversal}
+    \left[-p \hat{F}_z + q \hat{F}^2_z + nc_0 \, \zeta^\dagger \zeta
+        + nc_1 \, \langle\hat{\vb{F}}\rangle\cdot\hat{\vb{F}}
+        + \frac{nc_2}{5}{(\hat{\mathcal{T}}\zeta)}^\dagger \,
+        \zeta\hat{\mathcal{T}} -\mu \right] \zeta = 0,
+\end{equation}
+where \(\mu \) is the chemical potential and \(\hat{\mathcal{T}}\) is a
+time-reversal operator defined as \({(\hat{\mathcal{T}}\zeta)}_m =
+{(-1)}^m\zeta_{-m}^*\).
+Eq.~\eqref{eq: spin-2-GPEs-time-reversal} presents a non-linear system of
+equations that can be solved for the unknown
+\(\zeta_m\)~\cite{Ciobanu2000,Kawaguchi2012}.
+
+Defect states for a given spin-2 phase can, in principle, be constructed from
+the representative spinor by defining an appropriate azimuthal phase winding,
+\(\varphi \), in each component, i.e., \(\text{Arg}(\zeta_m) =l_m\varphi \),
+\(l_m \in \mathbb{Z}\).
+Here, however, we construct a unitary framework which is applicable for
+constructing defect states across topological interfaces in a spin-2 BEC.
+A defect state can be constructed from a uniform state by applying a global
+phase winding, \(\tau \), coupled with a spin rotation defined by three Euler
+angles \((\alpha, \beta, \gamma)\) as in Eq.~\eqref{eq: spin-2-rotation-matrix}.
+When the same transformation is supported by two phases, A and B, of a spin-2
+system, a defect connection across an interface between the two phases is given
+as
+\begin{align}\label{eq: general-defect-interface}
+    \zeta = e^{i\tau}\,\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B}.
+\end{align}
+
 As discussed in Chapter~\ref{chap: ground-states}, the spin-2 BEC gives rise to
 three ground state phases in the absence of a magnetic field: Ferromagnetic,
 nematic, and cyclic.
-In addition to these states, additional steady-state solutions that arise in
-the presence of Zeeman shifts~\cite{Kawaguchi2012}.
+In addition to these states, additional steady-state solutions that in the
+presence of Zeeman shifts~\cite{Kawaguchi2012}.
 Here, we derive a subset of the stationary solutions that offer interpolating
-solutions between different ground states.
+order parameters between different ground states.
 
 Stationary solutions of the spin-2 GPEs are obtained by substituting
 \(\psi_m = \sqrt{n}\zeta_m e^{-i\mu t/\hbar}\) into
@@ -215,7 +323,7 @@ A representative example with \(\alpha = \gamma = 0\) is given by
 \begin{align}\label{eq: UN-BN-SQV-SQV}
     \zeta_\text{sqv}^\text{UN-BN} & =
     \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sqv}
-    + D_-\zeta^\text{BN}_\text{sqv}\right),                       \\
+    + D_-\zeta^\text{BN}_\text{sqv}\right),                        \\
     \zeta^\text{UN}_\text{sqv}    & =
     \sqrt{\frac38}e^{i\varphi}
     \begin{pmatrix}
@@ -278,7 +386,7 @@ Eq.~\eqref{eq: spin-rotation-action}, resulting in the spinor
         \frac{1}{\sqrt{6}}\left(1+3\cos 2\beta_0\right) \\
         -e^{i\varphi} \sin 2 \beta _0                   \\
         e^{2i\varphi}\sin^2\beta_0
-    \end{pmatrix}, \label{eq: UN-SV-spinor}               \\
+    \end{pmatrix}, \label{eq: UN-SV-spinor}              \\
      & \zeta^\text{BN}_\text{sv} =
     \frac{1}{\sqrt{8}}
     \begin{pmatrix}
@@ -361,7 +469,7 @@ connection between spin vortices that arises due to a shared symmetry between
 the cyclic and BN phases.
 In particular, the common axis of symmetry is given by \(\hat{\vb{e}}_{(1,1,0)}=
 (\hat{\vb{x}} + \hat{\vb{y}}) / \sqrt{2}\) (see \(C_2'\) axis in
-Fig.~\ref{subfig: BN-spherical}).
+Fig.~\ref{fig: spin-2-spherical-harmonics}d).
 A spin rotation around this axis is given by
 \begin{equation}\label{eq: C-BN-sv-rot}
     \hat{U}\left(\hat{\vb{e}}_{(1,1,0)}, \delta\right) =
@@ -547,24 +655,26 @@ where
 \end{align}
 represent coreless vortices in both the FM-2 and FM-1 limits, respectively.
 The spherical harmonic representation of these coreless vortices are shown
-in Fig.~\ref{subfig: C-FM-FM2-coreless},~\ref{subfig: C-FM-FM1-coreless}.
+in Fig.~\ref{fig: C-FM-coreless-initial-states}a,
+~\ref{fig: C-FM-coreless-initial-states}b.
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}
-        \caption{\label{subfig: C-FM-FM2-coreless}}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/FM-1_coreless_init_state.pdf}
-        \caption{\label{subfig: C-FM-FM1-coreless}}
-    \end{subfigure}\\
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}
-        \caption{\label{subfig: C-FM-cyclic-DQV}}
-    \end{subfigure}
+    \begin{tikzpicture}
+        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_FM_init_spherical.pdf}};
+        \node at (7.5, 0) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-spin2/FM-1_coreless_init_state.pdf}};
+        \node at (3.75, -4) {\includegraphics[width=0.45\textwidth]
+            {gfx/ch-spin2/C-FM=2_coreless_cyclic_init_spherical.pdf}};
+
+        % Colour bar
+        \node at (3.25, 2.3){\includegraphics{gfx/colourbars/compiled_hsv.pdf}};
+
+        % Labels
+        \node at (0, -2.2) {(a)};
+        \node at (7.5, -2.2) {(b)};
+        \node at (3.75, -6.2) {(c)};
+    \end{tikzpicture}
     \caption[Spherical harmonic representation of a coreless vortex connection
         across a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-coreless-initial-states}Spherical harmonic
@@ -582,7 +692,7 @@ The resulting spinor in the cyclic limit is
     + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}\right) / 3.
 \end{equation}
 The spherical harmonic representation of this cyclic state is plotted in
-Fig.~\ref{subfig: C-FM-cyclic-DQV}.
+Fig.~\ref{fig: C-FM-coreless-initial-states}c.
 By tracing a point about the vortex core, the condensate phase winds by a total
 of \(4\pi \), indicating that this is a doubly-quantised vortex.
 
