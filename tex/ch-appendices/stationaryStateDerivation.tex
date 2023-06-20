@@ -1,0 +1,80 @@
+\chapter{Derivation of stationary solutions in a spin-2 Bose-Einstein
+  condensate}\label{appendix: stationary}
+
+Stationary solutions of the spin-2 GPEs are obtained by substituting
+\(\psi_m = \sqrt{n}\zeta_m e^{-i\mu t/\hbar}\) into
+Eqs.~\eqref{eq: spin-2-GPEs-pm2}-\eqref{eq: spin-2-GPEs-0}.
+Assuming a uniform system (\(V(\vb{r}) = 0\)), this results in
+\begin{align}
+    \mu\zeta_2    & = \left(-2p + 4q + c_0n +2c_1nf_z\right)\zeta_2
+    + c_1nf_-\zeta_1 + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},            \\
+    \mu\zeta_1    & = \left(-p + q + c_0n +c_1nf_z\right)\zeta_1
+    + c_1\left(\frac{\sqrt{6}}{2}nf_-\zeta_0 +nf_+\zeta_2\right)
+    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},                             \\
+    \mu\zeta_0    & = c_0n\zeta_0 + \frac{\sqrt{6}}{2}c_1\left(nf_+\zeta_1
+    + nf_-\zeta_{-1}\right) + \frac{c_2}{\sqrt{5}}na_{00}\zeta_0^*,        \\
+    \mu\zeta_{-1} & = \left(p + q + c_0n - c_1nf_z\right)\zeta_{-1}
+    + c_1\left(\frac{\sqrt{6}}{2}nf_+\zeta_0 +nf_-\zeta_{-2}\right)
+    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{1},                              \\
+    \mu\zeta_{-2} & = \left(2p + 4q + c_0n - 2c_1nf_z\right)\zeta_{-2}
+    + c_1nf_+\zeta_{-1} + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{2}.
+\end{align}
+
+We can choose the overall phase such that \(\zeta_0\) is real.
+In addition, since the system is assumed to be symmetric about the \(z\)-axis,
+we can let \(f_y=0\) without loss of generality.
+\textcolor{red}{Need to convince myself on this last assumption.}
+We consider the specific case where the transverse magnetisation is zero
+\(f_{\pm} = 0\), which is valid for \(q < 0\).
+Assuming the above, the stationary equations can be transformed into the
+following simplified set of equations:
+\begin{align}
+    0 & = (-2p + 4q + c_0n + 2c_1nf_z - \mu)\zeta_2
+    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},
+    \label{eq: spin-2-stationary-zeta2}                                 \\
+    0 & = (2p + 4q + c_0n - 2c_1nf_z - \mu)\zeta_{-2}
+    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_{2},
+    \label{eq: spin-2-stationary-zetam2}                                \\
+    0 & = (-p + q + c_0n + c_1nf_z - \mu)\zeta_1
+    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},
+    \label{eq: spin-2-stationary-zeta1}                                 \\
+    0 & = (p + q + c_0n - c_1nf_z - \mu)\zeta_{-1}
+    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_1,
+    \label{eq: spin-2-stationary-zetam1}                                \\
+    0 & = \left(c_0n + \frac{c_2}{\sqrt{5}}na_{00} - \mu\right)\zeta_0.
+    \label{eq: spin-2-stationary-zeta0}
+\end{align}
+
+Noting that the above equations are decoupled in three parts, we can construct
+the following matrix equations relating to
+Eqs.~\eqref{eq: spin-2-stationary-zeta2}-\eqref{eq: spin-2-stationary-zetam2}
+and Eqs.~\eqref{eq: spin-2-stationary-zeta1}
+-~\eqref{eq: spin-2-stationary-zetam1}, respectively, as
+\begin{align}
+    \mqty(4q + 2\beta -\tilde{\mu} & \tilde{\alpha}                    \\
+    \tilde{\alpha}^*               & 4q - 2\tilde{\beta} -\tilde{\mu})
+    \mqty(\zeta_2                                                      \\
+    \zeta_{-2}^*)                  & = 0, \label{eq: zeta-pm2-matrix}  \\
+    \mqty(q + \beta -\tilde{\mu}   & -\tilde{\alpha}                   \\
+    -\tilde{\alpha}^*              & q - \tilde{\beta} -\tilde{\mu})
+    \mqty(\zeta_1                                                      \\
+    \zeta_{-1}^*)                  & = 0, \label{eq: zeta-pm1-matrix}
+\end{align}
+with Eq.~\eqref{eq: spin-2-stationary-zeta0} being recast as
+\begin{equation}\label{eq: spin-2-stationary-zeta0-recast}
+    (\alpha - \tilde{\mu})\zeta_0 = 0.
+\end{equation}
+Here, \(\tilde{\mu} = \mu - c_0n\), \(\tilde{\alpha} = c_2na_{20}/\sqrt{5}\) and
+\(\tilde{\beta} = c_1nf_z - p\).
+The stationary solutions are then classified according to the determinant of
+the coefficient matrices of the above equations.
+Explicitly, these are
+\begin{align}
+    D_2 & = {(4q-\tilde{\mu})}^2 -4\tilde{\beta}^2 - |\tilde{\alpha}|^2,
+    \label{eq: D2}                                                        \\
+    D_1 & = {(q - \tilde{\mu})}^2 - \tilde{\beta}^2 - |\tilde{\alpha}|^2.
+    \label{eq: D1}
+\end{align}
+From these determinants and Eq.~\eqref{eq: spin-2-stationary-zeta0-recast},
+we can derive stationary solutions that interpolate between different ground
+states of the spin-2 system.

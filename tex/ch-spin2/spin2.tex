@@ -132,98 +132,19 @@ as
     \zeta = e^{i\tau}\,\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B}.
 \end{align}
 
-As discussed in Chapter~\ref{chap: ground-states}, the spin-2 BEC gives rise to
-three ground state phases in the absence of a magnetic field: Ferromagnetic,
-nematic, and cyclic.
-In addition to these states, additional steady-state solutions that in the
-presence of Zeeman shifts~\cite{Kawaguchi2012}.
-Here, we derive a subset of the stationary solutions that offer interpolating
-order parameters between different ground states.
-
-Stationary solutions of the spin-2 GPEs are obtained by substituting
-\(\psi_m = \sqrt{n}\zeta_m e^{-i\mu t/\hbar}\) into
-Eqs.~\eqref{eq: spin-2-GPEs-pm2}-\eqref{eq: spin-2-GPEs-0}.
-Ignoring the kinetic energy term and taking \(V(\vb{r}) = 0\), this results
-in
-\begin{align}
-    \mu\zeta_2    & = \left(-2p + 4q + c_0n +2c_1nf_z\right)\zeta_2
-    + c_1nf_-\zeta_1 + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},            \\
-    \mu\zeta_1    & = \left(-p + q + c_0n +c_1nf_z\right)\zeta_1
-    + c_1\left(\frac{\sqrt{6}}{2}nf_-\zeta_0 +nf_+\zeta_2\right)
-    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},                             \\
-    \mu\zeta_0    & = c_0n\zeta_0 + \frac{\sqrt{6}}{2}c_1\left(nf_+\zeta_1
-    + nf_-\zeta_{-1}\right) + \frac{c_2}{\sqrt{5}}na_{00}\zeta_0^*,        \\
-    \mu\zeta_{-1} & = \left(p + q + c_0n - c_1nf_z\right)\zeta_{-1}
-    + c_1\left(\frac{\sqrt{6}}{2}nf_+\zeta_0 +nf_-\zeta_{-2}\right)
-    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{1},                              \\
-    \mu\zeta_{-2} & = \left(2p + 4q + c_0n - 2c_1nf_z\right)\zeta_{-2}
-    + c_1nf_+\zeta_{-1} + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{2}.          \\
-\end{align}
-
-We can choose the overall phase such that \(\zeta_0\) is real.
-In addition, since the system is assumed to be symmetric about the \(z\)-axis,
-we can let \(f_y=0\) without loss of generality.
-\textcolor{red}{Need to convince myself on this last assumption.}
-We consider the specific case where the transverse magnetisation is zero
-\(f_{\pm} = 0\), which is valid for \(q < 0\)
-Assuming the above, the stationary equations can be transformed into the
-following simplified set of equations:
-\begin{align}
-    0 & = (-2p + 4q + c_0n + 2c_1nf_z - \mu)\zeta_2
-    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},
-    \label{eq: spin-2-stationary-zeta2}                                 \\
-    0 & = (2p + 4q + c_0n - 2c_1nf_z - \mu)\zeta_{-2}
-    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_{2},
-    \label{eq: spin-2-stationary-zetam2}                                \\
-    0 & = (-p + q + c_0n + c_1nf_z - \mu)\zeta_1
-    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},
-    \label{eq: spin-2-stationary-zeta1}                                 \\
-    0 & = (p + q + c_0n - c_1nf_z - \mu)\zeta_{-1}
-    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_1,
-    \label{eq: spin-2-stationary-zetam1}                                \\
-    0 & = \left(c_0n + \frac{c_2}{\sqrt{5}}na_{00} - \mu\right)\zeta_0.
-    \label{eq: spin-2-stationary-zeta0}
-\end{align}
-
-Noting that the above equations are decoupled in three parts, we can construct
-the following matrix equations relating to
-Eqs.~\eqref{eq: spin-2-stationary-zeta2}-\eqref{eq: spin-2-stationary-zetam2}
-and Eqs.~\eqref{eq: spin-2-stationary-zeta1}
--~\eqref{eq: spin-2-stationary-zetam1}, respectively, as
-\begin{align}
-    \mqty(4q + 2\beta -\tilde{\mu} & \alpha                           \\
-    \alpha^*                       & 4q - 2\beta -\tilde{\mu})
-    \mqty(\zeta_2                                                     \\
-    \zeta_{-2}^*)                  & = 0, \label{eq: zeta-pm2-matrix} \\
-    \mqty(q + \beta -\tilde{\mu}   & -\alpha                          \\
-    -\alpha^*                      & q - \beta -\tilde{\mu})
-    \mqty(\zeta_1                                                     \\
-    \zeta_{-1}^*)                  & = 0, \label{eq: zeta-pm1-matrix}
-\end{align}
-with Eq.~\eqref{eq: spin-2-stationary-zeta0} being recast as
-\begin{equation}\label{eq: spin-2-stationary-zeta0-recast}
-    (\alpha - \tilde{\mu})\zeta_0 = 0.
-\end{equation}
-Here, \(\tilde{\mu} = \mu - c_0n\), \(\alpha = c_2na_{20}/\sqrt{5}\) and
-\(\beta = c_1nf_z - p\).
-The stationary solutions are then classified according to the determinant of
-the coefficient matrices of the above equations.
-Explicitly, these are
-\begin{align}
-    D_2 & = {(4q-\tilde{\mu})}^2 -4\beta^2 - |\alpha|^2, \label{eq: D2}  \\
-    D_1 & = {(q - \tilde{\mu})}^2 - \beta^2 - |\alpha|^2. \label{eq: D1}
-\end{align}
-From these determinants and Eq.~\eqref{eq: spin-2-stationary-zeta0-recast},
-we can derive stationary solutions that interpolate between different ground
-states of the spin-2 system.
+Through the subsequent sections we provide solutions that interpolate between
+different phases of a spin-2 BEC.\@
+Detailed derivations of each interpolating solution can be found in
+Appendix~\ref{appendix: stationary}.
 
 \subsection{Uniaxial nematic to biaxial nematic}\label{subsec: UN-BN-defects}
-Consider \(D_1 \neq 0\) and \(D_2 = 0\), then \(\zeta_1 = \zeta_{-1} = 0\).
-Furthermore, if \(\tilde{\mu} = \alpha \), then all of \(\zeta_{\pm 2}\) and
-\(\zeta_0\) can be non-zero.
-\textcolor{red}{Rest of derivation here.}
+We first focus on a family of solutions interpolating between the UN and BN
+phases.
+Such an interpolating solution comes from considering the case \(D_1 \neq 0\)
+and \(D_2 = 0\).
+In such a case, \(\zeta_1 = \zeta_{-1} = 0\), and, if \(\tilde{\mu} = \alpha \),
+then all of \(\zeta_{\pm 2}\) and \(\zeta_0\) can be non-zero.
 
-The final solution reads
 \begin{equation}\label{eq: UN-BN-interpolating-spinor}
     \zeta^\text{UN-BN} = \frac{1}{2}\mqty(
     e^{i\chi_2}D_- \\
@@ -233,7 +154,7 @@ The final solution reads
     e^{i\chi_{-2}}D_-
     ),
     \qquad
-    D_{\pm} = \sqrt{1 +\pm \eta},
+    D_{\pm} = \sqrt{1 \pm \eta},
 \end{equation}
 where \(\eta = 10q /|c_2|n \in [-1, 1]\) and \(\chi_m = \text{Arg}(\zeta_m)\)
 for component \(m\).
@@ -323,7 +244,7 @@ A representative example with \(\alpha = \gamma = 0\) is given by
 \begin{align}\label{eq: UN-BN-SQV-SQV}
     \zeta_\text{sqv}^\text{UN-BN} & =
     \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sqv}
-    + D_-\zeta^\text{BN}_\text{sqv}\right),                        \\
+    + D_-\zeta^\text{BN}_\text{sqv}\right),                       \\
     \zeta^\text{UN}_\text{sqv}    & =
     \sqrt{\frac38}e^{i\varphi}
     \begin{pmatrix}
@@ -386,7 +307,7 @@ Eq.~\eqref{eq: spin-rotation-action}, resulting in the spinor
         \frac{1}{\sqrt{6}}\left(1+3\cos 2\beta_0\right) \\
         -e^{i\varphi} \sin 2 \beta _0                   \\
         e^{2i\varphi}\sin^2\beta_0
-    \end{pmatrix}, \label{eq: UN-SV-spinor}              \\
+    \end{pmatrix}, \label{eq: UN-SV-spinor}               \\
      & \zeta^\text{BN}_\text{sv} =
     \frac{1}{\sqrt{8}}
     \begin{pmatrix}
