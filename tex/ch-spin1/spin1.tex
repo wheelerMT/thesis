@@ -66,8 +66,8 @@ discontinuous transitions.
 
 \section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
-control parameter, \( \lambda \), is ramped across a phase transition that occurs
-at the critical point, \( \lambda_c \).
+control parameter, \( \lambda \), is ramped across a phase transition that
+occurs at the critical point, \( \lambda_c \).
 A continuous, second-order phase transition can be characterized by a divergence
 of the equilibrium correlation length
 \begin{equation}
@@ -86,7 +86,8 @@ is the dimensionless distance from the critical point.
 The equilibrium relaxation time \( \tau \) describes the time it takes for the
 system to react to an external change of a parameter.
 In a quantum phase transition, the relaxation time is set by the inverse of an
-energy gap \( \Delta \) between the ground state and the first excited state [REFS]
+energy gap \( \Delta \) between the ground state and the first excited
+state~\cite{Zurek2005, Damski2006}.
 \begin{equation}
     \tau \simeq \Delta^{-1}.
 \end{equation}
@@ -95,14 +96,13 @@ As we approach the critical point, the energy gap vanishes as
     \Delta \sim |\epsilon|^{\nu z}.
 \end{equation}
 
-
 The system is initially prepared in a high-symmetry phase \(  \epsilon > 0 \),
 but breaks that symmetry as the critical point is crossed \(  \epsilon < 0 \).
 In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical
 and correlation length critical exponents, respectively.
 These exponents are determined by the universality class of the phase
 transition~\cite{Sachdev2011}, and different systems belonging to the same
-universality class share the same critical exponents. \par
+universality class share the same critical exponents.
 
 The KZM describes the dynamics of crossing the critical point when \( \lambda \)
 is continually varied.
@@ -256,9 +256,9 @@ We are interested in the phase transition that occurs between the
 broken-axisymmetry (BA) and ferromagnetic (FM) phases.
 The energy densities for the two states are given by~\cite{Kawaguchi2012}
 \begin{equation}
-    \epsilon_\mathrm{BA} = \frac{{(-p^2 + q^2 +2qc_2n)}^2}{8c_2nq^2}
+    \epsilon_\mathrm{BA} = \frac{{(-p^2 + q^2 +2qc_1n)}^2}{8c_1nq^2}
     + \frac{1}{2}c_0n, \qquad
-    \epsilon_\mathrm{FM_{\pm}} = \mp p + q + \frac{1}{2}n(c_0 + c_2),
+    \epsilon_\mathrm{FM_{\pm}} = \mp p + q + \frac{1}{2}n(c_0 + c_1),
 \end{equation}
 where \( \epsilon_\mathrm{FM_{\pm}} \) corresponds to the energy density in the
 FM phase for the spinor \( \zeta = {(1, 0, 0)}^T \) (+) and
@@ -268,7 +268,7 @@ continuous.
 The derivative of the above energies with respect to \( q \) yields
 \begin{equation}
     \pdv{\epsilon_\mathrm{BA}}{q} =
-    \frac{1}{4c_2n}\left(q - \frac{p^4}{q^3}\right) - \frac{p^2}{q^2}
+    \frac{1}{4c_1n}\left(q - \frac{p^4}{q^3}\right) - \frac{p^2}{q^2}
     + \frac{1}{2},
     \qquad
     \pdv{\epsilon_\mathrm{FM_{\pm}}}{q} = 1.
@@ -277,12 +277,12 @@ Indeed, there is a discontinuity in these derivatives at \( q=p=0 \), however,
 they still remain bounded.
 The relevant order parameter for this transition is given by
 \begin{equation}
-    m_\mathrm{BA} = \frac{p(p^2 - q^2 - 2qc_2n)}{8c_2nq},
+    m_\mathrm{BA} = \frac{p(p^2 - q^2 - 2qc_1n)}{8c_1nq},
     \qquad
     m_{\mathrm{FM}_{\pm}} = \pm 1,
 \end{equation}
-which is precisely the local magnetisation, \( F_z \), in both phases
-(\textcolor{red}{Link to the section discussing ground states}).
+which is precisely the local magnetisation, \( F_z \), in both phases (see
+Sec.~\ref{sec: ground-states-spin-1}).
 Again, one sees that at the critical point and for \( p=0 \) the order parameter
 becomes zero in the BA phase whilst becoming non-zero in the FM phase.
 In addition, as the linear Zeeman shift \( p \) is varied both above and below
@@ -381,8 +381,9 @@ BA phase, which is explicitly derived in Ref.~\cite{Uchino2010}.
 
 For simplicity, we now consider a 1D system.
 In the long-wavelength limit (\(k \rightarrow 0\)), the only non-zero (gapped)
-mode is given by \(E_{k, +}= \sqrt{4(c_1n)^2(1-\tilde{q})}\), which has the form
-\(E_{k, +} \sim \sqrt{{q_c^\prime}^2 - q^2}\), where \(q_c^\prime = 2c_1n\).
+mode is given by \(E_{k, +}= \sqrt{4{(c_1n)}^2(1-\tilde{q})}\), which has the
+form \(E_{k, +} \sim \sqrt{{q_c^\prime}^2 - q^2}\), where
+\(q_c^\prime = 2c_1n\).
 The relevant mode for the BA to FM transition can be found by considering the
 imaginary parts of the derived Bogoliubov energies (see
 Fig.~\ref{fig: dens-spin-energies}).
@@ -393,7 +394,7 @@ Fig.~\ref{fig: dens-spin-energies}).
         broken-axisymmetry phase of a spin-1 BEC]
     {Imaginary parts of the energies defined in Eq.~\eqref{eq: e_k-fz} and
     Eq.~\eqref{eq: e_k-pm} in a parameter space of mode \(k\) and
-    \( Q=q/|c_2|n \).\label{fig: dens-spin-energies}}
+    \( Q=q/|c_1|n \).\label{fig: dens-spin-energies}}
 \end{figure}
 For \(|Q|>2\), \(\text{Im}(E_{k, +})\) becomes non-zero, indicating an
 instability.
@@ -422,98 +423,122 @@ similar to Damski~\cite{Damski2007} and analytically determine the scaling
 behaviour of the system near the critical point.
 
 To begin, we start with a wave function close to the BA state
-\begin{equation}
-    \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q_0} + \delta\psi_{\pm 1}(t),
-    \qquad
-    \psi_0 = \frac{1}{2}\sqrt{2 + Q_0} + \delta \psi_0(t),
+\begin{equation}\label{eq: spin-1-perturbed-BA-state}
+    \Psi^T = \left(\frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{1}(t),
+    \frac{\sqrt{n_0}}{2}\sqrt{2 + Q_0} + \delta \psi_0(t),
+    \frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{-1}(t)\right)e^{-i\mu t},
 \end{equation}
-where \( 0 < Q_0 < 2 \) is a constant and \( |\delta\psi_m| \ll 1 \).
-\textcolor{red}{Was the reason for using \( Q_0 \) instead of \( Q(t) \) because
-    the BA ground state is defined for fixed \( q \)?}
-Substituting the above expressions in the stationary GPEs
-(\textcolor{red}{link to section}) in the absence of a trapping potential and
-keeping leading order terms in \( \delta\psi \) we arrive at the equations:
-\begin{equation}
-    \begin{aligned}
-        i\pdv{\delta\psi_1}{t} & = \left[-\frac{\nabla^2}{2} + q - \mu
-            + \frac{10c_0+6c_2-(c_0-c_2)Q_0}{8}\right]\delta\psi_1
-        + \frac{\sqrt{2}}{8}\sqrt{4-Q_0^2}\left[(c_0+3c_2)\delta\psi_0
-        + (c_0+c_2)\delta\psi_0^*\right]                                         \\
-                               & + \frac{2-Q_0}{8}\left[(c_0-c_2)\delta\psi_{-1}
-            + (c_0+c_2)\delta\psi_1^*
-            + (c_0 + (2+3Q_0)c_2)\delta\psi_{-1}^*\right],
-    \end{aligned}
-\end{equation}
-\begin{equation}
-    \begin{aligned}
-        i\pdv{\delta\psi_{-1}}{t} & = \left[-\frac{\nabla^2}{2} + q - \mu
-            + \frac{10c_0+6c_2-(c_0-c_2)Q_0}{8}\right]\delta\psi_{-1}
-        + \frac{\sqrt{2}}{8}\sqrt{4-Q_0^2}\left[(c_0+3c_2)\delta\psi_0
-        + (c_0+c_2)\delta\psi_0^*\right]                                           \\
-                                  & + \frac{2-Q_0}{8}\left[(c_0-c_2)\delta\psi_{1}
-            + (c_0+c_2)\delta\psi_{-1}^*
-            + (c_0 + (2+3Q_0)c_2)\delta\psi_{1}^*\right].
-    \end{aligned}
-\end{equation}
-\textcolor{red}{Introduce a variable to make equations more aesthetically
-    pleasing.}
-As we showed, Eq.~\eqref{eq: zero-mode-energy} is the relevant mode in our
-transition, which is related to the difference of the outer components.
-Therefore, we subtract the above equations from each other to obtain
-\begin{equation}
-    i\pdv{G_y}{t} = \left[-\frac{\nabla^2}{2} - c_2\left(Q
-        - \frac{Q_0}{2}\right)\right]G_y - \frac{c_2Q_0}{2}G_y^*,
-\end{equation}
-where \( G_y = \delta\psi_1 - \delta\psi_{-1} \), \( Q=q/|c_2|n \), and we have
-used the fact that \( \mu = c_0 + c_2(2-Q_0)/2 \).
-To solve the above equation we transform to Fourier space and split the equation
-into real and imaginary parts, leading to the matrix equation
-\begin{equation}
-    \dv{t} \mqty(a_y \\ b_y) = \mqty(0 & \frac{k^2}{2}-c_2(Q-Q_0) \\
-    c_2Q - \frac{k^2}{2} & 0)
-    \mqty(a_y \\ b_y),
-\end{equation}
-\textcolor{red}{Why can we drop partial derivatives?}
-where \( a_y = \int \mathrm{Re}(G_y)e^{ikx} \, \dd x \) and
-\( y_y = \int \mathrm{Im}(G_y)e^{ikx} \, \dd x \).
-To solve the above equation, we derive the equation for \( \dv[2]{a_y}{t} \)
-which leads to
-\begin{equation}
-    \dv[2]{a_y}{t} = -\frac{2c_2\dot{Q}}{k^2 - 2c_2(Q-Q_0)}\dv{a_y}{t}
-    + \left(k^2c_2Q - c_2^2Q^2 + c_2QQ_0 - \frac{k^2c_2}{2}Q_0
-    - \frac{k^4}{4}\right).
-\end{equation}
-\textcolor{red}{Why can we ignore the first derivative term again?}\\
-To simplify further, we are interested in sufficiently large systems such that
-\( k^2/\tau_Q \ll 1 / \tau_Q^2 \).
-Using this assumption and taking \(Q_0=0 \) at the critical point we are left
-with
-\begin{equation}
-    \dv[2]{a_y}{t} = \frac{\dot{Q}}{Q}\dv{a_y}{t} - c_2^2Q^2a_y.
-\end{equation}
-Solving the above equation yields
-\begin{equation}
-    a_y = \frac{1}{C}e^{C\lambda t} + D,
-\end{equation}
-where \( C, D \) are constants of integration and
-\( \lambda ={(|c_2|/\tau_Q)}^{1/2} \).
-Expanding the above equation and keeping the leading order term in \( t \) we
-arrive at
-\begin{equation}
-    a_y \sim {\left(\frac{|c_2|}{\tau_Q}\right)}^{\frac{1}{2}}t.
-\end{equation}
-We therefore conclude that \( a_y \) scales as \( \tau_Q^{-1/2} \) at the
-critical point.
-This provides a useful test for confirming scaling laws observed in numerical
-simulations.
+where \( 0 < Q_0 < 2 \) is a constant, \(\mu \) is the
+chemical potential and \( |\delta\psi_m| \ll 1 \) are time-dependent noise
+terms.
+The noise terms must satisfy \(\int \sum_m\delta\psi_m+\delta\psi_m^* \, \dd z\)
+to ensure normalisation of the wave function.
+Additionally, they must also satisfy \(\int (\delta\psi_1 + \delta\psi_1^* 
+\delta\psi_{-1} + \delta\psi_{-1}^*) \dd z = 0\) to ensure that magnetisation
+is conserved.
 
-\textcolor{red}{This is without getting rid of the first derivative.
-    If you get rid of the derivative you are left with Weber's equation. Which
-    I think you can still show that \( a_y \) scales like \( \tau_Q^{-1/2} \),
-    but it's a little more complicated.}
+Recall the spin-1 GPEs are given as (see Sec.~\ref{subsec: spin-1-gpes}):
+\begin{align}\label{eq: spin-1-KZ-GPEs}
+    i\hbar\pdv{\Psi}{t} = \left[ -\frac{\hbar^2\nabla^2}{2M}
+    -p\hat{F_z} + q\hat{F}_z^2 +c_0n +c_1n\langle \hat{\vb{F}}\rangle
+    \cdot \hat{\vb{F}}\right]\Psi.
+\end{align}
+Substituting Eq.~\eqref{eq: spin-1-perturbed-BA-state} into the above equations
+and keeping leading order terms in \(\delta\psi_m\) yields the following two
+equations for \(\delta_{\pm 1}\) (\(p=0\))
+\begin{multline}\label{eq: dpsi1}
+    i\hbar\pdv{\delta\psi_1}{t} = \left[-\frac{\hbar^2}{2M}\dv[2]{}{z}+q-\mu
+    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_1 \\
+    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
+        (c_0 + 3c_1)\delta\psi_0
+        + (c_0+c_1)\delta\psi_0^*
+    \right] \\
+    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{-1}
+    + (c_0+c_1)\delta\psi_1^*\right]
+    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{-1}^*,
+\end{multline}
+\begin{multline}\label{eq: dpsim1}
+    i\hbar\pdv{\delta\psi_{-1}}{t} = \left[-\frac{\hbar^2}{2M}\dv[2]{}{z}+q-\mu
+    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_{-1} \\
+    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
+        (c_0 + 3c_1)\delta\psi_0
+        + (c_0+c_1)\delta\psi_0^*
+    \right] \\
+    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{1}
+    + (c_0+c_1)\delta\psi_{-1}^*\right]
+    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{1}^*.
+\end{multline}
+Now, subtracting Eq.~\eqref{eq: dpsim1} from Eq.~\eqref{eq: dpsi1} results in
+the following ordinary differential equation
+\begin{align}\label{eq: G_y-unsimplified}
+    i\hbar\dv{G_y}{t}= \left[ -\frac{\hbar^2}{2M}\dv[2]{}{z}+q
+    -\mu+n_0(c_0+c_1)\right]G_y
+    -\frac{c_1n_0Q}{2}G_y^*,
+\end{align}
+where \(G_y = \delta\psi_1 - \delta\psi_{-1}\).
+The chemical potential of the system is calculated from the \(\psi_0\)
+component of Eq.~\eqref{eq: spin-1-KZ-GPEs}, again keeping leading order terms
+in \(\delta\psi_0\) and assuming a stationary state, leading to
+\(\mu=c_0n_0 + c_1n_0(2 - Q_0)/2\).
+Using this expression for the chemical potential and \(q(t) = -c_1n_0Q(t)\)
+Eq.~\eqref{eq: G_y-unsimplified} simplifies to
+\begin{align}\label{eq: G_y-simplified}
+    i\hbar\dv{G_y}{t} = \left[ -\frac{\hbar^2}{2M}\dv[2]{}{z}
+    -c_1n_0\left(Q-\frac{Q_0}{2}\right)\right]G_y
+    - \frac{c_1n_0Q}{2}G_y^*.
+\end{align}
+
+We now split \(G_y\) into real and imaginary parts and make use of Fourier
+transforms, \(a_y=\int \text{Re}(G_y)e^{ikz} dz\) and
+\(b_y=\int \text{Im}(G_y)e^{ikz} dz\) to progress our analysis.
+Substituting these expressions in Eq.~\eqref{eq: G_y-simplified} yields the
+following matrix equation
+\begin{align}\label{eq: a_y-matrix}
+    \dv{t}\mqty[a_y \\ b_y] = \mqty(0 & \frac{\hbar k^2}{2M}
+    - \frac{c_1  n_0}{2\hbar}(Q - Q_0) \\
+    \frac{c_1  n_0}{2\hbar} \left( 3Q-Q_0 \right)-\frac{\hbar k^2}{2M} & 0)
+    \mqty[a_y \\ b_y].
+ \end{align}
+To solve the above matrix equation, we construct the equation for
+\(\dv[2]{a_y}{t}\) and substitute the critical point value \(Q=0\) to obtain
+\begin{align}
+    \dv[2]{a_y}{t} = \frac{c_1n_0}{2\hbar\tau_Q}b_y
+    + \left(\frac{\hbar^2k^2}{2M} - \frac{c_1n_0Q}{2\hbar}\right)\dv{b_y}{t}.
+\end{align}
+Now, expressions for \(b_y\) and \(\dv{b_y}{t}\) are found from
+Eq.~\eqref{eq: a_y-matrix}, which transforms the above equation to
+\begin{align}
+    \dv[2]{a_y}{t} = \frac{1}{\tau_Q\left(\frac{\hbar^2k^2}{Mc_1n_0}
+    - Q\right)}\dv{a_y}{t}
+    - \left(\frac{\hbar^2k^4}{4M^2} - \frac{k^2c_1n_0Q}{M}
+    + \frac{3c_1^2n_0^2Q^2}{4\hbar^2}\right)a_y.
+\end{align}
+Finally, to simplify the above expression, we use the spin healing length
+\(\xi_s = \hbar/\sqrt{2|c_1|n_0}\) and the spin time \(\tau_s=\hbar/|c_1|n_0\):
+\begin{align}
+  \dv[2]{a_y}{t} = \frac{-1}{\left(2\xi_s^2 k^2 \tau_Q- t \right)}\dv{a_y}{t}
+  -\left( \frac{\xi_s^4 k^4}{4\tau_s^2} -\frac{\xi_s^2 k^2 t}{2\tau_s^2 \tau_Q}
+  + \frac{3 t^2}{16\tau_s^2 \tau_Q^2} \right) a_y.
+\end{align}
+
+Now, to extract scaling solutions, we rescale time as \(t rightarrow t\lambda \)
+where \(\lambda = \sqrt{\tau_s\tau_Q}\), which leads to the final differential
+equation
+\begin{align} \label{eq: eqn-scaled-lin}
+    \dv[2]{a_y}{t} = \frac{-1}{\left( 2\kappa^2 - t\right)}\dv{a_y}{t}
+    -\frac{1}{4} \left( \kappa^4 - 2\kappa^2 t + \frac{3 t^2}{4} \right)a_y,
+\end{align}
+where \(\kappa^2 = \xi_s^2 k^2 \sqrt{\tau_Q/\tau_s}\).
+This scaling ensures that the last term of the above equation is independent of
+\(\tau_Q\).
+Then, the remaining dependence on \(\tau_Q\) is eliminated if we require that
+\(\kappa \) is constant, implying that \(\kappa \sim \tau_Q^{-1/4}\).
+Under these conditions, we expect scaling solutions to arise which are then
+consistent with the derived scaling for both the correlation length and
+dynamical exponents based on the KZM.\@
 
 \section{The KZM across a second-order phase transition}
-As shown in \textcolor{red}{relevant section}, there are four ground states
+As shown in Sec.~\ref{sec: ground-states-spin-1}, there are four ground states
 phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
 antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
 state phase has an associated symmetry.
@@ -536,7 +561,7 @@ for a second-order phase transition in a spin-1 BEC\@.
 Motivated by previous work~\cite{Damski2007}, we will investigate the
 Kibble-Zurek mechanism across the second-order phase transition occurring
 between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
-The polar phase is the energetic ground state when \( Q=q/|c_2|n > 2 \).
+The polar phase is the energetic ground state when \( Q=q/|c_1|n > 2 \).
 The critical point \( Q = 2 \) represents the second-order phase transition to
 the BA phase.
 The BA phase contains three Bogoliubov modes~\cite{Uchino2010}, but only one
@@ -584,7 +609,7 @@ To ensure we remain close to the polar ground state, we take
 
 We consider a 1D system with \(N_x = 2048\) grid points with \(L=78\) and
 choose dimensionless spin-independent interaction \(c_0=1.4\times10^5\) and
-\(c_0/c_2 = -222\).
+\(c_0/c_1 = -222\).
 We start with the initial state in Eq.~\eqref{eq: peturbed-polar-initi-state}
 and integrate the spin-1 Gross-Pitaevskii equations~\cite{Symes2016}.
 
@@ -602,7 +627,7 @@ where \(f_x\) and \(f_y \) are the \(x, y\) components of the condensate spin
 vector, respectively.
 In the polar phase this quantity is zero, but becomes non-zero in the BA limit
 where it is \(M_\perp = (1 - Q^2/4)/L\).
-\begin{figure}[htb]
+\begin{figure}
     \centering
     \begin{subfigure}{0.49\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/magnetisation_vs_Q.pdf}
@@ -658,18 +683,17 @@ We start from the broken-axisymmetry (BA) wave function with \( p=0 \)
     \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
     \label{eq: BA-initial-wavefunction}
 \end{equation}
-where \(Q(t)=q(t)/|c_2|n\).
-The BA wave function is the ground state for \(c_2 < 0\) and \(0 < Q < 2\).
+where \(Q(t)=q(t)/|c_1|n\).
+The BA wave function is the ground state for \(c_1 < 0\) and \(0 < Q < 2\).
 There exists a critical point at \( Q = 0 \) where the ground state changes from
 the BA phase to the ferromagnetic phase.
 We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
 spacing of \(\Delta_x = 0.125\).
 We perturb the initial BA state by adding small noise, \(\delta_m\), to each
-component where \(|\delta_m| \ll 1\).
-We generate the real and imaginary parts of \(\delta_m\) for each grid point
-using the probability distribution
-\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\).
-We choose \(\sigma=10^{-4}\) so that we start close to the BA ground state.
+component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
+parts of \(\delta_m\) for each grid point using the probability distribution
+\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\) where we choose
+\(\sigma=10^{-4}\) so that we start close to the BA ground state.
 
 \subsection{Phase boundaries in the ferromagnetic phase}
 As the system is quenched across the critical point at \( Q = 0 \), the ground
@@ -821,4 +845,5 @@ Our observation of a \(-1/2\) exponent signifies a deviation from
 the Kibble-Zurek theory which appears to be a consequence of our transition
 being first-order.
 
-\section{Polar-BA-FM results?}
+\section{Crossing two phase transitions}
+
