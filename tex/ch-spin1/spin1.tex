@@ -203,7 +203,138 @@ This is a key result of the Kibble-Zurek mechanism and provides a
 foundation in testing the KZM in BEC systems~\cite{Damski2007, Swislocki2013,
     Anquez2016, Saito2007, Saito2007a}.
 
-\section{Extending the KZM to first-order phase transitions}
+\section{Numerical studies of the KZM across a second-order phase transition}
+As shown in Sec.~\ref{sec: ground-states-spin-1}, there are four ground states
+phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
+antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
+state phase has an associated symmetry.
+The Kibble-Zurek mechanism can be studied in spin-1 BECs by considering how
+the change of a control parameter causes the order parameter to change from
+one ground state to another.
+As it does this, the symmetry of the system is spontaneously broken, and hence
+the Kibble-Zurek theory can be applied.
+
+Spin-1 BECs support numerous first- and second-order phase transitions
+when the linear, \( p \), or quadratic, \( q \), Zeeman shifts are
+ramped across a critical point~\cite{Kawaguchi2012}.
+A second-order transition is characterised by the derivative of the energy with
+respect to \( p \) and \( q \) change continuously across the transition
+\textcolor{red}{? (Is there other conditions on a second-order transition?)}.
+In this section, we aim to test the predictions of the Kibble-Zurek mechanism
+for a second-order phase transition in a spin-1 BEC\@.
+
+\subsection{Polar to broken-axisymmetry quench}
+Motivated by previous work~\cite{Damski2007}, we will investigate the
+Kibble-Zurek mechanism across the second-order phase transition occurring
+between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
+The polar phase is the energetic ground state when \( Q=q/|c_1|n > 2 \).
+The critical point \( Q = 2 \) represents the second-order phase transition to
+the BA phase.
+The BA phase contains three Bogoliubov modes~\cite{Uchino2010}, but only one
+is non-zero in the long wavelength limit.
+This mode is gapped, and has the scaling form
+\begin{equation}
+    \Delta \sim \sqrt{4 - q^2}.
+\end{equation}
+\textcolor{red}{We need to figure out why they take the scaling from the BA side
+    and not the polar side.}
+
+We assume the form of a linear quench
+\begin{equation}
+    Q(t) = 2 - \frac{t}{\tau_Q},
+    \label{eq: time-dep-Q-damski}
+\end{equation}
+where \( \tau_Q \) is the quench time.
+To investigate Kibble-Zurek scaling, we consider the freeze-out time,
+\( \hat{t} \), which occurs when the equilibrium relaxation time is equal to the
+rate of change of the control parameter [see Eq.~\eqref{eq: freeze-out-equal}].
+Using the above equation and considering sufficiently slow quenches
+(\(\tau_Q \gg 1\)), this leads to
+\begin{equation}
+    \hat{t} \sim \tau_Q^{\frac{1}{3}}.
+\end{equation}
+\textcolor{red}{I've tried deriving this and I am getting stuck\ldots}
+
+We now analyse the resulting dynamics when linearly decreasing \( q \) according
+to Eq.~\eqref{eq: time-dep-Q-damski}.
+We start from the polar phase (\( t < 0 \)) and end the simulation precisely at
+\( Q = 0 \) (\( t=2\tau_Q \)) in the BA phase.
+The initial state is a polar wave function that is slightly perturbed:
+\begin{equation}
+    \psi = \left(\delta\psi_1, \frac{1}{\sqrt{L}} + \delta\psi_0,
+    \delta\psi_{-1}\right),
+    \label{eq: peturbed-polar-initi-state}
+\end{equation}
+where \( |\delta\psi_m| \ll 1 / \sqrt{L} \) are small noise terms and \( L \) is
+the length.
+The real and imaginary parts of these terms at individual grid points are drawn
+from the probability distribution
+\( p(x) = \exp(-x^2/2\sigma^2)/\sqrt{2\pi}\sigma \).
+To ensure we remain close to the polar ground state, we take
+\( \sigma=10^{-4} \).
+
+We consider a 1D system with \(N_x = 2048\) grid points with \(L=78\) and
+choose dimensionless spin-independent interaction \(c_0=1.4\times10^5\) and
+\(c_0/c_1 = -222\).
+We start with the initial state in Eq.~\eqref{eq: peturbed-polar-initi-state}
+and integrate the spin-1 Gross-Pitaevskii equations~\cite{Symes2016}.
+
+\subsection{Evolution of the transverse magnetisation}
+To determine the freeze-out time within our system, we need to find a quantity
+that grows as the transition point is crossed.
+This freeze-out time is then measured by the time it takes for the onset of
+that growth to occur.
+The quantity that satisfies this condition in the polar to BA transition is the
+transverse magnetisation
+\begin{equation}
+    M_\perp = \int f_x^2 + f_y^2 \, dz,
+\end{equation}
+where \(f_x\) and \(f_y \) are the \(x, y\) components of the condensate spin
+vector, respectively.
+In the polar phase this quantity is zero, but becomes non-zero in the BA limit
+where it is \(M_\perp = (1 - Q^2/4)/L\).
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/magnetisation_vs_Q.pdf}
+        \caption{\label{subfig: magnetisation-vs-Q}}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/t-hat_vs_tau_q.pdf}
+        \caption{\label{subfig: t-hat-vs-tau-q}}
+    \end{subfigure}
+    \caption[Transverse magnetisation for as a function of quench parameter,
+        \(Q\)]
+    {(a) The transverse magnetisation as a function of \( Q(t) \) for
+        \(\tau_Q=11\).
+        Plotted are the numerical values (black line) and the
+        analytical prediction (red line).
+        (b) The extracted value of \( \hat{t} \) versus the quench time.
+        Overlaid is the power-law scaling \(\tau_Q^{1/3}\).}
+\end{figure}
+Fig.~\ref{subfig: magnetisation-vs-Q} shows a typical evolution of the
+transverse magnetisation for \(\tau_Q = 11\).
+One sees that after the critical point is crossed at \( Q = 2 \), the transverse
+magnetisation grows in a non-trivial fashion.
+This growth starts precisely after the system exits the freeze-out stage, which
+occurs at \(t=\hat{t}\).
+The magnetisation then grows rapidly, exceeding the analytical prediction in
+places, and begins to oscillate with the amplitude decaying over time.
+Using this quantity, we can test the Kibble-Zurek prediction in
+Eq.~\eqref{eq: freeze-out-scaling}.
+We define \( \hat{t} \) as the instant \(M_\perp L\) intersects 1\% of its
+maximum value \(M_\perp L = 1\).
+Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \hat{t} \) for
+a range of \( \tau_Q \).
+We see an unambiguous power-law scaling of \(\tau_Q^{1/3}\) for
+\(\tau_Q \geq 10\).
+The gradual departure from the \(\hat{t} \sim \tau_Q^{1/3}\) scaling indicates
+that the quench has to be sufficiently slow to capture the Kibble-Zurek scaling.
+We note that the choice of 1\% here is arbitrary.
+We tested a range of values up to a maximum of 10\%, and obtain quantitatively
+similar behaviour for all values tested.
+
+\section{Extending the KZ theory to first-order phase transitions}
 The Kibble-Zurek mechanism was first derived and extensively studied in the
 context of second-order phase transitions.
 Fisher and Berker~\cite{Fisher1982} presented the universality class for
@@ -309,6 +440,182 @@ In the case of a 1D system, the density of defects then scales as
     n_d \sim \tau_Q^{-1/4}.
 \end{equation}
 
+\section{Numerical studies of the KZM across a first-order phase transition}
+\subsection{Broken-axisymmetry to ferromagnetic quench}
+The KZM typically concerns second-order phase transitions. However, recent
+work has been conducted in condensed matter systems which investigate
+the KZM across first-order transitions~\cite{Qiu2020}.
+We aim to extend this research and present results for
+the first-order transition between the broken-axisymmetry and
+ferromagnetic phases.
+
+We start from the broken-axisymmetry (BA) wave function with \( p=0 \)
+\begin{equation}
+    \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
+    \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
+    \label{eq: BA-initial-wavefunction}
+\end{equation}
+where \(Q(t)=q(t)/|c_1|n\).
+The BA wave function is the ground state for \(c_1 < 0\) and \(0 < Q < 2\).
+There exists a critical point at \( Q = 0 \) where the ground state changes from
+the BA phase to the ferromagnetic phase.
+We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
+spacing of \(\Delta_x = 0.125\).
+We perturb the initial BA state by adding small noise, \(\delta_m\), to each
+component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
+parts of \(\delta_m\) for each grid point using the probability distribution
+\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\) where we choose
+\(\sigma=10^{-4}\) so that we start close to the BA ground state.
+
+\subsection{Phase boundaries in the ferromagnetic phase}
+As the system is quenched across the critical point at \( Q = 0 \), the ground
+state changes to the ferromagnetic phase.
+The order parameter for this phase takes the form \(\zeta={(1,0,0)}^T\) or
+\(\zeta={(0,0,1)}^T\) depending on the orientation of the spin.
+From Eq.~\eqref{eq: BA-initial-wavefunction} we have
+\(\psi_{\pm 1} = \frac{1}{2}\) and \(\psi_0 = \frac{\sqrt{2}}{2}\) at
+\( Q = 0 \).
+The question that remains is: Which state will the system choose after
+the critical point is passed?
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
+    \caption[Component densities of the system as a function of time]
+    {Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
+        \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
+        spatial subregion of the condensate for
+        \( \tau_Q=2500\tau \).\label{fig: BA-FM-densities}}
+\end{figure}
+Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
+component for a quench time \( \tau_Q=5000\tau \).
+As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
+linearly decrease as the \(\psi_{\pm 1}\) components increase.
+After the critical point at \(t/\tau=0\) is passed there is a freeze-out time
+(see Sec.~\ref{sec:the-KZM}) before the system crosses into the ferromagnetic
+phase.
+During this new phase, we see the formation of ferromagnetic domain walls
+(characterised by the bright density peaks) in the \(\psi_{\pm 1}\) components
+as the order parameter adjusts to the new ground state.
+These domains are spatially separated and where there is zero density in one of
+the components, there is maximal density in the other so that overall the total
+density \(n=\sum_m\psi_m^*\psi_m\) is uniform.
+
+The KZM predicts in Eq.~\eqref{eq: KZM-domain-size} that the size of the domains
+grow as the quench time increases.
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_width.pdf}
+        \caption{\label{fig: BA-FM-domain-width-comparison}}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_onset.pdf}
+        \caption{\label{fig: BA-FM-domain-onset}}
+    \end{subfigure}
+    \caption[Density profile across an average FM domain]
+    {(a): Density profile of the \(\psi_1\) component across an average
+        domain in a simulation with \(\tau_Q=2500\tau \) (black line) and
+        \(\tau_q=10000\) (red line).
+        (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial subregion
+        for \( \tau_Q=5000\tau \) (top) and \(\tau_Q=10000\tau \) (bottom).}
+\end{figure}
+Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
+for two different simulations with \(\tau_Q=2500\) and \(\tau_Q=10000\).
+We see that the longer quench time produces domains that have a
+larger width than those of faster quenches, supporting the Kibble-Zurek theory.
+In addition, we plot the time evolution of \(|\psi_1|^2\) for \(\tau_Q=5000\) and
+\(\tau_Q=10000\) in Fig.~\ref{fig: BA-FM-domain-onset}.
+We see the ferromagnetic domain formation is delayed in the simulation
+with a longer quench time, which supports the prediction in
+Eq.~\eqref{eq: freeze-out-scaling}.
+
+One can count the number of ferromagnetic domains in the system and see the
+dependence on \( \tau_Q \).
+To do this, we developed a numerical algorithm that counts the number of
+density peaks in each component and sums the result to give the total number of
+domains, \(N_d\).
+We calculate this quantity at time \(t/\tau=\tau_Q/2\) in each simulation, to
+ensure that the domains are frozen and avoid the early-time coarsening
+taking place which could affect the total number of domains present.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
+    \caption[Total ferromagnetic domains in the system versus the quench rate
+        \(\tau_Q\)]
+    {The number of ferromagnetic domains as a function of the
+        quench time. Each point represents 50 simulations and the
+        error bar gives one standard deviation. Overlaid are the scaling lines
+        \(\tau_Q^{-1/3}\) (black dashed line) and \(\tau_Q^{-1/5}\)
+        (red dotted line).\label{fig: FM-domains-scaling}}
+\end{figure}
+In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
+as a function of the quench time with fifty ensemble runs for each simulation.
+We see that there is not a uniform scaling throughout all quench times tested.
+Faster quenches indicate a steeper power-law scaling of the number of domains
+that approaches \(N_d\sim\tau_Q^{-1/3}\).
+As the quench time slows, a deviation from this scaling takes place at
+approximately \(\tau_Q\approx 3\times10^3\tau \), where the scaling of the
+domains approaches \(N_d\sim\tau_Q^{-1/5}\).
+\textcolor{red}{I guess the question now is: why is there a deviation?
+    Is the larger domain size (due to slower quench times) affecting the scaling?
+    Is it a consequence of the grid size? Can the \(1/3\) scaling be linked to KZ
+    theory?}
+
+\subsection{Power-law scaling near the critical point}
+Since we know the relevant unstable mode within our system, we can investigate
+power-law scaling near the critical point.
+To begin, we start with the fluctuation operator associated with the
+Bogoliubov spectrum \(E_{\vb{k}, fz}\)
+\begin{equation}
+    \hat{a}_{\vb{k}, {f_z}} = \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
+    - \hat{a}_{\vb{k}, -1}),
+    \label{eq: fz-fluctuation-operator}
+\end{equation}
+where \(\hat{a}_{\vb{k}, \pm1}\) is the annihilation operator for a spin-1 boson
+with wave number \( \vb{k} \) in component \(m=\pm1\).
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]
+        {gfx/ch-spin1/1d_BA-FM_5000_fluctuation_diff.pdf}
+        \caption{\label{fig: fluctuation-diff}}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_Qa_scaling.pdf}
+        \caption{\label{fig: Q_a-scaling}}
+    \end{subfigure}
+    \caption[Growth of the fluctuation operator]
+    {(a): The modulus of the fluctuation operator in
+        Eq.~\eqref{eq: fz-fluctuation-operator} for \(\vb{k}=1\) and
+        \(\tau_Q=5000\).
+        The plot shown is obtained by averaging over all runs in the ensemble.
+        (b): The critical value \(Q_a\) as a function of the quench time.
+    }
+\end{figure}
+Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
+of \(\tau_Q=5000\) with \(\vb{k}=1\).
+The quantity remains zero until after the critical point is passed, where
+a rapid period of growth occurs.
+This onset of this growth corresponds to the ferromagnetic domains forming
+within the system (see Fig.~\ref{fig: BA-FM-densities}).
+Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
+\( \hat{t} \), which is the time when \(|\hat{a}_{\vb{k}, {f_z}}|\) first
+exceeds 1\% of its maximum value: \(|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
+0.01\times \max|\hat{a}_{\vb{k}, {f_z}}(t)|\).
+For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
+\(\hat{t}=598\tau \).
+Using this time, we can extract the critical value of \( q \) that this growth
+occurs at, \(Q(\hat{t}) = Q_a\).
+Fig.~\ref{fig: Q_a-scaling} shows \(Q_a\) as a function of the quench time.
+We see a clear power-law scaling of \(Q_a \propto \tau_Q^{-\frac{1}{2}}\) for
+all values of \( \tau_Q \) tested.
+This exponent differs from observed results in previous works investigating
+second-order phase transitions~\cite{Damski2007, Anquez2016, Swislocki2013}
+where an exponent of \(-1/3\) is observed.
+Our observation of a \(-1/2\) exponent signifies a deviation from
+the Kibble-Zurek theory which appears to be a consequence of our transition
+being first-order.
 
 \subsection{Determining the relevant Bogoliubov mode}
 Here, we derive each mode  of the BA phase explicitly from the relevant
@@ -535,315 +842,24 @@ Then, the remaining dependence on \(\tau_Q\) is eliminated if we require that
 \(\kappa \) is constant, implying that \(\kappa \sim \tau_Q^{-1/4}\).
 Under these conditions, we expect scaling solutions to arise which are then
 consistent with the derived scaling for both the correlation length and
-dynamical exponents based on the KZM.\@
+dynamical exponents based on the KZM\@.
 
-\section{The KZM across a second-order phase transition}
-As shown in Sec.~\ref{sec: ground-states-spin-1}, there are four ground states
-phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
-antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
-state phase has an associated symmetry.
-The Kibble-Zurek mechanism can be studied in spin-1 BECs by considering how
-the change of a control parameter causes the order parameter to change from
-one ground state to another.
-As it does this, the symmetry of the system is spontaneously broken, and hence
-the Kibble-Zurek theory can be applied.
+\subsection{Crossing two phase transitions}
+To test the robustness of the observed scaling, we combine the effort of the
+previous two numerical studies into one.
+Namely, we investigate the scaling of the density of defects using a simulation
+that spans two phase transitions.
+Starting from the polar phase at \(Q  = 2.5\), we quench the quadratic Zeeman
+shift such that we cross over to the BA phase at \(Q=2\) and finally the FM
+phase at \(Q=0\).
+This quench then evidently spans two phase transitions: one second-order, and
+one-first order.
+Our numerical set up is exactly the same as the previous section.
 
-Spin-1 BECs support numerous first- and second-order phase transitions
-when the linear, \( p \), or quadratic, \( q \), Zeeman shifts are
-ramped across a critical point~\cite{Kawaguchi2012}.
-A second-order transition is characterised by the derivative of the energy with
-respect to \( p \) and \( q \) change continuously across the transition
-\textcolor{red}{? (Is there other conditions on a second-order transition?)}.
-In this section, we aim to test the predictions of the Kibble-Zurek mechanism
-for a second-order phase transition in a spin-1 BEC\@.
-
-\subsection{Polar to broken-axisymmetry quench}
-Motivated by previous work~\cite{Damski2007}, we will investigate the
-Kibble-Zurek mechanism across the second-order phase transition occurring
-between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
-The polar phase is the energetic ground state when \( Q=q/|c_1|n > 2 \).
-The critical point \( Q = 2 \) represents the second-order phase transition to
-the BA phase.
-The BA phase contains three Bogoliubov modes~\cite{Uchino2010}, but only one
-is non-zero in the long wavelength limit.
-This mode is gapped, and has the scaling form
-\begin{equation}
-    \Delta \sim \sqrt{4 - q^2}.
-\end{equation}
-\textcolor{red}{We need to figure out why they take the scaling from the BA side
-    and not the polar side.}
-
-We assume the form of a linear quench
-\begin{equation}
-    Q(t) = 2 - \frac{t}{\tau_Q},
-    \label{eq: time-dep-Q-damski}
-\end{equation}
-where \( \tau_Q \) is the quench time.
-To investigate Kibble-Zurek scaling, we consider the freeze-out time,
-\( \hat{t} \), which occurs when the equilibrium relaxation time is equal to the
-rate of change of the control parameter [see Eq.~\eqref{eq: freeze-out-equal}].
-Using the above equation and considering sufficiently slow quenches
-(\(\tau_Q \gg 1\)), this leads to
-\begin{equation}
-    \hat{t} \sim \tau_Q^{\frac{1}{3}}.
-\end{equation}
-\textcolor{red}{I've tried deriving this and I am getting stuck\ldots}
-
-We now analyse the resulting dynamics when linearly decreasing \( q \) according
-to Eq.~\eqref{eq: time-dep-Q-damski}.
-We start from the polar phase (\( t < 0 \)) and end the simulation precisely at
-\( Q = 0 \) (\( t=2\tau_Q \)) in the BA phase.
-The initial state is a polar wave function that is slightly perturbed:
-\begin{equation}
-    \psi = \left(\delta\psi_1, \frac{1}{\sqrt{L}} + \delta\psi_0,
-    \delta\psi_{-1}\right),
-    \label{eq: peturbed-polar-initi-state}
-\end{equation}
-where \( |\delta\psi_m| \ll 1 / \sqrt{L} \) are small noise terms and \( L \) is
-the length.
-The real and imaginary parts of these terms at individual grid points are drawn
-from the probability distribution
-\( p(x) = \exp(-x^2/2\sigma^2)/\sqrt{2\pi}\sigma \).
-To ensure we remain close to the polar ground state, we take
-\( \sigma=10^{-4} \).
-
-We consider a 1D system with \(N_x = 2048\) grid points with \(L=78\) and
-choose dimensionless spin-independent interaction \(c_0=1.4\times10^5\) and
-\(c_0/c_1 = -222\).
-We start with the initial state in Eq.~\eqref{eq: peturbed-polar-initi-state}
-and integrate the spin-1 Gross-Pitaevskii equations~\cite{Symes2016}.
-
-\subsection{Evolution of the transverse magnetisation}
-To determine the freeze-out time within our system, we need to find a quantity
-that grows as the transition point is crossed.
-This freeze-out time is then measured by the time it takes for the onset of
-that growth to occur.
-The quantity that satisfies this condition in the polar to BA transition is the
-transverse magnetisation
-\begin{equation}
-    M_\perp = \int f_x^2 + f_y^2 \, dz,
-\end{equation}
-where \(f_x\) and \(f_y \) are the \(x, y\) components of the condensate spin
-vector, respectively.
-In the polar phase this quantity is zero, but becomes non-zero in the BA limit
-where it is \(M_\perp = (1 - Q^2/4)/L\).
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{gfx/ch-spin1/magnetisation_vs_Q.pdf}
-        \caption{\label{subfig: magnetisation-vs-Q}}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{gfx/ch-spin1/t-hat_vs_tau_q.pdf}
-        \caption{\label{subfig: t-hat-vs-tau-q}}
-    \end{subfigure}
-    \caption[Transverse magnetisation for as a function of quench parameter,
-        \(Q\)]
-    {(a) The transverse magnetisation as a function of \( Q(t) \) for
-        \(\tau_Q=11\).
-        Plotted are the numerical values (black line) and the
-        analytical prediction (red line).
-        (b) The extracted value of \( \hat{t} \) versus the quench time.
-        Overlaid is the power-law scaling \(\tau_Q^{1/3}\).}
+    \includegraphics[width=0.75\textwidth]{example-image}
+    \caption{\label{fig: polar-ba-fm-defects}Caption.}
 \end{figure}
-Fig.~\ref{subfig: magnetisation-vs-Q} shows a typical evolution of the
-transverse magnetisation for \(\tau_Q = 11\).
-One sees that after the critical point is crossed at \( Q = 2 \), the transverse
-magnetisation grows in a non-trivial fashion.
-This growth starts precisely after the system exits the freeze-out stage, which
-occurs at \(t=\hat{t}\).
-The magnetisation then grows rapidly, exceeding the analytical prediction in
-places, and begins to oscillate with the amplitude decaying over time.
-Using this quantity, we can test the Kibble-Zurek prediction in
-Eq.~\eqref{eq: freeze-out-scaling}.
-We define \( \hat{t} \) as the instant \(M_\perp L\) intersects 1\% of its
-maximum value \(M_\perp L = 1\).
-Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \hat{t} \) for
-a range of \( \tau_Q \).
-We see an unambiguous power-law scaling of \(\tau_Q^{1/3}\) for
-\(\tau_Q \geq 10\).
-The gradual departure from the \(\hat{t} \sim \tau_Q^{1/3}\) scaling indicates
-that the quench has to be sufficiently slow to capture the Kibble-Zurek scaling.
-We note that the choice of 1\% here is arbitrary.
-We tested a range of values up to a maximum of 10\%, and obtain quantitatively
-similar behaviour for all values tested.
-
-\section{The KZM across a first-order phase transition}
-\subsection{Broken-axisymmetry to ferromagnetic quench}
-The KZM typically concerns second-order phase transitions. However, recent
-work has been conducted in condensed matter systems which investigate
-the KZM across first-order transitions~\cite{Qiu2020}.
-We aim to extend this research and present results for
-the first-order transition between the broken-axisymmetry and
-ferromagnetic phases.
-
-We start from the broken-axisymmetry (BA) wave function with \( p=0 \)
-\begin{equation}
-    \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
-    \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
-    \label{eq: BA-initial-wavefunction}
-\end{equation}
-where \(Q(t)=q(t)/|c_1|n\).
-The BA wave function is the ground state for \(c_1 < 0\) and \(0 < Q < 2\).
-There exists a critical point at \( Q = 0 \) where the ground state changes from
-the BA phase to the ferromagnetic phase.
-We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
-spacing of \(\Delta_x = 0.125\).
-We perturb the initial BA state by adding small noise, \(\delta_m\), to each
-component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
-parts of \(\delta_m\) for each grid point using the probability distribution
-\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\) where we choose
-\(\sigma=10^{-4}\) so that we start close to the BA ground state.
-
-\subsection{Phase boundaries in the ferromagnetic phase}
-As the system is quenched across the critical point at \( Q = 0 \), the ground
-state changes to the ferromagnetic phase.
-The order parameter for this phase takes the form \(\zeta={(1,0,0)}^T\) or
-\(\zeta={(0,0,1)}^T\) depending on the orientation of the spin.
-From Eq.~\eqref{eq: BA-initial-wavefunction} we have
-\(\psi_{\pm 1} = \frac{1}{2}\) and \(\psi_0 = \frac{\sqrt{2}}{2}\) at
-\( Q = 0 \).
-The question that remains is: Which state will the system choose after
-the critical point is passed?
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
-    \caption[Component densities of the system as a function of time]
-    {Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
-        \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
-        spatial subregion of the condensate for
-        \( \tau_Q=2500\tau \).\label{fig: BA-FM-densities}}
-\end{figure}
-Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
-component for a quench time \( \tau_Q=5000\tau \).
-As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
-linearly decrease as the \(\psi_{\pm 1}\) components increase.
-After the critical point at \(t/\tau=0\) is passed there is a freeze-out time
-(see Sec.~\ref{sec:the-KZM}) before the system crosses into the ferromagnetic
-phase.
-During this new phase, we see the formation of ferromagnetic domain walls
-(characterised by the bright density peaks) in the \(\psi_{\pm 1}\) components
-as the order parameter adjusts to the new ground state.
-These domains are spatially separated and where there is zero density in one of
-the components, there is maximal density in the other so that overall the total
-density \(n=\sum_m\psi_m^*\psi_m\) is uniform.
-
-The KZM predicts in Eq.~\eqref{eq: KZM-domain-size} that the size of the domains
-grow as the quench time increases.
-\begin{figure}[tb]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_width.pdf}
-        \caption{\label{fig: BA-FM-domain-width-comparison}}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_onset.pdf}
-        \caption{\label{fig: BA-FM-domain-onset}}
-    \end{subfigure}
-    \caption[Density profile across an average FM domain]
-    {(a): Density profile of the \(\psi_1\) component across an average
-        domain in a simulation with \(\tau_Q=2500\tau \) (black line) and
-        \(\tau_q=10000\) (red line).
-        (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial subregion
-        for \( \tau_Q=5000\tau \) (top) and \(\tau_Q=10000\tau \) (bottom).}
-\end{figure}
-Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
-for two different simulations with \(\tau_Q=2500\) and \(\tau_Q=10000\).
-We see that the longer quench time produces domains that have a
-larger width than those of faster quenches, supporting the Kibble-Zurek theory.
-In addition, we plot the time evolution of \(|\psi_1|^2\) for \(\tau_Q=5000\) and
-\(\tau_Q=10000\) in Fig.~\ref{fig: BA-FM-domain-onset}.
-We see the ferromagnetic domain formation is delayed in the simulation
-with a longer quench time, which supports the prediction in
-Eq.~\eqref{eq: freeze-out-scaling}.
-
-One can count the number of ferromagnetic domains in the system and see the
-dependence on \( \tau_Q \).
-To do this, we developed a numerical algorithm that counts the number of
-density peaks in each component and sums the result to give the total number of
-domains, \(N_d\).
-We calculate this quantity at time \(t/\tau=\tau_Q/2\) in each simulation, to
-ensure that the domains are frozen and avoid the early-time coarsening
-taking place which could affect the total number of domains present.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.65\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
-    \caption[Total ferromagnetic domains in the system versus the quench rate
-        \(\tau_Q\)]
-    {The number of ferromagnetic domains as a function of the
-        quench time. Each point represents 50 simulations and the
-        error bar gives one standard deviation. Overlaid are the scaling lines
-        \(\tau_Q^{-1/3}\) (black dashed line) and \(\tau_Q^{-1/5}\)
-        (red dotted line).\label{fig: FM-domains-scaling}}
-\end{figure}
-In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
-as a function of the quench time with fifty ensemble runs for each simulation.
-We see that there is not a uniform scaling throughout all quench times tested.
-Faster quenches indicate a steeper power-law scaling of the number of domains
-that approaches \(N_d\sim\tau_Q^{-1/3}\).
-As the quench time slows, a deviation from this scaling takes place at
-approximately \(\tau_Q\approx 3\times10^3\tau \), where the scaling of the
-domains approaches \(N_d\sim\tau_Q^{-1/5}\).
-\textcolor{red}{I guess the question now is: why is there a deviation?
-    Is the larger domain size (due to slower quench times) affecting the scaling?
-    Is it a consequence of the grid size? Can the \(1/3\) scaling be linked to KZ
-    theory?}
-
-\subsection{Power-law scaling near the critical point}
-Since we know the relevant unstable mode within our system, we can investigate
-power-law scaling near the critical point.
-To begin, we start with the fluctuation operator associated with the
-Bogoliubov spectrum \(E_{\vb{k}, fz}\)
-\begin{equation}
-    \hat{a}_{\vb{k}, {f_z}} = \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    - \hat{a}_{\vb{k}, -1}),
-    \label{eq: fz-fluctuation-operator}
-\end{equation}
-where \(\hat{a}_{\vb{k}, \pm1}\) is the annihilation operator for a spin-1 boson
-with wave number \( \vb{k} \) in component \(m=\pm1\).
-\begin{figure}[tb]
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]
-        {gfx/ch-spin1/1d_BA-FM_5000_fluctuation_diff.pdf}
-        \caption{\label{fig: fluctuation-diff}}
-    \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_Qa_scaling.pdf}
-        \caption{\label{fig: Q_a-scaling}}
-    \end{subfigure}
-    \caption[Growth of the fluctuation operator]
-    {(a): The modulus of the fluctuation operator in
-        Eq.~\eqref{eq: fz-fluctuation-operator} for \(\vb{k}=1\) and
-        \(\tau_Q=5000\).
-        The plot shown is obtained by averaging over all runs in the ensemble.
-        (b): The critical value \(Q_a\) as a function of the quench time.
-    }
-\end{figure}
-Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
-of \(\tau_Q=5000\) with \(\vb{k}=1\).
-The quantity remains zero until after the critical point is passed, where
-a rapid period of growth occurs.
-This onset of this growth corresponds to the ferromagnetic domains forming
-within the system (see Fig.~\ref{fig: BA-FM-densities}).
-Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
-\( \hat{t} \), which is the time when \(|\hat{a}_{\vb{k}, {f_z}}|\) first
-exceeds 1\% of its maximum value: \(|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
-0.01\times \max|\hat{a}_{\vb{k}, {f_z}}(t)|\).
-For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
-\(\hat{t}=598\tau \).
-Using this time, we can extract the critical value of \( q \) that this growth
-occurs at, \(Q(\hat{t}) = Q_a\).
-Fig.~\ref{fig: Q_a-scaling} shows \(Q_a\) as a function of the quench time.
-We see a clear power-law scaling of \(Q_a \propto \tau_Q^{-\frac{1}{2}}\) for
-all values of \( \tau_Q \) tested.
-This exponent differs from observed results in previous works investigating
-second-order phase transitions~\cite{Damski2007, Anquez2016, Swislocki2013}
-where an exponent of \(-1/3\) is observed.
-Our observation of a \(-1/2\) exponent signifies a deviation from
-the Kibble-Zurek theory which appears to be a consequence of our transition
-being first-order.
-
-\section{Crossing two phase transitions}
-
+Results for the density of defects are plotted in
+Fig.~\ref{fig: polar-ba-fm-defects}.
