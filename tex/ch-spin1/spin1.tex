@@ -64,7 +64,7 @@ three-component broken-axisymmetry (BA) phase and a ferromagnetic (FM) phase,
 making this system an ideal platform for investigating the KZM across
 discontinuous transitions.
 
-\section{The Kibble-Zurek mechanism}\label{sec:the-KZM}
+\section{The Kibble-Zurek mechanism}\label{sec: the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
 control parameter, \( \lambda \), is ramped across a phase transition that
 occurs at the critical point, \( \lambda_c \).
@@ -87,7 +87,7 @@ The equilibrium relaxation time \( \tau \) describes the time it takes for the
 system to react to an external change of a parameter.
 In a quantum phase transition, the relaxation time is set by the inverse of an
 energy gap \( \Delta \) between the ground state and the first excited
-state~\cite{Zurek2005, Damski2006}.
+state~\cite{Zurek2005, Damski2006}
 \begin{equation}
     \tau \simeq \Delta^{-1}.
 \end{equation}
@@ -96,8 +96,8 @@ As we approach the critical point, the energy gap vanishes as
     \Delta \sim |\epsilon|^{\nu z}.
 \end{equation}
 
-The system is initially prepared in a high-symmetry phase \(  \epsilon > 0 \),
-but breaks that symmetry as the critical point is crossed \(  \epsilon < 0 \).
+The system is initially prepared in a high-symmetry phase (\(  \epsilon > 0 \)),
+but breaks that symmetry as the critical point is crossed (\(  \epsilon < 0 \)).
 In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical
 and correlation length critical exponents, respectively.
 These exponents are determined by the universality class of the phase
@@ -219,11 +219,11 @@ when the linear, \( p \), or quadratic, \( q \), Zeeman shifts are
 ramped across a critical point~\cite{Kawaguchi2012}.
 A second-order transition is characterised by the derivative of the energy with
 respect to \( p \) and \( q \) change continuously across the transition
-\textcolor{red}{? (Is there other conditions on a second-order transition?)}.
+\textcolor{red}{? (Are there other conditions on a second-order transition?)}.
 In this section, we aim to test the predictions of the Kibble-Zurek mechanism
 for a second-order phase transition in a spin-1 BEC\@.
 
-\subsection{Polar to broken-axisymmetry quench}
+\subsection{Polar to broken-axisymmetry quench}\label{sec: KZM-second-order-numerics}
 Motivated by previous work~\cite{Damski2007}, we will investigate the
 Kibble-Zurek mechanism across the second-order phase transition occurring
 between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
@@ -231,7 +231,9 @@ The polar phase is the energetic ground state when \( Q=q/|c_1|n > 2 \).
 The critical point \( Q = 2 \) represents the second-order phase transition to
 the BA phase.
 The BA phase contains three Bogoliubov modes~\cite{Uchino2010}, but only one
-is non-zero in the long wavelength limit.
+is non-zero in the long wavelength limit (see
+Sec.~\ref{subsec: bogoliubov-modes} for further details on Bogoliubov modes in
+a spin-1 BEC).
 This mode is gapped, and has the scaling form
 \begin{equation}
     \Delta \sim \sqrt{4 - q^2}.
@@ -322,6 +324,7 @@ The magnetisation then grows rapidly, exceeding the analytical prediction in
 places, and begins to oscillate with the amplitude decaying over time.
 Using this quantity, we can test the Kibble-Zurek prediction in
 Eq.~\eqref{eq: freeze-out-scaling}.
+
 We define \( \hat{t} \) as the instant \(M_\perp L\) intersects 1\% of its
 maximum value \(M_\perp L = 1\).
 Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \hat{t} \) for
@@ -335,8 +338,15 @@ We tested a range of values up to a maximum of 10\%, and obtain quantitatively
 similar behaviour for all values tested.
 
 \section{Extending the KZ theory to first-order phase transitions}
-The Kibble-Zurek mechanism was first derived and extensively studied in the
-context of second-order phase transitions.
+The preceding sections were concerned with the KZM across second-order phase
+transitions.
+Describing the KZM across discontinuous, first-order transitions, however, has
+been difficult due to lack of
+universality~\cite{Turban2002,Continentino2004,Nauenberg1975a}.
+More recent work has aimed to bridge the gap between the KZM and first-order
+transitions~\cite{Suzuki2015}, and here we present an overview of how the KZM
+can be adapted to fit a discontinuous phase transition.
+
 Fisher and Berker~\cite{Fisher1982} presented the universality class for
 a first-order phase transition known as a discontinuous critical point (DCP).
 This DCP results in a discontinuity in the order parameter as the critical point
@@ -348,35 +358,35 @@ the quantum case and established the quantum discontinuous critical point
 (QDCP).
 
 Let us consider a system that contains a critical point at
-\( \Gamma = \Gamma_c \), where \( \Gamma \) is a tunable parameter and contains
-the presence of a symmetry-breaking field, \( h \).
-For one to have a QDCP five conditions need to be satisfied.
-Firstly, the energy density \( \epsilon(\Gamma, h) \) must be a continuous
-function of \( \Gamma \) and \( h \) across the critical point
+\( q = q_c \), where \( q \) is a tunable parameter and contains
+the presence of a symmetry-breaking field, \( p \).
+For one to have a QDCP five conditions need to be satisfied~\cite{Suzuki2015}.
+Firstly, the energy density \( \epsilon(q, p) \) must be a continuous
+function of \( q \) and \( p \) across the critical point
 \begin{equation}
-    \epsilon(\Gamma_c + 0, 0) = \epsilon(\Gamma_c - 0, 0).
+    \epsilon(q_c + 0, 0) = \epsilon(q_c - 0, 0).
     \label{eq: continuous-energy-cond}
 \end{equation}
 The derivative of this energy density, however, is discontinuous
 \begin{equation}
-    \pdv{\epsilon(\Gamma_c + 0, 0)}{t} \neq \pdv{\epsilon(\Gamma_c - 0, 0)}{t}.
+    \pdv{\epsilon(q_c + 0, 0)}{t} \neq \pdv{\epsilon(q_c - 0, 0)}{t}.
 \end{equation}
-The order parameter \( m(\Gamma, h) \), where
-\( m=-\pdv{\epsilon(\Gamma, h)}{h} \)
+The order parameter \( m(q, p) \), where
+\( m=-\pdv{\epsilon(q, p)}{p} \)
 \textcolor{red}{where does this come from?},
-has a discontinuous jump as a function of \( \Gamma \) as the critical point is
+has a discontinuous jump as a function of \( q \) as the critical point is
 passed
 \begin{equation}
-    |m(\Gamma_c - 0, 0)| > m(\Gamma_c + 0, 0)| = 0,
+    |m(q_c - 0, 0)| > m(q_c + 0, 0)| = 0,
 \end{equation}
-whilst also having a discontinuous jump as a function of \( h \)
+whilst also having a discontinuous jump as a function of \( p \)
 \begin{equation}
-    |m(\Gamma_c, \pm 0)| > 0.
+    |m(q_c, \pm 0)| > 0.
 \end{equation}
 Finally, we require that the derivative of the energy density be bounded as
-\( \Gamma \rightarrow \Gamma_c \pm 0 \)
+\( q \rightarrow q_c \pm 0 \)
 \begin{equation}
-    \left|\pdv{\epsilon(\Gamma_c \pm 0, 0)}{\Gamma}\right| < \infty.
+    \left|\pdv{\epsilon(q_c \pm 0, 0)}{q}\right| < \infty.
     \label{eq: bounded-energy-derivative-cond}
 \end{equation}
 These five conditions encapsulate a QDCP\@.
@@ -406,14 +416,14 @@ The derivative of the above energies with respect to \( q \) yields
 \end{equation}
 Indeed, there is a discontinuity in these derivatives at \( q=p=0 \), however,
 they still remain bounded.
-The relevant order parameter for this transition is given by
+The relevant order parameter for this transition are given by
 \begin{equation}
     m_\mathrm{BA} = \frac{p(p^2 - q^2 - 2qc_1n)}{8c_1nq},
     \qquad
     m_{\mathrm{FM}_{\pm}} = \pm 1,
 \end{equation}
-which is precisely the local magnetisation, \( F_z \), in both phases (see
-Sec.~\ref{sec: ground-states-spin-1}).
+which is precisely the local magnetisation, \(F_z = |\psi_1|^2
+- |\psi_{-1}|^2\), in both phases (see Sec.~\ref{sec: ground-states-spin-1}).
 Again, one sees that at the critical point and for \( p=0 \) the order parameter
 becomes zero in the BA phase whilst becoming non-zero in the FM phase.
 In addition, as the linear Zeeman shift \( p \) is varied both above and below
@@ -424,21 +434,160 @@ specified in Eqs.~\eqref{eq: continuous-energy-cond}
 and therefore is a QDCP\@.
 
 \subsection{Predicting the density of defects}
-Suzuki \textit{et al.}~\cite{Suzuki2015} extended the prediction of the density
-of defects obtained from the KZM and applied it to a general QDCP\@.
-The density of defects was shown to scale as
-\begin{equation}
-    n_d \sim \tau_Q^{-d(2-\alpha_+)/(3-\alpha_+)z},
-\end{equation}
-where \( d \) is the dimensionality of the system and \( \alpha_+ \) and
-\(  z \) are critical exponents.
-For the BA to FM transition one has \( \alpha_+=1 \), \( z=2 \)
-(\textcolor{red}{see appendix for detailed derivation of these critical
-    exponents}).
-In the case of a 1D system, the density of defects then scales as
-\begin{equation}
-    n_d \sim \tau_Q^{-1/4}.
-\end{equation}
+Recall from Sec~\ref{sec: the-KZM} that the density of defects takes the form
+\(N_d \simeq \xi^{-d}\).
+Therefore, to predict the density of defects for the BA to FM transition, we
+need to find the appropriate form for the correlation length, \(\xi \).
+To do so, we consider the Bogoliubov modes of a spin-1 BEC\@.
+
+Here, we derive each mode  of the BA phase explicitly from the relevant
+Bogoliubov transformations and determine the relevant mode for the 
+BA to FM transition.
+The broken-axisymmetry phase of a spin-1 BEC exhibits three Bogoliubov
+modes~\cite{Uchino2010}.
+The broken-axisymmetry phase can be parameterised as
+\begin{align}
+    \zeta^\text{BA} = \left(\frac{\sin\theta}{\sqrt{2}}, \cos\theta,
+    \frac{\sin\theta}{\sqrt{2}}\right),
+\end{align}
+where \(\sin\theta = \sqrt{1/2+q/(4nc_1)}\).
+The fluctuation operators for this state are then defined as~\cite{Uchino2010}:
+\begin{align}
+    \hat{a}_{\vb{k}, d} &= \frac{\sin\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
+    + \hat{a}_{\vb{k}, -1}) + \cos\theta \hat{a}_{\vb{k}, 0}, \\
+    \hat{a}_{\vb{k}, f_z} &= \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
+    - \hat{a}_{\vb{k}, -1}), \\
+    \hat{a}_{\vb{k}, \theta} &= \frac{\cos\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
+    + \hat{a}_{\vb{k}, -1}) - \sin\theta \hat{a}_{\vb{k}, 0},
+\end{align}
+where on the right-hand side \(\hat{a}_{\vb{k}, m}\) is the annihilation
+operator for a spin-\(1\) boson in magnetic level \(m\) (for \(m=-1,0,+1\)),
+determined by expanding the wave function field operator as
+\begin{align}
+    \hat{\psi}_m(\vb{x}) = \frac{1}{\sqrt{V}}\sum_{\vb{k}}
+    \hat{a}_{\vb{k}, m}e^{i\vb{k}\cdot \vb{x}},
+\end{align}
+where \(V\) is the volume of the system.
+
+The sub-Hamiltonian for the spin fluctuation mode \(\hat{a}_{\vb{k}, f_z}\) can
+be diagonalised using the transformation
+\begin{align}
+    \hat{b}_{\vb{k}, f_z} = \sqrt{\frac{\epsilon_{\vb{k}} + q/2
+    + E_{\vb{k}, f_z}}{2E_{\vb{k}, f_z}}}\hat{a}_{\vb{k}, f_z}
+    + \sqrt{\frac{\epsilon_{\vb{k}} + q/2 - E_{\vb{k}, f_z}}{2E_{\vb{k}, f_z}}}
+    \hat{a}_{-\vb{k}, f_z}^\dagger,
+\end{align}
+where \(\epsilon_{\vb{k}} = \hbar^2|\vb{k}|^2/2M\) is the kinetic energy and the
+Bogoliubov spectrum is given by
+\begin{align}\label{eq: e_k-fz}
+    E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)}.
+\end{align}
+The sub-Hamiltonians for the density fluctuation mode \(\hat{a}_{\vb{k}, d}\)
+and the \(\theta \) mode
+\(\hat{a}_{\vb{k}, \theta}\) can be similarly diagonalised using operators
+\(\hat{b}_{\vb{k}, +}\) and \(\hat{b}_{\vb{k}, +}\), which yields the remaining
+two Bogoliubov modes~\cite{Uchino2010}:
+\begin{align}\label{eq: e_k-pm}
+    E_{\vb{k}, \pm}= \sqrt{\epsilon_{\vb{k}}^2 + n(c_0-c_1)\epsilon_{\vb{k}}
+        + 2{(nc_1)}^2(1 - \tilde{q}^2) \pm E_1(\vb{k})},
+\end{align}
+where \(\tilde{q} = -q/2c_1n\) and
+\begin{align}
+    E_1(\vb{k}) = \sqrt{{\left[n{(c_0 + 3c_1)}\epsilon_{\vb{k}}
+                    + 2{(c_1n)}^2(1-\tilde{q}^2)\right]}^2
+        - 4c_1(c_0+2c_1){(n\tilde{q}\epsilon_{\vb{k}})}^2}.
+\end{align}
+The final, diagonalised Hamiltonian then reads
+\begin{align}
+    \hat{p}^\text{BA} =\, E_0^\text{BA}
+    + \sum_{\vb{k} \neq 0}\left[E_{\vb{k}, f_z}\hat{b}^\dagger_{\vb{k}, f_z}
+    \hat{b}_{\vb{k}, f_z}
+    + E_{\vb{k}, -}\hat{b}^\dagger_{\vb{k}, -}\hat{b}_{\vb{k}, -}
+    + E_{\vb{k}, +}\hat{b}^\dagger_{\vb{k}, +}\hat{b}_{\vb{k}, +}\right],
+\end{align}
+where \(E_0^\text{BA}\) is the ground state energy for the
+BA phase, which is explicitly derived in Ref.~\cite{Uchino2010}.
+
+For simplicity, we now consider a 1D system.
+In the long-wavelength limit (\(k \rightarrow 0\)), the only non-zero (gapped)
+mode is given by \(E_{k, +}= \sqrt{4{(c_1n)}^2(1-\tilde{q})}\), which has the
+form \(E_{k, +} \sim \sqrt{{q_c^\prime}^2 - q^2}\), where
+\(q_c^\prime = 2c_1n\).
+The relevant mode for the BA to FM transition can be found by considering the
+imaginary parts of the derived Bogoliubov energies (see
+Fig.~\ref{fig: dens-spin-energies}).
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/bogoliubov_energies.pdf}
+    \caption[Real and imaginary parts of the Bogoliubov energies for the
+        broken-axisymmetry phase of a spin-1 BEC]
+    {Imaginary parts of the energies defined in Eq.~\eqref{eq: e_k-fz} and
+    Eq.~\eqref{eq: e_k-pm} in a parameter space of mode \(k\) and
+    \( Q=q/|c_1|n \).\label{fig: dens-spin-energies}}
+\end{figure}
+For \(|Q|>2\), \(\text{Im}(E_{k, +})\) becomes non-zero, indicating an
+instability.
+The critical point \(Q = 2\) corresponds to the second-order phase transition
+from the polar to the BA phase, indicating that \(E_{k, +}\) is the desired
+Bogoliubov energy for that particular transition.
+However, we see that for \(Q<0\) the imaginary part of \(E_{k, f_z}\) becomes
+non-zero, and hence unstable.
+This critical point corresponds to the transition between the BA and FM phases,
+which precisely describes our transition of interest.
+Therefore, \(E_{k, f_z}\) is the correct Bogoliubov mode for our transition.
+Note that for \(k=0\) an instability does not occur in the \(E_{k, f_z}\) mode,
+and so studies focussing on this mode in particular will not capture the phase
+transition that occurs at \(Q=0\)~\cite{Matuszewski2009, Qiu2020,
+Mirkhalaf2021}.
+In contrast, choosing the \(k=0\) mode is sufficient to capture the phase
+transition at \(Q=2\) since it is the most unstable mode indicated in
+\(E_{k, +}\).
+In practice, the \(Q=-2\) transition is not realised since the instability at
+\(Q=0\) for any \(k \neq 0\) will typically arise and take precedent when
+\(Q\) is quenched from positive to negative values.
+
+With the relevant Bogoliubov mode found, we can predict the scaling of the
+density of defects for a BA to FM phase transition.
+Since our relevant mode is gapless, it is instructive to consider a special case
+of the spectrum, given as
+\begin{align}\label{eq: dispersion-relation}
+    \omega^2 \sim |q-q_c|^{\theta^+}k^{z^+}+k^{2z}.
+\end{align}
+We focus on the (+) spectrum (i.e., approaching the critical point from the BA
+phase), since this determines the crossover from the adiabatic regime to the
+impulse regime which sets the metastable state after the QDCP is crossed.
+To be consistent with the KZM, where \(\omega \sim |q(t)-q_c|^{z}\), we make
+the ansatz \(k \sim \xi^{-1} \sim |q(t)-q_c|^{\nu}\).
+For a scaling solution to arise that is consistent with the relaxation time,
+we require \(\omega sim k^z\).
+This, combined with Eq.~\eqref{eq: dispersion-relation}, leads us to the
+relation
+\begin{align}
+    \theta^+ = \nu (2z-z^+).
+\end{align}
+Now, in our system, we have \(q_c = 0\) and \(q = -t/\tau_Q\) and thus
+Eq.~\eqref{eq: dispersion-relation} simplifies to
+\begin{align}
+    \omega^2 \sim \frac{|t|^{\theta^+}}{\tau_Q^{\theta^+}}k^{z^+}.    
+\end{align}
+
+Recall now the adiabatic-impulse approximation described in
+Sec.~\ref{sec: the-KZM}, with an energy gap given by \(\Delta(t)\).
+In this case, the relaxation time scales as \(\tau \sim 1/\Delta \), which
+implies that far from the critical point the relaxation time is small, and the
+system adiabatically follows the instantaneous ground state.
+However, as the critical point is approached, \(\Delta \rightarrow 0\), and the
+relaxation time then diverges.
+At some time \(\tilde{t}\) the reaction time becomes comparable to the
+transition time, \(\Delta / \dot{\Delta}\), and the system can no longer
+adiabatically follow the ground state.
+This time (often denoted the freezing time), \(\tilde{t}\), denotes the onset
+of the impulse regime, where the system becomes frozen.
+Therefore, the freezing time can be evaluated from the expression
+\begin{align}
+    \frac{1}{\Delta(\tilde{t})} \sim
+    \frac{\Delta(\tilde{t})}{\dot{\Delta}(\tilde{t})} .
+\end{align}
 
 \section{Numerical studies of the KZM across a first-order phase transition}
 \subsection{Broken-axisymmetry to ferromagnetic quench}
@@ -492,7 +641,7 @@ component for a quench time \( \tau_Q=5000\tau \).
 As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
 linearly decrease as the \(\psi_{\pm 1}\) components increase.
 After the critical point at \(t/\tau=0\) is passed there is a freeze-out time
-(see Sec.~\ref{sec:the-KZM}) before the system crosses into the ferromagnetic
+(see Sec.~\ref{sec: the-KZM}) before the system crosses into the ferromagnetic
 phase.
 During this new phase, we see the formation of ferromagnetic domain walls
 (characterised by the bright density peaks) in the \(\psi_{\pm 1}\) components
@@ -616,113 +765,6 @@ where an exponent of \(-1/3\) is observed.
 Our observation of a \(-1/2\) exponent signifies a deviation from
 the Kibble-Zurek theory which appears to be a consequence of our transition
 being first-order.
-
-\subsection{Determining the relevant Bogoliubov mode}
-Here, we derive each mode  of the BA phase explicitly from the relevant
-Bogoliubov transformations and determine the relevant mode for the 
-BA to ferromagnetic (FM) transition.
-The broken-axisymmetry phase of a spin-1 BEC exhibits three Bogoliubov
-modes~\cite{Uchino2010}.
-The broken-axisymmetry phase can be parameterised as
-\begin{align}
-    \zeta^\text{BA} = \left(\frac{\sin\theta}{\sqrt{2}}, \cos\theta,
-    \frac{\sin\theta}{\sqrt{2}}\right),
-\end{align}
-where \(\sin\theta = \sqrt{1/2+q/(4nc_1)}\).
-The fluctuation operators for this state are then defined as~\cite{Uchino2010}:
-\begin{align}
-    \hat{a}_{\vb{k}, d} &= \frac{\sin\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    + \hat{a}_{\vb{k}, -1}) + \cos\theta \hat{a}_{\vb{k}, 0}, \\
-    \hat{a}_{\vb{k}, f_z} &= \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    - \hat{a}_{\vb{k}, -1}), \\
-    \hat{a}_{\vb{k}, \theta} &= \frac{\cos\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    + \hat{a}_{\vb{k}, -1}) - \sin\theta \hat{a}_{\vb{k}, 0},
-\end{align}
-where on the right-hand side \(\hat{a}_{\vb{k}, m}\) is the annihilation
-operator for a spin-\(1\) boson in magnetic level \(m\) (for \(m=-1,0,+1\)),
-determined by expanding the wave function field operator as
-\begin{align}
-    \hat{\psi}_m(\vb{x}) = \frac{1}{\sqrt{V}}\sum_{\vb{k}}
-    \hat{a}_{\vb{k}, m}e^{i\vb{k}\cdot \vb{x}},
-\end{align}
-where \(V\) is the volume of the system.
-
-The sub-Hamiltonian for the spin fluctuation mode \(\hat{a}_{\vb{k}, f_z}\) can
-be diagonalised using the transformation
-\begin{align}
-    \hat{b}_{\vb{k}, f_z} = \sqrt{\frac{\epsilon_{\vb{k}} + q/2
-    + E_{\vb{k}, f_z}}{2E_{\vb{k}, f_z}}}\hat{a}_{\vb{k}, f_z}
-    + \sqrt{\frac{\epsilon_{\vb{k}} + q/2 - E_{\vb{k}, f_z}}{2E_{\vb{k}, f_z}}}
-    \hat{a}_{-\vb{k}, f_z}^\dagger,
-\end{align}
-where \(\epsilon_{\vb{k}} = \hbar^2|\vb{k}|^2/2M\) is the kinetic energy and the
-Bogoliubov spectrum is given by
-\begin{align}\label{eq: e_k-fz}
-    E_{\vb{k}, {f_z}} = \sqrt{\epsilon_{\vb{k}}(\epsilon_{\vb{k}} + q)}.
-\end{align}
-The sub-Hamiltonians for the density fluctuation mode \(\hat{a}_{\vb{k}, d}\)
-and the \(\theta \) mode
-\(\hat{a}_{\vb{k}, \theta}\) can be similarly diagonalised using operators
-\(\hat{b}_{\vb{k}, +}\) and \(\hat{b}_{\vb{k}, +}\), which yields the remaining
-two Bogoliubov modes~\cite{Uchino2010}:
-\begin{align}\label{eq: e_k-pm}
-    E_{\vb{k}, \pm}= \sqrt{\epsilon_{\vb{k}}^2 + n(c_0-c_1)\epsilon_{\vb{k}}
-        + 2{(nc_1)}^2(1 - \tilde{q}^2) \pm E_1(\vb{k})},
-\end{align}
-where \(\tilde{q} = -q/2c_1n\) and
-\begin{align}
-    E_1(\vb{k}) = \sqrt{{\left[n{(c_0 + 3c_1)}\epsilon_{\vb{k}}
-                    + 2{(c_1n)}^2(1-\tilde{q}^2)\right]}^2
-        - 4c_1(c_0+2c_1){(n\tilde{q}\epsilon_{\vb{k}})}^2}.
-\end{align}
-The final, diagonalised Hamiltonian then reads
-\begin{align}
-    \hat{H}^\text{BA} =\, E_0^\text{BA}
-    + \sum_{\vb{k} \neq 0}\left[E_{\vb{k}, f_z}\hat{b}^\dagger_{\vb{k}, f_z}
-    \hat{b}_{\vb{k}, f_z}
-    + E_{\vb{k}, -}\hat{b}^\dagger_{\vb{k}, -}\hat{b}_{\vb{k}, -}
-    + E_{\vb{k}, +}\hat{b}^\dagger_{\vb{k}, +}\hat{b}_{\vb{k}, +}\right],
-\end{align}
-where \(E_0^\text{BA}\) is the ground state energy for the
-BA phase, which is explicitly derived in Ref.~\cite{Uchino2010}.
-
-For simplicity, we now consider a 1D system.
-In the long-wavelength limit (\(k \rightarrow 0\)), the only non-zero (gapped)
-mode is given by \(E_{k, +}= \sqrt{4{(c_1n)}^2(1-\tilde{q})}\), which has the
-form \(E_{k, +} \sim \sqrt{{q_c^\prime}^2 - q^2}\), where
-\(q_c^\prime = 2c_1n\).
-The relevant mode for the BA to FM transition can be found by considering the
-imaginary parts of the derived Bogoliubov energies (see
-Fig.~\ref{fig: dens-spin-energies}).
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/bogoliubov_energies.pdf}
-    \caption[Real and imaginary parts of the Bogoliubov energies for the
-        broken-axisymmetry phase of a spin-1 BEC]
-    {Imaginary parts of the energies defined in Eq.~\eqref{eq: e_k-fz} and
-    Eq.~\eqref{eq: e_k-pm} in a parameter space of mode \(k\) and
-    \( Q=q/|c_1|n \).\label{fig: dens-spin-energies}}
-\end{figure}
-For \(|Q|>2\), \(\text{Im}(E_{k, +})\) becomes non-zero, indicating an
-instability.
-The critical point \(Q = 2\) corresponds to the second-order phase transition
-from the polar to the BA phase, indicating that \(E_{k, +}\) is the desired
-Bogoliubov energy for that particular transition.
-However, we see that for \(Q<0\) the imaginary part of \(E_{k, f_z}\) becomes
-non-zero, and hence unstable.
-This critical point corresponds to the transition between the BA and FM phases,
-which precisely describes our transition of interest.
-Therefore, \(E_{k, f_z}\) is the correct Bogoliubov mode for our transition.
-Note that for \(k=0\) an instability does not occur in the \(E_{k, f_z}\) mode,
-and so studies focussing on this mode in particular will not capture the phase
-transition that occurs at \(Q=0\)~\cite{Matuszewski2009, Qiu2020,
-Mirkhalaf2021}.
-In contrast, choosing the \(k=0\) mode is sufficient to capture the phase
-transition at \(Q=2\) since it is the most unstable mode indicated in
-\(E_{k, +}\).
-In practice, the \(Q=-2\) transition is not realised since the instability at
-\(Q=0\) for any \(k \neq 0\) will typically arise and take precedent when
-\(Q\) is quenched from positive to negative values.
 
 \subsection{Extracting a power-law scaling near the critical point}
 Having identified the relevant mode of the transition, we now follow a procedure
@@ -858,8 +900,23 @@ Our numerical set up is exactly the same as the previous section.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\textwidth]{example-image}
-    \caption{\label{fig: polar-ba-fm-defects}Caption.}
+    \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/polar-BA-FM_domains.pdf}
+    \caption{\label{fig: polar-ba-fm-defects}Number of ferromagnetic domains as
+    a function of the quench time, \(\tau_Q\), after the system has crossed two
+    phase transitions.
+    Each point is averaged over 5 runs, with the error bars giving \(\pm 1\)
+    standard deviation.}
 \end{figure}
+We once again count the number of ferromagnetic domains present at the end of
+the simulation when the system is in the FM phase.
 Results for the density of defects are plotted in
 Fig.~\ref{fig: polar-ba-fm-defects}.
+Despite passing through two phase transitions, we observe qualitatively similar
+behaviour to that of previous transition crossing only the first-order phase
+transition (see Fig.~\ref{fig: FM-domains-scaling}).
+For fast quenches (\(\tau_Q \lesssim 10^3 \)), the scaling of the density of
+defects follows closely to \(N_d \sim \tau_Q^{-1/4}\).
+Similar to the previous case, there is a deviation from this scaling when the
+quench time becomes slower (\(\tau_Q > 10^3\)).
+This shows that the scaling of the density of defects for fast quenches is
+robust, and is unaffected by the number of previous phase transitions.
