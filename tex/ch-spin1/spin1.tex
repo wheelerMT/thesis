@@ -195,8 +195,8 @@ set by the value of the equilibrium correlation length at the freeze-out time
 \end{equation}
 If the system supports topological defects such as vortices, then the defect
 density is given by
-\begin{equation}
-    n_d \simeq \hat{\xi}^{-d} \sim \tau_Q^{\frac{-d\nu}{1+z\nu}},
+\begin{equation}\label{eq: KZM-defects-scaling}
+    N_d \simeq \hat{\xi}^{-d} \sim \tau_Q^{\frac{-d\nu}{1+z\nu}},
 \end{equation}
 where \( d \) is the number of spatial dimensions.
 This is a key result of the Kibble-Zurek mechanism and provides a
@@ -433,14 +433,14 @@ specified in Eqs.~\eqref{eq: continuous-energy-cond}
 -\eqref{eq: bounded-energy-derivative-cond}
 and therefore is a QDCP\@.
 
-\subsection{Predicting the density of defects}
+\subsection{Determining the relevant Bogoliubov mode}\label{subsec: bogoliubov-modes}
 Recall from Sec~\ref{sec: the-KZM} that the density of defects takes the form
 \(N_d \simeq \xi^{-d}\).
 Therefore, to predict the density of defects for the BA to FM transition, we
 need to find the appropriate form for the correlation length, \(\xi \).
 To do so, we consider the Bogoliubov modes of a spin-1 BEC\@.
 
-Here, we derive each mode  of the BA phase explicitly from the relevant
+Here, we derive each mode of the BA phase explicitly from the relevant
 Bogoliubov transformations and determine the relevant mode for the 
 BA to FM transition.
 The broken-axisymmetry phase of a spin-1 BEC exhibits three Bogoliubov
@@ -546,6 +546,7 @@ In practice, the \(Q=-2\) transition is not realised since the instability at
 \(Q=0\) for any \(k \neq 0\) will typically arise and take precedent when
 \(Q\) is quenched from positive to negative values.
 
+\subsection{Predicting the density of defects}
 With the relevant Bogoliubov mode found, we can predict the scaling of the
 density of defects for a BA to FM phase transition.
 Since our relevant mode is gapless, it is instructive to consider a special case
@@ -567,7 +568,7 @@ relation
 \end{align}
 Now, in our system, we have \(q_c = 0\) and \(q = -t/\tau_Q\) and thus
 Eq.~\eqref{eq: dispersion-relation} simplifies to
-\begin{align}
+\begin{align}\label{eq: dispersion-relation-simplified}
     \omega^2 \sim \frac{|t|^{\theta^+}}{\tau_Q^{\theta^+}}k^{z^+}.    
 \end{align}
 
@@ -588,6 +589,51 @@ Therefore, the freezing time can be evaluated from the expression
     \frac{1}{\Delta(\tilde{t})} \sim
     \frac{\Delta(\tilde{t})}{\dot{\Delta}(\tilde{t})} .
 \end{align}
+
+For our gapless spectrum, we work with a dispersion relation of the form given
+by Eq.~\eqref{eq: dispersion-relation-simplified}, and calculate the freezing
+time using the relation \(\omega^2 = \dot{\omega}\).
+This yields
+\begin{align}
+    \frac{\theta^+}{2\tau_Q^{\theta^+/2}}|\tilde{t}|^{(\theta^+/2 - 1)}
+    \tilde{k}^{z^+/2} \sim \frac{|\tilde{t}|^{\theta^+}}{\tau_Q^{\theta^+}}
+    \tilde{k}^{z^+},
+\end{align}
+which then leads us directly to the freezing time
+\begin{align}\label{eq: freeze-t}   
+    |\tilde{t}| \sim \tau_Q^{\theta^+/(2+\theta^+)}
+    \tilde{k}^{-z^+/(2+\theta^+)}.
+\end{align}
+Now, to obtain the characteristic momentum scale, we substitute
+Eq.~\eqref{eq: freeze-t} back into
+Eq.~\eqref{eq: dispersion-relation-simplified}, which yields
+\begin{align}
+    \tilde{k} \sim \tau_Q^{\theta^+/(z^+-(2+\theta^+)z)}.
+\end{align}
+The density of defects is then finally calculated as
+\begin{align}
+    N_d \sim \tilde{k}^d \sim \tau_Q^{d\theta^+/(z^+-(2+\theta^+)z)} \sim
+    \tau_Q^{-d\nu/(z\nu + 1)},
+\end{align}
+where \(d\) is the dimensionality of the system.
+Hence, we have shown how the density of defects can be predicted for a system
+containing a gapless spectrum.
+
+For the BA to FM transition specifically, Eq.~\eqref{eq: e_k-fz} implies that
+\(\theta^+=1\), \(z^+=2\), and \(z = 2\).
+Considering a 1D system (\(d = 1\)), that leads to a scaling of the density of
+defects as
+\begin{align}
+    N_d \sim\tau_Q^{-1/4},
+\end{align}
+which corresponds to choosing \(z=2\) and \(\nu = 1/2\) in
+Eq.~\eqref{eq: KZM-defects-scaling}.
+Despite the Hamiltonian of our model being the same as previous works, this
+scaling obtained is different from that reported in previous studies on the KZM
+in spinor BECs~\cite{Damski2007,Saito2007,Saito2007a,Saito2013,Swislocki2013}.
+These studies focused on continuous phase transitions through a QCP\@, and our
+results indicate a new scaling regime that is associated specifically with the
+QDCP of this system.
 
 \section{Numerical studies of the KZM across a first-order phase transition}
 \subsection{Broken-axisymmetry to ferromagnetic quench}
@@ -689,7 +735,7 @@ ensure that the domains are frozen and avoid the early-time coarsening
 taking place which could affect the total number of domains present.
 \begin{figure}
     \centering
-    \includegraphics[width=0.65\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
+    \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
     \caption[Total ferromagnetic domains in the system versus the quench rate
         \(\tau_Q\)]
     {The number of ferromagnetic domains as a function of the
