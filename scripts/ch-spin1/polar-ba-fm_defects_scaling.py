@@ -20,7 +20,7 @@ for quench in quenches:
         domains_std.append(np.std(nd_total))
         num_of_domains.append(sum(nd_total) / len(nd_total))
 
-fig, ax = plt.subplots(1)
+fig, ax = plt.subplots(1, figsize=(6.4, 3.8))
 ax.set_ylabel(r"$N_d$")
 ax.set_xlabel(r"$\tau_Q$")
 ax.errorbar(
