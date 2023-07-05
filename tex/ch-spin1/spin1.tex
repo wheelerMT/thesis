@@ -2,10 +2,13 @@
 
 
 \section{Introduction}
-Nonequilibrium phase transitions arise in many areas of physics, ranging from
-cosmology to condensed matter~\cite{Polkovnikov2011}.
-Unlike its classical counterpart, a quantum phase transition (QPT) is a
-zero-temperature transition driven by quantum fluctuations~\cite{Sachdev2011}.
+Nonequilibrium phase transitions are ubiquitous, arising in many areas of
+physics, including cosmology~\cite{Kibble1980,Mazumdar2019}, condensed
+matter~\cite{Chuang1991,Hendry1994,Bauerle1996,Ruutu1996,Sondhi1997,
+Polkovnikov2011}, and ultracold atomic gases~\cite{Hadzibabic2006,Langen2015,
+Fletcher2015,Liu2018}.
+A quantum phase transition (QPT), in contrast to its classical counterpart, is a
+zero-temperature transition driven by quantum fluctuations.~\cite{Sachdev2011}.
 In such a transition, a fundamental change of ground state occurs as an external
 parameter is varied across the quantum critical point.
 As this critical point is passed, the timescale governing the dynamics diverges,
@@ -20,10 +23,8 @@ strings in the early universe~\cite{Kibble1976, Kibble1980}, before being
 extended by Zurek to condensed matter systems~\cite{Zurek1985, Zurek1993,
     Zurek1996}.
 
-
-The standard KZ theory is very general, and can be applied to any continuous
-phase transition.
-The robustness of the theory has seen it successfully applied to both
+Any continuous phase transition can be modelled using the KZ theory, and due to
+this robustness, it has been successfully applied to both
 classical~\cite{Donadello2016,Beugnon2017} and
 quantum~\cite{Dziarmaga2005, Damski2005, Lamacraft2007} phase transitions.
 Whilst the theory has had great success in applications to continuous,
@@ -39,10 +40,10 @@ There is current interest in trying to generalise the KZM and applying it to
 discontinuous transitions and deriving appropriate scaling
 laws~\cite{Divakaran2008, Suzuki2015}.
 
-Fisher and Berker, in the classical case, first discussed a particular type of
-discontinuous, first-order transition and introduced the notion of a
-discontinuous critical point (DCP)~\cite{Fisher1982}.
-The DCP separates two distinct phases, characterized by a discontinuous jump
+The seminal work of Fisher and Berker~\cite{Fisher1982}, in the classical case,
+first discussed a particular type of discontinuous, first-order transition and
+introduced the notion of a discontinuous critical point (DCP).
+Such a DCP separates two distinct phases, characterized by a discontinuous jump
 in the order parameter.
 Despite the discontinuity, the transition can still be characterized by a
 diverging length scale and hence critical exponents can be derived.
@@ -51,11 +52,9 @@ for a quantum discontinuous critical point (QDCP)~\cite{Suzuki2015}.
 The QDCP leads to a prediction of the scaling of the defect density that is
 modified from the typical KZ scenario.
 
-Spinor Bose-Einstein condensates (BECs) offer a highly controllable platform
-for studying non-equilibrium physics, ranging from topological
-defects~\cite{Lovegrove2014, Borgh2016} to quantum
-quenches~\cite{Symes2017, Prufer2018, Schmied2019}.
-\textcolor{red}{More references/topics?}
+Spinor BECs offer a highly controllable platform for studying non-equilibrium
+physics, ranging from topological defects~\cite{Lovegrove2014, Borgh2016} to
+quantum quenches~\cite{Symes2017, Prufer2018, Schmied2019}.
 In addition, their rich phase diagram has seen the KZM applied both numerically
 and experimentally in various continuous phase transitions~\cite{Damski2007,
     Saito2007, Saito2007a, Swislocki2013, Witkowska2013, Anquez2016}.
@@ -63,6 +62,26 @@ For a ferromagnetic spin-1 BEC, there exists a first-order QPT between a
 three-component broken-axisymmetry (BA) phase and a ferromagnetic (FM) phase,
 making this system an ideal platform for investigating the KZM across
 discontinuous transitions.
+
+In this Chapter we analytically and numerically investigate the KZM in an 1D FM
+spin-1 BEC\@.
+By quenching the quadratic Zeeman shift, we are able to quench the system
+through both continuous and discontinuous phase transitions.
+In particular, we first examine the resulting scaling laws associated with
+quenching through the continuous phase transition from the polar phase to the
+BA phase, and confirm that these are in excellent agreement with the KZ theory.
+Then, we extend the KZM to predict the scaling laws of the discontinuous,
+first-order phase transition between the BA and FM phases.
+Quenching the quadratic Zeeman shift allows the system to change from the
+BA phase into a phase-separated FM phase, where domains with opposing
+condensate-spin projection develop~\cite{Kawaguchi2012}.
+We show that, despite this particular transition having a gapless spectrum, the
+standard KZ theory can be generalised and extended to cover discontinuous,
+first-order transitions.
+In addition, scaling behaviour near the critical point is derived by means of
+linearising the mean-field equations for the spin-1
+condensate~\cite{Damski2007, Uchino2010}.
+Predicted scaling laws are then confirmed by direct numerical simulations.
 
 \section{The Kibble-Zurek mechanism}\label{sec: the-KZM}
 Consider a system that undergoes a spontaneous breaking of symmetry when a
@@ -114,7 +133,7 @@ parameter can be written as
 \end{equation}
 where the distance to the critical point is
 \begin{equation}
-    \epsilon(t) = \frac{t}{\tau_Q}
+    \epsilon(t) = \frac{t}{\tau_Q},
     \label{eq: time-dependent-epsilon}
 \end{equation}
 for a quench time \( \tau_Q \).
@@ -666,10 +685,16 @@ the critical point is passed?
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
     \caption[Component densities of the system as a function of time]
-    {Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
+    {\label{fig: BA-FM-densities}
+    Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
         \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
         spatial subregion of the condensate for
-        \( \tau_Q=2500\tau \).\label{fig: BA-FM-densities}}
+        \( \tau_Q=1000\tau \).
+        After the critical point is passed (\(t/\tau=0\)), FM domains form in
+        the \(\psi_{\pm 1}\) components, indicated by the bright density peaks.
+        The location of a bright density peak in one component matches with a
+        density minimum in the other component, showcasing the opposite
+        spin-projection.}
 \end{figure}
 Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
 component for a quench time \( \tau_Q=5000\tau \).
@@ -729,7 +754,7 @@ number of domains, \(N_d\).
 We calculate this quantity at the end of each simulation to ensure that the
 domains are frozen and avoid the early-time coarsening taking place which could
 affect the total number of domains present.
-\begin{figure}
+\begin{figure}[htb!]
     \centering
     \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
     \caption[Total ferromagnetic domains in the system versus the quench rate

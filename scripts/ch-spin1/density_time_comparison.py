@@ -26,8 +26,6 @@ for i in range(num_of_frames):
     spacetime_plus_1000[:, i] = abs(psi_1_1000[:, i]) ** 2
     spacetime_plus_500[:, i] = abs(psi_1_500[:, i]) ** 2
 
-extent = 0, time_500.max(), x.min(), x.max()
-
 fig, ax = plt.subplots(2)
 ax[0].set_xlim(0, time_500.max())
 ax[0].set_xticks([])
