@@ -219,7 +219,7 @@ when the linear, \( p \), or quadratic, \( q \), Zeeman shifts are
 ramped across a critical point~\cite{Kawaguchi2012}.
 A second-order transition is characterised by the derivative of the energy with
 respect to \( p \) and \( q \) change continuously across the transition
-\textcolor{red}{? (Are there other conditions on a second-order transition?)}.
+\textcolor{red}{(Are there other conditions on a second-order transition?)}.
 In this section, we aim to test the predictions of the Kibble-Zurek mechanism
 for a second-order phase transition in a spin-1 BEC\@.
 
@@ -238,8 +238,6 @@ This mode is gapped, and has the scaling form
 \begin{equation}
     \Delta \sim \sqrt{4 - q^2}.
 \end{equation}
-\textcolor{red}{We need to figure out why they take the scaling from the BA side
-    and not the polar side.}
 
 We assume the form of a linear quench
 \begin{equation}
@@ -255,7 +253,6 @@ Using the above equation and considering sufficiently slow quenches
 \begin{equation}
     \hat{t} \sim \tau_Q^{\frac{1}{3}}.
 \end{equation}
-\textcolor{red}{I've tried deriving this and I am getting stuck\ldots}
 
 We now analyse the resulting dynamics when linearly decreasing \( q \) according
 to Eq.~\eqref{eq: time-dep-Q-damski}.
@@ -342,7 +339,7 @@ The preceding sections were concerned with the KZM across second-order phase
 transitions.
 Describing the KZM across discontinuous, first-order transitions, however, has
 been difficult due to lack of
-universality~\cite{Turban2002,Continentino2004,Nauenberg1975a}.
+universality~\cite{Turban2002,Continentino2004,Nauenberg1975}.
 More recent work has aimed to bridge the gap between the KZM and first-order
 transitions~\cite{Suzuki2015}, and here we present an overview of how the KZM
 can be adapted to fit a discontinuous phase transition.
@@ -427,7 +424,7 @@ which is precisely the local magnetisation, \(F_z = |\psi_1|^2
 Again, one sees that at the critical point and for \( p=0 \) the order parameter
 becomes zero in the BA phase whilst becoming non-zero in the FM phase.
 In addition, as the linear Zeeman shift \( p \) is varied both above and below
-zero the order parameter becomes non-zero.
+zero, the order parameter becomes non-zero.
 We have shown that the BA to FM phase transition satisfies all conditions
 specified in Eqs.~\eqref{eq: continuous-energy-cond}
 -\eqref{eq: bounded-energy-derivative-cond}
@@ -438,11 +435,9 @@ Recall from Sec~\ref{sec: the-KZM} that the density of defects takes the form
 \(N_d \simeq \xi^{-d}\).
 Therefore, to predict the density of defects for the BA to FM transition, we
 need to find the appropriate form for the correlation length, \(\xi \).
-To do so, we consider the Bogoliubov modes of a spin-1 BEC\@.
-
-Here, we derive each mode of the BA phase explicitly from the relevant
-Bogoliubov transformations and determine the relevant mode for the 
-BA to FM transition.
+To do so, we consider the Bogoliubov modes of the BA phase of a spin-1 BEC,
+which we derive explicitly from the relevant Bogoliubov transformations, and
+determine the relevant mode for the  BA to FM transition.
 The broken-axisymmetry phase of a spin-1 BEC exhibits three Bogoliubov
 modes~\cite{Uchino2010}.
 The broken-axisymmetry phase can be parameterised as
@@ -499,7 +494,7 @@ where \(\tilde{q} = -q/2c_1n\) and
 \end{align}
 The final, diagonalised Hamiltonian then reads
 \begin{align}
-    \hat{p}^\text{BA} =\, E_0^\text{BA}
+    \hat{H}^\text{BA} =\, E_0^\text{BA}
     + \sum_{\vb{k} \neq 0}\left[E_{\vb{k}, f_z}\hat{b}^\dagger_{\vb{k}, f_z}
     \hat{b}_{\vb{k}, f_z}
     + E_{\vb{k}, -}\hat{b}^\dagger_{\vb{k}, -}\hat{b}_{\vb{k}, -}
@@ -637,14 +632,9 @@ QDCP of this system.
 
 \section{Numerical studies of the KZM across a first-order phase transition}
 \subsection{Broken-axisymmetry to ferromagnetic quench}
-The KZM typically concerns second-order phase transitions. However, recent
-work has been conducted in condensed matter systems which investigate
-the KZM across first-order transitions~\cite{Qiu2020}.
-We aim to extend this research and present results for
-the first-order transition between the broken-axisymmetry and
-ferromagnetic phases.
-
-We start from the broken-axisymmetry (BA) wave function with \( p=0 \)
+To check our predictions, we perform numerical simulations of a spin-1
+Bose-Einstein condensate crossing a QDCP\@.
+We start from the BA wave function with \( p=0 \):
 \begin{equation}
     \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
     \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
@@ -672,7 +662,6 @@ From Eq.~\eqref{eq: BA-initial-wavefunction} we have
 \( Q = 0 \).
 The question that remains is: Which state will the system choose after
 the critical point is passed?
-
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
@@ -709,7 +698,8 @@ grow as the quench time increases.
         \caption{\label{fig: BA-FM-domain-onset}}
     \end{subfigure}
     \caption[Density profile across an average FM domain]
-    {(a): Density profile of the \(\psi_1\) component across an average
+    {\textcolor{red}{Fix axis labels}
+    (a): Density profile of the \(\psi_1\) component across an average
         domain in a simulation with \(\tau_Q=2500\tau \) (black line) and
         \(\tau_q=10000\) (red line).
         (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial subregion
@@ -727,12 +717,13 @@ Eq.~\eqref{eq: freeze-out-scaling}.
 
 One can count the number of ferromagnetic domains in the system and see the
 dependence on \( \tau_Q \).
-To do this, we developed a numerical algorithm that counts the number of
-density peaks in each component and sums the result to give the total number of
-domains, \(N_d\).
-We calculate this quantity at time \(t/\tau=\tau_Q/2\) in each simulation, to
-ensure that the domains are frozen and avoid the early-time coarsening
-taking place which could affect the total number of domains present.
+To do this, we identified that each domain is associated with a corresponding
+density peak, and subsequently developed a numerical algorithm that counts the
+number of density peaks in each component and sums the result to give the total
+number of domains, \(N_d\).
+We calculate this quantity at the end of each simulation to ensure that the
+domains are frozen and avoid the early-time coarsening taking place which could
+affect the total number of domains present.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
@@ -745,17 +736,22 @@ taking place which could affect the total number of domains present.
         (red dotted line).\label{fig: FM-domains-scaling}}
 \end{figure}
 In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
-as a function of the quench time with fifty ensemble runs for each simulation.
-We see that there is not a uniform scaling throughout all quench times tested.
-Faster quenches indicate a steeper power-law scaling of the number of domains
-that approaches \(N_d\sim\tau_Q^{-1/3}\).
-As the quench time slows, a deviation from this scaling takes place at
-approximately \(\tau_Q\approx 3\times10^3\tau \), where the scaling of the
-domains approaches \(N_d\sim\tau_Q^{-1/5}\).
-\textcolor{red}{I guess the question now is: why is there a deviation?
-    Is the larger domain size (due to slower quench times) affecting the scaling?
-    Is it a consequence of the grid size? Can the \(1/3\) scaling be linked to KZ
-    theory?}
+as a function of the quench time, where each point represents fifty ensemble
+runs for each simulation.
+We find excellent agreement with the predicted value of
+\(N_d \sim \tau_Q^{-1/4}\) for sufficiently fast quenches (\(\tau_Q < 2
+\times 10^3\)).
+However, for slower quenches, a clear deviation from the predicted scaling
+occurs.
+Similar deviation from the predicted KZM scaling has been observed in other
+works where the quantities investigated were measured far past the critical
+point~\cite{Su2013, Swislocki2013}.
+The deviation observed in our system can be attributed to a crossover into a
+regime that is described by the Landau-Zener model~\cite{Zurek2005,Damski2005,
+Pellegrini2008,Divakaran2008}.
+\textcolor{red}{This will be expanded with more detail into the
+Landau-Zener theory after I have read a few more papers and got my head around
+it \ldots}
 
 \subsection{Power-law scaling near the critical point}
 Since we know the relevant unstable mode within our system, we can investigate
@@ -916,7 +912,7 @@ Finally, to simplify the above expression, we use the spin healing length
   + \frac{3 t^2}{16\tau_s^2 \tau_Q^2} \right) a_y.
 \end{align}
 
-Now, to extract scaling solutions, we rescale time as \(t rightarrow t\lambda \)
+Now, to extract scaling solutions, we rescale time as \(t\rightarrow t\lambda \)
 where \(\lambda = \sqrt{\tau_s\tau_Q}\), which leads to the final differential
 equation
 \begin{align} \label{eq: eqn-scaled-lin}
@@ -966,3 +962,5 @@ Similar to the previous case, there is a deviation from this scaling when the
 quench time becomes slower (\(\tau_Q > 10^3\)).
 This shows that the scaling of the density of defects for fast quenches is
 robust, and is unaffected by the number of previous phase transitions.
+
+\section{Conclusions}
