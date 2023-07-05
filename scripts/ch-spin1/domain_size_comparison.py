@@ -18,7 +18,7 @@ x = data_500["grid/x"][...]
 
 fig, ax = plt.subplots(1, )
 ax.set_ylabel(r"$|\psi_1|^2/n_0$")
-ax.set_xlabel(r"Spatial extent, $\xi_s$")
+ax.set_xlabel(r"\textbf{Spatial extent}, $\xi_s$")
 ax.plot(
     x[140:356] - x[140:356].mean(),
     abs(psi_1_5000) ** 2,
