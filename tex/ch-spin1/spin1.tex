@@ -699,10 +699,16 @@ grow as the quench time increases.
     \end{subfigure}
     \caption[Density profile across an average FM domain]
     {(a): Density profile of the \(\psi_1\) component across an average
-        domain in a simulation with \(\tau_Q=2500\tau \) (black line) and
-        \(\tau_q=10000\) (red line).
-        (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial subregion
-        for \( \tau_Q=5000\tau \) (top) and \(\tau_Q=10000\tau \) (bottom).}
+        domain in a simulation with \(\tau_Q=5000\tau \) (black line) and
+        \(\tau_q=500\) (gold line).
+        Domain size appear proportional to the quench time \(\tau_Q\), with
+        slower quenches having large domains, which supports the KZ theory
+        (see Eq.~\eqref{eq: KZM-domain-size}).
+        (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial
+        subregion for \( \tau_Q=500\tau \) (top) and \(\tau_Q=1000\tau \)
+        (bottom) showcasing the difference in the time it takes for domain
+        formation to occur, which faster quenches leading to an earlier onset
+        of domain formation when compared with slower quenches.}
 \end{figure}
 Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
 for two different simulations with \(\tau_Q=2500\) and \(\tau_Q=10000\).
@@ -961,5 +967,3 @@ Similar to the previous case, there is a deviation from this scaling when the
 quench time becomes slower (\(\tau_Q > 10^3\)).
 This shows that the scaling of the density of defects for fast quenches is
 robust, and is unaffected by the number of previous phase transitions.
-
-\section{Conclusions}
