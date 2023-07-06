@@ -223,10 +223,12 @@ foundation in testing the KZM in BEC systems~\cite{Damski2007, Swislocki2013,
     Anquez2016, Saito2007, Saito2007a}.
 
 \section{Numerical studies of the KZM across a second-order phase transition}
+To verify the key results of the KZ theory presented in the previous section,
+we perform numerical simulations using a spin-1 BEC\@.
 As shown in Sec.~\ref{sec: ground-states-spin-1}, there are four ground states
-phases of spin-1 Bose-Einstein condensates; namely, the ferromagnetic,
-antiferromagnetic, polar, and broken-axisymmetry phases, where each ground
-state phase has an associated symmetry.
+phases of spin-1 BECs; namely, the ferromagnetic, antiferromagnetic, polar, and
+broken-axisymmetry phases, where each ground state phase has an associated
+symmetry.
 The Kibble-Zurek mechanism can be studied in spin-1 BECs by considering how
 the change of a control parameter causes the order parameter to change from
 one ground state to another.
@@ -274,9 +276,9 @@ Using the above equation and considering sufficiently slow quenches
 \end{equation}
 
 We now analyse the resulting dynamics when linearly decreasing \( q \) according
-to Eq.~\eqref{eq: time-dep-Q-damski}.
-We start from the polar phase (\( t < 0 \)) and end the simulation precisely at
-\( Q = 0 \) (\( t=2\tau_Q \)) in the BA phase.
+to Eq.~\eqref{eq: time-dep-Q-damski}, starting from the polar phase (\(t < 0\))
+and end the simulation precisely at \( Q = 0 \) (\( t=2\tau_Q \)) in the BA
+phase.
 The initial state is a polar wave function that is slightly perturbed:
 \begin{equation}
     \psi = \left(\delta\psi_1, \frac{1}{\sqrt{L}} + \delta\psi_0,
@@ -290,7 +292,6 @@ from the probability distribution
 \( p(x) = \exp(-x^2/2\sigma^2)/\sqrt{2\pi}\sigma \).
 To ensure we remain close to the polar ground state, we take
 \( \sigma=10^{-4} \).
-
 We consider a 1D system with \(N_x = 2048\) grid points with \(L=78\) and
 choose dimensionless spin-independent interaction \(c_0=1.4\times10^5\) and
 \(c_0/c_1 = -222\).
@@ -365,8 +366,8 @@ can be adapted to fit a discontinuous phase transition.
 
 Fisher and Berker~\cite{Fisher1982} presented the universality class for
 a first-order phase transition known as a discontinuous critical point (DCP).
-This DCP results in a discontinuity in the order parameter as the critical point
-is passed.
+Such a DCP results in a discontinuity in the order parameter as the critical
+point is passed.
 Despite this, the transition can still be characterised by a diverging length
 scale, and hence, critical exponents can be derived.
 Suzuki \textit{et al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
@@ -450,16 +451,10 @@ specified in Eqs.~\eqref{eq: continuous-energy-cond}
 and therefore is a QDCP\@.
 
 \subsection{Determining the relevant Bogoliubov mode}\label{subsec: bogoliubov-modes}
-Recall from Sec~\ref{sec: the-KZM} that the density of defects takes the form
-\(N_d \simeq \xi^{-d}\).
-Therefore, to predict the density of defects for the BA to FM transition, we
-need to find the appropriate form for the correlation length, \(\xi \).
-To do so, we consider the Bogoliubov modes of the BA phase of a spin-1 BEC,
-which we derive explicitly from the relevant Bogoliubov transformations, and
-determine the relevant mode for the  BA to FM transition.
-The broken-axisymmetry phase of a spin-1 BEC exhibits three Bogoliubov
-modes~\cite{Uchino2010}.
-The broken-axisymmetry phase can be parameterised as
+In order to find the relevant energy spectrum for our system, we consider the
+Bogoliubov modes of the BA phase of a spin-1 BEC, which we derive explicitly
+from the relevant Bogoliubov transformations.
+The broken-axisymmetry phase can be parameterised as~\cite{Uchino2010}
 \begin{align}
     \zeta^\text{BA} = \left(\frac{\sin\theta}{\sqrt{2}}, \cos\theta,
     \frac{\sin\theta}{\sqrt{2}}\right),
@@ -470,7 +465,7 @@ The fluctuation operators for this state are then defined as~\cite{Uchino2010}:
     \hat{a}_{\vb{k}, d} &= \frac{\sin\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
     + \hat{a}_{\vb{k}, -1}) + \cos\theta \hat{a}_{\vb{k}, 0}, \\
     \hat{a}_{\vb{k}, f_z} &= \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    - \hat{a}_{\vb{k}, -1}), \\
+    - \hat{a}_{\vb{k}, -1}), \label{eq: a_k-fz}\\
     \hat{a}_{\vb{k}, \theta} &= \frac{\cos\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
     + \hat{a}_{\vb{k}, -1}) - \sin\theta \hat{a}_{\vb{k}, 0},
 \end{align}
@@ -520,7 +515,7 @@ The final, diagonalised Hamiltonian then reads
     + E_{\vb{k}, +}\hat{b}^\dagger_{\vb{k}, +}\hat{b}_{\vb{k}, +}\right],
 \end{align}
 where \(E_0^\text{BA}\) is the ground state energy for the
-BA phase, which is explicitly derived in Ref.~\cite{Uchino2010}.
+BA phase~\cite{Uchino2010}.
 
 For simplicity, we now consider a 1D system.
 In the long-wavelength limit (\(k \rightarrow 0\)), the only non-zero (gapped)
@@ -561,6 +556,10 @@ In practice, the \(Q=-2\) transition is not realised since the instability at
 \(Q\) is quenched from positive to negative values.
 
 \subsection{Predicting the density of defects}
+Recall from Sec~\ref{sec: the-KZM} that the density of defects takes the form
+\(N_d \simeq \xi^{-d}\).
+Therefore, to predict the density of defects for the BA to FM transition, we
+need to find the appropriate form for the correlation length, \(\xi \).
 With the relevant Bogoliubov mode found, we can predict the scaling of the
 density of defects for a BA to FM phase transition.
 Since our relevant mode is gapless, it is instructive to consider a special case
@@ -591,12 +590,12 @@ Sec.~\ref{sec: the-KZM}, with an energy gap given by \(\Delta(t)\).
 In this case, the relaxation time scales as \(\tau \sim 1/\Delta \), which
 implies that far from the critical point the relaxation time is small, and the
 system adiabatically follows the instantaneous ground state.
-However, as the critical point is approached, \(\Delta \rightarrow 0\), and the
+However, as the critical point is approached \(\Delta \rightarrow 0\), and the
 relaxation time then diverges.
-At some time \(\tilde{t}\) the reaction time becomes comparable to the
+At some time \(\tilde{t}\) the relaxation time becomes comparable to the
 transition time, \(\Delta / \dot{\Delta}\), and the system can no longer
 adiabatically follow the ground state.
-This time (often denoted the freezing time), \(\tilde{t}\), denotes the onset
+This time (often denoted the freezing time), \(\tilde{t}\), signifies the onset
 of the impulse regime, where the system becomes frozen.
 Therefore, the freezing time can be evaluated from the expression
 \begin{align}
@@ -653,13 +652,14 @@ QDCP of this system.
 \subsection{Broken-axisymmetry to ferromagnetic quench}
 To check our predictions, we perform numerical simulations of a spin-1
 Bose-Einstein condensate crossing a QDCP\@.
-We start from the BA wave function with \( p=0 \):
+We start from the BA wave function with (\( p=0 \)):
 \begin{equation}
-    \psi_{\pm 1} = \frac{\sqrt{2}}{4}\sqrt{2 - Q(t)}, \qquad
-    \psi_0 = \frac{1}{2}\sqrt{2 + Q(t)},
+    \psi_{\pm 1} = \frac{\sqrt{2n_0}}{4}\sqrt{2 - Q(t)}, \qquad
+    \psi_0 = \frac{\sqrt{n_0}}{2}\sqrt{2 + Q(t)},
     \label{eq: BA-initial-wavefunction}
 \end{equation}
-where \(Q(t)=q(t)/|c_1|n\).
+where \(Q(t)=q(t)/|c_1|n\) and \(n_0\) is the background density in a uniform
+system.
 The BA wave function is the ground state for \(c_1 < 0\) and \(0 < Q < 2\).
 There exists a critical point at \( Q = 0 \) where the ground state changes from
 the BA phase to the ferromagnetic phase.
@@ -668,19 +668,20 @@ spacing of \(\Delta_x = 0.125\).
 We perturb the initial BA state by adding small noise, \(\delta_m\), to each
 component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
 parts of \(\delta_m\) for each grid point using the probability distribution
-\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\) where we choose
+\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\), choosing
 \(\sigma=10^{-4}\) so that we start close to the BA ground state.
 
 \subsection{Phase boundaries in the ferromagnetic phase}
 As the system is quenched across the critical point at \( Q = 0 \), the ground
 state changes to the ferromagnetic phase.
-The order parameter for this phase takes the form \(\zeta={(1,0,0)}^T\) or
-\(\zeta={(0,0,1)}^T\) depending on the orientation of the spin.
-From Eq.~\eqref{eq: BA-initial-wavefunction} we have
-\(\psi_{\pm 1} = \frac{1}{2}\) and \(\psi_0 = \frac{\sqrt{2}}{2}\) at
-\( Q = 0 \).
+The order parameter for this phase takes the form \(\psi={(\sqrt{n_0},0,0)}^T\)
+or \(\psi={(0,0,\sqrt{n_0})}^T\) depending on the orientation of the spin.
+From Eq.~\eqref{eq: BA-initial-wavefunction}, however, we have
+\(\psi_{\pm 1} = \frac{\sqrt{n_0}}{2}\) and \(\psi_0 = \frac{\sqrt{2n_0}}{2}\)
+at \( Q = 0 \).
 The question that remains is: Which state will the system choose after
 the critical point is passed?
+
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
@@ -697,17 +698,17 @@ the critical point is passed?
         spin-projection.}
 \end{figure}
 Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
-component for a quench time \( \tau_Q=5000\tau \).
+component for a quench time \( \tau_Q=1000\tau \).
 As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
 linearly decrease as the \(\psi_{\pm 1}\) components increase.
-After the critical point at \(t/\tau=0\) is passed there is a freeze-out time
+After the critical point at \(t/\tau=0\) is passed, there is a freeze-out time
 (see Sec.~\ref{sec: the-KZM}) before the system crosses into the ferromagnetic
 phase.
 During this new phase, we see the formation of ferromagnetic domain walls
 (characterised by the bright density peaks) in the \(\psi_{\pm 1}\) components
 as the order parameter adjusts to the new ground state.
 These domains are spatially separated and where there is zero density in one of
-the components, there is maximal density in the other so that overall the total
+the components, there is maximal density in the other, so that overall the total
 density \(n=\sum_m\psi_m^*\psi_m\) is uniform.
 
 The KZM predicts in Eq.~\eqref{eq: KZM-domain-size} that the size of the domains
@@ -736,13 +737,13 @@ grow as the quench time increases.
         of domain formation when compared with slower quenches.}
 \end{figure}
 Fig.~\ref{fig: BA-FM-domain-width-comparison} shows the average domain size
-for two different simulations with \(\tau_Q=2500\) and \(\tau_Q=10000\).
+for two different simulations with \(\tau_Q=500\) and \(\tau_Q=5000\).
 We see that the longer quench time produces domains that have a
 larger width than those of faster quenches, supporting the Kibble-Zurek theory.
-In addition, we plot the time evolution of \(|\psi_1|^2\) for \(\tau_Q=5000\) and
-\(\tau_Q=10000\) in Fig.~\ref{fig: BA-FM-domain-onset}.
+In addition, we plot the time evolution of \(|\psi_1|^2\) for \(\tau_Q=500\)
+and \(\tau_Q=1000\) in Fig.~\ref{fig: BA-FM-domain-onset}.
 We see the ferromagnetic domain formation is delayed in the simulation
-with a longer quench time, which supports the prediction in
+with a longer quench time, again supporting the prediction in
 Eq.~\eqref{eq: freeze-out-scaling}.
 
 One can count the number of ferromagnetic domains in the system and see the
@@ -787,14 +788,7 @@ it \ldots}
 Since we know the relevant unstable mode within our system, we can investigate
 power-law scaling near the critical point.
 To begin, we start with the fluctuation operator associated with the
-Bogoliubov spectrum \(E_{\vb{k}, fz}\)
-\begin{equation}
-    \hat{a}_{\vb{k}, {f_z}} = \frac{1}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
-    - \hat{a}_{\vb{k}, -1}),
-    \label{eq: fz-fluctuation-operator}
-\end{equation}
-where \(\hat{a}_{\vb{k}, \pm1}\) is the annihilation operator for a spin-1 boson
-with wave number \( \vb{k} \) in component \(m=\pm1\).
+Bogoliubov spectrum \(E_{\vb{k}, fz}\) given in Eq.~\eqref{eq: a_k-fz}.
 \begin{figure}[tb]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -808,26 +802,26 @@ with wave number \( \vb{k} \) in component \(m=\pm1\).
     \end{subfigure}
     \caption[Growth of the fluctuation operator]
     {(a): The modulus of the fluctuation operator in
-        Eq.~\eqref{eq: fz-fluctuation-operator} for \(\vb{k}=1\) and
+        Eq.~\eqref{eq: a_k-fz} for \(k=1\) and
         \(\tau_Q=5000\).
         The plot shown is obtained by averaging over all runs in the ensemble.
         (b): The critical value \(Q_a\) as a function of the quench time.
     }
 \end{figure}
 Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
-of \(\tau_Q=5000\) with \(\vb{k}=1\).
+of \(\tau_Q=5000\) with \(k=1\).
 The quantity remains zero until after the critical point is passed, where
 a rapid period of growth occurs.
 This onset of this growth corresponds to the ferromagnetic domains forming
 within the system (see Fig.~\ref{fig: BA-FM-densities}).
 Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
-\( \hat{t} \), which is the time when \(|\hat{a}_{\vb{k}, {f_z}}|\) first
-exceeds 1\% of its maximum value: \(|\hat{a}_{\vb{k}, {f_z}}(\hat{t})| =
-0.01\times \max|\hat{a}_{\vb{k}, {f_z}}(t)|\).
+\( \tilde{t} \), which is the time when \(|\hat{a}_{k, {f_z}}|\) first
+exceeds 1\% of its maximum value: \(|\hat{a}_{k, {f_z}}(\tilde{t})| =
+0.01\times \max|\hat{a}_{k, {f_z}}(t)|\).
 For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
-\(\hat{t}=598\tau \).
+\(\tilde{t}=598\tau \).
 Using this time, we can extract the critical value of \( q \) that this growth
-occurs at, \(Q(\hat{t}) = Q_a\).
+occurs at, \(Q(\tilde{t}) = Q_a\).
 Fig.~\ref{fig: Q_a-scaling} shows \(Q_a\) as a function of the quench time.
 We see a clear power-law scaling of \(Q_a \propto \tau_Q^{-\frac{1}{2}}\) for
 all values of \( \tau_Q \) tested.
