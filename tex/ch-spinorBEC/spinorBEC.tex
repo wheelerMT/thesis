@@ -456,7 +456,7 @@ Time-independent equations are found through the substitution
 potential.
 Substituting into Eq.~\eqref{eq: spin-1-GPEs} and writing the equation for
 each component explicitly gives
-\begin{align}
+\begin{align}\label{eq: spin-1-GPEs-dimensional-psi1}
     \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) - p + q + c_0n + c_1F_z
     - \mu\right]\psi_1 + \frac{c_1}{\sqrt{2}}F_-\psi_0    & = 0  \\
     \frac{c_1}{\sqrt{2}}F_+\psi_1 + \left[-\frac{\hbar^2\nabla^2}{2M}
@@ -464,6 +464,7 @@ each component explicitly gives
                                                           & = 0  \\
     \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + p + q + c_0n - c_1F_z
     - \mu\right]\psi_{-1} + \frac{c_1}{\sqrt{2}}F_+\psi_0 & = 0,
+    \label{eq: spin-1-GPEs-dimensional-psim1}
 \end{align}
 where \(F_{\pm} = F_x \pm iF_y\).
 These equations can be solved to reveal more on the ground states and stationary
@@ -547,3 +548,213 @@ where \(F_z\) is given in Eq.~\eqref{eq: spin-1-spin-vectors} or
 Eq.~\eqref{eq: spin-2-spin-vectors} for the spin-1 and spin-2 cases,
 respectively.
 \textcolor{red}{Appendix on derivations?}
+
+\section{Reduction to lower dimensions}
+One can reduce the full 3D coupled GPEs to lower dimensions by considering
+sufficiently tight confinement of the condensate in one or more directions.
+Here, we reduce both the spin-1 and spin-2 GPEs to their 2D and 1D counterparts.
+
+\subsection{Spin-1}
+To begin, we start with the full 3D dimensional equations given in
+Eqs.~\eqref{eq: spin-1-GPEs-dimensional-psi1} ---
+~\eqref{eq: spin-1-GPEs-dimensional-psim1}, written in matrix form as
+\begin{align}\label{eq: spin-1-GPEs-matrix}
+    i\hbar \pdv{\Psi}{t} = \left[-\frac{\hbar^2\nabla^2}{2m} + V(\vb{r}) + c_0n
+    + c_1n \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}} - p\hat{F}_z
+    + q\hat{F}_z^2\right]\Psi,
+\end{align}
+where \(\Psi=(\psi_1, \psi_0, \psi_{-1})\) is the three-component wave function.
+\textcolor{red}{Has \(\hat{\vb{F}}\) been defined before?}
+To reduce the dimensionality, we assume the condensate has been tightly confined
+in the \(z\) direction by means of a harmonic oscillator which has trapping
+frequencies (\(\omega_x, \omega_y, \omega_z\)) in the (\(x, y, z\)) directions,
+respectively.
+A tight confinement in the \(z\) direction is achieving by having
+\(\omega_z \gg \omega_x, \omega_y\).
+In addition, we assume the trapping frequencies are sufficiently such that only
+the ground state of the condensate is occupied.
+With these assumptions, we can separate the wave function of the condensate into
+its 2D counterpart:
+\begin{align}\label{eq: Psi-2D}
+    \Psi(x, y, z, t) = \tilde{\Psi}(x, y, t)\Phi(z)
+    = \sqrt{\tilde{n}(x, y, t)}\zeta(x, y, t)\Phi(z),
+\end{align}
+where \(\Phi(z)\) is normalised as \(\int_{-\infty}^{\infty}|\Phi(z)|^2 \, \dd z
+= 1\), and we apply the single-mode approximation (SMA) such that
+\(\zeta(x, y, t)\) has no \(z\)-dependence.
+
+Substituting Eq.~\eqref{eq: Psi-2D} into Eq.~\eqref{eq: spin-1-GPEs-matrix} we
+obtain
+\begin{equation}
+\begin{split}
+    i\hbar\pdv{\tilde{\Psi}}{t}\Phi = \left[
+        -\frac{\hbar^2}{2M}\Phi\nabla_\perp^2
+        - \frac{\hbar^2}{2M}\pdv[2]{\Phi}{z} + [V_\perp(x, y) + V_z(z)]\Phi
+        +c_0\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi\right. \\
+        \left.+c_1\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi
+        \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
+        -p\Phi\hat{F}_z + q\Phi\hat{F}_z^2 \vphantom{\int_1^2}\right]\Psi.
+\end{split}
+\end{equation}
+To reduce the equation further, we multiply from the left by \(\Phi^*\) and
+integrate over the \(z\) direction, which gives:
+\begin{equation}\label{eq: spin-1-GPEs-tildes}
+\begin{split}
+    \left[
+        -\frac{\hbar^2}{2M}\Phi\nabla_\perp^2
+        - \frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\Phi^*\dv[2]{\Phi}{z} \dd z
+        + V_\perp(x, y) + \int_{-\infty}^{\infty} V_z(z)|\Phi|^2 \dd z\right. \\
+        \left.+c_0\tilde{n}\int_{-\infty}^{\infty}|\Phi|^4 \dd z
+        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
+        \int_{-\infty}^{\infty}|\Phi|^4 \dd z
+        -p\hat{F}_z + q\Phi\hat{F}_z^2 \right]\Psi.
+\end{split}
+\end{equation}
+In the above equation, the constant \(C =
+-\frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\Phi^*\dv[2]{\Phi}{z} \dd z
++ \int_{-\infty}^{\infty} V_z(z)|\Phi|^2 \dd z\) can be removed from the
+equation via the appropriate transformation \(\tilde{\Psi} \rightarrow
+\tilde{\Psi}e^{-Ct/N}\), where \(N\) is the total atom number.
+Now, we take \(\Phi(z)\) to be the harmonic oscillator ground state, which has
+the form
+\begin{align}
+    \Phi(z) =
+    {\left(\frac{\beta}{\pi}\right)}^{\frac{1}{4}}e^{-\frac{\beta}{2}z^2},
+\end{align}
+where \(\beta = M\omega_z/\hbar \).
+This then leads to the integral
+\begin{align}
+    \int_{-\infty}^{\infty}|\Phi(z)|^4 \dd z = \sqrt{\frac{\beta}{2\pi}}.
+\end{align}
+We can then appropriately rescale the interaction strengths into their 2D
+counterparts:
+\begin{align}
+    c_0^\text{2D} = c_0\sqrt{\frac{\beta}{2\pi}}, \qquad
+    c_1^\text{2D} = c_1\sqrt{\frac{\beta}{2\pi}}.
+\end{align}
+Finally, substituting back into Eq.~\eqref{eq: spin-1-GPEs-tildes} yields the
+2D GPEs for a spin-1 system:
+\begin{align}
+    i\hbar\pdv{\Psi}{t} = \left[-\frac{\hbar^2}{2M}\nabla_\perp^2 + V_\perp
+    + c_0^\text{2D}n + c_1^\text{2D}n\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
+    -p\hat{F}_z + q\hat{F}_z^2\right]\Psi,
+\end{align}
+where we have dropped the tildes for notational convenience.
+
+A similar process can be used to reduce the full 3D equations into their 1D
+counterparts.
+We now assume that the condensate is tightly confined in two directions, which
+we will take to be the \(x, y\) directions (\(\omega_x, \omega_y \gg
+\omega_z\)).
+This time, we separate the wave function according to
+\begin{align}
+    \Psi(x, y, z, t) = \tilde{\Psi}(z, t)\Phi(x, y) = \sqrt{\tilde{n}(z, t)}
+    \zeta(z, t)\Phi(x, y),
+\end{align}
+once again assuming \(\Phi(x, y)\) to be normalised as \(\int_{-\infty}^{\infty}
+\int_{-\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y = 1\) and using the SMA such
+that \(\zeta(z, t)\) only has a \(z\) dependence.
+We substitute the above expression in the GPEs
+(Eq.~\eqref{eq: spin-1-GPEs-matrix}) and find
+\begin{equation}
+\begin{split}
+    i\hbar\pdv{\tilde{\Psi}}{t}\Phi = \left[
+        -\frac{\hbar^2}{2M}\Phi\pdv[2]{}{z}
+        - \frac{\hbar^2}{2M}\nabla_\perp^2\Phi + [V_\perp(x, y) + V_z(z)]\Phi
+        +c_0\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi\right. \\
+        \left.+c_1\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi
+        \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
+        -p\Phi\hat{F}_z + q\Phi\hat{F}_z^2 \vphantom{\int_1^2}\right]\Psi.
+\end{split}
+\end{equation}
+Following the procedure before, we multiply from the left by \(\Phi^*\)
+and integrate over \(x\) and \(y\) which yields
+\begin{equation}
+\begin{split}
+    \left[
+        -\frac{\hbar^2}{2M}\Phi\pdv[2]{}{z}
+        - \frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        \Phi^*\dv[2]{\Phi}{z} \dd x \dd y
+        + V_\perp(x, y) + \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        V_z(z)|\Phi|^2 \dd x \dd y\right. \\
+        \left.+c_0\tilde{n}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        |\Phi|^4 \dd x \dd y
+        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
+        \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}|\Phi|^4 \dd x \dd y
+        -p\hat{F}_z + q\Phi\hat{F}_z^2 \right]\Psi.
+\end{split}
+\end{equation}
+Now, the constant term \(C = -\hbar^2/2M\int_{\infty}^{\infty}
+\int_{\infty}^{\infty}|\nabla_\perp^2\Phi|^2\dd x \dd z
++\int_{\infty}^{\infty}\int_{\infty}^{\infty}V_\perp|\Phi|^2\dd x \dd y\) can
+again be dropped from the equation via the appropriate substitution
+\(\tilde{\Psi} = \tilde{\Psi}e^{-iCt/N}\).
+We then take \(\tilde{\Psi}\) to be the lowest harmonic oscillator ground state,
+which in 2D becomes
+\begin{align}
+    \Phi(x, y) = {\left(\frac{\beta}{\pi}\right)}^{1/2}
+    e^{-\frac{\beta}{2}(x^2+y^2)},
+\end{align}
+where \(\beta=m\omega_\perp / \hbar \), which leads to the relation
+\begin{align}
+    \int_{\infty}^{\infty}\int_{\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y
+    = \frac{\beta}{2\pi}.
+\end{align}
+This then leads to the 1D rescaled interaction strengths
+\begin{align}
+    c_0^\text{1D} = c_0\frac{\beta}{2\pi}, \qquad
+    c_1^\text{1D}=c_1\frac{\beta}{2\pi}.
+\end{align}
+Finally, we arrive at the 1D GPE given in matrix form:
+\begin{align}
+    i\hbar\pdv{\Psi}{t} = \left[-\frac{\hbar^2}{2M}
+    \pdv[2]{}{z}+V_z(z) + c_0^\text{1D}n
+    + c_1^\text{1D}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}} - p\hat{F}_z
+    + q\hat{F}_z^2\right]\Psi,
+\end{align}
+again dropping the tildes for notational convenience.
+
+\section{Dimensionless spinor Gross-Pitaevskii equations}
+Systems that can undergo Bose-Einstein condensation, and hence become a
+superfluid, can form at a variety of length scales, ranging from Bose-Einstein
+condensates at the micron scale all the way to the cores of neutron stars,
+which are theorised to be superfluid on the kilometre
+scale~\cite{Warszawski2011}.
+In addition, atomic Bose-Einstein condensates in experiment take on a wide range
+of variable parameters and geometries.
+Such geometries include box-like potentials~\cite{Gaunt2013}, toroidal ring
+geometries~\cite{Ryu2007, Ramanathan2011}, both quasi-2D~\cite{Neely2010}
+and quasi-1D systems~\cite{Burger1999}, and even arbitrary
+potentials~\cite{Henderson2009}.
+
+Due to these reasons, rescaling the quantities used in the corresponding GPEs
+allows one to reformulate any calculation into a desired scale and parameter
+regime.
+In practice, this is done by casting the GPEs into a dimensionless form, where
+each dimensional parameter in the equation is rescaled using an appropriate
+quantity such that it becomes dimensionless.
+An advantage of using a dimensionless form is that the parameters used within
+numerical computation become normalised on the scale of unity, which,
+when compared to values in the dimensional equation such as \(\hbar =
+1.054\times 10^{-34}\), can reduce numerical errors that arise due to the
+floating point representation used by computers.
+
+The process of making the GPEs dimensionless can be done in different ways,
+where the scaling parameters chosen typically depend on whether the system is
+trapped or not.
+Here, we derive the dimensionless 3D GPEs for both a homogeneous spin-1 BEC and
+a trapped spin-2 BEC, which will aid the analysis in subsequent chapters.
+
+\subsection{Homogeneous spin-1 BEC}
+Consider a homogeneous system in the absence of a trapping potential
+\(\V(\vb{r}) = 0\).
+In a spin-1 system, there are two choices of length scales one
+can choose as their unit of length: the density healing length
+\(\xi_d=\hbar /\sqrt{2Mc_0n_0}\), or the spin healing length
+\(\xi_s = \hbar /\sqrt{2M|c_1|n_0}\), where \(n_0\) is the background density
+of the uniform system.
+Both choices are valid, but for this thesis we shall choose the spin healing
+length, \(\xi_s\).
+Then, an appropriate unit of energy is the spin energy: \(\E_s = 2|c_1|n_0\).
+Similarly, a spin time can be defined as \(\tau_f = \hbar / E_s\).
+\section{Experimental parameters}
