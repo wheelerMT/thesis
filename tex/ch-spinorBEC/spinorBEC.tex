@@ -559,7 +559,7 @@ To begin, we start with the full 3D dimensional equations given in
 Eqs.~\eqref{eq: spin-1-GPEs-dimensional-psi1} ---
 ~\eqref{eq: spin-1-GPEs-dimensional-psim1}, written in matrix form as
 \begin{align}\label{eq: spin-1-GPEs-matrix}
-    i\hbar \pdv{\Psi}{t} = \left[-\frac{\hbar^2\nabla^2}{2m} + V(\vb{r}) + c_0n
+    i\hbar \pdv{\Psi}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + c_0n
     + c_1n \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}} - p\hat{F}_z
     + q\hat{F}_z^2\right]\Psi,
 \end{align}
@@ -697,7 +697,7 @@ which in 2D becomes
 \end{align}
 where \(\beta=m\omega_\perp / \hbar \), which leads to the relation
 \begin{align}
-    \int_{\infty}^{\infty}\int_{\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y
+    \int_{\infty}^{\infty}\int_{\infty}^{\infty} |\Phi(x, y)|^4 \dd x \dd y
     = \frac{\beta}{2\pi}.
 \end{align}
 This then leads to the 1D rescaled interaction strengths
@@ -747,7 +747,7 @@ a trapped spin-2 BEC, which will aid the analysis in subsequent chapters.
 
 \subsection{Homogeneous spin-1 BEC}
 Consider a homogeneous system in the absence of a trapping potential
-\(\V(\vb{r}) = 0\).
+\(V(\vb{r}) = 0\).
 In a spin-1 system, there are two choices of length scales one
 can choose as their unit of length: the density healing length
 \(\xi_d=\hbar /\sqrt{2Mc_0n_0}\), or the spin healing length
@@ -755,6 +755,259 @@ can choose as their unit of length: the density healing length
 of the uniform system.
 Both choices are valid, but for this thesis we shall choose the spin healing
 length, \(\xi_s\).
-Then, an appropriate unit of energy is the spin energy: \(\E_s = 2|c_1|n_0\).
-Similarly, a spin time can be defined as \(\tau_f = \hbar / E_s\).
+Then, an appropriate unit of energy is the spin energy: \(E_s = 2|c_1|n_0\),
+which leads to the spin time \(\tau_s = \hbar / E_s\).
+Now we have found appropriate units for length, time, and energy, we can
+rescale each quantity as
+\begin{align}
+    \vb{r} \rightarrow \xi_s \tilde{\vb{r}}, \qquad
+    t \rightarrow \tau_s\tilde{t}, \qquad
+    \Psi \rightarrow \sqrt{n_0}\tilde{\Psi},
+\end{align}
+where a tilde denotes the dimensionless quantity.
+Substituting these into Eq.~\eqref{eq: spin-1-GPEs-matrix} leads to the
+dimensionless spin-1 GPEs:
+\begin{align}
+    i \pdv{\tilde{\psi}_{1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    + \tilde{c}_0\tilde{n} + \tilde{c}_1\tilde{n}\tilde{F}_z - \tilde{p}
+    + \tilde{q}\right]\tilde{\psi}_{1}
+    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{F}_-\tilde{\psi}_0, \\
+    i \pdv{\tilde{\psi}_0}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    + \tilde{c}_0\tilde{n}\right]\tilde{\psi}_0
+    + \frac{\tilde{c}_1}{\sqrt{2}}\left(\tilde{F}_+\tilde{\psi}_1
+    + \tilde{F}_-\tilde{\psi}_{-1}\right), \\
+    i \pdv{\tilde{\psi}_{-1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    + \tilde{c}_0\tilde{n} - \tilde{c}_1\tilde{n}\tilde{F}_z + \tilde{p}
+    + \tilde{q}\right]\tilde{\psi}_{-1}
+    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{F}_+\tilde{\psi}_0, \\
+\end{align}
+where the rescaled interaction strengths and Zeeman shifts are
+\begin{align}
+    \tilde{c}_0 = \frac{n_0c_0}{E_s} = \left|\frac{c_0}{2c_1}\right|, \quad
+    \tilde{c}_1 = \frac{n_0c_1}{E_s} = \frac{1}{2} \cdot \text{sgn}(c_1),\quad
+    \tilde{p} = \frac{q}{E_s}, \quad
+    \tilde{q} = \frac{q}{E_s}.
+\end{align}
+By choosing our unit of length and time as \(\xi_s\) and \(\tau_s\),
+respectively, the dimensionless spin-dependent interaction strength is fixed
+at \(|\tilde{c}_1| = 1/2\).
+Therefore, to set the spin-independent interaction strength, \(\tilde{c}_0\),
+we need the ratio of the interaction strengths, \(c_0/c_1\), which is set by
+the atomic species itself.
+
+\subsection{Trapped spin-2 BEC}
+Consider now a spin-2 BEC trapped by a uniform harmonic trap \(V(\vb{r})\).
+Now, instead of choosing the healing length as our unit of length, it makes more
+sense to instead choose the harmonic oscillator length \(\ell =
+\sqrt{\hbar/(M\omega)}\), where \(\omega \) is the trapping frequency.
+Then, time is measured in units of \(omega^{-1}\) and energy in
+\(\hbar\omega \), which leads to the rescaling of the following units:
+\(\vb{r}\rightarrow \ell\tilde{\vb{r}},\ t \rightarrow \omega\tilde{t}\).
+To construct the dimensionless wave function, it is conventional to define the
+dimensionless wave function as being normalised to unit
+\(\int_{-\infty}^\infty |\tilde{\Psi}|^2\dd^3\tilde{\vb{r}} = 1\).
+Then, recalling that the dimensional wave function is normalised to the number
+of atoms \(\int_{-\infty}^\infty |{\Psi}|^2\dd^3{\vb{r}} = N\), and that
+\(\dd^3\vb{r} = \ell^3\dd^3\tilde{\vb{r}}\), it follows that the dimensional
+wave function can be rescaled as
+\begin{align}
+    \Psi \rightarrow \sqrt{\frac{N}{\ell^3}}\tilde{\Psi}.
+\end{align}
+Substituting these rescaled quantities into Eqs.~\eqref{eq: spin-2-GPEs-pm2}
+-~\eqref{eq: spin-2-GPEs-0} yields the dimensionless spin-2 GPEs for a trapped
+system
+\begin{align}
+    i\pdv{\tilde{\psi}_{\pm 2}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm 2\tilde{c}_1\tilde{F}_z
+    \mp 2\tilde{p} + 4\tilde{q}\right]\tilde{\psi}_{\pm 2}
+    + \tilde{c}_1\tilde{F}_\mp\tilde{\psi}_{\pm 1}
+    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\mp 2}^* \\
+    i\pdv{\tilde{\psi}_{\pm 1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm \tilde{c}_1\tilde{F}_z
+    \mp 2\tilde{p} + 4\tilde{q}\right]\tilde{\psi}_{\pm 1}
+    +\tilde{c}_1\left(\frac{\sqrt{6}}{2}\tilde{F}_\mp \tilde{\psi}_0
+    +\tilde{F}_\pm\tilde{\psi}_{\pm 2}\right)
+    - \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\mp 1}^* \\
+    i\pdv{\tilde{\psi}_0}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
+    +V(\tilde{\vb{r}})+\tilde{c}_0\tilde{n}\right]\tilde{\psi}_0
+    +\frac{\sqrt{6}}{2}\tilde{c}_1\left(\tilde{F}_+\tilde{\psi}_1
+    +\tilde{F}_-\tilde{\psi}_{-1}\right)
+    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\pm 2}^*,
+\end{align}
+where now the rescaled interaction strengths and Zeeman shifts are
+\begin{align}\label{eq: spin-2-interaction-strengths-dimensionless}
+    \tilde{c}_0 = \frac{Nc_0}{\hbar\omega\ell^3}, \quad
+    \tilde{c}_1 = \frac{Nc_1}{\hbar\omega\ell^3}, \quad
+    \tilde{c}_2 = \frac{Nc_2}{\hbar\omega\ell^3}, \quad
+    \tilde{p} = \frac{p}{\hbar\omega}, \quad
+    \tilde{q} = \frac{q}{\hbar\omega}.
+\end{align}
+
 \section{Experimental parameters}
+Numerical simulations are an extremely useful tool for gaining insight into
+what experiments of BEC systems might look like.
+As mentioned in the previous section, dimensionless equations allow us to
+recast any calculation into a desired scale and parameter regime, as well as
+providing a more stable numerical solution.
+In this section, we calculate the dimensionless, numerical values of the
+interaction strengths that would correspond to different atomic species.
+Here, we are taking our unit of length and time to be the harmonic oscillator
+length \(\ell \) and inverse trap frequency \(\omega^{-1}\), respectively.
+
+\subsection{Spin-1}
+Recall that the dimensional interaction strengths for a spin-1 system are given
+as
+\begin{align}\label{eq: spin-1-interaction-strengths}
+    c_0 = \frac{4\pi\hbar^2}{3M}(a_0+2a_2), \qquad
+    c_1 = \frac{4\pi\hbar^2}{3M}(a_2-a_0), \qquad
+\end{align}
+where \(a_\mathcal{F}\) is the s-wave scattering length for the
+spin-\(\mathcal{F}\) channel.
+To calculate the dimensional interaction strengths, we list the scattering
+lengths obtained by Crubellier~\cite{Crubellier1999} for \( ^{23}\)Na and
+Ho~\cite{Ho1998} for \( ^{87}\)Rb in
+Table~\ref{table: scaterring-lengths-spin-1}.
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ cccc } 
+     \toprule
+      & \(a_0\) & \(a_2\) \\
+      \midrule
+      \( ^{23}\)Na & \(50.0\pm 1.6\) & \(55.0\pm 1.7\) \\ 
+      \( ^{87}\)Rb & \(110.0\pm 4.0\) & \(107.0\pm 4.0\) \\
+      \bottomrule
+    \end{tabular}
+    \caption{\label{table: scaterring-lengths-spin-1}Table of scattering lengths
+    for spin-1 atomic species \( ^{23}\)Na and \( ^{87}\)Rb in units of the Bohr
+    radius.}
+\end{table}
+With these values, we are free to calculate the dimensional interaction
+strengths using Eq.~\eqref{eq: spin-1-interaction-strengths}.
+To calculate the numerical, dimensionless interaction strengths we assume an
+atom number of \(N = 2\times10^5\) and a trapping frequency of
+\(\omega = 2\pi \times 130\)Hz.
+Both the dimensional (with uncertainties) and dimensionless values for a spin-1
+\( ^{23}\)Na system are given in Table~\ref{table: spin-1-interactions-sodium}.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \( ^{23}\)Na & Dimensional (units of \(\text{kg}\, \text{m}^5
+        \text{s}^{-2}\)) & Dimensionless \\
+        \midrule
+        \(c_0\) & \(1.03 \pm 0.00654 \times 10^{-50}\) & \(3.91\times10^3\) \\
+        \(c_1\) & \(5.10 \pm 0.654 \times 10^{-52}\) & \(195\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{table: spin-1-interactions-sodium}Dimensional (with
+    uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
+\end{table}
+Calculating the ratio of interaction parameters gives \(c_0/c_1=\ldots \),
+which predicts the ground state of \( ^{23}\)Na to be polar.
+
+For the \( ^{87}\)Rb system, we again assume an atom number of
+\(N = 2\times 10^5\) with a trapping frequency of
+\(\omega = 2\pi \times 130\)Hz.
+The dimensional (with uncertainties) and dimensionless interaction strengths
+for a spin-1 \( ^{87}\)Rb are given in
+Table~\ref{table: spin-1-interactions-rb87}.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \( ^{87}\)Rb & Dimensional (units of \(\text{kg}\, \text{m}^5
+        \text{s}^{-2}\)) & Dimensionless \\
+        \midrule
+        \(c_0\) & \(1.03 \pm 0.00654 \times 10^{-50}\) & \(3.91\times10^3\) \\
+        \(c_1\) & \(5.10 \pm 0.654 \times 10^{-52}\) & \(195\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{table: spin-1-interactions-rb87}Dimensional (with
+    uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
+\end{table}
+Calculating the ratio of interaction strengths for this system gives
+\(c_0/c_1=\ldots \), which predicts the ground state of \( ^{87}\)Rb to be
+ferromagnetic.
+
+\subsection{Spin-2}
+Recall that the dimensional interaction strengths for a spin-2 system are given
+as
+\begin{align}\label{eq: spin-2-interaction-strengths}
+    c_0 = \frac{4\pi\hbar^2}{7M}(4a_2+3a_4), \qquad
+    c_1 = \frac{4\pi\hbar^2}{7M}(a_4-a_2), \qquad
+    c_2 = \frac{4\pi\hbar^2}{7M}(7a_0-10a_2+3a_4),
+\end{align}
+To determine the values of the interaction strengths, we first list the s-wave
+scattering lengths in units of the Bohr radius given by
+Ciobanu~\cite{Ciobanu2000} for \( ^{23}\)Na and Klausen~\cite{Klausen2001} for
+\( ^{85}\)Rb and \( ^{87}\)Rb in Table~\ref{table: scaterring-lengths-spin-2}.
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ cccc } 
+     \toprule
+      & \(a_0\) & \(a_2\) & \(a_4\) \\
+      \midrule
+      \( ^{23}\)Na & \(34.9\pm 1.0\) & \(45.8\pm 1.1\) & \(64.5\pm 1.3\) \\ 
+      \( ^{85}\)Rb  & \(-740\pm60.0\) & \(-570\pm 50.0\) & \(-390\pm20.0\) \\ 
+      \( ^{87}\)Rb & \(86.2\pm 1.0\) & \(90.2\pm 1.0\) & \(97.4\pm 1.0\) \\
+      \bottomrule
+    \end{tabular}
+    \caption{\label{table: scaterring-lengths-spin-2}Table of scattering lengths
+    for spin-2 atomic species \( ^{23}\)Na, \( ^{85}\)Rb, and \( ^{87}\)Rb in
+    units of the Bohr radius.}
+\end{table}
+With these scattering lengths we can calculate the dimensional interaction
+strengths using Eq.~\eqref{eq: spin-2-interaction-strengths}.
+To calculate the corresponding dimensionless interaction strength, we assume
+\(N = 2\times10^5\) and \(\omega = 2\pi \times 130\) Hz.
+Both the dimensional (with uncertainties) and dimensionless values for a spin-2
+\( ^{23}\)Na system are given in
+Table~\ref{table: spin-2-interactions-sodium}.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \( ^{23}\)Na & Dimensional (units of \(\text{kg}\, \text{m}^5
+        \text{s}^{-2}\)) & Dimensionless \\
+        \midrule
+        \(c_0\) & \(1.03 \pm 0.00654 \times 10^{-50}\) & \(3.91\times10^3\) \\
+        \(c_1\) & \(5.10 \pm 0.654 \times 10^{-52}\) & \(195\) \\
+        \(c_2\) & \(-5.51 \pm 0.927 \times 10^{-52}\) & \(-210\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{table: spin-2-interactions-sodium}Dimensional (with
+    uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
+\end{table}
+The ratios of interaction parameters are
+\begin{equation}
+    \frac{c_0}{c_1} = 20.1, \qquad \frac{c_0}{c_2} = -18.6,
+\end{equation}
+which predicts the ground state of \( ^{23}\)Na to be nematic (see
+Sec~\ref{sec: ground-state-spin-2} for details).
+
+For \( ^{87}\)Rb we once again assume an atom number of \(N=2\times10^5\) with a
+trapping frequency \(\omega = 2\pi \times 130\)Hz.
+The dimensional (with uncertainties) and dimensionless parameters for a spin-2
+\( ^{87}\)Rb system are listed in
+Table~\ref{table: spin-2-interactions-rb87}.
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        \( ^{87}\)Rb & Dimensional (units of \(\text{kg}\, \text{m}^5
+        \text{s}^{-2} \)) & Dimensionless \\
+        \midrule
+        \(c_0\) & \(4.71 \pm 0.0144 \times 10^{-51}\) & \(1.32\times10^4\) \\
+        \(c_1\) & \(5.19 \pm 1.44 \times 10^{-53}\) & \(146\) \\
+        \(c_2\) & \(-4.61 \pm 2.16 \times 10^{-53}\) & \(-129\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{table: spin-2-interactions-rb87}Dimensional (with
+    uncertainties) and dimensionless interaction strengths of \( ^{87}\)Rb.}
+\end{table}
+In this case, the interaction strength ratios are
+\begin{align}
+    \frac{c_0}{c_1} = 90.7, \qquad \frac{c_0}{c_2} = -102.0,
+\end{align}
+which again predict the ground state to be nematic (see
+Sec~\ref{sec: ground-state-spin-2} for details).
