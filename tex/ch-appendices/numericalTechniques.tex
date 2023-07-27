@@ -1,0 +1,39 @@
+\chapter{Numerical techniques}
+
+\section{Dimensionless two-component Gross-Pitaevskii equations}
+As mentioned in Sec~\ref{sec: dimensionless-equations}, dimensionless equations
+offer numerous benefits, including increased numerical stability and the ease
+of reformulating calculations into a desired scale and parameter regime.
+Here we derive the dimensionless two-component GPEs which are stated in
+Eq.~\eqref{eq: dimensionless-two-comp-GPEs}.
+
+To begin we start with the full 3D dimensional GPEs for a two-component system:
+\begin{align} \label{eq: two-comp-GPE-psi1}
+    i\hbar\pdv{\psi_1}{t} &= \left(-\frac{\hbar^2\nabla^2}{2m_1} + g_1|\psi_1|^2
+    +g_{12}|\psi_2|^2\right)\psi_1, \\
+    i\hbar\pdv{\psi_2}{t} &= \left(-\frac{\hbar^2\nabla^2}{2m_2} + g_2|\psi_2|^2
+    +g_{12}|\psi_1|^2\right)\psi_2. \label{eq: two-comp-GPE-psi2}
+\end{align}
+Our simulations are performed on space-time grid lattices with a spatial side
+length of \(L = N_s a_s\), where \(a_s\) is the lattice spacing and the total
+number of grid points is given as \(N_s^d\) where \(d\) is the dimensionality of
+the system.
+With these, we make use of the following dimensionless variables
+\begin{align}
+    \tilde{\vb{r}} = \frac{\vb{r}}{a_s}, \quad
+    \tilde{g}_j = \frac{2mg_j{a_s}^{2-d}}{\hbar^2}, \quad
+    \tilde{t} = \frac{t\hbar}{2ma_s^2}, \quad
+    \tilde{\psi_j} = \sqrt{a_s^d}e^{2i\tilde{t}}\psi_j,
+\end{align}
+where \(m = m_1 = m_2\).
+Using the above dimensionless quantities, we can rescale the dimensional
+variables in Eqs~\eqref{eq: two-comp-GPE-psi1} -~\eqref{eq: two-comp-GPE-psi2},
+which leads to the dimensionless equations
+\begin{align}
+    i\pdv{\tilde{\psi}_1}{t} &= \left(-\tilde{\nabla}^2
+    + \tilde{g}_1|\tilde{\psi}_1|^2 + \tilde{g}_{12}|\tilde{\psi}_2|^2\right)
+    \tilde{\psi}_1, \\
+    i\pdv{\tilde{\psi}_2}{t} &= \left(-\tilde{\nabla}^2
+    + \tilde{g}_2|\tilde{\psi}_2|^2 + \tilde{g}_{12}|\tilde{\psi}_1|^2\right)
+    \tilde{\psi}_2.
+\end{align}
