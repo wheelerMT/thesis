@@ -844,14 +844,14 @@ where now the rescaled interaction strengths and Zeeman shifts are
     \tilde{q} = \frac{q}{\hbar\omega}.
 \end{align}
 
-\section{Experimental parameters}
+\subsection{Mapping to experimental parameters}
 Numerical simulations are an extremely useful tool for gaining insight into
 what experiments of BEC systems might look like.
-As mentioned in the previous section, dimensionless equations allow us to
-recast any calculation into a desired scale and parameter regime, as well as
-providing a more stable numerical solution.
-In this section, we calculate the dimensionless, numerical values of the
-interaction strengths that would correspond to different atomic species.
+Therefore, it is useful to calculate the values of the interaction strengths
+for different atomic species so that they can be mapped to our dimensionless
+parameters.
+In particular, we investigate both the spin-1 and spin-2 atoms of \( ^{23}\)Na
+and \( ^{87}\)Rb.
 Here, we are taking our unit of length and time to be the harmonic oscillator
 length \(\ell \) and inverse trap frequency \(\omega^{-1}\), respectively.
 
@@ -889,7 +889,6 @@ atom number of \(N = 2\times10^5\) and a trapping frequency of
 \(\omega = 2\pi \times 130\)Hz.
 Both the dimensional (with uncertainties) and dimensionless values for a spin-1
 \( ^{23}\)Na system are given in Table~\ref{table: spin-1-interactions-sodium}.
-\textcolor{red}{Calculate!}
 \begin{table}[!htbp]
     \centering
     \begin{tabular}{ccc}
@@ -897,15 +896,16 @@ Both the dimensional (with uncertainties) and dimensionless values for a spin-1
         \( ^{23}\)Na & Dimensional (units of \(\text{kg}\, \text{m}^5
         \text{s}^{-2}\)) & Dimensionless \\
         \midrule
-        \(c_0\) & \(1.03 \pm 0.00654 \times 10^{-50}\) & \(3.91\times10^3\) \\
-        \(c_1\) & \(5.10 \pm 0.654 \times 10^{-52}\) & \(195\) \\
+        \(c_0\) & \(1.03 \pm 0.00321 \times 10^{-50}\) & \(3.91\times10^3\) \\
+        \(c_1\) & \(3.21 \pm 0.0640 \times 10^{-52}\) & \(122\) \\
         \bottomrule
     \end{tabular}
     \caption{\label{table: spin-1-interactions-sodium}Dimensional (with
     uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
 \end{table}
-Calculating the ratio of interaction parameters gives \(c_0/c_1=\ldots \),
-which predicts the ground state of \( ^{23}\)Na to be polar.
+Calculating the ratio of interaction parameters gives \(c_0/c_1=32.0 \),
+which predicts the ground state of \( ^{23}\)Na to be polar (see
+Sec~\ref{sec: ground-states-spin-1} for details on spin-1 ground states).
 
 For the \( ^{87}\)Rb system, we again assume an atom number of
 \(N = 2\times 10^5\) with a trapping frequency of
@@ -913,7 +913,6 @@ For the \( ^{87}\)Rb system, we again assume an atom number of
 The dimensional (with uncertainties) and dimensionless interaction strengths
 for a spin-1 \( ^{87}\)Rb are given in
 Table~\ref{table: spin-1-interactions-rb87}.
-\textcolor{red}{Calculate!}
 \begin{table}[!htbp]
     \centering
     \begin{tabular}{ccc}
@@ -921,16 +920,17 @@ Table~\ref{table: spin-1-interactions-rb87}.
         \( ^{87}\)Rb & Dimensional (units of \(\text{kg}\, \text{m}^5
         \text{s}^{-2}\)) & Dimensionless \\
         \midrule
-        \(c_0\) & \(1.03 \pm 0.00654 \times 10^{-50}\) & \(3.91\times10^3\) \\
-        \(c_1\) & \(5.10 \pm 0.654 \times 10^{-52}\) & \(195\) \\
+        \(c_0\) & \(5.43 \pm 0.201 \times 10^{-51}\) & \(2.10\times10^3\) \\
+        \(c_1\) & \(-5.03 \pm 10.3 \times 10^{-53}\) & \(-19.1\) \\
         \bottomrule
     \end{tabular}
     \caption{\label{table: spin-1-interactions-rb87}Dimensional (with
     uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
 \end{table}
 Calculating the ratio of interaction strengths for this system gives
-\(c_0/c_1=\ldots \), which predicts the ground state of \( ^{87}\)Rb to be
-ferromagnetic.
+\(c_0/c_1=-110 \), which predicts the ground state of \( ^{87}\)Rb to be
+ferromagnetic (see
+Sec~\ref{sec: ground-states-spin-1} for details on spin-1 ground states).
 
 \subsection{Spin-2}
 Recall that the dimensional interaction strengths for a spin-2 system are given
