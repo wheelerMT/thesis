@@ -1,4 +1,10 @@
 \chapter{Vortex connections across topological interfaces}\label{chap: spin-2}
+\section{To do}
+\begin{itemize}
+    \item 
+\end{itemize}
+
+
 Topological interfaces may form at the phase boundary between topologically
 distinct phases that are described by different order parameters.
 In such an interface, the phases can exist in a coherent and order medium, in
@@ -61,6 +67,8 @@ accessible test beds for interface physics with all combinations of continuous
 and discrete symmetries, as well as phases supporting non-Abelian defects.
 
 \section{Interface crossing solutions in a spin-2 BEC}
+\textcolor{red}{Move this paragraph later on, focus on interfaces in the BEC
+itself first.}
 In a continuous spinor superfluid, it is possible for distinct phases with
 varying order parameter symmetry to coexist.
 This situation can arise, for example, due to energy relaxation in vortex core
@@ -84,29 +92,28 @@ The condensate wave function then smoothly interpolates between the coexisting
 phases in the bulk superfluid and the defect core, establishing a topological
 interface between them.
 
-It is also possible to design a topological interface to divide a continuous
-superfluid into spatially distinct bulk regions with various order parameter
-symmetries.
-This can be done, for instance, by spatially varying the Hamiltonian's
-parameters, causing the condensate to seek a different ground state in each
-region.
+A spinor BEC may be engineered such that separate regions of the condensate
+have distinct ground state phases, e.g., nematic or cyclic, and hence have
+different order parameter symmetries, creating a topological interface within
+the condensate itself.
+This can be achieved through variation of parameters in the Hamiltonian (see
+\textcolor{red}{Link to spin-2 Hamiltonian}), such as the linear and quadratic
+Zeeman shifts, which locally stabilise the different regions.
 If the parameter fluctuation is sufficiently acute, then the wave function will
-interpolate between the bulk phases across a distance given by the appropriate
+interpolate between the bulk phases across a distance given by an appropriate
 healing length.
-
 In addition, as proposed for the spin-1 system~\cite{Borgh2014}, linear \(p\)
 and quadratic \(q\) Zeeman shifts form the basis for engineering interpolating
 solutions that model the topological interface.
 Such steady-state solutions are found from the mean-field Hamiltonian density
-functional in Eq. (\textcolor{red}{No full spin-2 Hamiltonian in paper, either
+functional in Eq.~(\textcolor{red}{No full spin-2 Hamiltonian in paper, either
     put here or back in Chapter 2}) for a uniform system in the presence of an
 external magnetic field using the relation \(\delta \mathcal{H}
-/ \delta \zeta_m^*=0\).
-This yields~\cite{Kawaguchi2012}
+/ \delta \zeta_m^*=0\)~\cite{Kawaguchi2012}:
 \begin{equation}\label{eq: spin-2-GPEs-time-reversal}
-    \left[-p \hat{F}_z + q \hat{F}^2_z + nc_0 \, \zeta^\dagger \zeta
-        + nc_1 \, \langle\hat{\vb{F}}\rangle\cdot\hat{\vb{F}}
-        + \frac{nc_2}{5}{(\hat{\mathcal{T}}\zeta)}^\dagger \,
+    \left[-p \hat{F}_z + q \hat{F}^2_z + c_0n \, \zeta^\dagger \zeta
+        + c_1n \, \langle\hat{\vb{F}}\rangle\cdot\hat{\vb{F}}
+        + \frac{c_2n}{5}{(\hat{\mathcal{T}}\zeta)}^\dagger \,
         \zeta\hat{\mathcal{T}} -\mu \right] \zeta = 0,
 \end{equation}
 where \(\mu \) is the chemical potential and \(\hat{\mathcal{T}}\) is a
@@ -116,61 +123,63 @@ Eq.~\eqref{eq: spin-2-GPEs-time-reversal} presents a non-linear system of
 equations that can be solved for the unknown
 \(\zeta_m\)~\cite{Ciobanu2000,Kawaguchi2012}.
 
-Defect states for a given spin-2 phase can, in principle, be constructed from
+Using the constructed interpolating stationary states, defect states for a given
+spin-2 phase can, in principle, be constructed from
 the representative spinor by defining an appropriate azimuthal phase winding,
-\(\varphi \), in each component, i.e., \(\text{Arg}(\zeta_m) =l_m\varphi \),
-\(l_m \in \mathbb{Z}\).
-Here, however, we construct a unitary framework which is applicable for
-constructing defect states across topological interfaces in a spin-2 BEC.
-A defect state can be constructed from a uniform state by applying a global
-phase winding, \(\tau \), coupled with a spin rotation defined by three Euler
-angles \((\alpha, \beta, \gamma)\) as in Eq.~\eqref{eq: spin-2-rotation-matrix}.
+\(\chi_m \), in each component, i.e., \(\text{Arg}(\zeta_m) =\chi_m =
+k_m\varphi \), where \(k_m\) is an integer and \(\varphi \) is the azimuthal
+angle around the vortex core.
+In addition, we also create a unitary framework which is applicable for
+constructing other types of defect states across topological interfaces in a
+spin-2 BEC, such as monopoles or textures.
+A given defect state can be constructed from the uniform state by applying a
+global phase winding, \(\tau \), coupled with a spin rotation defined by three
+Euler angles \((\alpha, \beta, \gamma)\) as in
+Eq.~\eqref{eq: spin-2-rotation-matrix}.
 When the same transformation is supported by two phases, A and B, of a spin-2
-system, a defect connection across an interface between the two phases is given
-as
+condensate, a general defect connection across an interface between the two
+phases is given as
 \begin{align}\label{eq: general-defect-interface}
     \zeta = e^{i\tau}\,\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B}.
 \end{align}
-
-Through the subsequent sections we provide solutions that interpolate between
-different phases of a spin-2 BEC.\@
-Detailed derivations of each interpolating solution can be found in
-Appendix~\ref{appendix: stationary}.
+Through the subsequent sections we provide various steady-state solutions that
+interpolate between the different phases of a spin-2 BEC.\@
+Using these solutions, we then construct interesting defect states that connect
+across the topological interface.
+Detailed derivations of each interpolating solution used in the subsequent
+sections can be found in Appendix~\ref{appendix: stationary}.
 
 \subsection{Uniaxial nematic to biaxial nematic}\label{subsec: UN-BN-defects}
 We first focus on a family of solutions interpolating between the UN and BN
-phases.
-Such an interpolating solution comes from considering the case \(D_1 \neq 0\)
-and \(D_2 = 0\).
-In such a case, \(\zeta_1 = \zeta_{-1} = 0\), and, if \(\tilde{\mu} = \alpha \),
-then all of \(\zeta_{\pm 2}\) and \(\zeta_0\) can be non-zero.
-
+phases (see Sec~\ref{sec: ground-states-spin-2} for details on these ground
+states).
+Such an interpolating solution is given as
 \begin{equation}\label{eq: UN-BN-interpolating-spinor}
     \zeta^\text{UN-BN} = \frac{1}{2}\mqty(
-    e^{i\chi_2}D_- \\
+    e^{i\chi_2}\sqrt{1 - \eta} \\
     0 \\
-    e^{i\chi_0}\sqrt{2}D_+ \\
+    e^{i\chi_0}\sqrt{2(1+\eta)} \\
     0 \\
-    e^{i\chi_{-2}}D_-
+    e^{i\chi_{-2}}\sqrt{1 - \eta}
     ),
-    \qquad
-    D_{\pm} = \sqrt{1 \pm \eta},
 \end{equation}
 where \(\eta = 10q /|c_2|n \in [-1, 1]\) and \(\chi_m = \text{Arg}(\zeta_m)\)
 for component \(m\).
+Here, \(\chi_m\) are arbitrary phase coefficients that can either take fixed
+values, or be spatially wound in order to produce different vortex states.
 This solution depends only on the quadratic Zeeman shift, which can alter the
-spinor between phases.
-When \(q = c_2n / 10\) the system is in the uniaxial nematic phase.
-In the opposite limit when \(q = -c_2n/10\) the system is in the biaxial
-nematic phase.
-This spinor therefore provides interpolating solutions between the uniaxial
-nematic and biaxial nematic phases, engineered through manipulation of the
-quadratic Zeeman shift.
+spinor between the different phases: When \(q = c_2n / 10\) the system is in the
+UN phase with only the \(\zeta_0=1\) component occupied, where the nematic
+director is aligned with the \(z\)-axis.
+In the opposite limit, when \(q = -c_2n/10\), the system is in the
+BN phase with the \(\zeta_{\pm 2} = 1/\sqrt{2}\) components occupied.
+This spinor therefore provides interpolating solutions between the UN and BN
+phases, engineered through manipulation of the quadratic Zeeman shift.
 
-To determine the stability of this interpolating spinor, we compare the energy
-per particle given by~\cite{Kawaguchi2012}
+To determine the energetic stability of this interpolating spinor, we compare
+the energy per particle given by~\cite{Kawaguchi2012}
 \begin{equation}
-    \mathcal{E}^\text{UN-BN} = \mathcal{H}[\Psi^\text{UN-BN}] - \frac{c_0n}{2},
+    E^\text{UN-BN} = \mathcal{H}[\Psi^\text{UN-BN}] - \frac{c_0n}{2},
 \end{equation}
 where \(\mathcal{H} = \mathcal{H}_0 + \mathcal{H}_\text{int}\) is the spin-2
 Hamiltonian density where \(\mathcal{H}_0\) and \(\mathcal{H}_\text{int}\)
@@ -178,18 +187,28 @@ are defined in Eq.~\eqref{eq: single-particle-Hamiltonian} and
 Eq.~\eqref{eq: spin-2-interacting-Hamiltonian}, respectively.
 The energy of the interpolating spinor given in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor} reads
-\(\mathcal{E}^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\)
+\(E^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\)
 Comparing this energy with that of the UN phase
-\(\mathcal{E}^\text{UN} = c_2n/10\) and the BN phase
-\(\mathcal{E}^\text{BN} = c_2n/10 + 4q\) reveals that the ground state is UN for
+\(E^\text{UN} = c_2n/10\) and the BN phase
+\(E^\text{BN} = c_2n/10 + 4q\) reveals that the ground state is UN for
 \(q \geq 0\) and BN for \(q \leq 0\).
 Therefore, the UN-BN interface can be stabilised through careful choice of
 a longitudinal quadratic Zeeman shift \(q(z)\) such that \(q(z)\) changes
-sign at some transverse plane, which we take to be \(z=0\).
+sign at some transverse plane, which we typically take to be \(z=0\).
 
-The consequence of a spatially-dependent \(\eta \) is revealed from the spin
-singlet-duo and -trio amplitudes, which for this interface become
-Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into
+A consequence of a spatially-dependent \(\eta \) is revealed from the spin
+singlet-duo and -trio amplitudes, given in terms of the spinor \(\zeta_m\),
+respectively, as
+\begin{gather}\label{eq: a20definition}
+    |A_{20}|^2 = \frac{1}{5}\left|2\zeta_2\zeta_{-2}-2\zeta_1\zeta_{-1}
+    + \zeta_0^2\right|^2, \\
+    |A_{30}|^2 = \left|\frac{3\sqrt{6}}{2}\left(\zeta_1^2\zeta_{-2}
+    + \zeta_{-1}^2\zeta_2\right)
+    + \zeta_0\left(\zeta_0^2-3\zeta_1\zeta_{-1}
+    - 6\zeta_2\zeta_{-2}\right)\right|^2.
+\end{gather}
+Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into the above,
+we get
 \begin{equation}
     \begin{aligned}
         |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\theta
@@ -199,7 +218,8 @@ Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into
             + \eta(5 \eta -8) + 5\right],
     \end{aligned}
 \end{equation}
-where \(\theta = \chi_2 + \chi_{-2} - 2\chi_0\).
+where \(\chi = \chi_2 + \chi_{-2} - 2\chi_0\) is the relative phase difference
+between the components.
 We plot both the singlet-duo and -trio amplitudes in
 Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
 \begin{figure}
@@ -214,33 +234,57 @@ Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
         interpolates between the UN, BN, and cyclic phases depending on the
         relative phase difference \(\chi=\chi_2+\chi_{-2}-2\chi_0\).}
 \end{figure}
-We see that this spinor interpolates between the different phases of UN, BN and
-cyclic depending on both \(\eta \) and the relative phase difference
-\(\theta \).
+Upon investigation, we see interesting behaviour arise in both quantities.
+In particular, we see that this spinor can interpolate between the different
+phases of UN, BN and cyclic depending on both \(\eta \) and the relative phase
+difference \(\chi \).
 For example, if one were to maintain \(\theta=0\) and interpolate \(\eta \),
-then there would be multiple transitions between the UN (\(|a_{00}|^2 = 1\)) and
-BN (\(|a_{00}|^2 = 0\)) phases.
-As we shall see in the numerical investigation of such an interface, this has
-profound effects on the structure of topological defects connecting across
-the interface.
+then there would be multiple transitions between the UN (\(|A_{20}|^2 = 1\)) and
+BN (\(|A_{20}|^2 = 0\)) phases.
+In addition, maintaining a relative phase difference of \(\chi=\pi \), the
+singlet-trio amplitude reveals that a cyclic phase is present when
+\(-0.5 \lesssim \eta \lesssim 0.5\).
+As we shall see in our numerical investigations, this has profound effects on
+the structure of topological defects connecting across such an interface.
 
-Defect states that span the interface can be constructed by applying a
-condensate phase \(\tau \) and spin rotation defined by
-Euler angles (\(\alpha, \beta, \gamma \))
-[see Eq.~\eqref{eq: spin-2-rotation-matrix}] as
-\begin{equation}\label{eq: spin-rotation-action}
-    \zeta = e^{i\tau}\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B},
-\end{equation}
-where \(\zeta^\text{A-B}\) represents an interpolating spinor between ground
-state A and B of a spin-2 BEC\@.
-
-In this Chapter we focus only on a small subset of the possible defects present
-in the spin-2 system.
-The first case we consider is the connection of SQVs on either side of the
-interface, defined as a \(2\pi \) winding of the condensate phase, \(\tau \).
-Such a connection is realised by the choice \(\tau = \varphi \) whilst keeping
-the Euler angles constant.
-A representative example with \(\alpha = \gamma = 0\) is given by
+To begin our investigations of defects connecting across topological interfaces,
+we first consider vortex connections.
+A summary of different vortex connections possible across a UN-BN interface are
+listed in Table~\ref{tab: UN-BN-vortices}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{5}{c}{Uniaxial to Biaxial Nematic (UN-BN) --- Vortices} \\
+        \midrule
+        UN limit & BN limit &  \(\chi_2/\varphi \) & \(\chi_0/\varphi \) &
+        \(\chi_{-2}/\varphi \)  \\
+        \midrule
+         Singular phase vortex & Singular phase vortex & \(k\) & \(k\) &
+         \(k\) \\ 
+         Vortex-free & Singular phase vortex & \(k\) & 0 & \(k\) \\
+         Singular phase vortex & Vortex-free & 0 & \(k\) & 0\\
+         Vortex-free & Singular spin vortex  & \(-k\) & 0 & \(k\) \\
+         Singular phase vortex & Singular spin vortex  & \(-k\) & \(k\) &
+         \(k\) \\
+         Vortex-free & Half-quantum vortex  & \(k\) & 0 & 0\\
+         Singular phase vortex & Half-quantum vortex  & \(k\) & \(k\) & 0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: UN-BN-vortices}
+    Representative examples of different vortex connections possible across a
+    UN-BN interface, constructed from the winding of the phase coefficients
+    \(\chi_m\) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
+    Additionally, generalisations to multiply quantised vortices are given by
+    \(k \in \mathbb{Z}\).}
+\end{table}
+We start by constructing a connection of singly quantised vortices (SQVs) on
+either side of the interface, which can be achieved by allowing
+\(\chi_m=\varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results
+in a spatially overlapping \(2\pi \) phase winding in each component.
+An alternative construction is achieved using
+Eq~\eqref{eq: general-defect-interface}, where instead \(\tau=\varphi \) and the
+Euler angles are kept constant.
 \begin{align}\label{eq: UN-BN-SQV-SQV}
     \zeta_\text{sqv}^\text{UN-BN} & =
     \frac{1}{\sqrt{2}}\left( D_+\zeta^\text{UN}_\text{sqv}
@@ -366,14 +410,14 @@ nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
 
 The uniform mean-field energy of Eq.~\eqref{eq: C-N-interpolating-spinor} reads
 \begin{equation}
-    \mathcal{E}^\text{C-N} = \frac{c_2n}{10}\eta^2 + 2q(1 - \eta).
+    E^\text{C-N} = \frac{c_2n}{10}\eta^2 + 2q(1 - \eta).
 \end{equation}
 The energy becomes minimised at \(\eta = 10q/c_2n\) for \(c_2 > 0\) and fixed
 \(q\).
 Since the interpolating spinor \(\zeta^\text{C-N}\) is a function of \(q\) only
-the stability of the interface is guaranteed since \(\mathcal{E}^\text{C-N} =
-2q-10q^2/c_2 \leq \mathcal{E}^\text{C}, \mathcal{E}^\text{UN},
-\mathcal{E}^\text{BN}\) for \(|q| < c_2n/10\).
+the stability of the interface is guaranteed since \(E^\text{C-N} =
+2q-10q^2/c_2 \leq E^\text{C}, E^\text{UN},
+E^\text{BN}\) for \(|q| < c_2n/10\).
 
 Here, for simplicity, we focus on an interface between the cyclic and BN phases
 which is achieved from a longitudinally-dependent quadratic Zeeman shift
@@ -467,15 +511,15 @@ cyclic and both ferromagnetic phases.
 
 The uniform mean-field energy of the above spinor reads
 \begin{equation}
-    \mathcal{E}^\text{C-FM} = \frac{c_1 n}{2} f_z^2 - (p-q)f_z +2q,
+    E^\text{C-FM} = \frac{c_1 n}{2} f_z^2 - (p-q)f_z +2q,
 \end{equation}
 which becomes minimised upon the choice \(f_z = (p-q)/c_1n\) for \(c_1 > 0\) and
 fixed \(p, q\).
 Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
 appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\).
 The interface is expected to be stable within the range
-\(-c_1n \leq p \leq 2c_1n\) since \(\mathcal{E}^\text{C-FM} \leq
-\mathcal{E}^\text{C}=0, \mathcal{E}^{f_z=1} = c_1n/2 + p\).
+\(-c_1n \leq p \leq 2c_1n\) since \(E^\text{C-FM} \leq
+E^\text{C}=0, E^{f_z=1} = c_1n/2 + p\).
 
 Applying a phase and a general spin rotation to the spinor in
 Eq.~\eqref{eq: C-FM-interpolating-spinor} yields (\(\beta = 0\))
@@ -637,14 +681,14 @@ The resulting stationary solution has the form
 where \(f_z\) gives the longitudinal magnetisation.
 The energy of this interpolating spinor reads
 \begin{equation}\label{eq: FM-BN-energy}
-    \mathcal{E}^\text{FM-BN} = \frac{1}{2}\left(c_1-\frac{c_2}{20}\right)f_z^2
+    E^\text{FM-BN} = \frac{1}{2}\left(c_1-\frac{c_2}{20}\right)f_z^2
     - p f_z + 4q + \frac{c_2}{10},
 \end{equation}
 which is minimised precisely when \(f_z = p / [(c_1-c_2/20)n]\) provided that
 \(c_1 \geq c_2/20\) for fixed \(p\) and \(q\).
 Substitution of \(f_z = p / [(c_1-c_2/20)n]\) into Eq.~\eqref{eq: FM-BN-energy}
-reveals that \(\mathcal{E}^\text{FM-BN} \leq \mathcal{E}^\text{BN},
-\mathcal{E}^{f_z=\pm 2}\) for \(|p| < (2c_1-c_2/10)n\).
+reveals that \(E^\text{FM-BN} \leq E^\text{BN},
+E^{f_z=\pm 2}\) for \(|p| < (2c_1-c_2/10)n\).
 
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
 the ferromagnetic state with spin \(f_z = \pm 2\).
