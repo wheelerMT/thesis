@@ -154,7 +154,7 @@ We first focus on a family of solutions interpolating between the UN and BN
 phases (see Sec~\ref{sec: ground-states-spin-2} for details on these ground
 states).
 Such an interpolating solution is given as
-\begin{equation}\label{eq: UN-BN-interpolating-spinor}
+\begin{align}\label{eq: UN-BN-interpolating-spinor}
     \zeta^\text{UN-BN} = \frac{1}{2}\mqty(
     e^{i\chi_2}\sqrt{1 - \eta} \\
     0 \\
@@ -162,7 +162,7 @@ Such an interpolating solution is given as
     0 \\
     e^{i\chi_{-2}}\sqrt{1 - \eta}
     ),
-\end{equation}
+\end{align}
 where \(\eta = 10q /|c_2|n \in [-1, 1]\) and \(\chi_m = \text{Arg}(\zeta_m)\)
 for component \(m\).
 Here, \(\chi_m\) are arbitrary phase coefficients that can either take fixed
@@ -367,7 +367,7 @@ An example can be constructed by considering opposite phase windings in the
 outer components, i.e., choosing \(\chi_{\pm 2} = \pm \varphi \) in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor}, resulting in the spinor
 (see Sec.~\ref{sec: vortices-spin-2})
-\begin{align}\label{eq: UN-BN-SV-SV-spinor}
+\begin{align}\label{eq: UN-BN-vf-sv}
     \zeta_\text{vf-sv}^\text{UN-BN} = \frac{1}{2}\mqty(
         e^{i\varphi}\sqrt{1 - \eta} \\
         0 \\
@@ -387,7 +387,7 @@ applying Eq.~\eqref{eq: spin-2-rotation-matrix} with \(\beta = \pi/2\) and
 keeping the Euler angles \(\alpha, \gamma \) constant.
 Then, by again choosing \(\chi_{\pm 2} = \pm \varphi \), we arrive at the
 resulting interpolating spinor (\(\alpha = \gamma = 0\)):
-\begin{align}
+\begin{align}\label{eq: UN-BN-sv-sv}
     \zeta_\text{sv-sv}^\text{UN-BN} = \frac{1}{4}\mqty(
         e^{i\varphi}(\sqrt{1 - \eta} + \sqrt{3(1+\eta)}) \\
         0 \\
@@ -486,28 +486,26 @@ given in Table~\ref{tab: UN-BN-nonsingular}.
 \end{table}
 
 \subsection{Cyclic to nematic}
-A steady-state solution that interpolates between the nematic and cyclic phases
-can be found by choosing \(\chi = \chi_2 + \chi_{-2} + 2\chi_0 = \pi \) in
-Eq.~\eqref{eq: UN-BN-interpolating-spinor}, namely
-\begin{equation}\label{eq: C-N-interpolating-spinor}
-    \zeta^\mathrm{C-N} = \mqty(
-    e^{i\chi_2}D_- \\
+As we have discussed already in the context of vortex cores, topological
+interfaces can arise between the cyclic and nematic phases.
+This can be achieved by maintaining a constant \(\chi = \pi \), which can be
+achieved by the following family of spinors
+\begin{align}\label{eq: C-N-interpolating-spinor}
+    \zeta^\text{C-N} = \frac{1}{2}\mqty(
+    e^{i\chi_2}\sqrt{1 - \eta} \\
     0 \\
-    ie^{i\chi_0}\sqrt{2}D_+ \\
+    ie^{i\chi_0}\sqrt{2(1+\eta)} \\
     0 \\
-    e^{i\chi_{-2}}D_-),
-    \quad D_\pm = \sqrt{1\pm\eta},
-\end{equation}
-where \(\eta = 10q/(|c_2|n)\).
-The quadratic Zeeman shift can be used to interpolate the above solution between
-the different phases.
-At \(q = 0\) the above solution becomes the three component cyclic
-\(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
-The sign of the quadratic Zeeman shift determines which nematic state is chosen.
-If \(q = -c_2n/10\) then the solution becomes biaxial nematic
-\(\zeta_\mathrm{BN} = {(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
-In the opposite limit of \(q = c_2n/10\) then the system is in the uniaxial
-nematic state \(\zeta_\mathrm{UN} = {(0, 0, 1, 0, 0)}^T\).
+    e^{i\chi_{-2}}\sqrt{1 - \eta}
+    ),
+\end{align}
+where now \(\chi = 0\) \textcolor{red}{ask Giuseppe about this.}
+The quadratic Zeeman shift can once again be used to interpolate the above
+solution between the different phases.
+At \(\eta = 0\) the above solution becomes the three component cyclic state with
+a spinor of the form \(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
+The sign of the quadratic Zeeman shift determines which nematic state is chosen,
+where \(\eta = \pm 1\) recovers the familiar UN and BN states, respectively.
 
 The uniform mean-field energy of Eq.~\eqref{eq: C-N-interpolating-spinor} reads
 \begin{equation}
@@ -515,41 +513,64 @@ The uniform mean-field energy of Eq.~\eqref{eq: C-N-interpolating-spinor} reads
 \end{equation}
 The energy becomes minimised at \(\eta = 10q/c_2n\) for \(c_2 > 0\) and fixed
 \(q\).
-Since the interpolating spinor \(\zeta^\text{C-N}\) is a function of \(q\) only
+Since the interpolating spinor \(\zeta^\text{C-N}\) is a function of \(q\) only,
 the stability of the interface is guaranteed since \(E^\text{C-N} =
 2q-10q^2/c_2 \leq E^\text{C}, E^\text{UN},
 E^\text{BN}\) for \(|q| < c_2n/10\).
-
 Here, for simplicity, we focus on an interface between the cyclic and BN phases
 which is achieved from a longitudinally-dependent quadratic Zeeman shift
 \(q(z)\) which varies from \(q = 0\) at the cyclic phase to \(q = -c_2n/10\)
 at the BN side.
 
-Firstly, one can construct the SQV-SQV and SV-SV connections considered in the
-UN-BN interface for this interface upon the substitution
-\(D_+ \rightarrow iD_+\) in Eq.~\eqref{eq: UN-BN-SQV-SQV} and identifying the
-cyclic limit as \(D_+ = 1\) and \(D_- = 0\).
+Firstly, one can construct the same SQV and spin vortex connections considered
+in the UN-BN interface upon the substitution \(\sqrt{1+\eta} \rightarrow
+i\sqrt{1+\eta}\) in Eqs.~\eqref{eq: UN-BN-SQV-SQV} and~\eqref{eq: UN-BN-sv-sv},
+identifying the cyclic limit as \(\eta = 0\).
+However, choosing the phase windings \(\chi_m\) such that \(\chi \neq 0\) leads
+to defect states which are undefined in the cyclic limit, and hence we omit
+them from the discussion.
+These defect states are summarised in Table~\ref{tab: C-N-vortices}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{6}{c}{Cyclic to nematic --- vortices} \\
+        \midrule
+        Cyclic limit & UN limit & BN limit & \(\chi_2/\varphi \) &
+        \(\chi_0/\varphi \) & \(\chi_{-2}/\varphi \) \\
+        \midrule
+            SQV & SQV & SQV & \(k\) & \(k\) & \(k\) \\
+            Singular spin vortex & Vortex-free & Singular spin vortex & \(-k\)
+            & 0 & \(k\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: C-N-vortices}Summary of the phase and spin vortices
+    possible in a cyclic to nematic interface.
+    Different vortices are constructed from appropriate choices of the phase
+    windings \(\chi_m\).
+    Note that \(\chi=0\) for all cases considered as to
+    ensure identifiable vortices within the cyclic limit.}
+\end{table}
 
-In addition to these connections, one can also construct an alternative
-connection between spin vortices that arises due to a shared symmetry between
-the cyclic and BN phases.
-In particular, the common axis of symmetry is given by \(\hat{\vb{e}}_{(1,1,0)}=
-(\hat{\vb{x}} + \hat{\vb{y}}) / \sqrt{2}\) (see \(C_2'\) axis in
-Fig.~\ref{fig: spin-2-spherical-harmonics}d).
-A spin rotation around this axis is given by
-\begin{equation}\label{eq: C-BN-sv-rot}
-    \hat{U}\left(\hat{\vb{e}}_{(1,1,0)}, \delta\right) =
-    \exp{-i\frac{\hat{F}_x + \hat{F}_y}{\sqrt{2}}\delta},
-\end{equation}
-where \(\delta \) is an angle.
-This spin rotation with \(\delta = \varphi \), along with \(\tau=0\), can then
-be applied to the interpolating in Eq.~\eqref{eq: C-N-interpolating-spinor} to
-produce
+In addition to these connections, it is also possible to construct topologically
+distinct spin vortex connection between the cyclic and both nematic phases.
+This arises from the common axis of symmetry between the cyclic and BN phases
+(see \(C_2'\) axis in Fig.~\ref{fig: spin-2-spherical-harmonics}d).
+A spin rotation around this particular axis can be achieved from the spin-2
+rotation matrix in Eq.~\eqref{eq: spin-2-rotation-matrix} by choosing
+\(\alpha = -\gamma =\pi / 4\) and keeping \(\beta \) arbitrary.
+Applying the transformation in Eq.~\eqref{eq: general-defect-interface} to the
+general cyclic to nematic spinor in Eq.~\eqref{eq: C-N-interpolating-spinor}
+using these Euler angles with \(\tau=0\) and \(\beta = \varphi \) results in
+the following spinor:
+\begin{align}
+    \zeta^\text{C-N}_\mathrm{sv-sv} = \frac{1}{\sqrt{2}}\left(
+    i\sqrt{1+\eta}\zeta^\mathrm{UN}_\mathrm{sv} +
+    \sqrt{1-\eta}\zeta^\mathrm{BN}_\mathrm{sv}
+    \right), \label{eq: C-BN-sv-sv}
+\end{align}
+where the spin vortices in the UN and BN limits are given as
 \begin{gather}
-    \zeta_\mathrm{sv} = \frac{1}{\sqrt{2}}\left(
-    iD_+\zeta^\mathrm{UN}_\mathrm{sv} +
-    D_-\zeta^\mathrm{BN}_\mathrm{sv}
-    \right), \label{eq: C-BN-SV-SV-spinor} \\
     \zeta^\mathrm{UN}_\mathrm{sv} = \sqrt{\frac{3}{8}}
     \mqty(
     \sin^2 \varphi \\
@@ -565,11 +586,9 @@ produce
     0\\
     e^{-\frac{i \pi }{4}} \sin \varphi \\
     \cos \varphi
-    ),
+    ).
 \end{gather}
-which yields integer spin vortices in the cyclic and both nematic limits.
-The same spinor can be constructed from Eq.~\eqref{eq: spin-rotation-action}
-with \(\alpha=-\gamma=\pi/4\) and \(\beta = \varphi \).
+This yields integer spin vortices in the cyclic and both nematic limits.
 
 \subsection{Cyclic to ferromagnetic}
 An additional stationary solution can be found by considering \(D_1=D_2=0\).
