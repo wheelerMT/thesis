@@ -488,8 +488,9 @@ given in Table~\ref{tab: UN-BN-nonsingular}.
 \subsection{Cyclic to nematic}
 As we have discussed already in the context of vortex cores, topological
 interfaces can arise between the cyclic and nematic phases.
-This can be achieved by maintaining a constant \(\chi = \pi \), which can be
-achieved by the following family of spinors
+From Fig.~\ref{fig: UN-BN-duo-trio}, we see that by maintaining a constant
+\(\chi=\pi \) one can interpolate between the UN, cyclic and BN states.
+This can be achieved by the following family of spinors
 \begin{align}\label{eq: C-N-interpolating-spinor}
     \zeta^\text{C-N} = \frac{1}{2}\mqty(
     e^{i\chi_2}\sqrt{1 - \eta} \\
@@ -499,8 +500,10 @@ achieved by the following family of spinors
     e^{i\chi_{-2}}\sqrt{1 - \eta}
     ),
 \end{align}
-where now \(\chi = 0\) \textcolor{red}{ask Giuseppe about this.}
-The quadratic Zeeman shift can once again be used to interpolate the above
+where we now require that \(\chi_2 + \chi_{-2} - 2\chi_0 = 0\).
+Then, due to the \(i\) term in the middle component, this leads to a constant
+phase difference of \(\chi_2 + \chi_{-2} - 2(\chi_0 + \pi/2) = -\pi \), and
+hence allows us to use the quadratic Zeeman shift to interpolate the above
 solution between the different phases.
 At \(\eta = 0\) the above solution becomes the three component cyclic state with
 a spinor of the form \(\zeta_\mathrm{C} = {(1, 0, i\sqrt{2}, 0, 1)}^T/2\).
@@ -588,87 +591,174 @@ where the spin vortices in the UN and BN limits are given as
     \cos \varphi
     ).
 \end{gather}
-This yields integer spin vortices in the cyclic and both nematic limits.
+This yields a connection between an integer spin vortex in the cyclic limit to
+another integer spin vortex in both nematic limits.
+
+As discussed in the previous section, the nematic phases give rise to
+nonsingular textures and point defects such as nematic coreless vortices and
+monopoles.
+Those same defect connections can be constructed in this interface by using
+the appropriate transformation \(\sqrt{1+\eta} \rightarrow i\sqrt{1+\eta}\) in
+Eq.~\eqref{eq: UN-BN-general}.
+This then still results in, for example, the nematic coreless vortices in the
+nematic limits, which now connect to a nonsingular vortex structure in the
+cyclic limit.
+These defects are summarised in Table~\ref{tab: C-N-other}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{6}{c}{Cyclic to nematic --- Other defects/textures} \\
+        \midrule
+        Cyclic limit & UN/BN Limits &  \(\tau/\varphi \) & \(\alpha/\varphi \)
+        & \(\gamma/\varphi \) & \(\beta \) \\
+        \midrule
+         Singular spin vortex & Singular spin vortex & 0 &
+         \(\alpha=\frac{\pi}{4}\) & \(\gamma=-\alpha \) & \(k\varphi \) \\
+         Nonsingular vortex & Nonsingular vortex & 0 & 1 & 0
+         & \(\beta(\rho)\) \\ 
+         Monopole & Monopole & 0 & \(k\)  & 0 & \(k\theta \) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: C-N-other}Summary of other types of defect structures
+    possible in a cyclic to nematic interface.
+    Each defect is identified by windings of the condensate phase \(\tau \) and
+    Euler angles (\(\alpha, \beta, \gamma \)), expressed in terms of the
+    azimuthal angle \(\varphi \).
+    For nonsingular vortices, \(\beta(\rho)\) denotes a monotonically increasing
+    function of the transverse radius \(\rho \).
+    Additionally, for the monopole case, \(\theta \) is the polar angle in
+    spherical coordinates.}
+\end{table}
 
 \subsection{Cyclic to ferromagnetic}
-An additional stationary solution can be found by considering \(D_1=D_2=0\).
-Eq.~\eqref{eq: D2} and Eq.~\eqref{eq: D1} can then be solved exactly, to yield
-\begin{equation}
-    \tilde{\mu} = \pm \sqrt{4q^2 + |\alpha|^2}.
-\end{equation}
-If \(q \neq 0\), then \(\tilde{\mu} \neq \alpha \) which implies \(\zeta_0=0\)
-from Eq.~\eqref{eq: spin-2-stationary-zeta0-recast}.
-Zero transverse magnetisation then implies we have
-\(0 = 2c_1n(\zeta_2^*\zeta_{1} + \zeta_{-1}^*\zeta_{-2})\).
-\textcolor{red}{Rest of derivation here.}
-
-The final solution reads
-\begin{equation}\label{eq: C-FM-interpolating-spinor}
+Since spin-2 BECs support a ferromagnetic phase, which has inherent
+magnetisation, it is natural to construct an interface between this state and
+one with zero magnetisation.
+This would then result in spatially distinct regions which have different values
+of the spin magnitude, and hence would create a spatially-dependent
+magnetisation.
+By restricting ourselves to the case of zero transverse magnetisation,
+\(\hat{\vb{F}} = \hat{F}_z\), one such case that arises is between the cyclic
+and ferromagnetic phases, given by the following family of spinors:
+\begin{align}\label{eq: C-FM-interpolating-spinor}
     \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\mqty(
-    e^{i\chi_2}D_2 \\
-    0 \\
-    0 \\
-    e^{i\chi_{-1}}D_{-1} \\
-    0
-    ), \qquad
-    \mqty{
-        D_2 = \sqrt{1 + f_z} \\
-        D_{-1} = \sqrt{2 - f_z}
-    }
-    ,
-\end{equation}
-where \(f_z\) gives the \(z\)-component of the spin vector.
-At zero magnetisation, \(f_z = 0\), this solution is precisely the two-component
-cyclic state.
-The solution also interpolates between different ferromagnetic states depending
-on the value of the magnetisation.
-If \(f_z = -1\) one recovers an FM-1 solution
-\(\zeta_\text{FM-1} = {(0, 0, 0, 1, 0)}^T\).
-Conversely, \(f_z = 2\) yields the FM-2 solution
-\(\zeta_\text{FM-2} = {(1, 0, 0, 0, 0)}^T\).
-This spinor therefore provides a family of interpolating solutions between the
-cyclic and both ferromagnetic phases.
+        e^{i\chi_2}\sqrt{1 + \eta} \\
+        0 \\
+        0 \\
+        e^{i\chi_{-1}}\sqrt{2 - \eta} \\
+        0
+    ),
+\end{align}
+where \(\eta \) now becomes the longitudinal magnetisation, \(\hat{F}_z\).
+At zero magnetisation, \(\hat{F}_z = 0\), equivalent to setting \(\eta=0\), this
+solution becomes the two-component cyclic state,
+\(\zeta^C = {(1, 0, 0, \sqrt{2}, 0)}^T/\sqrt{3}\) which naturally has no
+magnetisation.
+Then, since this is a spin-2 system, the condensate spin is free to vary between
+\(\hat{F}_z = 0\) and \(\hat{F}_z = 2\).
+Recall from Chapter~\ref{chap: ground-states} that the spin-2 system supports
+two FM ground states, one with \(\spinmag = 1\), which we denote
+FM-1, and another with \(\spinmag = 2\), which we denote FM-2.
+Therefore, this spinor can interpolate between the cyclic and both FM phases,
+depending on the value of the condensate spin, \(\hat{F}_z\).
 
 The uniform mean-field energy of the above spinor reads
 \begin{equation}
-    E^\text{C-FM} = \frac{c_1 n}{2} f_z^2 - (p-q)f_z +2q,
+    E^\text{C-FM} = \frac{c_1 n}{2} \eta^2 - (p-q)\eta + 2q,
 \end{equation}
-which becomes minimised upon the choice \(f_z = (p-q)/c_1n\) for \(c_1 > 0\) and
-fixed \(p, q\).
-Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
-appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\).
+which becomes minimised upon the choice \(\eta = (p-q)/c_1n\) for \(c_1 > 0\)
+and fixed \(p, q\).
 The interface is expected to be stable within the range
 \(-c_1n \leq p \leq 2c_1n\) since \(E^\text{C-FM} \leq
 E^\text{C}=0, E^{f_z=1} = c_1n/2 + p\).
+Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
+appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\),
+where \(p(z) = 0\) represents the cyclic phase, whilst \(p(z) = -c_1n\) and
+\(p(z) = 2c_1n\) represent the FM-1 and FM-2 phases,
+respectively.
 
-Applying a phase and a general spin rotation to the spinor in
-Eq.~\eqref{eq: C-FM-interpolating-spinor} yields (\(\beta = 0\))
-\begin{equation}\label{eq: C-FM-general-spinor}
-    \zeta^\text{C-FM} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
-    e^{-2i(\alpha+\gamma)}D_2 \\
-    0 \\
-    0 \\
-    e^{i(\alpha+\gamma)}D_{-1} \\
-    0
+Following the procedure similar to the previous interfaces, we first focus on
+constructing phase vortices connecting across this topological interface, which
+can be obtained by appropriate winding of \(\chi_2\) and \(\chi_{-1}\).
+Again, one can construct singular SQVs connecting in all three limits by
+crossing \(\chi_2 = \chi_{-1} = \varphi \), which yields
+\begin{align}\label{eq: C-FM-sqv-sqv}
+    \zeta^\text{C-FM}_\text{sqv-sqv} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
+        \sqrt{1 + \eta} \\
+        0 \\
+        0 \\
+        \sqrt{2 - \eta} \\
+        0
     ),
-\end{equation}
-where \(D_2 = \sqrt{1 + f_z}\) and
-\(D_{-1} = \sqrt{2 - f_z}\).
-Now, combinations of \(\tau \) and \(\alpha+\gamma \) yields different phase
-vortices.
-Since the cyclic phase supports fractional vortices
-(see Sec. \textcolor{red}{Section}), we are able to construct a myriad of
-different connections from this interpolating spinor.
-For example, the choice \(\alpha+\gamma=-\varphi/3\) and \(\tau=\varphi/3\)
-results in a singular SQV in the FM-2 limit (\(D_2 = 1, D_{-1} = 0\)),
-a third vortex in the cyclic limit (\(D_2 = \sqrt{1/3}, D_{-1} = \sqrt{2/3}\)),
-and a vortex-free state in the FM-1 limit (\(D_2 = 0, D_{-1} = 1\)).
-Instead, by choosing \(\alpha + \gamma = \varphi/3\) and \(\tau = 2\varphi/3\)
-we have a vortex-free state in the FM-2 limit, a two-third vortex in the cyclic
-limit, and a singular SQV in the FM-1 limit.
-A case constructing SQVs in all three limits is given by \(\alpha+\gamma = 0\)
-and \(\tau = \varphi \).
+\end{align}
+In addition to these singly quantised vortices, the cyclic phase supports
+vortices with fractional charges, such as one-third and two-third vortices (see
+Sec.~\ref{sec: vortices-spin-2}).
+One can then construct such a vortex in the cyclic limit by limiting the winding
+of the phase to only one component.
+Due to the spin-gauge symmetry of the FM phase, this choice of winding would
+then lead to either singular SQVs and vortex-free regions in this limit.
+For example, the following spinor connects a one-third vortex in the cyclic
+limit to a singular SQV in the FM-2 and a vortex-free region in the FM-1 limit:
+\begin{align}\label{eq: C-FM-third-sqv}
+    \zeta^\text{C-FM}_\text{third-sqv} = \frac{1}{\sqrt{3}}\mqty(
+        e^{i\varphi}\sqrt{1 + \eta} \\
+        0 \\
+        0 \\
+        \sqrt{2 - \eta} \\
+        0
+    ),
+\end{align}
+which corresponds to the choice of \(\chi_2 = \varphi \) and \(\chi_{-1} = 0\)
+in Eq.~\eqref{eq: C-FM-interpolating-spinor}.
+Similarly, a two-third vortex in the cyclic limit can connect to a vortex-free
+region in the FM-2 limit or a singular SQV in the FM-1 limit, given by the
+spinor
+\begin{align}\label{eq: C-FM-2third-vf}
+    \zeta^\text{C-FM}_\text{two-third-sqv} = \frac{1}{\sqrt{3}}\mqty(
+        e^{i\varphi}\sqrt{1 + \eta} \\
+        0 \\
+        0 \\
+        \sqrt{2 - \eta} \\
+        0
+    ),
+\end{align}
+equivalent to setting \(\chi_2 = 0\) and \(\chi_{-1}=\varphi \) in
+Eq.~\eqref{eq: C-FM-interpolating-spinor}.
+Note that equivalent constructions can be made for the above two spinors using
+Eq.~\eqref{eq: general-defect-interface} with \(\tau=-\gamma=\varphi/3\) and
+\(\tau=2\gamma=2\varphi/3\), respectively.
+A summary of the phase vortex connections possible in this interface are
+summarised in Table~\ref{tab: C-FM-vortices}.
+\begin{table}
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        \multicolumn{5}{c}{Cyclic to ferromagnetic --- Vortices} \\
+        \midrule
+        C limit & FM-2 limit & FM-1 limit & \(\chi_2/\varphi \)
+        & \(\chi_{-1}/\varphi \) \\
+        \midrule
+         SQV & SQV & SQV & \(k\) & \(k\) \\ 
+         One-third & SQV & Vortex-free & \(k\) & 0 \\
+         Two-third vortex & Vortex-free & SQV & 0 & \(k\) \\
+         Singular spin vortex & Singular spin vortex & Singular spin vortex
+         & \(-2k\) & \(k\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: C-FM-vortices}Summary of the vortex connections
+    possible in a cyclic to FM interface.
+    Each vortex can be constructed by choosing the appropriate phase winding
+    \(\chi_m\), expressed in terms of the azimuthal angle \(\varphi \).
+    Here, \(k \) is an integer that allows one to represent vortices of
+    arbitrary quantisation.
+    Note that, for example, choosing \(k=3\) would result in a one-third
+    vortex now having unit quantisation, but it would be topologically distinct
+    to the SQV constructed from the choice \(\chi_2=\chi_{-1}=k\).}
+\end{table}
 
+\textcolor{red}{Move to numerics.}
 One can use the general spinor in Eq.~\eqref{eq: C-FM-general-spinor} to
 analytically examine the vortex core structures when \(D_{2,{-1}}\) are
 functions of the transverse radius \(\rho = \sqrt{x^2 + y^2}\).
@@ -696,21 +786,24 @@ Fig.~\ref{fig: C-FM-analytical-spin-singlet}.
             something?}
     }
 \end{figure}
-\textcolor{red}{Need to expand this discussion and really get my head around
-    what this plot shows in relation to a vortex.}
 
-In addition to phase vortices, we can construct a coreless vortex in the FM
-phase that connects to a vortex state in the cyclic phase.
+In addition to phase vortices, the FM phase also supports nonsingular coreless
+vortices, which is identified from a characteristic fountain-like texture of
+the condensate spin (see Fig.~\ref{fig: spin-1-vortices}b for the spin-1
+analogue.)
+To construct such a defect across an interface, we make use of
+Eq.~\eqref{eq: general-defect-interface}, and apply it to the general cyclic to
+FM interface in Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 To construct the characteristic fountain-like spin texture, we choose a
 monotonically increasing function of \(\beta=\beta(\rho)\).
 The order-parameter is then kept single-valued by a combined winding of the
 condensate phase coupled to a winding of the spin vector, achieved by
 \(\tau'=2\alpha=2\varphi \), where \(\tau'=\tau-2\gamma \).
-Applying such a rotation to the general spinor in
-Eq.~\eqref{eq: C-FM-interpolating-spinor} yields
+This then results in the spinor
 \begin{equation}\label{eq: C-FM-coreless-general}
-    \zeta_\text{cl} = \frac{1}{\sqrt{3}}\left(D_2\zeta^\text{|F|=2}_\text{cl}
-    + D_{-1}\zeta^\text{|F|=1}_\text{cl}\right),
+    \zeta_\text{cl} = \frac{1}{\sqrt{3}}\left(
+        \sqrt{1 + \eta}\zeta^\text{|F|=2}_\text{cl}
+        + \sqrt{2 - \eta}\zeta^\text{|F|=1}_\text{cl}\right),
 \end{equation}
 where
 \begin{align}\label{eq: C-FM-coreless-FM-limits}
@@ -741,7 +834,8 @@ where
 represent coreless vortices in both the FM-2 and FM-1 limits, respectively.
 The spherical harmonic representation of these coreless vortices are shown
 in Fig.~\ref{fig: C-FM-coreless-initial-states}a,
-~\ref{fig: C-FM-coreless-initial-states}b.
+~\ref{fig: C-FM-coreless-initial-states}b, where we see the characteristic
+fountain-like texture emerge.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -774,12 +868,15 @@ The resulting spinor in the cyclic limit is
 \begin{equation}\label{eq: C-FM-DQV-cyclic-limit}
     \zeta_\text{dqv}
     = \left(\zeta^\text{|F|=2}_\text{cl}
-    + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}\right) / 3.
+    + \sqrt{2}\zeta^\text{|F|=1}_\text{cl}\right) / 3,
 \end{equation}
-The spherical harmonic representation of this cyclic state is plotted in
+where the spherical harmonic representation of this cyclic state is plotted in
 Fig.~\ref{fig: C-FM-coreless-initial-states}c.
 By tracing a point about the vortex core, the condensate phase winds by a total
-of \(4\pi \), indicating that this is a doubly-quantised vortex.
+of \(4\pi \), coupled with a non-trivial rotation of the condensate spin,
+indicating that this is particular vortex is a doubly-quantised vortex.
+Therefore, the interpolating spinor above connects FM coreless vortices to a
+doubly-quantised vortex in the cyclic limit.
 
 \subsection{Ferromagnetic to biaxial nematic}
 Consider the case \(D_1 \neq 0\) and \(D_2 = 0\).
