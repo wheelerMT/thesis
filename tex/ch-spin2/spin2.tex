@@ -1305,7 +1305,7 @@ We choose this as the initial state, with
 monotonically increasing function.
 Here we focus only on the cyclic to FM-2 limit, but equivalently the cyclic to
 FM-1 limit can be chosen by an appropriate choice of \(p\) and \(q\) that
-interpolates \(f_z\) between \(-1\) and \(0\).
+interpolates \(\eta \) between \(-1\) and \(0\).
 We perform purely imaginary-time simulations to simulate energy relaxation.
 \begin{figure}
     \centering
@@ -1335,9 +1335,9 @@ We perform purely imaginary-time simulations to simulate energy relaxation.
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_third_spherical.pdf}};
         \node[cylinder, draw, fill=green, opacity=0.5, minimum height=2.8cm,
             rotate=90] (c_third) at (10, 1.5) {};
-        \node[rectangle, draw, minimum width=0.5cm, minimum height=0.5cm,
+        \node[rectangle, draw, minimum width=0.3cm, minimum height=0.3cm,
             dashed, green]
-        (third_small_rec) at (5.65, 0.78) {};
+        (third_small_rec) at (5.28, 0.62) {};
         \node[rectangle, draw, minimum width=4.4cm, minimum height=2.9cm,
             green] (third_big_rec) at (10, 1.6) {};
         \draw[-, dashed, green]
@@ -1351,9 +1351,9 @@ We perform purely imaginary-time simulations to simulate energy relaxation.
             {gfx/ch-spin2/C-FM=2_coreless_cyclic_2third_spherical.pdf}};
         \node[cylinder, draw, fill=red, opacity=0.5, minimum height=2.8cm,
             rotate=90] (c_2third) at (10, -1.5) {};
-        \node[rectangle, draw, dashed, minimum width=0.9cm,
-            minimum height=0.9cm, rotate=45, opacity=0.5, red]
-        (2third_small_rec) at (5.05, 0.15) {};
+        \node[rectangle, draw, dashed, minimum width=0.7cm,
+            minimum height=0.7cm, rotate=45, opacity=0.5, red]
+        (2third_small_rec) at (4.8, 0.15) {};
         \node[rectangle, draw, minimum width=4.4cm, minimum height=2.9cm,
             red] (2third_big_rec) at (10, -1.4) {};
         \draw[-, dashed, red]
@@ -1391,10 +1391,10 @@ side of the interface, shown in Fig.~\ref{fig: C-FM-coreless-cyclic}.
 As expected for a doubly quantised vortex line, it very rapidly undergoes a
 splitting process.
 In this case, it splits into four one-third vortices, evidenced by the
-\(\spinmag = 1\) regions.
-In addition, the large \(\spinmag = 2\) region indicates the core of a two-third
-vortex.
-\textcolor{red}{Why different sizes? Set by different healing lengths?}
+\(\spinmag = 1\) regions, and a further two-third vortex, evidence by the large
+\(\spinmag = 2\) region.
+The discrepancy of the core size could arise from the different vortices being
+set by different healing lengths.
 Analysis of the spherical harmonics in Fig.~\ref{fig: C-FM-coreless-cyclic}c,d
 shows the non-trivial order parameter symmetry both within and outside the
 vortex cores.
@@ -1403,8 +1403,9 @@ phase changes by \(2\pi/3\) and \(4\pi/3\) confirming that these structures are
 one-third and two-third vortices.
 Due to the energy relaxation, the one-third vortices quickly leave the
 condensate.
-However, the two-third vortex first undergoes a further splitting process into
-two one-third vortices, which then proceed to exit the condensate cloud.
+However, the two-third vortex is first observed to undergo a further splitting
+process in which it splits into two one-third vortices, which then proceed to
+exit the condensate cloud.
 
 The initial coreless vortex on the FM side of the interface also undergoes a
 complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
@@ -1434,7 +1435,7 @@ complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
             {gfx/ch-spin2/C-FM=2_coreless_FM_after_spherical.pdf}};
 
         \node[rectangle, draw, minimum width=0.5cm, minimum height=0.5cm]
-        (small_rec) at (5.35, -0.13) {};
+        (small_rec) at (5.1, -0.1) {};
         \node[rectangle, draw, minimum width=4.4cm, minimum height=2.3cm]
         (big_rec) at (10, 0) {};
         \draw[-, dashed] (big_rec.north west) -- (small_rec.north east) {};
@@ -1460,7 +1461,6 @@ Analysis of the spherical harmonics reveal the non-trivial symmetry within
 the singular vortex cores.
 As in the case on the cyclic side, these vortices rapidly leave the condensate
 due to the energy relaxation.
-
 On both sides of the interface the vortex structures are observed to terminate
 at the interface itself, and do not connect in a way that is observed in the
 SQV to one-third vortex connection (see Fig.~\ref{fig: C-FM-third-SQV}).
