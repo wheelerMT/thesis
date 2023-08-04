@@ -758,35 +758,6 @@ summarised in Table~\ref{tab: C-FM-vortices}.
     to the SQV constructed from the choice \(\chi_2=\chi_{-1}=k\).}
 \end{table}
 
-\textcolor{red}{Move to numerics.}
-One can use the general spinor in Eq.~\eqref{eq: C-FM-general-spinor} to
-analytically examine the vortex core structures when \(D_{2,{-1}}\) are
-functions of the transverse radius \(\rho = \sqrt{x^2 + y^2}\).
-The states can be described by choosing an appropriate function for
-\(f_z(\rho)\) that interpolates between all three phases.
-We choose \(f_z(\rho) = 3\tanh(\rho/2) - 1\) which becomes \(f_z=-1\) at
-\(\rho=0\), \(f_z=0\) and hence cyclic at \(\rho=\tanh^{-1}(1/3)\), and
-finally \(f_z=2\) at large \(\rho \).
-The resulting spin magnitude and singlet-trio amplitude using the above
-substitution in Eq.~\eqref{eq: C-FM-general-spinor} are plotted in
-Fig.~\ref{fig: C-FM-analytical-spin-singlet}.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]
-    {gfx/ch-spin2/spin_singlet_radius_analytical.pdf}
-    \caption[Analytically calculated spin magnitude and spin-singlet trio
-        amplitude for a cyclic to ferromagnetic interface]
-    {\label{fig: C-FM-analytical-spin-singlet}
-        Analytical calculation of the spin magnitude (solid line) and
-        spin-singlet trio amplitude (dashed line) using the initial state in
-        Eq.~\eqref{eq: C-FM-interpolating-spinor}.
-        We choose \(f_z(\rho) = 3\tanh(\rho/2) - 1\) to mode all three phases of
-        this interpolating spinor.
-        \textcolor{red}{Plot takes up a lot of space. Can I pair it with
-            something?}
-    }
-\end{figure}
-
 In addition to phase vortices, the FM phase also supports nonsingular coreless
 vortices, which is identified from a characteristic fountain-like texture of
 the condensate spin (see Fig.~\ref{fig: spin-1-vortices}b for the spin-1
@@ -1078,6 +1049,8 @@ avoid components that are identically zero.
 Additionally, when constructing states with defects, the position of each defect
 is perturbed slightly to avoid artificial stability when placed at exactly the
 centre of the trap.
+Details of the trapped, dimensionless units can be found in
+Sec.~\ref{subsec: spin-2-dimensionless}.
 
 \subsection{\label{subsec: UN-BN-numerics}
 Uniaxial nematic to biaxial nematic interface}
@@ -1162,38 +1135,23 @@ symmetry within the cores.
 \end{figure}
 In the UN case, the initially empty core fills with atoms occupying both the
 cyclic and BN phases, generating a topological interface within the core itself.
-This likely arises due to the differing phases factors between the wave function
+This likely arises due to the differing phases factors between the spinor
 components, as seen in Fig.~\ref{fig: UN-BN-duo-trio}.
-
-The SQV on the BN undergoes a similar filling of the empty vortex core.
-This time, the core fills with atoms in the UN, FM, and cyclic phases, also
-generating an interface within the core.
-The outer UN core is occupied by two small FM regions with
-\(|\langle \hat{F} \rangle| = 2\), in addition to a larger, central cyclic
-region \textcolor{red}{Plots highlighting the FM regions, hard to see from
-    current plot}.
-Spherical harmonics constructed about the core reveal that the phase winds by
-\(\pi \) about these FM regions, accompanied by a \(\pi/2\) rotation of the
-condensate spin vector.
+The SQV on the BN side undergoes a similar filling of the empty vortex core,
+filling with atoms in the UN, BN and cyclic phases, also generating an interface
+within the core.
 The development of this composite core structure signifies the start of a
-splitting process, whereby the SQV is expected to split into two HQVs.
-Since our system has no rotation to stabilise the vortices, the timescales
-considered here reveal that both vortices eventually leave the condensate
-cloud.
-Additionally, the SQV on the BN side of the interface will leave the condensate
-before the splitting into two HQVs has occurred.
-However, Fig.~\textcolor{red}{relevant fig} shows a purely imaginary time
-simulation of the initial state in Eq.~\eqref{eq: UN-BN-SQV-SQV} with
-\(\beta_0 = 0\) showing the resulting HQVs after the initial SQV has split.
+splitting process, whereby the SQV is expected to split into two HQVs
+[\textcolor{red}{refs?}].
+Since our system has no rotation of the trapping potential to stabilise the
+vortices, the timescales considered here reveal that both vortices eventually
+leave the condensate cloud.
+Additionally, the SQV on the BN side of the interface is observed to leave the
+condensate before the splitting into two HQVs has occurred.
 
-We next investigate the spin vortex connection, using the initial state in
-Eq.~\eqref{eq: UN-BN-SV-SV-spinor} with \(\beta_0=0\).
-\textcolor{red}{Need to do simulation of this. May or may not include,
-    depending on result.}
-
-We can also investigate a vortex connection that terminates on the interface.
-We start with the initial state in Eq.~\eqref{eq: UN-BN-SQV-SQV} with
-\(\beta_0=0\), and artificially remove the winding from the middle component.
+We next investigate a vortex connection that terminates on the interface.
+We start with the initial state in Eq.~\eqref{eq: UN-BN-vf-sqv}, which contains
+no phase winding in the middle component.
 The result is a SQV in the BN phase that smoothly connects to a vortex-free
 state in the UN phase.
 The resulting spin magnitude and singlet-trio amplitude after purely
@@ -1224,15 +1182,16 @@ The dynamics of this connection closely resembles what the later dynamics of the
 BN side of the SQV-SQV connection would look like, provided that the vortices
 were stabilised against leaving the condensate.
 We see that the initial SQV on the BN side has undergone a splitting process
-into two HQVs, each of which terminate at the interface.
+into two HQVs, each of which can be seen to terminate at the interface.
 The cores of the HQVs are easily identified from the
 \(\spinmag = 2\) regions.
 Similar splitting of an SQV into HQVs has been observed in the polar phase of
 spin-1 condensates~\cite{Seo2015, Xiao2021}.
 For the timescales considered, the resulting HQVs remain stable against
 leaving the condensate.
-
-\textcolor{red}{Monopole?}
+Additionally, we see the clear presence of the cyclic phase emerging at the
+interface \(z / \ell \sim 0\), arising due to the phase difference between
+the spinor components (see Fig.~\ref{fig: UN-BN-duo-trio}).
 
 \subsection{Cyclic to ferromagnetic interface}
 We numerically investigate vortex connections across a topological interface
@@ -1242,22 +1201,21 @@ Since our numerical simulations use parameters that predict a nematic ground
 state, we introduce a spatially-dependent \(c_1\) term such that \(c0/c_1=90.7\)
 on the cyclic side but \(c_0/c_1=-90.7\) on the FM side, effectively changing
 the sign of the \(c_1\) term.
+\textcolor{red}{Are there experimental papers to cite here that mention the
+manipulation of scattering lengths to achieve this?}
 Now, in the FM region, the parameters ensure that the FM region remains stable.
 Despite the cyclic state not being the predicted ground state, the interface
 is observed to remain stable for the timescales considered in our simulations.
 
 We firstly investigate the connection of a third vortex in the cyclic phase
 connecting to a singular SQV in the FM-2 phase using
-Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = \varphi/3\) and
-\(\tau=\varphi/3\) as the initial state.
-The initial state is then propagated using a short imaginary-time evolution to
-imprint the vortex cores.
-From here we switch to complex-time using a damping coefficient of
-\(\gamma=10^{-2}\).
-
-The resulting spin magnitude and spin-singlet duo amplitude are plotted in
-Fig.~\ref{fig: C-FM-third-SQV}.
-\begin{figure}[htb!]
+Eq.~\eqref{eq: C-FM-third-sqv} as the initial state.
+This initial state is then propagated using a short imaginary-time evolution to
+imprint the vortex cores and, once the core is imprinted, we switch to
+complex-time simulations using a damping coefficient of \(\nu=10^{-2}\).
+The resulting spin magnitude and spin-singlet duo amplitude for this interface
+after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
+\begin{figure}
     \centering
     \begin{tikzpicture}
 
@@ -1281,17 +1239,22 @@ Fig.~\ref{fig: C-FM-third-SQV}.
         {\includegraphics[width=0.33\textwidth]
             {gfx/ch-spin2/C-FM=2_third-SQV_singlet_trio.pdf}};
 
+        \node[inner sep=0pt] (plot3) at (-0.7, -5) {
+            \includegraphics[width=0.5\textwidth]
+                {gfx/ch-spin2/spin_singlet_radius_analytical.pdf}
+        };
+
         % Labels
         \node at (-5.15, -2.5) {(a)};
         \node at (-0.5, -2.5) {(b)};
         \node at (3.95, -2.5) {(c)};
+        \node at (-0.5, -7.5) {(d)};
     \end{tikzpicture}
     \caption[Dynamics of a one-third vortex to singly quantised vortex
     connection in a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-third-SQV}Third vortex to SQV connection in an
     interface between the cyclic and FM-2 phases given by
-    Eq.~\eqref{eq: C-FM-general-spinor} with \(\alpha + \gamma = -\varphi/3\)
-    and \(\tau = \varphi/3\) at \(\bar{t} = 50\).
+    Eq.~\eqref{eq: C-FM-third-sqv} at \(\bar{t} = 50\).
     (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
     The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
     \(\spinmag = 1\) core which extends throughout the FM region.
@@ -1300,22 +1263,40 @@ Fig.~\ref{fig: C-FM-third-SQV}.
     Overlaid are the spherical harmonics showing the non-trivial change
     of order parameter symmetry inside the core.
     (c): Longitudinal cut of \(|A_{30}|^2\) at \(y/\ell=0\).
-    Cyclic regions are identified from \(|A_{30}|^2=2\).}
+    Cyclic regions are identified from \(|A_{30}|^2=2\).
+    (d) Analytically calculated values of \(\spinmag \) and \(|A_{30}|^2\)
+    using the interpolating spinor in Eq.~\eqref{eq: C-FM-third-sqv} with the
+    choice of \(\eta(\rho) = 3\tanh(\rho/3)\).}
 \end{figure}
 Here, \(\spinmag \) reveals non-trivial core structures emerging.
 Clearly one can see the third vortex on the cyclic side of the interface
 (\(z/\ell < 0\)) evidenced by the \(\spinmag = 1\) core.
-However, this \(\spinmag = 1\) region then extends throughout the longitudinal
-extent of the condensate, and penetrates into the FM region.
-The initial SQV of the FM side has developed a composite core structure.
-Inside is the \(\spinmag = 1\) region, which is encased in a cyclic shell as
-seen from the \(|A_{30}|^2=2\) regions.
-The spherical harmonics reveal the non-trivial change of order parameter
+However, unlike the previous case where the vortices spatially separated, this
+\(\spinmag = 1\) region then extends throughout the longitudinal extent of the
+condensate, and penetrates into the FM region, revealing that the initial SQV of
+the FM phase has developed a composite core structure.
+This composite core structure is separated into three distinct parts:
+Inside is the \(\spinmag = 1\) region, which is then encased in a cyclic shell
+as seen from the \(|A_{30}|^2=2\) regions in Fig.~\ref{fig: C-FM-third-SQV}c.
+Then, far away from the vortex core, the system smoothly interpolates back to
+a \(\spinmag = 2\) region in the bulk of the condensate.
+The spherical harmonics of the internal core structure plotted in
+Fig.~\ref{fig: C-FM-third-SQV}b reveal the non-trivial change of order parameter
 symmetry within the composite core.
-Far away from the vortex core, the system then interpolates back to the FM-2
-phase.
-Note that the composite core structure was predicted analytically in
-Fig.~\ref{fig: C-FM-analytical-spin-singlet}.
+
+One can use the general spinor in Eq.~\eqref{eq: C-FM-third-sqv} to
+analytically examine the vortex core structures when \(\eta \) is a
+function of the transverse radius \(\rho = \sqrt{x^2 + y^2}\).
+The states can be described by choosing an appropriate function for
+\(\eta(\rho)\) that interpolates between all three phases.
+We choose \(\eta(\rho) = 3\tanh(\rho/2) - 1\) which becomes \(\eta=-1\) at
+\(\rho=0\), \(\eta=0\) and hence cyclic at \(\rho=\tanh^{-1}(1/3)\), and
+finally \(\eta=2\) at large \(\rho \).
+The resulting spin magnitude and singlet-trio amplitude using the above
+substitution in Eq.~\eqref{eq: C-FM-third-sqv} are plotted in
+Fig.~\ref{fig: C-FM-third-SQV}d.
+We see that the analytically calculated values of \(\spinmag \) and
+\(|A_{30}|^2\) mirror those observed in the numerics.
 
 Instead of considering only singular vortices, we can also investigate the
 coreless vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.

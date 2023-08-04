@@ -15,7 +15,7 @@ psiP2 = np.sqrt((1 + eta_C_FM) / 3)
 psiM1 = np.sqrt((2 - eta_C_FM) / 3)
 
 mod_f = abs(2 * abs(psiP2) ** 2 - abs(psiM1) ** 2)
-fig, ax = plt.subplots(1, figsize=(6.4, 4.8))
+fig, ax = plt.subplots(1, figsize=(6.4, 3))
 ax.set_xlim(0, 6)
 ax.set_ylim(-0.1, 2.1)
 
