@@ -72,12 +72,14 @@ spinor as
 \begin{align}\label{eq: FM-representative-spinor}
     \psi^\mathrm{FM} =
     \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} =
-    \sqrt{n}e^{i(\tau - \gamma)}\mqty(
+    \sqrt{n}e^{i\tau^\prime}\mqty(
     e^{-i\alpha}\cos^2\frac{\beta}{2} \\
     \frac{1}{\sqrt{2}}\sin\beta \\
     e^{i\alpha}\sin^2\frac{\beta}{2}
-    ).
+    ),
 \end{align}
+where \(\tau^\prime = \tau-\gamma \).
+
 \subsection{Polar phase}
 For polar interactions (\(c_1 > 0\)), the energy is minimised by having the
 spin magnitude vanish \(|F|=0\).
@@ -787,7 +789,7 @@ Table~\ref{tab: homotopy-groups}~\cite{Kawaguchi2012}.
         \bottomrule
     \end{tabular}
     \caption{\label{tab: homotopy-groups}A list of different homotopy groups
-    and the corresponding topological defects they describe.}
+    and the corresponding topological defects/solitons they describe.}
 \end{table}
 
 In this section, we list the order parameter space for each ground state
@@ -797,6 +799,8 @@ space.
 After calculating these, we construct a few illustrative vortex examples, and
 investigate the properties of these vortices using spherical harmonic
 representations.
+
+\subsection{Single-valuedness condition}
 
 \subsection{Spin-1}\label{sec: vortices-spin-1}
 Recall that a spin-1 system has two phases in the absence of a magnetic field:
@@ -808,26 +812,47 @@ Kobayashi2012}.
 \begin{table}
     \centering
     \begin{tabular}{ccccc}
+        \toprule
         Spin-1 phase & \(\mathcal{M}\) & \(\pi_1\) & \(\pi_2\) & \(\pi_3\) \\
         \midrule
         Polar phase & \(\left[S^2_{\hat{\vb{F}}} \times {U(1)}_\tau\right]
-        / {(\mathbb{Z})}_{\hat{\vb{F}}, \tau} \)
+        / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \)
         & \(\mathbb{Z}\) & \(\mathbb{Z}\) & \(\mathbb{Z}\) \\
+        Ferromagnetic phase & \({\text{SO}(3)}_{\hat{\vb{F}}, \tau}\)
+        & \({\mathbb{Z}}_2\) & 0 & \(\mathbb{Z}\) \\
         \bottomrule
     \end{tabular}
-    \caption{\label{tab: spin-1-homotopy-groups}Caption.}
+    \caption{\label{tab: spin-1-homotopy-groups}Spin-1 phases and their relative
+    order parameter space, \(\mathcal{M}\).
+    Also given are the first three homotopy groups calculated from the
+    corresponding order parameter space.
+    Here, \(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the
+    condensate spin and phase, respectively.
+    Additionally, \({\mathbb{Z}}_2=\{0, 1\} \) denotes the two-element group.}
 \end{table}
 We start with the polar phase, with the representative spinor defined as in
 Eq.~\eqref{eq: polar-representative-spinor}.
-The first homotopy group is calculated to be \(\pi_1(\mathcal{M}_\text{polar})
-= \mathbb{Z}\), which indicates vortices are stable within this phase.
-Unlike the scalar BEC, a singly quantised vortex in the polar phase does not
-represent the lowest unit of circulation.
-Instead, the polar phase allows for a vortex where the global phase only winds
-by \(\pi \) about the vortex core.
-This \(\pi \) rotation is then coupled with a \(\pi \) spin rotation to the
-nematic director \(\hat{\vb{d}}\) to keep the order parameter single valued.
+The order parameter space is given as \(\mathcal{M} = \left[S^2_{\hat{\vb{F}}}
+\times {U(1)}_\tau\right] / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \), where
+\(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the condensate spin
+and phase, respectively.
+Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
+the fact that the polar order parameter described in
+Eq.~\eqref{eq: polar-representative-spinor} remains invariant under the
+transformation of \(\left(\hat{\vb{d}}, \tau\right)
+\rightarrow \left(-\hat{\vb{d}}, \tau+\pi\right)\)
+(see Fig.~\ref{fig: spin-1-spherical-harmonics}b).
+The first homotopy group is calculated to be the additive group of integers,
+\(\pi_1(\mathcal{M}_\text{polar}) = \mathbb{Z}\), which indicates vortices are
+stable and classified by integers within this phase.
+It is worth noting that the first homotopy group for a scalar BEC system,
+which has an order parameter space of \(\mathcal{M}_\text{scalar}
+= \text{U}(1)\), is the same: \(\pi_1(\mathcal{M}_\text{scalar}) = \mathbb{Z}\).
+However, due to the \({\mathbb{Z}}_2\) symmetry, the minimum unit of circulation
+becomes half that of a scalar \(\text{U}(1)\) vortex, giving rise to what are
+known as half-quantum vortices (HQVs)~\cite{Kawaguchi2012}.
 
+Here we analytically construct a wave function that corresponds to a HQV\@.
 If we consider a vortex that is oriented along the \(z\)-axis and the nematic
 director is oriented in the \((x, y)\)-plane, then such a vortex corresponds to
 the choice of \(\tau=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
@@ -841,11 +866,8 @@ Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
     \label{eq: polar-HQV}
 \end{equation}
 where \(\varphi \) is the azimuthal angle about the vortex core.
-Such a vortex is referred to as a half-quantum vortex (HQV) due to carrying
-half the typical circulation of a scalar \(U(1)\) vortex.
 Similar, but topologically distinct vortices arise in the A phase of
 superfluid \( ^3\)He~\cite{Salomaa1985, Salomaa1987}.
-
 In experiment, for the vortex constructed as in Eq.~\eqref{eq: polar-HQV}, the
 vortex consists of density depletion along the core in the \(\psi_{-1}\)
 component, where the phase winding is located.
@@ -879,32 +901,62 @@ the HQV\@.
         condensate spin vector.}
 \end{figure}
 
-\subsection{Spin-2}
-\section{Topological defects in spinor BECs}
-\subsection{Spin-1}
+For the case of the ferromagnetic phase, the order parameter space is simply
+\(\mathcal{M}_\text{FM}={\text{SO}(3)}_{\hat{\vb{F}}, \tau}\).
+Now, different from the polar case, the first homotopy group is calculated
+as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM}) = {\mathbb{Z}}_2\),
+where \({\mathbb{Z}}_2=\{0, 1\} \) is the two-element group, which corresponds
+to two different line defects: singular and nonsingular.
+The singular vortex configuration can be constructed from
+Eq.~\eqref{eq: FM-representative-spinor} using the choice \(\tau'=0\) along with
+\(\alpha = \varphi \), which leads to the spinor
+\begin{align}
+    \psi^\text{FM}_\text{pcv} =
+    \sqrt{n}\mqty(
+    e^{-i\varphi}\cos^2\frac{\beta}{2} \\
+    \frac{1}{\sqrt{2}}\sin\beta \\
+    e^{i\varphi}\sin^2\frac{\beta}{2}
+    ).
+\end{align}
+In this configuration, the single-valuedness condition could be satisfied by
+having the condensate density vanish along the vortex core.
+However, in spinor BECs, we typically have \(c_0 \gg |c_1|\), which implies
+that it is more energetically favourable to vary the condensate spin instead.
+Therefore, the condensate can instead choose to lift atoms out of the FM state
+and into the polar state (i.e., occupy the \(m=0\) component) within the vortex
+core.
+For this reason, such a vortex is referred to as a polar-core
+vortex~\cite{Kawaguchi2012}.
 
-The ferromagnetic phase has the unique property that circulation is not
-quantised~\cite{Kawaguchi2012}.
-This leads to both singular and non-singular defects present in this phase.
-Here, we discuss a particular type of non-singular vortex called the coreless
-vortex~\cite{Martikainen2002, Leanhardt2003}.
-
-From Eq.~\eqref{eq: FM-representative-spinor}, a coreless vortex is constructed
-using the choice of \(\tau-\gamma = \alpha= \varphi \) and having
-\(\beta = \beta(\rho)\) be a function of the radial coordinate, \(\rho \):
-\begin{equation}
-    \psi^\mathrm{coreless} = \sqrt{n}\mqty(
+An example of a nonsingular vortex arising in the FM phase is the coreless
+vortex~\cite{Martikainen2002, Leanhardt2003}, which can be constructed from
+Eq.~\eqref{eq: FM-representative-spinor} by choosing \(\tau^\prime = \alpha
+= \varphi \) and having \(\beta = \beta(\rho)\) be a function of the transverse
+radial coordinate, \(\rho =\sqrt{x^2 + y^2}\), as:
+\begin{align}
+    \psi^\text{FM}_\text{cl} = \sqrt{n}\mqty(
     \cos^2\frac{\beta}{2} \\
     \frac{e^{i\varphi}}{\sqrt{2}}\sin\beta \\
     e^{2i\varphi}\sin^2\frac{\beta}{2}
     ).
-\end{equation}
-The single-valued condition of the wave function is satisfied by choosing
-\(\beta \) such that \(\beta(r=0) = 0\) and \(\beta(r=r_0) = \pi \), where
-\(r_0\) is the radius of the system.
-This choice of \(\beta \) results in a vortex-free configuration at \(r=0\),
-which then terminates on a doubly-quantised vortex at \(r=r_0\).
-A spherical harmonic representation of the coreless vortex is shown in
+\end{align}
+The single-valuedness condition of the wave function is satisfied by choosing
+\(\beta(\rho) \) in one of two ways, resulting in slightly different
+configurations of a coreless vortex.
+If we choose \(\beta(\rho)\) such that \(\beta(\rho=0) = 0\) and
+\(\beta(\rho=\rho_0) = \pi/2 \), where \(\rho_0\) is the radius of the system,
+then we have is what is known as a Mermin-Ho vortex.
+In this configuration, the spin starts aligned with the \(z\)-axis at
+\(\rho=0\), then gradually tilts away as \(\rho \rightarrow \rho_0\) until
+the spin lies in the \(xy\)-plane at \(\rho=\rho_0\).
+A different configuration is obtained if instead, one chooses \(\beta(\rho)\)
+such that \(\beta(\rho=0) = 0\) and now \(\beta(\rho=\rho_0) = \pi \), leading
+to what is known as an Anderson-Toulouse vortex~\cite{Woelfle1990}.
+In this configuration, the spin follows a similar path, but now tilts through
+the \(xy\)-plane, and ends up aligned with the \(z\)-axis once more at
+\(\rho=\rho_0\), with the spin now pointing in the opposite direction to the
+spin at \(\rho=0\).
+A spherical harmonic representation of the Mermin-Ho vortex is shown in
 Fig.~\ref{fig: spin-1-vortices}b, where the characteristic fountain-like
 spin texture is apparent.
 

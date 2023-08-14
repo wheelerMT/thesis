@@ -61,3 +61,5 @@ Klausen
 Crubellier
 SVs
 SQV
+single-valuedness
+Mermin-Ho
