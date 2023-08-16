@@ -44,5 +44,5 @@ camlight left
 camlight right
 lighting phong
 daspect([1 1 1]);
-view(-23, 30);
-exportgraphics(gca, '../../gfx/ch-groundStateSymmetries/AFM-spherical.pdf');
+view(90, 13);
+exportgraphics(gca, '../../../thesis_tikz/gfx/AFM-spherical.pdf');

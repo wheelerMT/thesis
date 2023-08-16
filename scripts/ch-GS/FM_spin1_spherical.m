@@ -3,18 +3,17 @@ nx = 128;
 ny = 128;
 
 % Constants
-q = 1.0;
-p = 0.75;
-c1 = -1;
+p = 0.9;
+c1 = 1;
 n = 1;
 
 % Spinor components
-zetaP1 = (q+p)/(2*q)*sqrt((-p^2+q^2+2*c1*n*q)/(2*c1*n*q))*ones(nx, ny);
-zeta0 = sqrt(((q^2-p^2)*(-p^2-q^2+2*c1*n*q))/(4*c1*n*q^3))*ones(nx, ny);
-zetaM1 = (q-p)/(2*q)*sqrt((-p^2+q^2+2*c1*n*q)/(2*c1*n*q))*ones(nx, ny);
+zetaP1 = ones(nx, ny);
+zeta0 = zeros(nx, ny);
+zetaM1 = zeros(nx, ny);
 
 % discretize sphere surface
-resolution = 100;
+resolution = 250;
 delta = pi/resolution;
 theta = 0:delta:pi; % altitude
 phi = 0:2*delta:2*pi; % azimuth
@@ -45,5 +44,7 @@ camlight left
 camlight right
 lighting phong
 daspect([1 1 1]);
-view(0, 26);
-exportgraphics(gca, '../../../thesis_tikz/gfx/BA-spherical.pdf');
+view(-23, 30);
+
+exportgraphics(gca, '../../../thesis_tikz/gfx/FM-spherical.pdf');
+
