@@ -765,16 +765,21 @@ Mithun2022}.
 The types of stable topological defects within a given system can be
 found from a group-theoretical approach using homotopy theory~\cite{Mermin1979,
 Kawaguchi2012}.
-To do so, one needs to first find the relevant order parameter space for the
-given system, \(\mathcal{M}\), that describes the symmetries of that
-particular order parameter.
+The theory states that the \(n\)th homotopy group \(\pi_n\) classifies
+topological excitations with dimension of homotopy \(n\), where
+\(n = d - \nu - 1\) for singular excitations and \(n=d - \nu \) for nonsingular
+excitations~\cite{Kobayashi2012}.
+Here, \(d\) and \(\nu \) describe the dimensionality of the system and the
+dimensionality of the excitation, respectively.
+To calculate whether a given defect is stable in a particular system, one needs
+to first find the relevant order parameter space, \(\mathcal{M}\), that
+describes the symmetries associated with the order parameter of that system.
 Then, calculating a given homotopy group, \(\pi_n(\mathcal{M})\), states whether
 the topological defect described by \(\pi_n\) is stable in that order parameter
 space.
-For example, given an order parameter space \(\mathcal{M}\), calculating the
-second homotopy group \(\pi_2(\mathcal{M})\) can tell us whether point defects
-are topologically stable within systems that have an order parameter space of
-\(\mathcal{M}\).
+For example, given an order parameter space \(\mathcal{M}\), one can calculate
+whether point defects (\(n=2\)) are stable within the system by seeing if
+\(\pi_2(\mathcal{M}) \neq 0\).
 Homotopy groups and the topological defects they describe are listed in
 Table~\ref{tab: homotopy-groups}~\cite{Kawaguchi2012}.
 \begin{table}
@@ -815,25 +820,23 @@ Kobayashi2012}.
         \toprule
         Spin-1 phase & \(\mathcal{M}\) & \(\pi_1\) & \(\pi_2\) & \(\pi_3\) \\
         \midrule
-        Polar phase & \(\left[S^2_{\hat{\vb{F}}} \times {U(1)}_\tau\right]
+        Polar & \(\left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right]
         / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \)
-        & \(\mathbb{Z}\) & \(\mathbb{Z}\) & \(\mathbb{Z}\) \\
-        Ferromagnetic phase & \({\text{SO}(3)}_{\hat{\vb{F}}, \tau}\)
-        & \({\mathbb{Z}}_2\) & 0 & \(\mathbb{Z}\) \\
+        & \(\mathbb{Z}\) & \(\mathbb{Z}\)  & \(\mathbb{Z}\) \\
+        Ferromagnetic & \({\text{SO}(3)}_{\hat{\vb{F}}, \tau}\)
+        & \({\mathbb{Z}}_2\) & 0  & \(\mathbb{Z}\) \\
         \bottomrule
     \end{tabular}
     \caption{\label{tab: spin-1-homotopy-groups}Spin-1 phases and their relative
-    order parameter space, \(\mathcal{M}\).
-    Also given are the first three homotopy groups calculated from the
-    corresponding order parameter space.
+    order parameter space, \(\mathcal{M}\) along with the corresponding first
+    (\(\pi_1\)), second (\(\pi_2\)), and third (\(\pi_3\)) homotopy groups.
     Here, \(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the
-    condensate spin and phase, respectively.
-    Additionally, \({\mathbb{Z}}_2=\{0, 1\} \) denotes the two-element group.}
+    condensate spin and phase, respectively.}
 \end{table}
 We start with the polar phase, with the representative spinor defined as in
 Eq.~\eqref{eq: polar-representative-spinor}.
 The order parameter space is given as \(\mathcal{M} = \left[S^2_{\hat{\vb{F}}}
-\times {U(1)}_\tau\right] / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \), where
+\cross {U(1)}_\tau\right] / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \), where
 \(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the condensate spin
 and phase, respectively.
 Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
@@ -961,8 +964,50 @@ Fig.~\ref{fig: spin-1-vortices}b, where the characteristic fountain-like
 spin texture is apparent.
 
 \subsection{Spin-2}\label{sec: vortices-spin-2}
-Spin-2 BECs offer an even richer diagram of topological defects than their
-spin-1 counterparts.
+As shown in Sec.~\ref{sec: ground-states-spin-2}, spin-2 BECs have a richer
+phase diagram, and with that an even richer family of topological defects.
+The order parameter spaces along with the first three homotopy groups are
+given in Table~\ref{tab: spin-2-homotopy-groups}~\cite{Mermin1979,Kawaguchi2012,
+Kobayashi2012}.
+\begin{table}
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        Spin-2 phase & \(\mathcal{M}\) & \(\pi_1\) & \(\pi_2\) & \(\pi_3\) \\
+        \midrule
+        Uniaxial nematic & \(\left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right]
+        / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}} \)
+        & \(\mathbb{Z} \cross \mathbb{Z}_2\)
+        & \(\mathbb{Z}\) & \(\mathbb{Z} \) \\
+        Biaxial nematic & \(\left[{\text{U}(1)}_\tau \cross
+        {\text{SO}(3)}_{\hat{\vb{F}}}\right]
+        / {(\text{D}_4)}_{\hat{\vb{F}}, \tau}\)
+        & \(\mathbb{Z} \cross_h {(\text{D}^\ast_4)}_{\hat{\vb{F}}}\) & 0
+        & \(\mathbb{Z}\) \\
+        Cyclic & \(\left[{\text{U}(1)}_\tau
+        \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
+        / \text{T}_{\hat{\vb{F}}, \tau}\)
+        & \(\mathbb{Z} \cross_h \text{T}_{\hat{\vb{F}}, \tau}\) & 0
+        & \(\mathbb{Z}\) \\
+        Ferromagnetic & \({\text{SO}(3)}_{\hat{\vb{F}}, \tau}
+        / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau}\)
+        & \({\mathbb{Z}}_4\) & 0 & \(\mathbb{Z}\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: spin-2-homotopy-groups}Spin-2 phases and their relative
+    order parameter space, \(\mathcal{M}\), along with the corresponding first
+    (\(\pi_1\)), second (\(\pi_2\)), and third (\(\pi_3\)) homotopy groups.
+    Here, \(\hat{\vb{F}}\), \(\tau \) indicate contributions from the
+    condensate spin and phase, respectively.
+    Additionally, \(\text{D}_4\) and T represent the fourth dihedral and
+    tetrahedral groups, respectively, and a \(\ast \) denotes a lift of that
+    particular group~\cite{Mermin1979}.
+    Finally, \(\cross_h\) is the \(h\)-product (see~\cite{Kobayashi2012} for
+    details).}
+\end{table}
+Here, we analytically construct some illustrative examples of vortices arising
+in the spin-2 ground state phases.
+
 We start with the UN phase, as given by
 Eq.~\eqref{eq: UN-representative-spinor}.
 Unlike the spin-1 polar phase, the UN phase does not support fractional vortices
@@ -975,7 +1020,7 @@ spin circulation.
 Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
 the choice \(\tau=0, \alpha=-\varphi/2, \beta=\pi/2\):
 \begin{equation}
-    \psi^\mathrm{SV} = \frac{\sqrt{6n}}{4}\mqty(
+    \psi^\text{UN}_\text{SV} = \frac{\sqrt{6n}}{4}\mqty(
     e^{i\varphi} \\
     0 \\
     -\sqrt{\frac{2}{3}} \\
@@ -998,26 +1043,39 @@ Fig.~\ref{fig: SV-HQV}a.
         \node at (7.2, -2.2) {(b)};
     \end{tikzpicture}
     \caption[Spherical harmonic representation of spin-2 vortices]
-    {\label{fig: SV-HQV}Spherical harmonic representation of select vortices in the spin-2
-        nematic phases.
-        (a): A spin vortex in the UN phase. A complete circuit of the vortex
-        results in a \(\pi \) winding of the condensate spin vector, with no
-        change to the condensate phase.
-        (b): One type of half-quantum vortex in the BN phase.
-        The condensate phase winds by \(\pi \) about the vortex core which is
-        coupled to a \(\pi / 2\) spin rotation.}
+    {\label{fig: SV-HQV}Spherical harmonic representation of select vortices
+    in the spin-2 nematic phases.
+    (a): A spin vortex in the UN phase. A complete circuit of the vortex
+    results in a \(\pi \) winding of the condensate spin vector, with no
+    change to the condensate phase, and hence this vortex has no mass
+    circulation.
+    (b): One type of half-quantum vortex in the BN phase.
+    The condensate phase winds by \(\pi \) about the vortex core which is
+    coupled to a \(\pi / 2\) spin rotation.}
 \end{figure}
-As the core of the vortex is traversed, the spin vector winds by \(\pi \) about
-the axis perpendicular to the nematic director, \(\hat{\vb{d}}\).
+Indeed, we see that as the core of the vortex is traversed, the spin vector
+winds by \(\pi \) about the axis perpendicular to the nematic director,
+\(\hat{\vb{d}}\), but the condensate phase remains unchanged.
 
-The BN phase is the simplest order parameter that supports non-abelian defects,
-i.e., defects whose topological charges do not commute~\cite{Mermin1979}.
-One of the simplest defects in this phase is the half-quantum vortex.
-However, this is topologically distinct from that of the spin-1 polar case.
+We see from Table~\ref{tab: spin-2-homotopy-groups} that the first homotopy
+group of the BN phase is \(\pi_1(\mathcal{M}_\text{BN}) = \mathbb{Z} \cross_h
+{(\text{D}^\ast_4)}_{\hat{\vb{F}}}\), which is a non-Abelian
+group~\cite{Mermin1979,Kobayashi2012} in which elements of that group do not
+commute.
+This then implies that the BN phase can host non-Abelian vortices, i.e.,
+vortices whose topological charges do not commute.
+A reconnection between two non-Abelian vortices leaves a trace of the
+reconnection in the form of a rung vortex~\cite{Mermin1979}.
+Such vortices also arise in the cyclic phase, and numerous studies have
+investigated the dynamics of such non-Abelian vortices~\cite{Mawson2015,
+Borgh2016}.
+One of the simplest defects present in the BN phase is a HQV\@.
+Note that this is topologically distinct from that of the spin-1 polar case
+presented in Fig.~\ref{fig: spin-1-vortices}a.
 Such a vortex can be constructed from Eq.~\eqref{eq: BN-representative-spinor}
 using the choice \(\tau=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
 \begin{equation}
-    \psi^\mathrm{1/2-1/4} = \sqrt{\frac{n}{2}}\mqty(
+    \psi^\text{BN}_\text{hqv} = \sqrt{\frac{n}{2}}\mqty(
     1 \\
     0 \\
     0 \\
@@ -1027,31 +1085,34 @@ using the choice \(\tau=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
 \end{equation}
 The spherical harmonic representation of this vortex is shown in
 Fig.~\ref{fig: SV-HQV}b.
-It is the clear the condensate phase winds by \(\pi \) about the vortex core,
-which is also coupled to a \(\pi / 2\) spin rotation.
+It is clear this vortex has the typical \(\pi \) phase winding about the vortex
+core associated with HQVs, which is also coupled to a \(\pi / 2\) spin rotation.
 This configuration is sometimes denoted a \(1/2-1/4\) vortex, where the \(1/2\)
 and \(1/4\) denote the phase and spin rotation angles, respectively.
+Additionally, there exists a half-quantum spin vortex (\(0 - 1/2\) vortex) in
+this phase, in which the condensate spin winds by \(\pi \) about the core,
+but the condensate phase remains unchanged~\cite{Kawaguchi2012}.
 
-This is not the only type of HQV that the BN phase supports.
-For example, there exists a pure spin vortex (\(0 - 1/2\) vortex) and a HQV
-that is also coupled to a \(\pi \) spin rotation
-(\(1/2-1/2\) vortex)~\cite{Kawaguchi2012}.
-
-Finally, the cyclic phase also allows for fractional vortices.
-However, the circulation in this phase is quantised in units of \(\kappa / 3\),
+As mentioned previously, the first homotopy group of the cyclic phase
+(\(\mathbb{Z} \cross_h \text{T}_{\hat{\vb{F}}, \tau}\)) is also non-Abelian and
+hence supports non-Abelian defects.
+Additionally, this phase also supports fractional vortices, but instead of the
+half-quantum of circulation that arises in the nematic phases, the cyclic phase
+has circulation that is quantised in units of \(\kappa / 3\),
 leading to \(1/3\) and \(2/3\) vortices.
-These vortices are constructed by applying a condensate phase and general spin
-rotation to Eq.~\eqref{eq: C-2-spinor}.
-A \(1/3\) vortex is constructed from the choice
-\(\tau = -\alpha = \varphi/3 \) with \(\gamma = 0\).
-Similarly, a \(2/3\) vortex is constructed by choosing \(\tau = 2\varphi/3\),
+These vortices can be constructed from Eq.~\eqref{eq: C-2-spinor} by applying a
+condensate phase and general spin rotation, where a \(1/3\) vortex is
+constructed from the choice \(\tau = -\alpha = \varphi/3 \) with \(\gamma = 0\)
+and a \(2/3\) vortex is constructed by choosing \(\tau = 2\varphi/3\),
 \(\alpha = \varphi/3\) and \(\gamma=0\).
 The result is a phase winding in the \(\psi_2\) and \(\psi_{-1}\) components
 for the \(1/3\) and \(2/3\) vortices, respectively:
 \begin{equation}
-    \psi^{1/3} = \sqrt{\frac{n}{3}}\mqty(e^{i\varphi} \\ 0 \\ 0 \\ \sqrt{2}\\0),
+    \psi^\text{C}_{1/3} = \sqrt{\frac{n}{3}}\mqty(e^{i\varphi} \\ 0 \\ 0 \\
+    \sqrt{2}\\0),
     \qquad
-    \psi^{2/3} = \sqrt{\frac{n}{3}}\mqty(1 \\ 0 \\ 0 \\\sqrt{2}e^{i\varphi}\\0).
+    \psi^\text{C}_{2/3} = \sqrt{\frac{n}{3}}\mqty(1 \\ 0 \\ 0 \\
+    \sqrt{2}e^{i\varphi}\\0).
 \end{equation}
 Spherical harmonic representations are plotted in
 Fig.~\ref{fig: cyclic-fractional-spherical}.
