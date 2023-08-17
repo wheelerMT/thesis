@@ -276,54 +276,31 @@ In spin-1, there are three \(f = 1\) spherical harmonics given by
 The spherical harmonic representations of the spin-1 polar and ferromagnetic
 ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
 \begin{figure}
-    \begin{tikzpicture}
-        % Plots
-        \node at (0, 0) {\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-spherical.pdf}};
-        \node at (3.8, 0) {\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/polar-spherical.pdf}};
-        \node at (7.6, 0) {\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/AFM-spherical.pdf}};
-        \node at (11.4, 0) {\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/BA-spherical.pdf}};
-
-        % Colour bar
-        % \node at (4, 0) {\includegraphics[angle=90]
-        %     {gfx/colourbars/compiled_hsv.pdf}};
-
-        % % Labels
-        % \node at (0, -2.) {(a)};
-        % \node at (7.2, -2.) {(b)};
-        % \node at (0, -7.2) {(c)};
-        % \node at (7.2, -7.2) {(d)};
-
-        % % Spinors
-        % \node at (0, 3) {\(\zeta^\mathrm{FM}={(1, 0, 0)}^T\)};
-        % \node at (7.2, 3) {\(\zeta^\mathrm{P}={(0, 1, 0)}^T\)};
-        % \node at (0, -2.5) {\(\zeta^\mathrm{AFM} \) given in
-        %     Eq.~\eqref{eq: AFM-spinor}};
-        % \node at (7.2, -2.5) {\(\zeta^\mathrm{BA}\) given in
-        %     Eq.~\eqref{eq: BA-spinor}};
-
-    \end{tikzpicture}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-1-ground-states.pdf}
     \caption[Spherical harmonic representation of spin-1 ground states]
     {\label{fig: spin-1-spherical-harmonics}
     Spherical harmonics representation of the ground state phases available in a
     spin-1 BEC.\@
     (a): The spin-1 ferromagnetic ground state with
     \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
-    The black arrow represents the direction of the condensate magnetisation.
+    The black dashed arrow represents the direction of the condensate
+    magnetisation.
     (b): The spin-1 polar ground state with
     \(\zeta^\mathrm{P}={(0, 1, 0)}^T\) where the nematic director
     \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
-    The order parameter remains unchanged about \(\pi/2\) rotations about the
-    \(C_2\) axis.
-    (c): The anti-ferromagnetic state given by Eq.~\eqref{eq: AFM-spinor}.
+    The order parameter remains unchanged about \(\pi \) rotations about the
+    \(C_2\) axis coupled with a \(\pi \) change of the condensate phase as
+    \(\left(\hat{\vb{d}}, \tau\right) \rightarrow
+    \left(-\hat{\vb{d}}, \tau+\pi\right)\).
+    (c): The anti-ferromagnetic state given by Eq.~\eqref{eq: AFM-spinor} with
+    \(p \neq 0\).
     Note that for this state the direction of the spin vector is aligned with
     the magnetic field.
-    (d): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor}.
-    The direction of the spin is tilted away from the magnetic field axis.
-    \textcolor{red}{Would like this on one row, like spin-2 paper.}}
+    (d): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor} with
+    \(p, q \neq 0\).
+    The direction of the spin vector is tilted away from the magnetic field
+    axis, which is assumed to be along the \(z\)-axis.}
 \end{figure}
 We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
 the \(z\)-axis.
@@ -414,7 +391,7 @@ It should be noted, however, that the FM-1 state can remain stable in
 certain situations, such as in the cores of vortices (see
 Chapter~\ref{chap: spin-2}).
 The representative spinors for the spin-2 ferromagnetic states have the form
-\begin{equation}
+\begin{equation}\label{eq: FM2-FM1-spinors}
     \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
     \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
 \end{equation}
@@ -470,11 +447,16 @@ We see that the energy functional is minimised when the spin is minimised
 \(\spinmag = 0\) but the singlet-duo amplitude is maximised
 \(|A_{20}|^2 = n/5\).
 Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
-or biaxial nematic (BN), described by the spinors
-\begin{equation}
-    \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0), \qquad
-    \zeta^\mathrm{BN} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
-\end{equation}
+or biaxial nematic (BN).
+A representative spinor for the UN state, where the nematic director
+\(\hat{\vb{d}}\) is aligned along the \(z\)-axis is given as
+\begin{align}\label{eq: UN-spinor}
+    \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0).
+\end{align}
+The representative spinor for the BN state reads
+\begin{align}\label{eq: BN-spinor}
+    \zeta^\mathrm{BN} &= \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
+\end{align}
 In the absence of a magnetic field, these two states are degenerate.
 The general wave function for the UN state is
 \begin{equation}\label{eq: UN-representative-spinor}
@@ -597,55 +579,22 @@ The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
 \begin{figure}
     \centering
-    \begin{tikzpicture}
-        % Plots
-        \node at (0, 0) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-2-spherical.pdf}};
-        \node at (7.2, 0) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-1-spherical.pdf}};
-        \node at (0, -6) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/UN-spherical.pdf}};
-        \node at (7.2, -6) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/BN-spherical.pdf}};
-        \node at (0, -12) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/C1-spherical.pdf}};
-        \node at (7.2, -12) {\includegraphics[width=0.45\textwidth]
-            {gfx/ch-groundStateSymmetries/C2-spherical.pdf}};
-
-        % Colour bars
-        \node at (3.2, -13.6) {\includegraphics{gfx/colourbars/compiled_hsv.pdf}};
-
-        % Labels
-        \node at (0, -2) {(a)};
-        \node at (7.2, -2) {(b)};
-        \node at (0, -8) {(c)};
-        \node at (7.2, -8) {(d)};
-        \node at (0, -14) {(e)};
-        \node at (7.2, -14) {(f)};
-
-        % Spinors
-        \node at (0, 2.5) {\(\zeta={(1, 0, 0, 0, 0)}^T\)};
-        \node at (7.2, 2.5) {\(\zeta={(0, 1, 0, 0, 0)}^T\)};
-        \node at (0, -3.2) {\(\zeta={(0, 0, 1, 0, 0)}^T\)};
-        \node at (7.2, -3.2) {\(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)};
-        \node at (0, -9.5) {\(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)};
-        \node at (7.2, -9.5) {\(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\)};
-    \end{tikzpicture}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-2-ground-states.pdf}
     \caption[Spherical harmonic representation of spin-2 ground states]
     {\label{fig: spin-2-spherical-harmonics}Spherical harmonic
         representations for different ground states in a spin-2 system.
-        (a) and (b): Ferromagnetic states with a spin of \(|F|=2n\) and
-        \(|F|=n\), respectively, where the arrows indicate the direction of
-        magnetisation.
-        (c): the uniaxial nematic state where \(\hat{\vb{d}}\) is the nematic
-        director. The order parameter remains unchanged about \(\pi \) rotations
-        about the \(C_2\) axis.
-        (d): the biaxial nematic state. The order parameter is symmetric under
-        \(\pi/2\) rotations about the \(C_4\) axis.
-        Additionally, there is a two-fold symmetry about the \(C_2, C_2'\) axes.
-        (e) and (f): the cyclic states which have a two- and three-fold symmetry
-        about the \(C_2, C_3\) axes, respectively.
-        \textcolor{red}{Add \(C_2'\) axis in (e) for use in spin-2 chapter.}}
+        (a) and (b): Ferromagnetic states with \(\spinmag=2\) and
+        \(\spinmag=1\) [given in Eq.~\eqref{eq: FM2-FM1-spinors}], respectively,
+        where the black dashed arrows indicate the direction of magnetisation.
+        (c): Uniaxial nematic state given by Eq~\eqref{eq: UN-spinor} where
+        \(\hat{\vb{d}}\) is the nematic director.
+        The order parameter has a two-fold symmetry about the \(C_2\) axis.
+        (d): Biaxial nematic state given by Eq.~\eqref{eq: BN-spinor} which
+        has a four-fold symmetry about the \(C_4\) axis, and two additional
+        two-fold symmetries about the \(C_2, C_2'\) axes.
+        (e): Cyclic state given by Eq.~\eqref{eq: C-1-spinor} which has a
+        two- and three-fold symmetry about the \(C_2, C_3\) axes, respectively.}
 \end{figure}
 It is clear from Figs~\ref{fig: spin-2-spherical-harmonics}a
 and~\ref{fig: spin-2-spherical-harmonics}b that the ferromagnetic order

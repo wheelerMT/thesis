@@ -46,4 +46,5 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 view(-23, 30);
-exportgraphics(gca, '../../gfx/ch-groundStateSymmetries/C2-spherical.pdf');
+exportgraphics(gca, '../../../thesis_tikz/gfx/C2-spherical.pdf');
+

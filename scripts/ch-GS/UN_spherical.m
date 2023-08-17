@@ -10,7 +10,7 @@ zetaM1 = zeros(nx, ny);
 zetaM2 = zeros(nx, ny);
 
 % discretize sphere surface
-resolution = 100;
+resolution = 200;
 delta = pi/resolution;
 theta = 0:delta:pi; % altitude
 phi = 0:2*delta:2*pi; % azimuth
@@ -46,4 +46,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 view(-23, 30);
-exportgraphics(gca, '../../gfx/ch-groundStateSymmetries/UN-spherical.pdf');
+exportgraphics(gca, '../../../thesis_tikz/gfx/UN-spherical.pdf');
