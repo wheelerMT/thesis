@@ -277,9 +277,8 @@ at once.
 \subsubsection{Spherical harmonic representation}
 We first consider the spherical harmonic representation, which maps the
 order parameter onto spherical harmonics using the relation
-\begin{equation}
+\begin{equation}\label{eq: spherical-harmonics}
     Z(\hat{s}) = \sum_m\zeta_m Y_f^m(\hat{s}),
-    \label{eq: spherical-harmonics}
 \end{equation}
 where \(\hat{s}\) is a unit vector in 3D spin space, and \(Y_f^m \) are the
 spherical harmonics for a spin-\(f\) state.
@@ -299,7 +298,7 @@ picture of what is happening to the wave function at different locations in
 space, where the symmetry of the wave function can rapidly transform in a
 non-trivial manner (see Chapter~\ref{chap: spin-2}).
 
-In spin-1, there are three \(f = 1\) spherical harmonics given by
+In spin-1, there are three (\(f = 1\)) spherical harmonics given by
 \begin{align}
     Y_1^0(\theta, \phi)       & = \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
     Y_1^{\pm 1}(\theta, \phi) & =
@@ -313,7 +312,8 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     \caption[Spherical harmonic representation of spin-1 ground states]
     {\label{fig: spin-1-spherical-harmonics}
     Spherical harmonics representation of the ground state phases available in a
-    spin-1 BEC.\@
+    spin-1 BEC calculated using the appropriate representative spinor in
+    Eq.~\eqref{eq: spherical-harmonics}.
     (a): The spin-1 ferromagnetic ground state with
     \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
     The black dashed arrow represents the direction of the condensate
@@ -393,7 +393,7 @@ Fig.~\ref{fig: spin-1-majorana}.
     states. The colour of the points represent \(\cos\theta =
     (1-|z|^2)/(1+|z|^2)\).
     A number next to a point represents the root when the polynomial
-    \(P_\psi^1(z)\) has an \(n\)-multiple root.
+    \(P^{(1)}(z)\) has an \(n\)-multiple root.
     (a): Ferromagnetic state with \(\zeta={(1, 0, 0)}^T\).
     (b): Polar state with \(\zeta={(0, 1, 0)}^T\).
     (c): AFM state with \(\zeta={(1, 0, 1)}^T/\sqrt{2}\).}
@@ -410,6 +410,9 @@ The interacting part of the spin-2 Hamiltonian reads
 As before, we assume a uniform ground state so that the density remains fixed.
 Therefore, different ground states arise from the competition between the spin-,
 \(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
+The magnitude of the spin expectation is now defined in terms of the spin-2
+spin vectors given in Eq.~\eqref{eq: spin-2-spin-vectors}, and the spin-singlet
+duo, \(A_{20}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
 
 \subsection{Ferromagnetic phase}
 If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
@@ -436,7 +439,7 @@ As in the spin-1 case, the energy of a given spinor in the absence of a magnetic
 field is degenerate following the application of a global \(U(1)\) phase and an
 \(SO(3)\) spin rotation.
 In a spin-2 system, a general spin rotation is instead represented as a
-\(5\times 5\) matrix of the form
+\(5\times 5\) matrix of the form~\cite{Kawaguchi2012}
 \begin{multline}\label{eq: spin-2-rotation-matrix}
     U(\alpha, \beta, \gamma) = \\
     \scalemath{0.90}{\mqty(
@@ -475,17 +478,18 @@ general FM-2 wave function
     e^{2i\alpha} \sin^4\frac{\beta}{2}
     ),
 \end{equation}
-where \(\tau'=\tau-2\gamma \).
+where \(\tau'=\tau-2\gamma \), which describes all ferromagnetic states that
+have \(\spinmag=2\).
 
 \subsection{Nematic phases}
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
 We see that the energy functional is minimised when the spin is minimised
 \(\spinmag = 0\) but the singlet-duo amplitude is maximised
-\(|A_{20}|^2 = n/5\).
+\(|A_{20}|^2 = 1/5\).
 Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
 or biaxial nematic (BN).
 A representative spinor for the UN state, where the nematic director
-\(\hat{\vb{d}}\) is aligned along the \(z\)-axis is given as
+\(\hat{\vb{d}}\) is aligned along the \(z\)-axis, is given as
 \begin{align}\label{eq: UN-spinor}
     \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0).
 \end{align}
@@ -493,7 +497,6 @@ The representative spinor for the BN state reads
 \begin{align}\label{eq: BN-spinor}
     \zeta^\mathrm{BN} &= \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
 \end{align}
-In the absence of a magnetic field, these two states are degenerate.
 The general wave function for the UN state is
 \begin{equation}\label{eq: UN-representative-spinor}
     \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\tau}\mqty(
@@ -516,6 +519,11 @@ and for the BN
         + i\cos\beta\sin 2\gamma\right]
     ).
 \end{equation}
+In the absence of a magnetic field, these two states are degenerate.
+However, a quadratic Zeeman shift, \(q\), can be used to manipulate the system
+into choosing one or the other, since the energies of each ground state now
+change (energetic stability of these states is discussed in
+Sec.~\ref{subsec: UN-BN-defects}).
 
 \subsection{Cyclic phase}
 Now consider \(c_1, c_2 > 0\).
@@ -591,9 +599,9 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
 \end{figure}
 Note, for the case of \(c_1, c_2 < 0\), there is a competition between
 the ferromagnetic and nematic phases.
-For this case the energy functional is minimised by either having maximal spin
+For this case, the energy functional is minimised by either having maximal spin
 density and \(|A_{20}|^2 = 0\) as in the ferromagnetic phase, or by having
-minimal spin density and \(|A_{20}|^2 = n/5\) as in the nematic phase, which
+minimal spin density and \(|A_{20}|^2 = 1/5\) as in the nematic phase, which
 leads to a phase boundary at \(c_2n=20c_1n\).
 
 \subsection{Graphical representation of spin-2 ground states}
@@ -601,7 +609,7 @@ leads to a phase boundary at \(c_2n=20c_1n\).
 The mapping of the order parameter onto spherical harmonics in the spin-2 case
 follows the same equation as in the spin-1 case, i.e.,
 Eq.~\eqref{eq: spherical-harmonics}.
-For the spin-2 system, however, we have five \(f=2\) spherical harmonics given
+For the spin-2 system, however, we have five (\(f=2\)) spherical harmonics given
 by
 \begin{align}
     Y_2^0(\theta, \phi)       & = \frac{1}{4}\sqrt{\frac{5}{\pi}}
@@ -619,7 +627,9 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
     {gfx/ch-groundStateSymmetries/spin-2-ground-states.pdf}
     \caption[Spherical harmonic representation of spin-2 ground states]
     {\label{fig: spin-2-spherical-harmonics}Spherical harmonic
-        representations for different ground states in a spin-2 system.
+        representations for different ground states in a spin-2 system
+        calculated using the appropriate representative spinor in
+        Eq.~\eqref{eq: spherical-harmonics}.
         (a) and (b): Ferromagnetic states with \(\spinmag=2\) and
         \(\spinmag=1\) [given in Eq.~\eqref{eq: FM2-FM1-spinors}], respectively,
         where the black dashed arrows indicate the direction of magnetisation.
@@ -682,47 +692,13 @@ The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-Majorana}.
 \begin{figure}
     \centering
-    \begin{tikzpicture}
-        % First row
-        \node at (0, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-2-Majorana.pdf}};
-        \node at (4.5, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-1-Majorana.pdf}};
-        \node at (9, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/UN-Majorana.pdf}};
-        \node at (11.8, -2.5) {
-            \includegraphics{gfx/colourbars/compiled_jet_majorana.pdf}};
-
-        \node at (0, -2) {(a)};
-        \node at (4.5, -2) {(b)};
-        \node at (9, -2) {(c)};
-
-        \node at (0, 2) {\(\zeta={(1, 0, 0, 0, 0)}^T\)};
-        \node at (4.5, 2) {\(\zeta={(0, 1, 0, 0, 0)}^T\)};
-        \node at (9, 2) {\(\zeta={(0, 0, 1, 0, 0)}^T\)};
-
-        % Second row
-        \node at (0, -5){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/BN-Majorana.pdf}};
-        \node at (4.5, -5){\includegraphics[width=0.265\textwidth]
-            {gfx/ch-groundStateSymmetries/C1-Majorana.pdf}};
-        \node at (9, -5){\includegraphics[width=0.275\textwidth]
-            {gfx/ch-groundStateSymmetries/C2-Majorana.pdf}};
-
-        \node at (0, -7) {(d)};
-        \node at (4.5, -7) {(e)};
-        \node at (9, -7) {(f)};
-
-        \node at (0, -3) {\(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\)};
-        \node at (4.5, -3) {\(\zeta={(1, 0, i\sqrt{2}, 0, 1)}^T/2\)};
-        \node at (9, -3) {\(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\)};
-    \end{tikzpicture}
+    \includegraphics{gfx/ch-groundStateSymmetries/spin-2-majorana.pdf}
     \caption[Majorana representation of spin-2 ground states]
     {\label{fig: spin-2-Majorana}Majorana representation of spin-2 ground
     states.
     As in the spin-1 case, the colour of the points represent \(\cos\theta =
     (1-|z|^2)/(1+|z|^2)\), whilst a number next to a point represents the root
-    when the polynomial \(P_\psi^1(z)\) has an \(n\)-multiple root.
+    when the polynomial \(P^{(2)}(z)\) has an \(n\)-multiple root.
     (a): FM-2 state with \(\zeta={(1, 0, 0, 0, 0)}^T\).
     (b): FM-1 state with \(\zeta={(0, 1, 0, 0, 0)}^T\).
     (c): UN state with \(\zeta={(0, 0, 1, 0, 0)}^T\).
@@ -738,10 +714,10 @@ Due to their rich phase diagrams discussed in the previous sections, spinor BECs
 give rise to multiple different types of topological defects.
 Such defects range from vortices, both singular~\cite{Yip1999,Isoshima2002,
 Mizushima2002, Sadler2006,Semenoff2007,Lovegrove2012,Lovegrove2016,
-Borgh2016,Weiss2019,Xiao2021,Xiao2022}, fractional~\cite{Leonhardt2000,
-Zhou2003,Ji2008,Seo2015,Semenoff2007,Kobayashi2009,Lovegrove2012,
-Lovegrove2016,Borgh2016,Borgh2017,Xiao2021,Xiao2022}, and
-nonsingular~\cite{Ohmi1998, Ho1998, Mizushima2002a,
+Borgh2016,Weiss2019,Xiao2021,Xiao2022}, including singular
+fractional vortices~\cite{Leonhardt2000, Zhou2003,Ji2008,Seo2015,Semenoff2007,
+Kobayashi2009,Lovegrove2012, Lovegrove2016,Borgh2016,Borgh2017,Xiao2021,
+Xiao2022}, and nonsingular~\cite{Ohmi1998, Ho1998, Mizushima2002a,
 Martikainen2002, Leanhardt2003, Mizushima2004, Choi2012, Choi2012a,
 Lovegrove2014,Weiss2019}, to point defects such as monopoles~\cite{Stoof2001,
 Savage2003,Ruostekoski2003, Pietila2009,Ray2014,Ray2015,Ollikainen2017,
@@ -750,7 +726,7 @@ Mithun2022}.
 The types of stable topological defects within a given system can be
 found from a group-theoretical approach using homotopy theory~\cite{Mermin1979,
 Kawaguchi2012}.
-The theory states that the \(n\)th homotopy group \(\pi_n\) classifies
+The theory states that the \(n\)th homotopy group, \(\pi_n\), classifies
 topological excitations with dimension of homotopy \(n\), where
 \(n = d - \nu - 1\) for singular excitations and \(n=d - \nu \) for nonsingular
 excitations~\cite{Kobayashi2012}.
@@ -765,7 +741,7 @@ space.
 For example, given an order parameter space \(\mathcal{M}\), one can calculate
 whether point defects (\(n=2\)) are stable within the system by seeing if
 \(\pi_2(\mathcal{M}) \neq 0\).
-Homotopy groups and the topological defects they describe are listed in
+Homotopy groups and the topological excitations they describe are listed in
 Table~\ref{tab: homotopy-groups}~\cite{Kawaguchi2012}.
 \begin{table}
     \centering
@@ -787,9 +763,6 @@ In this section, we list the order parameter space for each ground state
 in both spin-1 and spin-2 systems, which we then use to deduce the possible
 stable defect structures in each phase by calculating the homotopy groups of the
 space.
-After calculating these, we construct a few illustrative vortex examples, and
-investigate the properties of these vortices using spherical harmonic
-representations.
 
 \subsection{Homotopy groups for a spin-1 system}
 Recall that a spin-1 system has two phases in the absence of a magnetic field:
@@ -841,12 +814,12 @@ However, due to the \({\mathbb{Z}}_2\) symmetry, the minimum unit of circulation
 becomes half that of a scalar \(\text{U}(1)\) vortex, giving rise to what are
 known as half-quantum vortices (HQVs)~\cite{Kawaguchi2012} (see
 Sec.~\ref{sec: vortices-spin-1}).
-In addition, the polar phase supports stable point defects as
+In addition, the polar phase supports stable point defects since
 \(\pi_2(\mathcal{M}_\text{UN}) = \mathbb{Z}\), where the point defects are
 classified by integers.
 
 The FM phase, described generally by Eq.~\eqref{eq: FM-representative-spinor},
-has an order parameter space consisting off the full 3D rotation group:
+has an order parameter space consisting of the full 3D rotation group:
 \(\mathcal{M}_\text{FM} = {\text{SO}(3)}_{\hat{\vb{F}}, \tau}\).
 This leads to a first homotopy group of \(\pi_1(\mathcal{M}_\text{FM})
 = {\mathbb{Z}}_2\), which states that vortices are classified by one of two
@@ -941,8 +914,9 @@ Like the BN phase, this leads to a non-Abelian fundamental group:
 \(\pi_1(\mathcal{M}_\text{C}) = \mathbb{Z} \cross_h
 \text{T}_{\hat{\vb{F}}, \tau}\), and hence the cyclic phase also supports
 non-Abelian vortices.
-Numerous studies have investigated the dynamics of such non-Abelian
-vortices~\cite{Mawson2015, Borgh2016}.
+One class of non-Abelian vortex is the fractional vortex, where the mass
+circulation is quantised in different fractional units to other fractional
+vortices arising in, e.g., the BN phase (see Sec.~\ref{sec: vortices-spin-2}).
 
 \section{Spinor vortices and their hydrodynamic properties}
 The properties of a vortex can be characterised by determining how the order
@@ -1067,7 +1041,7 @@ the HQV\@.
         condensate spin vector.}
 \end{figure}
 By substituting \(\tau=\varphi/2\) in Eq.~\eqref{eq: spinor-superfluid-vel},
-and taking \(|\hat{\vb{F}}|=0\) since this is a polar phase, the superfluid
+and taking \(|\hat{\vb{F}}|=0\) since this is the polar phase, the superfluid
 velocity becomes \(\vb{v}_s = \hbar/(2M)\nabla\varphi \).
 It immediately follows that the mass circulation is calculated as
 \begin{align}
