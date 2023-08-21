@@ -64,3 +64,4 @@ SQV
 single-valuedness
 Mermin-Ho
 Anderson-Toulouse-Chechetkin
+HQV

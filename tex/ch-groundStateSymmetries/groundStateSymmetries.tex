@@ -494,7 +494,7 @@ spinor
     \label{eq: C-1-spinor}
 \end{equation}
 The general wave function is given as
-\begin{equation}
+\begin{equation}\label{eq: general-cyclic-wfn}
     \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\tau} \mqty(
     e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
     + e^{-2i(\alpha-\gamma)}S^4
@@ -925,13 +925,11 @@ which, upon substitution of the general scalar order parameter into the above,
 leads to the relation \(\vb{v} = (\hbar / M) \nabla\tau \).
 The mass circulation is then calculated as the integral of the superfluid
 velocity around the loop as~\cite{Barenghi2016}
-\begin{align}
+\begin{align}\label{eq: mass-circulation}
     \oint_C \vb{v} \cdot \dd\vb{\ell} =
-    \frac{\hbar}{M}\oint_C \nabla \tau \cdot \dd \vb{\ell}
-    = \frac{\hbar}{M}\Delta\tau,
+    \frac{\hbar}{M}\oint_C \nabla \tau \cdot \dd \vb{\ell},
 \end{align}
-where \(\dd \vb{\ell} \) is the line element of integration and \(\Delta\tau \)
-denotes the change of the phase around the loop.
+where \(\dd \vb{\ell} \) is the line element of integration.
 The single-valuedness of the wave function states that \(\psi(r_0)=\psi(r_1)\),
 where \(r_0, r_1\) are points denoting the start and the end of the loop,
 respectively.
@@ -959,7 +957,7 @@ states that~\cite{Kawaguchi2012}
 where \(r_0, r_1\) denote the start and ends points of the loop, respectively.
 Following a similar procedure as the scalar case, the superfluid velocity for a
 spin-\(f\) system, \(\vb{v}_s\), is given as~\cite{Kawaguchi2012}:
-\begin{align}
+\begin{align}\label{eq: spinor-mass-current}
     n\vb{v}_s = \frac{\hbar}{2Mi}\sum_{m=-f}^f\left(\psi^*_m\nabla\psi_m
     - {(\nabla \psi_m^*)}\psi_m\right).
 \end{align}
@@ -991,14 +989,14 @@ If we consider a vortex that is oriented along the \(z\)-axis, and the nematic
 director is oriented in the \((x, y)\)-plane, then such a vortex corresponds to
 the choice of \(\tau=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
 Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
-\begin{equation}
-    \psi^\mathrm{HQV} = \sqrt{\frac{n}{2}} \mqty(
+\begin{align}
+    \psi^\text{P}_\text{hqv} = \sqrt{\frac{n}{2}} \mqty(
     -1 \\
     0 \\
     e^{i\varphi}
     ),
     \label{eq: polar-HQV}
-\end{equation}
+\end{align}
 where \(\varphi \) is the azimuthal angle about the vortex core.
 Similar, but topologically distinct vortices arise in the A phase of
 superfluid \( ^3\)He~\cite{Salomaa1985, Salomaa1987}.
@@ -1034,6 +1032,15 @@ the HQV\@.
         The vortex takes on a characteristic fountain-like texture of the
         condensate spin vector.}
 \end{figure}
+By substituting \(\tau=\varphi/2\) in Eq.~\eqref{eq: spinor-superfluid-vel},
+and taking \(|\hat{\vb{F}}|=0\) since this is a polar phase, the superfluid
+velocity becomes \(\vb{v}_s = \hbar/(2M)\nabla\varphi \).
+It immediately follows that the mass circulation is calculated as
+\begin{align}
+    \oint_C \vb{v}_s \cdot \dd \vb{\ell} = \frac{\kappa}{2},
+\end{align}
+proving that the unit of circulation is quantised in units of \(\kappa / 2\) for
+this system.
 
 For the case of the ferromagnetic phase, recall that the first homotopy group is
 calculated as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM})
@@ -1095,12 +1102,14 @@ Fig.~\ref{fig: spin-1-vortices}b, where the characteristic fountain-like
 spin texture is apparent.
 
 \subsection{Vortices in spin-2 systems}\label{sec: vortices-spin-2}
+Like the subsection before, we construct a few illustrative examples of vortices
+arising in the spin-2 phases and investigate them using spherical harmonics.
 We start with the UN phase, as given by
 Eq.~\eqref{eq: UN-representative-spinor}.
 Unlike the spin-1 polar phase, the UN phase does not support fractional vortices
 with mass circulation.
 This is apparent from the spherical harmonic representation given in
-Fig.~\ref{fig: spin-2-spherical-harmonics}c, where the \(\mathbb{Z}_2\) symmetry
+Fig.~\ref{fig: spin-2-spherical-harmonics}c, where the two-fold symmetry
 about the \(C_2\) axis is not coupled to the condensate phase, \(\tau \).
 This phase instead accommodates a spin vortex, i.e., a vortex which carries only
 spin circulation.
@@ -1144,8 +1153,14 @@ Indeed, we see that as the core of the vortex is traversed, the spin vector
 winds by \(\pi \) about the axis perpendicular to the nematic director,
 \(\hat{\vb{d}}\), but the condensate phase remains unchanged.
 
-One of the simplest defects present in the BN phase is a HQV\@.
-Note that this is topologically distinct from that of the spin-1 polar case
+Recall that the first homotopy group of the BN phase
+(\(\pi_1(\mathcal{M}_\text{BN})=\mathbb{Z} \cross_h
+{(\text{D}^*)}_{\hat{\vb{F}}}\)) is non-Abelian, and hence supports non-Abelian
+vortices.
+Unlike the UN phase, the BN phase can support fractional vortices with mass
+circulation.
+One such example is of the BN HQV, which, due to the differing first homotopy
+group, is topologically distinct from that of the spin-1 polar case
 presented in Fig.~\ref{fig: spin-1-vortices}a.
 Such a vortex can be constructed from Eq.~\eqref{eq: BN-representative-spinor}
 using the choice \(\tau=2\alpha=\varphi/2\) and \(\beta=\gamma=0\):
@@ -1168,20 +1183,18 @@ Additionally, there exists a half-quantum spin vortex (\(0 - 1/2\) vortex) in
 this phase, in which the condensate spin winds by \(\pi \) about the core,
 but the condensate phase remains unchanged~\cite{Kawaguchi2012}.
 
-As mentioned previously, the first homotopy group of the cyclic phase
-(\(\mathbb{Z} \cross_h \text{T}_{\hat{\vb{F}}, \tau}\)) is also non-Abelian and
-hence supports non-Abelian defects.
+Like the BN phase, the cyclic phase also supports non-Abelian vortices.
 Additionally, this phase also supports fractional vortices, but instead of the
 half-quantum of circulation that arises in the nematic phases, the cyclic phase
 has circulation that is quantised in units of \(\kappa / 3\),
-leading to \(1/3\) and \(2/3\) vortices.
-These vortices can be constructed from Eq.~\eqref{eq: C-2-spinor} by applying a
-condensate phase and general spin rotation, where a \(1/3\) vortex is
-constructed from the choice \(\tau = -\alpha = \varphi/3 \) with \(\gamma = 0\)
-and a \(2/3\) vortex is constructed by choosing \(\tau = 2\varphi/3\),
-\(\alpha = \varphi/3\) and \(\gamma=0\).
+leading to one-third and two-third vortices.
+These vortices can be constructed from Eq.~\eqref{eq: general-cyclic-wfn} by
+applying a condensate phase and general spin rotation, where a one-third vortex
+is constructed from the choice \(\tau = -\alpha = \varphi/3 \) with
+\(\gamma = 0\) and a two-third vortex is constructed by choosing
+\(\tau = 2\varphi/3\), \(\alpha = \varphi/3\) and \(\gamma=0\).
 The result is a phase winding in the \(\psi_2\) and \(\psi_{-1}\) components
-for the \(1/3\) and \(2/3\) vortices, respectively:
+for the one-third and two-third vortices, respectively:
 \begin{equation}
     \psi^\text{C}_{1/3} = \sqrt{\frac{n}{3}}\mqty(e^{i\varphi} \\ 0 \\ 0 \\
     \sqrt{2}\\0),
@@ -1206,9 +1219,20 @@ Fig.~\ref{fig: cyclic-fractional-spherical}.
     \caption[Spherical harmonic representation of cyclic fractional vortices]
     {\label{fig: cyclic-fractional-spherical}Spherical harmonic
         representations of cyclic fractional vortices.
-        (a): The \(\frac{1}{3}\) vortex. A complete circuit reveals a \(2\pi/3\)
+        (a): A one-third vortex. A complete circuit reveals a \(2\pi/3\)
         winding of the condensate phase, coupled with a \(\pi/2\) spin rotation.
-        (b): The \(\frac{2}{3}\) vortex. Similarly, a complete circuit of the
+        (b): A two-third vortex. Similarly, a complete circuit of the
         vortex results in a \(4\pi/3\) winding of the condensate phase, again
         coupled to a \(\pi/2\) spin rotation.}
 \end{figure}
+As we did for the spin-1 HQV in the polar phase, one can use the above wave
+function to see that the circulation is now quantised in units of
+\(\kappa / 3\).
+Substituting \(\tau=\varphi/3\) in Eq.~\eqref{eq: spinor-superfluid-vel}, and
+taking \(|\hat{\vb{F}}|=0\) since this is the cyclic phase, the superfluid
+velocity becomes \(\vb{v}_s=\hbar/(3M)\nabla\varphi \).
+It then immediately follows that the mass circulation is calculated as
+\begin{align}
+    \oint_C \vb{v}_s \cdot \dd \vb{\ell} = \frac{\kappa}{3},
+\end{align}
+proving the circulation in this phase is quantised in units of \(\kappa / 3\).
