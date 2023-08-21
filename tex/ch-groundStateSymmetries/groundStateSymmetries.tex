@@ -10,23 +10,31 @@ of Zeeman shifts.
 Additionally, we investigate the symmetry properties of each ground state
 using different graphical representations: namely Majorana and spherical
 harmonics.
-Finally, we construct a list of topological defects that can arise in spinor
+Finally, we delve into the topological defects that can arise in spinor
 BECs.
-Using the spherical harmonic representation of the order parameter, we are able
-to visualise each defect state.
+In particular, we first introduce the homotopy theory used to describe the
+types of stable defects allowed in each phase.
+From here we construct the wave functions of some illustrative examples of
+vortices arising in both spin-1 and spin-2 condensates, and,
+using the spherical harmonic representation of the order parameter, we are able
+to visualise each vortex.
 There are numerous references (e.g., see~\cite{Ciobanu2000, Zhang2003,
 Kawaguchi2012,Stamper-Kurn2013}) that already provide most of these results,
 but we reproduce them here to provide reference for subsequent chapters.
 
 \section{Ground states of spin-1 BECs}\label{sec: ground-states-spin-1}
-To obtain ground states for a spin-1 BEC, we consider the interacting part of
+To obtain ground states for a spin-1 BEC, we consider the interaction part of
 the energy functional given as (see Sec.~\ref{subsec: spin-1-int-hamil})
 \begin{align}\label{eq: spin-1-int-energy}
-    E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1|\vb{F}|^2 d\vb{r},
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1n^2\spinmag^2 \dd^3\vb{r},
 \end{align}
 which contains two independent non-linear interaction terms, namely the
 condensate density and the condensate spin.
-In a uniform system the condensate density remains fixed, so only the spin term
+Here, \(\spinmag = \sqrt{|\hat{F}_x|^2 + |\hat{F}_y|^2 + |\hat{F}_z|^2}\) is the
+magnitude of the spin expectation, where the spin vectors \(\hat{F}_\mu \) for
+\(\mu = (x, y, z)\) are defined in Eq.~\eqref{eq: spin-1-spin-vectors}.
+To simplify our analysis we assume a uniform ground state.
+In this case the condensate density remains fixed, so only the spin term
 remains relevant for determining ground states.
 Therefore, the sign of \(c_1\) determines the energetic ground state in a
 spin-1 system.
@@ -38,23 +46,28 @@ Then, Eq.~\eqref{eq: spin-1-int-energy} is minimised when \(\spinmag \) takes
 its maximal value of \(\spinmag=1\).
 This type of ground state, where the spin is maximised, is referred to as a
 ferromagnetic state.
-A representative spinor for a ferromagnetic ground state is given
-as~\cite{Kawaguchi2012}
-\begin{equation}
+A representative spinor, i.e., a spinor that minimises the energy, for a
+ferromagnetic ground state is given as~\cite{Kawaguchi2012}
+\begin{align}
     \zeta^\mathrm{FM} = \mqty(1 \\ 0 \\ 0).
-\end{equation}
+\end{align}
 Substitution of the above spinor into the expression for the condensate spin
 indeed reveals that \(\spinmag=1\).
+Note that \(\zeta^\text{FM}={(0, 0, 1)}^T\) is an equally valid representative
+spinor.
+However, in this case, the magnetisation now becomes negative (see
+Eq.~\eqref{eq: magnetisation-formula}).
 
 In the absence of a magnetic field, the energy of a given spinor is degenerate
-with respect to a global \(U(1)\) phase \(e^{i\tau}\) and an \(SO(3)\) spin
-rotation, parameterized by three Euler angles \(\alpha, \beta \),
-and \(\gamma \).
+with respect to a global \(\text{U}(1)\) phase \(e^{i\tau}\) and an
+\(\text{SO}(3)\) spin rotation, parameterized by three Euler angles
+\(\alpha, \beta \), and \(\gamma \).
 A general spin rotation represents rotations around the \(z-y-z\) axes:
 \begin{align}\label{eq: spin-rotation-exponential}
     U(\alpha, \beta, \gamma) = e^{-i\alpha F_z}e^{-i\beta F_y}e^{-i\gamma F_z}.
 \end{align}
-In explicit matrix form, this becomes
+For a spin-1 system the spin rotation can be cast explicitly in matrix form
+as~\cite{Kawaguchi2012}
 \begin{align}
     U(\alpha, \beta, \gamma) = \mqty(
     e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
@@ -80,12 +93,16 @@ spinor as
     e^{i\alpha}\sin^2\frac{\beta}{2}
     ),
 \end{align}
-where \(\tau^\prime = \tau-\gamma \).
+where \(\tau^\prime = \tau-\gamma \), which describes all possible ferromagnetic
+states.
 
 \subsection{Polar phase}
-For polar interactions (\(c_1 > 0\)), the energy is minimised by having the
-spin magnitude vanish \(|F|=0\).
-A representative polar spinor is
+Now consider the case of \(c_1 > 0\), typically referred to as polar
+interactions.
+Then, Eq.~\eqref{eq: spin-1-int-energy} becomes minimised by having the spin
+magnitude vanish \(\spinmag=0\).
+For this case, the ground state is called polar, with a representative
+spinor given as
 \begin{equation}\label{eq: EAP-spinor}
     \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
 \end{equation}
@@ -99,9 +116,21 @@ Similar to the FM case, a general polar wave function is constructed as
     \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta
     ).
 \end{equation}
-Thus, in the absence of a magnetic field, there are two ground states in a
-spin-1 system: polar and ferromagnetic, depending on the sign of the
-spin-dependent interaction term, \(c_1\).
+It is also often useful to characterise the polar state using the condensate
+phase and an unoriented unit vector, \(\hat{\vb{d}}\), referred to as the
+nematic director~\cite{Ruostekoski2003}.
+A wave function in this representation is given as
+\begin{align}
+    \zeta^\mathrm{P} = \frac{e^{i\tau}}{\sqrt{2}}
+    \mqty(-d_x + id_y \\ \sqrt{2}d_z \\ d_x + id_y).
+\end{align}
+The nematic director can be used to distinguish between the state given in
+Eq.~\eqref{eq: EAP-spinor} and an alternative representative spinor of
+\(\zeta^\text{P} = {(1, 0, 1)}^T/\sqrt{2}\) in the absence of a magnetic field.
+The former has the nematic director aligned with the \(z\)-axis, and is
+typically referred to as the easy-axis polar phase, whilst the latter has the
+nematic director in the \(xy\)-plane, which is referred to as the easy-plane
+polar phase.
 
 \subsection{Ground states in the presence of magnetic fields}
 The presence of an external magnetic field, however, drastically changes the
@@ -202,17 +231,17 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
 \end{table}
 
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
-and \(F_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(F_z=-1\) (state II),
-depending on the sign of the linear Zeeman shift \(p\).
+and \(\hat{F}_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(\hat{F}_z=-1\)
+(state II), depending on the sign of the linear Zeeman shift \(p\).
 A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
-\(F_z = 0\).
+\(\hat{F}_z = 0\).
 For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
 (state III) with
 \begin{equation}\label{eq: AFM-spinor}
     \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
-and \(F_z = p/(c_1n)\).
+and \(\hat{F}_z = p/(c_1n)\).
 At \(p=0\), this state transforms into the easy-plane polar phase, i.e., state
 IV with the nematic director in the \(xy\)-plane.
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
@@ -221,11 +250,12 @@ Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
     \begin{aligned}
         \zeta_{\pm 1} & =
         \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}},              \\
-        \zeta_0       & = \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}},
+        \zeta_0       & = \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}}.
     \end{aligned}
     \label{eq: BA-spinor}
 \end{equation}
-which has a magnetisation that tilts against the quantisation axis
+This corresponds to a magnetisation that tilts against the quantisation axis,
+given by
 \begin{equation}
     F_z = \frac{p(-p^2 + q^2 + 2qc_1n)}{2c_1nq^2}.
 \end{equation}
@@ -304,13 +334,17 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     The direction of the spin vector is tilted away from the magnetic field
     axis, which is assumed to be along the \(z\)-axis.}
 \end{figure}
-We see that the ferromagnetic order parameter has an \(SO(2)\) symmetry about
-the \(z\)-axis.
-The polar state has two nematic lobes which have a \(\pi \) phase difference.
+We see that the ferromagnetic order parameter has an \(\text{SO}(2)\) symmetry
+about the \(z\)-axis.
+The polar state is distinguished by two nematic lobes which have a \(\pi \)
+phase difference, hence the name polar.
 These lobes are aligned along an axis of symmetry given by the nematic director,
 \(\hat{\vb{d}}\).
 There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
-rotations preserve the symmetry.
+rotations preserve the symmetry, but not the phase.
+It can be seen that the order parameter will remain invariant under a change of
+\(\zeta\left(\hat{\vb{d}, \tau}\right) \rightarrow
+\zeta\left(-\hat{\vb{d}, \tau + \pi}\right)\).
 
 \subsubsection{Majorana representation}
 An alternative description to visualising the symmetries of spinor BECs is
@@ -370,12 +404,12 @@ To find the ground states of a spin-2 system we follow a similar procedure to
 the spin-1 case.
 The interacting part of the spin-2 Hamiltonian reads
 \begin{align}
-    E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1|\vb{F}|^2+c_2|A_{20}|^2
-    d\vb{r}.
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1n^2\spinmag^2+c_2n^2|A_{20}|^2
+    \dd^3\vb{r}.
 \end{align}
-As before, the density remains fixed for any normalised ground state and so
-different ground states arise from the competition between the spin-
-and singlet-dependent interaction strengths.
+As before, we assume a uniform ground state so that the density remains fixed.
+Therefore, different ground states arise from the competition between the spin-,
+\(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
 
 \subsection{Ferromagnetic phase}
 If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
