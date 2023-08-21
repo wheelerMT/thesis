@@ -745,7 +745,8 @@ Table~\ref{tab: homotopy-groups}~\cite{Kawaguchi2012}.
         \bottomrule
     \end{tabular}
     \caption{\label{tab: homotopy-groups}A list of different homotopy groups
-    and the corresponding topological defects/solitons they describe.}
+    and the corresponding topological defects/solitons they
+    describe~\cite{Kawaguchi2012}.}
 \end{table}
 
 In this section, we list the order parameter space for each ground state
@@ -778,7 +779,8 @@ Kobayashi2012}.
     \end{tabular}
     \caption{\label{tab: spin-1-homotopy-groups}Spin-1 phases and their relative
     order parameter space, \(\mathcal{M}\) along with the corresponding first
-    (\(\pi_1\)), second (\(\pi_2\)), and third (\(\pi_3\)) homotopy groups.
+    (\(\pi_1\)), second (\(\pi_2\)), and third (\(\pi_3\)) homotopy
+    groups~\cite{Kobayashi2012}.
     Here, \(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the
     condensate spin and phase, respectively.}
 \end{table}
@@ -865,9 +867,10 @@ Kobayashi2012}.
 
 Firstly, note that the order parameter space for the FM phase is slightly
 different from the spin-1 case in that it is now divided by a
-\(\mathbb{Z}_{\hat{\vb{F}}, \tau}\) factor.
-This arises from the double winding of the condensate phase, which can be seen
-from Fig.~\ref{fig: spin-2-spherical-harmonics}a.
+\({(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\) factor.
+This contribution arises from the double winding of the condensate phase seen in
+the spherical harmonic representation in
+Fig.~\ref{fig: spin-2-spherical-harmonics}a.
 The first homotopy group is also different, allowing now for an additional two
 classes of line defects as \(\pi_1(\mathcal{M}_\text{FM}) = \mathbb{Z}_4\), but
 the second and third homotopy groups are the same.
@@ -881,7 +884,7 @@ In addition, the first homotopy group differs slightly as now it reads
 \(\pi_1(\mathcal{M}_\text{UN}) = \mathbb{Z} \cross
 \mathbb{Z}_2\)~\cite{Kobayashi2012}, which allows for the creation of additional
 types of line defects such as spin vortices, which are vortices which carry no
-mass circulation, but instead carry a circulation of the condensate spin
+mass circulation, but instead only carry a circulation of the condensate spin
 (see Sec.~\ref{sec: vortices-spin-2}).
 
 The BN phase has an order parameter space of \(\left[{\text{U}(1)}_\tau \cross
@@ -912,29 +915,35 @@ The properties of a vortex can be characterised by determining how the order
 parameter changes on a loop, \(C\), encircling the vortex.
 Let us first take the example of a scalar BEC, described by the order parameter
 \(\psi = \sqrt{n}e^{i\tau}\) for condensate density \(n\) and phase \(\tau \).
-The superfluid velocity for a scalar system with atomic mass \(M\)
+The superfluid velocity, \(\vb{v}\), for a scalar system with atomic mass \(M\)
 is~\cite{Barenghi2016}
-\begin{equation}
+\begin{align}
     n\vb{v} = \frac{\hbar}{2Mi}\left(\psi^*\nabla\psi
-    - {(\nabla \psi)}^*\psi\right),
-\end{equation}
+    - {(\nabla \psi^*)}\psi\right),
+\end{align}
 which, upon substitution of the general scalar order parameter into the above,
 leads to the relation \(\vb{v} = (\hbar / M) \nabla\tau \).
-As the loop is encircled, the phase changes as~\cite{Barenghi2016}
-\begin{equation}
-    \Delta \tau = \oint_C \nabla \tau \cdot \dd \ell,
-\end{equation}
-where \(\dd \ell \) is the line element of integration.
-If \(\psi_0\) is the value of \(\psi \) at the starting point of the loop and
-\(\psi_1\) is the value of \(\psi \) at the end point, then the
-single-valuedness condition of the wave function implies that \(\Delta \tau =
-2\pi n_w\), where \(n_w \in \mathbb{Z}\).
+The mass circulation is then calculated as the integral of the superfluid
+velocity around the loop as~\cite{Barenghi2016}
+\begin{align}
+    \oint_C \vb{v} \cdot \dd\vb{\ell} =
+    \frac{\hbar}{M}\oint_C \nabla \tau \cdot \dd \vb{\ell}
+    = \frac{\hbar}{M}\Delta\tau,
+\end{align}
+where \(\dd \vb{\ell} \) is the line element of integration and \(\Delta\tau \)
+denotes the change of the phase around the loop.
+The single-valuedness of the wave function states that \(\psi(r_0)=\psi(r_1)\),
+where \(r_0, r_1\) are points denoting the start and the end of the loop,
+respectively.
+This implies that the change in phase around the loop is
+\(\Delta \tau = 2\pi n_w\), where \(n_w \in \mathbb{Z}\), showing that the
+circulation is quantised in scalar BECs, with the unit of circulation given as
+\(\kappa = h / M\).
 For \(n_w \neq 0\) a phase defect arises, where at a point in space the phase
-simultaneously takes on every value.
-Thus, to avoid this singularity, the density must vanish at this point.
+simultaneously takes on every value and therefore, to avoid this singularity,
+the density must vanish at this point.
 
-For spinor BECs, a vanishing density is not always necessary to accommodate the
-phase defect.
+In spinor BECs, the situation becomes more complex.
 Consider the general spinor wave function given as \(\psi =
 \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta_\text{rep}\), where the spin
 rotation \(U(\alpha, \beta, \gamma)\) is defined in
@@ -948,11 +957,37 @@ states that~\cite{Kawaguchi2012}
     U(\alpha(r_1), \beta(r_1), \gamma(r_1)) \zeta_\text{rep}(r_1),
 \end{align}
 where \(r_0, r_1\) denote the start and ends points of the loop, respectively.
-The superfluid velocity for a spinor system is given as~\cite{Kawaguchi2012}:
+Following a similar procedure as the scalar case, the superfluid velocity for a
+spin-\(f\) system, \(\vb{v}_s\), is given as~\cite{Kawaguchi2012}:
+\begin{align}
+    n\vb{v}_s = \frac{\hbar}{2Mi}\sum_{m=-f}^f\left(\psi^*_m\nabla\psi_m
+    - {(\nabla \psi_m^*)}\psi_m\right).
+\end{align}
+Substituting the general spinor wave function into the above equation yields
+the following expression for the superfluid velocity
+\begin{align}\label{eq: spinor-superfluid-vel}
+    \vb{v}_s = \frac{\hbar}{M}\left[\nabla\tau - |\hat{\vb{F}}| (
+        \cos\beta\nabla\alpha + \nabla\gamma)\right].
+\end{align}
+When \(|\hat{\vb{F}}| = 0\), as is the case for non-ferromagnetic ground states
+in spin-1 and spin-2 BECs, then the superfluid velocity results in
+\(\vb{v}_s=(\hbar/M)\nabla\tau \), similar to the scalar BEC case.
+This implies circulation is quantised in these phases, but as we shall see, the
+circulation can be quantised in fractional units of \(\kappa \).
+On the other hand, Eq.~\eqref{eq: spinor-superfluid-vel} implies that
+\(\nabla \cross \vb{v}_s \neq 0\) when \(|\hat{\vb{F}}| \neq 0\) due to the
+\(\cos\beta\nabla\alpha \) term.
+Hence, ferromagnetic spinor BECs do not have quantised circulation, which can
+lead to some interesting vortex structures such as coreless vortices (see the
+below sections).
 
 \subsection{Vortices in spin-1 systems}\label{sec: vortices-spin-1}
-Here we analytically construct a wave function that corresponds to a HQV\@.
-If we consider a vortex that is oriented along the \(z\)-axis and the nematic
+Here, we analytically construct wave functions corresponding to different
+classes of vortices arising in spin-1 condensates, and investigate their
+properties using spherical harmonics.
+We begin with the polar phase, and construct a wave function that corresponds
+to a HQV\@.
+If we consider a vortex that is oriented along the \(z\)-axis, and the nematic
 director is oriented in the \((x, y)\)-plane, then such a vortex corresponds to
 the choice of \(\tau=\alpha=\varphi/2 \) and \(\beta = \pi/2\) in
 Eq.~\eqref{eq: polar-representative-spinor} to yield the wave function
@@ -1000,12 +1035,10 @@ the HQV\@.
         condensate spin vector.}
 \end{figure}
 
-For the case of the ferromagnetic phase, the order parameter space is simply
-\(\mathcal{M}_\text{FM}={\text{SO}(3)}_{\hat{\vb{F}}, \tau}\).
-Now, different from the polar case, the first homotopy group is calculated
-as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM}) = {\mathbb{Z}}_2\),
-where \({\mathbb{Z}}_2=\{0, 1\} \) is the two-element group, which corresponds
-to two different line defects: singular and nonsingular.
+For the case of the ferromagnetic phase, recall that the first homotopy group is
+calculated as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM})
+= {\mathbb{Z}}_2\), which corresponds to two different classes of line defects:
+singular and nonsingular.
 The singular vortex configuration can be constructed from
 Eq.~\eqref{eq: FM-representative-spinor} using the choice \(\tau'=0\) along with
 \(\alpha = \varphi \), which leads to the spinor
@@ -1044,13 +1077,15 @@ The single-valuedness condition of the wave function is satisfied by choosing
 configurations of a coreless vortex.
 If we choose \(\beta(\rho)\) such that \(\beta(\rho=0) = 0\) and
 \(\beta(\rho=\rho_0) = \pi/2 \), where \(\rho_0\) is the radius of the system,
-then we have is what is known as a Mermin-Ho vortex.
+then we have what is known as a Mermin-Ho vortex~\cite{Mermin1976,
+Mizushima2002a}.
 In this configuration, the spin starts aligned with the \(z\)-axis at
 \(\rho=0\), then gradually tilts away as \(\rho \rightarrow \rho_0\) until
 the spin lies in the \(xy\)-plane at \(\rho=\rho_0\).
-A different configuration is obtained if instead, one chooses \(\beta(\rho)\)
+A different configuration is obtained if instead one chooses \(\beta(\rho)\)
 such that \(\beta(\rho=0) = 0\) and now \(\beta(\rho=\rho_0) = \pi \), leading
-to what is known as an Anderson-Toulouse vortex~\cite{Woelfle1990}.
+to what is known as an Anderson-Toulouse-Chechetkin
+vortex~\cite{Chechetkin1976, Anderson1977}.
 In this configuration, the spin follows a similar path, but now tilts through
 the \(xy\)-plane, and ends up aligned with the \(z\)-axis once more at
 \(\rho=\rho_0\), with the spin now pointing in the opposite direction to the
