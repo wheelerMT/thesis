@@ -1,21 +1,20 @@
 \chapter{Relaxation dynamics of half-quantum vortices}\label{chap: two-comp}
 
-Since the realization of superfluidity, quantum turbulence (QT) has been studied
+Since the realization of superfluidity, quantum turbulence has been studied
 in systems ranging from superfluid liquid
 Helium~\cite{Barenghi2014, Walmsley2014} to quasi-particle
 condensates in solid-state systems~\cite{Kreil2018}.
-Due to their unprecedented experimental accessibility, QT in Bose-Einstein
-condensates (BECs) in dilute, ultra-cold atomic gases have attracted
-considerable theoretical~\cite{Kobayashi2007,Numasato2010, Reeves2013,
-    Billam2014,Simula2014,Baggaley2018} and
-experimental~\cite{Henn2009,Kwon2014,Seo2017,Navon2019,Gauthier2019,
-    Johnstone2019} interest in both 2D and 3D configurations.
-In a scalar BEC, the QT state is made up of many vortices with quantised
-circulation.
+Due to their unprecedented experimental accessibility, quantum turbulence in
+dilute, ultra-cold atomic gases has attracted considerable
+theoretical~\cite{Kobayashi2007,Numasato2010, Reeves2013, Billam2014,
+Simula2014,Baggaley2018} and experimental~\cite{Henn2009,Kwon2014,Seo2017,
+Navon2019,Gauthier2019, Johnstone2019} interest in both 2D and 3D
+configurations.
+In a scalar BEC, the quantum turbulence state is typically made up of many
+vortices with quantised circulation.
 The collective behaviour of the vortices plays a key role
 in the hydrodynamics, recovering features of classical turbulence that can
 exhibit the characteristic Kolmogorov power-law spectrum~\cite{Kobayashi2005}.
-
 
 In contrast to the scalar superfluids, multi-component and spinor BECs are
 described by multi-component order parameters and allow for a wider range of
@@ -65,32 +64,32 @@ in~\cite{Schole2012, Nowak2012, Karl2017}.
 Finally, we discuss how our observations of anomalous vortex decay can be
 explained by relating to previous work~\cite{Eto2011, Kasamatsu2016}.
 
-
-\section{The two-component BEC as a pseudospinor}
-
-\subsection{Easy-plane polar phase}\label{subsec:easy-plane-polar-phase}
-The two-component BEC can be mapped directly to a spin-1 BEC\@.
+\section{The two-component BEC as a pseudospinor system}
+\subsection{Mapping of a spin-1 BEC to a two-component system}
+In order to treat the two-component BEC as a pseudospinor system, we discuss
+how a spin-1 condensate can be directly mapped to a two-component configuration
+for particular ground states.
 Recall from Sec.~\ref{sec: ground-states-spin-1} that the spin-1 condensate
-with polar interactions \((c_2 > 0)\) supports a polar ground state with
-\(|\vb{F}|=0\).
+with polar interactions \((c_1 > 0)\) supports a polar ground state with
+\(\spinmag=0\).
 This state can be categorized in two different ways depending on the orientation
-of the nematic director.
+of the nematic director, \(\hat{\vb{d}}\).
 The first consists of the nematic director being aligned with the \( z \)-axis,
 which is referred to as the easy-axis polar (EAP) phase.
 The second case consists of the director being in the \( xy \)-plane, which is
 referred to as the easy-plane polar (EPP) phase.
-The representative wave function for the EPP phase can be written as
-\begin{equation}
-    \psi_\mathrm{EPP} = \frac{1}{\sqrt{2}}\begin{pmatrix}
+The representative spinor for the EPP phase can be written as
+\begin{align}\label{eq: EPP-spinor}
+    \zeta^\text{EPP} = \frac{1}{\sqrt{2}}\begin{pmatrix}
         1 \\ 0 \\ 1
     \end{pmatrix}.
-    \label{eq:EPP_wavefunction}
-\end{equation}
-The EPP phase presents an ideal candidate for mapping the two-component BEC
-due to the empty middle component.
+\end{align}
+Due to the unpopulated middle component, the EPP phase presents a configuration
+of a spin-1 BEC that can be mapped directly to a two-component condensate.
 
-\subsection{Mapping the EPP phase onto a two-component system}
-To begin the mapping procedure, we first construct the time-independent
+To begin the mapping procedure, recall the spin-1 GPEs listed in
+Eq.~\eqref{eq: spin-1-GPEs}.
+Since we're considering the EPP phase, we construct the time-independent
 GPEs for the spin-1 system with a wave function that assumes an empty middle
 component:
 \begin{equation}
@@ -106,10 +105,8 @@ component:
 \end{equation}
 where \( \mu \) is the chemical potential of the system, and we have taken
 \( p=0 \).
-\textcolor{red}{What happens if \(p \neq 0\)? Can we just absorb into chemical
-    potential? Or perhaps the mapping is only valid precisely if \(p = 0\).}
-
-Similarly, the time-independent GPEs for the two-component system are
+Now, one can compare the above spin-1 GPEs to the equivalent two-component
+time-dependent GPEs, given here as (see Sec.~\ref{sec: two-comp-theory})
 \begin{equation}
     \begin{aligned}
         \left(-\frac{\hbar^2\nabla^2}{2m_1} + g_1|\psi_1|^2
@@ -120,47 +117,53 @@ Similarly, the time-independent GPEs for the two-component system are
     \label{eq:two-comp-time-independent-gpes}
 \end{equation}
 Using these time-independent equations, we can map the two-component system
-to that of the spin-1 by comparing the coefficients with
+to that of the spin-1 by comparing the coefficients of the above with that of
 Eq.~\eqref{eq:EPP-time-independent-GPEs}.
-By doing this we find
+Doing this we find
 \begin{equation}
     g_1=g_2=c_0+c_2, \enskip g_{12} = c_0-c_2, \enskip \mu_1=\mu_2=\tilde{\mu},
     \enskip m_1=m_2=M,
 \end{equation}
 where \( \tilde{\mu} = \mu - q \).
-This directly relates the two-component BEC to the EPP phase of a spin-1
-condensate.
-Note that this mapping only holds when the interspecies interactions, chemical
-potentials and masses of the atomic species in the two-component BEC are equal.
-\textcolor{red}{Links to papers that discuss this particular type of
-    two-component BEC?\@ This evidently must be two-component BECs of the same
-    atomic species.}
+The above equations then directly maps the EPP phase of a spin-1 BEC to the
+equivalent two-component system, hence providing a pseudospinor description
+of the two-component BEC\@.
 
-
-\section{Two-component hydrodynamic properties and vortices}
-Just like for pure spinor BECs, the multi-component nature of the two-component
-system allows for a novel vortex structure otherwise unseen in scalar BECs.
-To construct such a vortex, we begin by defining the pseudospin-1/2
-wave function:
-\begin{equation}
+\subsection{Hydrodynamic properties of a pseudospinor condensate}
+The wave function for a two-component BEC can be written generally as
+\begin{align}
     \mqty(\psi_1 \\ \psi_2) =
     \mqty(|\psi_1|e^{i\theta_1} \\ |\psi_2|e^{i\theta_2}) =
     e^{i\Theta}\mqty(|\psi_1|e^{i\Phi} \\ |\psi_2|e^{-i\Phi}),
     \label{eq: pseudospin-1/2-wavefunction}
-\end{equation}
-where \( \theta_j=\mathrm{Arg}(\psi_j) \) for \( j=1,2 \) and
-\begin{equation}\label{eq: Theta-Phi}
+\end{align}
+where \( \theta_j=\mathrm{Arg}(\psi_j) \) for component \( j=1,2 \) and
+\begin{align}\label{eq: Theta-Phi}
     \Theta = \frac{\theta_1 + \theta_2}{2}, \qquad
     \Phi = \frac{\theta_1 - \theta_2}{2}.
-\end{equation}
+\end{align}
+Since there are two condensates, each with a global \(\text{U}(1)\) symmetry,
+the order parameter space for a two-component system is \({\text{U}(1)}_1 \cross
+{\text{U}(1)}_2\), where \({\text{U}(1)}_j\) denotes the contribution from
+the phase \(\theta_j\) of component \(j\).
+In the pseudospinor picture, this can be thought of as a contribution from the
+global condensate phase, \(\Theta \), and pseudospin, \(\Phi \), leading to the
+order parameter space~\cite{Eto2011}
+\begin{align}
+    \mathcal{M}_\text{2C} = \frac{{\text{U}(1)}_\Theta \cross
+    {\text{U}(1)}_{\Phi}}{\mathbb{Z}_2}.
+\end{align}
+The \(\mathbb{Z}_2\) factor comes from the fact that the order parameter remains
+invariant under the choice \(\Theta=\Phi=\pi \) in
+Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, and hence gets factored out.
 
-To understand the role that \(\Theta \) and \(\Phi \) play, it is useful to
-construct a hydrodynamic picture.
+To understand the dynamical role that \(\Theta \) and \(\Phi \) play, it is
+useful to construct a hydrodynamic picture.
 In a two-component system, each component has an associated mass current given
-by the formula [references?]
+by the formula
 \begin{equation}
     {(n\vb{v})}_j=\frac{\hbar}{2im_j}
-    \left[\psi_j^*\nabla\psi_j-(\nabla\psi_j^*)\psi_j\right]
+    \left[\psi_j^*\nabla\psi_j-(\nabla\psi_j^*)\psi_j\right].
     \label{eq: two-comp-mass-current}
 \end{equation}
 for component \(j=1,2\).
@@ -179,53 +182,71 @@ at
 \end{equation}
 This reveals that gradients in \(\Theta \) are associated with a total,
 superfluid mass current.
-
 We can perform a similar analysis to determine the importance of \(\Phi \).
 Instead of looking at the total mass current, we instead take the difference
 of the individual mass currents, resulting in the expression
 \begin{equation}
     \vb{v}_2 - \vb{v}_1 = \frac{2\hbar}{m}\nabla\Phi.
 \end{equation}
-The difference of the two mass currents can be interpreted as a pseudospin
-current, and therefore gradients in \(\Phi \) are associated with this
-pseudospin current.
-\textcolor{red}{Feel like this is quite vague. I have tried constructing the
-    spin current as done in Kawaguchi, however the resulting algebra is messy
-    and doesn't reveal anything.}
+The difference of the two mass currents, and hence gradients of \(\Phi \), are
+interpreted as a pseudospin current.
 
-Now consider a vortex state which consists of a phase singularity in the
-\(\psi_1 \) component such that about the singularity \( \theta_1 \) winds by
-\( 2\pi \) and \( \theta_2 \) remains unchanged, i.e., it is a smooth phase
+\subsection{Vortices in two-component systems}
+As we have seen in Chapter~\ref{chap: ground-states}, the types of stable
+topological defects within a system can be obtained using homotopy theory.
+For a pseudospinor system, the first homotopy group is calculated
+as~\cite{Eto2011}
+\begin{align}
+    \pi_1(\mathcal{M}_\text{2c}) = \mathbb{Z} \cross \mathbb{Z},
+\end{align}
+which specifies that two types of vortices are topological stable within this
+system.
+The first is integer vortices, which are described by a \(2\pi \) winding of
+the global phase, \(\Theta \), with no winding in the pseudospin, \(\Phi \).
+This is achieved in Eq.~\eqref{eq: pseudospin-1/2-wavefunction} by having
+\(\theta_1=\theta_2=\varphi \), where \(\varphi \) is the azimuthal angle
+about the core.
+These vortices share similarities with \(\text{U}(1)\) vortices arising in
+scalar condensates, due to their both having a \(2\pi \) winding of the
+condensate phase.
+The second class of vortex can be distinguished as a \(\pi \) winding of the
+condensate phase, \(\Theta \), which is coupled to a \(\pm\pi \) winding of the
+pseudospin \(\Phi \), where the sign of the winding in \(\Phi \) is determined
+by which component the phase singularity is located.
+For example, consider a vortex state which consists of a phase singularity in
+the \(\psi_1 \) component such that about the singularity \( \theta_1 \) winds
+by \( 2\pi \) and \( \theta_2 \) remains unchanged, i.e., it is a smooth phase
 field.
 Such a state can be written as
 \begin{equation}
     \twovec{\psi_1}{\psi_2}
     = \twovec{|\psi_1|e^{i\varphi}}{|\psi_2|}
-    = e^{\varphi/2}\twovec{|\psi_1|e^{i\varphi/2}}{|\psi_2|e^{-i\varphi/2}},
+    = e^{\varphi/2}\twovec{|\psi_1|e^{i\varphi/2}}{|\psi_2|e^{-i\varphi/2}}.
 \end{equation}
-where \( \varphi \) is the azimuthal angle around the vortex core.
 By comparing the above to Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, we have
 \( \Theta=\Phi=\varphi/2 \).
-Using Eq.~\eqref{eq: two-comp-velocity}, the circulation can be written as
+Due to the global phase winding by \(\pi \), such a vortex is typically called
+a HQV\@.
+Note however that this vortex is different from, e.g., the HQV arising in the
+polar phase of spin-1 condensates~\cite{Leonhardt2000, Seo2015} (see
+Sec.~\ref{sec: vortices-spin-1}).
+One key difference arises in the quantisation of circulation.
+Using Eq.~\eqref{eq: two-comp-velocity}, the mass circulation along a closed
+contour \(C\) about the vortex can be calculated as
 \begin{equation}
-    \oint_C\vb{v}\cdot d\vb{\ell} = q\frac{\kappa}{2},
+    \oint_C\vb{v}\cdot d\vb{\ell} = 2\pi q\kappa,
 \end{equation}
-where \( q \) denotes the charge of the vortex and \(\kappa=\hbar/m\) is the
+where \( q \) denotes the charge of the vortex and \(\kappa=h/m\) is the
 quantum of circulation.
-Traversing a point about the vortex shows the circulation is quantised in units
-of \(\kappa/2\), half the usual circulation of \( U(1) \) vortices in scalar
-BECs.
-Since this vortex carries half the circulation of a \( U(1) \) vortex, such a
-vortex state is referred to as a half-quantum vortex\footnote{This vortex is
-    topologically distinct from HQVs that arise in the A and polar phases of
-    superfluid \(^3\)He~\cite{Autti2016} and the polar phase of spin-1
-    BECs~\cite{Leonhardt2000, Seo2015}.}.
+This shows that, despite being classed as a HQV, the circulation of such a
+vortex is still quantised in the typical units of \(\kappa \), similar to
+\(\text{U}(1)\) vortices in scalar condensates.
 
-\section{Half-quantum vortex relaxation dynamics}
+\section{Investigating half-quantum vortex relaxation dynamics}
 To begin studying the relaxation dynamics of HQVs in a turbulent system, we
-numerically solve the two-component Gross-Pitaevskii equations in dimensionless
-form (see Appendix~\ref{sec: two-comp-dimensionless} for details of
-dimensionless form):
+numerically solve the two-component Gross-Pitaevskii equations, given here in
+dimensionless form (see Appendix~\ref{sec: two-comp-dimensionless} for details
+of dimensionless form):
 \begin{equation}\label{eq: dimensionless-two-comp-GPEs}
     \begin{aligned}
         i\frac{\partial \psi_1}{\partial t} & = (-\nabla^2 + g|\psi_1|^2
@@ -234,13 +255,17 @@ dimensionless form):
         + \gamma|\psi_1|^2)\psi_2,
     \end{aligned}
 \end{equation}
-where we have assumed each component has the same atomic mass and interspecies
-interaction strength.
+where we have assumed each component has the same atomic mass (\(m_1=m_2=m\))
+and interspecies interaction strength (\(g_1=g_2=g\)) to comply with the mapping
+of the spin-1 EPP phase to a two-component system.
+This type of condensate, with equal mass and interspecies interactions, can be
+achieved experimentally using two hyperfine states of the same
+atom~\cite{Myatt1997, Hall1998}.
 The key parameter is the ratio of inter- to intra-species interaction
-\begin{equation}
+\begin{align}
     \gamma = \frac{g_{12}}{g}.
-\end{equation}
-We consider the case \(0 < \gamma < 1\) with all interactions repulsive such
+\end{align}
+We consider the case \(0 < \gamma < 1\), with all interactions repulsive such
 that the condensate is stable against the separation of the components.
 
 The inter- and intra-component interactions give rise to two important length
@@ -253,15 +278,17 @@ The density and spin healing lengths are then defined as~\cite{Eto2011}
     \xi_s = \xi_d \sqrt{\frac{1 + \gamma}{1 - \gamma}},
     \label{eq:healing-lengths}
 \end{equation}
-where \(n_0\) is the background number density of each component in a uniform
-system.
+where \(n_0\) is the background number density, which we assume to be the same
+in each component.
 The size of the HQV core can be understood from the energetic hierarchy of
 these healing lengths.
-Since an HQV consists of a phase singularity in one component and not the other,
-the core is free to fill with the atoms of the other component.
+Since a HQV consists of a phase singularity in one component and not the other,
+the vortex core is free to fill with the atoms in the component with no phase
+singularity.
 This corresponds to spatial variations in the \( z \)-component of the
-pseudospin, the size of which is set by the spin healing length, \(\xi_s\).
-The vortex core can expand when \(\xi_s \lesssim \xi_d\), which lowers
+pseudospin, the size of which is set by the pseudospin healing length,
+\(\xi_s\).
+The vortex core can expand when \(\xi_s \gtrsim \xi_d\), which lowers
 the total energy.
 We see from Eq.~\eqref{eq:healing-lengths} that \(\gamma \) directly determines
 the core sizes within our systems.
@@ -270,6 +297,7 @@ deformations of vortex cores such as the splitting of singly quantised vortices
 into fractional vortices~\cite{Seo2015}.
 
 \subsection{Numerical setup}\label{sec:numerical-setup}
+Our numerical setup is as follows.
 We solve Eq.~\eqref{eq: dimensionless-two-comp-GPEs} on a periodic domain with
 \(N_s^2=1024^2\) grid points which has dimensionless area \(L^2=N_s^2\) with
 side length \(L=N_s\).
@@ -277,28 +305,35 @@ We take \(N=3.2\times10^9\) atoms per component and fix dimensionless
 \(g=L^2/4N\).
 The dimensionless density healing length is then fixed at
 \(\xi_d=N_s/\sqrt{gN}=2\) in our system.
-We wish to explore the effect of the inter-component interaction by varying
-\(\gamma \) within the range \(0 < \gamma < 1\).
+Our goal is to explore the effect of the inter-component interaction on HQV
+relaxation dynamics by varying \(\gamma \) within the range \(0 < \gamma < 1\).
 
-The initial state is constructed as follows.
-We construct \(48^2\) vortices in the initial state of each component.
-To do this we start with a grid of vortex positions such that the
-\(i\)-th vortex is to be imprinted at position \((x_i, y_i)\).
-We repeat the same procedure for the other component.
-However, to avoid overlapping vortex positions, we offset this grid in both
-\(x\) and \(y\) whilst preserving the grid structure.
-To facilitate a random distribution of vortices and subsequently turbulent
-dynamics, we then displace each position by some small amount
-\((x_i, y_i) \rightarrow (x_i + \delta x_i, y_i + \delta y_i)\), where
-\(\delta x_i, \delta y_i < 3\xi_d\).
-The vortices are then constructed as an alternating \( 2\pi \) winding of the
-component phase about each vortex position using the method described
-in~\cite{Billam2014}.
-
-We imprint the vortices using a short imaginary time propagation of
-Eq.~\eqref{eq: dimensionless-two-comp-GPEs} whilst keeping the phase profile
-fixed to not alter the positions of the vortices.
+We first need to construct an initial state that consists of many HQVs, which we
+can subsequently relax.
+Our numerical procedure for generating such a system is outlined here.
+We start with a grid of positions such that the \(i\)-th vortex is to be
+constructed at position \((x_i, y_i)\).
+Initially, this grid of positions is the same for each component.
+However, this naturally leads to phase windings that overlap in both components,
+which would result in generating integer vortices, not the required HQVs.
+To avoid the overlapping vortex positions, we displace each position by some
+small amount \((x_i, y_i) \rightarrow (x_i + \delta x_i, y_i + \delta y_i)\),
+where \(\delta x_i, \delta y_i\) are random number drawn from a uniform
+distribution and \(|\delta x_i|, |\delta y_i| < 3\xi_d\).
+This results in a random distribution of vortex positions, which will now
+generate HQVs, since the phase windings in each component no longer overlap.
+The phase of each component is then constructed to contain a \( 2\pi \) about
+each vortex position using the method described in~\cite{Billam2014}.
+To ensure that the overall circulation is zero, each position alternates the
+winding of the phase, leading to an equal number of HQVs with positive and
+negative charge.
+For our system in particular, we imprint \(48^2\) HQVs each component.
+Finally, the vortices themselves are constructed using a short imaginary time
+propagation of Eq.~\eqref{eq: dimensionless-two-comp-GPEs}, whilst keeping the
+phase profile of each component fixed to not alter the positions of the
+vortices.
 This results in an initially turbulent system of HQVs.
+
 The HQV cores correspond to a density depletion in one component at the position
 of the phase singularity with a corresponding density peak at the same position
 in the other component (see Fig.~\ref{fig:initial-vortex-state}).
@@ -313,7 +348,6 @@ in the other component (see Fig.~\ref{fig:initial-vortex-state}).
         component, which have been filled by atoms in this
         component.\label{fig:initial-vortex-state}}
 \end{figure}
-
 Previous work has shown that clustering of vortices can lead to anomalously
 slow coarsening dynamics~\cite{Karl2017} and thus constructing the initial
 state this way ensures that there is no clustering of like-signed vortices.
@@ -322,7 +356,7 @@ Eq.~\eqref{eq: dimensionless-two-comp-GPEs}.
 Two HQVs in the same component with opposite winding can annihilate, leading to
 a decay of the total vortex number within the system.
 
-\subsection{Interaction dependence of HQV core size}
+\section{Spatial aspects of half-quantum vortex decay}
 We first investigate how \(\gamma \) affects the HQVs within our systems.
 \begin{figure}
     \centering
@@ -486,7 +520,7 @@ In addition, it shows that, despite containing a different type of vortex, the
 dynamics follow quantitatively similar behaviour to some turbulent scalar BEC
 systems containing scalar vortices.
 
-\subsection{Temporal aspects of decay}
+\section{Temporal aspects of half-quantum vortex decay}
 To measure the temporal aspect of the relaxation dynamics, we wish to
 construct correlation functions.
 Since our pseudo-spinor order parameter is composed of a mass part and a spin
