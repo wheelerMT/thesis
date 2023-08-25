@@ -332,7 +332,8 @@ Finally, the vortices themselves are constructed using a short imaginary time
 propagation of Eq.~\eqref{eq: dimensionless-two-comp-GPEs}, whilst keeping the
 phase profile of each component fixed to not alter the positions of the
 vortices.
-This results in an initially turbulent system of HQVs.
+This imaginary time propagation imprints the cores of the vortices, and
+therefore results in an initially turbulent system of HQVs.
 
 The HQV cores correspond to a density depletion in one component at the position
 of the phase singularity with a corresponding density peak at the same position
@@ -357,20 +358,24 @@ Two HQVs in the same component with opposite winding can annihilate, leading to
 a decay of the total vortex number within the system.
 
 \section{Spatial aspects of half-quantum vortex decay}
-We first investigate how \(\gamma \) affects the HQVs within our systems.
+We begin our investigations by considering the spatial aspects of the
+relaxation dynamics.
+Firstly, we wish to investigate how \(\gamma \) affects the HQVs within our
+systems.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/densVort.pdf}
     \caption[Density and pseudo-vorticity of at late simulation time for various
         \(\gamma \)]
-    {\label{fig:density-pseudo-vort}Density (a)- (c) and pseudo-vorticity
-        (d)- (f) of the \(\psi_1 \) component in a \(256\xi_d \times 256\xi_d\)
-        subregion at a time \(t/\tau=2.5\times 10^4\xi_d^2\) for \(\gamma=0.1\)
-        (left), \(\gamma=0.6\) (middle), and \(\gamma=0.8\) (right).
+    {\label{fig:density-pseudo-vort}Density (a) --- (c) and pseudo-vorticity
+        (d) --- (f) of the \(\psi_1 \) component in a
+        \(256\xi_d \times 256\xi_d\) subregion at a time
+        \(t/\tau=2.5\times 10^4\xi_d^2\) for \(\gamma=0.1\) (left),
+        \(\gamma=0.6\) (middle), and \(\gamma=0.8\) (right).
         The density depletions correspond to HQVs in this component.
         For \(\gamma \gtrsim 0.6\), density peaks reveal the locations of HQVs
-        with the phase singularity in the other component where the cores have
-        filled with atoms in this component.
+        with the phase singularity in the other component, where the vortex
+        cores have filled with atoms in this component.
         Vortices with positive (blue) and negative (red) circulation are
         identifiable in the pseudo-vorticity field.}
 \end{figure}
@@ -381,7 +386,6 @@ the density depletion) also increases.
 From Eq.~\eqref{eq:healing-lengths} we see that the size of the HQV core is
 dependent on \(\gamma \), where \(\xi_s \rightarrow \xi_d\) as
 \(\gamma \rightarrow 0\).
-
 The healing lengths can explain why, for \(\gamma \geq 0.6\), bright density
 peaks also appear within the \(\psi_1 \) field.
 For small \(\gamma \), the density and spin healing lengths become comparable,
@@ -395,22 +399,25 @@ Hence, bright density peaks in Fig.~\ref{fig:density-pseudo-vort} correspond to
 atoms in the \(\psi_1 \) component that have filled the core of an HQV in the
 \(\psi_2\) component.
 
-We can accurately track the positions of the HQVs in the system through
-the pseudo-vorticity~\cite{Villois2016}
+To locate the HQVs in the system, we make use of the
+pseudo-vorticity~\cite{Villois2016}, given as:
 \begin{equation}
     \omega_\mathrm{p_j} = \frac{1}{2}\nabla \times {(n\vb{v})}_j,
 \end{equation}
 where \({(n\vb{v})}_j\) is the mass current of component \(j=1, 2\) defined as
 in Eq.~\eqref{eq: two-comp-mass-current}.
-
 The pseudo-vorticity has the unique property of remaining regular and non-zero
-within the vortex cores. On length scales greater than the spin healing length
-away from a vortex core, the pseudo-vorticity quickly relaxes to zero as seen
-in Fig.~\ref{fig:density-pseudo-vort} (d) --- (f).
-This property allows us to easily identify the location of vortices within the
-system.
+within the vortex cores, and, on length scales greater than the spin healing
+length away from a vortex core, quickly relaxes to zero.
+Therefore, this becomes a useful tool to identify where vortices are in the
+system by checking for regions of non-zero pseudo-vorticity.
+Fig.~\ref{fig:density-pseudo-vort} (d) --- (f) shows the pseudo-vorticity for
+the same systems in (a) --- (c).
+We see that non-zero regions of pseudo-vorticity are in alignment with the
+density depletions, confirming the cores of vortices.
 Additionally, the sign of the pseudo-vorticity also determines the charge of
-the vortex.
+the vortex, where positive pseudo-vorticity corresponds to a vortex with a
+positive charge and vice versa.
 
 \subsection{Investigating the kinetic energy spectrum}
 A useful property to investigate in turbulent systems is the kinetic energy
@@ -418,62 +425,60 @@ spectrum, which provides useful insights into the spatial aspects of the
 relaxation dynamics.
 We start with the kinetic energy of the two-component system which is written
 in terms of the density \(n_j\) and velocity \(\vb{v}_j\) of the \(j\)-th
-component (\( j=1,2 \)) as
-\begin{equation}
-    E_\mathrm{kin} = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2
-    + |\nabla\sqrt{n_2}|^2)
-    + \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2
-    + |\sqrt{n_2}\vb{v}_2|^2).
-\end{equation}
+component as
+\begin{align}
+    E_\mathrm{kin} = \int \left(|\nabla\sqrt{n_1}|^2
+    + |\nabla\sqrt{n_2}|^2\right) \, \dd^2\vb{r} 
+    + \frac{1}{4}\int \left(|\sqrt{n_1}\vb{v}_1|^2
+    + |\sqrt{n_2}\vb{v}_2|^2\right) \, \dd^2\vb{r}.
+\end{align}
 The kinetic energy can be further decomposed into quantum pressure
 (\( E^q\)) and classical velocity (\(E^v\)) contributions:
-\begin{equation}
-    E^v = \frac{1}{4}\int d^2\vb{x} (|\sqrt{n_1}\vb{v}_1|^2
-    + |\sqrt{n_2}\vb{v}_2|^2),
-\end{equation}
-\begin{equation}
-    E^q = \int d^2\vb{x} (|\nabla\sqrt{n_1}|^2
-    + |\nabla\sqrt{n_2}|^2).
-\end{equation}
-
-To extract energy spectra from these contributions, we define the generalized
+\begin{align}
+    E^v = \frac{1}{4}\int \left(|\sqrt{n_1}\vb{v}_1|^2
+    + |\sqrt{n_2}\vb{v}_2|^2\right) \, \dd^2\vb{r},
+\end{align}
+\begin{align}
+    E^q = \int \left(|\nabla\sqrt{n_1}|^2
+    + |\nabla\sqrt{n_2}|^2\right) \, \dd^2\vb{r}.
+\end{align}
+To extract energy spectra from these contributions we define the generalized
 velocities for the incompressible (i), compressible (c), and quantum pressure
 (q) parts as
-\begin{equation}
-    \begin{aligned}
-        \vb{w}^{i, c} & = \sqrt{n_1}\vb{v}_1^{i, c} + \sqrt{n_1}\vb{v}_1^{i, c}
-        \\
-        \vb{w}^q      & = 2 (\nabla \sqrt{n_1} + \nabla \sqrt{n_2}).
-    \end{aligned}
-\end{equation}
-Here, the incompressible and compressible parts of the velocity field are
-extracted from a Helmholtz decomposition which splits the velocity into a
-divergence-free incompressible part, \(\nabla \cdot \vb{v}^i = 0\), and an
-irrotational, compressible part, \(\nabla \times \vb{v}^c=\vb{0}\).
+\begin{align}
+    \vb{w}^{i, c} &= \sqrt{n_1}\vb{v}_1^{i, c} + \sqrt{n_2}\vb{v}_2^{i, c} \\
+    \vb{w}^q      &= 2 (\nabla \sqrt{n_1} + \nabla \sqrt{n_2}).
+\end{align}
+Here, the incompressible and compressible parts of the velocity field,
+\(\vb{v}\), are extracted from a Helmholtz decomposition which splits the
+velocity into a divergence-free incompressible part,
+\(\nabla \cdot \vb{v}^i = 0\), and an irrotational, compressible part,
+\(\nabla \times \vb{v}^c=\vb{0}\).
 Hence, in Fourier space, the kinetic energy spectrum can be calculated by
 taking the Fourier transform of the generalized velocities and integrating over
 the \(k\)-space angle as
-\begin{equation}
-    E^\delta(k) = \frac{1}{4} \int_{0}^{2\pi} d\Omega_k
-    |\tilde{\vb{w}}^\delta(\vb{k})|^2
+\begin{align}
+    E^\delta(k) = \frac{1}{4} \int_{0}^{2\pi}
+    |\tilde{\vb{w}}^\delta(\vb{k})|^2 \, \dd\Omega_k
     \qquad (\delta = i, c, q),
-\end{equation}
+\end{align}
 where \(\tilde{\vb{w}}^\delta \) denotes the Fourier transform of the
 generalised velocity \(\vb{w}^\delta \) for wave number \(k=|\vb{k}|\).
 The total kinetic energy is then given by the sum of each contribution,
 integrated over all \(k\)
-\begin{equation}
-    E_\mathrm{kin} = \sum_\delta \int dk E^\delta (k) \qquad (\delta = i, c, q).
-\end{equation}
+\begin{align}
+    E_\mathrm{kin} = \sum_\delta \int E^\delta (k) \, \dd k
+    \qquad (\delta = i, c, q).
+\end{align}
 The occupation numbers of each contribution are extracted as
-\begin{equation}
+\begin{align}
     n^\delta(k) = k^{-2}E^\delta(k) \qquad (\delta = i, c, q).
-\end{equation}
+\end{align}
 Finally, the total occupation number of the system is given as
-\begin{equation}
-    n(k) = \int_{0}^{2\pi} d\Omega_k \psi_1^*(k)\psi_1(k)
-    + \psi_2^*(k)\psi_2(k).
-\end{equation}
+\begin{align}
+    n(k) = \int_{0}^{2\pi} \left[\tilde{\psi}_1^*(k)\tilde{\psi}_1(k)
+    + \tilde{\psi}_2^*(k)\tilde{\psi}_2(k)\right] \, \dd \Omega_k.
+\end{align}
 
 \begin{figure}[t!]
     \centering
@@ -496,24 +501,20 @@ The total occupation number exhibits two different scaling: A \(k^{-4}\) in the
 ultraviolet (UV), and \(k^{-2}\) in the infrared (IR).
 The same scaling have been found in some 2D, turbulent, scalar BEC systems
 containing scalar vortices~\cite{Nowak2012}.
-
 The decomposition of the kinetic energy into its respective contributions
 allows us to see that the incompressible contribution dominates the spectrum
 in the IR region, and is therefore responsible for the transition to the
 \(k^{-4}\) scaling.
 This incompressible contribution is directly associated with the vortices in
-the system. \textcolor{red}{Elaborate? Why exactly?}
+the system, as vortices are the only excitations that can arise in an
+incompressible, irrotational superfluid~\cite{Pethick2008,Barenghi2016}.
 Similarly, we see it is both the compressible and quantum pressure contributions
 that dominate in the UV region, facilitating the transition to the \(k^{-2}\)
-scaling.
-This \(k^{-2}\) scaling is characteristic of weak-wave
-turbulence~\cite{Zakharov1992}.
-\textcolor{red}{How in-depth do I have to go into the theory of turbulence
-    here?}
+scaling, which is characteristic of weak-wave turbulence~\cite{Zakharov1992,
+Nazarenko2011, Newell2011}.
 This scaling of the kinetic energy was observed throughout all values of
 \(\gamma \) tested, indicating that it is quantitatively insensitive to
 variations in \(\gamma \).
-
 The investigation into the kinetic energy spectrum reveals that \(\gamma \) has
 negligible effects on the spatial aspects of the relaxation dynamics.
 In addition, it shows that, despite containing a different type of vortex, the
