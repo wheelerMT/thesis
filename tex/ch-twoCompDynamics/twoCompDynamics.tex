@@ -510,35 +510,34 @@ the system, as vortices are the only excitations that can arise in an
 incompressible, irrotational superfluid~\cite{Pethick2008,Barenghi2016}.
 Similarly, we see it is both the compressible and quantum pressure contributions
 that dominate in the UV region, facilitating the transition to the \(k^{-2}\)
-scaling, which is characteristic of weak-wave turbulence~\cite{Zakharov1992,
+scaling, which is characteristic of weak-wave-turbulence~\cite{Zakharov1992,
 Nazarenko2011, Newell2011}.
 This scaling of the kinetic energy was observed throughout all values of
 \(\gamma \) tested, indicating that it is quantitatively insensitive to
 variations in \(\gamma \).
-The investigation into the kinetic energy spectrum reveals that \(\gamma \) has
-negligible effects on the spatial aspects of the relaxation dynamics.
+The investigation into the kinetic energy spectrum thus reveals that \(\gamma \)
+has negligible effects on the spatial aspects of the relaxation dynamics.
 In addition, it shows that, despite containing a different type of vortex, the
 dynamics follow quantitatively similar behaviour to some turbulent scalar BEC
-systems containing scalar vortices.
+systems containing scalar vortices~\cite{Nowak2012}.
 
 \section{Temporal aspects of half-quantum vortex decay}
-To measure the temporal aspect of the relaxation dynamics, we wish to
-construct correlation functions.
+To measure the temporal aspect of the relaxation dynamics, we will consider
+correlation functions.
 Since our pseudo-spinor order parameter is composed of a mass part and a spin
 part [c.f. Eq.~\eqref{eq: Theta-Phi}], it is natural to then construct both a
 mass and spin correlation function.
-
 To begin, we need to identify appropriate quantities that serve as order
 parameters for our system.
-By taking motivation from the EPP phase in spinor BECs, one such quantity is
+Motivated by the form of the EPP phase in spinor BECs, one such quantity is
 the planar tensor~\cite{Symes2017}
 \begin{equation}
     \mathsf{Q} = \mqty(Q_{xx} & Q_{xy} \\ Q_{xy} & -Q_{xx}),
 \end{equation}
 where \(Q_{xx} = \mathrm{Re}(\psi_1^*\psi_2)\) and
-\(Q_{xx} = \mathrm{Im}(\psi_1^*\psi_2)\).
+\(Q_{xy} = \mathrm{Im}(\psi_1^*\psi_2)\).
 The eigenvalues of \(\mathsf{Q}\) are given by
-\( \left\{-\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\right\} \), where
+\( \left\{ -\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\right\} \), where
 \(\alpha=-2\psi_1\psi_2\).
 If we consider the general wave function defined in
 Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, then evaluating \(\mathsf{Q}\) and
@@ -550,7 +549,7 @@ Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, then evaluating \(\mathsf{Q}\) and
 \begin{equation}
     \alpha = -2|\psi_1||\psi_2|e^{2i\Theta}.
 \end{equation}
-This shows that \(\mathsf{Q}\) is sensitive to the phase of the spin,
+This shows that \(\mathsf{Q}\) is dependent on the phase of the spin,
 \( \Phi \), whereas \(\alpha \) is dependent upon the global phase,
 \( \Theta \).
 
@@ -571,42 +570,53 @@ averages with spatial averages.
 To obtain the 1D spectrum, we perform an angular integration in k-space.
 The spin correlation function is then computed as
 \begin{equation}
-    G_\Phi(r, t) = \int d\Omega_k \int \frac{d^2\vb{x}'}{L^2}
-    \frac{2}{n^2}\mathrm{Tr}
-    [\langle \mathsf{Q}(\vb{x'})\mathsf{Q}(\vb{x}' + \vb{r})\rangle],
+    G_\Phi(r, t) = \int d\Omega_k \int \frac{d^2\vb{r}\prime}{L^2}
+    \frac{2}{n^2}\text{Tr}
+    [\langle \mathsf{Q}(\vb{r}\prime)\mathsf{Q}(\vb{r}\prime + \vb{r})\rangle],
 \end{equation}
 where \(\int d\Omega_k\) denotes integration over the k-space angle, whilst
-\(\int d^2\vb{x}'/L^2\) is spatial averaging.
+\(\int d^2\vb{r}'/L^2\) is spatial averaging.
 We perform the same averaging for the mass correlation function.
 
+% \begin{figure}
+%     \begin{subfigure}{\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{
+%             gfx/ch-twoCompDynamics/correlations.pdf}
+%         \caption{\label{fig:correlation-functions}}
+%     \end{subfigure}\\
+%     \begin{subfigure}{0.5\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{
+%             gfx/ch-twoCompDynamics/correlation_lengths.pdf}
+%         \caption{\label{fig:correlation-lengths}}
+%     \end{subfigure}
+%     \begin{subfigure}{0.5\textwidth}
+%         \centering
+%         \includegraphics[height=0.8\textwidth,width=0.8\textwidth]{
+%             gfx/ch-twoCompDynamics/scalar_vortex.pdf}
+%         \caption{\label{fig:scalar-vortex-lengths}}
+%     \end{subfigure}
+%     \caption{\textcolor{red}{Plot size needs fixing. Will split these into
+%             separate plots I think.}}
+% \end{figure}
 \begin{figure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{
-            gfx/ch-twoCompDynamics/correlations.pdf}
-        \caption{\label{fig:correlation-functions}}
-    \end{subfigure}\\
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{
-            gfx/ch-twoCompDynamics/correlation_lengths.pdf}
-        \caption{\label{fig:correlation-lengths}}
-    \end{subfigure}
-    \begin{subfigure}{0.5\textwidth}
-        \centering
-        \includegraphics[height=0.8\textwidth,width=0.8\textwidth]{
-            gfx/ch-twoCompDynamics/scalar_vortex.pdf}
-        \caption{\label{fig:scalar-vortex-lengths}}
-    \end{subfigure}
-    \caption{\textcolor{red}{Plot size needs fixing. Will split these into
-            separate plots I think.}}
+    \centering
+    \includegraphics[width=\textwidth]{
+        gfx/ch-twoCompDynamics/correlation_functions.pdf}
+    \caption{\label{fig: correlation-functions}Correlation functions for the
+    mass (left) and spin (right) parts of a two-component system as functions of
+    time for \(\gamma=0.6\).
+    As time increases the correlation functions decay over a larger range,
+    indicating long-rang ordering within the system.
+    Insets: Collapse of the mass (left) and spin (right) correlation functions
+    when scaled by the appropriate correlation length.}
 \end{figure}
-Fig.~\ref{fig:correlation-functions} shows both correlation functions for
+Fig.~\ref{fig: correlation-functions} shows both correlation functions for
 \(\gamma=0.6\) for various times through the simulation.
 We see that as time increases, the correlation functions extend over larger
 distances which indicates that the respective domains are growing over time,
 showing long-range order is being established.
-
 From these correlation functions, we may extract a correlation length,
 \(L_\delta \) with \(\delta \in \{\Theta, \Phi \} \), that enables us to
 determine a length scale over which the correlation function decays.
@@ -618,13 +628,20 @@ exhibit dynamical scaling, which implies the form of the functions remains
 self-similar at different times throughout the simulation.
 This means the function collapses to a universal, time-independent function
 when scaled by the correlation length: \(H_\delta(r) = G(r/L_\delta(t), t)\).
-
-The insets of Fig.~\ref{fig:correlation-functions} show the scaling of the
+The insets of Fig.~\ref{fig: correlation-functions} show the scaling of the
 correlation functions when scaled by the respective correlation length.
 This confirms that the correlation functions within our system do exhibit
-dynamical scaling. \textcolor{red}{Reference to other systems where dynamical
-    scaling is also seen?} \par
-Fig.~\ref{fig:correlation-lengths} shows the correlation lengths for
+dynamical scaling.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{
+        gfx/ch-twoCompDynamics/correlation_lengths.pdf}
+    \includegraphics[width=0.49\textwidth]{
+        gfx/ch-twoCompDynamics/scalar_vortex.pdf}
+    \caption{\label{fig: correlation-lengths}}
+\end{figure}
+Fig.~\ref{fig: correlation-lengths} shows the correlation lengths for
 \(\gamma=0.3\), \(\gamma=0.6\), and \(\gamma=0.8\) as functions of time.
 We see that at late times in the evolution, all correlation lengths tend to a
 universal \(t^\frac{1}{5}\) scaling.
@@ -632,7 +649,6 @@ However, the early-time dynamics are remarkably different for the various
 \(\gamma \).
 As \(\gamma \) increases, there is a faster growth of the correlation lengths at
 early times, which signifies the correlation length being \(\gamma \)-dependent.
-
 We investigate this behaviour by considering the total vortex number of
 the system as a function of time.
 We can then extract the mean distance between the vortices as
