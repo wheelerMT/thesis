@@ -537,7 +537,7 @@ the planar tensor~\cite{Symes2017}
 where \(Q_{xx} = \mathrm{Re}(\psi_1^*\psi_2)\) and
 \(Q_{xy} = \mathrm{Im}(\psi_1^*\psi_2)\).
 The eigenvalues of \(\mathsf{Q}\) are given by
-\( \left\{ -\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\right\} \), where
+\( \left\{-\frac{1}{2}|\alpha|, \frac{1}{2}|\alpha|\right\} \), where
 \(\alpha=-2\psi_1\psi_2\).
 If we consider the general wave function defined in
 Eq.~\eqref{eq: pseudospin-1/2-wavefunction}, then evaluating \(\mathsf{Q}\) and
@@ -635,11 +635,26 @@ dynamical scaling.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\textwidth]{
-        gfx/ch-twoCompDynamics/correlation_lengths.pdf}
-    \includegraphics[width=0.49\textwidth]{
-        gfx/ch-twoCompDynamics/scalar_vortex.pdf}
-    \caption{\label{fig: correlation-lengths}}
+    \includegraphics[width=\textwidth]{
+        gfx/ch-twoCompDynamics/two-component-correlation-lengths.pdf}
+    \caption{\label{fig: correlation-lengths}
+    (a): Mass and spin correlation
+    lengths as a function of time for \(\gamma=0.3,0.6, 0.8\).
+    For early-time dynamics, a larger \(\gamma \) is associated with a faster
+    growth of the correlation length.
+    At late times, however, all correlation lengths tend to a universal
+    \(t^{1/5}\) scaling.
+    (b): Inter-vortex spacing, \(\ell_d\), as a function of time for scalar
+    systems prepared using different initial conditions.
+    Grid corresponds to a grid of vortices, similar to the setup in (a), random
+    (with noise) corresponds to a random distribution of vortices where each
+    position is drawn from a uniform distribution (with numerical noise added
+    to the initial state).
+    For early-time dynamics the inter-vortex spacing follows a
+    \(t^{1/5}\) for each initial state.
+    At late times, this scaling transition to \(t^{1/2}\), which is typically
+    observed in scalar vortex relaxation dynamics~\cite{Nowak2012}.
+    }
 \end{figure}
 Fig.~\ref{fig: correlation-lengths} shows the correlation lengths for
 \(\gamma=0.3\), \(\gamma=0.6\), and \(\gamma=0.8\) as functions of time.
@@ -659,13 +674,14 @@ observed that \(\ell_d \sim t^\beta \)~\cite{Karl2017}, where \(\beta \)
 characterizes the annihilation rate of vortices.
 In particular, there were two scaling observed: Firstly, a \(\beta=1/5\) scaling
 after some short period of evolution.
-This scaling is included in Fig.~\ref{fig:correlation-lengths} as a comparison.
+This scaling is included in Fig.~\ref{fig: correlation-lengths}a as a
+comparison.
 Secondly, after a much longer period of evolution, a \(\beta=1/2\) scaling
 emerges.
 This second scaling can be delayed if the initial vortex distribution is
 highly clustered~\cite{Karl2017}.
 
-Fig.~\ref{fig:scalar-vortex-lengths} is a reproduction of both the early- and
+Fig.~\ref{fig: correlation-lengths}b is a reproduction of both the early- and
 late-time scaling of the mean vortex distance, \(\ell_d\), for a scalar system
 using the parameters of~\cite{Karl2017}.
 We consider three initial conditions: Firstly, we constructed a grid of vortices
@@ -682,7 +698,7 @@ Motivated by this previous work in scalar BECs, we conduct a similar analysis
 on our two-component system containing HQVs, and determine how \(\gamma \)
 affects the vortex decay rate.
 In particular, we consider the early-time evolution in which
-Fig.~\ref{fig:correlation-lengths} suggests interesting dynamics.
+Fig.~\ref{fig: correlation-lengths}a suggests interesting dynamics.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/vortex_number.pdf}
@@ -703,13 +719,12 @@ different scaling regimes emerge at early times
 (\(2.5\times10^2\xi_d^2 \lesssim t/\tau \lesssim 2.5\times10^3\xi_d^2\)) with
 \(N_\mathrm{vort} \sim t^{-1}\) for \(\gamma=0.7\) and
 \(N_\mathrm{vort} \sim t^{-3/2}\) for \(\gamma=0.9\).
-
 After the initial differing early-time dynamics, the systems then tend to a
 universal \(t^{-2/5}\) scaling, which corresponds to \(\ell_d\sim t^{1/5}\)
 similar to the scalar BEC simulation shown.
 These results show a better fit to the theoretical \(t^{1/5}\) scaling than
 indicated by the correlation lengths shown in
-Fig.~\ref{fig:correlation-lengths}.
+Fig.~\ref{fig: correlation-lengths}.
 This further suggests that \(L_{\Phi,\Theta}\) differs slightly from \(\ell_d\),
 even though the growth of the correlation lengths is driven by vortex
 annihilation.
@@ -720,7 +735,7 @@ sufficiently small \(\gamma \).
 For large \(\gamma \), due to the rapid annihilation of vortices at early times,
 there may not be enough vortices left within the system to facilitate the
 transition to the \(N_\mathrm{vort} \sim t^{-1}\) regime.
-\par
+
 We wish to investigate further the effect of \(\gamma \) on the initial decay
 rate of the vortices.
 We can model the vortex decay rate as a simple kinetic-like equation of the form
@@ -744,7 +759,7 @@ process, where three vortices are necessary to facilitate annihilation.
 \begin{figure}[t!]
     \centering
     \includegraphics{gfx/ch-twoCompDynamics/gamma_vs_expo.pdf}
-    \caption[Critical exponent as a function of \(\gamma\)]
+    \caption[Critical exponent as a function of \(\gamma \)]
     {The exponent \( z \) in Eq.~\eqref{eq:vortex-number-scaling} as a
         function of \(\gamma \).
         We see that after \(\gamma \gtrsim 0.6\) a rapid decrease of the exponent
