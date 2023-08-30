@@ -522,9 +522,10 @@ dynamics follow quantitatively similar behaviour to some turbulent scalar BEC
 systems containing scalar vortices~\cite{Nowak2012}.
 
 \section{Temporal aspects of half-quantum vortex decay}
+\subsection{Growth of correlation lengths}
 To measure the temporal aspect of the relaxation dynamics, we will consider
 correlation functions.
-Since our pseudo-spinor order parameter is composed of a mass part and a spin
+Since our pseudospinor order parameter is composed of a mass part and a spin
 part [c.f. Eq.~\eqref{eq: Theta-Phi}], it is natural to then construct both a
 mass and spin correlation function.
 To begin, we need to identify appropriate quantities that serve as order
@@ -570,41 +571,20 @@ averages with spatial averages.
 To obtain the 1D spectrum, we perform an angular integration in k-space.
 The spin correlation function is then computed as
 \begin{equation}
-    G_\Phi(r, t) = \int d\Omega_k \int \frac{d^2\vb{r}\prime}{L^2}
+    G_\Phi(r, t) = \int d\Omega_k \int \frac{d^2\vb{r}^\prime}{L^2}
     \frac{2}{n^2}\text{Tr}
-    [\langle \mathsf{Q}(\vb{r}\prime)\mathsf{Q}(\vb{r}\prime + \vb{r})\rangle],
+    [\langle \mathsf{Q}(\vb{r}^\prime)\mathsf{Q}(\vb{r}^\prime+\vb{r})\rangle],
 \end{equation}
 where \(\int d\Omega_k\) denotes integration over the k-space angle, whilst
 \(\int d^2\vb{r}'/L^2\) is spatial averaging.
 We perform the same averaging for the mass correlation function.
 
-% \begin{figure}
-%     \begin{subfigure}{\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{
-%             gfx/ch-twoCompDynamics/correlations.pdf}
-%         \caption{\label{fig:correlation-functions}}
-%     \end{subfigure}\\
-%     \begin{subfigure}{0.5\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{
-%             gfx/ch-twoCompDynamics/correlation_lengths.pdf}
-%         \caption{\label{fig:correlation-lengths}}
-%     \end{subfigure}
-%     \begin{subfigure}{0.5\textwidth}
-%         \centering
-%         \includegraphics[height=0.8\textwidth,width=0.8\textwidth]{
-%             gfx/ch-twoCompDynamics/scalar_vortex.pdf}
-%         \caption{\label{fig:scalar-vortex-lengths}}
-%     \end{subfigure}
-%     \caption{\textcolor{red}{Plot size needs fixing. Will split these into
-%             separate plots I think.}}
-% \end{figure}
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{
         gfx/ch-twoCompDynamics/correlation_functions.pdf}
-    \caption{\label{fig: correlation-functions}Correlation functions for the
+    \caption[Mass and spin correlation functions associated with HQV relaxation
+    dynamics]{\label{fig: correlation-functions}Correlation functions for the
     mass (left) and spin (right) parts of a two-component system as functions of
     time for \(\gamma=0.6\).
     As time increases the correlation functions decay over a larger range,
@@ -637,7 +617,9 @@ dynamical scaling.
     \centering
     \includegraphics[width=\textwidth]{
         gfx/ch-twoCompDynamics/two-component-correlation-lengths.pdf}
-    \caption{\label{fig: correlation-lengths}
+    \caption[Mass and spin correlation lengths associated with HQV relaxation
+    dynamics, in addition to inter-vortex spacing in a scalar system]
+    {\label{fig: correlation-lengths}
     (a): Mass and spin correlation
     lengths as a function of time for \(\gamma=0.3,0.6, 0.8\).
     For early-time dynamics, a larger \(\gamma \) is associated with a faster
@@ -672,8 +654,8 @@ number of vortices in the two components.
 In a scalar BEC containing an initially large number of vortices, it has been
 observed that \(\ell_d \sim t^\beta \)~\cite{Karl2017}, where \(\beta \)
 characterizes the annihilation rate of vortices.
-In particular, there were two scaling observed: Firstly, a \(\beta=1/5\) scaling
-after some short period of evolution.
+In particular, there were two distinct \(\beta \) observed: Firstly, a
+\(\beta=1/5\) scaling after some short period of evolution.
 This scaling is included in Fig.~\ref{fig: correlation-lengths}a as a
 comparison.
 Secondly, after a much longer period of evolution, a \(\beta=1/2\) scaling
@@ -685,7 +667,8 @@ Fig.~\ref{fig: correlation-lengths}b is a reproduction of both the early- and
 late-time scaling of the mean vortex distance, \(\ell_d\), for a scalar system
 using the parameters of~\cite{Karl2017}.
 We consider three initial conditions: Firstly, we constructed a grid of vortices
-analogous to our two-component system (see Sec.~\ref{subsec: two-comp-numerical-setup}).
+analogous to our two-component system (see
+Sec.~\ref{subsec: two-comp-numerical-setup}).
 Secondly, we considered a random distribution of vortices; one with noise
 added to the energy spectrum, and one without.
 We see that at early and intermediate times, there is a clear \(t^{1/5}\)
@@ -694,12 +677,13 @@ Furthermore, at late times we recover the \(t^{1/2}\) scaling for all initial
 states.
 This indicates the scaling is robust and insensitive to the initial conditions.
 
+\subsection{Vortex decay rate}
 Motivated by this previous work in scalar BECs, we conduct a similar analysis
 on our two-component system containing HQVs, and determine how \(\gamma \)
 affects the vortex decay rate.
 In particular, we consider the early-time evolution in which
 Fig.~\ref{fig: correlation-lengths}a suggests interesting dynamics.
-\begin{figure}[t!]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/vortex_number.pdf}
     \caption[Vortex decay as a function of time for a system of HQVs for
@@ -720,8 +704,9 @@ Fig.~\ref{fig: correlation-lengths}a suggests interesting dynamics.
         total vortex number as the two-component system.
     }
 \end{figure}
-The total vortex number is plotted in Fig.~\ref{fig: vortex-number} for
-\(\gamma=0.3\), \(\gamma=0.7\), and \(\gamma=0.9\).
+The variation of the total vortex number with time is plotted in
+Fig.~\ref{fig: vortex-number} for \(\gamma=0.3\), \(\gamma=0.7\), and
+\(\gamma=0.9\).
 We see that for \(\gamma=0.3\), the vortex decay rate is mostly consistent
 throughout the evolution, which tends to a \(t^{-2/5}\)
 (\(\ell_d \sim t^{1/5}\)) scaling at later times.
@@ -769,15 +754,17 @@ On the contrary, an exponent of \(z=5\) corresponds to a three-body collision
 process, where three vortices are necessary to facilitate annihilation.
 \begin{figure}[t!]
     \centering
-    \includegraphics{gfx/ch-twoCompDynamics/gamma_vs_expo.pdf}
+    \includegraphics[width=0.85\textwidth]{
+        gfx/ch-twoCompDynamics/gamma_vs_expo.pdf}
     \caption[Critical exponent as a function of \(\gamma \)]
-    {The exponent \( z \) in Eq.~\eqref{eq:vortex-number-scaling} as a
-        function of \(\gamma \).
-        We see that after \(\gamma \gtrsim 0.6\) a rapid decrease of the exponent
-        occurs, signalling a rapid change in vortex
-        dynamics.\label{fig:exponent-vs-gamma}}
+    {\label{fig: exponent-vs-gamma}The exponent \( z \) in
+        Eq.~\eqref{eq:vortex-number-scaling} as a function of \(\gamma \).
+        Here, \(z\) is calculated in the region \(2.5 \times 10^2\xi_d^2 <
+        t/\tau < 2.5\times10^3\xi_d^2\), where early-time dynamics take place.
+        We see that after \(\gamma \gtrsim 0.6\) a rapid decrease of the
+        exponent occurs, signalling a rapid change in vortex dynamics.}
 \end{figure}
-Fig.~\ref{fig:exponent-vs-gamma} shows the exponent, \( z \), as a function of
+Fig.~\ref{fig: exponent-vs-gamma} shows the exponent, \( z \), as a function of
 \(\gamma \) where \( z \) is extracted within the time interval
 \(2.5 \times 10^2\xi_d^2 < t/\tau < 2.5\times10^3\xi_d^2\).
 We see a rapid decrease of the exponent after \(\gamma \gtrsim 0.6\), in which
@@ -791,9 +778,8 @@ Numerous studies have been conducted to try to understand the inter-vortex
 forces between HQVs in two-component systems~\cite{Eto2011, Kasamatsu2016}.
 In particular, Kasamatsu \textit{et al.}~\cite{Kasamatsu2016} tried to derive a
 point vortex model to explain the dynamics shown in
-Fig.~\ref{fig:exponent-vs-gamma}, but found that the model failed to accurately
+Fig.~\ref{fig: exponent-vs-gamma}, but found that the model failed to accurately
 predict the resulting vortex dynamics.
-
 To discern more about the dynamics of these HQVs, we perform analysis similar to
 Ref.~\cite{Kasamatsu2016} and consider the motion of a HQV dipole.
 As a simple test case, I consider two HQVs of opposite winding within the same
@@ -805,27 +791,7 @@ the motion of the dipole.
 
 \begin{figure}
     \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-                width=10cm,height=7.5cm,
-                xmin=-3,xmax=3,ymin=0,ymax=5,
-                xlabel={\(x/a_s\)},
-                ylabel={\(y/a_s\)},
-            ]
-            \addplot[only marks,blue,mark=square,samples=50, domain=-1.0:1.0]
-            {-2*x^2 + 2};
-            \addplot[only marks,red,mark=triangle,samples=50, domain=-1.0:1.0]
-            {-4*x^2 + 4};
-            \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
-            ({-1}, {5 * x});
-            \addplot[only marks, orange,mark=diamond,samples=50, domain=-1.0:1.0]
-            ({1}, {5 * x});
-
-            \addlegendentry{$\gamma = 0.8$}
-            \addlegendentry{$\gamma = 0.6$}
-            \addlegendentry{$\gamma = 0.3$}
-        \end{axis}
-    \end{tikzpicture}
+    \includegraphics{gfx/ch-twoCompDynamics/HQV-dipole-dynamics.pdf}
     \caption[Schematic representation of dipole motion for various \(\gamma \)]
     {\label{fig: HQV-dipole-motion}Pictorial representation of the
         motion of HQV dipoles in a two-component condensate, where the dipole is
@@ -847,3 +813,52 @@ vortices.
 The strength of \(\gamma \) also determines the rate at which the vortices
 annihilate, as seen by the largest \(\gamma \) tested, which shows the
 annihilation happening over a shorter length scale.
+
+\section{Conclusions}
+In this chapter we have investigated the relaxation dynamics of HQVs in a
+two-dimensional, two-component BEC\@.
+After detailing the numerical set up, we first investigated the spatial aspects
+of the relaxation dynamics.
+In particular, we investigated the kinetic energy spectrum by splitting it
+into incompressible, compressible, and quantum pressure parts.
+We found that the kinetic energy spectrum exhibits two different scaling in the
+infrared and ultraviolet regions.
+The former had a scaling of \(k^{-2}\), whilst the latter had \(k^{-4}\).
+The splitting of the spectrum into its constituent parts revealed that the
+transition to the \(k^{-2}\) scaling was due to the incompressible component,
+whilst the \(k^{-4}\) arose due to the compressible component.
+Similar scaling has been observed in scalar BEC systems containing scalar
+vortices~\cite{Nowak2012}.
+This shows that, despite being an entirely different class of vortex, relaxation
+dynamics of HQVs exhibit similar spatial aspects to those observed in scalar
+systems with scalar vortices
+
+After considering the spatial aspects, we then considered the temporal aspects
+of the relaxation dynamics.
+We started with investigating the correlation functions, for which we
+constructed both a mass and spin part.
+It was revealed that the correlation functions extended over larger regions as
+time increased, which indicates long-range order within our systems.
+We also showed our system exhibits dynamical scaling, by showing that the
+correlation functions collapsed to a universal, time-independent function when
+scaled by the appropriate correlation length.
+Investigations into these correlation lengths suggested anomalous early-time
+dynamics was taking part.
+It was revealed that the correlation lengths had a faster initial growth for
+larger \(\gamma \), but at late times all correlation lengths scaled as
+\(t^{1/5}\).
+
+Motivated by the previous scalar BEC work in~\cite{Karl2017}, we investigated
+the decay rate of the vortices.
+We showed that for sufficiently high \(\gamma \gtrsim 0.6\) the vortices had an
+increasingly steeper decay rate at early times, which then tended to a universal
+\(t^{-2/5}\) at late times in all \(\gamma \) tested.
+We tested this theory further by modelling the vortex decay rate as a simple
+kinetic-like equation, for which we then manually extracted the scaling of
+the total vortex number.
+Plotting the exponent of the scaling against \(\gamma \) confirmed that after
+\(\gamma \sim 0.6\) there is a rapid increase the exponent, and therefore the
+decay rate of the vortices.
+Finally, we presented a pictorial representation of HQV dipoles in motion,
+showing that the motion is vastly different for the HQVs when
+\(\gamma \gtrsim 0.6\).
