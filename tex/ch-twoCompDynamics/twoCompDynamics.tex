@@ -296,7 +296,7 @@ Similar energetic hierarchies exist in spinor BECs, which can facilitate
 deformations of vortex cores such as the splitting of singly quantised vortices
 into fractional vortices~\cite{Seo2015}.
 
-\subsection{Numerical setup}\label{sec:numerical-setup}
+\subsection{Numerical setup}\label{subsec: two-comp-numerical-setup}
 Our numerical setup is as follows.
 We solve Eq.~\eqref{eq: dimensionless-two-comp-GPEs} on a periodic domain with
 \(N_s^2=1024^2\) grid points which has dimensionless area \(L^2=N_s^2\) with
@@ -685,7 +685,7 @@ Fig.~\ref{fig: correlation-lengths}b is a reproduction of both the early- and
 late-time scaling of the mean vortex distance, \(\ell_d\), for a scalar system
 using the parameters of~\cite{Karl2017}.
 We consider three initial conditions: Firstly, we constructed a grid of vortices
-analogous to our two-component system (see Sec.~\ref{sec:numerical-setup}).
+analogous to our two-component system (see Sec.~\ref{subsec: two-comp-numerical-setup}).
 Secondly, we considered a random distribution of vortices; one with noise
 added to the energy spectrum, and one without.
 We see that at early and intermediate times, there is a clear \(t^{1/5}\)
@@ -699,17 +699,28 @@ on our two-component system containing HQVs, and determine how \(\gamma \)
 affects the vortex decay rate.
 In particular, we consider the early-time evolution in which
 Fig.~\ref{fig: correlation-lengths}a suggests interesting dynamics.
-\begin{figure}
+\begin{figure}[t!]
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/vortex_number.pdf}
-    \caption[Total vortex number as a function of time]
-    {Total vortex number as a function of time for
+    \caption[Vortex decay as a function of time for a system of HQVs for
+    different \(\gamma \)]
+    {\label{fig: vortex-number}Total vortex number as a function of time for
         \(\gamma=0.3,0.7,0.9\) (red circles).
         Larger \(\gamma \) leads to a faster decay rate of vortices at
         early times due to the rapid annihilation of opposite-signed vortices
-        within the same component.\label{fig:vortex-number}}
+        within the same component.
+        Despite vastly different early-time dynamics, the vortex decay rates
+        tend to a universal \(t^{-2/5}\) at late times.
+        For comparison the vortex decay rate of a scalar system is shown
+        (black circles).
+        This system is set up using the grid method as defined in
+        Sec.~\ref{subsec: two-comp-numerical-setup}, with \(48^2\) vortices in
+        total.
+        Note that the black line is multiplied by two to have it be the same
+        total vortex number as the two-component system.
+    }
 \end{figure}
-The total vortex number is plotted in Fig.~\ref{fig:vortex-number} for
+The total vortex number is plotted in Fig.~\ref{fig: vortex-number} for
 \(\gamma=0.3\), \(\gamma=0.7\), and \(\gamma=0.9\).
 We see that for \(\gamma=0.3\), the vortex decay rate is mostly consistent
 throughout the evolution, which tends to a \(t^{-2/5}\)
@@ -728,7 +739,7 @@ Fig.~\ref{fig: correlation-lengths}.
 This further suggests that \(L_{\Phi,\Theta}\) differs slightly from \(\ell_d\),
 even though the growth of the correlation lengths is driven by vortex
 annihilation.
-Fig.~\ref{fig:vortex-number} only extends up to \(t/\tau=5\times 10^4\xi_d^2\),
+Fig.~\ref{fig: vortex-number} only extends up to \(t/\tau=5\times 10^4\xi_d^2\),
 and we expect to see a universal transition to
 \(N_\mathrm{vort}\sim t^{-1}\) (\(\ell_d\sim t^{1/2}\)) at much later times for
 sufficiently small \(\gamma \).
@@ -770,7 +781,7 @@ Fig.~\ref{fig:exponent-vs-gamma} shows the exponent, \( z \), as a function of
 \(\gamma \) where \( z \) is extracted within the time interval
 \(2.5 \times 10^2\xi_d^2 < t/\tau < 2.5\times10^3\xi_d^2\).
 We see a rapid decrease of the exponent after \(\gamma \gtrsim 0.6\), in which
-Fig.~\ref{fig:vortex-number} shows the rapid annihilation of vortices is
+Fig.~\ref{fig: vortex-number} shows the rapid annihilation of vortices is
 prevalent.
 The decrease of the exponent in our simulations signals an additional vortex
 interaction mechanism not present in scalar BEC systems.
