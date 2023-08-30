@@ -104,12 +104,12 @@ ax.loglog(
 )
 
 ax.loglog(
-    time[30:], 5.2 * time[30:] ** (1 / 5), "k--", label=r"$t^{1/5}$"
+    time[30:], 5.2 * time[30:] ** (1 / 5), "k:", label=r"$t^{1/5}$", linewidth=3
 )
-ax.loglog(time[30:], 8.5 * time[30:] ** (1 / 5), "k--")
+ax.loglog(time[30:], 8.5 * time[30:] ** (1 / 5), "k:", linewidth=3)
 ax.legend(loc="upper left", ncol=1, fontsize=13.2)
 plt.tight_layout()
 plt.savefig(
-    "gfx/ch-twoCompDynamics/correlation_lengths.pdf", bbox_inches="tight"
+    "../thesis_tikz/gfx/correlation_lengths.pdf", bbox_inches="tight"
 )
 plt.show()
