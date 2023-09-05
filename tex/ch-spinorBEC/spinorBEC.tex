@@ -2,83 +2,101 @@
 
 In this chapter we provide the theoretical background necessary to understand
 the dynamics of ultracold atomic gases.
-We start by introducing the most simple form of a Bose-Einstein condensate,
-the scalar condensate.
+We begin by introducing the most simple form of a BEC, the scalar condensate.
 This lays the framework for building to more complex systems.
 We then go on to discuss the two-component condensate, where additional
 interactions arise between atoms of differing components.
 Finally, we construct the framework needed to understand spinor BECs, which is
 the main basis of this thesis.
 
-\section{Scalar Bose-Einstein condensates}
-\subsection{Mean-field description}
-A system of \(N\) particles interacting through binary collisions is described
-by an \(N\)-body Schr\"{o}dinger equation, given as
-\begin{equation}
-    i\hbar \pdv{}{t}\Psi(\vb{r}_1;\ldots;\vb{r}_N, t) =
-    \hat{H}_N\Psi(\vb{r}_1;\ldots;\vb{r}_N, t),
-\end{equation}
-where the \(N\)-body Hamiltonian operator is given by
-\begin{equation}
-    \hat{H}_N = -\sum_i \frac{\hbar^2}{2m}\nabla_i^2
-    + \sum_{i \neq j}V(\vb{r}_i - \vb{r}_j).
-\end{equation}
-The first sum of the above equation represents the kinetic energy operator,
-whilst the second describes the two-body potential operator.
-This description, however, becomes unwieldy when trying to model the number of
-particles associated with typical BEC experiments.
-
-Instead, we model the system using a mean-field theory, in which we make two
-assumptions.
-Firstly, the dilute nature of a BEC justifies that any binary interaction
-between two particles at positions \(\vb{r}_1, \vb{r}_2\) takes the form of
+\section{Mean-field description of scalar condensates}
+Consider a system of bosons which is dilute enough such that we may approximate
+interactions between bosons as two-body interactions only.
+Such a system is described by the Hamiltonian~\cite{Pethick2008}
+\begin{align}\label{eq: scalar-hamiltonian}
+    \hat{H} = \hat{H}_0 + \hat{H}_I,
+\end{align}
+where \(\Psi(\vb{r}, t)\) is the field operator that annihilates a boson at
+position \(\vb{r}\) at time \(t\).
+Here, \(\hat{H}_0\) is the single-particle Hamiltonian:
+\begin{align}
+    \hat{H}_0 = \int \hat{\Psi}^\dagger(\vb{r}, t)\left[
+        -\frac{\hbar^2\nabla^2}{2m} + V(\vb{r}, t)
+    \right]\hat{\Psi}(\vb{r}, t)\, \dd^3\vb{r},
+\end{align}\
+where the first term represents the kinetic energy operator and \(V(\vb{r}, t)\)
+is a trapping potential.
+Additionally, \(\hat{H}_I\) represents the interacting part of the Hamiltonian,
+which describes binary collisions between bosons at positions \(\vb{r}_1\) and
+\(\vb{r}_2\) whose interactions are described by the interaction potential
+\(\mathcal{U}(\vb{r}_1 - \vb{r}_2)\):
+\begin{align}
+    \hat{H}_I = \int \int \Psi^\dagger(\vb{r}_1, t)\Psi^\dagger(\vb{r}_2, t)
+    \mathcal{U}(\vb{r}_1 - \vb{r}_2)\Psi(\vb{r}_2, t)\Psi(\vb{r}_1, t)
+    \, \dd^3\vb{r}_1 \, \dd^3\vb{r}_2.
+\end{align}
+The dilute nature of the BEC justifies that any binary interaction
+between two particles at positions \(\vb{r}_1, \vb{r}_2\) can be approximated by
 a contact interaction modelled by the following delta function:
 \begin{equation}
-    V(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
+    \mathcal{U}(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
 \end{equation}
-where \(g\) represents an interaction coefficient.
-Secondly, we assume that, for sufficiently low temperatures, the system
-undergoes Bose-Einstein condensation, and all particles of
-the system occupy the same quantum state.
-This implies that each particle is described by the same single-particle wave
-function and hence the system can be described by a macroscopic wave function
-\(\psi(\vb{r}, t)\) for position \(\vb{r}\) and time \(t\).
-Additionally, the field \(\psi \) is scalar since each particle shares the same
-phase and quantum state.
-This approximation is only valid in the limit of zero temperature, where there
-are no particles contributing to thermal or quantum fluctuations beyond the
-classical field.
+where the interaction coefficient, \(g\), is coupled to the s-wave scattering
+length, \(a_s\), as
+\begin{align}
+    g = \frac{4\pi\hbar^2a_s}{m},
+\end{align}
+for a boson with atomic mass \(m\).
 
 \subsection{The Gross-Pitaevskii equation}
-The preceding assumptions form the basis of constructing the underlying equation
-that governs the dynamics of Bose-Einstein condensate systems: the
-Gross-Pitaevskii equation (GPE):
+The Heisenberg picture states that the time evolution for the field operator
+\(\hat{\Psi}(\vb{r}, t)\) is given by~\cite{Pethick2008}
+\begin{align}
+    i\hbar\pdv{\hat{\Psi}(\vb{r}, t)}{t} = \left[\hat{H}, \hat{\Psi}(\vb{r}, t)
+    \right],
+\end{align}
+which, using Eq.~\eqref{eq: scalar-hamiltonian}, is calculated to be
+\begin{align}\label{eq: scalar-field-operator-motion}
+    i\hbar\pdv{\hat{\Psi}(\vb{r}, t)}{t} = \left[-\frac{\hbar^2\nabla^2}{2m}
+    + V(\vb{r}, t)\right]\hat{\Psi}(\vb{r}, t)
+    + g\hat{\Psi}^\dagger(\vb{r}, t)\hat{\Psi}(\vb{r}, t)\hat{\Psi}(\vb{r}, t).
+\end{align}
+Now, since we consider a system close to absolute zero, we make the assumption
+that most atoms occupy the same quantum state, and hence we can decompose the
+field operator into a mean and fluctuation parts as
+\begin{align}
+    \hat{\Psi}(\vb{r}, t) = \psi(\vb{r}, t) + \hat{\delta}(\vb{r}, t),
+\end{align}
+where \(\psi \equiv \langle \hat{\Psi}(\vb{r}, t)\rangle\) is a scalar field
+denoted the wave function of the condensate, which describes the
+spatially-coherent condensed state.
+Here, \(\hat{\delta}(\vb{r}, t)\) describes deviations from this mean and
+\(\langle \hat{\delta}(\vb{r}, t)\rangle = 0\).
+Substituting the above form of the field operator into
+Eq.~\eqref{eq: scalar-field-operator-motion}, taking the expectation and
+ignoring terms of \(\delta^2\) or higher yields the equation of motion for the
+wave function for a Bose-Einstein condensate, the Gross-Pitaevskii equation
+(GPE):
 \begin{equation}\label{eq: scalar-GPE}
     i\hbar \pdv{\psi(\vb{r}, t)}{t} = \left(-\frac{\hbar^2}{2m}\nabla^2
-    + V(\vb{r}, t) +g|\psi(\vb{r}, t)|^2\right)\psi(\vb{r}, t),
+    + V(\vb{r}, t) +g|\psi(\vb{r}, t)|^2\right)\psi(\vb{r}, t).
 \end{equation}
-where \(V(\vb{r}, t)\) is a trapping potential.
+Neglecting the fluctuation terms is only valid when considering a system at zero
+temperature, where there are no particles contributing to thermal or quantum
+fluctuations beyond the classical field.
 
-The first two terms on the right-hand side describe the energy of a single
-particle in an external potential.
-The third term accounts for the interactions within the condensate, where
-\(g=4\pi \hbar^2a_s/m\) is the interaction strength of the condensate for
-s-wave scattering length \(a_s\) and atomic mass \(m\).
 For \(g>0\) the interactions are repulsive and for \(g < 0\) attractive.
 When \(g=0\) there are no interactions present and the system reduces to the
 Schr\"{o}dinger equation.
-
 The wave function of the system is normalised to the number of particles
 \begin{equation}
-    \int |\psi(\vb{r}, t)|^2 d\vb{r} = N.
+    \int |\psi(\vb{r}, t)|^2 \, \dd^3\vb{r} = N,
 \end{equation}
-The total mass of the condensate is given as \(M=mN\), where \(N\) is provided
-by the above normalisation condition.
-
-The energy of the system is
+which remains conserved under the GPE\@.
+Finally, the total energy of the system is given by
 \begin{equation}
-    E = \int d^3\vb{r} \left[\frac{\hbar^2}{2m}|\nabla\psi|^2
-        + V|\psi|^2 + \frac{g}{2}|\psi|^4\right]
+    E = \int  \left[\frac{\hbar^2}{2m}|\nabla\psi|^2
+        + V|\psi|^2 + \frac{g}{2}|\psi|^4\right] \, \dd^3\vb{r}
     = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
 \end{equation}
 where \(E_\mathrm{kin}, E_\mathrm{pot}\) and \(E_\mathrm{int}\) describes the
@@ -96,21 +114,22 @@ The coupled GPEs are given as
         i\hbar \pdv{\psi_1(\vb{r}, t)}{t} & =
         \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r}, t)
             + g_1|\psi_1(\vb{r}, t)|^2
-        + g_{12}|\psi_2(\vb{r}, t)|^2\right]\psi_1(\vb{r}, t) \\
+        + g_{12}|\psi_2(\vb{r}, t)|^2\right]\psi_1(\vb{r}, t), \\
         i\hbar \pdv{\psi_2(\vb{r}, t)}{t} & =
         \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r}, t)
             + g_2|\psi_2(\vb{r}, t)|^2
             + g_{12}|\psi_1(\vb{r}, t)|^2\right]\psi_2(\vb{r}, t),
     \end{aligned}
 \end{equation}
-where \(\psi_j(\vb{r}, t)\) describes component \(j\) with atomic mass \(m_j\)
-for \(j=1, 2\) and \(V(\vb{r}, t)\) is an external trapping potential.
-Additionally, the interaction terms are given as
+where \(\psi_j(\vb{r}, t)\) corresponds to the wave function of component \(j\)
+with atomic mass \(m_j\) for \(j=1, 2\), and \(V_j(\vb{r}, t)\) is an external
+trapping potential.
+Additionally, the interaction terms are given by
 \begin{equation}
     g_j = \frac{4\pi \hbar^2a_j}{2m_j}, \qquad
     g_{12} = g_{21} = \frac{2\pi\hbar^2(m_1+m_2)a_{12}}{m_1m_2},
 \end{equation}
-which describe the intra-species and inter-species interaction strengths,
+which describe the intraspecies and interspecies interaction strengths,
 respectively.
 Similar to the scalar case, the wave function of each component is normalised
 to the number of atoms of that component
@@ -219,7 +238,7 @@ is
     \frac{N_1N_2}{V}
 \end{equation}
 Therefore, the condition \(g_{12} > \sqrt{g_1g_2}\) reveals that for large
-enough inter-species interactions the system favours an immiscible phase
+enough interspecies interactions the system favours an immiscible phase
 over a miscible one.
 This criterion only depends on the interactions within the system, and is not
 affected by condensate particle numbers or size.
