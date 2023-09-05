@@ -137,15 +137,15 @@ to the number of atoms of that component
     \int |\psi_j|^2 d^3\vb{r} = N_j.
 \end{equation}
 
-The time-independent GPEs are obtained through the substitution
-\(\psi_j(\vb{r}, t)=\psi_j(\vb{r})e^{-i\mu_j t/\hbar}\) in
+The time-independent GPEs can be obtained by making the following substitution
+of the wave function \(\psi_j(\vb{r}, t)=\psi_j(\vb{r})e^{-i\mu_j t/\hbar}\) in
 Eq.~\eqref{eq: two-component-GPEs}, yielding
 \begin{equation}\label{eq: time-indep-two-component-GPEs}
     \begin{aligned}
         \mu_1\psi_1(\vb{r}) & =
         \left[-\frac{\hbar^2}{2m_1}\nabla^2 + V_1(\vb{r})
             + g_1|\psi_1(\vb{r})|^2
-        + g_{12}|\psi_2(\vb{r})|^2\right]\psi_1(\vb{r}) \\
+        + g_{12}|\psi_2(\vb{r})|^2\right]\psi_1(\vb{r}), \\
         \mu_2\psi_2(\vb{r}) & =
         \left[-\frac{\hbar^2}{2m_2}\nabla^2 + V_2(\vb{r})
             + g_2|\psi_2(\vb{r})|^2
@@ -153,44 +153,41 @@ Eq.~\eqref{eq: two-component-GPEs}, yielding
     \end{aligned}
 \end{equation}
 where \(\mu_j\) is the chemical potential of component \(j\).
-
 The total energy of the two-component system is composed of the contributions
 from each component as
 \begin{equation}
     \begin{aligned}
         E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
-        + V_1|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] d^3\vb{r}   \\
+        + V_1(\vb{r})|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] \dd^3\vb{r} \\
           & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
-        + V_2|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] d^3\vb{r}   \\
-          & + \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] d^3\vb{r}.
+        + V_2(\vb{r})|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] \dd^3\vb{r} \\
+          & + \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] \dd^3\vb{r}.
     \end{aligned}
 \end{equation}
 
 \subsection{Miscible and immiscible regimes}
-Two-component condensates can either be miscible or immiscible, depending on
+Two-component condensates can be either miscible or immiscible, depending on
 the interactions present within the system.
 Here, we derive the immiscibility criterion for two-component condensates
 following the procedure in Ref.~\cite{Ao1998}.
-
-We start by assuming, for simplicity, a square-well trapping potential with
-\(V(\vb{r}) = 0\) inside the well and setting \(V\) to be infinitely large
-outside.
-Assuming a stationary solution and hence neglecting the kinetic energy
-terms, Eq.~\eqref{eq: time-indep-two-component-GPEs} reduce to
+We start by assuming, for simplicity, a BEC in the absence of a trapping
+potential such that \(V_1(\vb{r}) = V_2(\vb{r}) = 0\).
+Assuming a homogeneous stationary solution where the kinetic energy terms can
+be neglected, Eq.~\eqref{eq: time-indep-two-component-GPEs} reduces to
 \begin{equation}
     \begin{aligned}
         \mu_1 & = g_1|\psi_1|^2 + g_{12}|\psi_2|^2, \\
         \mu_2 & = g_2|\psi_2|^2 + g_{12}|\psi_1|^2.
     \end{aligned}
 \end{equation}
-
-Inside the trap the densities of each component can be re-written as
-\(n_j=N_j/V\), where \(V\) is the volume of the condensate.
+Let us consider a miscible regime, where, inside the trap, the densities of each
+component can be re-written as \(n_j=N_j/\mathcal{V}\), where \(\mathcal{V}\) is
+the volume of the condensate.
 The above equations then reduce to \(g_1n_1 + g_{12}n_2 = \mu_1\) and
 \(g_2n_2 + g_{12}n_1 = \mu_2\), and the energy becomes
 \begin{equation}
-    E_\mathrm{misc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
-        + 2g_{12}\frac{N_1N_2}{V}\right].
+    E_\mathrm{misc} = \frac{1}{2}\left[g_1\frac{N_1^2}{\mathcal{V}}
+    + g_2\frac{N_2^2}{\mathcal{V}} + 2g_{12}\frac{N_1N_2}{\mathcal{V}}\right].
 \end{equation}
 Provided \(g_{12}\) is small enough, any variation to this state will increase
 the system energy, implying that this state is stable.
@@ -199,43 +196,46 @@ a state with a lower energy.
 
 Let us consider an immiscible regime, where the two condensates do not spatially
 overlap.
-The volume of condensate \(j\) is given as \(V_j\) and the densities
-subsequently become \(n_j=N_j/V_j\).
-Eqs.~\eqref{eq: time-indep-two-component-GPEs} become \(g_j n_j = \mu_j\) with
-total energy
+The volume of condensate \(j\) is given as \(\mathcal{V}_j\) and the densities
+subsequently become \(n_j=N_j/\mathcal{V}_j\).
+Assuming that the contribution to the energy arising from the interface between
+the two condensates is negligible in comparison to the contribution from the
+bulk, Eqs.~\eqref{eq: time-indep-two-component-GPEs} become \(g_j n_j = \mu_j\)
+with the total energy
 \begin{equation}\label{eq: immiscible-energy}
-    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V_1}
-        + g_2\frac{N_2^2}{V_2}\right].
+    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{\mathcal{V}_1}
+        + g_2\frac{N_2^2}{\mathcal{V}_2}\right].
 \end{equation}
-Minimising the above energy with respect to \(V_1\) or \(V_2\) with
-\(V=V_1+V_2\) results in the expressions for the volume of each component
+Minimising the above energy with respect to \(\mathcal{V}_1\) or
+\(\mathcal{V}_2\) with \(\mathcal{V}=\mathcal{V}_1+\mathcal{V}_2\) results in
+the expressions for the volume of each component
 \begin{equation}
-    V_1 = \frac{1}{1 + \sqrt{g_2/g_1}(N_2/N_1)}V,
+    \mathcal{V}_1 = \frac{1}{1 + \sqrt{g_2/g_1}(N_2/N_1)}\mathcal{V},
 \end{equation}
 \begin{equation}
-    V_2 = \frac{1}{1 + \sqrt{g_1/g_2}(N_1/N_2)}V.
+    \mathcal{V}_2 = \frac{1}{1 + \sqrt{g_1/g_2}(N_1/N_2)}\mathcal{V}.
 \end{equation}
 The corresponding densities then become
 \begin{equation}
     \begin{aligned}
         n_1 = \left(1 + \sqrt{\frac{g_2}{g_1}}\frac{N_2}{N_1}\right)
-        \frac{N_1}{V},
+        \frac{N_1}{\mathcal{V}}, \quad
         n_2 = \left(1 + \sqrt{\frac{g_1}{g_2}}\frac{N_1}{N_2}\right)
-        \frac{N_2}{V}.
+        \frac{N_2}{\mathcal{V}}.
     \end{aligned}
 \end{equation}
 Substituting the above densities into the expression for the total energy
 in Eq.~\eqref{eq: immiscible-energy} yields
 \begin{equation}
-    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{V} + g_2\frac{N_2^2}{V}
-        + 2\sqrt{g_1g_2}\frac{N_1N_2}{V}\right].
+    E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{\mathcal{V}}
+    + g_2\frac{N_2^2}{\mathcal{V}}
+    + 2\sqrt{g_1g_2}\frac{N_1N_2}{\mathcal{V}}\right],
 \end{equation}
-
-The difference between the energies of the miscible and immiscible phases
-is
+and the difference between the energies of the miscible and immiscible phases is
+subsequently calculated as
 \begin{equation}
     \Delta E = E_\mathrm{misc} - E_\mathrm{immisc} = (g_{12} - \sqrt{g_1g_2})
-    \frac{N_1N_2}{V}
+    \frac{N_1N_2}{\mathcal{V}}.
 \end{equation}
 Therefore, the condition \(g_{12} > \sqrt{g_1g_2}\) reveals that for large
 enough interspecies interactions the system favours an immiscible phase
