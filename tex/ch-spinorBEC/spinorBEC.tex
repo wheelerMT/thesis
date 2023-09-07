@@ -75,7 +75,7 @@ Here, \(\hat{\delta}(\vb{r}, t)\) describes deviations from this mean and
 Substituting the above form of the field operator into
 Eq.~\eqref{eq: scalar-field-operator-motion}, taking the expectation and
 ignoring terms of \(\delta^2\) or higher yields the equation of motion for the
-wave function for a Bose-Einstein condensate, the Gross-Pitaevskii equation
+wave function of a Bose-Einstein condensate, the Gross-Pitaevskii equation
 (GPE):
 \begin{equation}\label{eq: scalar-GPE}
     i\hbar \pdv{\psi(\vb{r}, t)}{t} = \left(-\frac{\hbar^2}{2m}\nabla^2
@@ -95,8 +95,9 @@ The wave function of the system is normalised to the number of particles
 which remains conserved under the GPE\@.
 Finally, the total energy of the system is given by
 \begin{equation}
-    E = \int  \left[\frac{\hbar^2}{2m}|\nabla\psi|^2
-        + V|\psi|^2 + \frac{g}{2}|\psi|^4\right] \, \dd^3\vb{r}
+    E = \int  \left[\frac{\hbar^2}{2m}|\nabla\psi(\vb{r}, t)|^2
+        + V(\vb{r}, t)|\psi(\vb{r}, t)|^2 + \frac{g}{2}|\psi(\vb{r}, t)|^4
+        \right] \, \dd^3\vb{r}
     = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
 \end{equation}
 where \(E_\mathrm{kin}, E_\mathrm{pot}\) and \(E_\mathrm{int}\) describes the
@@ -254,28 +255,127 @@ phases for \(g_1=1\) in a parameter space of \(g_2, g_{12}\).
 
 
 \section{Spinor Bose-Einstein condensates}
-Spinor systems comprise particles with total spin \(f\).
-This implies there are \(2f + 1\) possible spin states along a given spin
+Spinor systems are comprised of particles with total spin \(f\).
+This implies that there are \(2f + 1\) possible spin states along a given spin
 quantisation axis.
 Such a state is denoted \(\ket{f, m} \), where
 \(m \in \{-f, -f+1, \ldots, 0, \ldots, f - 1, f\} \) denotes the magnetic
-sublevel for total spin \( f\).
-
+sublevel for an atom with total spin \( f\).
 A general spin-\(f\) state is described by the (\(2f+1\))-component wave
 function \(\psi \), defined as \(\ket{\psi} = \sum_m\psi_m\ket{f, m}\).
 In the spin-1 case, we have \(\psi = {(\psi_1, \psi_0, \psi_{-1})}^T\), and for
 the spin-2 case \(\psi = {(\psi_2, \psi_1, \psi_0, \psi_{-1}, \psi_{-2})}^T\).
+To construct the relevant spinor Hamiltonians we follow the methodology in
+Refs~\cite{Ho1998,Ohmi1998,Kawaguchi2012,Stamper-Kurn2013} and make the
+following assumptions: We assume only elastic and binary collisions between
+atoms, implying that the total spin is conserved, as well as low incident
+collision energy so that only s-wave scattering is observed.
+Additionally, we assume no spin-orbit coupling and no mixing of
+hyperfine states.
 
-Two identical spin-\(f\) bosons (atoms with integer spin) can collide to form a
-total spin of \(\EuScript{F} = 0, 2, \ldots, 2f\) depending on the orientation
-of the particles, with \(\EuScript{M} \equiv m+m' \in
-\{-\EuScript{F}, \ldots, \EuScript{F}\} \).
-In the s-wave scattering limit, where the orbital angular momentum is zero,
-the total spin of two interacting particles must be even.
-Due to the rotational symmetry, the scattering lengths depend only on the total
-spin \(\EuScript{F}\), implying there are \(f + 1\) different scattering lengths
-\(a_0, a_2, \ldots, a_{2f}\).
+\subsection{Single-particle Hamiltonian}
+When a magnetic field is applied to a spinor system, the field causes energy
+shifts in the spin components.
+When this field is aligned along the spin quantisation axis, linear, \(p\), and
+quadratic, \(q\), Zeeman shifts arise.
+In such a case, the single-particle (non-interacting) Hamiltonian is given
+by~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: single-particle-Hamiltonian}
+    H_0 = \int \sum_{m,m'=-f}^{f} \psi_m^\dagger \left[
+        -\frac{\hbar^2}{2M}\nabla^2 + V(\vb{r})
+        - pm + qm^2\right]\psi_{m'} \, \dd^3\vb{r},
+\end{equation}
+where \(V(\vb{r})\) is a trapping potential.
+Throughout most of this thesis we assume that the magnetic field applied is
+uniform, such that the Zeeman shifts are constant.
+In Chapter~\ref{chap: spin-1}, however, we introduce a time-dependent field
+such that the quadratic Zeeman shift has a time-dependence.
+Despite the time-dependence, the quadratic Zeeman shift is still spatially
+uniform.
+It becomes apparent from Eq.~\eqref{eq: single-particle-Hamiltonian} that the
+quadratic shift uniformly alters the energetic separation between the
+\(\psi_{\pm 1}\) and \(\psi_0\) components.
+Conversely, the linear shift maintains the separation.
 
+\subsection{Contributions from spin-channels}
+Collisions between two incoming spin-\(f\) atoms in magnetic sublevels \(m\)
+and \(m'\) can undergo spin-exchange interactions, where the outgoing particles
+can now be in entirely different magnetic sublevels.
+In the case of s-wave scattering, where the orbital angular momentum is zero,
+the total spin \(\EuScript{M} \equiv m + m'\) is conserved~\cite{Kawaguchi2012}.
+For example, collisions between two spin-1 atoms located in sublevels \(m=1\)
+and \(m'=-1\) must collide to form \(\EuScript{M} = 0\), implying that the only
+allowed exchange is:
+\begin{align}
+    (1, -1) \leftrightarrows (0, 0).
+\end{align}
+
+In general, a collision between two spin-\(f\) atoms can combine to have a total
+spin \(\EuScript{F} \in \{0, 1, \ldots, 2f\}\) and
+\(\EuScript{M} \equiv m + m' \in \{-\EuScript{F}, \ldots, \EuScript{F}\}\).
+In the s-wave scattering limit, the total spin \(\EuScript{F}\) of two colliding
+atoms must be a multiple of \(2f\), i.e., \(\EuScript{F} \in
+\{0, 2, \ldots, 2f\}\), since the wave function must remain symmetric under the
+exchange of the two atoms~\cite{Pethick2008}.
+The total interaction Hamiltonian is then constructed as a sum of each
+contribution from individual spin channels as~\cite{Kawaguchi2012}
+\begin{align}
+    \hat{H}_i = \sum_{\EuScript{F}=0, 2, \ldots 2f} \hat{V}^{(\EuScript{F})},
+\end{align}
+where \(\hat{V}^{(\EuScript{F})}\) is the interaction Hamiltonian between two
+atoms with total spin \(\EuScript{F}\), which is given as
+\begin{align}\label{eq: spin-channel-hamiltonian-full-form}
+    \hat{V}^{(\EuScript{F})} = \frac{1}{2}\int\int
+    \mathcal{U}^{(\EuScript{F})}(\vb{r}_1-\vb{r}_2)
+    \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
+    \hat{\alpha}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2)
+    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) \,
+    \dd^3\vb{r}_1\dd^3\vb{r}_2,
+\end{align} 
+where \(\mathcal{U}^{(\EuScript{F})}\) describes the interaction potential
+between two particles with total spin \(\EuScript{F}\).
+Here, \(\hat{\alpha}_{\EuScript{F}\EuScript{M}}\) are projection operators
+that project two spin-\(f\) particles with total component \(\EuScript{M}\)
+onto total spin \(\EuScript{F}\) and component \(\EuScript{M}\).
+They are defined, explicitly, as
+\begin{align}
+    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) =
+    \hat{\Psi}^T\mathcal{A}_{\EuScript{F}\EuScript{M}}\hat{\Psi},
+\end{align}
+where \(\mathcal{A}_{\EuScript{F}\EuScript{M}}\) are matrices of
+Clebsch-Gordon coefficients which couple individual spins of atoms together
+to describe them using the total spin \(\EuScript{F}\):
+\begin{align}
+    {\left(\mathcal{A}_{\EuScript{F}\EuScript{M}}\right)}_{m,m'} =
+    \braket{\EuScript{F}; \EuScript{M}}{f, m; f, m'}.
+\end{align}
+
+Since we are assuming binary collisions, we can make an assumption similar to
+the scalar case and model the interactions by a contact potential of the
+following form:
+\begin{align}
+    \mathcal{U}^{(\EuScript{F})} = g_\EuScript{F}\delta(\vb{r}_1-\vb{r}_2),
+\end{align}
+where \(g_\EuScript{F}\) is an interaction coefficient related to the s-wave
+scattering length of the total spin-\(\EuScript{F}\), \(a_\EuScript{F}\), as
+\begin{align}
+    g_\EuScript{F} = \frac{4\pi\hbar^2a_\EuScript{F}}{2M},
+\end{align}
+for atomic mass \(M\).
+This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
+\begin{align}
+    \hat{V}^{(\EuScript{F})} = \frac{g_\EuScript{F}}{2}\int
+    \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
+    \hat{\alpha}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r})
+    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}) \,
+    \dd^3\vb{r}.
+\end{align}
+
+\subsection{Spin matrices, spin-singlets and nematic tensors}
+Before we construct the full spinor interaction Hamiltonian, it is useful to
+define some operator relations.
+
+\subsection{Spinor interaction Hamiltonian}
 In a spinor BEC, the effective contact interaction is generalised to include
 contributions from all spin channels as
 \begin{equation}\label{eq: spin-f-interaction-potential}
@@ -398,30 +498,6 @@ For \(c_2 > 0\), it becomes energetically favourable to minimise the
 spin-singlet amplitude, i.e., \(|A_{20}|^2 = 0\).
 Conversely, for interactions where \(c_2 < 0\), the energy is minimised by
 maximising the amplitude \(|A_{20}|^2=n/5\).
-
-\subsection{Single-particle Hamiltonian}
-When a magnetic field is applied to a spinor system, the field causes energy
-shifts in the spin components.
-When this field is aligned along the spin quantisation axis, linear, \(p\), and
-quadratic, \(q\), Zeeman shifts arise.
-In such a case, the single-particle (non-interacting) Hamiltonian is given
-by~\cite{Kawaguchi2012}
-\begin{equation}\label{eq: single-particle-Hamiltonian}
-    H_0 = \int d\vb{r}\sum_{m,m'=-f}^{f} \psi_m^\dagger \left[
-        -\frac{\hbar^2}{2M}\nabla^2 + V(\vb{r}) - pm + qm^2\right]\psi_{m'},
-\end{equation}
-where \(V(\vb{r})\) is a trapping potential.
-Throughout most of this thesis we assume that the magnetic field applied is
-uniform, such that the Zeeman shifts are constant.
-In Chapter~\ref{chap: spin-1}, however, we introduce a time-dependent field
-such that the quadratic Zeeman shift has a time-dependence.
-Despite the time-dependence, the quadratic Zeeman shift is still spatially
-uniform.
-
-It becomes apparent from Eq.~\eqref{eq: single-particle-Hamiltonian} that the
-quadratic shift uniformly alters the energetic separation between the
-\(\psi_{\pm 1}\) and \(\psi_0\) components.
-Conversely, the linear shift maintains the separation.
 
 \section{Spinor Gross-Pitaevskii equations}
 \subsection{Spin-1}\label{subsec: spin-1-gpes}

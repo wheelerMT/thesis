@@ -66,3 +66,4 @@ Mermin-Ho
 Anderson-Toulouse-Chechetkin
 HQV
 unoriented
+Clebsch-Gordon
