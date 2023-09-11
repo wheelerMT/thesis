@@ -67,3 +67,4 @@ Anderson-Toulouse-Chechetkin
 HQV
 unoriented
 Clebsch-Gordon
+Pauli-type

@@ -317,10 +317,11 @@ In the s-wave scattering limit, the total spin \(\EuScript{F}\) of two colliding
 atoms must be a multiple of \(2f\), i.e., \(\EuScript{F} \in
 \{0, 2, \ldots, 2f\}\), since the wave function must remain symmetric under the
 exchange of the two atoms~\cite{Pethick2008}.
-The total interaction Hamiltonian is then constructed as a sum of each
+The total interaction Hamiltonian is constructed as a sum of each
 contribution from individual spin channels as~\cite{Kawaguchi2012}
 \begin{align}
-    \hat{H}_i = \sum_{\EuScript{F}=0, 2, \ldots 2f} \hat{V}^{(\EuScript{F})},
+    \hat{H}_\text{int} = \sum_{\EuScript{F}=0, 2, \ldots 2f}
+    \hat{V}^{(\EuScript{F})},
 \end{align}
 where \(\hat{V}^{(\EuScript{F})}\) is the interaction Hamiltonian between two
 atoms with total spin \(\EuScript{F}\), which is given as
@@ -328,24 +329,24 @@ atoms with total spin \(\EuScript{F}\), which is given as
     \hat{V}^{(\EuScript{F})} = \frac{1}{2}\int\int
     \mathcal{U}^{(\EuScript{F})}(\vb{r}_1-\vb{r}_2)
     \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
-    \hat{\alpha}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2)
-    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) \,
+    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2)
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) \,
     \dd^3\vb{r}_1\dd^3\vb{r}_2,
 \end{align} 
 where \(\mathcal{U}^{(\EuScript{F})}\) describes the interaction potential
 between two particles with total spin \(\EuScript{F}\).
-Here, \(\hat{\alpha}_{\EuScript{F}\EuScript{M}}\) are projection operators
+Here, \(\hat{A}_{\EuScript{F}\EuScript{M}}\) are projection operators
 that project two spin-\(f\) particles with total component \(\EuScript{M}\)
 onto total spin \(\EuScript{F}\) and component \(\EuScript{M}\).
 They are defined, explicitly, as
-\begin{align}
-    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) =
-    \hat{\Psi}^T\mathcal{A}_{\EuScript{F}\EuScript{M}}\hat{\Psi},
+\begin{align}\label{eq: irreducible-operator}
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) =
+    \hat{\psi}^T\mathcal{A}_{\EuScript{F}\EuScript{M}}\hat{\psi},
 \end{align}
 where \(\mathcal{A}_{\EuScript{F}\EuScript{M}}\) are matrices of
 Clebsch-Gordon coefficients which couple individual spins of atoms together
-to describe them using the total spin \(\EuScript{F}\):
-\begin{align}
+to describe them using the total spin \(\EuScript{F}\)~\cite{Kawaguchi2012}:
+\begin{align}\label{eq: clebsch-gordon}
     {\left(\mathcal{A}_{\EuScript{F}\EuScript{M}}\right)}_{m,m'} =
     \braket{\EuScript{F}; \EuScript{M}}{f, m; f, m'}.
 \end{align}
@@ -357,7 +358,8 @@ following form:
     \mathcal{U}^{(\EuScript{F})} = g_\EuScript{F}\delta(\vb{r}_1-\vb{r}_2),
 \end{align}
 where \(g_\EuScript{F}\) is an interaction coefficient related to the s-wave
-scattering length of the total spin-\(\EuScript{F}\), \(a_\EuScript{F}\), as
+scattering length of the total spin-\(\EuScript{F}\), \(a_\EuScript{F}\)
+channel, as
 \begin{align}
     g_\EuScript{F} = \frac{4\pi\hbar^2a_\EuScript{F}}{2M},
 \end{align}
@@ -366,14 +368,81 @@ This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
 \begin{align}
     \hat{V}^{(\EuScript{F})} = \frac{g_\EuScript{F}}{2}\int
     \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
-    \hat{\alpha}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r})
-    \hat{\alpha}_{\EuScript{F}\EuScript{M}}(\vb{r}) \,
+    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r})
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}) \,
     \dd^3\vb{r}.
 \end{align}
 
-\subsection{Spin matrices, spin-singlets and nematic tensors}
+\subsection{Physical observables}
 Before we construct the full spinor interaction Hamiltonian, it is useful to
-define some operator relations.
+define some operator relations that relate the operator
+\(\hat{A}_{\EuScript{F}\EuScript{M}}\) to physical observables.
+
+\subsubsection{Spinor Pauli-type matrices}
+Spin-\(f\) Pauli-type matrices, \(f_\nu\) (\(\nu \in \{x, y, z\}\)), form the
+basis for constructing useful quantities that arise in spinor BECs such as the
+condensate spin vector.
+Here we construct a general representation for these matrices as well as give
+the explicit Pauli-type matrices for spin-1 and spin-2 systems.
+
+A spin-\(f\) Pauli-type matrix is a \((2f + 1) \times (2f + 1)\) matrix.
+The (\(m, m'\))-components of the spin matrices are defined generally
+as~\cite{Kawaguchi2012}
+\begin{align}
+    {(f_x)}_{mm'} &= \frac{1}{2}\left[\sqrt{(f - m + 1)(f + m)}\delta_{m-1,m'}
+        + \sqrt{(f + m + 1)(f - m)}\delta_{m+1,m'}\right], \\
+    {(f_y)}_{mm'} &= -\frac{i}{2}\left[\sqrt{(f - m + 1)(f + m)}\delta_{m-1,m'}
+        - \sqrt{(f + m + 1)(f - m)}\delta_{m+1,m'}\right], \\
+    {(f_z)}_{mm'} &= m\delta_{mm'}.
+\end{align}
+The spin matrices act on a given spin state to transform it into a new spin
+state.
+For example, the action of \(f_z\) on a given state is
+\begin{align}
+    f_z\ket{f, m} = m\ket{f, m}.
+\end{align}
+The spin-1 Pauli-type matrices are given below in their irreducible
+representation as~\cite{Kawaguchi2012}
+\begin{align}
+    f_x = \frac{1}{\sqrt{2}}\mqty(0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0), \quad
+    f_y = \frac{i}{\sqrt{2}}\mqty(0 & -1 & 0 \\ 1 & 0 & -1 \\ 0 & 1 & 0), \quad
+    f_z = \mqty(1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1).
+\end{align}
+Similarly, the spin-2 Pauli-type matrices are
+\begin{equation}
+    \begin{gathered}
+        f_x = \mqty(
+            0 & 1 & 0 & 0 & 0 \\
+            1 & 0 & \sqrt{\frac{3}{2}} & 0 & 0 \\
+            0 & \sqrt{\frac{3}{2}} & 0 & \sqrt{\frac{3}{2}} & 0 \\
+            0 & 0 & \sqrt{\frac{3}{2}} & 0 & 1 \\
+            0 & 0 & 0 & 1 & 0), \quad
+        f_y = i\mqty(
+            0 & -1 & 0 & 0 & 0 \\
+            1 & 0 & -\sqrt{\frac{3}{2}} & 0 & 0 \\
+            0 & \sqrt{\frac{3}{2}} & 0 & i\sqrt{\frac{3}{2}} & 0 \\
+            0 & 0 & \sqrt{\frac{3}{2}} & 0 & -1 \\
+            0 & 0 & 0 & 1 & 0), \\
+        f_z = \mqty(
+            2 & 0 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & -1 & 0 \\
+            0 & 0 & 0 & 0 & -2).
+    \end{gathered}
+\end{equation}
+
+\subsubsection{Spin-singlet pair}
+The quantity \(\hat{A}_{00}\) is the spin-singlet pair operator, which describes
+interactions for atoms in a singlet state (zero total spin, i.e.,
+\(\EuScript{F} = 0\)) and with \(\EuScript{M} = 0\).
+Using Eq.~\eqref{eq: irreducible-operator} and Eq.~\eqref{eq: clebsch-gordon},
+along with the substitution \(\EuScript{F} = \EuScript{M} = 0\), yields the
+spin-singlet pair operator:
+\begin{align}
+    \hat{A}_{00}(\vb{r}_1-\vb{r}_2) = \frac{1}{\sqrt{2f+1}}\sum_{m=-f}^{f}
+    {(-1)}^{f-m}\hat{\psi}_m(\vb{r}_1)\hat{\psi}_{-m}(\vb{r}_2).
+\end{align}
 
 \subsection{Spinor interaction Hamiltonian}
 In a spinor BEC, the effective contact interaction is generalised to include
