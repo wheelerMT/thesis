@@ -319,7 +319,7 @@ atoms must be a multiple of \(2f\), i.e., \(\EuScript{F} \in
 exchange of the two atoms~\cite{Pethick2008}.
 The total interaction Hamiltonian is constructed as a sum of each
 contribution from individual spin channels as~\cite{Kawaguchi2012}
-\begin{align}
+\begin{align}\label{eq: general-interaction-hamiltonian}
     \hat{H}_\text{int} = \sum_{\EuScript{F}=0, 2, \ldots 2f}
     \hat{V}^{(\EuScript{F})},
 \end{align}
@@ -361,11 +361,11 @@ where \(g_\EuScript{F}\) is an interaction coefficient related to the s-wave
 scattering length of the total spin-\(\EuScript{F}\), \(a_\EuScript{F}\)
 channel, as
 \begin{align}
-    g_\EuScript{F} = \frac{4\pi\hbar^2a_\EuScript{F}}{2M},
+    g_\EuScript{F} = \frac{4\pi\hbar^2}{M}a_\EuScript{F},
 \end{align}
 for atomic mass \(M\).
 This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
-\begin{align}
+\begin{align}\label{eq: spin-channel-hamiltonian}
     \hat{V}^{(\EuScript{F})} = \frac{g_\EuScript{F}}{2}\int
     \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
     \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r})
@@ -444,129 +444,181 @@ spin-singlet pair operator:
     {(-1)}^{f-m}\hat{\psi}_m(\vb{r}_1)\hat{\psi}_{-m}(\vb{r}_2).
 \end{align}
 
+\subsubsection{Operator relations}
+Most physical observables can be constructed from powers of the spinor
+Pauli-type matrices, \(\vb{f} \equiv (f_x, f_y, f_z)\)~\cite{Kawaguchi2012}.
+Firstly, the total density operator is defined as
+\begin{align}
+    \hat{n}(\vb{r}) = \sum_{m=-f}^{f}\hat{\psi}^\dagger_m(\vb{r})
+    \hat{\psi}_m(\vb{r}).
+\end{align}
+Secondly, the components of the condensate spin density operator, \(\hat{\vb{F}}
+\equiv (\hat{F}_x, \hat{F}_y, \hat{F}_z)\), also known as the magnetisation
+operator, are constructed as
+\begin{align}
+    \hat{F}_\nu(\vb{r}) = \sum_{m,m'=-f}^{f}{\left(f_\nu\right)}_{mm'}
+    \hat{\psi}^\dagger_m(\vb{r})\hat{\psi}_{m'}(\vb{r}), \quad
+    (\nu = x, y, z).
+\end{align}
+At mean-field level the magnitude of the expectation of the condensate spin
+vector can vary from its minimum \(\spinmag = 0\) to its maximum
+\(\spinmag = nf\).
+Finally, the general rank-\(k\) spin nematic tensor operator for \(k \geq 2\) is
+given by
+\begin{align}
+    \mathcal{N}^{(k)}_{\nu_1\nu_2\cdots\nu_k} = \sum_{m,m'=-f}^{f}
+    {\left(f_{\nu_1}f_{\nu_2}\cdots f_{\nu_k}\right)}_{mm'}
+    \hat{\psi}^\dagger_m(\vb{r})\hat{\psi}_{m'}(\vb{r}), \quad
+    (\nu_1, \nu_2, \ldots, \nu_k = x, y, z).
+\end{align}
+
+\subsubsection{Spin-channel operators to physical observables}
+To construct the spinor interaction Hamiltonian in terms of physical
+observables, we need to connect them to the projection operators
+\(\hat{A}_{\EuScript{F}, \EuScript{M}}\).
+The relationship between the two is constructed using a completeness relation
+that joins the irreducible observables to the composition law of angular
+momentum, then taking the expectation value (see Ref.~\cite{Kawaguchi2012} for
+details).
+The result is the following relation~\cite{Symes2019}:
+\begin{align}\label{eq: physical-observable}
+    \sum_{\nu_1\nu_2\cdots\nu_k}{(\mathcal{N}_{\nu_1\nu_2\cdots\nu_k})}^2 =
+    \sum_{\EuScript{F} = 0, 2, \ldots, 2f}{\left[
+        \frac{1}{2}\EuScript{F}(\EuScript{F} + 1) - f(f+1)
+    \right]}^k \sum_{\EuScript{M} = -\EuScript{F}}^{\EuScript{F}}
+    \hat{A}^\dagger_{\EuScript{F}, \EuScript{M}}
+    \hat{A}_{\EuScript{F}, \EuScript{M}},
+\end{align}
+where the left-hand side is a tensor inner product, reducing the tensor to a
+scalar energy term~\cite{Kawaguchi2012}.
+
 \subsection{Spinor interaction Hamiltonian}
-In a spinor BEC, the effective contact interaction is generalised to include
-contributions from all spin channels as
-\begin{equation}\label{eq: spin-f-interaction-potential}
-    V_\mathrm{int} = \delta(\vb{r_1} - \vb{r_2})
-    \sum_{\EuScript{F}=0}^{2f}g_\EuScript{F}\vb{P}_\EuScript{F},
-\end{equation}
-where \(g_\EuScript{F}=4\pi\hbar^2a_\EuScript{F}/M\) and
-\(\vb{P}_\EuScript{F}\) is the projection operator which projects a pair
-of atoms into a total spin \(\EuScript{F}\) state, defined as
-\begin{equation}
-    \vb{P}_\EuScript{F} = \sum_{m=-\EuScript{F}}^{\EuScript{F}}
-    \ket{\EuScript{F}, \EuScript{M}}\bra{\EuScript{F}, \EuScript{M}}.
-\end{equation}
-For a system of identical bosons, the sum over all projection operators gives
-\begin{equation}\label{eq: completeness-relation}
-    \sum_{\EuScript{F}=0}^{2f}\vb{P}_\EuScript{F} = 1.
-\end{equation}
+Using the results of the previous subsection, namely,
+Eq.~\eqref{eq: physical-observable}, we can now construct the full spinor
+interaction Hamiltonian for spin-\(f\) systems.
+In particular, we explicitly construct the interaction Hamiltonian for spin-1
+and spin-2 systems, and then provide the general interaction Hamiltonian for
+a spin-\(f\) system.
+The Hamiltonian will provide us with the form of interaction strengths arising
+in spinor systems, and how they relate to the spin-channel scattering lengths,
+\(a_\EuScript{F}\).
 
+\subsubsection{Spin-1}
+In spin-1 we have \(\EuScript{F} = 0\) or \(\EuScript{F} = 2\), which, using
+Eq.~\eqref{eq: general-interaction-hamiltonian}, implies an interaction
+Hamiltonian of the form
+\begin{align}
+    \hat{H}_\text{int} = \hat{V}^{(0)} + \hat{V}^{(2)}.
+\end{align}
+Then, using Eq.~\eqref{eq: spin-channel-hamiltonian}, this becomes
+\begin{align}\label{eq: spin-1-interaction-hamiltonian-projection}
+    \hat{H}_\text{int} = \frac{1}{2}\int
+        g_0\hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r})
+        + g_2\sum_{\EuScript{M}=-2}^{2}
+        \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r})
+        \, \dd^3\vb{r}.
+\end{align}
+To simplify the above expression, we set \(f=1\) and \(k=0, 1\) in
+Eq.~\eqref{eq: physical-observable}, which yields the following two expressions
+\begin{align}
+    \hat{n}^2(\vb{r}) &= \hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r})
+    + \sum_{\EuScript{M}=-2}^{2}
+    \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r}), \\
+    \vb{\hat{F}}^2(\vb{r}) &= -2\hat{n}^2(\vb{r}) + 3 \sum_{\EuScript{M}=-2}^{2}
+    \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r}).
+\end{align}
+Solving the above simultaneous equations gives the following expressions for
+the projection operators:
+\begin{align}
+    \hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r}) &=
+        \frac{1}{3}\left[\hat{n}^2(\vb{r}) - \vb{\hat{F}}^2(\vb{r})\right], \\
+    \sum_{\EuScript{M}=-2}^{2}
+    \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r}) &=
+    \frac{1}{3}\left[\hat{n}^2(\vb{r}) + \vb{\hat{F}}^2(\vb{r})\right].
+\end{align}
+Finally, substituting the above expressions into
+Eq.~\eqref{eq: spin-1-interaction-hamiltonian-projection} gives the full
+interaction Hamiltonian for a spin-1 BEC\@:
+\begin{align}\label{eq: spin-1-interaction-hamiltonian}
+    \hat{H}_\text{int} = \frac{1}{2}\int c_0\hat{n}^2(\vb{r})
+    + c_1\vb{\hat{F}}^2(\vb{r}) \, \dd^3\vb{r},
+\end{align}
+where
+\begin{align}
+    c_0 &= \frac{1}{3}\left(g_0 + 2g_2\right), \\
+    c_1 &= \frac{1}{3}\left(g_2 - g_0\right).
+\end{align}
+Here, \(c_0\) gives the density (spin-independent) interaction strength and
+\(c_1\) gives the spin-dependent interaction strength.
+As we shall see in Chapter~\ref{chap: ground-states}, the sign of the
+spin-indepndent interaction strength, \(c_1\), determines the relevant ground
+states available in spin-1 systems.
+Since \(c_1\) is the difference of two s-wave scattering lengths, which are
+comparable in magnitude experimentally, the spin-dependent interaction strength
+is usually much smaller than the spin-independent strength (see
+Sec.~\ref{subsec: experimental-params}).
+Competition between the \(c_1\) and \(c_2\) terms gives rise to an interesting
+ground state phase diagram for spin-2 BECs (see
+Chapter~\ref{chap: ground-states}).
 
-\subsection{Spin-1 interaction Hamiltonian}\label{subsec: spin-1-int-hamil}
-To calculate the spin-dependent mean-field interaction potential, it is common
-to relate the projection operators to products of the single-particle spin
-operators.
-For a spin-1 condensate, the composition law of the angular momentum
-gives~\cite{Kawaguchi2012, StamperKurn2013}
-\begin{equation}\label{eq: composition-law}
-    \vb{F}_1 \cdot \vb{F}_2 = \frac{1}{2}\left[{(\vb{F}_1 + \vb{F}_2)}^2
-        - \vb{F}_1^2 - \vb{F}_2^2\right] = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
-    -f(f+1),
-\end{equation}
-where \(\vb{F}_i\) is the spin operator for atom \(i\).
-From here we can construct the relation \(\vb{F}_1 \cdot \vb{F}_2 =
-\sum_{\EuScript{F} = 0}^{2f}\lambda_\EuScript{F}\vb{P}_\EuScript{F}\), where
-\(\lambda_\EuScript{F} = \frac{1}{2}\EuScript{F}(\EuScript{F} + 1)
--f(f+1)\).
-In an \(f=1\) spinor condensate, only \(\EuScript{F} = 0\) or \(2\) channels
-are allowed.
-Therefore, we have
-\begin{equation}\label{eq: spin-1-spin-relation}
-    \vb{F}_1 \cdot \vb{F}_2 = \sum_{\EuScript{F} = 0}^{2f}
-    \lambda_\EuScript{F}\vb{P}_\EuScript{F} = \vb{P}_2 - 2\vb{P}_0,
-\end{equation}
-and
-\begin{equation}\label{eq: spin-1-completeness-relation}
-    \sum_{\EuScript{F} = 0}^{2f} = 1 = \vb{P}_0 + \vb{P}_2.
-\end{equation}
-Using both Eq.~\eqref{eq: spin-1-spin-relation} and
-Eq.~\eqref{eq: spin-1-completeness-relation}, one can re-write
-Eq.~\eqref{eq: spin-f-interaction-potential} as
-\begin{equation}
-    V_\mathrm{int} = \delta(\vb{r}_1 - \vb{r}_2)
-    (c_0 + c_1 \vb{F}_1 \cdot \vb{F}_2),
-\end{equation}
-where \(c_0 = (g_0+2g_2)/3\) and \(c_1=(g_2-g_0) / 3\).
-Finally, the spin-1 interacting Hamiltonian is then given as
-\begin{equation}\label{eq: spin-1-interacting-Hamiltonian}
-    H_\mathrm{int} = \frac{1}{2}\int d\vb{r} (c_0n^2 + c_1|\vb{F}|^2).
-\end{equation}
+\subsubsection{Spin-2}
+In a spin-2 system we have \(\EuScript{F}=0,2,4\).
+Eq.~\eqref{eq: general-interaction-hamiltonian} then implies the interaction
+Hamiltonian for a spin-2 system has the form
+\begin{align}
+    \hat{H}_\text{int} = \hat{V}^{(0)} + \hat{V}^{(2)} + \hat{V}^{(4)}.
+\end{align}
+Using Eq.~\eqref{eq: spin-channel-hamiltonian} the above becomes
+\begin{align}\label{eq: spin-2-interaction-hamiltonian-projection}
+    \hat{H}_\text{int} = \frac{1}{2}\int
+        g_0\hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r})
+        + g_2\sum_{\EuScript{M}=-2}^{2}
+        \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r})
+        + g_4\sum_{\EuScript{M}=-4}^{4}
+        \hat{A}^\dagger_{4\EuScript{M}}(\vb{r})\hat{A}_{24\EuScript{M}}(\vb{r})
+        \, \dd^3\vb{r}.
+\end{align}
+Substituting \(f=2\) and \(k=1,2,3\) in Eq.~\eqref{eq: physical-observable}
+and solving the resulting equations for the projection operators gives the
+following relations
+\begin{align}
+    \sum_{\EuScript{M}=-2}^{2}
+    \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r}) &=
+    \frac{1}{7}\left[4\hat{n}^2(\vb{r})
+        - 10\hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r})
+        - \vb{\hat{F}}^2(\vb{r})\right], \\
+    \sum_{\EuScript{M}=-4}^{4}
+    \hat{A}^\dagger_{4\EuScript{M}}(\vb{r})\hat{A}_{4\EuScript{M}}(\vb{r}) &=
+    \frac{1}{7}\left[3\hat{n}^2(\vb{r})
+        + 3\hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r})
+        + \vb{\hat{F}}^2(\vb{r})\right].
+\end{align}
+Substituting the above relations into
+Eq.~\eqref{eq: spin-2-interaction-hamiltonian-projection} yields the full
+interaction Hamiltonian for a spin-2 BEC\@:
+\begin{align}
+    \hat{H} = \frac{1}{2}\int c_0\hat{n}^2(\vb{r}) + c_1\hat{\vb{F}}^2(\vb{r})
+    + c_2\hat{A}^\dagger_{00}(\vb{r})\hat{A}_{00}(\vb{r}) \, \dd^3\vb{r},
+\end{align}
+where the interaction strengths are defined as
+\begin{align}
+    c_0 &=\frac{1}{7}\left(4g_2 + 3g_4\right), \\
+    c_1 &=\frac{1}{7}\left(g_4 - g_2\right), \\
+    c_2 &=\frac{1}{7}\left(7g_0 - 10g_2 + 3g_4\right).
+\end{align}
+Here, \(c_0, c_1\) are the spin-independent and spin-dependent interaction
+strengths, respectively.
+Since the spin-2 system has an extra contribution from the spin-channels
+compared to the spin-1 system, there arises an additional interaction strength,
+\(c_2\), denoted the spin-singlet interaction strength.
 
-Here \(c_0\) is interpreted as the spin-independent interaction strength.
-It becomes apparent from Eq.~\ref{eq: spin-1-interacting-Hamiltonian} that
-\(c_0 > 0\) (repulsive interactions) is required for stability.
-In the \(c_0 < 0\) limit (i.e., attractive interactions), the condensate would
-favour becoming infinitely dense, and in the process would destroy itself.
-Therefore, throughout this thesis we always consider \(c_0 > 0\).
-
-The \(c_1\) term describes is the spin-dependent interaction strength.
-Since \(c_0\) is constrained to be positive, \(c_1\) can take positive or
-negative values.
-When \(c_1 > 0\), the system energetically favours minimising the condensate
-spin \(\vb{F}\), which are typically referred to as antiferromagnetic or polar
-interactions.
-Conversely, for \(c_1 < 0\) the system favours maximising the spin vector,
-which are referred to as ferromagnetic interactions.
-
-Finally, we note that since \(c_1\) is the difference of two s-wave scattering
-lengths which are comparable in magnitude experimentally, the spin-dependent
-interaction strength is usually much smaller than the spin-independent strength.
-
-\subsection{Spin-2 interaction Hamiltonian}
-For an \(f=2\) spinor condensate, we now have \(\EuScript{F}=0,2,4\) spin
-channels.
-For a spin-2 condensate, Eq.~\eqref{eq: composition-law} now gives
-\begin{equation}
-    \vb{F}_1 \cdot \vb{F}_2 = \sum_{\EuScript{F} = 0}^{2f}
-    \lambda_\EuScript{F}\vb{P}_\EuScript{F} = -6\vb{P}_0-3\vb{P}_2+4\vb{P}_4.
-\end{equation}
-Using the above equation and the completeness relation in
-Eq.~\eqref{eq: completeness-relation}, one can write \(\vb{P}_2\) and
-\(\vb{P}_4\) in terms of \(\vb{P}_0\) and \(\vb{F}_1 \cdot \vb{F}_2\):
-\begin{equation}
-    \vb{P}_2 = \frac{1}{7}(4 - \vb{F}_1 \cdot \vb{F}_2 - 10\vb{P}_0), \qquad
-    \vb{P}_4 = \frac{1}{7}(3 + \vb{F}_1 \cdot \vb{F}_2 + 3\vb{P}_0).
-\end{equation}
-From Eq.~\eqref{eq: spin-f-interaction-potential}, the spin-2 interaction
-potential takes the form
-\begin{equation}
-    V_\mathrm{int}\delta(\vb{r}_1-\vb{r}_2)(c_0+c_1\vb{F}_1 \cdot \vb{F}_2
-    +c_2\vb{P}_0),
-\end{equation}
-where \(c_0=(4g_2+3g_4)/7\), \(c_1=(g_4-g_2)/7\), and
-\(c_2=(7g_0-10g_2+3g_4)/7\).
-Both \(c_0\) and \(c_1\) are the spin-independent and -dependent interaction
-strengths, respectively, analogous to the spin-1 system.
-Due to the extra degree of freedom in the spin-2 system, a new interaction term,
-\(c_2\), describing the spin-singlet interaction arises.
-
-The spin-2 interaction Hamiltonian is given as
-\begin{equation}\label{eq: spin-2-interacting-Hamiltonian}
-    H_\mathrm{int} = \frac{1}{2}\int d\vb{r}\left(c_0n^2+c_1|\vb{F}|^2
-    +c_2|A_{20}|^2\right),
-\end{equation}
-where \(|A_{20}|^2\) is the spin-singlet duo amplitude, defined in terms of
-the condensate wave function as
-\begin{equation}\label{eq: spin-singlet-duo}
-    A_{20} = \frac{1}{\sqrt{5}}\left(\psi_0^2-2\psi_1\psi_{-1}
-    +2\psi_2\psi_{-2}\right).
-\end{equation}
-For \(c_2 > 0\), it becomes energetically favourable to minimise the
-spin-singlet amplitude, i.e., \(|A_{20}|^2 = 0\).
-Conversely, for interactions where \(c_2 < 0\), the energy is minimised by
-maximising the amplitude \(|A_{20}|^2=n/5\).
+\subsubsection{Spin-\(f\)}
+Generally, the spin-\(f\) interaction Hamiltonian has \(f + 1\) non-linear
+interaction terms to account for the \(f + 1\) spin-channels.
+The process to construct higher spin interaction Hamiltonians is the same as for
+the spin-1 and spin-2 cases, making use of Eq.~\eqref{eq: physical-observable}.
+For example, for a spin-3 system, we substitute \(f=3\) and \(k=1,2,3,4\) into
+Eq.~\eqref{eq: physical-observable} and follow the same methodology as before.
 
 \section{Spinor Gross-Pitaevskii equations}
 \subsection{Spin-1}\label{subsec: spin-1-gpes}
@@ -1008,7 +1060,8 @@ where now the rescaled interaction strengths and Zeeman shifts are
     \tilde{q} = \frac{q}{\hbar\omega}.
 \end{align}
 
-\subsection{Mapping to experimental parameters}
+\subsection{\label{subsec: experimental-params}
+Mapping to experimental parameters}
 Numerical simulations are an extremely useful tool for gaining insight into
 what experiments of BEC systems might look like.
 Therefore, it is useful to calculate the values of the interaction strengths
