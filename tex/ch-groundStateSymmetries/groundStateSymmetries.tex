@@ -24,7 +24,8 @@ but we reproduce them here to provide reference for subsequent chapters.
 
 \section{Ground states of spin-1 BECs}\label{sec: ground-states-spin-1}
 To obtain ground states for a spin-1 BEC, we consider the interaction part of
-the energy functional given as (see Sec.~\ref{subsec: spin-1-int-hamil})
+the energy functional given as (see
+Sec.~\ref{subsec: spinor-interaction-hamiltonian})
 \begin{align}\label{eq: spin-1-int-energy}
     E_\mathrm{int} = \frac{1}{2}\int c_0n^2+c_1n^2\spinmag^2 \dd^3\vb{r},
 \end{align}
@@ -46,10 +47,14 @@ Then, Eq.~\eqref{eq: spin-1-int-energy} is minimised when \(\spinmag \) takes
 its maximal value of \(\spinmag=1\).
 This type of ground state, where the spin is maximised, is referred to as a
 ferromagnetic state.
-A representative spinor, i.e., a spinor that minimises the energy, for a
-ferromagnetic ground state is given as~\cite{Kawaguchi2012}
+The wave function of the ferromagnetic state takes the form
 \begin{align}
-    \zeta^\mathrm{FM} = \mqty(1 \\ 0 \\ 0).
+    \psi=\sqrt{n}\zeta^\text{FM},
+\end{align}
+where the representative spinor, i.e., a spinor that minimises the energy, is
+given as~\cite{Kawaguchi2012}
+\begin{align}
+    \zeta^\text{FM} = \mqty(1 \\ 0 \\ 0).
 \end{align}
 Substitution of the above spinor into the expression for the condensate spin
 indeed reveals that \(\spinmag=1\).
@@ -121,7 +126,7 @@ phase and an unoriented unit vector, \(\hat{\vb{d}}\), referred to as the
 nematic director~\cite{Ruostekoski2003}.
 A wave function in this representation is given as
 \begin{align}
-    \zeta^\mathrm{P} = \frac{e^{i\tau}}{\sqrt{2}}
+    \psi^\mathrm{P} = \frac{\sqrt{n}e^{i\tau}}{\sqrt{2}}
     \mqty(-d_x + id_y \\ \sqrt{2}d_z \\ d_x + id_y).
 \end{align}
 The nematic director can be used to distinguish between the state given in
@@ -215,20 +220,20 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
     \centering
     \begin{tabular}{ccc}
         \toprule
-        Ground state                          & Spinor, \(\zeta^T\)                      & \(F_z\) \\
+        Ground state & Spinor, \(\zeta^T\) & \(\hat{F}_z\) \\
         \midrule
-        Ferromagnetic (I)                     & \((1, 0, 0)\)                            & 1       \\
-        Ferromagnetic (II)                    & \((0, 0, 1)\)                            & -1      \\
-        Antiferromagnetic (III)               & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
-        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\)                                 \\
-        Polar (IV)                            & \((0, 1, 0)\)                            & 0       \\
-        Broken-axisymmetry (V)                & Eq.~\eqref{eq: BA-spinor}
-                                              & \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\)            \\
+        Ferromagnetic (I) & \((1, 0, 0)\) & 1 \\
+        Ferromagnetic (II) & \((0, 0, 1)\) & -1 \\
+        Antiferromagnetic (III) & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
+        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\) \\
+        Polar (IV) & \((0, 1, 0)\) & 0 \\
+        Broken-axisymmetry (V) & Eq.~\eqref{eq: BA-spinor} &
+        \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\) \\
         \bottomrule
     \end{tabular}
-    \caption[Ground states arising in spin-1 BECs]{
-        \label{tab: spin-1-ground-states}Summary of the ground state
-        phases in a spin-1 BEC with their respective spinors and magnetisation.}
+    \caption[Ground states arising in spin-1 BECs]
+    {\label{tab: spin-1-ground-states}Summary of the ground state phases in a
+    spin-1 BEC with their respective spinors and magnetisation.}
 \end{table}
 
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
@@ -405,7 +410,7 @@ To find the ground states of a spin-2 system we follow a similar procedure to
 the spin-1 case.
 The interacting part of the spin-2 Hamiltonian reads
 \begin{align}
-    E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1n^2\spinmag^2+c_2n^2|A_{20}|^2
+    E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1n^2\spinmag^2+c_2n^2|A_{00}|^2
     \dd^3\vb{r}.
 \end{align}
 As before, we assume a uniform ground state so that the density remains fixed.
@@ -413,12 +418,12 @@ Therefore, different ground states arise from the competition between the spin-,
 \(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
 The magnitude of the spin expectation is now defined in terms of the spin-2
 spin vectors given in Eq.~\eqref{eq: spin-2-spin-vectors}, and the spin-singlet
-duo, \(A_{20}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
+duo, \(A_{00}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
 
 \subsection{Ferromagnetic phase}
 If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
 minimised when  the spin density is maximised \(\spinmag=2\)
-and the singlet-duo amplitude is minimised \(|A_{20}|=0\).
+and the singlet-duo amplitude is minimised \(|A_{00}|=0\).
 This state is denoted as the spin-2 ferromagnetic phase, where \(\spinmag \) is
 now \(\spinmag=2\) for this ground state, as opposed to \(\spinmag=1\) in the
 spin-1 system.
@@ -486,7 +491,7 @@ have \(\spinmag=2\).
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
 We see that the energy functional is minimised when the spin is minimised
 \(\spinmag = 0\) but the singlet-duo amplitude is maximised
-\(|A_{20}|^2 = 1/5\).
+\(|A_{00}|^2 = 1/5\).
 Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
 or biaxial nematic (BN).
 A representative spinor for the UN state, where the nematic director
@@ -529,7 +534,7 @@ Sec.~\ref{subsec: UN-BN-defects}).
 \subsection{Cyclic phase}
 Now consider \(c_1, c_2 > 0\).
 The energy functional is minimised when both the spin magnitude and singlet-duo
-amplitude is minimised: \(\spinmag = 0, |A_{20}|^2=0\).
+amplitude is minimised: \(\spinmag = 0, |A_{00}|^2=0\).
 Such a state is referred to as the cyclic state and has the representative
 spinor
 \begin{equation}
@@ -601,8 +606,8 @@ are summarised in Fig.~\ref{fig: spin-2-ground-states}.
 Note, for the case of \(c_1, c_2 < 0\), there is a competition between
 the ferromagnetic and nematic phases.
 For this case, the energy functional is minimised by either having maximal spin
-density and \(|A_{20}|^2 = 0\) as in the ferromagnetic phase, or by having
-minimal spin density and \(|A_{20}|^2 = 1/5\) as in the nematic phase, which
+density and \(|A_{00}|^2 = 0\) as in the ferromagnetic phase, or by having
+minimal spin density and \(|A_{00}|^2 = 1/5\) as in the nematic phase, which
 leads to a phase boundary at \(c_2n=20c_1n\).
 
 \subsection{Graphical representation of spin-2 ground states}
@@ -710,7 +715,7 @@ are shown in Fig.~\ref{fig: spin-2-Majorana}.
     \(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\).}
 \end{figure}
 
-\section{Determining stable topological defects in spinor BECs}
+\section{Stable topological defects in spinor BECs}
 Due to their rich phase diagrams discussed in the previous sections, spinor BECs
 give rise to multiple different types of topological defects.
 Such defects range from vortices, both singular~\cite{Yip1999,Isoshima2002,
@@ -1128,7 +1133,7 @@ spin circulation.
 Such a vortex is constructed from Eq.~\eqref{eq: UN-representative-spinor} with
 the choice \(\tau=0, \alpha=-\varphi/2, \beta=\pi/2\):
 \begin{equation}
-    \psi^\text{UN}_\text{SV} = \frac{\sqrt{6n}}{4}\mqty(
+    \psi^\text{UN}_\text{sv} = \frac{\sqrt{6n}}{4}\mqty(
     e^{i\varphi} \\
     0 \\
     -\sqrt{\frac{2}{3}} \\
