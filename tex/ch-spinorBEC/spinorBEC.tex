@@ -261,41 +261,22 @@ quantisation axis.
 Such a state is denoted \(\ket{f, m} \), where
 \(m \in \{-f, -f+1, \ldots, 0, \ldots, f - 1, f\} \) denotes the magnetic
 sublevel for an atom with total spin \( f\).
-A general spin-\(f\) state is described by the (\(2f+1\))-component wave
-function \(\psi \), defined as \(\ket{\psi} = \sum_m\psi_m\ket{f, m}\).
-In the spin-1 case, we have \(\psi = {(\psi_1, \psi_0, \psi_{-1})}^T\), and for
-the spin-2 case \(\psi = {(\psi_2, \psi_1, \psi_0, \psi_{-1}, \psi_{-2})}^T\).
+A system of identical spin-\(f\) bosons with atomic mass \(M\) is described by
+the field operators \(\hat{\psi}_m(\vb{r})\) which satisfy the following commutation
+relations~\cite{Kawaguchi2012}:
+\begin{align}
+    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right]
+    &= \delta_{mm'}\delta(\vb{r}_1 - \vb{r}_2), \\
+    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right] &=
+    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right] = 0.
+\end{align}
 To construct the relevant spinor Hamiltonians we follow the methodology in
-Refs~\cite{Ho1998,Ohmi1998,Kawaguchi2012,Stamper-Kurn2013} and make the
-following assumptions: We assume only elastic and binary collisions between
+Refs~\cite{Ho1998,Ohmi1998,Kawaguchi2012,Stamper-Kurn2013,Symes2019} and make
+the following assumptions: We assume only elastic and binary collisions between
 atoms, implying that the total spin is conserved, as well as low incident
 collision energy so that only s-wave scattering is observed.
 Additionally, we assume no spin-orbit coupling and no mixing of
 hyperfine states.
-
-\subsection{Single-particle Hamiltonian}
-When a magnetic field is applied to a spinor system, the field causes energy
-shifts in the spin components.
-When this field is aligned along the spin quantisation axis, linear, \(p\), and
-quadratic, \(q\), Zeeman shifts arise.
-In such a case, the single-particle (non-interacting) Hamiltonian is given
-by~\cite{Kawaguchi2012}
-\begin{equation}\label{eq: single-particle-Hamiltonian}
-    H_0 = \int \sum_{m,m'=-f}^{f} \psi_m^\dagger \left[
-        -\frac{\hbar^2}{2M}\nabla^2 + V(\vb{r})
-        - pm + qm^2\right]\psi_{m'} \, \dd^3\vb{r},
-\end{equation}
-where \(V(\vb{r})\) is a trapping potential.
-Throughout most of this thesis we assume that the magnetic field applied is
-uniform, such that the Zeeman shifts are constant.
-In Chapter~\ref{chap: spin-1}, however, we introduce a time-dependent field
-such that the quadratic Zeeman shift has a time-dependence.
-Despite the time-dependence, the quadratic Zeeman shift is still spatially
-uniform.
-It becomes apparent from Eq.~\eqref{eq: single-particle-Hamiltonian} that the
-quadratic shift uniformly alters the energetic separation between the
-\(\psi_{\pm 1}\) and \(\psi_0\) components.
-Conversely, the linear shift maintains the separation.
 
 \subsection{Contributions from spin-channels}
 Collisions between two incoming spin-\(f\) atoms in magnetic sublevels \(m\)
@@ -379,7 +360,7 @@ define some operator relations that relate the operator
 \(\hat{A}_{\EuScript{F}\EuScript{M}}\) to physical observables.
 
 \subsubsection{Spinor Pauli-type matrices}
-Spin-\(f\) Pauli-type matrices, \(f_\nu\) (\(\nu \in \{x, y, z\}\)), form the
+Spin-\(f\) Pauli-type matrices, \(\vb{f}\equiv(f_x, f_y, f_z)\), form the
 basis for constructing useful quantities that arise in spinor BECs such as the
 condensate spin vector.
 Here we construct a general representation for these matrices as well as give
@@ -620,10 +601,36 @@ the spin-1 and spin-2 cases, making use of Eq.~\eqref{eq: physical-observable}.
 For example, for a spin-3 system, we substitute \(f=3\) and \(k=1,2,3,4\) into
 Eq.~\eqref{eq: physical-observable} and follow the same methodology as before.
 
+\subsection{Single-particle Hamiltonian}
+When a magnetic field is applied to a spinor system, the field causes energy
+shifts in the spin components.
+When this field is aligned along the spin quantisation axis, linear, \(p\), and
+quadratic, \(q\), Zeeman shifts arise.
+In such a case, the single-particle (non-interacting) Hamiltonian is given
+by~\cite{Kawaguchi2012}
+\begin{equation}\label{eq: single-particle-Hamiltonian}
+    \hat{H}_0 = \int \sum_{m,m'=-f}^{f} \hat{\psi}_m^\dagger \left[
+        -\frac{\hbar^2}{2M}\nabla^2 + V(\vb{r})
+        - p{(f_z)}_{mm'} + q{(f_z^2)}_{mm'}\right]\hat{\psi}_{m'} \,\dd^3\vb{r},
+\end{equation}
+where \(V(\vb{r})\) is a trapping potential.
+The linear Zeeman shift, \(p\), introduces a Larmor precession of the condensate
+spin about the direction of the applied magnetic field, and hence can be
+removed by transforming to a rotating basis.
+The quadratic Zeeman shift, \(q\), however, breaks the spin symmetry, and thus
+changes the non-linear spin dynamics.
+Throughout this thesis we consider a variety of applied magnetic fields
+providing different forms for the quadratic Zeeman shift.
+In Chapter~\ref{chap: spin-1} we consider a time-dependent but spatially-uniform
+quadratic Zeeman shift, i.e., \(q = q(t)\).
+Additionally, Chapter~\ref{chap: spin-2} sees the application of a non-uniform
+magnetic field such that \(q=q(z)\).
+
 \section{Spinor mean-field theory}
 The mean-field theory for spinor BECs is obtained by expanding the field
-operator \(\hat{\psi}\) into a complete orthonormal set of basis functions and
-taking the expectation (see Ref.~\cite{Kawaguchi2012} for details).
+operator \(\hat{\psi}(\vb{r})\) into a complete orthonormal set of basis
+functions and taking the expectation (see Ref.~\cite{Kawaguchi2012} for
+details).
 The mean-field state of a spin-\(f\) system is then described by a
 \(2f+1\)-component order parameter of the form
 \begin{align}
@@ -635,7 +642,7 @@ In this section we use the result of the mean-field theory to construct the
 energy functional of both spin-1 and spin-2 systems, and then derive the
 spinor Gross-Pitaevskii equations.
 
-\subsection{Spin-1}\label{subsec: spin-1-gpes}
+\subsection{Spin-1 Gross-Pitaevskii equations}\label{subsec: spin-1-gpes}
 The mean-field wave function of a spin-1 system is given as a three-component
 vector of the form
 \begin{align}
@@ -715,7 +722,7 @@ particles between the components and hence individual component atom numbers
 are not conserved, but the total atom number, \(N\), is (see
 Sec.~\ref{subsec: conserved-quantities}).
 
-\subsection{Spin-2}
+\subsection{Spin-2 Gross-Pitaevskii equations}
 The mean-field wave function of a spin-2 system is given as a five-component
 vector of the form
 \begin{align}
@@ -803,22 +810,23 @@ Then, by the definition of \(\hat{F}_z\) in Eq.~\eqref{eq: spin-1-spin-vectors},
 we see that the integral of the longitudinal spin vector, i.e., the longitudinal
 magnetisation defined above, would remain constant.
 
-\section{Reduction to lower dimensions}
+\subsection{Reduction to lower dimensions}
 One can reduce the full 3D coupled GPEs to lower dimensions by considering
 sufficiently tight confinement of the condensate in one or more directions.
-Here, we reduce both the spin-1 and spin-2 GPEs to their 2D and 1D counterparts.
+Here, we reduce the spin-1 GPEs to their 2D and 1D counterparts.
 
-\subsection{Spin-1}
+\subsubsection{Reduction to 2D}
 To begin, we start with the full 3D dimensional equations given in
 Eq.~\eqref{eq: spin-1-GPEs}, written in matrix form as
 \begin{align}\label{eq: spin-1-GPEs-matrix}
     i\hbar \pdv{\Psi}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + c_0n
-    + c_1n \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-    - pn\langle\hat{F}_z\rangle
-    + qn\langle\hat{F}_z^2\rangle\right]\Psi,
+    + c_1n \langle\hat{\vb{F}}\rangle \cdot \vb{f}
+    - pf_z
+    + qf_z^2\right]\Psi,
 \end{align}
-where \(\Psi=(\psi_1, \psi_0, \psi_{-1})\) is the three-component wave function.
-\textcolor{red}{Has \(\hat{\vb{F}}\) been defined before?}
+where \(\Psi=(\psi_1, \psi_0, \psi_{-1})\) is the three-component wave function
+and \(\vb{f}\equiv(f_x, f_y, f_z)\) are the spin-1 Pauli-type matrices defined
+in Eq.~\eqref{eq: spin-1-pauli-matrices}.
 To reduce the dimensionality, we assume the condensate has been tightly confined
 in the \(z\) direction by means of a harmonic oscillator which has trapping
 frequencies (\(\omega_x, \omega_y, \omega_z\)) in the (\(x, y, z\)) directions,
@@ -830,8 +838,7 @@ the ground state of the condensate is occupied.
 With these assumptions, we can separate the wave function of the condensate into
 its 2D counterpart:
 \begin{align}\label{eq: Psi-2D}
-    \Psi(x, y, z, t) = \tilde{\Psi}(x, y, t)\Phi(z)
-    = \sqrt{\tilde{n}(x, y, t)}\zeta(x, y, t)\Phi(z),
+    \Psi(x, y, z, t) = \tilde{\Psi}(x, y, t)\Phi(z),
 \end{align}
 where \(\Phi(z)\) is normalised as \(\int_{-\infty}^{\infty}|\Phi(z)|^2 \, \dd z
 = 1\), and we apply the single-mode approximation (SMA) such that
@@ -846,24 +853,30 @@ obtain
         - \frac{\hbar^2}{2M}\pdv[2]{\Phi}{z} + [V_\perp(x, y) + V_z(z)]\Phi
         +c_0\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi\right. \\
         \left.+c_1\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi
-        \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-        -p\Phi\hat{F}_z + q\Phi\hat{F}_z^2 \vphantom{\int_1^2}\right]\Psi.
+        \langle\hat{\vb{F}}\rangle \cdot \vb{f}
+        -p\Phi f_z
+        + q\Phi f_z^2
+        \vphantom{\int_1^2}\right]\tilde{\Psi}\Phi.
 \end{split}
 \end{equation}
 To reduce the equation further, we multiply from the left by \(\Phi^*\) and
 integrate over the \(z\) direction, which gives:
 \begin{equation}\label{eq: spin-1-GPEs-tildes}
 \begin{split}
-    \left[
+    i\hbar\pdv{\tilde{\Psi}}{t} = \left[
         -\frac{\hbar^2}{2M}\Phi\nabla_\perp^2
-        - \frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\Phi^*\dv[2]{\Phi}{z} \dd z
-        + V_\perp(x, y) + \int_{-\infty}^{\infty} V_z(z)|\Phi|^2 \dd z\right. \\
-        \left.+c_0\tilde{n}\int_{-\infty}^{\infty}|\Phi|^4 \dd z
-        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-        \int_{-\infty}^{\infty}|\Phi|^4 \dd z
-        -p\hat{F}_z + q\Phi\hat{F}_z^2 \right]\Psi.
+        - \frac{\hbar^2}{2M}\left(\int_{-\infty}^{\infty}\Phi^*\dv[2]{\Phi}{z}
+        \dd z\right)
+        + V_\perp(x, y) + \left(\int_{-\infty}^{\infty} V_z(z)|\Phi|^2
+        \dd z\right)\right. \\
+        \left.+c_0\tilde{n}\left(\int_{-\infty}^{\infty}|\Phi|^4 \dd z\right)
+        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \vb{f}
+        \left(\int_{-\infty}^{\infty}|\Phi|^4 \dd z\right)
+        -pf_z + qf_z^2
+        \right]\tilde{\Psi},
 \end{split}
 \end{equation}
+where \(\tilde{n}=\tilde{\Psi}^\dagger\tilde{\Psi}\).
 In the above equation, the constant \(C =
 -\frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\Phi^*\dv[2]{\Phi}{z} \dd z
 + \int_{-\infty}^{\infty} V_z(z)|\Phi|^2 \dd z\) can be removed from the
@@ -889,12 +902,13 @@ counterparts:
 Finally, substituting back into Eq.~\eqref{eq: spin-1-GPEs-tildes} yields the
 2D GPEs for a spin-1 system:
 \begin{align}
-    i\hbar\pdv{\Psi}{t} = \left[-\frac{\hbar^2}{2M}\nabla_\perp^2 + V_\perp
-    + c_0^\text{2D}n + c_1^\text{2D}n\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-    -p\hat{F}_z + q\hat{F}_z^2\right]\Psi,
+    i\hbar\pdv{\tilde{\Psi}}{t} = \left[-\frac{\hbar^2}{2M}\nabla_\perp^2 + V_\perp
+    + c_0^\text{2D}n + c_1^\text{2D}n\langle\hat{\vb{F}}\rangle \cdot
+    \vb{f} - pf_z + qf_z^2\right]\tilde{\Psi},
 \end{align}
 where we have dropped the tildes for notational convenience.
 
+\subsubsection{Reduction to 1D}
 A similar process can be used to reduce the full 3D equations into their 1D
 counterparts.
 We now assume that the condensate is tightly confined in two directions, which
@@ -902,14 +916,13 @@ we will take to be the \(x, y\) directions (\(\omega_x, \omega_y \gg
 \omega_z\)).
 This time, we separate the wave function according to
 \begin{align}
-    \Psi(x, y, z, t) = \tilde{\Psi}(z, t)\Phi(x, y) = \sqrt{\tilde{n}(z, t)}
-    \zeta(z, t)\Phi(x, y),
+    \Psi(x, y, z, t) = \tilde{\Psi}(z, t)\Phi(x, y),
 \end{align}
 once again assuming \(\Phi(x, y)\) to be normalised as \(\int_{-\infty}^{\infty}
 \int_{-\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y = 1\) and using the SMA such
 that \(\zeta(z, t)\) only has a \(z\) dependence.
-We substitute the above expression in the GPEs
-(Eq.~\eqref{eq: spin-1-GPEs-matrix}) and find
+We substitute the above expression into the GPEs in
+Eq.~\eqref{eq: spin-1-GPEs-matrix} and find
 \begin{equation}
 \begin{split}
     i\hbar\pdv{\tilde{\Psi}}{t}\Phi = \left[
@@ -917,25 +930,25 @@ We substitute the above expression in the GPEs
         - \frac{\hbar^2}{2M}\nabla_\perp^2\Phi + [V_\perp(x, y) + V_z(z)]\Phi
         +c_0\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi\right. \\
         \left.+c_1\tilde{\Psi}^\dagger\tilde{\Psi}|\Phi|^2\Phi
-        \langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-        -p\Phi\hat{F}_z + q\Phi\hat{F}_z^2 \vphantom{\int_1^2}\right]\Psi.
+        \langle\hat{\vb{F}}\rangle \cdot \vb{f}
+        - p\Phi f_z + q\Phi f_z^2 \vphantom{\int_1^2}\right]\tilde{\Psi}\Phi.
 \end{split}
 \end{equation}
 Following the procedure before, we multiply from the left by \(\Phi^*\)
 and integrate over \(x\) and \(y\) which yields
 \begin{equation}
 \begin{split}
-    \left[
+    i\hbar\pdv{\tilde{\Psi}}{t} = \left[
         -\frac{\hbar^2}{2M}\Phi\pdv[2]{}{z}
-        - \frac{\hbar^2}{2M}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
-        \Phi^*\dv[2]{\Phi}{z} \dd x \dd y
-        + V_\perp(x, y) + \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
-        V_z(z)|\Phi|^2 \dd x \dd y\right. \\
-        \left.+c_0\tilde{n}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
-        |\Phi|^4 \dd x \dd y
-        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}}
-        \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}|\Phi|^4 \dd x \dd y
-        -p\hat{F}_z + q\Phi\hat{F}_z^2 \right]\Psi.
+        - \frac{\hbar^2}{2M}\left(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        \Phi^*\dv[2]{\Phi}{z} \dd x \dd y\right)
+        + V_\perp(x, y) + \left(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        V_z(z)|\Phi|^2 \dd x \dd y\right)\right. \\
+        \left.+c_0\tilde{n}\left(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+        |\Phi|^4 \dd x \dd y\right)
+        +c_1\tilde{n}\langle\hat{\vb{F}}\rangle \cdot \vb{f}
+        \left(\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}|\Phi|^4
+        \dd x \dd y\right) - pf_z + qf_z^2 \right]\tilde{\Psi}.
 \end{split}
 \end{equation}
 Now, the constant term \(C = -\hbar^2/2M\int_{\infty}^{\infty}
@@ -951,7 +964,7 @@ which in 2D becomes
 \end{align}
 where \(\beta=m\omega_\perp / \hbar \), which leads to the relation
 \begin{align}
-    \int_{\infty}^{\infty}\int_{\infty}^{\infty} |\Phi(x, y)|^4 \dd x \dd y
+    \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} |\Phi(x, y)|^4 \dd x \dd y
     = \frac{\beta}{2\pi}.
 \end{align}
 This then leads to the 1D rescaled interaction strengths
@@ -963,28 +976,28 @@ Finally, we arrive at the 1D GPE given in matrix form:
 \begin{align}
     i\hbar\pdv{\Psi}{t} = \left[-\frac{\hbar^2}{2M}
     \pdv[2]{}{z}+V_z(z) + c_0^\text{1D}n
-    + c_1^\text{1D}\langle\hat{\vb{F}}\rangle \cdot \hat{\vb{F}} - p\hat{F}_z
-    + q\hat{F}_z^2\right]\Psi,
+    + c_1^\text{1D}\langle\hat{\vb{F}}\rangle \cdot \vb{f}
+    - pf_z + qf_z^2\right]\Psi,
 \end{align}
 again dropping the tildes for notational convenience.
 
-\section{Dimensionless spinor Gross-Pitaevskii equations}
-\label{sec: dimensionless-equations}
+\section{\label{sec: dimensionless-equations}
+Dimensionless spinor Gross-Pitaevskii equations}
 Systems that can undergo Bose-Einstein condensation, and hence become a
 superfluid, can form at a variety of length scales, ranging from Bose-Einstein
 condensates at the micron scale all the way to the cores of neutron stars,
 which are theorised to be superfluid on the kilometre
 scale~\cite{Warszawski2011}.
-In addition, atomic Bose-Einstein condensates in experiment take on a wide range
-of variable parameters and geometries.
+In addition, atomic BECs in experiment take on a wide range of variable
+parameters and geometries.
 Such geometries include box-like potentials~\cite{Gaunt2013}, toroidal ring
 geometries~\cite{Ryu2007, Ramanathan2011}, both quasi-2D~\cite{Neely2010}
 and quasi-1D systems~\cite{Burger1999}, and even arbitrary
 potentials~\cite{Henderson2009}.
-
 Due to these reasons, rescaling the quantities used in the corresponding GPEs
 allows one to reformulate any calculation into a desired scale and parameter
 regime.
+
 In practice, this is done by casting the GPEs into a dimensionless form, where
 each dimensional parameter in the equation is rescaled using an appropriate
 quantity such that it becomes dimensionless.
@@ -993,7 +1006,6 @@ numerical computation become normalised on the scale of unity, which,
 when compared to values in the dimensional equation such as \(\hbar =
 1.054\times 10^{-34}\), can reduce numerical errors that arise due to the
 floating point representation used by computers.
-
 The process of making the GPEs dimensionless can be done in different ways,
 where the scaling parameters chosen typically depend on whether the system is
 trapped or not.
@@ -1026,15 +1038,15 @@ dimensionless spin-1 GPEs:
     i \pdv{\tilde{\psi}_{1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
     + \tilde{c}_0\tilde{n} + \tilde{c}_1\tilde{n}\tilde{F}_z - \tilde{p}
     + \tilde{q}\right]\tilde{\psi}_{1}
-    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{F}_-\tilde{\psi}_0, \\
+    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{n}\tilde{F}_-\tilde{\psi}_0, \\
     i \pdv{\tilde{\psi}_0}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
     + \tilde{c}_0\tilde{n}\right]\tilde{\psi}_0
-    + \frac{\tilde{c}_1}{\sqrt{2}}\left(\tilde{F}_+\tilde{\psi}_1
+    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{n}\left(\tilde{F}_+\tilde{\psi}_1
     + \tilde{F}_-\tilde{\psi}_{-1}\right), \\
     i \pdv{\tilde{\psi}_{-1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
     + \tilde{c}_0\tilde{n} - \tilde{c}_1\tilde{n}\tilde{F}_z + \tilde{p}
     + \tilde{q}\right]\tilde{\psi}_{-1}
-    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{F}_+\tilde{\psi}_0, \\
+    + \frac{\tilde{c}_1}{\sqrt{2}}\tilde{n}\tilde{F}_+\tilde{\psi}_0,
 \end{align}
 where the rescaled interaction strengths and Zeeman shifts are
 \begin{align}
@@ -1055,7 +1067,7 @@ Consider now a spin-2 BEC trapped by a uniform harmonic trap \(V(\vb{r})\).
 Now, instead of choosing the healing length as our unit of length, it makes more
 sense to instead choose the harmonic oscillator length \(\ell =
 \sqrt{\hbar/(M\omega)}\), where \(\omega \) is the trapping frequency.
-Then, time is measured in units of \(omega^{-1}\) and energy in
+Then, time is measured in units of \(\omega^{-1}\) and energy in
 \(\hbar\omega \), which leads to the rescaling of the following units:
 \(\vb{r}\rightarrow \ell\tilde{\vb{r}},\ t \rightarrow \omega\tilde{t}\).
 To construct the dimensionless wave function, it is conventional to define the
@@ -1073,21 +1085,23 @@ Substituting these rescaled quantities into Eqs.~\eqref{eq: spin-2-GPEs-pm2}
 system
 \begin{align}
     i\pdv{\tilde{\psi}_{\pm 2}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
-    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm 2\tilde{c}_1\tilde{F}_z
+    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm 2\tilde{c}_1\tilde{n}\tilde{F}_z
     \mp 2\tilde{p} + 4\tilde{q}\right]\tilde{\psi}_{\pm 2}
-    + \tilde{c}_1\tilde{F}_\mp\tilde{\psi}_{\pm 1}
-    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\mp 2}^* \\
+    + \tilde{c}_1\tilde{n}\tilde{F}_\mp\tilde{\psi}_{\pm 1}
+    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{n}\tilde{A}_{20}\tilde{\psi}_{\mp 2}^*
+    \\
     i\pdv{\tilde{\psi}_{\pm 1}}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
-    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm \tilde{c}_1\tilde{F}_z
+    +V(\tilde{\vb{r}}) \tilde{c}_0\tilde{n} \pm \tilde{c}_1\tilde{n}\tilde{F}_z
     \mp 2\tilde{p} + 4\tilde{q}\right]\tilde{\psi}_{\pm 1}
-    +\tilde{c}_1\left(\frac{\sqrt{6}}{2}\tilde{F}_\mp \tilde{\psi}_0
+    +\tilde{c}_1\tilde{n}\left(\frac{\sqrt{6}}{2}\tilde{F}_\mp \tilde{\psi}_0
     +\tilde{F}_\pm\tilde{\psi}_{\pm 2}\right)
-    - \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\mp 1}^* \\
+    - \frac{\tilde{c}_2}{\sqrt{2}}\tilde{n}\tilde{A}_{20}\tilde{\psi}_{\mp 1}^*
+    \\
     i\pdv{\tilde{\psi}_0}{\tilde{t}} &= \left[-\frac{1}{2}\tilde{\nabla}^2
     +V(\tilde{\vb{r}})+\tilde{c}_0\tilde{n}\right]\tilde{\psi}_0
-    +\frac{\sqrt{6}}{2}\tilde{c}_1\left(\tilde{F}_+\tilde{\psi}_1
+    +\frac{\sqrt{6}}{2}\tilde{c}_1\tilde{n}\left(\tilde{F}_+\tilde{\psi}_1
     +\tilde{F}_-\tilde{\psi}_{-1}\right)
-    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{A}_{20}\tilde{\psi}_{\pm 2}^*,
+    + \frac{\tilde{c}_2}{\sqrt{2}}\tilde{n}\tilde{A}_{20}\tilde{\psi}_{\pm 2}^*,
 \end{align}
 where now the rescaled interaction strengths and Zeeman shifts are
 \begin{align}\label{eq: spin-2-interaction-strengths-dimensionless}
@@ -1243,7 +1257,7 @@ The ratios of interaction parameters are
     \frac{c_0}{c_1} = 20.1, \qquad \frac{c_0}{c_2} = -18.6,
 \end{equation}
 which predicts the ground state of \( ^{23}\)Na to be nematic (see
-Sec~\ref{sec: ground-state-spin-2} for details).
+Sec~\ref{sec: ground-states-spin-2} for details).
 
 For \( ^{87}\)Rb we once again assume an atom number of \(N=2\times10^5\) with a
 trapping frequency \(\omega = 2\pi \times 130\)Hz.
@@ -1270,4 +1284,4 @@ In this case, the interaction strength ratios are
     \frac{c_0}{c_1} = 90.7, \qquad \frac{c_0}{c_2} = -102.0,
 \end{align}
 which again predict the ground state to be nematic (see
-Sec~\ref{sec: ground-state-spin-2} for details).
+Sec~\ref{sec: ground-states-spin-2} for details).

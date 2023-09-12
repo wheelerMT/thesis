@@ -69,3 +69,4 @@ unoriented
 Clebsch-Gordon
 Pauli-type
 spin-indepndent
+Larmor
