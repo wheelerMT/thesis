@@ -29,17 +29,17 @@ is a trapping potential.
 Additionally, \(\hat{H}_I\) represents the interacting part of the Hamiltonian,
 which describes binary collisions between bosons at positions \(\vb{r}_1\) and
 \(\vb{r}_2\) whose interactions are described by the interaction potential
-\(\mathcal{U}(\vb{r}_1 - \vb{r}_2)\):
+\(\mathcal{U}(\vb{r}_1, \vb{r}_2)\):
 \begin{align}
     \hat{H}_I = \int \int \Psi^\dagger(\vb{r}_1, t)\Psi^\dagger(\vb{r}_2, t)
-    \mathcal{U}(\vb{r}_1 - \vb{r}_2)\Psi(\vb{r}_2, t)\Psi(\vb{r}_1, t)
+    \mathcal{U}(\vb{r}_1, \vb{r}_2)\Psi(\vb{r}_2, t)\Psi(\vb{r}_1, t)
     \, \dd^3\vb{r}_1 \, \dd^3\vb{r}_2.
 \end{align}
 The dilute nature of the BEC justifies that any binary interaction
 between two particles at positions \(\vb{r}_1, \vb{r}_2\) can be approximated by
 a contact interaction modelled by the following delta function:
 \begin{equation}
-    \mathcal{U}(\vb{r}_1 - \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
+    \mathcal{U}(\vb{r}_1, \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
 \end{equation}
 where the interaction coefficient, \(g\), is coupled to the s-wave scattering
 length, \(a_s\), as
@@ -308,10 +308,10 @@ where \(\hat{V}^{(\EuScript{F})}\) is the interaction Hamiltonian between two
 atoms with total spin \(\EuScript{F}\), which is given as
 \begin{align}\label{eq: spin-channel-hamiltonian-full-form}
     \hat{V}^{(\EuScript{F})} = \frac{1}{2}\int\int
-    \mathcal{U}^{(\EuScript{F})}(\vb{r}_1-\vb{r}_2)
+    \mathcal{U}^{(\EuScript{F})}(\vb{r}_1, \vb{r}_2)
     \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
-    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2)
-    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) \,
+    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}_1, \vb{r}_2)
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1, \vb{r}_2) \,
     \dd^3\vb{r}_1\dd^3\vb{r}_2,
 \end{align} 
 where \(\mathcal{U}^{(\EuScript{F})}\) describes the interaction potential
@@ -321,7 +321,7 @@ that project two spin-\(f\) particles with total component \(\EuScript{M}\)
 onto total spin \(\EuScript{F}\) and component \(\EuScript{M}\).
 They are defined, explicitly, as
 \begin{align}\label{eq: irreducible-operator}
-    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1-\vb{r}_2) =
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}_1, \vb{r}_2) =
     \hat{\psi}^T\mathcal{A}_{\EuScript{F}\EuScript{M}}\hat{\psi},
 \end{align}
 where \(\mathcal{A}_{\EuScript{F}\EuScript{M}}\) are matrices of
@@ -336,15 +336,14 @@ Since we are assuming binary collisions, we can make an assumption similar to
 the scalar case and model the interactions by a contact potential of the
 following form:
 \begin{align}
-    \mathcal{U}^{(\EuScript{F})} = g_\EuScript{F}\delta(\vb{r}_1-\vb{r}_2),
+    \mathcal{U}^{(\EuScript{F})} = g_\EuScript{F}\delta(\vb{r}_1 - \vb{r}_2),
 \end{align}
 where \(g_\EuScript{F}\) is an interaction coefficient related to the s-wave
-scattering length of the total spin-\(\EuScript{F}\), \(a_\EuScript{F}\)
-channel, as
+scattering length of the total spin-\(\EuScript{F}\) channel,
+\(a_\EuScript{F}\), as
 \begin{align}
-    g_\EuScript{F} = \frac{4\pi\hbar^2}{M}a_\EuScript{F},
+    g_\EuScript{F} = \frac{4\pi\hbar^2}{M}a_\EuScript{F}.
 \end{align}
-for atomic mass \(M\).
 This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
 \begin{align}\label{eq: spin-channel-hamiltonian}
     \hat{V}^{(\EuScript{F})} = \frac{g_\EuScript{F}}{2}\int
@@ -421,7 +420,7 @@ Using Eq.~\eqref{eq: irreducible-operator} and Eq.~\eqref{eq: clebsch-gordon},
 along with the substitution \(\EuScript{F} = \EuScript{M} = 0\), yields the
 spin-singlet pair operator:
 \begin{align}
-    \hat{A}_{00}(\vb{r}_1-\vb{r}_2) = \frac{1}{\sqrt{2f+1}}\sum_{m=-f}^{f}
+    \hat{A}_{00}(\vb{r}_1, \vb{r}_2) = \frac{1}{\sqrt{2f+1}}\sum_{m=-f}^{f}
     {(-1)}^{f-m}\hat{\psi}_m(\vb{r}_1)\hat{\psi}_{-m}(\vb{r}_2).
 \end{align}
 
@@ -455,13 +454,13 @@ given by
 
 \subsubsection{Spin-channel operators to physical observables}
 To construct the spinor interaction Hamiltonian in terms of physical
-observables, we need to connect them to the projection operators
+observables, we need to connect them to the projection operators,
 \(\hat{A}_{\EuScript{F}, \EuScript{M}}\).
 The relationship between the two is constructed using a completeness relation
 that joins the irreducible observables to the composition law of angular
 momentum, then taking the expectation value (see Ref.~\cite{Kawaguchi2012} for
 details).
-The result is the following relation~\cite{Symes2019}:
+The result is the following relation~\cite{Kawaguchi2012, Symes2019}:
 \begin{align}\label{eq: physical-observable}
     \sum_{\nu_1\nu_2\cdots\nu_k}{(\mathcal{N}_{\nu_1\nu_2\cdots\nu_k})}^2 =
     \sum_{\EuScript{F} = 0, 2, \ldots, 2f}{\left[
@@ -471,7 +470,7 @@ The result is the following relation~\cite{Symes2019}:
     \hat{A}_{\EuScript{F}, \EuScript{M}},
 \end{align}
 where the left-hand side is a tensor inner product, reducing the tensor to a
-scalar energy term~\cite{Kawaguchi2012}.
+scalar energy term.
 
 \subsection{Spinor interaction Hamiltonian}
 Using the results of the previous subsection, namely,
@@ -589,9 +588,6 @@ strengths, respectively.
 Since the spin-2 system has an extra contribution from the spin-channels
 compared to the spin-1 system, there arises an additional interaction strength,
 \(c_2\), denoted the spin-singlet interaction strength.
-Competition between the \(c_1\) and \(c_2\) terms gives rise to an interesting
-ground state phase diagram for spin-2 BECs (see
-Chapter~\ref{chap: ground-states}).
 
 \subsubsection{Spin-\(f\)}
 Generally, the spin-\(f\) interaction Hamiltonian has \(f + 1\) non-linear
@@ -618,7 +614,7 @@ The linear Zeeman shift, \(p\), introduces a Larmor precession of the condensate
 spin about the direction of the applied magnetic field, and hence can be
 removed by transforming to a rotating basis.
 The quadratic Zeeman shift, \(q\), however, breaks the spin symmetry, and thus
-changes the non-linear spin dynamics.
+affects the non-linear spin dynamics.
 Throughout this thesis we consider a variety of applied magnetic fields
 providing different forms for the quadratic Zeeman shift.
 In Chapter~\ref{chap: spin-1} we consider a time-dependent but spatially-uniform
@@ -628,7 +624,7 @@ magnetic field such that \(q=q(z)\).
 
 \section{Spinor mean-field theory}
 The mean-field theory for spinor BECs is obtained by expanding the field
-operator \(\hat{\psi}(\vb{r})\) into a complete orthonormal set of basis
+operator \(\hat{\psi}_m(\vb{r})\) into a complete orthonormal set of basis
 functions and taking the expectation (see Ref.~\cite{Kawaguchi2012} for
 details).
 The mean-field state of a spin-\(f\) system is then described by a
@@ -672,9 +668,9 @@ Eq.~\eqref{eq: spin-1-pauli-matrices}, the individual components of the spin
 vectors for a spin-1 system are given explicitly as
 \begin{align}\label{eq: spin-1-spin-vectors}
     \hat{F}_x &= \frac{1}{\sqrt{2}n} \left(\psi_1^*\psi_0
-    + \psi_0^*(\psi_1+\psi_{-1}) + \psi_{-1}^*\psi_0\right) \\
+    + \psi_0^*(\psi_1+\psi_{-1}) + \psi_{-1}^*\psi_0\right), \\
     \hat{F}_y &= \frac{i}{\sqrt{2}n}\left(-\psi_1^*\psi_0
-    + \psi_0^*(\psi_1-\psi_{-1}) +\psi_{-1}^*\psi_0\right) \\
+    + \psi_0^*(\psi_1-\psi_{-1}) +\psi_{-1}^*\psi_0\right), \\
     \hat{F}_z &= \frac{1}{n}\left(|\psi_1|^2-|\psi_{-1}|^2\right).
 \end{align}
 
@@ -791,7 +787,7 @@ external potential are independent of time, the total energy of the system
 Eq.~\eqref{eq: spin-2-energy-functional}] is conserved.
 In addition, the total atom number of the condensate
 \begin{align}
-    N = \int \sum_{m=-f}^f |\psi_m|^2 \, \dd^3\vb{r}
+    N = \int \sum_{m=-f}^f |\psi_m|^2 \, \dd^3\vb{r},
 \end{align}
 is also conserved.
 Furthermore, the \(z\)-component of the magnetisation, defined as
