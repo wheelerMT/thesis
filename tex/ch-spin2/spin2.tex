@@ -16,7 +16,7 @@ symmetries connect smoothly across the boundary.
 These interfaces arise in many areas of physics, such as in the context of
 domain walls in the early universe~\cite{Zeldovich1975,Kibble1976,Kibble1980},
 the \(A\)--\(B\) phase boundary in superfluid liquid \(^3\)He~\cite{
-    Osheroff1977,Yip1986,Salomaa1987,Finne2006,Bradley2007,Volovik2009}, and in
+    Osheroff1977,Yip1986,Salomaa1987,Finne2006,Bradley2008,Volovik2009}, and in
 atomic Bose-Einstein condensates (BECs)~\cite{Takeuchi2006,Kasamatsu2010,
     Borgh2012,Borgh2013, Borgh2014,Kaneda2014}.
 The differing order parameter symmetry on each side of the interface implies
@@ -154,12 +154,12 @@ phases, engineered through manipulation of the quadratic Zeeman shift.
 To determine the energetic stability of this interpolating spinor, we compare
 the energy per particle given by~\cite{Kawaguchi2012}
 \begin{equation}\label{eq: energy-per-particle}
-    E = \mathcal{H}[\Psi^\text{UN-BN}] - \frac{c_0n}{2},
+    E = \hat{H}\left[\Psi^\text{UN-BN}\right] - \frac{c_0n}{2},
 \end{equation}
-where \(\mathcal{H} = \mathcal{H}_0 + \mathcal{H}_\text{int}\) is the spin-2
-Hamiltonian density where \(\mathcal{H}_0\) and \(\mathcal{H}_\text{int}\)
+where \(\hat{H} = \hat{H}_0 + \hat{H}_\text{int}\) is the spin-2
+Hamiltonian where \(\hat{H}_0\) and \(\hat{H}_\text{int}\)
 are defined in Eq.~\eqref{eq: single-particle-Hamiltonian} and
-Eq.~\eqref{eq: spin-2-interacting-Hamiltonian}, respectively.
+Eq.~\eqref{eq: spin-2-interaction-hamiltonian}, respectively.
 The energy of the interpolating spinor given in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor} reads
 \(E^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\)
@@ -172,7 +172,7 @@ a longitudinal quadratic Zeeman shift \(q(z)\) such that \(q(z)\) changes
 sign at some transverse plane, which we typically take to be \(z=0\).
 
 A consequence of a spatially-dependent \(\eta \) is revealed from the spin
-singlet-duo and -trio amplitudes, given in terms of the spinor \(\zeta_m\),
+singlet-duo and -trio amplitudes, given in terms of the spinor \(\zeta\),
 respectively, as
 \begin{gather}\label{eq: a20definition}
     |A_{20}|^2 = \frac{1}{5}\left|2\zeta_2\zeta_{-2}-2\zeta_1\zeta_{-1}
@@ -186,10 +186,10 @@ Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into the above,
 we get
 \begin{equation}
     \begin{aligned}
-        |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\theta
+        |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\chi
         + \eta^2 + 1\right],                                          \\
         |A_{30}|^2 & = \frac{1+\eta}{4} \left[3\left(\eta ^2-1\right)
-            \cos\theta
+            \cos\chi
             + \eta(5 \eta -8) + 5\right],
     \end{aligned}
 \end{equation}
@@ -373,9 +373,9 @@ Eq.~\eqref{eq: UN-BN-interpolating-spinor}, resulting in the spinor
         e^{-i\varphi}\sqrt{1 - \eta}
     ).
 \end{align}
-Notice that there is no phase winding apparent in the above equation, which
-implies that the spin vortex exists only within the BN limit, and therefore
-smoothly connects to a vortex-free state in the UN limit.
+Notice that there is no condensate phase winding apparent in the above equation,
+which implies that the spin vortex exists only within the BN limit, and
+therefore smoothly connects to a vortex-free state in the UN limit.
 It is, however, possible to construct a spin vortex on both sides of the
 interface.
 This can be achieved by first applying a spin rotation to the state initial
@@ -634,7 +634,7 @@ These defects are summarised in Table~\ref{tab: C-N-other}.
 
 \subsection{Cyclic to ferromagnetic}
 Since spin-2 BECs support a ferromagnetic phase, which has inherent
-magnetisation, it is natural to construct an interface between this state and
+magnetisation, one can construct an interface between this state and
 one with zero magnetisation.
 This would then result in spatially distinct regions which have different values
 of the spin magnitude, and hence would create a spatially-dependent
@@ -1144,8 +1144,8 @@ The SQV on the BN side undergoes a similar filling of the empty vortex core,
 filling with atoms in the UN, BN and cyclic phases, also generating an interface
 within the core.
 The development of this composite core structure signifies the start of a
-splitting process, whereby the SQV is expected to split into two HQVs
-[\textcolor{red}{refs?}].
+splitting process, whereby the SQV is expected to split into two
+HQVs~\cite{Seo2015, Xiao2021}.
 Since our system has no rotation of the trapping potential to stabilise the
 vortices, the timescales considered here reveal that both vortices eventually
 leave the condensate cloud.
@@ -1203,9 +1203,7 @@ Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 Since our numerical simulations use parameters that predict a nematic ground
 state, we introduce a spatially-dependent \(c_1\) term such that \(c0/c_1=90.7\)
 on the cyclic side but \(c_0/c_1=-90.7\) on the FM side, effectively changing
-the sign of the \(c_1\) term.
-\textcolor{red}{Are there experimental papers to cite here that mention the
-manipulation of scattering lengths to achieve this?}
+the sign of the \(c_1\) term~\cite{Fatemi2000,Papoular2010}.
 Now, in the FM region, the parameters ensure that the FM region remains stable.
 Despite the cyclic state not being the predicted ground state, the interface
 is observed to remain stable for the timescales considered in our simulations.
