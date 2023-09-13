@@ -230,21 +230,21 @@ listed in Table~\ref{tab: UN-BN-vortices}.
     \centering
     \begin{tabular}{cccccc}
         \toprule
-        \multicolumn{5}{c}{Uniaxial nematic to biaxial nematic (UN-BN) ---
-        Vortices} \\
+        \multicolumn{5}{c}{UN-BN --- Vortices from spinor-component phase
+        winding} \\
         \midrule
         UN limit & BN limit &  \(\chi_2/\varphi \) & \(\chi_0/\varphi \) &
         \(\chi_{-2}/\varphi \)  \\
         \midrule
-         Singular phase vortex & Singular phase vortex & \(k\) & \(k\) &
+        Phase vortex & Phase vortex & \(k\) & \(k\) &
          \(k\) \\ 
-         Vortex-free & Singular phase vortex & \(k\) & 0 & \(k\) \\
-         Singular phase vortex & Vortex-free & 0 & \(k\) & 0\\
+         Vortex-free & Phase vortex & \(k\) & 0 & \(k\) \\
+        Phase vortex & Vortex-free & 0 & \(k\) & 0\\
          Vortex-free & Singular spin vortex  & \(-k\) & 0 & \(k\) \\
-         Singular phase vortex & Singular spin vortex  & \(-k\) & \(k\) &
+        Phase vortex & Singular spin vortex  & \(-k\) & \(k\) &
          \(k\) \\
-         Vortex-free & Half-quantum vortex  & \(k\) & 0 & 0\\
-         Singular phase vortex & Half-quantum vortex  & \(k\) & \(k\) & 0 \\
+         Vortex-free & Half-quantum vortex  & 0 & 0 & 1 \\
+        Phase vortex & Half-quantum vortex  & 0 & \(\pm 1\) & 1 \\
         \bottomrule
     \end{tabular}
     \caption[Examples of possible vortex connections across a uniaxial nematic
@@ -457,17 +457,20 @@ A summary of other types of defects one can obtain in a UN-BN interface is
 given in Table~\ref{tab: UN-BN-nonsingular}.
 \begin{table}
     \centering
-    \begin{tabular}{cccccc}
+    \begin{tabular}{ccccc}
         \toprule
-        \multicolumn{6}{c}{Uniaxial nematic to biaxial nematic ---
-        Other defects/textures} \\
+        \multicolumn{5}{c}{UN-BN --- Vortices, textures, and monopoles using
+        Euler angles} \\
         \midrule
-        UN limit & BN limit &  \(\tau/\varphi \) & \(\alpha/\varphi \) &
-        \(\gamma/\varphi \) & \(\beta \) \\
+        UN limit & BN limit &  \(\alpha/\varphi \) & \(\gamma/\varphi \)
+            & \(\beta \) \\
         \midrule
-        Monopole & Monopole & 0 & \(k\)  & 0 & \(k\theta \) \\
-        Nonsingular vortex & Nonsingular vortex & 0 & 1 & 0 &
-        \(\beta(\rho)\) \\ 
+        Spin half-quantum vortex & Spin half-quantum vortex & 1 & 0
+            & \(\pi/2\) \\
+        Nonsingular spin vortex & Singular spin vortex & 1 & 0
+            & \(\beta(\rho)\) \\
+        Monopole & Singular spin vortex & 1  & 0 & \(\theta \) \\
+        Singular spin vortex & Monopole & 1 & -1 & \(\beta(\rho)\) \\ 
         \bottomrule
     \end{tabular}
     \caption[Examples of monopole and nonsingular vortex connections across a
@@ -536,12 +539,13 @@ These defect states are summarised in Table~\ref{tab: C-N-vortices}.
     \centering
     \begin{tabular}{cccccc}
         \toprule
-        \multicolumn{6}{c}{Cyclic to nematic --- vortices} \\
+        \multicolumn{6}{c}{C-N --- Vortices from spinor-component phase
+            winding} \\
         \midrule
         Cyclic limit & UN limit & BN limit & \(\chi_2/\varphi \) &
         \(\chi_0/\varphi \) & \(\chi_{-2}/\varphi \) \\
         \midrule
-            SQV & SQV & SQV & \(k\) & \(k\) & \(k\) \\
+            Phase vortex & Phase vortex & Phase vortex & \(k\) & \(k\) & \(k\)\\
             Singular spin vortex & Vortex-free & Singular spin vortex & \(-k\)
             & 0 & \(k\) \\
         \bottomrule
@@ -606,18 +610,19 @@ cyclic limit.
 These defects are summarised in Table~\ref{tab: C-N-other}.
 \begin{table}
     \centering
-    \begin{tabular}{cccccc}
+    \begin{tabular}{ccccc}
         \toprule
-        \multicolumn{6}{c}{Cyclic to nematic --- Other defects/textures} \\
+        \multicolumn{5}{c}{C-N --- Vortices, textures, and monopoles using Euler
+            angles} \\
         \midrule
-        Cyclic limit & UN/BN Limits &  \(\tau/\varphi \) & \(\alpha/\varphi \)
+        Cyclic / BN limits & UN limit & \(\alpha/\varphi \)
         & \(\gamma/\varphi \) & \(\beta \) \\
         \midrule
-         Singular spin vortex & Singular spin vortex & 0 &
-         \(\alpha=\frac{\pi}{4}\) & \(\gamma=-\alpha \) & \(k\varphi \) \\
-         Nonsingular vortex & Nonsingular vortex & 0 & 1 & 0
-         & \(\beta(\rho)\) \\ 
-         Monopole & Monopole & 0 & \(k\)  & 0 & \(k\theta \) \\
+        Singular spin vortex & Singular spin vortex & \(\alpha=\pi/4\)
+            & \(\gamma=-\alpha\) & \(k\varphi\) \\
+        Singular spin vortex & Nonsingular spin vortex & 1 & 0
+            & \(\beta(\rho)\) \\
+        Singular spin vortex & Monopole & 1 & 0 & \(\theta\) \\
         \bottomrule
     \end{tabular}
     \caption[Examples of monopole and nonsingular vortex connections across a
@@ -736,16 +741,16 @@ summarised in Table~\ref{tab: C-FM-vortices}.
     \centering
     \begin{tabular}{ccccc}
         \toprule
-        \multicolumn{5}{c}{Cyclic to ferromagnetic --- Vortices} \\
+        \multicolumn{5}{c}{C-FM --- Vortices from spinor-component phase
+            winding} \\
         \midrule
-        C limit & FM-2 limit & FM-1 limit & \(\chi_2/\varphi \)
+        Cyclic limit & FM-2 limit & FM-1 limit & \(\chi_2/\varphi \)
         & \(\chi_{-1}/\varphi \) \\
         \midrule
-         SQV & SQV & SQV & \(k\) & \(k\) \\ 
-         One-third & SQV & Vortex-free & \(k\) & 0 \\
-         Two-third vortex & Vortex-free & SQV & 0 & \(k\) \\
-         Singular spin vortex & Singular spin vortex & Singular spin vortex
-         & \(-2k\) & \(k\) \\
+         Phase vortex & Phase vortex & Phase vortex & \(k\) & \(k\) \\ 
+         One-third vortex & Phase vortex & Vortex-free & 1 & 0 \\
+         Two-third vortex & Vortex-free & Phase vortex & 0 & 1 \\
+         Singular spin vortex & Phase vortex & Phase vortex & \(-2k\) & \(k\) \\
         \bottomrule
     \end{tabular}
     \caption[Examples of possible vortex connections across a cyclic to
@@ -850,6 +855,52 @@ of \(4\pi \), coupled with a non-trivial rotation of the condensate spin,
 indicating that this is particular vortex is a doubly-quantised vortex.
 Therefore, the interpolating spinor above connects FM coreless vortices to a
 doubly-quantised vortex in the cyclic limit.
+A table of vortices, textures, and monopoles that can be constructed using
+Euler angles in this interface are presented in Table~\ref{tab: C-FM-other}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{6}{c}{C-FM --- Vortices, textures and monopoles using Euler
+            angles} \\
+        \midrule
+        C limit & FM-2 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
+            & \(\gamma/\varphi\) & \(\beta\) \\
+        \midrule
+        Phase vortex & Nonsingular vortex & 2 & 1 & 0 & \(\beta(\rho)\) \\ 
+        Singular spin vortex & Nonsingular vortex & 0 & 1 & \(\pm 1\)
+            & \(\beta(\rho)\) \\ 
+        Two-third vortex & Nonsingular vortex & 2/3 & 1 & -2/3, 4/3
+            & \(\beta(\rho)\) \\
+        Phase vortex & Dirac monopole & 2 & \(1\) & 0 & \(\theta\) \\ 
+        Singular spin vortex & Dirac monopole & 0 & \( 1\) & \(\pm 1\)
+            & \(\theta\) \\ 
+        Two-third vortex & Dirac monopole & 2/3 & \( 1\) & -2/3, 4/3
+            & \(\theta\) \\
+        \bottomrule
+        \midrule
+        C limit & FM-1 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
+            & \(\gamma/\varphi\) & \(\beta\) \\
+        \midrule
+        Phase vortex & Nonsingular vortex & 1 & 1 & 0 & \(\beta(\rho)\) \\ 
+        Singular spin vortex & Nonsingular vortex & 0 & 1 & \(\pm 1\)
+            & \(\beta(\rho)\) \\ 
+        One-third vortex & Nonsingular vortex & 1/3 & 1 & -4/3, 2/3
+            & \(\beta(\rho)\) \\
+        Phase vortex & Dirac monopole & 1 & 1 & 0 & \(\theta\) \\ 
+        Singular spin vortex & Dirac monopole & 0 & 1 & \(\pm 1\) & \(\theta\)\\ 
+        One-third vortex & Dirac monopole & 1/3 & 1 & -4/3, 2/3 & \(\theta\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: C-FM-other}List of vortices, textures, and monopoles
+    that can be constructed in a cyclic to FM interface using a combination
+    of the condensate phase \(\tau\) and the Euler angles \(\alpha, \beta,
+    \gamma\).
+    Here, \(\tau, \alpha, \gamma\) are given as multiples of the azimuthal angle
+    \(\varphi\), whilst \(\beta\) is either a multiple of the polar angle
+    \(\theta\), or a monotonically increasing function of the transverse radius,
+    \(\rho\).}
+\end{table}
 
 \subsection{Ferromagnetic to biaxial nematic}
 Another interface containing non-zero magnetisation is that between the FM and
@@ -935,10 +986,10 @@ Table~\ref{tab: FM-BN-vortices}.
         FM-2 (up) limit & FM-2 (down) limit & BN limit &  \(\chi_2/\varphi \)
         & \(\chi_{-2}/\varphi \)  \\
         \midrule
-         SQV & SQV & SQV & \(k\) & \(k\) \\ 
-         SQV & Vortex-free & Half-quantum vortex & \(k\) & 0 \\
-         Vortex-free & SQV & Half-quantum vortex & 0 & \(k\) \\
-         SQV & SQV & Singular spin vortex  & \(-k\) & \(k\) \\
+         Phase vortex & Phase vortex & Phase vortex & \(k\) & \(k\) \\ 
+         Phase vortex & Vortex-free & Half-quantum vortex & 1 & 0 \\
+         Vortex-free & Phase vortex & Half-quantum vortex & 0 & 1 \\
+         Phase vortex & Phase vortex & Singular spin vortex  & \(-k\) & \(k\) \\
         \bottomrule
     \end{tabular}
     \caption[Examples of possible vortex connections across a ferromagnetic
@@ -1025,6 +1076,39 @@ phase changes by a total of \(4\pi \).
         this is a doubly quantised vortex, coupled with a non-trivial rotation
         of the condensate spin.}
 \end{figure}
+A summary of vortices, textures, and monopoles that can be constructed using
+the Euler angles in an FM-BN interface is given in Table~\ref{tab: FM-BN-other}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{6}{c}{FM-BN --- Vortices, textures and monopoles from Euler
+            angles} \\
+        \midrule
+        FM-2 limit & BN limit & \(\tau/\varphi\) & \(\alpha/\varphi\)
+            & \(\gamma/\varphi\) & \(\beta\) \\
+        \midrule
+        Nonsingular vortex & Phase vortex & \(2\) & 1 & \(0\)
+            & \(\beta(\rho)\) \\ 
+        Nonsingular vortex & Singular spin vortex  & \(0\) & 1 & \(\pm 1\)
+            & \(\beta(\rho)\) \\ 
+        Nonsingular vortex & Half-quantum vortex & 1/2 & 1 & -3/4
+            & \(\beta(\rho)\) \\ 
+        Dirac monopole & Phase vortex & 2 & 1  & 0 & \(\theta\)\\
+        Dirac monopole & Singular spin vortex & 0 & 1  & \(\pm 1\)
+            & \(\theta\)\\
+        Dirac monopole & Half-quantum vortex & 1/2 & 1  & -3/4 & \(\theta\) \\
+        \bottomrule
+    \end{tabular}
+    \caption{\label{tab: FM-BN-other}List of vortices, textures, and monopoles
+    that can be constructed in an FM to BN interface using a combination
+    of the condensate phase \(\tau\) and the Euler angles \(\alpha, \beta,
+    \gamma\).
+    Here, \(\tau, \alpha, \gamma\) are given as multiples of the azimuthal angle
+    \(\varphi\), whilst \(\beta\) is either a multiple of the polar angle
+    \(\theta\), or a monotonically increasing function of the transverse radius,
+    \(\rho\).}
+\end{table}
 
 \section{Numerical investigations of defect crossing physics}
 In this section we numerically investigate some topological interfaces defined
