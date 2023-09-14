@@ -529,12 +529,41 @@ at the BN side.
 
 Firstly, one can construct the same SQV and spin vortex connections considered
 in the UN-BN interface upon the substitution \(\sqrt{1+\eta} \rightarrow
-i\sqrt{1+\eta}\) in Eqs.~\eqref{eq: UN-BN-SQV-SQV} and~\eqref{eq: UN-BN-sv-sv},
+i\sqrt{1+\eta}\).
+For example, a connection between phase vortices is obtained from
+Eq.~\eqref{eq: UN-BN-SQV-SQV}, where the resulting spinor reads
+\begin{align}
+    \zeta^\text{C-N}_\text{pv-pv} = \frac{1}{2}\mqty(
+        e^{ik\varphi}\sqrt{1 - \eta} \\
+        0 \\
+        ie^{ik\varphi}\sqrt{2(1 + \eta)} \\
+        0 \\
+        e^{ik\varphi}\sqrt{1 - \eta}
+    ),
+\end{align}
 identifying the cyclic limit as \(\eta = 0\).
-However, choosing the phase windings \(\chi_m\) such that \(\chi \neq 0\) leads
+This is obtained from Eq.~\eqref{eq: C-N-interpolating-spinor} by the choice
+\(\chi_2=\chi_0=\chi_{-2}=k\varphi\).
+Additionally, a connection involving spin vortices is constructed as
+\begin{align}
+    \zeta^\text{C-N}_\text{sv-sv/vf} = \frac{1}{2}\mqty(
+        e^{-ik\varphi}\sqrt{1 - \eta} \\
+        0 \\
+        i\sqrt{2(1 + \eta)} \\
+        0 \\
+        e^{ik\varphi}\sqrt{1 - \eta}
+    ),
+\end{align}
+which equates to spin vortices in the cyclic and BN limits, connecting to a
+vortex-free state in the UN limit.
+These connections can be achieved from Eq.~\eqref{eq: C-N-interpolating-spinor}
+with the choice \(\chi_{\pm 2} = \mp k\varphi\) and \(\chi_0=0\).
+Vortices that can be constructed from component phase windings are summarised in
+Table~\ref{tab: C-N-vortices}.
+It is worth noting that choosing the phase windings \(\chi_m\) in
+Eq.~\eqref{eq: C-N-interpolating-spinor} such that \(\chi \neq 0\) leads
 to defect states which are undefined in the cyclic limit, and hence we omit
 them from the discussion.
-These defect states are summarised in Table~\ref{tab: C-N-vortices}.
 \begin{table}
     \centering
     \begin{tabular}{cccccc}
