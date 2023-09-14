@@ -255,10 +255,10 @@ listed in Table~\ref{tab: UN-BN-vortices}.
     Additionally, generalisations to multiply quantised vortices are given by
     \(k \in \mathbb{Z}\).}
 \end{table}
-We start by constructing a connection of singly quantised vortices (SQVs) on
-either side of the interface, which can be achieved by allowing
-\(\chi_m=\varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results
-in a spatially overlapping \(2\pi \) phase winding in each component.
+We start by constructing a connection of phase vortices on either side of the
+interface, which can be achieved by allowing \(\chi_m=\varphi \) in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results in a spatially
+overlapping \(2\pi \) phase winding in each component.
 An alternative construction is achieved using
 Eq~\eqref{eq: general-defect-interface}, where instead \(\tau=\varphi \) and the
 Euler angles are kept constant.
@@ -273,21 +273,22 @@ Such a spinor is given explicitly as
         e^{i\varphi}\sqrt{1-\eta}
     ).
 \end{align}
-One can see that in the above spinors we recover the individual SQV case in both
-the UN \(\zeta^\text{UN}_\text{pv} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
-\(\zeta^\mathrm{BN}_\text{pv} ={(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\)
-limits when \(\eta = \pm 1\), respectively.
+One can see that in the above spinors we recover the individual phase vortex
+case in both the UN \(\zeta^\text{UN}_\text{pv} = {(0,0,e^{i\varphi},0,0)}^T\)
+and BN \(\zeta^\mathrm{BN}_\text{pv} =
+{(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\) limits when \(\eta = \pm 1\),
+respectively.
 It is important to note that, despite being characterised by the same phase
-winding, the SQVs on either side of the interface represent entirely different
-objects due to the differing topologies of the UN and BN phases.
+winding, the phase vortices on either side of the interface represent entirely
+different objects due to the differing topologies of the UN and BN phases.
 
 Instead of connecting two vortices on either side of the interface, one can
 instead construct a vortex that terminates on the interface itself, essentially
 connecting to a vortex-free region on the other side.
 This can be achieved by selectively removing the phase winding from particular
 components.
-For example, to achieve an SQV in the UN limit that connects to a vortex-free
-region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
+For example, to achieve a phase vortex in the UN limit that connects to a
+vortex-free region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
 = \varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which gives
 \begin{align}\label{eq: UN-BN-pv-vf}
     \zeta^\text{UN-BN}_\text{pv-vf} = \frac{1}{2}\mqty(
@@ -299,8 +300,8 @@ region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
     ).
 \end{align}
 Similarly, by reversing this and setting the winding \(\chi_{\pm 2} = 0\) and
-\(\chi_0=\varphi \) one instead constructs an SQV in the BN phase which connects
-to a vortex-free region in the UN limit, given by the spinor
+\(\chi_0=\varphi \) one instead constructs a phase vortex in the BN phase which
+connects to a vortex-free region in the UN limit, given by the spinor
 \begin{align}\label{eq: UN-BN-vf-pv}
     \zeta^\text{UN-BN}_\text{vf-pv} = \frac{1}{2}\mqty(
         e^{i\varphi} \sqrt{1-\eta} \\
@@ -527,9 +528,9 @@ which is achieved from a longitudinally-dependent quadratic Zeeman shift
 \(q(z)\) which varies from \(q = 0\) at the cyclic phase to \(q = -c_2n/10\)
 at the BN side.
 
-Firstly, one can construct the same SQV and spin vortex connections considered
-in the UN-BN interface upon the substitution \(\sqrt{1+\eta} \rightarrow
-i\sqrt{1+\eta}\).
+Firstly, one can construct the same phase vortex and spin vortex connections
+considered in the UN-BN interface upon the substitution \(\sqrt{1+\eta}
+\rightarrow i\sqrt{1+\eta}\).
 For example, a connection between phase vortices is obtained from
 Eq.~\eqref{eq: UN-BN-SQV-SQV}, where the resulting spinor reads
 \begin{align}
@@ -715,8 +716,8 @@ respectively.
 Following the procedure similar to the previous interfaces, we first focus on
 constructing phase vortices connecting across this topological interface, which
 can be obtained by appropriate winding of \(\chi_2\) and \(\chi_{-1}\).
-Again, one can construct singular SQVs connecting in all three limits by
-crossing \(\chi_2 = \chi_{-1} = \varphi \), which yields
+Again, one can construct singular phase vortices connecting in all three limits
+by crossing \(\chi_2 = \chi_{-1} = \varphi \), which yields
 \begin{align}\label{eq: C-FM-pv-pv}
     \zeta^\text{C-FM}_\text{pv-pv} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
         \sqrt{1 + \eta} \\
@@ -732,9 +733,11 @@ Sec.~\ref{sec: vortices-spin-2}).
 One can then construct such a vortex in the cyclic limit by limiting the winding
 of the phase to only one component.
 Due to the spin-gauge symmetry of the FM phase, this choice of winding would
-then lead to either singular SQVs and vortex-free regions in this limit.
+then lead to either singular phase vortices and vortex-free regions in this
+limit.
 For example, the following spinor connects a one-third vortex in the cyclic
-limit to a singular SQV in the FM-2 and a vortex-free region in the FM-1 limit:
+limit to a singular phase vortex in the FM-2 and a vortex-free region in the
+FM-1 limit:
 \begin{align}\label{eq: C-FM-third-pv}
     \zeta^\text{C-FM}_\text{third-pv} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
@@ -747,8 +750,8 @@ limit to a singular SQV in the FM-2 and a vortex-free region in the FM-1 limit:
 which corresponds to the choice of \(\chi_2 = \varphi \) and \(\chi_{-1} = 0\)
 in Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 Similarly, a two-third vortex in the cyclic limit can connect to a vortex-free
-region in the FM-2 limit or a singular SQV in the FM-1 limit, given by the
-spinor
+region in the FM-2 limit or a singular phase vortex in the FM-1 limit, given by
+the spinor
 \begin{align}\label{eq: C-FM-2third-vf}
     \zeta^\text{C-FM}_\text{two-third-pv} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
@@ -787,10 +790,7 @@ summarised in Table~\ref{tab: C-FM-vortices}.
     Each vortex can be constructed by choosing the appropriate phase winding
     \(\chi_m\), expressed in terms of the azimuthal angle \(\varphi \).
     Here, \(k \) is an integer that allows one to represent vortices of
-    arbitrary quantisation.
-    Note that, for example, choosing \(k=3\) would result in a one-third
-    vortex now having unit quantisation, but it would be topologically distinct
-    to the SQV constructed from the choice \(\chi_2=\chi_{-1}=k\).}
+    arbitrary quantisation.}
 \end{table}
 
 In addition to phase vortices, the FM phase also supports nonsingular vortices,
@@ -969,8 +969,8 @@ the linear Zeeman shift, \(p(z)\).
 We start from the interpolating spinor between the FM and BN phases in
 Eq.~\eqref{eq: FM-BN-interpolating-spinor} and first construct various vortex
 states using different combinations of the phase windings \(\chi_{\pm 2}\).
-Again, similar to the previous cases, SQVs are connected across the interface
-by the choice \(\chi_{\pm 2} = \varphi \).
+Again, similar to the previous cases, singular phase vortices are connected
+across the interface by the choice \(\chi_{\pm 2} = \varphi \).
 An interesting case arises between a singular phase vortex in the FM phases
 connecting to a spin vortex in the BN phase.
 This can be achieved by again allowing opposite phase windings in the outer
@@ -1000,8 +1000,8 @@ the spinor
     0 \\
     \sqrt{1 - \eta}),
 \end{align}
-which connects this HQV to an SQV in the FM-2 limit when \(\eta = 1\), or a
-vortex-free state when \(\eta = -1\).
+which connects this HQV to a phase vortex in the FM-2 limit when \(\eta = 1\),
+or a vortex-free state when \(\eta = -1\).
 Choosing \(\chi_{\pm 2}\) the opposite way around would reverse this connection.
 A summary of these vortex connections is provided in
 Table~\ref{tab: FM-BN-vortices}.
@@ -1182,15 +1182,15 @@ The quadratic Zeeman shift linearly interpolates over a small transition region
 \(q = -0.1\hbar\omega \) in the BN phase to \(q = 0.1\hbar\omega \) in the UN
 phase.
 
-Our investigation begins with that of the SQV-SQV connection, where the initial
-state is constructed as in Eq.~\eqref{eq: UN-BN-SQV-SQV}.
+Our investigation begins with that of the phase vortex connection, where the
+initial state is constructed as in Eq.~\eqref{eq: UN-BN-SQV-SQV}.
 To imprint the vortices, we perform a short imaginary time propagation, then
 proceed to numerically evolve the spin-2 GPEs.
 The dynamics of this connection is split into two distinct parts, which are
 plotted in Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}.
 Firstly, upon evolution, the two overlapping SQVs spatially separate due to an
 instability occurring at the interface \(z \approx 0\).
-Each SQV then connects to a vortex-free state on the other side of the
+Each phase vortex then connects to a vortex-free state on the other side of the
 interface shown in Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}a.
 After the initial separation, the cores of the vortices fill with atoms
 occupying different ground states, drastically altering the order parameter
@@ -1238,13 +1238,13 @@ symmetry within the cores.
     \caption[Dynamics of a singly quantised vortex connection across a uniaxial
         nematic to biaxial nematic interface]
     {\label{fig: UN-BN-SQV-SQV-singlets}Spin singlet-trio amplitude for
-        the UN-BN SQV-SQV connection given in Eq.~\eqref{eq: UN-BN-SQV-SQV} at
-        \(\bar{t} = 300\).
+        the UN-BN phase vortex connection given in Eq.~\eqref{eq: UN-BN-SQV-SQV}
+        at \(\bar{t} = 300\).
         (a): Longitudinal cut showing the spatial separation of the two vortex
         lines.
         (b) and (c): Transverse cut on the UN (\(z/\ell = 3.125\)) and BN
-        (\(z/\ell = -3.125\)) sides, respectively, showing the SQVs and their
-        composite core structure.
+        (\(z/\ell = -3.125\)) sides, respectively, showing the phase vortices
+        and their composite core structure.
         (d) and (e): Magnified transverse cuts with an overlay of the spherical
         harmonics, showing the non-trivial change of symmetry of the order
         parameter within the vortex cores.}
@@ -1253,23 +1253,23 @@ In the UN case, the initially empty core fills with atoms occupying both the
 cyclic and BN phases, generating a topological interface within the core itself.
 This likely arises due to the differing phases factors between the spinor
 components, as seen in Fig.~\ref{fig: UN-BN-duo-trio}.
-The SQV on the BN side undergoes a similar filling of the empty vortex core,
-filling with atoms in the UN, BN and cyclic phases, also generating an interface
-within the core.
+The phase vortex on the BN side undergoes a similar filling of the empty vortex
+core, filling with atoms in the UN, BN and cyclic phases, also generating an
+interface within the core.
 The development of this composite core structure signifies the start of a
-splitting process, whereby the SQV is expected to split into two
+splitting process, whereby the phase vortex is expected to split into two
 HQVs~\cite{Seo2015, Xiao2021}.
 Since our system has no rotation of the trapping potential to stabilise the
 vortices, the timescales considered here reveal that both vortices eventually
 leave the condensate cloud.
-Additionally, the SQV on the BN side of the interface is observed to leave the
-condensate before the splitting into two HQVs has occurred.
+Additionally, the phase vortex on the BN side of the interface is observed to
+leave the condensate before the splitting into two HQVs has occurred.
 
 We next investigate a vortex connection that terminates on the interface.
 We start with the initial state in Eq.~\eqref{eq: UN-BN-vf-pv}, which contains
 no phase winding in the middle component.
-The result is a SQV in the BN phase that smoothly connects to a vortex-free
-state in the UN phase.
+The result is a phase vortex in the BN phase that smoothly connects to a
+vortex-free state in the UN phase.
 The resulting spin magnitude and singlet-trio amplitude after purely
 imaginary-time relaxation are plotted in Fig.~\ref{fig: UN-BN-VF-SQV}.
 \begin{figure}
@@ -1285,7 +1285,7 @@ imaginary-time relaxation are plotted in Fig.~\ref{fig: UN-BN-VF-SQV}.
     \end{subfigure}
     \caption[Dynamics of a singly quantised vortex to vortex-free connection in
     a uniaxial nematic to biaxial nematic interface]
-    {\label{fig: UN-BN-VF-SQV} Vortex-free to SQV connection defined
+    {\label{fig: UN-BN-VF-SQV} Vortex-free to phase vortex connection defined
     by Eq.~\eqref{eq: UN-BN-SQV-SQV} with \(\beta=0\) and no winding in the
     middle component.
     (a): Spin magnitude at \(\bar{t}=5\). The HQV cores are identified where
@@ -1295,14 +1295,14 @@ imaginary-time relaxation are plotted in Fig.~\ref{fig: UN-BN-VF-SQV}.
     (see Fig~\ref{fig: UN-BN-duo-trio}).}
 \end{figure}
 The dynamics of this connection closely resembles what the later dynamics of the
-BN side of the SQV-SQV connection would look like, provided that the vortices
-were stabilised against leaving the condensate.
-We see that the initial SQV on the BN side has undergone a splitting process
-into two HQVs, each of which can be seen to terminate at the interface.
+BN side of the phase vortex connection would look like, provided that the
+vortices were stabilised against leaving the condensate.
+We see that the initial phase vortex on the BN side has undergone a splitting
+process into two HQVs, each of which can be seen to terminate at the interface.
 The cores of the HQVs are easily identified from the
 \(\spinmag = 2\) regions.
-Similar splitting of an SQV into HQVs has been observed in the polar phase of
-spin-1 condensates~\cite{Seo2015, Xiao2021}.
+Similar splitting of a phase vortex into HQVs has been observed in the polar
+phase of spin-1 condensates~\cite{Seo2015, Xiao2021}.
 For the timescales considered, the resulting HQVs remain stable against
 leaving the condensate.
 Additionally, we see the clear presence of the cyclic phase emerging at the
@@ -1322,7 +1322,7 @@ Despite the cyclic state not being the predicted ground state, the interface
 is observed to remain stable for the timescales considered in our simulations.
 
 We firstly investigate the connection of a third vortex in the cyclic phase
-connecting to a singular SQV in the FM-2 phase using
+connecting to a singular phase vortex in the FM-2 phase using
 Eq.~\eqref{eq: C-FM-third-pv} as the initial state.
 This initial state is then propagated using a short imaginary-time evolution to
 imprint the vortex cores and, once the core is imprinted, we switch to
@@ -1366,8 +1366,8 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
     \end{tikzpicture}
     \caption[Dynamics of a one-third vortex to singly quantised vortex
     connection in a cyclic to ferromagnetic interface]
-    {\label{fig: C-FM-third-SQV}Third vortex to SQV connection in an
-    interface between the cyclic and FM-2 phases given by
+    {\label{fig: C-FM-third-SQV}One-third vortex to phase vortex connection in
+    an interface between the cyclic and FM-2 phases given by
     Eq.~\eqref{eq: C-FM-third-pv} at \(\bar{t} = 50\).
     (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
     The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
@@ -1387,8 +1387,8 @@ Clearly one can see the third vortex on the cyclic side of the interface
 (\(z/\ell < 0\)) evidenced by the \(\spinmag = 1\) core.
 However, unlike the previous case where the vortices spatially separated, this
 \(\spinmag = 1\) region then extends throughout the longitudinal extent of the
-condensate, and penetrates into the FM region, revealing that the initial SQV of
-the FM phase has developed a composite core structure.
+condensate, and penetrates into the FM region, revealing that the initial phase
+vortex of the FM phase has developed a composite core structure.
 This composite core structure is separated into three distinct parts:
 Inside is the \(\spinmag = 1\) region, which is then encased in a cyclic shell
 as seen from the \(|A_{30}|^2=2\) regions in Fig.~\ref{fig: C-FM-third-SQV}c.
@@ -1577,4 +1577,5 @@ As in the case on the cyclic side, these vortices rapidly leave the condensate
 due to the energy relaxation.
 On both sides of the interface the vortex structures are observed to terminate
 at the interface itself, and do not connect in a way that is observed in the
-SQV to one-third vortex connection (see Fig.~\ref{fig: C-FM-third-SQV}).
+phase vortex to one-third vortex connection (see
+Fig.~\ref{fig: C-FM-third-SQV}).
