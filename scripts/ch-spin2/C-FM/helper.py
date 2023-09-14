@@ -1,4 +1,3 @@
-import cupy as cp
 import numpy as np
 
 
@@ -52,19 +51,6 @@ def calc_spin_singlet_trio(zetap2, zetap1, zeta0, zetam1, zetam2):
     return 3 * np.sqrt(6) / 2 * (
         zetap1**2 * zetam2 + zetam1**2 * zetap2
     ) + zeta0 * (zeta0**2 - 3 * zetap1 * zetam1 - 6 * zetap2 * zetam2)
-
-
-def get_tf_density_3d(c0, c2, x, y, z, atom_num=1):
-    """Get 3D Thomas-Fermi profile using interaction parameters
-    for a spin-2 condensate."""
-    g = c0 + 4 * c2
-    rtf = (15 * atom_num * g / (4 * cp.pi)) ** 0.2
-
-    r2 = x**2 + y**2 + z**2
-    tf_dens = 15 * atom_num / (8 * cp.pi * rtf**2) * (1 - r2 / rtf**2)
-    tf_dens = cp.where(tf_dens < 0, 0, tf_dens)
-
-    return tf_dens
 
 
 def get_linear_interp(z, gradient=0.25):

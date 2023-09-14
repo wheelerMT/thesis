@@ -8,15 +8,15 @@ plt.rcParams["text.usetex"] = True
 plt.rc("text.latex", preamble=r"\usepackage{fourier}")
 plt.rcParams.update({"font.size": 26})
 
-path = Path("../../../../thesis_code/data/spin-2")
-filename = "5f_C-FM=2_coreless_MH.hdf5"
+path = Path("../thesis_data/")
+filename = "5f_C-FM=2_coreless.hdf5"
 
 # Load data
 data = h5py.File(path / filename, "r")
 x, y, z = data["grid/x"], data["grid/y"], data["grid/z"]
 X, Y, Z = np.meshgrid(x, y, z, indexing="ij")
 dx, dy, dz = x[1] - x[0], y[1] - y[0], z[1] - z[0]
-frame = 1
+frame = -1
 psip2 = data["wavefunction/psiP2"][:, :, :, frame]
 psip1 = data["wavefunction/psiP1"][:, :, :, frame]
 psi0 = data["wavefunction/psi0"][:, :, :, frame]
@@ -41,6 +41,8 @@ spin_expec = tophat * np.sqrt(abs(fx) ** 2 + abs(fy) ** 2 + abs(fz) ** 2)
 fig, ax = plt.subplots(
     1,
 )
+ax.yaxis.set_label_position("right")
+ax.yaxis.tick_right()
 ax.set_xlim(-X.max() + 2, X.max() - 2)
 ax.set_ylim(-Y.max() + 2, Y.max() - 2)
 ax.set_xlabel(r"$x/\ell$")
@@ -57,12 +59,10 @@ plot = ax.imshow(
     interpolation="gaussian",
     cmap="jet",
 )
-constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01, location="right")
+constz_cbar = plt.colorbar(plot, ax=ax, pad=0.01, location="left")
 constz_cbar.set_ticks([0, 1, 2])
 constz_cbar.set_ticklabels([r"$0$", r"$1$", r"$2$"])
-constz_cbar.set_label(
-    r"$|\langle \hat{\mathbf{F}} \rangle|$", rotation=270, labelpad=35
-)
+constz_cbar.set_label(r"$|\langle \hat{\mathbf{F}} \rangle|$", labelpad=35)
 
 plt.savefig(
     "gfx/ch-spin2/C-FM=2_coreless_cyclic_spin_mag.pdf", bbox_inches="tight"
