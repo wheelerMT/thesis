@@ -1,15 +1,5 @@
 \chapter{Vortex connections across topological interfaces}\label{chap: spin-2}
-As shown in Chapter~\ref{chap: ground-states}, spin-1 and spin-2 systems offer a
-rich ground state phase diagram with a myriad of different order parameter
-symmetries.
-In spin-1 systems, methods have already been proposed to engineer so-called
-topological interfaces between the different order parameter
-symmetries by use of Zeeman shifts~\cite{Borgh2012, Borgh2013, Borgh2014}.
-Naturally, since the spin-2 system offers even more choice of order parameter
-symmetry, they make an excellent candidate for further investigating topological
-interfaces.
-
-In general, topological interfaces may form at the phase boundary between
+Topological interfaces may form at the phase boundary between
 topologically distinct phases that are described by different order parameters.
 In such an interface, the phases can coexist in such a way that the different
 symmetries connect smoothly across the boundary.
@@ -19,23 +9,37 @@ the \(A\)--\(B\) phase boundary in superfluid liquid \(^3\)He~\cite{
     Osheroff1977,Yip1986,Salomaa1987,Finne2006,Bradley2008,Volovik2009}, and in
 atomic Bose-Einstein condensates (BECs)~\cite{Takeuchi2006,Kasamatsu2010,
     Borgh2012,Borgh2013, Borgh2014,Kaneda2014}.
-The differing order parameter symmetry on each side of the interface implies
-that families of vastly different defects and textures may exist, and therefore
-cannot cross the interface unchanged.
+When the order parameters on either side of the interface exhibit point-group
+symmetries~\cite{Xiao2022}, families of vastly different defects
+and textures may exist, where the topological charges of each defect depends
+on other defects within the system~\cite{Poenaru1977, Mermin1979}.
+An example is the cyclic and BN phases of spin-2 BECs, which, as we calculated
+in Sec.~\ref{subsec: spin-2-homotopy}, have non-Abelian first homotopy groups,
+and hence support non-Abelian defects whose topological charges do not commute.
+Due to the different symmetries on either side of the interface, defects cannot
+typically cross the interface unchanged.
 Instead, the defect must either terminate at the boundary, or continuously
 and non-trivially connect to an object representing a different topology on the
 other side of the interface.
 
-Since Spinor BECs offer a rich phase diagram which support a wide family of
-topological defects exhibiting different order parameter symmetries, they become
-an ideal test bed for connections of topological defects across these
+As shown in Chapter~\ref{chap: ground-states}, spin-1 and spin-2 systems offer a
+rich ground state phase diagram with a myriad of different order parameter
+symmetries.
+In spin-1 systems, methods have already been proposed to engineer topological
+interfaces between the different order parameter symmetries by use of Zeeman
+shifts~\cite{Borgh2012, Borgh2013, Borgh2014}.
+Naturally, since the spin-2 system offers even more choice of order parameter
+symmetry, they make an excellent candidate for further investigating topological
 interfaces.
+Additionally, spinor BECs support wide family of topological defects exhibiting
+different order parameter symmetries, cementing them as an ideal test bed
+for connections of topological defects across such interfaces.
 A small selection of vortices in the spin-2 system has already been considered
-Sec.~\ref{sec: vortices-spin-2}.
+in Sec.~\ref{sec: vortices-spin-2}.
 However, spin-2 systems support a much larger family of vortices and higher
 order topological defects. 
 These include, but are not limited to, integer vortices~\cite{Yip1999,
-Isoshima2002,Mizushima2002, Sadler2006,Semenoff2007,Lovegrove2012,
+Isoshima2002,Mizushima2002,Sadler2006,Semenoff2007,Lovegrove2012,
 Lovegrove2016,Borgh2016,Weiss2019,Xiao2021,Xiao2022}, vortices with fractional
 charges~\cite{Leonhardt2000,Zhou2003,Ji2008,Seo2015,Semenoff2007,Kobayashi2009,
 Lovegrove2012,Lovegrove2016,Borgh2016,Borgh2017,Xiao2021,Xiao2022}, nonsingular
@@ -43,10 +47,7 @@ vortices such as 2D Skyrmions~\cite{Ohmi1998, Ho1998, Mizushima2002a,
 Martikainen2002, Leanhardt2003, Mizushima2004, Choi2012, Choi2012a,
 Lovegrove2014,Weiss2019} and point defects such as monopoles~\cite{Stoof2001,
 Savage2003,Ruostekoski2003,Pietila2009,Ray2014,Ray2015,Ollikainen2017,
-Mithun2022}.
-In addition, non-Abelian defects, whose charges depend on other defects within
-the system, may arise when the medium on either or both sides of the interface
-exhibits point-group order parameter symmetry~\cite{Xiao2022}.
+Mithun2022,Blinova2023}.
 
 In this chapter, we both analytically and numerically investigate the physics
 of topological defects when connected across topological interfaces in spin-2
@@ -62,7 +63,6 @@ These defects range from singular phase vortices, spin vortices, nonsingular
 textures, and even to point defects such as monopoles.
 Additionally, we also perform numerical simulations for select examples,
 highlighting the interesting physics occurring at the interface.
-
 
 \section{Interface crossing solutions in a spin-2 BEC}
 In a continuous spinor superfluid, it is possible for distinct phases with
@@ -86,7 +86,7 @@ presence of an external magnetic field using the relation \(\delta \mathcal{H}
 / \delta \zeta_m^*=0\)~\cite{Kawaguchi2012}:
 \begin{equation}\label{eq: spin-2-GPEs-time-reversal}
     \left[-p \hat{F}_z + q \hat{F}^2_z + c_0n \, \zeta^\dagger \zeta
-        + c_1n \, \langle\hat{\vb{F}}\rangle\cdot\hat{\vb{F}}
+        + c_1n \, \langle\hat{\vb{F}}\rangle\cdot \vb{f}
         + \frac{c_2n}{5}{(\hat{\mathcal{T}}\zeta)}^\dagger \,
         \zeta\hat{\mathcal{T}} -\mu \right] \zeta = 0,
 \end{equation}
@@ -264,7 +264,7 @@ Eq~\eqref{eq: general-defect-interface}, where instead \(\tau=\varphi \) and the
 Euler angles are kept constant.
 Such a spinor is given explicitly as
 \begin{align}\label{eq: UN-BN-SQV-SQV}
-    \zeta_\text{sqv-sqv}^\text{UN-BN} =
+    \zeta_\text{pv-pv}^\text{UN-BN} =
     \frac{1}{2}\mqty(
         e^{i\varphi}\sqrt{1-\eta} \\
         0 \\
@@ -274,8 +274,8 @@ Such a spinor is given explicitly as
     ).
 \end{align}
 One can see that in the above spinors we recover the individual SQV case in both
-the UN \(\zeta^\text{UN}_\text{sqv} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
-\(\zeta^\mathrm{BN}_\text{sqv} ={(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\)
+the UN \(\zeta^\text{UN}_\text{pv} = {(0,0,e^{i\varphi},0,0)}^T\) and BN
+\(\zeta^\mathrm{BN}_\text{pv} ={(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\)
 limits when \(\eta = \pm 1\), respectively.
 It is important to note that, despite being characterised by the same phase
 winding, the SQVs on either side of the interface represent entirely different
@@ -289,8 +289,8 @@ components.
 For example, to achieve an SQV in the UN limit that connects to a vortex-free
 region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
 = \varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which gives
-\begin{align}\label{eq: UN-BN-sqv-vf}
-    \zeta^\text{UN-BN}_\text{sqv-vf} = \frac{1}{2}\mqty(
+\begin{align}\label{eq: UN-BN-pv-vf}
+    \zeta^\text{UN-BN}_\text{pv-vf} = \frac{1}{2}\mqty(
         \sqrt{1-\eta} \\
         0 \\
         e^{i\varphi} \sqrt{2(1+\eta)} \\
@@ -301,8 +301,8 @@ region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
 Similarly, by reversing this and setting the winding \(\chi_{\pm 2} = 0\) and
 \(\chi_0=\varphi \) one instead constructs an SQV in the BN phase which connects
 to a vortex-free region in the UN limit, given by the spinor
-\begin{align}\label{eq: UN-BN-vf-sqv}
-    \zeta^\text{UN-BN}_\text{vf-sqv} = \frac{1}{2}\mqty(
+\begin{align}\label{eq: UN-BN-vf-pv}
+    \zeta^\text{UN-BN}_\text{vf-pv} = \frac{1}{2}\mqty(
         e^{i\varphi} \sqrt{1-\eta} \\
         0 \\
         \sqrt{2(1+\eta)} \\
@@ -337,14 +337,14 @@ One can use the above spinors to model this type of topological interface within
 the core structures.
 For example, consider that \(\eta \) now has a radial dependence, with the
 radial distance given as \(\rho = \sqrt{x^2 + y^2}\).
-The particular case of Eq.~\eqref{eq: UN-BN-sqv-vf} can be modelled by requiring
+The particular case of Eq.~\eqref{eq: UN-BN-pv-vf} can be modelled by requiring
 \(\eta(0) = -1\), and \(\eta(\rho)\) interpolates to \(\eta(\rho) = 1\) away
 from the vortex core, where we assume the vortex to be located at \(\rho = 0\).
 This then results in the core taking on the BN phase, which smoothly
 interpolates back to the UN phase far from the vortex core.
 In addition, the phase difference arising between the components becomes
-\(\chi = \mp 2\varphi \) for Eq~\eqref{eq: UN-BN-sqv-vf} and
-Eq~\eqref{eq: UN-BN-vf-sqv}, respectively, which implies that \(\chi \) can take
+\(\chi = \mp 2\varphi \) for Eq~\eqref{eq: UN-BN-pv-vf} and
+Eq~\eqref{eq: UN-BN-vf-pv}, respectively, which implies that \(\chi \) can take
 values between 0 and \(4\pi \) about the vortex line.
 Comparing this with Fig.~\ref{fig: UN-BN-duo-trio}, we see that at some point
 this phase difference will cross \(\chi = \pi \) (and also \(\chi=3\pi \)) in a
@@ -373,12 +373,13 @@ Eq.~\eqref{eq: UN-BN-interpolating-spinor}, resulting in the spinor
         e^{-i\varphi}\sqrt{1 - \eta}
     ).
 \end{align}
-Notice that there is no condensate phase winding apparent in the above equation,
-which implies that the spin vortex exists only within the BN limit, and
-therefore smoothly connects to a vortex-free state in the UN limit.
+Notice that there is no condensate phase winding apparent in the \(\zeta_0\)
+component in the above equation, which implies that the spin vortex exists only
+within the BN limit, and therefore smoothly connects to a vortex-free state in
+the UN limit.
 It is, however, possible to construct a spin vortex on both sides of the
 interface.
-This can be achieved by first applying a spin rotation to the state initial
+This can be achieved by first applying a spin rotation to the initial
 interpolating spinor in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, i.e.,
 applying Eq.~\eqref{eq: spin-2-rotation-matrix} with \(\beta = \pi/2\) and
 keeping the Euler angles \(\alpha, \gamma \) constant.
@@ -404,7 +405,7 @@ appear in both phases, and hence connect across the topological interface.
 So far, we have considered only singular vortices connecting across the
 interface.
 It is, however, possible to construct interpolating solutions that contain
-higher order defects, such as monopoles and nonsingular textures.
+other types of defects, such as monopoles and nonsingular textures.
 To construct these, we generate the most general UN-BN interpolating spinor,
 which is obtained by substituting Eq.~\eqref{eq: UN-BN-interpolating-spinor}
 into Eq.~\eqref{eq: general-defect-interface} with arbitrary Euler
@@ -445,10 +446,9 @@ Using the same choice for the BN limit in Eq.~\eqref{eq: BN-general} also
 results in a monopole, despite such a monopole not being stable in the BN phase
 (i.e., the second homotopy group of the BN order parameter space is zero).
 
-A type of nonsingular vortex arising in both the UN and BN limits is that of the
-nematic coreless vortex which carry zero angular
-momentum~\cite{Choi2012, Lovegrove2014}.
-A connection between nematic coreless vortices is achieved by setting
+Nonsingular vortices arise in both the UN and BN limits, which carry zero
+angular momentum~\cite{Choi2012, Lovegrove2014}.
+A connection between nematic nonsingular vortices is achieved by setting
 \(\alpha=\varphi \) and by having a radially-dependent Euler angle
 \(\beta(\rho)\) in Eq.~\eqref{eq: UN-BN-general}, where \(\beta(0)=0\)
 on the vortex line, monotonically increasing to \(\beta(\rho=\pi/2)\) far from
@@ -599,14 +599,13 @@ This yields a connection between an integer spin vortex in the cyclic limit to
 another integer spin vortex in both nematic limits.
 
 As discussed in the previous section, the nematic phases give rise to
-nonsingular textures and point defects such as nematic coreless vortices and
-monopoles.
+nonsingular vortices and point defects such as monopoles.
 Those same defect connections can be constructed in this interface by using
 the appropriate transformation \(\sqrt{1+\eta} \rightarrow i\sqrt{1+\eta}\) in
 Eq.~\eqref{eq: UN-BN-general}.
-This then still results in, for example, the nematic coreless vortices in the
-nematic limits, which now connect to a nonsingular vortex structure in the
-cyclic limit.
+This then still results in, for example, the nonsingular vortices in the
+nematic limits, which now also connect to a nonsingular vortex in the cyclic
+limit.
 These defects are summarised in Table~\ref{tab: C-N-other}.
 \begin{table}
     \centering
@@ -689,8 +688,8 @@ constructing phase vortices connecting across this topological interface, which
 can be obtained by appropriate winding of \(\chi_2\) and \(\chi_{-1}\).
 Again, one can construct singular SQVs connecting in all three limits by
 crossing \(\chi_2 = \chi_{-1} = \varphi \), which yields
-\begin{align}\label{eq: C-FM-sqv-sqv}
-    \zeta^\text{C-FM}_\text{sqv-sqv} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
+\begin{align}\label{eq: C-FM-pv-pv}
+    \zeta^\text{C-FM}_\text{pv-pv} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
         \sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -707,8 +706,8 @@ Due to the spin-gauge symmetry of the FM phase, this choice of winding would
 then lead to either singular SQVs and vortex-free regions in this limit.
 For example, the following spinor connects a one-third vortex in the cyclic
 limit to a singular SQV in the FM-2 and a vortex-free region in the FM-1 limit:
-\begin{align}\label{eq: C-FM-third-sqv}
-    \zeta^\text{C-FM}_\text{third-sqv} = \frac{1}{\sqrt{3}}\mqty(
+\begin{align}\label{eq: C-FM-third-pv}
+    \zeta^\text{C-FM}_\text{third-pv} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -722,7 +721,7 @@ Similarly, a two-third vortex in the cyclic limit can connect to a vortex-free
 region in the FM-2 limit or a singular SQV in the FM-1 limit, given by the
 spinor
 \begin{align}\label{eq: C-FM-2third-vf}
-    \zeta^\text{C-FM}_\text{two-third-sqv} = \frac{1}{\sqrt{3}}\mqty(
+    \zeta^\text{C-FM}_\text{two-third-pv} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -765,8 +764,8 @@ summarised in Table~\ref{tab: C-FM-vortices}.
     to the SQV constructed from the choice \(\chi_2=\chi_{-1}=k\).}
 \end{table}
 
-In addition to phase vortices, the FM phase also supports nonsingular coreless
-vortices, which is identified from a characteristic fountain-like texture of
+In addition to phase vortices, the FM phase also supports nonsingular vortices,
+which are identified from a characteristic fountain-like texture of
 the condensate spin (see Fig.~\ref{fig: spin-1-vortices}b for the spin-1
 analogue.)
 To construct such a defect across an interface, we make use of
@@ -809,8 +808,8 @@ where
     2e^{4i\varphi}\cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2}
     )
 \end{align}
-represent coreless vortices in both the FM-2 and FM-1 limits, respectively.
-The spherical harmonic representation of these coreless vortices are shown
+represent nonsingular vortices in both the FM-2 and FM-1 limits, respectively.
+The spherical harmonic representation of these nonsingular vortices are shown
 in Fig.~\ref{fig: C-FM-coreless-initial-states}a,
 ~\ref{fig: C-FM-coreless-initial-states}b, where we see the characteristic
 fountain-like texture emerge.
@@ -832,7 +831,7 @@ fountain-like texture emerge.
         \node at (7.5, -2.2) {(b)};
         \node at (3.75, -6.2) {(c)};
     \end{tikzpicture}
-    \caption[Spherical harmonic representation of a coreless vortex connection
+    \caption[Spherical harmonic representation of a nonsingular vortex connection
         across a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-coreless-initial-states}Spherical harmonic
         representation of the topological defects obtained in the cyclic, FM-1,
@@ -853,7 +852,7 @@ Fig.~\ref{fig: C-FM-coreless-initial-states}c.
 By tracing a point about the vortex core, the condensate phase winds by a total
 of \(4\pi \), coupled with a non-trivial rotation of the condensate spin,
 indicating that this is particular vortex is a doubly-quantised vortex.
-Therefore, the interpolating spinor above connects FM coreless vortices to a
+Therefore, the interpolating spinor above connects FM nonsingular vortices to a
 doubly-quantised vortex in the cyclic limit.
 A table of vortices, textures, and monopoles that can be constructed using
 Euler angles in this interface are presented in Table~\ref{tab: C-FM-other}.
@@ -948,8 +947,8 @@ connecting to a spin vortex in the BN phase.
 This can be achieved by again allowing opposite phase windings in the outer
 components, i.e., \(\chi_{\pm 2} = \pm \varphi \), where the interpolating
 spinor reads
-\begin{align}\label{eq: FM-BN-sqv-sv}
-    \zeta^\text{FM-BN}_\text{sqv-sv} = \frac{1}{\sqrt{2}}\mqty(
+\begin{align}\label{eq: FM-BN-pv-sv}
+    \zeta^\text{FM-BN}_\text{pv-sv} = \frac{1}{\sqrt{2}}\mqty(
     e^{i\varphi} \sqrt{1 + \eta} \\
     0 \\
     0 \\
@@ -964,8 +963,8 @@ outer components, i.e., \(\chi_2 = \varphi \) and \(\chi_{-2} = 0\) or vice
 versa.
 Using this first choice in Eq.~\eqref{eq: FM-BN-interpolating-spinor} leads to
 the spinor
-\begin{align}\label{eq: FM-BN-sqv-hqv}
-    \zeta^\text{FM-BN}_\text{sqv-sv} = \frac{1}{\sqrt{2}}\mqty(
+\begin{align}\label{eq: FM-BN-pv-hqv}
+    \zeta^\text{FM-BN}_\text{pv-sv} = \frac{1}{\sqrt{2}}\mqty(
     e^{i\varphi} \sqrt{1 + \eta} \\
     0 \\
     0 \\
@@ -1006,9 +1005,9 @@ Table~\ref{tab: FM-BN-vortices}.
 \end{table}
 
 We can also construct nonsingular defect crossing solutions using this interface.
-Again, since the FM phase supports a nonsingular coreless vortex, we can follow
-the same methodology as in the cyclic to FM interface and construct a coreless
-vortex connecting across the interface.
+Again, since the FM phase supports nonsingular vortices, we can follow
+the same methodology as in the cyclic to FM interface and construct a
+nonsingular vortex connecting across the interface.
 We apply Eq.~\eqref{eq: general-defect-interface} to the general FM-BN spinor
 in Eq.~\eqref{eq: FM-BN-interpolating-spinor}, and choose a monotonically
 increasing function for the Euler angle \(\beta(\rho)\) with a transverse
@@ -1028,7 +1027,8 @@ This leads to the interpolating spinor
     ),
 \end{align}
 where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
-In the FM limit, one recovers the spin-2 coreless vortex given as (\(\eta=1\))
+In the FM limit, one recovers the spin-2 nonsingular vortex given as
+(\(\eta=1\))
 \begin{align}\label{eq: FM-BN-coreless}
     \zeta^\text{FM}_\text{cl} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
     e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
@@ -1237,7 +1237,7 @@ Additionally, the SQV on the BN side of the interface is observed to leave the
 condensate before the splitting into two HQVs has occurred.
 
 We next investigate a vortex connection that terminates on the interface.
-We start with the initial state in Eq.~\eqref{eq: UN-BN-vf-sqv}, which contains
+We start with the initial state in Eq.~\eqref{eq: UN-BN-vf-pv}, which contains
 no phase winding in the middle component.
 The result is a SQV in the BN phase that smoothly connects to a vortex-free
 state in the UN phase.
@@ -1294,7 +1294,7 @@ is observed to remain stable for the timescales considered in our simulations.
 
 We firstly investigate the connection of a third vortex in the cyclic phase
 connecting to a singular SQV in the FM-2 phase using
-Eq.~\eqref{eq: C-FM-third-sqv} as the initial state.
+Eq.~\eqref{eq: C-FM-third-pv} as the initial state.
 This initial state is then propagated using a short imaginary-time evolution to
 imprint the vortex cores and, once the core is imprinted, we switch to
 complex-time simulations using a damping coefficient of \(\nu=10^{-2}\).
@@ -1339,7 +1339,7 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
     connection in a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-third-SQV}Third vortex to SQV connection in an
     interface between the cyclic and FM-2 phases given by
-    Eq.~\eqref{eq: C-FM-third-sqv} at \(\bar{t} = 50\).
+    Eq.~\eqref{eq: C-FM-third-pv} at \(\bar{t} = 50\).
     (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
     The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
     \(\spinmag = 1\) core which extends throughout the FM region.
@@ -1350,7 +1350,7 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
     (c): Longitudinal cut of \(|A_{30}|^2\) at \(y/\ell=0\).
     Cyclic regions are identified from \(|A_{30}|^2=2\).
     (d) Analytically calculated values of \(\spinmag \) and \(|A_{30}|^2\)
-    using the interpolating spinor in Eq.~\eqref{eq: C-FM-third-sqv} with the
+    using the interpolating spinor in Eq.~\eqref{eq: C-FM-third-pv} with the
     choice of \(\eta(\rho) = 3\tanh(\rho/3)\).}
 \end{figure}
 Here, \(\spinmag \) reveals non-trivial core structures emerging.
@@ -1369,7 +1369,7 @@ The spherical harmonics of the internal core structure plotted in
 Fig.~\ref{fig: C-FM-third-SQV}b reveal the non-trivial change of order parameter
 symmetry within the composite core.
 
-One can use the general spinor in Eq.~\eqref{eq: C-FM-third-sqv} to
+One can use the general spinor in Eq.~\eqref{eq: C-FM-third-pv} to
 analytically examine the vortex core structures when \(\eta \) is a
 function of the transverse radius \(\rho = \sqrt{x^2 + y^2}\).
 The states can be described by choosing an appropriate function for
@@ -1378,13 +1378,13 @@ We choose \(\eta(\rho) = 3\tanh(\rho/2) - 1\) which becomes \(\eta=-1\) at
 \(\rho=0\), \(\eta=0\) and hence cyclic at \(\rho=\tanh^{-1}(1/3)\), and
 finally \(\eta=2\) at large \(\rho \).
 The resulting spin magnitude and singlet-trio amplitude using the above
-substitution in Eq.~\eqref{eq: C-FM-third-sqv} are plotted in
+substitution in Eq.~\eqref{eq: C-FM-third-pv} are plotted in
 Fig.~\ref{fig: C-FM-third-SQV}d.
 We see that the analytically calculated values of \(\spinmag \) and
 \(|A_{30}|^2\) mirror those observed in the numerics.
 
 Instead of considering only singular vortices, we can also investigate the
-coreless vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
+nonsingular vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
 We choose this as the initial state, with
 \(\beta = \pi\left(1 + \tanh(\rho-1)\right)/2\) to model the required
 monotonically increasing function.
@@ -1492,7 +1492,7 @@ However, the two-third vortex is first observed to undergo a further splitting
 process in which it splits into two one-third vortices, which then proceed to
 exit the condensate cloud.
 
-The initial coreless vortex on the FM side of the interface also undergoes a
+The initial nonsingular vortex on the FM side of the interface also undergoes a
 complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
 \begin{figure}
     \centering
@@ -1526,13 +1526,13 @@ complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
         \draw[-, dashed] (big_rec.north west) -- (small_rec.north east) {};
         \draw[-, dashed] (big_rec.south west) -- (small_rec.south east) {};
     \end{tikzpicture}
-    \caption[Dynamics of the coreless vortex in a cyclic to ferromagnetic
-        interface]
+    \caption[Dynamics of a nonsingular vortex connected across a cyclic to
+        ferromagnetic interface]
     {\label{fig: C-FM-coreless-FM}Schematic representation of the
         splitting process occurring on the FM side of the interface
         (\(z/\ell > 0\)) of the state in Eq.~\eqref{eq: C-FM-coreless-general}.
-        (a): Spherical harmonic representation of the initial coreless vortex,
-        defined explicitly in Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
+        (a): Spherical harmonic representation of the initial nonsingular
+        vortex, defined explicitly in Eq.~\eqref{eq: C-FM-coreless-FM-limits}.
         (b) Transverse cut of \(\spinmag \) at \(z/\ell \approx 3\) after
         complex-time evolution at \(\bar{t} = 1.5\).
         The singular vortex structures can be seen from the
@@ -1540,7 +1540,7 @@ complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
         (c): Spherical harmonic representation of the internal structure of
         the singular vortex, showing the non-trivial symmetry within the core.}
 \end{figure}
-The coreless structure is observed to split into four singular vortices,
+The nonsingular vortex is observed to split into four singular vortices,
 observed from transverse cuts of \(\spinmag \).
 Analysis of the spherical harmonics reveal the non-trivial symmetry within
 the singular vortex cores.
