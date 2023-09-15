@@ -413,55 +413,85 @@ So far, we have considered only singular vortices connecting across the
 interface.
 It is, however, possible to construct interpolating solutions that contain
 other types of defects, such as monopoles and nonsingular textures.
-To construct these, we generate the most general UN-BN interpolating spinor,
-which is obtained by substituting Eq.~\eqref{eq: UN-BN-interpolating-spinor}
-into Eq.~\eqref{eq: general-defect-interface} with arbitrary Euler
-angles, which yields
-\begin{align}\label{eq: UN-BN-general}
+For example, the UN phase supports nonsingular spin vortices, which are defined
+by a fountain-like texture of the nematic director, \(\hat{\vb{d}} =
+(\cos\alpha\sin\beta, \sin\alpha\sin\beta, \cos\beta)\).
+The nonsingular fountain-like texture can be achieved by having \(\beta\) be a
+monotonically increasing function of the radial coordinate, \(\rho\).
+Applying the spin rotation \(U(\alpha=\varphi, \beta=\beta(\rho), \gamma=0)\) to
+Eq.~\eqref{eq: UN-BN-interpolating-spinor} with \(\chi_m=0\) results in the
+spinor
+\begin{align}
     \zeta^\text{UN-BN}=\frac{1}{\sqrt{2}}\left(
-        \sqrt{1+\eta}\zeta^\text{UN}_\text{ns} + 
-        \sqrt{1-\eta}\zeta^\text{BN}_\text{ns}
+        \sqrt{1+\eta}\zeta^\text{UN}_\text{nsv} + 
+        \sqrt{1-\eta}\zeta^\text{BN}_\text{sv}
         \right),
 \end{align}
 where the UN and BN single phase limits are given, respectively, as
 \begin{align}\label{eq: UN-general}
-    \zeta^\text{UN}_\text{ns} &= \sqrt{\frac{3}{8}}
+    \zeta^\text{UN}_\text{nsv} &= \sqrt{\frac{3}{8}}
     \mqty(
-        e^{-2i\alpha}\sin^2\beta \\
-        e^{-i\alpha}\sin 2 \beta \\
-        \frac{1}{\sqrt{6}}\left(1+3\cos 2\beta\right) \\
-        -e^{i\alpha} \sin 2 \beta \\
-        e^{2i\alpha}\sin^2\beta
+        e^{-2i\varphi}\sin^2\beta(\rho) \\
+        e^{-i\varphi}\sin 2 \beta(\rho) \\
+        \frac{1}{\sqrt{6}}\left[1+3\cos 2\beta(\rho)\right] \\
+        -e^{i\varphi} \sin 2 \beta(\rho) \\
+        e^{2i\varphi}\sin^2\beta(\rho)
     ), \\
-    \zeta^\text{BN}_\text{ns} &= \frac{1}{\sqrt{8}} \label{eq: BN-general}
+    \zeta^\text{BN}_\text{sv} &= \frac{1}{\sqrt{8}} \label{eq: BN-general}
     \mqty(
-        e^{-2i\alpha}\left(\cos^2\beta + 1\right) \\
-        - e^{-i\alpha}\sin 2 \beta \\
-        \sqrt{6}\sin^2\beta \\
-        e^{i\alpha}\sin 2 \beta \\
-        e^{2i\alpha}\left(\cos^2\beta + 1\right)          
+        e^{-2i\varphi}\left(\cos^2\beta(\rho) + 1\right) \\
+        - e^{-i\varphi}\sin 2 \beta(\rho) \\
+        \sqrt{6}\sin^2\beta(\rho) \\
+        e^{i\varphi}\sin 2 \beta(\rho) \\
+        e^{2i\varphi}\left(\cos^2\beta(\rho) + 1\right)          
     ).
 \end{align}
-An interesting example can be constructed by thinking about a monopole placed in
-the UN limit, which can be realised from a spherically symmetric dependence
-on the nematic director, \(\hat{\vb{d}} = (\cos\alpha \sin\beta, \sin\alpha
-\sin\beta, \cos\beta)\).
-A monopole can be constructed in the UN phase from Eq.~\eqref{eq: UN-general}
-by choosing \(\alpha=\varphi \) and having \(\beta = \theta \), where
-\(\theta \) is the polar angle in spherical coordinates.
-Using the same choice for the BN limit in Eq.~\eqref{eq: BN-general} also
-results in a monopole, despite such a monopole not being stable in the BN phase
-(i.e., the second homotopy group of the BN order parameter space is zero).
+This spinor now represents a connection between a nonsingular spin vortex in the
+UN limit which smoothly connects to a singular spin vortex in the BN limit.
 
-Nonsingular vortices arise in both the UN and BN limits, which carry zero
-angular momentum~\cite{Choi2012, Lovegrove2014}.
-A connection between nematic nonsingular vortices is achieved by setting
-\(\alpha=\varphi \) and by having a radially-dependent Euler angle
-\(\beta\) in Eq.~\eqref{eq: UN-BN-general}, where \(\beta(0)=0\)
-on the vortex line, monotonically increasing to \(\beta(\rho=\pi/2)\) far from
-the vortex.
-A summary of other types of defects one can obtain in a UN-BN interface is
-given in Table~\ref{tab: UN-BN-nonsingular}.
+Since \(\pi_2(\mathcal{M}_\text{UN}) \neq 0\) (see
+Sec.~\ref{subsec: spin-2-homotopy}), an interesting example can be
+constructed by thinking about a monopole placed in one the UN side of the
+interface.
+In such an interface, a monopole may form at the termination point of a singular
+line vortex.
+Similar structures, called boojums, have been observed in
+\(^3\)He~\cite{Volovik2009, Blaauwgeers2002}.
+A monopole can be realised as a radial hedgehog texture of the nematic director,
+\(\vb{\hat{d}}\).
+This achieved via the spin rotation \(U(\alpha=\varphi, \beta=\theta,
+\gamma=0)\), where \(\theta\) is the polar angle in spherical coordinates.
+Applying this spin rotation to the state in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor} with \(\chi_m=0\) results in
+\begin{align}
+    \zeta^\text{UN-BN}=\frac{1}{\sqrt{2}}\left(
+        \sqrt{1+\eta}\zeta^\text{UN}_\text{mp} + 
+        \sqrt{1-\eta}\zeta^\text{BN}_\text{sv}
+        \right),
+\end{align}
+where the UN and BN single phase limits are given, respectively, as
+\begin{align}
+    \zeta^\text{UN}_\text{mp} &= \sqrt{\frac{3}{8}}
+    \mqty(
+        e^{-2i\varphi}\sin^2\theta \\
+        e^{-i\varphi}\sin 2 \theta \\
+        \frac{1}{\sqrt{6}}\left(1+3\cos 2\theta\right) \\
+        -e^{i\varphi} \sin 2 \theta \\
+        e^{2i\varphi}\sin^2\theta
+    ), \\
+    \zeta^\text{BN}_\text{sv} &= \frac{1}{\sqrt{8}}
+    \mqty(
+        e^{-2i\varphi}\left(\cos^2\theta + 1\right) \\
+        - e^{-i\varphi}\sin 2 \theta \\
+        \sqrt{6}\sin^2\theta \\
+        e^{i\varphi}\sin 2 \theta \\
+        e^{2i\varphi}\left(\cos^2\theta + 1\right)          
+    ).
+\end{align}
+This interpolating spinor describes a monopole in the UN limit that terminates
+on a singular spin vortex in the BN limit.
+A summary of types of defects one can construct using Euler angles in a UN-BN
+interface is given in Table~\ref{tab: UN-BN-nonsingular}.
 \begin{table}
     \centering
     \begin{tabular}{ccccc}
