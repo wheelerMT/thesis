@@ -117,7 +117,7 @@ When the same transformation is supported by two phases, A and B, of a spin-2
 condensate, a general defect connection across an interface between the two
 phases is given as
 \begin{align}\label{eq: general-defect-interface}
-    \zeta = e^{i\tau}\,\hat{U}(\alpha, \beta, \gamma)\,\zeta^\text{A-B}.
+    \zeta = e^{i\tau}\,U(\alpha, \beta, \gamma)\,\zeta^\text{A-B}.
 \end{align}
 Through the subsequent sections we provide various steady-state solutions that
 interpolate between the different phases of a spin-2 BEC.\@
@@ -255,28 +255,29 @@ listed in Table~\ref{tab: UN-BN-vortices}.
     Additionally, generalisations to multiply quantised vortices are given by
     \(k \in \mathbb{Z}\).}
 \end{table}
-We start by constructing a connection of phase vortices on either side of the
-interface, which can be achieved by allowing \(\chi_m=\varphi \) in
-Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results in a spatially
-overlapping \(2\pi \) phase winding in each component.
-An alternative construction is achieved using
-Eq~\eqref{eq: general-defect-interface}, where instead \(\tau=\varphi \) and the
-Euler angles are kept constant.
+We start by constructing a connection of \(k\)-quantised phase vortices on
+either side of the interface, which can be achieved by allowing
+\(\chi_m=k\varphi\) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results
+in a spatially overlapping \(2k\pi \) phase winding in each component.
 Such a spinor is given explicitly as
 \begin{align}\label{eq: UN-BN-SQV-SQV}
     \zeta_\text{pv-pv}^\text{UN-BN} =
     \frac{1}{2}\mqty(
-        e^{i\varphi}\sqrt{1-\eta} \\
+        e^{ik\varphi}\sqrt{1-\eta} \\
         0 \\
-        e^{i\varphi}\sqrt{2(1+\eta)} \\
+        e^{ik\varphi}\sqrt{2(1+\eta)} \\
         0 \\
-        e^{i\varphi}\sqrt{1-\eta}
+        e^{ik\varphi}\sqrt{1-\eta}
     ).
 \end{align}
-One can see that in the above spinors we recover the individual phase vortex
-case in both the UN \(\zeta^\text{UN}_\text{pv} = {(0,0,e^{i\varphi},0,0)}^T\)
+Note that an alternative construction of the above interface is achieved using
+Eq~\eqref{eq: general-defect-interface} with\(\tau=k\varphi \) and the Euler
+angles kept constant, which then acts on the uniform spinor in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor} with \(\chi_m=0\).
+One can see that in the above spinor we recover the individual phase vortex
+case in both the UN \(\zeta^\text{UN}_\text{pv} = {(0,0,e^{ik\varphi},0,0)}^T\)
 and BN \(\zeta^\mathrm{BN}_\text{pv} =
-{(e^{i\varphi},0,0,0,e^{i\varphi})}^T/\sqrt{2}\) limits when \(\eta = \pm 1\),
+{(e^{ik\varphi},0,0,0,e^{ik\varphi})}^T/\sqrt{2}\) limits when \(\eta = \pm 1\),
 respectively.
 It is important to note that, despite being characterised by the same phase
 winding, the phase vortices on either side of the interface represent entirely
@@ -287,28 +288,30 @@ instead construct a vortex that terminates on the interface itself, essentially
 connecting to a vortex-free region on the other side.
 This can be achieved by selectively removing the phase winding from particular
 components.
-For example, to achieve a phase vortex in the UN limit that connects to a
-vortex-free region in the BN limit, we can set \(\chi_0 = 0\) and \(\chi_{\pm 2}
-= \varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which gives
+For example, to achieve a \(k\)-quantised phase vortex in the UN limit that
+connects to a vortex-free region in the BN limit, we can set \(\chi_0 = 0\) and
+\(\chi_{\pm 2} = k\varphi \) in Eq.~\eqref{eq: UN-BN-interpolating-spinor},
+which gives
 \begin{align}\label{eq: UN-BN-pv-vf}
     \zeta^\text{UN-BN}_\text{pv-vf} = \frac{1}{2}\mqty(
         \sqrt{1-\eta} \\
         0 \\
-        e^{i\varphi} \sqrt{2(1+\eta)} \\
+        e^{ik\varphi} \sqrt{2(1+\eta)} \\
         0 \\
         \sqrt{1-\eta}
     ).
 \end{align}
 Similarly, by reversing this and setting the winding \(\chi_{\pm 2} = 0\) and
-\(\chi_0=\varphi \) one instead constructs a phase vortex in the BN phase which
-connects to a vortex-free region in the UN limit, given by the spinor
+\(\chi_0=k\varphi \) one instead constructs a \(k\)-quantised phase vortex in
+the BN phase which connects to a vortex-free region in the UN limit, given by
+the spinor
 \begin{align}\label{eq: UN-BN-vf-pv}
     \zeta^\text{UN-BN}_\text{vf-pv} = \frac{1}{2}\mqty(
-        e^{i\varphi} \sqrt{1-\eta} \\
+        e^{ik\varphi} \sqrt{1-\eta} \\
         0 \\
         \sqrt{2(1+\eta)} \\
         0 \\
-        e^{i\varphi} \sqrt{1-\eta}
+        e^{ik\varphi} \sqrt{1-\eta}
     ).
 \end{align}
 
@@ -361,47 +364,50 @@ interface.
 One such example is of singular spin vortices, which, allowing for the fact that
 spinor BECs support the non-dissipative flow of spin, carry a circulation only
 in the condensate spin and not the mass (see Sec.~\ref{sec: vortices-spin-2}).
-An example can be constructed by considering opposite phase windings in the
-outer components, i.e., choosing \(\chi_{\pm 2} = \pm \varphi \) in
+An example containing a \(k\)-quantised spin vortex in the BN phase can be
+constructed by considering opposite phase windings in the outer components,
+i.e., choosing \(\chi_{\pm 2} = \pm \varphi \) in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor}, resulting in the spinor
-(see Sec.~\ref{sec: vortices-spin-2})
 \begin{align}\label{eq: UN-BN-vf-sv}
     \zeta_\text{vf-sv}^\text{UN-BN} = \frac{1}{2}\mqty(
-        e^{i\varphi}\sqrt{1 - \eta} \\
+        e^{ik\varphi}\sqrt{1 - \eta} \\
         0 \\
         \sqrt{2(1+\eta)} \\
         0 \\
-        e^{-i\varphi}\sqrt{1 - \eta}
+        e^{-ik\varphi}\sqrt{1 - \eta}
     ).
 \end{align}
-Notice that there is no condensate phase winding apparent in the \(\zeta_0\)
-component in the above equation, which implies that the spin vortex exists only
-within the BN limit, and therefore smoothly connects to a vortex-free state in
-the UN limit.
-It is, however, possible to construct a spin vortex on both sides of the
-interface.
-This can be achieved by first applying a spin rotation to the initial
-interpolating spinor in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, i.e.,
-applying Eq.~\eqref{eq: spin-2-rotation-matrix} with \(\beta = \pi/2\) and
-keeping the Euler angles \(\alpha, \gamma \) constant.
-Then, by again choosing \(\chi_{\pm 2} = \pm \varphi \), we arrive at the
-resulting interpolating spinor (\(\alpha = \gamma = 0\)):
+Since there is no condensate phase winding in the \(\zeta_0\) component in the
+above equation, this implies that the spin vortex exists only within the BN
+limit, and therefore smoothly connects to a vortex-free state in the UN limit.
+It is, however, possible to construct a \(k\)-quantised spin vortex on both
+sides of the interface using spin rotations.
+Applying the spin rotation \(U(\alpha=k\varphi/2, \beta=\pi/2,\gamma=0)\) to the
+initial interpolating spinor in Eq.~\eqref{eq: UN-BN-interpolating-spinor}
+results in
 \begin{align}\label{eq: UN-BN-sv-sv}
     \zeta_\text{sv-sv}^\text{UN-BN} = \frac{1}{4}\mqty(
-        e^{i\varphi}(\sqrt{1 - \eta} + \sqrt{3(1+\eta)}) \\
+        e^{-ik\varphi}(\sqrt{1 - \eta} + \sqrt{3(1+\eta)}) \\
         0 \\
         \sqrt{6(1-\eta)} - \sqrt{2(1+\eta)} \\
         0 \\
-        e^{-i\varphi}(\sqrt{1 - \eta} + \sqrt{3(1+\eta)})
+        e^{ik\varphi}(\sqrt{1 - \eta} + \sqrt{3(1+\eta)})
     ).
 \end{align}
-The result of the initial spin rotation means that in the UN (\(\eta = 1\)) and
-BN (\(\eta = -1\)) limits we now have a three-component spinor given by
-\(\zeta^\text{UN}_\text{sv} = {(e^{i\varphi}\sqrt{6}, 0, 2, 0,
-e^{-\varphi}\sqrt{6})}^T/4\) and
-\(\zeta^\text{BN}_\text{sv} = {(e^{i\varphi}\sqrt{2}, 0, 2\sqrt{3}, 0,
-e^{-\varphi}\sqrt{2})}^T/4\), respectively, thereby allowing spin vortices to
-appear in both phases, and hence connect across the topological interface.
+The result of the spin rotation means that in the UN (\(\eta = 1\)) and
+BN (\(\eta = -1\)) limits we now have a three-component spinor given,
+respectively, as
+\begin{align}
+    \zeta^\text{UN}_\text{sv} = \mqty(
+        e^{-ik\varphi}\sqrt{6} \\ 0 \\ 2 \\ 0 \\ e^{ik\varphi}\sqrt{6}
+        ),
+    \quad
+    \zeta^\text{BN}_\text{sv} = \mqty(
+        e^{-ik\varphi}\sqrt{2} \\ 0 \\ 2\sqrt{3} \\ 0 \\ e^{ik\varphi}\sqrt{2}
+    ),
+\end{align}
+thereby allowing spin vortices to appear in both phases, and hence connect
+across the topological interface.
 
 So far, we have considered only singular vortices connecting across the
 interface.
@@ -451,7 +457,7 @@ Nonsingular vortices arise in both the UN and BN limits, which carry zero
 angular momentum~\cite{Choi2012, Lovegrove2014}.
 A connection between nematic nonsingular vortices is achieved by setting
 \(\alpha=\varphi \) and by having a radially-dependent Euler angle
-\(\beta(\rho)\) in Eq.~\eqref{eq: UN-BN-general}, where \(\beta(0)=0\)
+\(\beta\) in Eq.~\eqref{eq: UN-BN-general}, where \(\beta(0)=0\)
 on the vortex line, monotonically increasing to \(\beta(\rho=\pi/2)\) far from
 the vortex.
 A summary of other types of defects one can obtain in a UN-BN interface is
@@ -469,9 +475,9 @@ given in Table~\ref{tab: UN-BN-nonsingular}.
         Spin half-quantum vortex & Spin half-quantum vortex & 1 & 0
             & \(\pi/2\) \\
         Nonsingular spin vortex & Singular spin vortex & 1 & 0
-            & \(\beta(\rho)\) \\
+            & \(\beta\) \\
         Monopole & Singular spin vortex & 1  & 0 & \(\theta \) \\
-        Singular spin vortex & Monopole & 1 & -1 & \(\beta(\rho)\) \\ 
+        Singular spin vortex & Monopole & 1 & -1 & \(\beta\) \\ 
         \bottomrule
     \end{tabular}
     \caption[Examples of monopole and nonsingular vortex connections across a
@@ -484,7 +490,7 @@ given in Table~\ref{tab: UN-BN-nonsingular}.
     Here, \(k\) is an integer which provides a generalisation to higher
     quantisation.
     Additionally, \(\theta \) is the polar angle in spherical coordinates, and
-    \(\beta(\rho)\) describes a monotonically increasing function of the
+    \(\beta\) describes a monotonically increasing function of the
     transverse radius \(\rho \).}
 \end{table}
 
@@ -531,8 +537,8 @@ at the BN side.
 Firstly, one can construct the same phase vortex and spin vortex connections
 considered in the UN-BN interface upon the substitution \(\sqrt{1+\eta}
 \rightarrow i\sqrt{1+\eta}\).
-For example, a connection between phase vortices is obtained from
-Eq.~\eqref{eq: UN-BN-SQV-SQV}, where the resulting spinor reads
+For example, a connection between \(k\)-quantised phase vortices is obtained
+from Eq.~\eqref{eq: UN-BN-SQV-SQV}, where the resulting spinor reads
 \begin{align}
     \zeta^\text{C-N}_\text{pv-pv} = \frac{1}{2}\mqty(
         e^{ik\varphi}\sqrt{1 - \eta} \\
@@ -593,20 +599,26 @@ In addition to these connections, it is also possible to construct topologically
 distinct spin vortex connection between the cyclic and both nematic phases.
 This arises from the common axis of symmetry between the cyclic and BN phases
 (see \(C_2'\) axis in Fig.~\ref{fig: spin-2-spherical-harmonics}d).
-A spin rotation around this particular axis can be achieved from the spin-2
-rotation matrix in Eq.~\eqref{eq: spin-2-rotation-matrix} by choosing
-\(\alpha = -\gamma =\pi / 4\) and keeping \(\beta \) arbitrary.
-Applying the transformation in Eq.~\eqref{eq: general-defect-interface} to the
-general cyclic to nematic spinor in Eq.~\eqref{eq: C-N-interpolating-spinor}
-using these Euler angles with \(\tau=0\) and \(\beta = \varphi \) results in
-the following spinor:
+A spin rotation around this particular axis can be achieved by using the
+following spin rotation, given here in axis-angle representation:
+\begin{align}
+    U(C_2', \delta) = \exp\left\{
+        -i\frac{\hat{F}_x + \hat{F}_y}{\sqrt{2}}\delta
+    \right\},
+\end{align}
+where \(C_2'\) represents the axis being rotated about and \(\delta\) represents
+the angle of rotation.
+When \(\delta\) is chosen to be the azimuthal angle such that it winds by
+\(2\pi \) about a vortex core (\(\delta=\varphi\)), then the above spin rotation
+applied the general cyclic to nematic spinor in
+Eq.~\eqref{eq: C-N-interpolating-spinor} results in the following spinor:
 \begin{align}
     \zeta^\text{C-N}_\mathrm{sv-sv} = \frac{1}{\sqrt{2}}\left(
     i\sqrt{1+\eta}\zeta^\mathrm{UN}_\mathrm{sv} +
     \sqrt{1-\eta}\zeta^\mathrm{BN}_\mathrm{sv}
     \right), \label{eq: C-BN-sv-sv}
 \end{align}
-where the spin vortices in the UN and BN limits are given as
+where the spinors in the UN and BN limits are given as
 \begin{gather}
     \zeta^\mathrm{UN}_\mathrm{sv} = \sqrt{\frac{3}{8}}
     \mqty(
@@ -625,8 +637,8 @@ where the spin vortices in the UN and BN limits are given as
     \cos \varphi
     ).
 \end{gather}
-This yields a connection between an integer spin vortex in the cyclic limit to
-another integer spin vortex in both nematic limits.
+This yields a connection between singular, singly quantised spin vortices in all
+three limits.
 
 As discussed in the previous section, the nematic phases give rise to
 nonsingular vortices and point defects such as monopoles.
@@ -650,7 +662,7 @@ These defects are summarised in Table~\ref{tab: C-N-other}.
         Singular spin vortex & Singular spin vortex & \(\alpha=\pi/4\)
             & \(\gamma=-\alpha\) & \(k\varphi\) \\
         Singular spin vortex & Nonsingular spin vortex & 1 & 0
-            & \(\beta(\rho)\) \\
+            & \(\beta\) \\
         Singular spin vortex & Monopole & 1 & 0 & \(\theta\) \\
         \bottomrule
     \end{tabular}
@@ -660,7 +672,7 @@ These defects are summarised in Table~\ref{tab: C-N-other}.
     Each defect is identified by windings of the condensate phase \(\tau \) and
     Euler angles (\(\alpha, \beta, \gamma \)), expressed in terms of the
     azimuthal angle \(\varphi \).
-    For nonsingular vortices, \(\beta(\rho)\) denotes a monotonically increasing
+    For nonsingular vortices, \(\beta\) denotes a monotonically increasing
     function of the transverse radius \(\rho \).
     Additionally, for the monopole case, \(\theta \) is the polar angle in
     spherical coordinates.}
@@ -716,10 +728,10 @@ respectively.
 Following the procedure similar to the previous interfaces, we first focus on
 constructing phase vortices connecting across this topological interface, which
 can be obtained by appropriate winding of \(\chi_2\) and \(\chi_{-1}\).
-Again, one can construct singular phase vortices connecting in all three limits
-by crossing \(\chi_2 = \chi_{-1} = \varphi \), which yields
+Again, one can construct \(k\)-quantised phase vortices connecting in all three
+limits by crossing \(\chi_2 = \chi_{-1} = k\varphi \), which yields
 \begin{align}\label{eq: C-FM-pv-pv}
-    \zeta^\text{C-FM}_\text{pv-pv} = \frac{e^{i\varphi}}{\sqrt{3}}\mqty(
+    \zeta^\text{C-FM}_\text{pv-pv} = \frac{e^{ik\varphi}}{\sqrt{3}}\mqty(
         \sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -739,7 +751,7 @@ For example, the following spinor connects a one-third vortex in the cyclic
 limit to a singular phase vortex in the FM-2 and a vortex-free region in the
 FM-1 limit:
 \begin{align}\label{eq: C-FM-third-pv}
-    \zeta^\text{C-FM}_\text{third-pv} = \frac{1}{\sqrt{3}}\mqty(
+    \zeta^\text{C-FM}_{\frac{1}{3}\text{-pv}} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -753,7 +765,7 @@ Similarly, a two-third vortex in the cyclic limit can connect to a vortex-free
 region in the FM-2 limit or a singular phase vortex in the FM-1 limit, given by
 the spinor
 \begin{align}\label{eq: C-FM-2third-vf}
-    \zeta^\text{C-FM}_\text{two-third-pv} = \frac{1}{\sqrt{3}}\mqty(
+    \zeta^\text{C-FM}_{\frac{2}{3}\text{-pv}} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
         0 \\
         0 \\
@@ -801,7 +813,7 @@ To construct such a defect across an interface, we make use of
 Eq.~\eqref{eq: general-defect-interface}, and apply it to the general cyclic to
 FM interface in Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 To construct the characteristic fountain-like spin texture, we choose a
-monotonically increasing function of \(\beta=\beta(\rho)\).
+monotonically increasing function of \(\beta=\beta\).
 The order-parameter is then kept single-valued by a combined winding of the
 condensate phase coupled to a winding of the spin vector, achieved by
 \(\tau'=2\alpha=2\varphi \), where \(\tau'=\tau-2\gamma \).
@@ -815,26 +827,28 @@ where
 \begin{align}\label{eq: C-FM-coreless-FM-limits}
     \zeta^\text{FM-2}_\text{cl} =
     \mqty(
-    \cos^4\frac{\beta(\rho)}{2}                                        \\
-    2e^{i\varphi}\cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2}  \\
-    \sqrt{6}e^{2i\varphi}\cos^2\frac{\beta(\rho)}{2}\sin^2
-    \frac{\beta(\rho)}{2}                                              \\
-    2e^{3i\varphi}\cos\frac{\beta(\rho)}{2}\sin^3\frac{\beta(\rho)}{2} \\
-    e^{4i\varphi}\sin^4\frac{\beta(\rho)}{2}
+    \cos^4\frac{\beta}{2} \\
+    2e^{i\varphi}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2}  \\
+    \sqrt{6}e^{2i\varphi}\cos^2\frac{\beta}{2}\sin^2\frac{\beta}{2} \\
+    2e^{3i\varphi}\cos\frac{\beta}{2}\sin^3\frac{\beta}{2} \\
+    e^{4i\varphi}\sin^4\frac{\beta}{2}
     ),
 \end{align}
 \begin{align}
     \zeta^\text{FM-1}_\text{cl} =
     \mqty(
-    -2\cos\frac{\beta(\rho)}{2}\sin^3\frac{\beta(\rho)}{2}         \\
-    e^{i\varphi}\sin^2\frac{\beta(\rho)}{2}\left(3\cos^2
-    \frac{\beta(\rho)}{2}-\sin^2\frac{\beta(\rho)}{2}\right)       \\
-    \sqrt{6}e^{2i\varphi}\left(\cos\frac{\beta(\rho)}{2}\sin^3
-    \frac{\beta(\rho)}{2}
-    - \cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2} \right) \\
-    e^{3i\varphi}\cos^2\frac{\beta(\rho)}{2}\left(\cos^2
-    \frac{\beta(\rho)}{2}-3\sin^2\frac{\beta(\rho)}{2}\right)      \\
-    2e^{4i\varphi}\cos^3\frac{\beta(\rho)}{2}\sin\frac{\beta(\rho)}{2}
+    -2\cos\frac{\beta}{2}\sin^3\frac{\beta}{2} \\
+    e^{i\varphi}\sin^2\frac{\beta}{2}\left(
+        3\cos^2\frac{\beta}{2} -\sin^2\frac{\beta}{2}
+    \right) \\
+    \sqrt{6}e^{2i\varphi}\left(
+        \cos\frac{\beta}{2}\sin^3\frac{\beta}{2}
+        - \cos^3\frac{\beta}{2}\sin\frac{\beta}{2}
+    \right) \\
+    e^{3i\varphi}\cos^2\frac{\beta}{2}\left(
+        \cos^2\frac{\beta}{2}-3\sin^2\frac{\beta}{2}
+    \right) \\
+    2e^{4i\varphi}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2}
     )
 \end{align}
 represent nonsingular vortices in both the FM-2 and FM-1 limits, respectively.
@@ -895,11 +909,11 @@ Euler angles in this interface are presented in Table~\ref{tab: C-FM-other}.
         C limit & FM-2 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
             & \(\gamma/\varphi\) & \(\beta\) \\
         \midrule
-        Phase vortex & Nonsingular vortex & 2 & 1 & 0 & \(\beta(\rho)\) \\ 
+        Phase vortex & Nonsingular vortex & 2 & 1 & 0 & \(\beta\) \\ 
         Singular spin vortex & Nonsingular vortex & 0 & 1 & \(\pm 1\)
-            & \(\beta(\rho)\) \\ 
+            & \(\beta\) \\ 
         Two-third vortex & Nonsingular vortex & 2/3 & 1 & -2/3, 4/3
-            & \(\beta(\rho)\) \\
+            & \(\beta\) \\
         Phase vortex & Dirac monopole & 2 & \(1\) & 0 & \(\theta\) \\ 
         Singular spin vortex & Dirac monopole & 0 & \( 1\) & \(\pm 1\)
             & \(\theta\) \\ 
@@ -910,11 +924,11 @@ Euler angles in this interface are presented in Table~\ref{tab: C-FM-other}.
         C limit & FM-1 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
             & \(\gamma/\varphi\) & \(\beta\) \\
         \midrule
-        Phase vortex & Nonsingular vortex & 1 & 1 & 0 & \(\beta(\rho)\) \\ 
+        Phase vortex & Nonsingular vortex & 1 & 1 & 0 & \(\beta\) \\ 
         Singular spin vortex & Nonsingular vortex & 0 & 1 & \(\pm 1\)
-            & \(\beta(\rho)\) \\ 
+            & \(\beta\) \\ 
         One-third vortex & Nonsingular vortex & 1/3 & 1 & -4/3, 2/3
-            & \(\beta(\rho)\) \\
+            & \(\beta\) \\
         Phase vortex & Dirac monopole & 1 & 1 & 0 & \(\theta\) \\ 
         Singular spin vortex & Dirac monopole & 0 & 1 & \(\pm 1\) & \(\theta\)\\ 
         One-third vortex & Dirac monopole & 1/3 & 1 & -4/3, 2/3 & \(\theta\) \\
@@ -969,20 +983,20 @@ the linear Zeeman shift, \(p(z)\).
 We start from the interpolating spinor between the FM and BN phases in
 Eq.~\eqref{eq: FM-BN-interpolating-spinor} and first construct various vortex
 states using different combinations of the phase windings \(\chi_{\pm 2}\).
-Again, similar to the previous cases, singular phase vortices are connected
-across the interface by the choice \(\chi_{\pm 2} = \varphi \).
-An interesting case arises between a singular phase vortex in the FM phases
-connecting to a spin vortex in the BN phase.
+Again, similar to the previous cases, \(k\)-quantised phase vortices are
+connected across the interface by the choice \(\chi_{\pm 2} = k\varphi \).
+An interesting case arises between a \(k\)-quantised phase vortex in the FM
+phases connecting to a spin vortex in the BN phase.
 This can be achieved by again allowing opposite phase windings in the outer
-components, i.e., \(\chi_{\pm 2} = \pm \varphi \), where the interpolating
+components, i.e., \(\chi_{\pm 2} = \pm k\varphi \), where the interpolating
 spinor reads
 \begin{align}\label{eq: FM-BN-pv-sv}
     \zeta^\text{FM-BN}_\text{pv-sv} = \frac{1}{\sqrt{2}}\mqty(
-    e^{i\varphi} \sqrt{1 + \eta} \\
+    e^{ik\varphi} \sqrt{1 + \eta} \\
     0 \\
     0 \\
     0 \\
-    e^{-i\varphi} \sqrt{1 - \eta}).
+    e^{-ik\varphi} \sqrt{1 - \eta}).
 \end{align}
 
 As observed in Fig.~\ref{fig: SV-HQV}, the BN phase allows for the creation
@@ -993,18 +1007,18 @@ versa.
 Using this first choice in Eq.~\eqref{eq: FM-BN-interpolating-spinor} leads to
 the spinor
 \begin{align}\label{eq: FM-BN-pv-hqv}
-    \zeta^\text{FM-BN}_\text{pv-sv} = \frac{1}{\sqrt{2}}\mqty(
+    \zeta^\text{FM-BN}_\text{pv-hqv} = \frac{1}{\sqrt{2}}\mqty(
     e^{i\varphi} \sqrt{1 + \eta} \\
     0 \\
     0 \\
     0 \\
     \sqrt{1 - \eta}),
 \end{align}
-which connects this HQV to a phase vortex in the FM-2 limit when \(\eta = 1\),
-or a vortex-free state when \(\eta = -1\).
+which connects a HQV in the BN limit to a phase vortex in the FM-2 limit when
+\(\eta = 1\), or a vortex-free state when \(\eta = -1\).
 Choosing \(\chi_{\pm 2}\) the opposite way around would reverse this connection.
-A summary of these vortex connections is provided in
-Table~\ref{tab: FM-BN-vortices}.
+A summary of possible vortex connections constructed using the component phase
+windings is provided in Table~\ref{tab: FM-BN-vortices}.
 \begin{table}
     \centering
     \begin{tabular}{ccccc}
@@ -1039,7 +1053,7 @@ the same methodology as in the cyclic to FM interface and construct a
 nonsingular vortex connecting across the interface.
 We apply Eq.~\eqref{eq: general-defect-interface} to the general FM-BN spinor
 in Eq.~\eqref{eq: FM-BN-interpolating-spinor}, and choose a monotonically
-increasing function for the Euler angle \(\beta(\rho)\) with a transverse
+increasing function for the Euler angle \(\beta\) with a transverse
 radial dependence, together with \(\tau - 2\gamma = 2\alpha = 2\varphi \).
 This leads to the interpolating spinor
 (\(\gamma=0\))
@@ -1055,7 +1069,7 @@ This leads to the interpolating spinor
     e^{4i\varphi}\left[S^4\sqrt{1+\eta} + C^4\sqrt{1-\eta} \right]
     ),
 \end{align}
-where \(C \equiv \cos(\beta(\rho)/2)\) and \(S \equiv \sin(\beta(\rho)/2)\).
+where \(C \equiv \cos(\beta/2)\) and \(S \equiv \sin(\beta/2)\).
 In the FM limit, one recovers the spin-2 nonsingular vortex given as
 (\(\eta=1\))
 \begin{align}\label{eq: FM-BN-coreless}
