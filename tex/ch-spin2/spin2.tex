@@ -165,8 +165,8 @@ Sec.~\ref{subsec: UN-BN-numerics}.
 In this section we analytically construct interpolating spinor solutions that
 model connections between different ground states of spin-2 systems.
 In particular, we focus on four different topological interfaces, which are:
-UN to BN, cyclic to nematic (either UN or BN), cyclic to ferromagnetic, and
-ferromagnetic to BN\@.
+UN to BN, cyclic to nematic (either UN or BN), cyclic to FM, and
+FM to BN\@.
 For each case we construct various topological defects connecting across the
 interface, ranging from simple phase vortex connections to more complicated
 connections involving monopoles and nonsingular textures.
@@ -753,7 +753,7 @@ These defects are summarised in Table~\ref{tab: C-N-other}.
 \end{table}
 
 \subsection{Cyclic to ferromagnetic}
-Since spin-2 BECs support a ferromagnetic phase, which has inherent
+Since spin-2 BECs support an FM phase, which has inherent
 magnetisation, one can construct an interface between this state and
 one with zero magnetisation.
 This would then result in spatially distinct regions which have different values
@@ -761,7 +761,7 @@ of the spin magnitude, and hence would create a spatially-dependent
 magnetisation.
 By restricting ourselves to the case of zero transverse magnetisation,
 \(\hat{\vb{F}} = \hat{F}_z\), one such case that arises is between the cyclic
-and ferromagnetic phases, given by the following family of spinors:
+and FM phases, given by the following family of spinors:
 \begin{align}\label{eq: C-FM-interpolating-spinor}
     \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\chi_2}\sqrt{1 + \eta} \\
@@ -1067,11 +1067,11 @@ E^{\text{FM}_2}\) for \(|p| < (2c_1-c_2/10)n\).
 Thus, as in the previous FM interface, we can stabilise the interface by relying
 on a longitudinal dependence of the linear Zeeman shift, \(p(z)\).
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
-the ferromagnetic state with spin \(\eta = \pm 2\).
+the FM state with spin \(\eta = \pm 2\).
 Alternatively, the solution becomes the BN state precisely when \(p=0\), and
 hence has zero magnetisation.
 Therefore, this spinor provides an interpolating solution between the
-ferromagnetic and BN phases, which is controlled by a longitudinal dependence of
+FM and BN phases, which is controlled by a longitudinal dependence of
 the linear Zeeman shift, \(p(z)\).
 
 \subsubsection{Connections involving phase, spin, and half-quantum vortices}
@@ -1692,3 +1692,48 @@ On both sides of the interface the vortex structures are observed to terminate
 at the interface itself, and do not connect in a way that is observed in the
 phase vortex to one-third vortex connection (see
 Fig.~\ref{fig: C-FM-third-SQV}).
+
+\section{Conclusions}
+In this chapter we have presented spin-2 BECs as a medium for investigating
+topological interface physics.
+We constructed topological interfaces within the condensate by means of
+interpolating spinor wave functions which are derived from steady-state
+solutions to the spin-2 GPEs, which smoothly connect different phases using
+an interpolation parameter.
+In each case we constructed multiple different classes of topological defects
+which either connected smoothly across the interface, or terminated on the
+interface itself.
+In particular, we showed how phase, spin, and fractional vortices could be
+constructed simply from the component phase windings, and how more complicated
+connections could be constructed by applying a spin rotation to the general
+interface spinor with appropriate choices for the Euler angles.
+It was shown that interfaces between the nematic phases allow for monopoles and
+nonsingular vortices on one side of the interface to smoothly connect to
+singular line defects on the other side.
+In addition, interfaces involving the FM phases can be engineered to contain
+a generalisation of the Dirac monopole in the FM limit, which connects to a
+singular vortex line in the opposite limit.
+
+Numerical investigations of the UN to BN and cyclic to FM interfaces were also
+performed.
+We showed that phase vortices in a UN to BN interface had two distinct parts to
+their dynamics.
+The initially overlapping vortex lines quickly spatially separated, arising from
+an instability at the interface itself.
+Each vortex then developed composite core structures that contained UN, BN, and
+cyclic phases, forming a topological interface within the vortex cores
+themselves.
+A phase vortex in the BN phase terminating at the interface was also
+investigated, which was observed to split into a pair of HQVs with FM cores,
+which also terminated at the interface.
+In the cyclic to FM interface, we observed a phase vortex in the FM phase
+smoothly connect to a one-third vortex in the cyclic limit by forming a
+composite structure that had an inner \(\spinmag=1\) core, encased by a
+surrounding cyclic region, before smoothly interpolating back to the
+\(\spinmag=2\) bulk.
+Lastly, a connection involving a nonsingular vortex was numerically simulated.
+We showed that the initial nonsingular structure on the FM side connected
+smoothly to a doubly quantised phase vortex in the cyclic limit.
+The nonsingular vortex was then observed to split into four singular structures,
+whilst the doubly quantised phase vortex split into four one-third vortices,
+with a large two-third vortex in the centre of the condensate.
