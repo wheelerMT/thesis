@@ -1,4 +1,24 @@
-\chapter{Vortex connections across topological interfaces}\label{chap: spin-2}
+\chapter{\label{chap: spin-2}
+Topological interfaces in spin-2 Bose-Einstein condensates}
+In this chapter, we both analytically and numerically investigate the physics
+of topological defects when connected across topological interfaces in spin-2
+Bose-Einstein condensates.
+We begin by introducing the concept of a topological interface, and discuss
+systems where they can arise.
+We then construct interpolating spinor wave functions for a spin-2 system that
+smoothly connect states with different symmetries, forming a topological
+interface.
+Such interfaces include connections between the UN and BN phases, cyclic to both
+nematic (UN/BN) phases, cyclic to FM phases, and also between the FM and BN
+phases.
+With these interpolating solutions, we then construct a rich phenomenology of
+different defect states connecting across the interface.
+These defects range from singular phase vortices, spin vortices, nonsingular
+textures, and even to point defects such as monopoles.
+Additionally, we also perform numerical simulations for select examples,
+highlighting the interesting physics occurring at the interface.
+
+\section{Introduction to topological interfaces}
 Topological interfaces may form at the phase boundary between
 topologically distinct phases that are described by different order parameters.
 In such an interface, the phases can coexist in such a way that the different
@@ -49,20 +69,50 @@ Lovegrove2014,Weiss2019} and point defects such as monopoles~\cite{Stoof2001,
 Savage2003,Ruostekoski2003,Pietila2009,Ray2014,Ray2015,Ollikainen2017,
 Mithun2022,Blinova2023}.
 
-In this chapter, we both analytically and numerically investigate the physics
-of topological defects when connected across topological interfaces in spin-2
-Bose-Einstein condensates.
-We construct interpolating spinor wave functions for a spin-2 system that
-smoothly connect states with different symmetries.
-Such interfaces include connections between the UN and BN phases, cyclic to both
-nematic (UN/BN) phases, cyclic to FM phases, and also between the FM and BN
-phases.
-With these interpolating solutions, we then construct a rich phenomenology of
-different defect states connecting across the interface.
-These defects range from singular phase vortices, spin vortices, nonsingular
-textures, and even to point defects such as monopoles.
-Additionally, we also perform numerical simulations for select examples,
-highlighting the interesting physics occurring at the interface.
+\subsection{Interfaces arising within defect cores}
+In addition to the topological interface within the condensate itself,
+interfaces may also form within the cores of topological defects.
+This situation can arise, for example, due to energy relaxation in vortex core
+structures~\cite{Ruostekoski2003,Lovegrove2012,Lovegrove2016,Borgh2016,
+    Borgh2016a, Weiss2019,Xiao2021,Xiao2022}.
+In a spin-2 BEC, the three contributions to the interaction energy each give
+rise to a healing length, which describe, respectively, the length scale over
+which perturbations of the superfluid density, condensate spin, and singlet duo
+amplitude heal to the bulk value:
+\begin{equation}
+    \xi_d=\ell \sqrt{\frac{\hbar\omega}{2nc_0}},
+    \enskip \xi_F=\ell \sqrt{\frac{\hbar\omega}{2n|c_1|}},
+    \enskip \xi_a=\ell \sqrt{\frac{\hbar\omega}{2n|c_2|}},
+    \label{eq: spin-2-healing-lengths}
+\end{equation}
+where \(\ell = {(\hbar/M\omega)}^{1/2}\) is the harmonic oscillator length.
+Typically, \(\xi_F,\xi_a > \xi_d\), allowing the core of singular vortices
+to reduce its energy by expanding and filling with a different superfluid
+phase~\cite{Ruostekoski2003}.
+The condensate wave function then smoothly interpolates between the coexisting
+phases in the superfluid and the phases within the defect core, establishing a
+topological interface between them.
+One can use the above spinors to model this type of topological interface within
+the core structures.
+For example, consider that \(\eta \) now has a radial dependence, with the
+radial distance given as \(\rho = \sqrt{x^2 + y^2}\).
+The particular case of Eq.~\eqref{eq: UN-BN-pv-vf} can be modelled by requiring
+\(\eta(0) = -1\), and \(\eta(\rho)\) interpolates to \(\eta(\rho) = 1\) away
+from the vortex core, where we assume the vortex to be located at \(\rho = 0\).
+This then results in the core taking on the BN phase, which smoothly
+interpolates back to the UN phase far from the vortex core.
+In addition, the phase difference arising between the components becomes
+\(\chi = \mp 2\varphi \) for Eq~\eqref{eq: UN-BN-pv-vf} and
+Eq~\eqref{eq: UN-BN-vf-pv}, respectively, which implies that \(\chi \) can take
+values between 0 and \(4\pi \) about the vortex line.
+Comparing this with Fig.~\ref{fig: UN-BN-duo-trio}, we see that at some point
+this phase difference will cross \(\chi = \pi \) (and also \(\chi=3\pi \)) in a
+region about the interface (\(\eta = 0\)), which implies that, interestingly, a
+transition to the cyclic phase will occur within the vortex cores.
+This results in an interface forming within the vortex core itself, containing
+the BN, UN, and cyclic phases.
+Such a vortex core interface is investigated in
+Sec.~\ref{subsec: UN-BN-numerics}.
 
 \section{Interface crossing solutions in a spin-2 BEC}
 In a continuous spinor superfluid, it is possible for distinct phases with
@@ -222,39 +272,9 @@ singlet-trio amplitude reveals that a cyclic phase is present when
 As we shall see in our numerical investigations, this has profound effects on
 the structure of topological defects connecting across such an interface.
 
+\subsubsection{Connections involving phase vortices}
 To begin our investigations of defects connecting across topological interfaces,
 we first consider vortex connections.
-A summary of different vortex connections possible across a UN-BN interface are
-listed in Table~\ref{tab: UN-BN-vortices}.
-\begin{table}
-    \centering
-    \begin{tabular}{cccccc}
-        \toprule
-        \multicolumn{5}{c}{UN-BN --- Vortices from spinor-component phase
-        winding} \\
-        \midrule
-        UN limit & BN limit &  \(\chi_2/\varphi \) & \(\chi_0/\varphi \) &
-        \(\chi_{-2}/\varphi \)  \\
-        \midrule
-        Phase vortex & Phase vortex & \(k\) & \(k\) &
-         \(k\) \\ 
-         Vortex-free & Phase vortex & \(k\) & 0 & \(k\) \\
-        Phase vortex & Vortex-free & 0 & \(k\) & 0\\
-         Vortex-free & Singular spin vortex  & \(-k\) & 0 & \(k\) \\
-        Phase vortex & Singular spin vortex  & \(-k\) & \(k\) &
-         \(k\) \\
-         Vortex-free & Half-quantum vortex  & 0 & 0 & 1 \\
-        Phase vortex & Half-quantum vortex  & 0 & \(\pm 1\) & 1 \\
-        \bottomrule
-    \end{tabular}
-    \caption[Examples of possible vortex connections across a uniaxial nematic
-    to biaxial nematic interface]{\label{tab: UN-BN-vortices}
-    Representative examples of different vortex connections possible across a
-    UN-BN interface, constructed from the winding of the phase coefficients
-    \(\chi_m\) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
-    Additionally, generalisations to multiply quantised vortices are given by
-    \(k \in \mathbb{Z}\).}
-\end{table}
 We start by constructing a connection of \(k\)-quantised phase vortices on
 either side of the interface, which can be achieved by allowing
 \(\chi_m=k\varphi\) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}, which results
@@ -315,50 +335,7 @@ the spinor
     ).
 \end{align}
 
-In addition to the topological interface within the condensate itself,
-interfaces may also form within the cores of topological defects.
-This situation can arise, for example, due to energy relaxation in vortex core
-structures~\cite{Ruostekoski2003,Lovegrove2012,Lovegrove2016,Borgh2016,
-    Borgh2016a, Weiss2019,Xiao2021,Xiao2022}.
-In a spin-2 BEC, the three contributions to the interaction energy each give
-rise to a healing length, which describe, respectively, the length scale over
-which perturbations of the superfluid density, condensate spin, and singlet duo
-amplitude heal to the bulk value:
-\begin{equation}
-    \xi_d=\ell \sqrt{\frac{\hbar\omega}{2nc_0}},
-    \enskip \xi_F=\ell \sqrt{\frac{\hbar\omega}{2n|c_1|}},
-    \enskip \xi_a=\ell \sqrt{\frac{\hbar\omega}{2n|c_2|}},
-    \label{eq: spin-2-healing-lengths}
-\end{equation}
-where \(\ell = {(\hbar/M\omega)}^{1/2}\) is the harmonic oscillator length.
-Typically, \(\xi_F,\xi_a > \xi_d\), allowing the core of singular vortices
-to reduce its energy by expanding and filling with a different superfluid
-phase~\cite{Ruostekoski2003}.
-The condensate wave function then smoothly interpolates between the coexisting
-phases in the superfluid and the phases within the defect core, establishing a
-topological interface between them.
-One can use the above spinors to model this type of topological interface within
-the core structures.
-For example, consider that \(\eta \) now has a radial dependence, with the
-radial distance given as \(\rho = \sqrt{x^2 + y^2}\).
-The particular case of Eq.~\eqref{eq: UN-BN-pv-vf} can be modelled by requiring
-\(\eta(0) = -1\), and \(\eta(\rho)\) interpolates to \(\eta(\rho) = 1\) away
-from the vortex core, where we assume the vortex to be located at \(\rho = 0\).
-This then results in the core taking on the BN phase, which smoothly
-interpolates back to the UN phase far from the vortex core.
-In addition, the phase difference arising between the components becomes
-\(\chi = \mp 2\varphi \) for Eq~\eqref{eq: UN-BN-pv-vf} and
-Eq~\eqref{eq: UN-BN-vf-pv}, respectively, which implies that \(\chi \) can take
-values between 0 and \(4\pi \) about the vortex line.
-Comparing this with Fig.~\ref{fig: UN-BN-duo-trio}, we see that at some point
-this phase difference will cross \(\chi = \pi \) (and also \(\chi=3\pi \)) in a
-region about the interface (\(\eta = 0\)), which implies that, interestingly, a
-transition to the cyclic phase will occur within the vortex cores.
-This results in an interface forming within the vortex core itself, containing
-the BN, UN, and cyclic phases.
-Such a vortex core interface is investigated in
-Sec.~\ref{subsec: UN-BN-numerics}.
-
+\subsubsection{Connections involving spin vortices}
 Vortices other than singular phase vortices may also be connected across the
 interface.
 One such example is of singular spin vortices, which, allowing for the fact that
@@ -408,7 +385,39 @@ respectively, as
 \end{align}
 thereby allowing spin vortices to appear in both phases, and hence connect
 across the topological interface.
+A summary of the possible phase and spin vortex connections across a UN-BN
+interface are listed in Table~\ref{tab: UN-BN-vortices}.
+\begin{table}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        \multicolumn{5}{c}{UN-BN --- Vortices from spinor-component phase
+        winding} \\
+        \midrule
+        UN limit & BN limit &  \(\chi_2/\varphi \) & \(\chi_0/\varphi \) &
+        \(\chi_{-2}/\varphi \)  \\
+        \midrule
+        Phase vortex & Phase vortex & \(k\) & \(k\) &
+         \(k\) \\ 
+         Vortex-free & Phase vortex & \(k\) & 0 & \(k\) \\
+        Phase vortex & Vortex-free & 0 & \(k\) & 0\\
+         Vortex-free & Singular spin vortex  & \(-k\) & 0 & \(k\) \\
+        Phase vortex & Singular spin vortex  & \(-k\) & \(k\) &
+         \(k\) \\
+         Vortex-free & Half-quantum vortex  & 0 & 0 & 1 \\
+        Phase vortex & Half-quantum vortex  & 0 & \(\pm 1\) & 1 \\
+        \bottomrule
+    \end{tabular}
+    \caption[Examples of possible vortex connections across a uniaxial nematic
+    to biaxial nematic interface]{\label{tab: UN-BN-vortices}
+    Representative examples of different vortex connections possible across a
+    UN-BN interface, constructed from the winding of the phase coefficients
+    \(\chi_m\) in Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
+    Additionally, generalisations to multiply quantised vortices are given by
+    \(k \in \mathbb{Z}\).}
+\end{table}
 
+\subsubsection{Connections involving monopoles and nonsingular textures}
 So far, we have considered only singular vortices connecting across the
 interface.
 It is, however, possible to construct interpolating solutions that contain
@@ -564,6 +573,7 @@ which is achieved from a longitudinally-dependent quadratic Zeeman shift
 \(q(z)\) which varies from \(q = 0\) at the cyclic phase to \(q = -c_2n/10\)
 at the BN side.
 
+\subsubsection{Connections involving phase and spin vortices}
 Firstly, one can construct the same phase vortex and spin vortex connections
 considered in the UN-BN interface upon the substitution \(\sqrt{1+\eta}
 \rightarrow i\sqrt{1+\eta}\).
@@ -670,6 +680,7 @@ where the spinors in the UN and BN limits are given as
 This yields a connection between singular, singly quantised spin vortices in all
 three limits.
 
+\subsubsection{Connections involving monopoles and nonsingular textures}
 As discussed in the previous section, the nematic phases give rise to
 nonsingular spin vortices and point defects such as monopoles.
 Those same defect connections can be constructed in this interface by using
@@ -755,6 +766,7 @@ where \(p(z) = 0\) represents the cyclic phase, whilst \(p(z) = -c_1n\) and
 \(p(z) = 2c_1n\) represent the FM-1 and FM-2 phases,
 respectively.
 
+\subsubsection{Connections involving phase, spin, and fractional vortices}
 Following the procedure similar to the previous interfaces, we first focus on
 constructing phase vortices connecting across this topological interface, which
 can be obtained by appropriate winding of \(\chi_2\) and \(\chi_{-1}\).
@@ -835,6 +847,7 @@ summarised in Table~\ref{tab: C-FM-vortices}.
     arbitrary quantisation.}
 \end{table}
 
+\subsubsection{Connections involving monopoles and nonsingular textures}
 In addition to phase vortices, the FM phase also supports nonsingular vortices,
 which are identified from a characteristic fountain-like texture of
 the condensate spin (see Fig.~\ref{fig: spin-1-vortices}b for the spin-1
@@ -1025,6 +1038,7 @@ Therefore, this spinor provides an interpolating solution between the
 ferromagnetic and BN phases, which is controlled by a longitudinal dependence of
 the linear Zeeman shift, \(p(z)\).
 
+\subsubsection{Connections involving phase, spin, and half-quantum vortices}
 We start from the interpolating spinor between the FM and BN phases in
 Eq.~\eqref{eq: FM-BN-interpolating-spinor} and first construct various vortex
 states using different combinations of the phase windings \(\chi_{\pm 2}\).
@@ -1092,7 +1106,9 @@ windings is provided in Table~\ref{tab: FM-BN-vortices}.
     quantisation.}
 \end{table}
 
-We can also construct nonsingular defect crossing solutions using this interface.
+\subsubsection{Connections involving monopoles and nonsingular textures}
+We can also construct nonsingular defect crossing solutions using this
+interface.
 Again, since the FM phase supports nonsingular vortices, we can follow
 the same methodology as in the cyclic to FM interface and construct a
 nonsingular vortex connecting across the interface.
