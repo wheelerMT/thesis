@@ -161,26 +161,6 @@ singular defect line, \(\rho\), as \(\eta=\eta(\rho)\).
 Such a vortex core interface is investigated in
 Sec.~\ref{subsec: UN-BN-numerics}.
 
-% One can use the above spinors to model this type of topological interface within
-% the core structures.
-% For example, consider that \(\eta \) now has a radial dependence, with the
-% radial distance given as \(\rho = \sqrt{x^2 + y^2}\).
-% The particular case of Eq.~\eqref{eq: UN-BN-pv-vf} can be modelled by requiring
-% \(\eta(0) = -1\), and \(\eta(\rho)\) interpolates to \(\eta(\rho) = 1\) away
-% from the vortex core, where we assume the vortex to be located at \(\rho = 0\).
-% This then results in the core taking on the BN phase, which smoothly
-% interpolates back to the UN phase far from the vortex core.
-% In addition, the phase difference arising between the components becomes
-% \(\chi = \mp 2\varphi \) for Eq~\eqref{eq: UN-BN-pv-vf} and
-% Eq~\eqref{eq: UN-BN-vf-pv}, respectively, which implies that \(\chi \) can take
-% values between 0 and \(4\pi \) about the vortex line.
-% Comparing this with Fig.~\ref{fig: UN-BN-duo-trio}, we see that at some point
-% this phase difference will cross \(\chi = \pi \) (and also \(\chi=3\pi \)) in a
-% region about the interface (\(\eta = 0\)), which implies that, interestingly, a
-% transition to the cyclic phase will occur within the vortex cores.
-% This results in an interface forming within the vortex core itself, containing
-% the BN, UN, and cyclic phases.
-
 \section{Interface crossing solutions in a spin-2 BEC}
 In this section we analytically construct interpolating spinor solutions that
 model connections between different ground states of spin-2 systems.
@@ -1372,6 +1352,30 @@ vortices, the timescales considered here reveal that both vortices eventually
 leave the condensate cloud.
 Additionally, the phase vortex on the BN side of the interface is observed to
 leave the condensate before the splitting into two HQVs has occurred.
+
+Note that it is possible to use the UN-BN interpolating spinor given in
+Eq.~\eqref{eq: UN-BN-interpolating-spinor} to predict the topological interface
+formed within the core structures.
+For example, consider that \(\eta \) now has a radial dependence, with the
+radial distance given as \(\rho = \sqrt{x^2 + y^2}\).
+Then vortex on the UN side can be modelled using Eq.~\eqref{eq: UN-BN-pv-vf} by
+requiring \(\eta(0) = -1\) along the vortex core, which then interpolates
+smoothly to \(\eta(\rho) = 1\) away from the vortex core, where we have assumed
+the vortex to be located at \(\rho = 0\).
+This then results in the core taking on the BN phase, which smoothly
+interpolates back to the UN phase far from the vortex core.
+In addition, the phase difference arising between the components becomes
+\(\chi = \mp 2\varphi \), which implies that \(\chi \) can take values between 0
+and \(4\pi \) about the vortex line.
+Comparing this with Fig.~\ref{fig: UN-BN-duo-trio} we see that at some point
+this phase difference will cross \(\chi = \pi \) (and also \(\chi=3\pi \)) in a
+region about the interface (\(\eta = 0\)), which implies that a
+transition to the cyclic phase will occur within the vortex core.
+This results in an interface forming within the vortex core itself, containing
+the BN, UN, and cyclic phases, which is clearly observed in
+Fig.~\ref{fig: UN-BN-SQV-SQV-singlets}.
+Similar analysis can be performed for the state in Eq.~\eqref{eq: UN-BN-vf-pv}
+to model the core on the BN side.
 
 We next investigate a vortex connection that terminates on the interface.
 We start with the initial state in Eq.~\eqref{eq: UN-BN-vf-pv}, which contains
