@@ -1465,16 +1465,10 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
         {\includegraphics[width=0.33\textwidth]
             {gfx/ch-spin2/C-FM=2_third-SQV_singlet_trio.pdf}};
 
-        \node[inner sep=0pt] (plot3) at (-0.7, -5) {
-            \includegraphics[width=0.5\textwidth]
-                {gfx/ch-spin2/spin_singlet_radius_analytical.pdf}
-        };
-
         % Labels
         \node at (-5.15, -2.5) {(a)};
         \node at (-0.5, -2.5) {(b)};
         \node at (3.95, -2.5) {(c)};
-        \node at (-0.5, -7.5) {(d)};
     \end{tikzpicture}
     \caption[Dynamics of a one-third vortex to singly quantised vortex
     connection in a cyclic to ferromagnetic interface]
@@ -1489,10 +1483,7 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
     Overlaid are the spherical harmonics showing the non-trivial change
     of order parameter symmetry inside the core.
     (c): Longitudinal cut of \(|A_{30}|^2\) at \(y/\ell=0\).
-    Cyclic regions are identified from \(|A_{30}|^2=2\).
-    (d) Analytically calculated values of \(\spinmag \) and \(|A_{30}|^2\)
-    using the interpolating spinor in Eq.~\eqref{eq: C-FM-third-pv} with the
-    choice of \(\eta(\rho) = 3\tanh(\rho/3)\).}
+    Cyclic regions are identified from \(|A_{30}|^2=2\).}
 \end{figure}
 Here, \(\spinmag \) reveals non-trivial core structures emerging.
 Clearly one can see the third vortex on the cyclic side of the interface
@@ -1510,19 +1501,18 @@ The spherical harmonics of the internal core structure plotted in
 Fig.~\ref{fig: C-FM-third-SQV}b reveal the non-trivial change of order parameter
 symmetry within the composite core.
 
-One can use the general spinor in Eq.~\eqref{eq: C-FM-third-pv} to
-analytically examine the vortex core structures when \(\eta \) is a
-function of the transverse radius \(\rho = \sqrt{x^2 + y^2}\).
-The states can be described by choosing an appropriate function for
+As we did in the UN to BN case, one can use the general spinor in
+Eq.~\eqref{eq: C-FM-third-pv} to analytically predict the vortex core structures
+observed when \(\eta \) is a function of the transverse radius
+\(\rho = \sqrt{x^2 + y^2}\).
+The core can be described by choosing an appropriate function for
 \(\eta(\rho)\) that interpolates between all three phases.
-We choose \(\eta(\rho) = 3\tanh(\rho/2) - 1\) which becomes \(\eta=-1\) at
-\(\rho=0\), \(\eta=0\) and hence cyclic at \(\rho=\tanh^{-1}(1/3)\), and
-finally \(\eta=2\) at large \(\rho \).
-The resulting spin magnitude and singlet-trio amplitude using the above
-substitution in Eq.~\eqref{eq: C-FM-third-pv} are plotted in
-Fig.~\ref{fig: C-FM-third-SQV}d.
-We see that the analytically calculated values of \(\spinmag \) and
-\(|A_{30}|^2\) mirror those observed in the numerics.
+In particular, we choose \(\eta(\rho) = 3\tanh(\rho/2) - 1\), which becomes
+\(\eta=-1\) (\(\text{FM}_1^-\)) at \(\rho=0\) along the vortex core, \(\eta=0\)
+(cyclic) at \(\rho=\tanh^{-1}(1/3)\), and finally \(\eta=2\) (\(\text{FM}_2^+\))
+at large \(\rho \).
+Thus, this interpolating spinor accurately models the behaviour observed in
+Fig.~\ref{fig: C-FM-third-SQV}.
 
 Instead of considering only singular vortices, we can also investigate the
 nonsingular vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
