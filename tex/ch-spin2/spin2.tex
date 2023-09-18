@@ -948,9 +948,9 @@ as a monotonically increasing function of the transverse radius, \(\rho\).
 In the FM-2 and FM-1 cases, the order-parameter is kept single-valued by a
 combined winding of the condensate phase coupled to a winding of the spin
 vector, achieved, respectively, by
-\begin{align}\label{eq: coreless-euler-limits}
-    \tau - 2\gamma &= \pm 2\alpha = \pm 2\varphi \\
-    \tau + \gamma &= \pm\alpha=\pm\varphi 
+\begin{align}\label{eq: coreless-euler-limits-FM-2}
+    \tau - 2\gamma &= \pm 2\alpha = \pm 2\varphi, \\
+    \tau + \gamma &= \pm\alpha=\pm\varphi.\label{eq: coreless-euler-limits-FM-1}
 \end{align}
 Choosing these Euler angles results in nonsingular vortices in the FM limits
 connecting to singular vortices in the cyclic limit.
@@ -1000,7 +1000,8 @@ systems~\cite{Borgh2012, Savage2003}.
 Such a structure is achieved by taking \(\beta=\theta\) in
 Eqs.~\eqref{eq: FM-2-coreless} and~\eqref{eq: FM-1-coreless}, where \(\theta\)
 is the polar angle in spherical coordinates, along with the same required limits
-on the Euler angles given in Eq.~\eqref{eq: coreless-euler-limits}.
+on the Euler angles given in Eqs.~\eqref{eq: coreless-euler-limits-FM-2}
+and~\eqref{eq: coreless-euler-limits-FM-1}.
 This creates the required hedgehog texture of the condensate spin and embeds
 a singular vortex line terminating on the monopole.
 These choices of angles then connect the generalisation of the Dirac monopole
@@ -1160,79 +1161,54 @@ windings is provided in Table~\ref{tab: FM-BN-vortices}.
 \end{table}
 
 \subsubsection{Connections involving monopoles and nonsingular textures}
-We can also construct nonsingular defect crossing solutions using this
-interface.
-Again, since the FM phase supports nonsingular vortices, we can follow
-the same methodology as in the cyclic to FM interface and construct a
-nonsingular vortex connecting across the interface.
-We apply Eq.~\eqref{eq: general-defect-interface} to the general FM-BN spinor
-in Eq.~\eqref{eq: FM-BN-interpolating-spinor}, and choose a monotonically
-increasing function for the Euler angle \(\beta\) with a transverse
-radial dependence, together with \(\tau - 2\gamma = 2\alpha = 2\varphi \).
-This leads to the interpolating spinor
-(\(\gamma=0\))
-\begin{align}\label{eq: FM-BN-coreless-dqv}
-    \zeta^\text{FM-BN}_\text{cl-dqv} = \mqty(
-    C^4\sqrt{1+\eta} + S^4\sqrt{1-\eta} \\
-    2e^{i\varphi}\left[C^3S\sqrt{1+\eta}
-        - CS^3\sqrt{1-\eta}\right] \\
-    e^{2i\varphi}\sqrt{6}C^2S^2\left[\sqrt{1+\eta}
-        + \sqrt{1-\eta} \right] \\
-    2e^{3i\varphi}\left[CS^3\sqrt{1+\eta}
-        - C^3S\sqrt{1-\eta}\right] \\
-    e^{4i\varphi}\left[S^4\sqrt{1+\eta} + C^4\sqrt{1-\eta} \right]
+As in the previous subsection discussing a cyclic to FM interface, we can apply
+the same logic and construct nonsingular defects in the FM phase that connect to
+singular defects in the BN phase, as well as Dirac monopoles that form the
+termination point of vortices.
+We begin by re-writing Eq.~\eqref{eq: FM-BN-interpolating-spinor} in the general
+form
+\begin{align}
+    \zeta^{\text{FM}_2\text{-BN}} = \frac{1}{\sqrt{2}}\mqty(
+        \sqrt{1+\eta}\zeta^{\text{FM}_2^+} \\
+        0 \\
+        0 \\
+        0 \\
+        \sqrt{1+\eta}\zeta^{\text{FM}_2^-}
     ),
 \end{align}
-where \(C \equiv \cos(\beta/2)\) and \(S \equiv \sin(\beta/2)\).
-In the FM limit, one recovers the spin-2 nonsingular vortex given as
-(\(\eta=1\))
-\begin{align}\label{eq: FM-BN-coreless}
-    \zeta^\text{FM}_\text{cl} = \sqrt{2}\mqty(C^4 \\ 2e^{i\varphi}C^3S \\
-    e^{2i\varphi}\sqrt{6}C^2S^2 \\ 2e^{3i\varphi}CS^3 \\ e^{4i\varphi}S^4
-    ).
+where \(\text{FM}_2^+\) is defined in Eq.~\eqref{eq: FM-2-coreless} and
+\(\text{FM}_2^-\) is similarly obtained by applying a general spin rotation
+to \(\zeta={(0, 0, 0, 0, 1)}^T\).
+Then, choosing the Euler angles according to
+Eq.~\eqref{eq: coreless-euler-limits-FM-2} results in \(\text{FM}_2^\pm\)
+becoming
+\begin{align}
+    \zeta^{\text{FM}_2^+} &=
+    \mqty(
+        e^{-4i\varphi} \cos^4 \frac{\beta}{2} \\
+        2e^{-3i\varphi} \cos^3 \frac{\beta}{2} \sin \frac{\beta}{2} \\
+        \sqrt{6}e^{-2i\varphi}\cos^2\frac{\beta}{2}\sin^2\frac{\beta}{2}\\
+        2e^{-i\varphi} \sin^3 \frac{\beta}{2} \cos \frac{\beta}{2} \\
+        \sin^4\frac{\beta}{2}
+        \label{eq: FM-BN-dirac2}
+    ), \\
+    \zeta^{\text{FM}_{2}^-} &= 
+    \mqty(
+        e^{-4i\varphi} \sin^4 \frac{\beta}{2} \\
+        -2e^{-3i\varphi} \sin^3 \frac{\beta}{2} \cos \frac{\beta}{2} \\
+        \sqrt{6}e^{-2i\varphi}\cos^2\frac{\beta}{2}\sin^2\frac{\beta}{2}\\
+        -2e^{-i\varphi} \cos^3 \frac{\beta}{2} \sin \frac{\beta}{2} \\
+        \cos^4\frac{\beta}{2}
+    ),
 \end{align}
-The spherical harmonic representation of this vortex is plotted in
-Fig.~\ref{fig: C-FM-coreless-initial-states}, where the characteristic
-fountain-like texture becomes apparent.
-The spinor in the BN limit (\(f_z=0\)) reads
-\begin{align}\label{eq: FM-BN-DQV}
-    \zeta^\text{BN}_\text{dqv} = \mqty(
-    C^4 + S^4 \\
-    2e^{i\varphi}CS\left[C^2-S^2\right] \\
-    2e^{2i\varphi}\sqrt{6}C^2S^2 \\
-    2e^{3i\varphi}CS\left[S^2 - C^2\right] \\
-    e^{4i\varphi}\left[C^4 + S^4\right]).
-\end{align}
-It is not immediately obvious from the form of the spinor the type of vortex
-present on the BN side of the interface.
-The spherical harmonics plotted in Fig.~\ref{fig: BN-DQV} reveal that, similar
-to the cyclic case, this is also doubly quantised vortex in the BN limit, which
-can be seen by tracing a point about the vortex line, showing the condensate
-phase changes by a total of \(4\pi \).
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \node at (0, 0) {\includegraphics[width=0.5\textwidth]
-            {gfx/ch-spin2/BN_DQV.pdf}};
-        \node[cylinder, draw, fill=black, opacity=0.5, minimum height=4cm,
-            rotate=90] (c_dqv) at (0, 0) {};
-
-        % Colour bar
-        \node[rotate=90] at (-4.15, 0.4)
-        {\includegraphics[width=0.15\textwidth, height=0.015\textheight]
-            {gfx/colourbars/hsv_colourbar.pdf}};
-        \node[rotate=90] at (-4.15, -1.6) {Arg(\(Z\)) = 0};
-        \node[rotate=90] at (-4.15, 1.9) {\(2\pi \)};
-    \end{tikzpicture}
-    \caption[Spherical harmonic representation of a biaxial nematic doubly
-        quantised vortex]
-    {\label{fig: BN-DQV} Spherical harmonic
-        representation of the BN vortex configuration given by
-        Eq.~\eqref{eq: FM-BN-DQV}.
-        A \(4\pi \) winding of the condensate phase about the core indicates
-        this is a doubly quantised vortex, coupled with a non-trivial rotation
-        of the condensate spin.}
-\end{figure}
+respectively.
+Then, choosing \(\beta\) as a monotonically increasing function of the
+transverse radius results in nonsingular vortices in both FM limits which
+connect to either phase, spin, or HQVs in the BN limit (\(\eta=0\)) depending
+on whether \(\tau=2\varphi, 0, \varphi/2\), respectively.
+Similarly, choosing \(\beta=\theta\) represents a generalisation of the Dirac
+monopole in both FM limits, which connects to either phase, spin, or HQVs in
+the BN limit depending on the choice of \(\tau\).
 A summary of vortices, textures, and monopoles that can be constructed using
 the Euler angles in an FM-BN interface is given in Table~\ref{tab: FM-BN-other}.
 \begin{table}
