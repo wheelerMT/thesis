@@ -64,4 +64,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 view(0, 35);
-exportgraphics(gca, '../../../gfx/ch-spin2/FM-2-coreless.pdf', 'Resolution', 200)
+% exportgraphics(gca, '../../../gfx/ch-spin2/FM-2-coreless.pdf', 'Resolution', 200)

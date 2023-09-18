@@ -14,7 +14,7 @@ y = (-ny/2:ny/2-1) * dy;
 z = (-nz/2:nz/2-1) * dz;
 [X, Y, Z] = meshgrid(x, y, z);
 
-file = '../../../../../../../thesis_code/data/spin-2/5f_C-FM=2_coreless.hdf5';
+file = '../../../../thesis_data/5f_C-FM=2_coreless.hdf5';
 frame = 2;
 psiP2 = squeeze(h5read(file, '/wavefunction/psiP2').r(frame, :, :, :) ...
     + 1j * h5read(file, '/wavefunction/psiP2').i(frame, :, :, :));
@@ -77,334 +77,40 @@ Y_2m1 = 0.5 * sqrt(15 / (2*pi)) * exp(-1j * phi).* sin(theta).*cos(theta);
 Y_2m2 = 0.25 * sqrt(15 / (2*pi)).* exp(-2j * phi).* sin(theta).^2;
 
 z_lim = 84;
-scale = 3.3;
-
-%% Centre point
-initial_x_lim = 74;
-initial_y_lim = 74;
-zsph = zetaP2(initial_x_lim, initial_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(initial_x_lim, initial_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(initial_x_lim, initial_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(initial_x_lim, initial_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(initial_x_lim, initial_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-
-xx = abs(zsph).^2.*sin(theta).*cos(phi); 
-yy = abs(zsph).^2.*sin(theta).*sin(phi);
-zz = abs(zsph).^2.*cos(theta);
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-
-%% First ring
-lower_x_lim = 72;
-middle_x_lim = 74;
-upper_x_lim = 76;
-lower_y_lim = 72;
-middle_y_lim = 74;
-upper_y_lim = 76;
-plot_angle = pi;
-radius = 7;
-
-zsph = zetaP2(lower_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-
-zsph = zetaP2(lower_x_lim, middle_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, middle_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, middle_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, middle_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, middle_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(lower_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(middle_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(middle_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(middle_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(middle_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(middle_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, middle_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, middle_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, middle_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, middle_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, middle_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(middle_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(middle_y_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(middle_y_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(middle_y_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(middle_y_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-th = 0:pi/50:2*pi;
-xunit = radius * cos(th);
-yunit = radius * sin(th);
-plot(xunit, yunit, 'k-', 'LineWidth', 1);
-hold on;
+scale = 0.9;
 
 %% Outer ring
-lower_x_lim = 70;
+lower_x_lim = 68;
 middle_x_lim = 74;
-upper_x_lim = 78;
-lower_y_lim = 70;
+upper_x_lim = 80;
+lower_y_lim = 68;
 middle_y_lim = 74;
-upper_y_lim = 78;
+upper_y_lim = 80;
 plot_angle = pi;
 radius = 14;
 
-zsph = zetaP2(lower_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
+for ii = lower_x_lim :2: upper_x_lim
+    for jj = lower_y_lim :2: upper_y_lim
+        zsph = zetaP2(ii, jj, z_lim).* Y_2p2 ...
+        + zetaP1(ii, jj, z_lim).* Y_2p1 ...
+        + zeta0(ii, jj, z_lim).* Y_2p0 ...
+        + zetaM1(ii, jj, z_lim).* Y_2m1 ...
+        + zetaM2(ii, jj, z_lim).* Y_2m2;
+        zsph = zsph * scale;
+        xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
+            + X(ii, jj);
+        yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
+            + Y(ii, jj);
+        zz = abs(zsph).^2.*cos(theta);
 
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-
-zsph = zetaP2(lower_x_lim, middle_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, middle_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, middle_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, middle_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, middle_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(lower_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(lower_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(lower_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(lower_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(lower_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(middle_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(middle_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(middle_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(middle_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(middle_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, upper_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, upper_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, upper_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, upper_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, upper_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, middle_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, middle_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, middle_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, middle_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, middle_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(upper_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(upper_x_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(upper_x_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(upper_x_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(upper_x_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-zsph = zetaP2(middle_x_lim, lower_y_lim, z_lim).* Y_2p2 ...
-    + zetaP1(middle_y_lim, lower_y_lim, z_lim).* Y_2p1 ...
-    + zeta0(middle_y_lim, lower_y_lim, z_lim).* Y_2p0 ...
-    + zetaM1(middle_y_lim, lower_y_lim, z_lim).* Y_2m1 ...
-    + zetaM2(middle_y_lim, lower_y_lim, z_lim).* Y_2m2;
-zsph = zsph * scale;
-xx = abs(zsph).^2.*sin(theta).*cos(phi) ...
-    + radius * cos(plot_angle);
-yy = abs(zsph).^2.*sin(theta).*sin(phi) ...
-    + radius * sin(plot_angle);
-zz = abs(zsph).^2.*cos(theta);
-plot_angle = plot_angle - 2 * pi / 8;
-
-h = surf(xx,yy,zz,angle(zsph));
-set(h, 'LineStyle','none')
-hold on;
-
-th = 0:pi/50:2*pi;
-xunit = radius * cos(th);
-yunit = radius * sin(th);
-plot(xunit, yunit, 'k-', 'LineWidth', 1);
-hold on;
+        h = surf(xx,yy,zz,angle(zsph));
+        set(h, 'LineStyle','none')
+        hold on;
+    end
+end
 
 axis off;
-view(-25, 30);
+view(0, 35);
 colormap(hsv);
 clim([-pi pi]);
 camlight left
@@ -412,4 +118,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 
-exportgraphics(gca, '../../../gfx/ch-spin2/C-FM=2_coreless_FM_after_spherical.pdf')
+% exportgraphics(gca, '../../../gfx/ch-spin2/C-FM=2_coreless_FM_after_spherical.pdf')
