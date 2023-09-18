@@ -800,7 +800,9 @@ Then, since this is a spin-2 system, the condensate spin is free to vary between
 \(\hat{F}_z = 0\) and \(\hat{F}_z = 2\).
 Recall from Chapter~\ref{chap: ground-states} that the spin-2 system supports
 two FM ground states, one with \(\spinmag = 1\), which we denote
-FM-1, and another with \(\spinmag = 2\), which we denote FM-2.
+\(\text{FM}_1^\pm\), and another with \(\spinmag = 2\), which we denote
+\(\text{FM}_2^\pm\).
+Here, the + (-) represents the FM state with spin pointing up (down).
 Therefore, this spinor can interpolate between the cyclic and both FM phases,
 depending on the value of the condensate spin, \(\hat{F}_z\).
 
@@ -816,7 +818,7 @@ E^\text{C}=0, E^{f_z=1} = c_1n/2 + p\).
 Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
 appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\),
 where \(p(z) = 0\) represents the cyclic phase, whilst \(p(z) = -c_1n\) and
-\(p(z) = 2c_1n\) represent the FM-1 and FM-2 phases,
+\(p(z) = 2c_1n\) represent the \(\text{FM}_1\) and \(\text{FM}_2\) phases,
 respectively.
 
 \subsubsection{Connections involving phase, spin, and fractional vortices}
@@ -843,8 +845,8 @@ Due to the spin-gauge symmetry of the FM phase, this choice of winding would
 then lead to either singular phase vortices and vortex-free regions in this
 limit.
 For example, the following spinor connects a one-third vortex in the cyclic
-limit to a singular phase vortex in the FM-2 and a vortex-free region in the
-FM-1 limit:
+limit to a singular phase vortex in the \(\text{FM}_2^+\) and a vortex-free
+region in the \(\text{FM}_1^-\) limit:
 \begin{align}\label{eq: C-FM-third-pv}
     \zeta^\text{C-FM}_{\frac{1}{3}\text{-pv}} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
@@ -857,8 +859,8 @@ FM-1 limit:
 which corresponds to the choice of \(\chi_2 = \varphi \) and \(\chi_{-1} = 0\)
 in Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 Similarly, a two-third vortex in the cyclic limit can connect to a vortex-free
-region in the FM-2 limit or a singular phase vortex in the FM-1 limit, given by
-the spinor
+region in the \(\text{FM}_2^+\) limit or a singular phase vortex in the
+\(\text{FM}_1^-\) limit, given by the spinor
 \begin{align}\label{eq: C-FM-2third-vf}
     \zeta^\text{C-FM}_{\frac{2}{3}\text{-pv}} = \frac{1}{\sqrt{3}}\mqty(
         e^{i\varphi}\sqrt{1 + \eta} \\
@@ -882,8 +884,8 @@ summarised in Table~\ref{tab: C-FM-vortices}.
         \multicolumn{5}{c}{C-FM --- Vortices from spinor-component phase
             winding} \\
         \midrule
-        Cyclic limit & FM-2 limit & FM-1 limit & \(\chi_2/\varphi \)
-        & \(\chi_{-1}/\varphi \) \\
+        Cyclic limit & \(\text{FM}_2\) limit & \(\text{FM}_1\) limit
+            & \(\chi_2/\varphi \) & \(\chi_{-1}/\varphi \) \\
         \midrule
          Phase vortex & Phase vortex & Phase vortex & \(k\) & \(k\) \\ 
          One-third vortex & Phase vortex & Vortex-free & 1 & 0 \\
@@ -911,13 +913,13 @@ general C-FM interface spinor by applying the general spin rotation
 Eq.~\eqref{eq: C-FM-interpolating-spinor}, which results in
 \begin{align}\label{eq: C-FM-coreless-general}
     \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\left(
-        \sqrt{1 + \eta}\zeta^\text{FM-2}
-        + \sqrt{2 - \eta}\zeta^\text{FM-1}
+        \sqrt{1 + \eta}\zeta^{\text{FM}_2^+}
+        + \sqrt{2 - \eta}\zeta^{\text{FM}_1^-}
     \right),
 \end{align}
 where the individual FM limits are given as
 \begin{align}\label{eq: FM-2-coreless}
-    \zeta^\text{FM-2} =e^{i(\tau-2\gamma)}
+    \zeta^{\text{FM}_2^+} =e^{i(\tau-2\gamma)}
     \mqty(
     e^{-2i\alpha}\cos^4\frac{\beta}{2} \\
     2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2}  \\
@@ -927,7 +929,7 @@ where the individual FM limits are given as
     ),
 \end{align}
 \begin{align}\label{eq: FM-1-coreless}
-    \zeta^\text{FM-1} = e^{i(\tau + \gamma)}
+    \zeta^{\text{FM}_1^-} = e^{i(\tau + \gamma)}
     \mqty(
     -2e^{-2i\alpha}\cos\frac{\beta}{2}\sin^3\frac{\beta}{2} \\
     e^{-i\alpha}\sin^2\frac{\beta}{2}\left(
@@ -945,9 +947,9 @@ where the individual FM limits are given as
 \end{align}
 To construct the characteristic fountain-like spin texture, we choose \(\beta\)
 as a monotonically increasing function of the transverse radius, \(\rho\).
-In the FM-2 and FM-1 cases, the order-parameter is kept single-valued by a
-combined winding of the condensate phase coupled to a winding of the spin
-vector, achieved, respectively, by
+In the \(\text{FM}_2\) and \(\text{FM}_1\) cases, the order-parameter is kept
+single-valued by a combined winding of the condensate phase coupled to a winding
+of the spin vector, achieved, respectively, by
 \begin{align}\label{eq: coreless-euler-limits-FM-2}
     \tau - 2\gamma &= \pm 2\alpha = \pm 2\varphi, \\
     \tau + \gamma &= \pm\alpha=\pm\varphi.\label{eq: coreless-euler-limits-FM-1}
@@ -984,10 +986,10 @@ see the characteristic fountain-like texture emerge.
     {\label{fig: C-FM-coreless-initial-states}Spherical harmonic
     representation of the nonsingular vortices constructed in
     Eq.~\eqref{eq: C-FM-coreless-general}.
-    (a) Nonsingular vortex in the FM-2 limit given by
+    (a) Nonsingular vortex in the \(\text{FM}_2^+\) limit given by
     Eq.~\eqref{eq: FM-2-coreless} with the choice \(\tau - 2\gamma = 2\alpha
     = 2\varphi \).
-    (b) Nonsingular vortex in the FM-1 limit given by
+    (b) Nonsingular vortex in the \(\text{FM}_1^-\) limit given by
     Eq.~\eqref{eq: FM-1-coreless} with the choice \(\tau + \gamma = \alpha
     = \varphi \).}
 \end{figure}
@@ -1016,7 +1018,7 @@ Euler angles in the C-FM interface are presented in Table~\ref{tab: C-FM-other}.
         \multicolumn{6}{c}{C-FM --- Vortices, textures and monopoles using Euler
             angles} \\
         \midrule
-        C limit & FM-2 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
+        C limit & \(\text{FM}_2\) limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
             & \(\gamma/\varphi\) & \(\beta\) \\
         \midrule
         Phase vortex & Nonsingular vortex & 2 & 1 & 0 & \(\beta(\rho)\) \\ 
@@ -1031,7 +1033,7 @@ Euler angles in the C-FM interface are presented in Table~\ref{tab: C-FM-other}.
             & \(\theta\) \\
         \bottomrule
         \midrule
-        C limit & FM-1 limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
+        C limit & \(\text{FM}_1\) limit &  \(\tau/\varphi\) & \(\alpha/\varphi\)
             & \(\gamma/\varphi\) & \(\beta\) \\
         \midrule
         Phase vortex & Nonsingular vortex & 1 & 1 & 0 & \(\beta(\rho)\) \\ 
@@ -1081,7 +1083,7 @@ This energy becomes minimised precisely when \(\eta = p / [(c_1-c_2/20)n]\) for
 \(c_1 \geq c_2/20\) and fixed \(p\) and \(q\).
 Substitution of \(\eta = p / [(c_1-c_2/20)n]\) into Eq.~\eqref{eq: FM-BN-energy}
 reveals that \(E^\text{FM-BN} \leq E^\text{BN},
-E^{FM-2}\) for \(|p| < (2c_1-c_2/10)n\).
+E^{\text{FM}_2}\) for \(|p| < (2c_1-c_2/10)n\).
 Thus, as in the previous FM interface, we can stabilise the interface by relying
 on a longitudinal dependence of the linear Zeeman shift, \(p(z)\).
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
@@ -1127,8 +1129,8 @@ the spinor
     0 \\
     \sqrt{1 - \eta}),
 \end{align}
-which connects a HQV in the BN limit to a phase vortex in the FM-2 limit when
-\(\eta = 1\), or a vortex-free state when \(\eta = -1\).
+which connects a HQV in the BN limit to a phase vortex in the \(\text{FM}_2\)
+limit when \(\eta = 1\), or a vortex-free state when \(\eta = -1\).
 Choosing \(\chi_{\pm 2}\) the opposite way around would reverse this connection.
 A summary of possible vortex connections constructed using the component phase
 windings is provided in Table~\ref{tab: FM-BN-vortices}.
@@ -1138,8 +1140,8 @@ windings is provided in Table~\ref{tab: FM-BN-vortices}.
         \toprule
         \multicolumn{5}{c}{Ferromagnetic to biaxial nematic --- Vortices} \\
         \midrule
-        FM-2 (up) limit & FM-2 (down) limit & BN limit &  \(\chi_2/\varphi \)
-        & \(\chi_{-2}/\varphi \)  \\
+        \(\text{FM}_2^+\) limit & \(\text{FM}_2^-\) limit & BN limit
+            & \(\chi_2/\varphi \) & \(\chi_{-2}/\varphi \)  \\
         \midrule
          Phase vortex & Phase vortex & Phase vortex & \(k\) & \(k\) \\ 
          Phase vortex & Vortex-free & Half-quantum vortex & 1 & 0 \\
@@ -1168,7 +1170,7 @@ termination point of vortices.
 We begin by re-writing Eq.~\eqref{eq: FM-BN-interpolating-spinor} in the general
 form
 \begin{align}
-    \zeta^{\text{FM}_2\text{-BN}} = \frac{1}{\sqrt{2}}\mqty(
+    \zeta^\text{FM-BN} = \frac{1}{\sqrt{2}}\mqty(
         \sqrt{1+\eta}\zeta^{\text{FM}_2^+} \\
         0 \\
         0 \\
@@ -1218,7 +1220,7 @@ the Euler angles in an FM-BN interface is given in Table~\ref{tab: FM-BN-other}.
         \multicolumn{6}{c}{FM-BN --- Vortices, textures and monopoles from Euler
             angles} \\
         \midrule
-        FM-2 limit & BN limit & \(\tau/\varphi\) & \(\alpha/\varphi\)
+        \(\text{FM}_2\) limit & BN limit & \(\tau/\varphi\) & \(\alpha/\varphi\)
             & \(\gamma/\varphi\) & \(\beta\) \\
         \midrule
         Nonsingular vortex & Phase vortex & \(2\) & 1 & \(0\)
@@ -1415,7 +1417,7 @@ the spinor components (see Fig.~\ref{fig: UN-BN-duo-trio}).
 
 \subsection{Cyclic to ferromagnetic interface}
 We numerically investigate vortex connections across a topological interface
-between the cyclic and FM-2 phases, given by
+between the cyclic and \(\text{FM}_2\) phases, given by
 Eq.~\eqref{eq: C-FM-interpolating-spinor}.
 Since our numerical simulations use parameters that predict a nematic ground
 state, we introduce a spatially-dependent \(c_1\) term such that \(c0/c_1=90.7\)
@@ -1426,7 +1428,7 @@ Despite the cyclic state not being the predicted ground state, the interface
 is observed to remain stable for the timescales considered in our simulations.
 
 We firstly investigate the connection of a third vortex in the cyclic phase
-connecting to a singular phase vortex in the FM-2 phase using
+connecting to a singular phase vortex in the \(\text{FM}_2\) phase using
 Eq.~\eqref{eq: C-FM-third-pv} as the initial state.
 This initial state is then propagated using a short imaginary-time evolution to
 imprint the vortex cores and, once the core is imprinted, we switch to
@@ -1471,7 +1473,7 @@ after time \(\bar{t} = 5\) are plotted in Fig.~\ref{fig: C-FM-third-SQV}.
     \caption[Dynamics of a one-third vortex to singly quantised vortex
     connection in a cyclic to ferromagnetic interface]
     {\label{fig: C-FM-third-SQV}One-third vortex to phase vortex connection in
-    an interface between the cyclic and FM-2 phases given by
+    an interface between the cyclic and \(\text{FM}_2\) phases given by
     Eq.~\eqref{eq: C-FM-third-pv} at \(\bar{t} = 50\).
     (a): Longitudinal cut of \(\spinmag \) at \(y/\ell=0\).
     The third vortex on the cyclic side (\(z/\ell < 0\)) is evident from the
@@ -1521,9 +1523,9 @@ nonsingular vortex connection given in Eq.~\eqref{eq: C-FM-coreless-general}.
 We choose this as the initial state, with
 \(\beta = \pi\left(1 + \tanh(\rho-1)\right)/2\) to model the required
 monotonically increasing function.
-Here we focus only on the cyclic to FM-2 limit, but equivalently the cyclic to
-FM-1 limit can be chosen by an appropriate choice of \(p\) and \(q\) that
-interpolates \(\eta \) between \(-1\) and \(0\).
+Here we focus only on the cyclic to \(\text{FM}_2\) limit, but equivalently the
+cyclic to \(\text{FM}_1\) limit can be chosen by an appropriate choice of \(p\)
+and \(q\) that interpolates \(\eta \) between \(-1\) and \(0\).
 We perform purely imaginary-time simulations to simulate energy relaxation.
 \begin{figure}
     \centering
