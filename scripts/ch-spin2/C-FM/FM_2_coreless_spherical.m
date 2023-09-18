@@ -14,11 +14,11 @@ varphi = atan2(Y, X);
 r = sqrt(X.^2 + Y.^2);
 beta = pi/4 * (1 + tanh(r - 1));
 
-zetaP2 = -2 * exp(-3j*varphi).*cos(beta/2) .* sin(beta/2).^3;
-zetaP1 = exp(-2j*varphi).*sin(beta/2).^2 .* (3*cos(beta/2).^2-sin(beta/2).^2);
-zeta0 = sqrt(6) * exp(-1j*varphi).*(cos(beta/2).* sin(beta/2).^3 - cos(beta/2).^3 .* sin(beta/2));
-zetaM1 = cos(beta/2).^2 .* (cos(beta/2).^2 - 3 * sin(beta/2).^2);
-zetaM2 = 2 * exp(1j*varphi).*cos(beta/2).^3 .* sin(beta/2);
+zetaP2 = exp(-4j*varphi).*cos(beta/2).^4;
+zetaP1 = 2 * exp(-3j*varphi).*cos(beta/2).^3 .* sin(beta/2);
+zeta0 = sqrt(6) * exp(-2j*varphi).*cos(beta/2).^2 .* sin(beta/2).^2;
+zetaM1 = 2 * exp(-1j*varphi).*sin(beta/2).^3 .* cos(beta/2);
+zetaM2 = sin(beta/2).^4;
 
 % discretize sphere surface
 resolution = 100;
@@ -64,4 +64,4 @@ camlight right
 lighting phong
 daspect([1 1 1]);
 view(0, 35);
-exportgraphics(gca, '../../../gfx/ch-spin2/FM-1-coreless.pdf')
+exportgraphics(gca, '../../../gfx/ch-spin2/FM-2-coreless.pdf', 'Resolution', 200)
