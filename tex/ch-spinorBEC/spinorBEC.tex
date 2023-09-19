@@ -12,27 +12,28 @@ the main basis of this thesis.
 \section{Mean-field description of scalar condensates}
 Consider a system of bosons which is dilute enough such that we may approximate
 interactions between bosons as two-body interactions only.
-Such a system is described by the Hamiltonian~\cite{Pethick2008}
+Such a system is described by the Hamiltonian~\cite{Pitaevskii2003}
 \begin{align}\label{eq: scalar-hamiltonian}
-    \hat{H} = \hat{H}_0 + \hat{H}_I,
+    \hat{H} = \hat{H}_0 + \hat{H}_I.
 \end{align}
-where \(\Psi(\vb{r}, t)\) is the field operator that annihilates a boson at
-position \(\vb{r}\) at time \(t\).
 Here, \(\hat{H}_0\) is the single-particle Hamiltonian:
 \begin{align}
     \hat{H}_0 = \int \hat{\Psi}^\dagger(\vb{r}, t)\left[
         -\frac{\hbar^2\nabla^2}{2m} + V(\vb{r}, t)
     \right]\hat{\Psi}(\vb{r}, t)\, \dd^3\vb{r},
 \end{align}\
-where the first term represents the kinetic energy operator and \(V(\vb{r}, t)\)
+where \(\hat{\Psi}(\vb{r}, t)\) is the field operator that annihilates a boson
+at position \(\vb{r}\) at time \(t\).
+The first term represents the kinetic energy operator and \(V(\vb{r}, t)\)
 is a trapping potential.
 Additionally, \(\hat{H}_I\) represents the interacting part of the Hamiltonian,
 which describes binary collisions between bosons at positions \(\vb{r}_1\) and
 \(\vb{r}_2\) whose interactions are described by the interaction potential
 \(\mathcal{U}(\vb{r}_1, \vb{r}_2)\):
 \begin{align}
-    \hat{H}_I = \int \int \Psi^\dagger(\vb{r}_1, t)\Psi^\dagger(\vb{r}_2, t)
-    \mathcal{U}(\vb{r}_1, \vb{r}_2)\Psi(\vb{r}_2, t)\Psi(\vb{r}_1, t)
+    \hat{H}_I = \int \int \hat{\Psi}^\dagger(\vb{r}_1, t)
+    \hat{\Psi}^\dagger(\vb{r}_2, t)\mathcal{U}(\vb{r}_1, \vb{r}_2)
+    \hat{\Psi}(\vb{r}_2, t)\hat{\Psi}(\vb{r}_1, t)
     \, \dd^3\vb{r}_1 \, \dd^3\vb{r}_2.
 \end{align}
 The dilute nature of the BEC justifies that any binary interaction
@@ -43,14 +44,14 @@ a contact interaction modelled by the following delta function:
 \end{equation}
 where the interaction coefficient, \(g\), is coupled to the s-wave scattering
 length, \(a_s\), as
-\begin{align}
+\begin{align}\label{eq: scalar-interaction-coeff}
     g = \frac{4\pi\hbar^2a_s}{m},
 \end{align}
 for a boson with atomic mass \(m\).
 
 \subsection{The Gross-Pitaevskii equation}
 The Heisenberg picture states that the time evolution for the field operator
-\(\hat{\Psi}(\vb{r}, t)\) is given by~\cite{Pethick2008}
+\(\hat{\Psi}(\vb{r}, t)\) is given by~\cite{Pitaevskii2003}
 \begin{align}
     i\hbar\pdv{\hat{\Psi}(\vb{r}, t)}{t} = \left[\hat{H}, \hat{\Psi}(\vb{r}, t)
     \right],
@@ -63,7 +64,7 @@ which, using Eq.~\eqref{eq: scalar-hamiltonian}, is calculated to be
 \end{align}
 Now, since we consider a system close to absolute zero, we make the assumption
 that most atoms occupy the same quantum state, and hence we can decompose the
-field operator into a mean and fluctuation parts as
+field operator into a mean and fluctuation parts as~\cite{Pitaevskii2003}
 \begin{align}
     \hat{\Psi}(\vb{r}, t) = \psi(\vb{r}, t) + \hat{\delta}(\vb{r}, t),
 \end{align}
@@ -82,8 +83,9 @@ wave function of a Bose-Einstein condensate, the Gross-Pitaevskii equation
     + V(\vb{r}, t) +g|\psi(\vb{r}, t)|^2\right)\psi(\vb{r}, t).
 \end{equation}
 Neglecting the fluctuation terms is only valid when considering a system at zero
-temperature, where there are no particles contributing to thermal or quantum
-fluctuations beyond the classical field.
+temperature, where there are no contributions from thermal fluctuations and
+contributions from quantum fluctuations are negligible in comparison to the
+classical field.
 
 For \(g>0\) the interactions are repulsive and for \(g < 0\) attractive.
 When \(g=0\) there are no interactions present and the system reduces to the
@@ -94,21 +96,22 @@ The wave function of the system is normalised to the number of particles
 \end{equation}
 which remains conserved under the GPE\@.
 Finally, the total energy of the system is given by
-\begin{equation}
+\begin{equation}\label{eq: scalar-energy}
     E = \int  \left[\frac{\hbar^2}{2m}|\nabla\psi(\vb{r}, t)|^2
         + V(\vb{r}, t)|\psi(\vb{r}, t)|^2 + \frac{g}{2}|\psi(\vb{r}, t)|^4
         \right] \, \dd^3\vb{r}
-    = E_\mathrm{kin} + E_\mathrm{pot} + E_\mathrm{int},
+    = E_\text{kin} + E_\text{pot} + E_\text{int},
 \end{equation}
-where \(E_\mathrm{kin}, E_\mathrm{pot}\) and \(E_\mathrm{int}\) describes the
+where \(E_\text{kin}, E_\text{pot}\) and \(E_\text{int}\) describes the
 kinetic, potential, and interaction energies, respectively.
 
 \section{Two-component Bose-Einstein condensates}\label{sec: two-comp-theory}
 We now generalise part of the theory introduced in the previous section to
 describe multi-component condensates.
 The time-dependent coupled Gross-Pitaevskii equations each describe a condensate
-similar to the standard GPE, but now with an additional non-linear term that
-describes the interactions of atoms between condensate components.
+similar to the standard GPE given in Eq.~\eqref{eq: scalar-GPE}, but now with an
+additional non-linear term that describes the interactions of atoms between
+condensate components.
 The coupled GPEs are given as
 \begin{equation}\label{eq: two-component-GPEs}
     \begin{aligned}
@@ -125,7 +128,8 @@ The coupled GPEs are given as
 where \(\psi_j(\vb{r}, t)\) corresponds to the wave function of component \(j\)
 with atomic mass \(m_j\) for \(j=1, 2\), and \(V_j(\vb{r}, t)\) is an external
 trapping potential.
-Additionally, the interaction terms are given by
+The interaction terms are a generalised from of
+Eq.~\eqref{eq: scalar-interaction-coeff}, given explicitly as
 \begin{equation}
     g_j = \frac{4\pi \hbar^2a_j}{2m_j}, \qquad
     g_{12} = g_{21} = \frac{2\pi\hbar^2(m_1+m_2)a_{12}}{m_1m_2},
@@ -154,8 +158,10 @@ Eq.~\eqref{eq: two-component-GPEs}, yielding
     \end{aligned}
 \end{equation}
 where \(\mu_j\) is the chemical potential of component \(j\).
-The total energy of the two-component system is composed of the contributions
-from each component as
+The total energy of the two-component system comprises the same contributions to
+the energy as the scalar case given in Eq.~\eqref{eq: scalar-energy}, i.e.,
+\(E = E_\text{kin} + E_\text{pot} + E_\text{int}\), but with contributions from
+both components as
 \begin{equation}
     \begin{aligned}
         E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
@@ -255,15 +261,21 @@ phases for \(g_1=1\) in a parameter space of \(g_2, g_{12}\).
 
 
 \section{Spinor Bose-Einstein condensates}
-Spinor systems are comprised of particles with total spin \(f\).
-This implies that there are \(2f + 1\) possible spin states along a given spin
-quantisation axis.
+Spinor systems are comprised of particles with total hyperfine spin \(f\).
+The hyperfine spin is made up of contributions from the atoms' electron spin,
+\(s\), the electron orbital angular momentum, \(l\), and the nuclear spin,
+\(i\)~\cite{Kawaguchi2012}.
+Canonical examples include \(^{23}\)Na and \(^{87}\)Rb, which can be realised as
+both \(f=1\) and \(f=2\) systems, and \(^{52}\)Cr, which can be realised as an
+\(f=3\) system.
+A hyperfine spin \(f\) implies that there are \(2f + 1\) possible spin states
+along a given spin quantisation axis.
 Such a state is denoted \(\ket{f, m} \), where
 \(m \in \{-f, -f+1, \ldots, 0, \ldots, f - 1, f\} \) denotes the magnetic
 sublevel for an atom with total spin \( f\).
 A system of identical spin-\(f\) bosons with atomic mass \(M\) is described by
-the field operators \(\hat{\psi}_m(\vb{r})\) which satisfy the following commutation
-relations~\cite{Kawaguchi2012}:
+the field operators \(\hat{\psi}_m(\vb{r})\) which satisfy the following
+commutation relations~\cite{Kawaguchi2012}:
 \begin{align}
     \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right]
     &= \delta_{mm'}\delta(\vb{r}_1 - \vb{r}_2), \\
@@ -352,11 +364,20 @@ This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
     \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}) \,
     \dd^3\vb{r}.
 \end{align}
+From this, we can construct the full interaction Hamiltonian using
+Eq.~\eqref{eq: general-interaction-hamiltonian}.
+However, we first want to connect the projection operators
+\(\hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r})\) to physical observables of the
+system, so that we can construct the Hamiltonian in terms of these observables.
 
 \subsection{Physical observables}
-Before we construct the full spinor interaction Hamiltonian, it is useful to
-define some operator relations that relate the operator
-\(\hat{A}_{\EuScript{F}\EuScript{M}}\) to physical observables.
+In this subsection we introduce useful quantities and operators that arise in
+spinor condensates, such as spinor Pauli-type matrices and the spin-singlet pair
+operator.
+In addition, we show how physical observables can be constructed from powers
+of the spinor Pauli-type matrices, and how these physical observables can be
+connected to the projection operators
+\(\hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r})\).
 
 \subsubsection{Spinor Pauli-type matrices}
 Spin-\(f\) Pauli-type matrices, \(\vb{f}\equiv(f_x, f_y, f_z)\), form the
@@ -440,9 +461,6 @@ operator, are constructed as
     \hat{\psi}^\dagger_m(\vb{r})\hat{\psi}_{m'}(\vb{r}), \quad
     (\nu = x, y, z).
 \end{align}
-At mean-field level the magnitude of the expectation of the condensate spin
-vector can vary from its minimum \(\spinmag = 0\) to its maximum
-\(\spinmag = nf\).
 Finally, the general rank-\(k\) spin nematic tensor operator for \(k \geq 2\) is
 given by
 \begin{align}
@@ -553,7 +571,7 @@ Using Eq.~\eqref{eq: spin-channel-hamiltonian} the above becomes
         + g_2\sum_{\EuScript{M}=-2}^{2}
         \hat{A}^\dagger_{2\EuScript{M}}(\vb{r})\hat{A}_{2\EuScript{M}}(\vb{r})
         + g_4\sum_{\EuScript{M}=-4}^{4}
-        \hat{A}^\dagger_{4\EuScript{M}}(\vb{r})\hat{A}_{24\EuScript{M}}(\vb{r})
+        \hat{A}^\dagger_{4\EuScript{M}}(\vb{r})\hat{A}_{4\EuScript{M}}(\vb{r})
         \, \dd^3\vb{r}.
 \end{align}
 Substituting \(f=2\) and \(k=1,2,3\) in Eq.~\eqref{eq: physical-observable}
@@ -661,19 +679,26 @@ where
 is the total atomic density and \(\hat{\vb{F}}\equiv(\hat{F}_x, \hat{F}_y,
 \hat{F}_z)\) is the spin density vector of which the components are defined as
 \begin{align}\label{eq: spin-vector-components}
-    \hat{F}_\nu = \frac{1}{n} \sum_{m,m'=-1}^1 \psi^*_m(\vb{r}){(f_\nu)}_{mm'}
+    \hat{F}_\nu = \sum_{m,m'=-1}^1 \psi^*_m(\vb{r}){(f_\nu)}_{mm'}
         \psi_m(\vb{r}).
 \end{align}
 Using the spin-1 Pauli-type matrices defined in
 Eq.~\eqref{eq: spin-1-pauli-matrices}, the individual components of the spin
 vectors for a spin-1 system are given explicitly as
 \begin{align}\label{eq: spin-1-spin-vectors}
-    \hat{F}_x &= \frac{1}{\sqrt{2}n} \left(\psi_1^*\psi_0
+    \hat{F}_x &= \frac{1}{\sqrt{2}} \left(\psi_1^*\psi_0
     + \psi_0^*(\psi_1+\psi_{-1}) + \psi_{-1}^*\psi_0\right), \\
-    \hat{F}_y &= \frac{i}{\sqrt{2}n}\left(-\psi_1^*\psi_0
+    \hat{F}_y &= \frac{i}{\sqrt{2}}\left(-\psi_1^*\psi_0
     + \psi_0^*(\psi_1-\psi_{-1}) +\psi_{-1}^*\psi_0\right), \\
-    \hat{F}_z &= \frac{1}{n}\left(|\psi_1|^2-|\psi_{-1}|^2\right).
+    \hat{F}_z &= |\psi_1|^2-|\psi_{-1}|^2.
 \end{align}
+The spin expectation \(\langle\hat{\vb{F}}\rangle\) is calculated from
+\(\hat{\vb{F}}\) as
+\begin{align}
+    \langle\hat{\vb{F}}\rangle = \frac{\hat{\vb{F}}}{n}.
+\end{align}
+The magnitude of the spin expectation takes values from \(\spinmag=0\) to
+\(\spinmag=f\) in a spin-f system.
 
 The mean-field equations that govern the time-evolution of the individual
 wave function components \(\psi_m(\vb{r})\) are derived from a variational
@@ -686,10 +711,9 @@ This results in the spin-1 GPEs:
 \begin{equation}\label{eq: spin-1-GPEs}
     i\hbar \pdv{\psi_m}{t} = \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r})
         - pm + qm^2 + c_0n\right]\psi_m
-    + c_1n\sum_{m'=-1}^{1}\hat{\vb{F}}\cdot \vb{f}_{mm'}\psi_{m'},
+    + c_1n\sum_{m'=-1}^{1}\langle\hat{\vb{F}}\rangle\cdot \vb{f}_{mm'}\psi_{m'},
 \end{equation}
 which describe the mean-field evolution of spin-1 Bose-Einstein condensates.
-
 The time-independent GPEs are found through the substitution
 \(\psi_m = \psi_m(\vb{r})e^{-i\mu t/\hbar}\), where \(\mu \) is the chemical
 potential.
@@ -741,16 +765,16 @@ constructed using the spin-2 Pauli-type matrices in
 Eq.~\eqref{eq: spin-2-pauli-matrices} along with
 Eq.~\eqref{eq: spin-vector-components} to give
 \begin{align}\label{eq: spin-2-spin-vectors}
-    \hat{F}_+ &= \hat{F}_-^* = \frac{1}{n}\left[2\left(\psi^*_2\psi_1
+    \hat{F}_+ &= \hat{F}_-^* = 2\left(\psi^*_2\psi_1
     + \psi_{-1}^*\psi_{-2}\right) + \sqrt{6}\left(\psi_1^*\psi_0
-    + \psi_0^*\psi_{-1}\right)\right], \\
-    \hat{F}_z &= \frac{1}{n}\left[2\left(|\psi_2|^2-|\psi_{-2}|^2\right)
-    + |\psi_1|^2 - |\psi_{-1}|^2\right].
+    + \psi_0^*\psi_{-1}\right), \\
+    \hat{F}_z &= 2\left(|\psi_2|^2-|\psi_{-2}|^2\right)
+    + |\psi_1|^2 - |\psi_{-1}|^2.
 \end{align}
 The additional term in the spin-2 energy functional is the spin-singlet pair
 amplitude, defined as
 \begin{align}\label{eq: spin-singlet-duo}
-    A_{00} = \frac{1}{\sqrt{5}n}\left[2\psi_2\psi_{-2} - 2\psi_1\psi_{-1}
+    A_{00} = \frac{1}{\sqrt{5}}\left[2\psi_2\psi_{-2} - 2\psi_1\psi_{-1}
         + \psi_0^2\right].
 \end{align}
 
@@ -793,7 +817,7 @@ In addition, the total atom number of the condensate
 is also conserved.
 Furthermore, the \(z\)-component of the magnetisation, defined as
 \begin{align}\label{eq: magnetisation-formula}
-    M_z = \int \hat{F}_z \, \dd^3\vb{r},
+    M_z = \int \langle\hat{F}_z\rangle \, \dd^3\vb{r},
 \end{align}
 is also conserved.
 The conservation of the longitudinal magnetisation can be seen from the fact
@@ -1134,7 +1158,7 @@ To calculate the dimensional interaction strengths, we list the scattering
 lengths obtained by Crubellier~\cite{Crubellier1999} for \( ^{23}\)Na and
 Ho~\cite{Ho1998} for \( ^{87}\)Rb in
 Table~\ref{table: scaterring-lengths-spin-1}.
-\begin{table}[htbp]
+\begin{table}
     \centering
     \begin{tabular}{ cccc } 
      \toprule
@@ -1156,7 +1180,7 @@ atom number of \(N = 2\times10^5\) and a trapping frequency of
 \(\omega = 2\pi \times 130\)Hz.
 Both the dimensional (with uncertainties) and dimensionless values for a spin-1
 \( ^{23}\)Na system are given in Table~\ref{table: spin-1-interactions-sodium}.
-\begin{table}[!htbp]
+\begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
@@ -1180,7 +1204,7 @@ For the \( ^{87}\)Rb system, we again assume an atom number of
 The dimensional (with uncertainties) and dimensionless interaction strengths
 for a spin-1 \( ^{87}\)Rb are given in
 Table~\ref{table: spin-1-interactions-rb87}.
-\begin{table}[!htbp]
+\begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
@@ -1192,7 +1216,7 @@ Table~\ref{table: spin-1-interactions-rb87}.
         \bottomrule
     \end{tabular}
     \caption{\label{table: spin-1-interactions-rb87}Dimensional (with
-    uncertainties) and dimensionless interaction strengths of \( ^{23}\)Na.}
+    uncertainties) and dimensionless interaction strengths of \( ^{87}\)Rb.}
 \end{table}
 Calculating the ratio of interaction strengths for this system gives
 \(c_0/c_1=-110 \), which predicts the ground state of \( ^{87}\)Rb to be
@@ -1211,7 +1235,7 @@ To determine the values of the interaction strengths, we first list the s-wave
 scattering lengths in units of the Bohr radius given by
 Ciobanu~\cite{Ciobanu2000} for \( ^{23}\)Na and Klausen~\cite{Klausen2001} for
 \( ^{85}\)Rb and \( ^{87}\)Rb in Table~\ref{table: scaterring-lengths-spin-2}.
-\begin{table}[htbp]
+\begin{table}
     \centering
     \begin{tabular}{ cccc } 
      \toprule
@@ -1234,7 +1258,7 @@ To calculate the corresponding dimensionless interaction strength, we assume
 Both the dimensional (with uncertainties) and dimensionless values for a spin-2
 \( ^{23}\)Na system are given in
 Table~\ref{table: spin-2-interactions-sodium}.
-\begin{table}[!htbp]
+\begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
@@ -1261,7 +1285,7 @@ trapping frequency \(\omega = 2\pi \times 130\)Hz.
 The dimensional (with uncertainties) and dimensionless parameters for a spin-2
 \( ^{87}\)Rb system are listed in
 Table~\ref{table: spin-2-interactions-rb87}.
-\begin{table}[!htbp]
+\begin{table}
     \centering
     \begin{tabular}{ccc}
         \toprule
