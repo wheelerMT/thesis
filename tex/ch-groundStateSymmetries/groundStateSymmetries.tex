@@ -31,17 +31,48 @@ Sec.~\ref{subsec: spinor-interaction-hamiltonian})
 \end{align}
 which contains two independent non-linear interaction terms, namely the
 condensate density and the condensate spin.
-Here, \(\spinmag = \sqrt{|\hat{F}_x|^2 + |\hat{F}_y|^2 + |\hat{F}_z|^2}\) is the
-magnitude of the spin expectation, where the spin vectors \(\hat{F}_\mu \) for
-\(\mu = (x, y, z)\) are defined in Eq.~\eqref{eq: spin-1-spin-vectors}.
-To simplify our analysis we assume a uniform ground state.
-In this case the condensate density remains fixed, so only the spin term
-remains relevant for determining ground states.
-Therefore, the sign of \(c_1\) determines the energetic ground state in a
-spin-1 system.
+Here, \(\spinmag = \sqrt{|\langle\hat{F}_x\rangle|^2
++ |\langle\hat{F}_y\rangle|^2 + |\langle\hat{F}_z\rangle|^2}\) is the
+magnitude of the spin expectation, where the spin vectors
+\(\langle\hat{F}_\nu\rangle \) for \(\nu = (x, y, z)\) are defined in
+Eq.~\eqref{eq: spin-1-spin-vectors}.
+To simplify our analysis we assume a uniform ground state where the condensate
+density remains fixed, and so only the spin term remains relevant for
+determining ground states.
+This then implies that the sign of \(c_1\) determines the energetic ground state
+in a spin-1 system.
+
+In the absence of a magnetic field, the energy of a given spinor is degenerate
+with respect to a global \(\text{U}(1)\) phase \(e^{i\tau}\) and an
+\(\text{SO}(3)\) spin rotation \(U(\alpha, \beta, \gamma)\) parameterized by
+three Euler angles \(\alpha, \beta \), and \(\gamma \), as
+\begin{align}
+    \zeta \rightarrow e^{i\tau}U(\alpha, \beta, \gamma)\zeta.
+\end{align}
+A spin rotation can be defined generally as a rotation around the \(z-y-z\) axes
+as
+\begin{align}\label{eq: general-spin-rot}
+    U(\alpha, \beta, \gamma) = e^{-i\hat{F}_z\alpha}e^{-i\hat{F}_y\beta}
+    e^{-i\hat{F}_z\gamma}.
+\end{align}
+For a spin-1 system the above spin rotation can be cast explicitly in matrix
+form~\cite{Kawaguchi2012}:
+\begin{align}\label{eq: spin1-rotation-matrix}
+    U(\alpha, \beta, \gamma) = \mqty(
+    e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
+    -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta &
+    e^{-i(\alpha - \gamma)}\sin^2\frac{\beta}{2} \\
+    \frac{e^{-i\gamma}}{\sqrt{2}}\sin\beta &
+    \cos\beta &
+    -\frac{e^{i\gamma}}{\sqrt{2}}\sin\beta \\
+    e^{i(\alpha - \gamma)}\cos^2\frac{\beta}{2} &
+    \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta &
+    e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
+    ).
+\end{align}
 
 \subsection{Ferromagnetic phase}
-Consider the case \(c_1 < 0 \), typically referred to as ferromagnetic
+Consider the case \(c_1 < 0 \), sometimes referred to as ferromagnetic
 interactions.
 Then, Eq.~\eqref{eq: spin-1-int-energy} is minimised when \(\spinmag \) takes
 its maximal value of \(\spinmag=1\).
@@ -62,32 +93,9 @@ Note that \(\zeta^\text{FM}={(0, 0, 1)}^T\) is an equally valid representative
 spinor.
 However, in this case, the magnetisation now becomes negative (see
 Eq.~\eqref{eq: magnetisation-formula}).
-
-In the absence of a magnetic field, the energy of a given spinor is degenerate
-with respect to a global \(\text{U}(1)\) phase \(e^{i\tau}\) and an
-\(\text{SO}(3)\) spin rotation \(U(\alpha, \beta, \gamma)\) parameterized by
-three Euler angles \(\alpha, \beta \), and \(\gamma \), as
-\begin{align}
-    \zeta \rightarrow e^{i\tau}U(\alpha, \beta, \gamma)\zeta,
-\end{align}
-For a spin-1 system the spin rotation can be cast explicitly in matrix form
-as~\cite{Kawaguchi2012}
-\begin{align}
-    U(\alpha, \beta, \gamma) = \mqty(
-    e^{-i(\alpha + \gamma)}\cos^2\frac{\beta}{2} &
-    -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta &
-    e^{-i(\alpha - \gamma)}\sin^2\frac{\beta}{2} \\
-    \frac{e^{-i\gamma}}{\sqrt{2}}\sin\beta &
-    \cos\beta &
-    -\frac{e^{i\gamma}}{\sqrt{2}}\sin\beta \\
-    e^{i(\alpha - \gamma)}\cos^2\frac{\beta}{2} &
-    \frac{e^{i\alpha}}{\sqrt{2}}\sin\beta &
-    e^{i(\alpha + \gamma)}\sin^2\frac{\beta}{2}
-    ).
-\end{align}
-Then, the general ferromagnetic wave function is constructed by applying the
-above spin rotation, coupled with a condensate phase, to the representative
-spinor as
+The general ferromagnetic wave function is constructed by applying the
+spin rotation in Eq.~\eqref{eq: spin1-rotation-matrix}, coupled with a
+condensate phase, to the representative spinor as
 \begin{align}\label{eq: FM-representative-spinor}
     \psi^\mathrm{FM} =
     \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{FM} =
@@ -112,7 +120,7 @@ spinor given as
 \end{equation}
 Similar to the FM case, a general polar wave function is constructed as
 \begin{equation}\label{eq: polar-representative-spinor}
-    \psi^\mathrm{EAP} =
+    \psi^\mathrm{P} =
     \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{EAP} =
     \sqrt{n}e^{i\tau}\mqty(
     -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
@@ -128,12 +136,12 @@ A wave function in this representation is given as
     \psi^\mathrm{P} = \frac{\sqrt{n}e^{i\tau}}{\sqrt{2}}
     \mqty(-d_x + id_y \\ \sqrt{2}d_z \\ d_x + id_y).
 \end{align}
-The nematic director can be used to distinguish between the state given in
-Eq.~\eqref{eq: EAP-spinor} and an alternative representative spinor of
+The nematic director can, in the absence of a magnetic field, be used to
+distinguish between the state given in Eq.~\eqref{eq: EAP-spinor} and an
+alternative representative spinor of
 \begin{align}\label{eq: EPP-polar}
-    \zeta^\text{EPP} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\ 1),
+    \zeta^\text{EPP} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\ 1).
 \end{align}
-in the absence of a magnetic field.
 The former has the nematic director aligned with the \(z\)-axis, and is
 typically referred to as the easy-axis polar (EAP) phase.
 The latter instead has the nematic director perpendicular to the \(z\)-axis,
@@ -226,7 +234,7 @@ which are summarised in Table~\ref{tab: spin-1-ground-states}.
 
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
 and \(\langle\hat{F}_z\rangle=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and
-\(\langle\hat{F}_z=-1\rangle\) (state II), depending on the sign of the linear
+\(\langle\hat{F}_z\rangle=-1\) (state II), depending on the sign of the linear
 Zeeman shift \(p\).
 A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
 \(\langle\hat{F}_z\rangle = 0\).
@@ -238,10 +246,10 @@ phase (state III) with
 \end{equation}
 and \(\langle\hat{F}_z\rangle = p/(c_1n)\).
 At \(p=0\), this state transforms into the non-magnetised EPP phase given in
-Eq.~\eqref{eq: EPP-polar}, i.e., state IV with the nematic director in the
-\(xy\)-plane.
+Eq.~\eqref{eq: EPP-polar}, equivalent to state IV with the nematic director in
+the \(xy\)-plane.
 As \(p \rightarrow \pm c_1n\) this state tends toward the ferromagnetic states
-(I or II), respectively.
+I or II, respectively.
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 \(c_1 > 0\) which has a spinor of the form
 \begin{equation}
@@ -431,28 +439,7 @@ Therefore, different ground states arise from the competition between the
 spin-dependent, \(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
 The magnitude of the spin expectation is now defined in terms of the spin-2
 spin vectors given in Eq.~\eqref{eq: spin-2-spin-vectors}, and the spin-singlet
-duo, \(A_{00}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
-
-\subsection{Ferromagnetic phase}
-If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
-minimised when  the spin density is maximised \(\spinmag=2\)
-and the singlet-duo amplitude is minimised \(|A_{00}|=0\).
-This state is denoted as the spin-2 ferromagnetic phase, where \(\spinmag \) is
-now \(\spinmag=2\) for this ground state, as opposed to \(\spinmag=1\) in the
-spin-1 system.
-Note that there exists a ferromagnetic state in a spin-2 BEC with
-\(\spinmag=1\), but this state is not the ground state since the \(\spinmag=2\)
-state has lower energy.
-To avoid confusion, we refer to the ferromagnetic state with \(\spinmag=2\) as
-the FM-2 state, and the state with \(\spinmag=1\) as the FM-1 state.
-It should be noted, however, that the FM-1 state can remain stable in
-certain situations, such as in the cores of vortices (see
-Chapter~\ref{chap: spin-2}).
-The representative spinors for the spin-2 ferromagnetic states have the form
-\begin{equation}\label{eq: FM2-FM1-spinors}
-    \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
-    \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
-\end{equation}
+pair amplitude, \(A_{00}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
 
 As in the spin-1 case, the energy of a given spinor in the absence of a magnetic
 field is degenerate following the application of a global \(U(1)\) phase and an
@@ -485,10 +472,30 @@ In a spin-2 system, a general spin rotation is instead represented as a
     )},
 \end{multline}
 where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
-Following the same procedure as the spin-1 case and applying the above spin
-rotation with a global phase \(\tau \) and condensate density \(n\) yields the
-general FM-2 wave function which describes all ferromagnetic states that
-have \(\spinmag=2\):
+\subsection{Ferromagnetic phase}
+If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
+minimised when  the spin density is maximised \(\spinmag=2\)
+and the singlet-duo amplitude is minimised \(|A_{00}|=0\).
+This state is denoted as the spin-2 ferromagnetic phase, where \(\spinmag \) is
+now \(\spinmag=2\) for this ground state, as opposed to \(\spinmag=1\) in the
+spin-1 system.
+Note that there exists a ferromagnetic state in a spin-2 BEC with
+\(\spinmag=1\), but this state is not the ground state since the \(\spinmag=2\)
+state has lower energy.
+To avoid confusion, we refer to the ferromagnetic state with \(\spinmag=2\) as
+the FM-2 state, and the state with \(\spinmag=1\) as the FM-1 state.
+It should be noted, however, that the FM-1 state can remain stable in
+certain situations, such as in the cores of vortices (see
+Chapter~\ref{chap: spin-2}).
+The representative spinors for the spin-2 ferromagnetic states have the form
+\begin{equation}\label{eq: FM2-FM1-spinors}
+    \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
+    \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
+\end{equation}
+Following the same procedure as the spin-1 case and applying a general spin
+rotation \(U(\alpha, \beta, \gamma)\) with a global phase \(\tau \) and
+condensate density \(n\) yields the general FM-2 wave function which describes
+all ferromagnetic states that have \(\spinmag=2\):
 \begin{equation}\label{eq: FM-2-representative-spinor}
     \psi^{\text{FM}_2} = \sqrt{n}e^{i\tau'}\mqty(
     e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
@@ -974,12 +981,9 @@ the density must vanish at this point.
 In spinor BECs, the situation becomes more complex.
 Consider the general spinor wave function given as \(\psi =
 \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta_\text{rep}\), where the spin
-rotation \(U(\alpha, \beta, \gamma)\) is defined generally as
-\begin{align}
-    U(\alpha, \beta, \gamma) = e^{-i\hat{F}_z\alpha}e^{-i\hat{F}_y\beta}
-    e^{-i\hat{F}_z\gamma},
-\end{align}
-and \(\zeta_\text{rep}\) is a representative spinor.
+rotation \(U(\alpha, \beta, \gamma)\) is defined in
+Eq.~\eqref{eq: general-spin-rot} and \(\zeta_\text{rep}\) is a representative
+spinor.
 If we consider a closed loop in space with the start and end points denoted
 \(r_0\) and \(r_1\), respectively, then the single-valuedness condition for the
 wave function of a spinor BEC states that~\cite{Kawaguchi2012}

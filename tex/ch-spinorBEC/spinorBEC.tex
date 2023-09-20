@@ -726,18 +726,21 @@ potential.
 Substituting into Eq.~\eqref{eq: spin-1-GPEs} and writing the equation for
 each component explicitly gives
 \begin{align}\label{eq: spin-1-GPEs-dimensional-psi1}
-    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) - p + q + c_0n + c_1n\hat{F}_z
-    - \mu\right]\psi_1 + \frac{c_1}{\sqrt{2}}n\hat{F}_-\psi_0    &= 0,  \\
-    \frac{c_1}{\sqrt{2}}n\hat{F}_+\psi_1 + \left[-\frac{\hbar^2\nabla^2}{2M}
-        + V(\vb{r}) + c_0n - \mu\right]\psi_0
-        + \frac{c_1}{\sqrt{2}}n\hat{F}_-\psi_{-1} &= 0,  \\
-    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + p + q + c_0n - c_1n\hat{F}_z
-    - \mu\right]\psi_{-1} + \frac{c_1}{\sqrt{2}}n\hat{F}_+\psi_0 &= 0,
+    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) - p + q + c_0n + c_1n
+    \langle\hat{F}_z\rangle - \mu\right]\psi_1
+    + \frac{c_1}{\sqrt{2}}n\langle\hat{F}_-\rangle\psi_0    &= 0,  \\
+    \frac{c_1}{\sqrt{2}}n\langle\hat{F}_+\rangle\psi_1
+    + \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + c_0n - \mu\right]\psi_0
+    + \frac{c_1}{\sqrt{2}}n\langle\hat{F}_-\rangle\psi_{-1} &= 0,  \\
+    \left[-\frac{\hbar^2\nabla^2}{2M} + V(\vb{r}) + p + q + c_0n
+    - c_1n\langle\hat{F}_z\rangle - \mu\right]\psi_{-1}
+    + \frac{c_1}{\sqrt{2}}n\langle\hat{F}_+\rangle\psi_0 &= 0,
     \label{eq: spin-1-GPEs-dimensional-psim1}
 \end{align}
 where
 \begin{align}
-    \hat{F}_{\pm} = \hat{F}_x \pm i\hat{F}_y.
+    \langle\hat{F}_{\pm}\rangle = \langle\hat{F}_x\rangle
+    \pm i\langle\hat{F}_y\rangle.
 \end{align}
 These equations can be solved to reveal more on the ground states and stationary
 solutions of spinor BECs, which forms the basis of
@@ -792,20 +795,24 @@ resulting in five coupled equations that model the mean-field dynamics of spin-2
 Bose-Einstein condensates:
 \begin{align}\label{eq: spin-2-GPEs-pm2}   
     i\hbar\pdv{\psi_{\pm 2}}{t} &= \left[-\frac{\hbar^2\nabla^2}{2M}
-        + V(\vb{r}) \mp 2p + 4q + c_0n \pm 2c_1n\hat{F}_z\right]\psi_{\pm 2}
-    + c_1n\hat{F}_{\mp}\psi_{\pm 1} + \frac{c_2}{\sqrt{2}}nA_{00}\psi_{\mp 2}^*
+        + V(\vb{r}) \mp 2p + 4q
+        + c_0n \pm 2c_1n\langle\hat{F}_z\rangle\right]\psi_{\pm 2}
+    + c_1n\langle\hat{F}_{\mp}\rangle\psi_{\pm 1}
+    + \frac{c_2}{\sqrt{2}}nA_{00}\psi_{\mp 2}^*
 \end{align}
 \begin{multline}\label{eq: spin-2-GPEs-pm1}
     i\hbar\pdv{\psi_{\pm 1}}{t} = \left[-\frac{\hbar^2\nabla^2}{2M}
-    + V(\vb{r}) \mp p + q + c_0n \pm c_1n\hat{F}_z\right]\psi_{\pm 1}
-    + c_1\left(\frac{\sqrt{6}}{2}n\hat{F}_{\mp}\psi_0
-    + n\hat{F}_{\pm}\psi_{\pm 2}\right) \\
+    + V(\vb{r}) \mp p + q
+        + c_0n \pm c_1n\langle\hat{F}_z\rangle\right]\psi_{\pm 1}
+    + c_1\left(\frac{\sqrt{6}}{2}n\langle\hat{F}_{\mp}\rangle\psi_0
+    + n\langle\hat{F}_{\pm}\rangle\psi_{\pm 2}\right) \\
     - \frac{c_2}{\sqrt{2}}nA_{00}\psi_{\mp 1}^* 
 \end{multline}
 \begin{align}\label{eq: spin-2-GPEs-0}
     i\hbar\pdv{\psi_0}{t} = \left[-\frac{\hbar^2\nabla^2}{2M}
     + V(\vb{r}) + c_0n\right]\psi_0
-    + \frac{\sqrt{6}}{2}c_1\left(n\hat{F}_+\psi_1 + n\hat{F}_-\psi_{-1}\right)
+    + \frac{\sqrt{6}}{2}c_1\left(n\langle\hat{F}_+\rangle\psi_1
+    + n\langle\hat{F}_-\rangle\psi_{-1}\right)
     + \frac{c_2}{\sqrt{2}}nA_{00}\psi_{\mp 2}^*.
 \end{align}
 Following the same procedure as in the spin-1 case, the time-independent GPEs
