@@ -286,7 +286,7 @@ rotations preserve the symmetry, but not the phase.
 It can be seen that the order parameter will remain invariant under a change of
 \(\zeta\left(\hat{\vb{d}}, \tau\right) \rightarrow
 \zeta\left(-\hat{\vb{d}}, \tau + \pi\right)\).
-The order parameter space is therefore given as \(\mathcal{M} =
+The corresponding order parameter space is given as \(\mathcal{M} =
 \left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right] /
 {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \).
 Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
@@ -505,6 +505,46 @@ In a spin-2 system, a general spin rotation is instead represented as a
     )},
 \end{multline}
 where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
+
+The ground states of the spin-2 system in a parameter space of \((c_1, c_2)\)
+are summarised in Fig.~\ref{fig: spin-2-ground-states}.
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \node[anchor=south west, inner sep=0] (diagram) at (0, 0)
+        {\includegraphics[width=0.5\textwidth]
+            {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
+        \begin{scope}[x={($0.1*(diagram.south east)$)},
+                y={($0.1*(diagram.north west)$)}]
+            \draw[->, thick, anchor=south west] (9.8, 5) -- (10.1, 5)
+            node[right] {$c_1n$};
+            \draw[->, thick, anchor=south west] (5, 9.7) -- (5, 10.1)
+            node[above] {$c_2n$};
+            \draw[-, thick, anchor=south west] (0.21, 5) -- (4.98, 5);
+            \node at (7.5, 7) {\textcolor{white}{Cyclic}};
+            \node at (2.5, 7) {\textcolor{white}{Ferromagnetic}};
+            \node at (7, 2) {\textcolor{white}{Nematic}};
+            \node[anchor=south east] at (5, 5) {\textcolor{white}{0}};
+            \node[anchor=south west, rotate=53] at (2.7, 0.7)
+            {\textcolor{white}{\(c_2n=20c_1n\)}};
+        \end{scope}
+    \end{tikzpicture}
+    \caption[Spin-2 ground state phase diagram]
+    {\label{fig: spin-2-ground-states}Ground state phase diagram for
+        spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
+        magnetic field.
+        White dashed lines indicate a first-order phase transition region
+        between the phases.}
+\end{figure}
+In the following subsections we shall discuss each phase individually, along
+with their respective graphical representations and order parameter spaces.
+Note, for the case of \(c_1, c_2 < 0\), there is a competition between
+the ferromagnetic and nematic phases.
+For this case, the energy functional is minimised by either having maximal spin
+density and \(|A_{00}|^2 = 0\) as in the ferromagnetic phase, or by having
+minimal spin density and \(|A_{00}|^2 = 1/5\) as in the nematic phase, which
+leads to a phase boundary at \(c_2n=20c_1n\) (see below).
+
 \subsection{Ferromagnetic phase}
 If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
 minimised when  the spin density is maximised \(\spinmag=2\)
@@ -553,7 +593,7 @@ ground states are given in Fig.~\ref{fig: spin-2-FM-graph}.
     representations of the spin-2 ferromagnetic ground states, with
     representative spinors given in Eq.~\eqref{eq: FM2-FM1-spinors}.
     (a) and (b): Spherical harmonic representation for the ferromagnetic states
-    with \(spinmag=2\) and \(\spinmag=1\), respectively, where the dashed line
+    with \(\spinmag=2\) and \(\spinmag=1\), respectively, where the dashed line
     represents the direction of the magnetisation.
     (c) and (d): Equivalent Majorana representations.}
 \end{figure}
@@ -614,6 +654,43 @@ into choosing one or the other, since the energies of each ground state now
 change (energetic stability of these states is discussed in
 Sec.~\ref{subsec: UN-BN-defects}).
 
+The spherical harmonics and Majorana representation of both nematic states are
+plotted in Fig.~\ref{fig: nematic-graph}.
+\begin{figure}
+    \centering
+    \includegraphics{example-image-c}
+    \caption[Spherical harmonic and Majorana representations of the spin-2
+    nematic ground states]{\label{fig: nematic-graph}Spherical harmonic and
+    Majorana representations of the spin-2 nematic ground states.
+    (a) Spherical harmonic representation of the uniaxial nematic spinor given
+    in Eq.~\eqref{eq: UN-spinor} where \(\hat{\vb{d}}\) is the nematic director.
+    The order parameter exhibits a two-fold symmetry about the \(C_2\) axis.
+    (b) Spherical harmonic representation of the biaxial nematic state given by
+    Eq.~\eqref{eq: BN-spinor} which has a four-fold symmetry about the \(C_4\)
+    axis, and two additional two-fold symmetries about the \(C_2, C_2'\) axes.
+    (c) and (d): Equivalent Majorana representations.}
+\end{figure}
+The UN phase is seen to differ slightly from the polar phase of spin-1 (see
+Fig.~\ref{fig: spin-1-polar-graph}a) in that the nematic lobes have the
+same phase.
+This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
+leaves the order parameter unchanged, and no appropriate transformation of the
+condensate phase has to occur.
+In addition, like the ferromagnetic states, this order parameter also has an
+\(SO(2)\) symmetry about the nematic director.
+The order parameter space for this phase is then calculated as
+\(\left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right]
+/ {({\mathbb{Z}}_2)}_{\hat{\vb{F}}} \).
+This is identical to the polar phase of the spin-1 BEC, except now the
+\({(\mathbb{Z}_2)}_{\hat{\vb{F}}}\) arises only from the condensate spin due to
+the nematic lobes having the same phase.
+The BN phase, shown in Fig.~\ref{fig: nematic-graph}b, breaks the
+\(SO(2)\) symmetry due to the perpendicular nematic lobes, which have a \(\pi \)
+phase difference.
+The symmetry of the order parameter is preserved under \(\pi/4\) rotations
+about the \(C_4\) axis and \(\pi\) rotations about both the \(C_2\) and \(C_2'\)
+axes.
+
 \subsection{Cyclic phase}
 Now consider \(c_1, c_2 > 0\).
 The energy functional is minimised when both the spin magnitude and singlet-duo
@@ -656,42 +733,29 @@ rotation~\cite{Kawaguchi2012}
     \exp\left[i\frac{\hat{F}_x-\hat{F}_y}{\sqrt{2}}
         \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^\mathrm{C-1}.
 \end{equation}
-The ground states of the spin-2 system in a parameter space of \((c_1, c_2)\)
-are summarised in Fig.~\ref{fig: spin-2-ground-states}.
+
+The spherical harmonic and Majorana representations of both orientates of the
+cyclic state are plotted in Fig.~\ref{fig: cyclic-graph}.
 \begin{figure}
     \centering
-    \begin{tikzpicture}
-        \node[anchor=south west, inner sep=0] (diagram) at (0, 0)
-        {\includegraphics[width=0.5\textwidth]
-            {gfx/ch-groundStateSymmetries/ground_states_spin2.pdf}};
-        \begin{scope}[x={($0.1*(diagram.south east)$)},
-                y={($0.1*(diagram.north west)$)}]
-            \draw[->, thick, anchor=south west] (9.8, 5) -- (10.1, 5)
-            node[right] {$c_1n$};
-            \draw[->, thick, anchor=south west] (5, 9.7) -- (5, 10.1)
-            node[above] {$c_2n$};
-            \draw[-, thick, anchor=south west] (0.21, 5) -- (4.98, 5);
-            \node at (7.5, 7) {\textcolor{white}{Cyclic}};
-            \node at (2.5, 7) {\textcolor{white}{Ferromagnetic}};
-            \node at (7, 2) {\textcolor{white}{Nematic}};
-            \node[anchor=south east] at (5, 5) {\textcolor{white}{0}};
-            \node[anchor=south west, rotate=53] at (2.7, 0.7)
-            {\textcolor{white}{\(c_2n=20c_1n\)}};
-        \end{scope}
-    \end{tikzpicture}
-    \caption[Spin-2 ground state phase diagram]
-    {\label{fig: spin-2-ground-states}Ground state phase diagram for
-        spin-2 BECs in a parameter space of \((c_1, c_2)\) in the absence of a
-        magnetic field.
-        White dashed lines indicate a first-order phase transition region
-        between the phases.}
+    \includegraphics{example-image-c}
+    \caption[Spherical harmonic and Majorana representations of two different
+    orientations of the cyclic ground state.]
+    {\label{fig: cyclic-graph}Spherical harmonic and Majorana representations of
+    two different orientations of the cyclic ground state.}
 \end{figure}
-Note, for the case of \(c_1, c_2 < 0\), there is a competition between
-the ferromagnetic and nematic phases.
-For this case, the energy functional is minimised by either having maximal spin
-density and \(|A_{00}|^2 = 0\) as in the ferromagnetic phase, or by having
-minimal spin density and \(|A_{00}|^2 = 1/5\) as in the nematic phase, which
-leads to a phase boundary at \(c_2n=20c_1n\).
+The cyclic order parameter has the symmetry of a tetrahedron, where each nematic
+lobe has a two-fold symmetry about the \(C_2\) axis.
+Furthermore, the order parameter has a three-fold symmetry about the \(C_3\)
+axis.
+In Fig.~\ref{fig: cyclic-graph}a, this axis is the \((1, 1, 1)\)-axis, whereas
+in Fig.~\ref{fig: cyclic-graph}b it is aligned along the \(z\)-axis.
+Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
+parameter.
+The order parameter space of the cyclic phase can be written as
+\(\left[{\text{U}(1)}_\tau \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
+/ \text{T}_{\hat{\vb{F}}, \tau}\), where \(\text{T}_{\hat{\vb{F}}, \tau}\) is
+the tetrahedral group.
 
 \subsection{Graphical representation of spin-2 ground states}
 \subsubsection{Spherical harmonic representation}
@@ -709,44 +773,9 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
         (a) and (b): Ferromagnetic states with \(\spinmag=2\) and
         \(\spinmag=1\) [given in Eq.~\eqref{eq: FM2-FM1-spinors}], respectively,
         where the black dashed arrows indicate the direction of magnetisation.
-        (c): Uniaxial nematic state given by Eq~\eqref{eq: UN-spinor} where
-        \(\hat{\vb{d}}\) is the nematic director.
-        The order parameter has a two-fold symmetry about the \(C_2\) axis.
-        (d): Biaxial nematic state given by Eq.~\eqref{eq: BN-spinor} which
-        has a four-fold symmetry about the \(C_4\) axis, and two additional
-        two-fold symmetries about the \(C_2, C_2'\) axes.
         (e): Cyclic state given by Eq.~\eqref{eq: C-1-spinor} which has a
         two- and three-fold symmetry about the \(C_2, C_3\) axes, respectively.}
 \end{figure}
-
-The UN phase as shown in Fig.~\ref{fig: spin-2-spherical-harmonics}c differs
-slightly from the polar phase of spin-1 (see
-Fig.~\ref{fig: spin-1-spherical-harmonics}b) in that the nematic lobes have the
-same phase.
-This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
-leaves the order parameter unchanged.
-In addition, like the ferromagnetic states, this order parameter also has an
-\(SO(2)\) symmetry about the \(z\)-axis.
-
-The BN phase, shown in Fig.~\ref{fig: spin-2-spherical-harmonics}d, breaks the
-\(SO(2)\) symmetry due to the perpendicular nematic lobes, which have a \(\pi \)
-phase difference.
-The symmetry of the order parameter is preserved under \(\pi/4\) rotations
-about the \(C_4\) axis.
-In addition, the BN order parameter is invariant under \(\pi \) rotations about
-both the \(C_2\) and \(C_2'\) axes.
-
-Finally, the cyclic order parameter, shown in
-Figs.~\ref{fig: spin-2-spherical-harmonics}e
-and~\ref{fig: spin-2-spherical-harmonics}f, have the symmetry of a tetrahedron.
-Each nematic lobe has a two-fold symmetry about the \(C_2\) axis.
-Furthermore, the order parameter has a three-fold symmetry about the \(C_3\)
-axis.
-In Fig.~\ref{fig: spin-2-spherical-harmonics}e, this axis is the
-\((1, 1, 1)\)-axis, whereas in Fig.~\ref{fig: spin-2-spherical-harmonics}f,
-it is aligned along the \(z\)-axis.
-Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
-parameter.
 
 \subsubsection{Majorana representation}
 The mapping of the spin-2 system onto the Majorana representation follows a
@@ -1015,7 +1044,7 @@ Eq.~\eqref{eq: general-spin-rot} and \(\zeta_\text{rep}\) is a representative
 spinor.
 If we consider a closed loop in space with the start and end points denoted
 \(r_0\) and \(r_1\), respectively, then the single-valuedness condition for the
-wave function of a spinor BEC states that~\cite{Kawaguchi2012}
+wave function of a spinor BEC states~\cite{Kawaguchi2012}
 \begin{align}
     \sqrt{n(r_0)}e^{i\tau(r_0)}U(\alpha(r_0), \beta(r_0), \gamma(r_0))
     \zeta_\text{rep}(r_0) = \sqrt{n(r_1)}e^{i\tau(r_1)}
