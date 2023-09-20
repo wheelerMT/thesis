@@ -65,11 +65,10 @@ Eq.~\eqref{eq: magnetisation-formula}).
 
 In the absence of a magnetic field, the energy of a given spinor is degenerate
 with respect to a global \(\text{U}(1)\) phase \(e^{i\tau}\) and an
-\(\text{SO}(3)\) spin rotation, parameterized by three Euler angles
-\(\alpha, \beta \), and \(\gamma \).
-A general spin rotation represents rotations around the \(z-y-z\) axes:
-\begin{align}\label{eq: spin-rotation-exponential}
-    U(\alpha, \beta, \gamma) = e^{-i\alpha F_z}e^{-i\beta F_y}e^{-i\gamma F_z}.
+\(\text{SO}(3)\) spin rotation \(U(\alpha, \beta, \gamma)\) parameterized by
+three Euler angles \(\alpha, \beta \), and \(\gamma \), as
+\begin{align}
+    \zeta \rightarrow e^{i\tau}U(\alpha, \beta, \gamma)\zeta,
 \end{align}
 For a spin-1 system the spin rotation can be cast explicitly in matrix form
 as~\cite{Kawaguchi2012}
@@ -109,12 +108,12 @@ magnitude vanish \(\spinmag=0\).
 For this case, the ground state is called polar, with a representative
 spinor given as
 \begin{equation}\label{eq: EAP-spinor}
-    \zeta^\mathrm{P} = \mqty(0 \\ 1 \\ 0).
+    \zeta^\mathrm{EAP} = \mqty(0 \\ 1 \\ 0).
 \end{equation}
 Similar to the FM case, a general polar wave function is constructed as
 \begin{equation}\label{eq: polar-representative-spinor}
-    \psi^\mathrm{P} =
-    \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{P} =
+    \psi^\mathrm{EAP} =
+    \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta^\mathrm{EAP} =
     \sqrt{n}e^{i\tau}\mqty(
     -\frac{e^{-i\alpha}}{\sqrt{2}}\sin\beta \\
     \cos\beta \\
@@ -131,15 +130,21 @@ A wave function in this representation is given as
 \end{align}
 The nematic director can be used to distinguish between the state given in
 Eq.~\eqref{eq: EAP-spinor} and an alternative representative spinor of
-\(\zeta^\text{P} = {(1, 0, 1)}^T/\sqrt{2}\) in the absence of a magnetic field.
+\begin{align}\label{eq: EPP-polar}
+    \zeta^\text{EPP} = \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\ 1),
+\end{align}
+in the absence of a magnetic field.
 The former has the nematic director aligned with the \(z\)-axis, and is
-typically referred to as the easy-axis polar phase, whilst the latter has the
-nematic director in the \(xy\)-plane, which is referred to as the easy-plane
-polar phase.
+typically referred to as the easy-axis polar (EAP) phase.
+The latter instead has the nematic director perpendicular to the \(z\)-axis,
+and is either referred to as the easy-plane polar (EPP) phase or the
+antiferromagnetic phase.
+Throughout this thesis we shall prefer the term EPP when describing an
+unmagnetised polar spinor of the form of Eq.~\eqref{eq: EPP-polar}.
 
 \subsection{Ground states in the presence of magnetic fields}
-The presence of an external magnetic field, however, drastically changes the
-valid ground states of the spin-1 system.
+The presence of an external magnetic field drastically changes the ground state
+phase diagram of the spin-1 system.
 \begin{figure}
     \centering
     \begin{tikzpicture}
@@ -152,30 +157,32 @@ valid ground states of the spin-1 system.
 
         \begin{scope}[x={($0.1*(sodium.south east)$)},
                 y={($0.1*(sodium.north west)$)}]
-            \draw[->, thick] (0,5)--(10.3,5) node[right]{$\frac{q}{c_1n}$};
-            \draw[->, thick] (4.97,0)--(4.97,10.3) node[above]{$\frac{p}{c_1n}$};
+            \draw[->, thick] (0,5)--(10.3,5) node[right]{\(\frac{q}{c_1n}\)};
+            \draw[->, thick] (4.97,0)--(4.97,10.3) node[above]
+                {\(\frac{p}{c_1n}\)};
             \draw[-] (6.1, 4.8) -- (6.1, 5.2);
             \node[anchor = south west] at (6.5, 3)
             {\scriptsize $p^2=2c_1nq$};
             \draw[->, thick] (6.6, 3.1) -- (6.25,2.55);
-            \node at (4.8, 7.75) {\scriptsize $1$};
-            \node at (4.7, 2.25) {\scriptsize -$1$};
+            \node at (4.8, 7.75) {\scriptsize \(1\)};
+            \node at (4.7, 2.25) {\scriptsize \(-1\)};
             \node at (6.1, 4.5) {\scriptsize 1/2};
             \node[anchor=south west] at (0.5, 8.2)
             {\textcolor{white}{Ferromagnetic (I)}};
             \node[anchor=south west] at (0.5, 0.5)
             {\textcolor{white}{Ferromagnetic (II)}};
-            \node[anchor=south west] at (0., 4.9)
-            {\textcolor{white}{\small Antiferromagnetic}};
+            \node[anchor=south west] at (2, 4.9)
+            {\textcolor{white}{Polar}};
             \node[anchor=south west] at (2.1, 3.8)
             {\textcolor{white}{(III)}};
             \node[anchor=south west] at (6.5, 4.9)
             {\textcolor{white}{Polar (IV)}};
-            \node[anchor=south west] at (3.8, -1.5) {\large $c_1 > 0$};
+            \node[anchor=south west] at (3.8, -1.5) {\large \(c_1 > 0\)};
         \end{scope}
         \begin{scope}[x={($0.1*(sodium.south east)$)},
                 y={($0.1*(sodium.north west)$)}]
-            \draw[->, thick] (19.3,5)--(24.5,5) node[right]{$\frac{q}{|c_1|n}$};
+            \draw[->, thick] (19.3,5)--(24.5,5) node[right]
+                {\(\frac{q}{|c_1|n}\)};
             \draw[->, thick] (19.3,0)--(19.3,10.3) node[above]
             {$\frac{p}{|c_1|n}$};
             \node[anchor=south west] at (19.2, 8.6)
@@ -199,57 +206,42 @@ valid ground states of the spin-1 system.
             {\textcolor{white}{Polar}};
             \node[anchor=south west] at (22.1, 3.8)
             {\textcolor{white}{(IV)}};
-            \node[anchor=south west] at (18., -1.5) {\large $c_1 < 0$};
+            \node[anchor=south west] at (18., -1.5) {\large \(c_1 < 0\)};
         \end{scope}
     \end{tikzpicture}
     \caption[Spin-1 ground state phase diagram]
     {\label{fig: GS-phase-diagram}Ground state phase diagrams of spin-1
-        BECs for polar (\(c_1 > 0\)) and ferromagnetic (\(c_1 < 0\))
-        interactions in a parameter space of \((p, q)\).
+        BECs for \(c_1 > 0\) (left) and \(c_1 < 0\) (right) interactions in a
+        parameter space of \((p, q)\).
         Solid or dashed white lines represent discontinuous and continuous phase
         transitions, respectively.}
 \end{figure}
 Fig.~\ref{fig: GS-phase-diagram} shows the ground state phase diagram for spin-1
 BECs with \(c_1 > 0\) (left) and \(c_1 < 0\) (right) in the presence of a
 magnetic field.
-The full derivation of the ground state phase diagram can be found in recent
+The full derivation of the ground state phase diagram can be found in
 reviews~\cite{Kawaguchi2012, Stamper-Kurn2013}.
 There are five total ground states shown in Fig.~\ref{fig: GS-phase-diagram},
 which are summarised in Table~\ref{tab: spin-1-ground-states}.
-\begin{table}
-    \centering
-    \begin{tabular}{ccc}
-        \toprule
-        Ground state & Spinor, \(\zeta^T\) & \(\hat{F}_z\) \\
-        \midrule
-        Ferromagnetic (I) & \((1, 0, 0)\) & 1 \\
-        Ferromagnetic (II) & \((0, 0, 1)\) & -1 \\
-        Antiferromagnetic (III) & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
-        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\) \\
-        Polar (IV) & \((0, 1, 0)\) & 0 \\
-        Broken-axisymmetry (V) & Eq.~\eqref{eq: BA-spinor} &
-        \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\) \\
-        \bottomrule
-    \end{tabular}
-    \caption[Ground states arising in spin-1 BECs]
-    {\label{tab: spin-1-ground-states}Summary of the ground state phases in a
-    spin-1 BEC with their respective spinors and magnetisation.}
-\end{table}
 
 There exists a fully magnetised ferromagnetic state with \(\zeta={(1, 0, 0)}^T\)
-and \(\hat{F}_z=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and \(\hat{F}_z=-1\)
-(state II), depending on the sign of the linear Zeeman shift \(p\).
+and \(\langle\hat{F}_z\rangle=1\) (state I) or \(\zeta={(0, 0, 1)}^T\) and
+\(\langle\hat{F}_z=-1\rangle\) (state II), depending on the sign of the linear
+Zeeman shift \(p\).
 A non-magnetised polar phase (state IV) arises with \(\zeta={(0, 1, 0)}^T\) and
-\(\hat{F}_z = 0\).
-For polar interactions \(c_1 > 0\), there exists an antiferromagnetic phase
-(state III) with
+\(\langle\hat{F}_z\rangle = 0\).
+For polar interactions \(c_1 > 0\), there exists a partially-magnetised polar
+phase (state III) with
 \begin{equation}\label{eq: AFM-spinor}
-    \zeta^\mathrm{AFM} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
+    \zeta^\mathrm{PMP} = {\left(\sqrt{\frac{1 + p/(c_1n)}{2}}, 0,
     \sqrt{\frac{1 - p/(c_1n)}{2}}\right)}^T,
 \end{equation}
-and \(\hat{F}_z = p/(c_1n)\).
-At \(p=0\), this state transforms into the easy-plane polar phase, i.e., state
-IV with the nematic director in the \(xy\)-plane.
+and \(\langle\hat{F}_z\rangle = p/(c_1n)\).
+At \(p=0\), this state transforms into the non-magnetised EPP phase given in
+Eq.~\eqref{eq: EPP-polar}, i.e., state IV with the nematic director in the
+\(xy\)-plane.
+As \(p \rightarrow \pm c_1n\) this state tends toward the ferromagnetic states
+(I or II), respectively.
 Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 \(c_1 > 0\) which has a spinor of the form
 \begin{equation}
@@ -263,10 +255,31 @@ Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 This corresponds to a magnetisation that tilts against the quantisation axis,
 given by
 \begin{equation}
-    F_z = \frac{p(-p^2 + q^2 + 2qc_1n)}{2c_1nq^2}.
+    \langle\hat{F}_z\rangle = \frac{p(-p^2 + q^2 + 2qc_1n)}{2c_1nq^2}.
 \end{equation}
 These five ground states fully encapsulate the phase diagram of spin-1 BECs
 in a magnetic field.
+
+\begin{table}
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        Ground state & Spinor, \(\zeta^T\) & \(\langle\hat{F}_z\rangle\) \\
+        \midrule
+        Ferromagnetic (I) & \((1, 0, 0)\) & 1 \\
+        Ferromagnetic (II) & \((0, 0, 1)\) & -1 \\
+        Polar (III) & \(\left(\sqrt{\frac{1 + p(c_1n)}{2}}, 0,
+        \sqrt{\frac{1 - p(c_1n)}{2}}\right)\) & \(\frac{p}{c_1n}\) \\
+        Polar (IV) & \((0, 1, 0)\) & 0 \\
+        Broken-axisymmetry (V) & Eq.~\eqref{eq: BA-spinor} &
+        \(\frac{p(-p^2+q^2+2qc_1n)}{2c_1nq^2}\) \\
+        \bottomrule
+    \end{tabular}
+    \caption[Ground states arising in spin-1 BECs in the presence of magnetic
+    fields]
+    {\label{tab: spin-1-ground-states}Summary of the ground state phases in a
+    spin-1 BEC with their respective spinors and magnetisation.}
+\end{table}
 
 \subsection{Graphical representation of spin-1 ground states}
 Graphical representations help us to visual the symmetry properties of different
@@ -331,8 +344,8 @@ ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
     \(C_2\) axis coupled with a \(\pi \) change of the condensate phase as
     \(\left(\hat{\vb{d}}, \tau\right) \rightarrow
     \left(-\hat{\vb{d}}, \tau+\pi\right)\).
-    (c): The anti-ferromagnetic state given by Eq.~\eqref{eq: AFM-spinor} with
-    \(p \neq 0\).
+    (c): The partially magnetised polar state given by
+    Eq.~\eqref{eq: AFM-spinor} with \(p \neq 0\).
     Note that for this state the direction of the spin vector is aligned with
     the magnetic field.
     (d): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor} with
@@ -349,8 +362,8 @@ These lobes are aligned along an axis of symmetry given by the nematic director,
 There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
 rotations preserve the symmetry, but not the phase.
 It can be seen that the order parameter will remain invariant under a change of
-\(\zeta\left(\hat{\vb{d}, \tau}\right) \rightarrow
-\zeta\left(-\hat{\vb{d}, \tau + \pi}\right)\).
+\(\zeta\left(\hat{\vb{d}}, \tau\right) \rightarrow
+\zeta\left(-\hat{\vb{d}}, \tau + \pi\right)\).
 
 \subsubsection{Majorana representation}
 An alternative description to visualising the symmetries of spinor BECs is
@@ -414,8 +427,8 @@ The interacting part of the spin-2 Hamiltonian reads
     \dd^3\vb{r}.
 \end{align}
 As before, we assume a uniform ground state so that the density remains fixed.
-Therefore, different ground states arise from the competition between the spin-,
-\(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
+Therefore, different ground states arise from the competition between the
+spin-dependent, \(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
 The magnitude of the spin expectation is now defined in terms of the spin-2
 spin vectors given in Eq.~\eqref{eq: spin-2-spin-vectors}, and the spin-singlet
 duo, \(A_{00}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
@@ -474,9 +487,10 @@ In a spin-2 system, a general spin rotation is instead represented as a
 where \(S \equiv \sin(\beta/2)\) and \(C \equiv \cos(\beta/2)\).
 Following the same procedure as the spin-1 case and applying the above spin
 rotation with a global phase \(\tau \) and condensate density \(n\) yields the
-general FM-2 wave function
+general FM-2 wave function which describes all ferromagnetic states that
+have \(\spinmag=2\):
 \begin{equation}\label{eq: FM-2-representative-spinor}
-    \psi^\mathrm{FM} = \sqrt{n}e^{i\tau'}\mqty(
+    \psi^{\text{FM}_2} = \sqrt{n}e^{i\tau'}\mqty(
     e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
     2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
     \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
@@ -484,8 +498,7 @@ general FM-2 wave function
     e^{2i\alpha} \sin^4\frac{\beta}{2}
     ),
 \end{equation}
-where \(\tau'=\tau-2\gamma \), which describes all ferromagnetic states that
-have \(\spinmag=2\).
+where \(\tau'=\tau-2\gamma \).
 
 \subsection{Nematic phases}
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
@@ -729,7 +742,7 @@ Lovegrove2014,Weiss2019}, to point defects such as monopoles~\cite{Stoof2001,
 Savage2003,Ruostekoski2003, Pietila2009,Ray2014,Ray2015,Ollikainen2017,
 Mithun2022}.
 
-The types of stable topological defects within a given system can be
+The types of topologically stable defects within a given system can be
 found from a group-theoretical approach using homotopy theory~\cite{Mermin1979,
 Kawaguchi2012}.
 The theory states that the \(n\)th homotopy group, \(\pi_n\), classifies
@@ -961,17 +974,20 @@ the density must vanish at this point.
 In spinor BECs, the situation becomes more complex.
 Consider the general spinor wave function given as \(\psi =
 \sqrt{n}e^{i\tau}U(\alpha, \beta, \gamma)\zeta_\text{rep}\), where the spin
-rotation \(U(\alpha, \beta, \gamma)\) is defined in
-Eq.~\eqref{eq: spin-rotation-exponential} for Euler angles
-\(\alpha, \beta, \gamma \) and \(\zeta_\text{rep}\) is a representative spinor.
-Then, the single-valuedness condition for the wave function of a spinor BEC
-states that~\cite{Kawaguchi2012}
+rotation \(U(\alpha, \beta, \gamma)\) is defined generally as
+\begin{align}
+    U(\alpha, \beta, \gamma) = e^{-i\hat{F}_z\alpha}e^{-i\hat{F}_y\beta}
+    e^{-i\hat{F}_z\gamma},
+\end{align}
+and \(\zeta_\text{rep}\) is a representative spinor.
+If we consider a closed loop in space with the start and end points denoted
+\(r_0\) and \(r_1\), respectively, then the single-valuedness condition for the
+wave function of a spinor BEC states that~\cite{Kawaguchi2012}
 \begin{align}
     \sqrt{n(r_0)}e^{i\tau(r_0)}U(\alpha(r_0), \beta(r_0), \gamma(r_0))
     \zeta_\text{rep}(r_0) = \sqrt{n(r_1)}e^{i\tau(r_1)}
-    U(\alpha(r_1), \beta(r_1), \gamma(r_1)) \zeta_\text{rep}(r_1),
+    U(\alpha(r_1), \beta(r_1), \gamma(r_1)) \zeta_\text{rep}(r_1).
 \end{align}
-where \(r_0, r_1\) denote the start and ends points of the loop, respectively.
 Following a similar procedure as the scalar case, the superfluid velocity for a
 spin-\(f\) system, \(\vb{v}_s\), is given as~\cite{Kawaguchi2012}:
 \begin{align}\label{eq: spinor-mass-current}
@@ -1194,11 +1210,16 @@ The spherical harmonic representation of this vortex is shown in
 Fig.~\ref{fig: SV-HQV}b.
 It is clear this vortex has the typical \(\pi \) phase winding about the vortex
 core associated with HQVs, which is also coupled to a \(\pi / 2\) spin rotation.
-This configuration is sometimes denoted a \(1/2-1/4\) vortex, where the \(1/2\)
-and \(1/4\) denote the phase and spin rotation angles, respectively.
-Additionally, there exists a half-quantum spin vortex (\(0 - 1/2\) vortex) in
-this phase, in which the condensate spin winds by \(\pi \) about the core,
-but the condensate phase remains unchanged~\cite{Kawaguchi2012}.
+When a vortex consists of a \(2\pi w\) winding of the condensate phase coupled
+to a \(2\pi \sigma\) winding about some axis of symmetry, the vortex charge can
+be described as (\(w, \sigma\)).
+The particular case of the vortex shown in Fig.~\ref{fig: SV-HQV}b is classed as
+a \((1/2, 1/4)\) vortex, where the \(1/2\) and \(1/4\) denote the phase and spin
+windings, respectively.
+Additionally, there exists a half-quantum spin vortex, also called a
+(\(0, 1/2\)) vortex, in this phase, in which the condensate spin winds by
+\(\pi \) about the core, but the condensate phase remains
+unchanged~\cite{Kawaguchi2012}.
 
 Like the BN phase, the cyclic phase also supports non-Abelian vortices.
 Additionally, this phase also supports fractional vortices, but instead of the
