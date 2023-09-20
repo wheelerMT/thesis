@@ -22,6 +22,88 @@ There are numerous references (e.g., see~\cite{Ciobanu2000, Zhang2003,
 Kawaguchi2012,Stamper-Kurn2013}) that already provide most of these results,
 but we reproduce them here to provide reference for subsequent chapters.
 
+\section{Graphical representations of spinor ground states}
+Graphical representations help us to visual the symmetry properties of different
+ground states in spinor systems.
+In particular, they can provide valuable insight to what is occurring within
+the order parameter when, e.g., topological defects form or the symmetry of the
+system is spontaneously broken.
+Here we focus on two types of graphical representation: Spherical harmonics and
+Majorana representations.
+Spherical harmonics in particular are widely used in Chapter~\ref{chap: spin-2},
+where the system exhibits multiple ground states, and hence different symmetries
+at once.
+Before we discuss individual ground states in depth, we first mathematically
+define the different graphical representations.
+Then, throughout the subsequent sections we shall provide both the spherical
+harmonic and Majorana representations of the discussed ground states and
+discuss the symmetries that arise in each phase.
+
+\subsection{Spherical harmonic representation}
+We first consider the spherical harmonic representation, which maps the
+order parameter onto spherical harmonics using the relation
+\begin{equation}\label{eq: spherical-harmonics}
+    Z(\hat{s}) = \sum_m\zeta_m Y_f^m(\hat{s}),
+\end{equation}
+where \(\hat{s}\) is a unit vector in 3D spin space, and \(Y_f^m \) are the
+spherical harmonics for a spin-\(f\) state.
+The symmetry can be visualised with a surface plot of \(|Z(\hat{s})|^2\),
+where the surface colour is represented by the argument of \(Z(\hat{s})\).
+
+The orientation of the spherical harmonics corresponds to the condensate spin,
+and so as the spin vector rotates, the orientation of spherical harmonics
+rotates to match.
+In addition, the colour of the spherical harmonics corresponds to the global
+phase, \( \tau \).
+Therefore, the spherical harmonics give an accurate description of the
+physical symmetries of the wave function, along with a pictorial representation
+of how the phase is changing.
+Throughout this thesis we will use the spherical harmonics to construct a
+picture of what is happening to the wave function at different locations in
+space, where the symmetry of the wave function can rapidly transform in a
+non-trivial manner (see Chapter~\ref{chap: spin-2}).
+In spin-1, there are three (\(f = 1\)) spherical harmonics given by
+\begin{align}
+    Y_1^0(\theta, \phi)       & = \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
+    Y_1^{\pm 1}(\theta, \phi) & =
+    \frac{1}{2}\sqrt{\frac{3}{2\pi}}e^{\pm i \phi}\sin\theta,
+\end{align}
+and in spin-2 there are five (\(f = 2\)) spherical harmonics given by
+\begin{align}
+    Y_2^0(\theta, \phi)       & = \frac{1}{4}\sqrt{\frac{5}{\pi}}
+    (3\cos^2\theta - 1),                                                    \\
+    Y_2^{\pm 1}(\theta, \phi) & =
+    \mp \frac{1}{2}\sqrt{\frac{15}{2\pi}}e^{\pm i\phi}\sin\theta\cos\theta, \\
+    Y_2^{\pm 2}(\theta, \phi) & =
+    \frac{1}{4}\sqrt{\frac{15}{2\pi}}e^{\pm 2i\phi}\sin^2\theta.
+\end{align}
+
+\subsection{Majorana representation}
+An alternative description to visualising the symmetries of spinor BECs is
+through the use of the Majorana representation~\cite{Majorana1932,Bloch1945},
+where a spin-\(f\) system can be represented as \(2f\) points on the Bloch
+sphere.
+The points on the sphere are numerically calculated as the \(2f\) roots
+\(z_j\) of the polynomial equation
+\begin{equation}
+    P^{(f)}(z) = \sum_{\alpha = 0}^{2f}
+    \sqrt{\mqty(2f \\ \alpha)}\zeta_{f-\alpha}^*z^\alpha=0,
+\end{equation}
+where each root represents a stereographic mapping
+\(z_j=\tan(\theta/2)e^{i\phi}\) of the spherical coordinates \((\theta, \phi)\).
+The disadvantage of this representation is that one is not able to see the
+condensate phase.
+The individual polynomials for both spin-1 and spin-2 systems are listed below.
+For the spin-1 system, we calculate the \(2f=2\) roots of the polynomial
+\begin{equation}
+    P^{(1)}(z) = \zeta_1^*z^2+\sqrt{2}\zeta_0^*z+\zeta_{-1}^*,
+\end{equation}
+and for the spin-2 system we calculate the \(2f=4\) roots of the polynomial
+\begin{align}
+    P^{(2)}(z) = \zeta_2^*z^4 + 2\zeta_1^*z^3 + \sqrt{6}\zeta_0^*z^2
+    + 2\zeta_{-1}^*z + \zeta_{-2}^*.
+\end{align}
+
 \section{Ground states of spin-1 BECs}\label{sec: ground-states-spin-1}
 To obtain ground states for a spin-1 BEC, we consider the interaction part of
 the energy functional given as (see
@@ -84,7 +166,7 @@ The wave function of the ferromagnetic state takes the form
 \end{align}
 where the representative spinor, i.e., a spinor that minimises the energy, is
 given as~\cite{Kawaguchi2012}
-\begin{align}
+\begin{align}\label{eq: spin-1-FM-rep-spinor}
     \zeta^\text{FM} = \mqty(1 \\ 0 \\ 0).
 \end{align}
 Substitution of the above spinor into the expression for the condensate spin
@@ -107,6 +189,29 @@ condensate phase, to the representative spinor as
 \end{align}
 where \(\tau^\prime = \tau-\gamma \), which describes all possible ferromagnetic
 states.
+
+Both the spherical harmonic and Majorana representations of the spin-1
+ferromagnetic ground states are shown in Fig.~\ref{fig: spin-1-FM-graph}.
+\begin{figure}
+    \centering
+    \includegraphics{example-image-a}
+    \caption[Graphical representations of the spin-1 ferromagnetic ground
+    state]{\label{fig: spin-1-FM-graph}Graphical representation of the spin-1
+    ferromagnetic phase, with the representative spinor given by
+    Eq.~\eqref{eq: spin-1-FM-rep-spinor}.
+    (a) Spherical harmonic representation, where the black dashed arrow
+    represents the direction of the condensate magnetisation.
+    (b) Majorana representation, where the colour of the points represent
+    \(\cos\theta = (1-|z|^2)/(1+|z|^2)\) and a number next to a point represents
+    the root when the polynomial \(P^{(1)}(z)\) has an \(n\)-multiple root.}
+\end{figure}
+We see that the ferromagnetic order parameter has an \(\text{SO}(2)\) symmetry
+about the direction of magnetisation, which in this case is the \(z\)-axis.
+The order parameter space, which describes the symmetries associated with the
+order parameter of the system, is \(\mathcal{M}_\text{FM}
+= {\text{SO}(3)}_{\hat{\vb{F}}, \tau}\), i.e.,
+the full 3D rotation group, where \(\tau\) and \(\hat{\vb{F}}\) denote
+contributions to the symmetry from the global phase and spin, respectively.
 
 \subsection{Polar phase}
 Now consider the case of \(c_1 > 0\), typically referred to as polar
@@ -149,6 +254,45 @@ and is either referred to as the easy-plane polar (EPP) phase or the
 antiferromagnetic phase.
 Throughout this thesis we shall prefer the term EPP when describing an
 unmagnetised polar spinor of the form of Eq.~\eqref{eq: EPP-polar}.
+
+Both the spherical harmonic and Majorana representations of the EPP and EPP
+polar ground states are shown in Fig.~\ref{fig: spin-1-polar-graph}.
+\begin{figure}
+    \centering
+    \includegraphics{example-image-a}
+    \caption[Graphical representations of the spin-1 easy-axis polar and
+    easy-plane polar ground states]{\label{fig: spin-1-polar-graph}Graphical
+    representation of the easy-axis polar and easy-plane polar ground states.
+    (a): Spherical harmonic representation of the EAP phase, with the
+    representative spinor given as \(\zeta^\mathrm{P}={(0, 1, 0)}^T\).
+    The nematic director \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
+    Note that the EPP phase looks equivalent, but with the nematic director
+    now laying in the \(xy\)-plane.
+    The order parameter remains unchanged about \(\pi \) rotations about the
+    \(C_2\) axis coupled with a \(\pi \) change of the condensate phase as
+    \(\left(\hat{\vb{d}}, \tau\right) \rightarrow
+    \left(-\hat{\vb{d}}, \tau+\pi\right)\).
+    (b) and (c): Majorana representation of the EAP and EPP phase,
+    respectively.}
+\end{figure}
+The polar state is distinguished by two nematic lobes which have a \(\pi \)
+phase difference, hence the name polar.
+These lobes are aligned along an axis of symmetry given by the nematic director,
+\(\hat{\vb{d}}\).
+In the above figure, the EPP phase is distinguished from the EPP phase by having
+the nematic director lay in the \(xy\)-plane.
+There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
+rotations preserve the symmetry, but not the phase.
+It can be seen that the order parameter will remain invariant under a change of
+\(\zeta\left(\hat{\vb{d}}, \tau\right) \rightarrow
+\zeta\left(-\hat{\vb{d}}, \tau + \pi\right)\).
+The order parameter space is therefore given as \(\mathcal{M} =
+\left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right] /
+{({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \).
+Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
+the fact that the polar order parameter described in
+Eq.~\eqref{eq: polar-representative-spinor} remains invariant under the
+above transformation of the order parameter.
 
 \subsection{Ground states in the presence of magnetic fields}
 The presence of an external magnetic field drastically changes the ground state
@@ -254,9 +398,9 @@ Finally, a broken-axisymmetry (BA) phase (state V) occurs in a condensate with
 \(c_1 > 0\) which has a spinor of the form
 \begin{equation}
     \begin{aligned}
-        \zeta_{\pm 1} & =
-        \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}},              \\
-        \zeta_0       & = \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}}.
+        \zeta^\text{BA}_{\pm 1} & =
+        \frac{q \pm p}{2q}\sqrt{\frac{-p^2+q^2+2c_1nq}{2c_1nq}}, \\
+        \zeta_0^\text{BA} & = \sqrt{\frac{(q^2-p^2)(-p^2-q^2+2c_1nq)}{4c_1nq^3}}.
     \end{aligned}
     \label{eq: BA-spinor}
 \end{equation}
@@ -289,142 +433,31 @@ in a magnetic field.
     spin-1 BEC with their respective spinors and magnetisation.}
 \end{table}
 
-\subsection{Graphical representation of spin-1 ground states}
-Graphical representations help us to visual the symmetry properties of different
-ground states in spinor systems.
-In particular, they can provide valuable insight to what is occurring within
-the order parameter when, e.g., topological defects form or the symmetry of the
-system is spontaneously broken.
-Here we focus on two types of graphical representation: Spherical harmonics and
-Majorana representations.
-Spherical harmonics in particular are widely used in Chapter~\ref{chap: spin-2},
-where the system exhibits multiple ground states, and hence different symmetries
-at once.
-
-\subsubsection{Spherical harmonic representation}
-We first consider the spherical harmonic representation, which maps the
-order parameter onto spherical harmonics using the relation
-\begin{equation}\label{eq: spherical-harmonics}
-    Z(\hat{s}) = \sum_m\zeta_m Y_f^m(\hat{s}),
-\end{equation}
-where \(\hat{s}\) is a unit vector in 3D spin space, and \(Y_f^m \) are the
-spherical harmonics for a spin-\(f\) state.
-The symmetry can be visualised with a surface plot of \(|Z(\hat{s})|^2\),
-where the surface colour is represented by the argument of \(Z(\hat{s})\).
-
-The orientation of the spherical harmonics corresponds to the condensate spin,
-and so as the spin vector rotates, the orientation of spherical harmonics
-rotates to match.
-In addition, the colour of the spherical harmonics corresponds to the global
-phase, \( \tau \).
-Therefore, the spherical harmonics give an accurate description of the
-physical symmetries of the wave function, along with a pictorial representation
-of how the phase is changing.
-Throughout this thesis we will use the spherical harmonics to construct a
-picture of what is happening to the wave function at different locations in
-space, where the symmetry of the wave function can rapidly transform in a
-non-trivial manner (see Chapter~\ref{chap: spin-2}).
-
-In spin-1, there are three (\(f = 1\)) spherical harmonics given by
-\begin{align}
-    Y_1^0(\theta, \phi)       & = \frac{1}{2}\sqrt{\frac{3}{\pi}}\cos\theta, \\
-    Y_1^{\pm 1}(\theta, \phi) & =
-    \frac{1}{2}\sqrt{\frac{3}{2\pi}}e^{\pm i \phi}\sin\theta.
-\end{align}
-The spherical harmonic representations of the spin-1 polar and ferromagnetic
-ground states are shown in Fig.~\ref{fig: spin-1-spherical-harmonics}.
+The spherical harmonic representations of the partially-magnetised polar
+(state III) and broken-axisymmetry (state V) phases are shown in
+Fig.~\ref{fig: spin-1-magnetised-graph}.
 \begin{figure}
     \includegraphics[width=\textwidth]
     {gfx/ch-groundStateSymmetries/spin-1-ground-states.pdf}
     \caption[Spherical harmonic representation of spin-1 ground states]
-    {\label{fig: spin-1-spherical-harmonics}
-    Spherical harmonics representation of the ground state phases available in a
-    spin-1 BEC calculated using the appropriate representative spinor in
-    Eq.~\eqref{eq: spherical-harmonics}.
-    (a): The spin-1 ferromagnetic ground state with
-    \(\zeta^\mathrm{FM}={(1, 0, 0)}^T\).
-    The black dashed arrow represents the direction of the condensate
-    magnetisation.
-    (b): The spin-1 polar ground state with
-    \(\zeta^\mathrm{P}={(0, 1, 0)}^T\) where the nematic director
-    \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
-    The order parameter remains unchanged about \(\pi \) rotations about the
-    \(C_2\) axis coupled with a \(\pi \) change of the condensate phase as
-    \(\left(\hat{\vb{d}}, \tau\right) \rightarrow
-    \left(-\hat{\vb{d}}, \tau+\pi\right)\).
-    (c): The partially magnetised polar state given by
+    {\label{fig: spin-1-magnetised-graph}
+    Spherical harmonics representation of both the partially-magnetised polar
+    state and the broken-axisymmetry phase calculated using the appropriate
+    representative spinor in Eq.~\eqref{eq: spherical-harmonics}.
+    (a): The partially magnetised polar state given by
     Eq.~\eqref{eq: AFM-spinor} with \(p \neq 0\).
     Note that for this state the direction of the spin vector is aligned with
-    the magnetic field.
-    (d): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor} with
+    the applied magnetic field.
+    (b): The broken-axisymmetry state given by Eq.~\eqref{eq: BA-spinor} with
     \(p, q \neq 0\).
     The direction of the spin vector is tilted away from the magnetic field
     axis, which is assumed to be along the \(z\)-axis.}
 \end{figure}
-We see that the ferromagnetic order parameter has an \(\text{SO}(2)\) symmetry
-about the \(z\)-axis.
-The polar state is distinguished by two nematic lobes which have a \(\pi \)
-phase difference, hence the name polar.
-These lobes are aligned along an axis of symmetry given by the nematic director,
-\(\hat{\vb{d}}\).
-There is a further axis of symmetry about the \(C_2\) axis, about which \(\pi \)
-rotations preserve the symmetry, but not the phase.
-It can be seen that the order parameter will remain invariant under a change of
-\(\zeta\left(\hat{\vb{d}}, \tau\right) \rightarrow
-\zeta\left(-\hat{\vb{d}}, \tau + \pi\right)\).
-
-\subsubsection{Majorana representation}
-An alternative description to visualising the symmetries of spinor BECs is
-through the use of the Majorana representation~\cite{Majorana1932,Bloch1945},
-where a spin-\(f\) system can be represented as \(2f\) points on the Bloch
-sphere.
-The points on the sphere are numerically calculated as the \(2f\) roots
-\(z_j\) of the polynomial equation
-\begin{equation}
-    P^{(f)}(z) = \sum_{\alpha = 0}^{2f}
-    \sqrt{\mqty(2f \\ \alpha)}\zeta_{f-\alpha}^*z^\alpha=0,
-\end{equation}
-where each root represents a stereographic mapping
-\(z_j=\tan(\theta/2)e^{i\phi}\) of the spherical coordinates \((\theta, \phi)\).
-For the spin-1 system, the polynomial is
-\begin{equation}
-    P^{(1)}(z) = \zeta_1^*z^2+\sqrt{2}\zeta_0^*z+\zeta_{-1}^*.
-\end{equation}
-The disadvantage of this representation is that one is not able to see the
-condensate phase.
-The equivalent Majorana representations for the states shown in
-Fig.~\ref{fig: spin-1-spherical-harmonics} are shown in
-Fig.~\ref{fig: spin-1-majorana}.
-\begin{figure}
-    \centering
-    \begin{tikzpicture}
-        \node at (0, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/FM-Majorana.pdf}};
-        \node at (4.5, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/polar-Majorana.pdf}};
-        \node at (9, 0){\includegraphics[width=0.3\textwidth]
-            {gfx/ch-groundStateSymmetries/AFM-Majorana.pdf}};
-        \node at (11.8, 0) {
-            \includegraphics{gfx/colourbars/compiled_jet_majorana.pdf}};
-
-        \node at (0, -2) {(a)};
-        \node at (4.5, -2) {(b)};
-        \node at (9, -2) {(c)};
-
-        \node at (0, 2) {\(\zeta={(1, 0, 0)}^T\)};
-        \node at (4.5, 2) {\(\zeta={(0, 1, 0)}^T\)};
-        \node at (9, 2) {\(\zeta={(1, 0, 1)}^T/\sqrt{2}\)};
-    \end{tikzpicture}
-    \caption[Majorana representation of spin-1 ground states]
-    {\label{fig: spin-1-majorana}Majorana representations of spin-1 ground
-    states. The colour of the points represent \(\cos\theta =
-    (1-|z|^2)/(1+|z|^2)\).
-    A number next to a point represents the root when the polynomial
-    \(P^{(1)}(z)\) has an \(n\)-multiple root.
-    (a): Ferromagnetic state with \(\zeta={(1, 0, 0)}^T\).
-    (b): Polar state with \(\zeta={(0, 1, 0)}^T\).
-    (c): AFM state with \(\zeta={(1, 0, 1)}^T/\sqrt{2}\).}
-\end{figure}
+For the partially-magnetised polar state, we see the effect of the linear
+Zeeman shift breaking the symmetry of the spin when compared to the polar state
+shown in Fig.~\ref{fig: spin-1-polar-graph}a.
+The broken-axisymmetry phase is seen to tilt against the \(z\)-axis, which
+arises due to the linear Zeeman shift, \(p\).
 
 \section{Ground states of spin-2 BECs}\label{sec: ground-states-spin-2}
 To find the ground states of a spin-2 system we follow a similar procedure to
@@ -632,19 +665,6 @@ leads to a phase boundary at \(c_2n=20c_1n\).
 
 \subsection{Graphical representation of spin-2 ground states}
 \subsubsection{Spherical harmonic representation}
-The mapping of the order parameter onto spherical harmonics in the spin-2 case
-follows the same equation as in the spin-1 case, i.e.,
-Eq.~\eqref{eq: spherical-harmonics}.
-For the spin-2 system, however, we have five (\(f=2\)) spherical harmonics given
-by
-\begin{align}
-    Y_2^0(\theta, \phi)       & = \frac{1}{4}\sqrt{\frac{5}{\pi}}
-    (3\cos^2\theta - 1),                                                    \\
-    Y_2^{\pm 1}(\theta, \phi) & =
-    \mp \frac{1}{2}\sqrt{\frac{15}{2\pi}}e^{\pm i\phi}\sin\theta\cos\theta, \\
-    Y_2^{\pm 2}(\theta, \phi) & =
-    \frac{1}{4}\sqrt{\frac{15}{2\pi}}e^{\pm 2i\phi}\sin^2\theta.
-\end{align}
 The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
 \begin{figure}
@@ -710,10 +730,7 @@ parameter.
 The mapping of the spin-2 system onto the Majorana representation follows a
 similar procedure to the spin-1 case.
 In this system, we compute the \(2f=4\) roots of the complex polynomial
-\begin{align}
-    P^{(2)}(z) = \zeta_2^*z^4 + 2\zeta_1^*z^3 + \sqrt{6}\zeta_0^*z^2
-    + 2\zeta_{-1}^*z + \zeta_{-2}^*.
-\end{align}
+
 The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
 are shown in Fig.~\ref{fig: spin-2-Majorana}.
 \begin{figure}
@@ -822,16 +839,6 @@ Kobayashi2012}.
 
 We start with the polar phase, with the representative spinor defined as in
 Eq.~\eqref{eq: polar-representative-spinor}.
-The order parameter space is given as \(\mathcal{M} = \left[S^2_{\hat{\vb{F}}}
-\cross {U(1)}_\tau\right] / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \), where
-\(\hat{\vb{F}}\) and \(\tau \) indicate contributions from the condensate spin
-and phase, respectively.
-Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
-the fact that the polar order parameter described in
-Eq.~\eqref{eq: polar-representative-spinor} remains invariant under the
-transformation of \(\left(\hat{\vb{d}}, \tau\right)
-\rightarrow \left(-\hat{\vb{d}}, \tau+\pi\right)\)
-(see Fig.~\ref{fig: spin-1-spherical-harmonics}b).
 The first homotopy group is calculated to be the additive group of integers,
 \(\pi_1(\mathcal{M}_\text{polar}) = \mathbb{Z}\), which indicates vortices are
 stable and classified by integers within this phase.
