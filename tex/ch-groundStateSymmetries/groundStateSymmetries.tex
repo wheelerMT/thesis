@@ -516,18 +516,18 @@ Note that there exists a ferromagnetic state in a spin-2 BEC with
 \(\spinmag=1\), but this state is not the ground state since the \(\spinmag=2\)
 state has lower energy.
 To avoid confusion, we refer to the ferromagnetic state with \(\spinmag=2\) as
-the FM-2 state, and the state with \(\spinmag=1\) as the FM-1 state.
+the \(\text{FM}_2\) state, and the state with \(\spinmag=1\) as the FM-1 state.
 It should be noted, however, that the FM-1 state can remain stable in
 certain situations, such as in the cores of vortices (see
 Chapter~\ref{chap: spin-2}).
 The representative spinors for the spin-2 ferromagnetic states have the form
 \begin{equation}\label{eq: FM2-FM1-spinors}
-    \zeta^\mathrm{FM-2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
-    \zeta^\mathrm{FM-1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
+    \zeta^{\text{FM}_2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
+    \zeta^{\text{FM}_1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
 \end{equation}
 Following the same procedure as the spin-1 case and applying a general spin
 rotation \(U(\alpha, \beta, \gamma)\) with a global phase \(\tau \) and
-condensate density \(n\) yields the general FM-2 wave function which describes
+condensate density \(n\) yields the general \(\text{FM}_2\) wave function which describes
 all ferromagnetic states that have \(\spinmag=2\):
 \begin{equation}\label{eq: FM-2-representative-spinor}
     \psi^{\text{FM}_2} = \sqrt{n}e^{i\tau'}\mqty(
@@ -539,6 +539,36 @@ all ferromagnetic states that have \(\spinmag=2\):
     ),
 \end{equation}
 where \(\tau'=\tau-2\gamma \).
+Equivalently, the general spinor for the \(\text{FM}_1\) phase is given as
+\begin{align}
+    \zeta^{\text{FM}_1} = 
+\end{align}
+
+The spherical harmonic and Majorana representations of the spin-2 ferromagnetic
+ground states are given in Fig.~\ref{fig: spin-2-FM-graph}.
+\begin{figure}
+    \centering
+    \includegraphics{example-image-b}
+    \caption{\label{fig: spin-2-FM-graph}Spherical harmonic and Majorana
+    representations of the spin-2 ferromagnetic ground states, with
+    representative spinors given in Eq.~\eqref{eq: FM2-FM1-spinors}.
+    (a) and (b): Spherical harmonic representation for the ferromagnetic states
+    with \(spinmag=2\) and \(\spinmag=1\), respectively, where the dashed line
+    represents the direction of the magnetisation.
+    (c) and (d): Equivalent Majorana representations.}
+\end{figure}
+It is clear from Figs~\ref{fig: spin-2-FM-graph}a, b that the ferromagnetic
+order parameters have the same \(SO(2)\) symmetry about the direction of the
+magnetisation as in the spin-1 case.
+However, the difference between the \(\text{FM}_2\) phase of the spin-2 system
+and the FM phase of the spin-1 system is apparent in the phase: the
+\(\text{FM}_2\) state winds by \(4\pi \) about the spherical harmonic as opposed
+to \(2\pi \) (see Fig.~\ref{fig: spin-1-FM-graph}).
+Therefore, the order parameter space of the \(\text{FM}_2\) phase is given as
+\(\mathcal{M}_{\text{FM}_2} = {\text{SO}(3)}_{\hat{\vb{F}}, \tau} /
+{(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\).
+The \({(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\) factor arises from the double
+winding of the condensate phase seen above.
 
 \subsection{Nematic phases}
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
@@ -688,14 +718,6 @@ are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
         (e): Cyclic state given by Eq.~\eqref{eq: C-1-spinor} which has a
         two- and three-fold symmetry about the \(C_2, C_3\) axes, respectively.}
 \end{figure}
-It is clear from Figs~\ref{fig: spin-2-spherical-harmonics}a
-and~\ref{fig: spin-2-spherical-harmonics}b that the ferromagnetic order
-parameters have the same \(SO(2)\) symmetry about the \(z\)-axis as the spin-1
-case.
-However, the difference between the FM-2 phase of the spin-2 system and the FM
-phase of the spin-1 system is apparent in the phase: the FM-2 state winds by
-\(4\pi \) about the spherical harmonic as opposed to \(2\pi \)
-(see Fig.~\ref{fig: spin-1-spherical-harmonics}a).
 
 The UN phase as shown in Fig.~\ref{fig: spin-2-spherical-harmonics}c differs
 slightly from the polar phase of spin-1 (see
@@ -742,7 +764,7 @@ are shown in Fig.~\ref{fig: spin-2-Majorana}.
     As in the spin-1 case, the colour of the points represent \(\cos\theta =
     (1-|z|^2)/(1+|z|^2)\), whilst a number next to a point represents the root
     when the polynomial \(P^{(2)}(z)\) has an \(n\)-multiple root.
-    (a): FM-2 state with \(\zeta={(1, 0, 0, 0, 0)}^T\).
+    (a): \(\text{FM}_2\) state with \(\zeta={(1, 0, 0, 0, 0)}^T\).
     (b): FM-1 state with \(\zeta={(0, 1, 0, 0, 0)}^T\).
     (c): UN state with \(\zeta={(0, 0, 1, 0, 0)}^T\).
     (d): BN state with \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
@@ -752,7 +774,7 @@ are shown in Fig.~\ref{fig: spin-2-Majorana}.
     \(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\).}
 \end{figure}
 
-\section{Stable topological defects in spinor BECs}
+\section{Topologically stable defects in spinor BECs}
 Due to their rich phase diagrams discussed in the previous sections, spinor BECs
 give rise to multiple different types of topological defects.
 Such defects range from vortices, both singular~\cite{Yip1999,Isoshima2002,
