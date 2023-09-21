@@ -194,7 +194,8 @@ Both the spherical harmonic and Majorana representations of the spin-1
 ferromagnetic ground states are shown in Fig.~\ref{fig: spin-1-FM-graph}.
 \begin{figure}
     \centering
-    \includegraphics{example-image-a}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-1-FM.pdf}
     \caption[Graphical representations of the spin-1 ferromagnetic ground
     state]{\label{fig: spin-1-FM-graph}Graphical representation of the spin-1
     ferromagnetic phase, with the representative spinor given by
@@ -259,10 +260,11 @@ Both the spherical harmonic and Majorana representations of the EPP and EPP
 polar ground states are shown in Fig.~\ref{fig: spin-1-polar-graph}.
 \begin{figure}
     \centering
-    \includegraphics{example-image-a}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-1-polar.pdf}
     \caption[Graphical representations of the spin-1 easy-axis polar and
     easy-plane polar ground states]{\label{fig: spin-1-polar-graph}Graphical
-    representation of the easy-axis polar and easy-plane polar ground states.
+    representation of the EAP and EPP polar ground states.
     (a): Spherical harmonic representation of the EAP phase, with the
     representative spinor given as \(\zeta^\mathrm{P}={(0, 1, 0)}^T\).
     The nematic director \(\hat{\vb{d}}\) is aligned with the \(z\)-axis.
@@ -292,7 +294,7 @@ The corresponding order parameter space is given as \(\mathcal{M} =
 Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
 the fact that the polar order parameter described in
 Eq.~\eqref{eq: polar-representative-spinor} remains invariant under the
-above transformation of the order parameter.
+transformation described above.
 
 \subsection{Ground states in the presence of magnetic fields}
 The presence of an external magnetic field drastically changes the ground state
@@ -437,8 +439,8 @@ The spherical harmonic representations of the partially-magnetised polar
 (state III) and broken-axisymmetry (state V) phases are shown in
 Fig.~\ref{fig: spin-1-magnetised-graph}.
 \begin{figure}
-    \includegraphics[width=\textwidth]
-    {gfx/ch-groundStateSymmetries/spin-1-ground-states.pdf}
+    \includegraphics[height=0.4\textwidth, width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-1-magnetised.pdf}
     \caption[Spherical harmonic representation of spin-1 ground states]
     {\label{fig: spin-1-magnetised-graph}
     Spherical harmonics representation of both the partially-magnetised polar
@@ -588,7 +590,8 @@ The spherical harmonic and Majorana representations of the spin-2 ferromagnetic
 ground states are given in Fig.~\ref{fig: spin-2-FM-graph}.
 \begin{figure}
     \centering
-    \includegraphics{example-image-b}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-2-FM.pdf}
     \caption{\label{fig: spin-2-FM-graph}Spherical harmonic and Majorana
     representations of the spin-2 ferromagnetic ground states, with
     representative spinors given in Eq.~\eqref{eq: FM2-FM1-spinors}.
@@ -658,11 +661,12 @@ The spherical harmonics and Majorana representation of both nematic states are
 plotted in Fig.~\ref{fig: nematic-graph}.
 \begin{figure}
     \centering
-    \includegraphics{example-image-c}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-2-nematic.pdf}
     \caption[Spherical harmonic and Majorana representations of the spin-2
     nematic ground states]{\label{fig: nematic-graph}Spherical harmonic and
     Majorana representations of the spin-2 nematic ground states.
-    (a) Spherical harmonic representation of the uniaxial nematic spinor given
+    (a): Spherical harmonic representation of the uniaxial nematic spinor given
     in Eq.~\eqref{eq: UN-spinor} where \(\hat{\vb{d}}\) is the nematic director.
     The order parameter exhibits a two-fold symmetry about the \(C_2\) axis.
     (b) Spherical harmonic representation of the biaxial nematic state given by
@@ -690,6 +694,10 @@ phase difference.
 The symmetry of the order parameter is preserved under \(\pi/4\) rotations
 about the \(C_4\) axis and \(\pi\) rotations about both the \(C_2\) and \(C_2'\)
 axes.
+The order parameter space for this phase is calculated as
+\(\left[{\text{U}(1)}_\tau \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
+/ {(\text{D}_4)}_{\hat{\vb{F}}, \tau}\), where \(\text{D}_4\) is the fourth
+dihedral group~\cite{Kobayashi2012}.
 
 \subsection{Cyclic phase}
 Now consider \(c_1, c_2 > 0\).
@@ -698,10 +706,10 @@ amplitude is minimised: \(\spinmag = 0, |A_{00}|^2=0\).
 Such a state is referred to as the cyclic state and has the representative
 spinor
 \begin{equation}
-    \zeta^\mathrm{C-1} = \frac{1}{2}\mqty(1 \\ 0 \\ i\sqrt{2} \\ 0 \\ 1).
+    \zeta^{\text{C}_1} = \frac{1}{2}\mqty(1 \\ 0 \\ i\sqrt{2} \\ 0 \\ 1).
     \label{eq: C-1-spinor}
 \end{equation}
-The general wave function is given as
+The general wave function is calculated as
 \begin{equation}\label{eq: general-cyclic-wfn}
     \psi^\mathrm{C} = \frac{\sqrt{n}}{2}e^{i\tau} \mqty(
     e^{-2i(\alpha+\gamma)}C^4 + 2i\sqrt{3}e^{-2i\alpha}C^2S^2
@@ -723,26 +731,33 @@ The general wave function is given as
 In addition to the three-component cyclic state, there is also a two-component
 cyclic state that is useful for understanding the general cyclic state:
 \begin{equation}
-    \zeta^\mathrm{C-2} = \frac{1}{\sqrt{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
+    \zeta^{\text{C}_2} = \frac{1}{\sqrt{3}}\mqty(1  \\ 0 \\ 0 \\ \sqrt{2} \\ 0),
     \label{eq: C-2-spinor}
 \end{equation}
 which is obtained from Eq.~\eqref{eq: C-1-spinor} via the spin
 rotation~\cite{Kawaguchi2012}
-\begin{equation}
-    \zeta^{C-2} = -ie^{i\frac{\pi}{4}\hat{F}_z}
+\begin{equation}\label{eq: cyclic-spin-rotation}
+    \zeta^{\text{C}_2} = -ie^{i\frac{\pi}{4}\hat{F}_z}
     \exp\left[i\frac{\hat{F}_x-\hat{F}_y}{\sqrt{2}}
-        \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^\mathrm{C-1}.
+        \arccos{\left(\frac{1}{\sqrt{3}}\right)}\right]\zeta^{\text{C}_1}.
 \end{equation}
 
-The spherical harmonic and Majorana representations of both orientates of the
+The spherical harmonic and Majorana representations of both orientations of the
 cyclic state are plotted in Fig.~\ref{fig: cyclic-graph}.
 \begin{figure}
     \centering
-    \includegraphics{example-image-c}
+    \includegraphics[width=\textwidth]
+    {gfx/ch-groundStateSymmetries/spin-2-cyclic.pdf}
     \caption[Spherical harmonic and Majorana representations of two different
     orientations of the cyclic ground state.]
     {\label{fig: cyclic-graph}Spherical harmonic and Majorana representations of
-    two different orientations of the cyclic ground state.}
+    two different orientations of the cyclic ground state.
+    (a): Cyclic state given by Eq.~\eqref{eq: C-1-spinor} which has a two- and
+    three-fold symmetry about the \(C_2, C_3\) axes, respectively.
+    (b): Alternative, two-component cyclic state, given by
+    Eq.~\eqref{eq: C-2-spinor} which is obtained from (a) by the spin rotation
+    given in Eq.~\eqref{eq: cyclic-spin-rotation}.
+    (c) and (d): Equivalent Majorana representations.}
 \end{figure}
 The cyclic order parameter has the symmetry of a tetrahedron, where each nematic
 lobe has a two-fold symmetry about the \(C_2\) axis.
@@ -755,53 +770,7 @@ parameter.
 The order parameter space of the cyclic phase can be written as
 \(\left[{\text{U}(1)}_\tau \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
 / \text{T}_{\hat{\vb{F}}, \tau}\), where \(\text{T}_{\hat{\vb{F}}, \tau}\) is
-the tetrahedral group.
-
-\subsection{Graphical representation of spin-2 ground states}
-\subsubsection{Spherical harmonic representation}
-The spherical harmonics for the ferromagnetic, UN, BN, and cyclic states
-are shown in Fig.~\ref{fig: spin-2-spherical-harmonics}.
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]
-    {gfx/ch-groundStateSymmetries/spin-2-ground-states.pdf}
-    \caption[Spherical harmonic representation of spin-2 ground states]
-    {\label{fig: spin-2-spherical-harmonics}Spherical harmonic
-        representations for different ground states in a spin-2 system
-        calculated using the appropriate representative spinor in
-        Eq.~\eqref{eq: spherical-harmonics}.
-        (a) and (b): Ferromagnetic states with \(\spinmag=2\) and
-        \(\spinmag=1\) [given in Eq.~\eqref{eq: FM2-FM1-spinors}], respectively,
-        where the black dashed arrows indicate the direction of magnetisation.
-        (e): Cyclic state given by Eq.~\eqref{eq: C-1-spinor} which has a
-        two- and three-fold symmetry about the \(C_2, C_3\) axes, respectively.}
-\end{figure}
-
-\subsubsection{Majorana representation}
-The mapping of the spin-2 system onto the Majorana representation follows a
-similar procedure to the spin-1 case.
-In this system, we compute the \(2f=4\) roots of the complex polynomial
-
-The Majorana representation of the ferromagnetic, UN, BN, and cyclic states
-are shown in Fig.~\ref{fig: spin-2-Majorana}.
-\begin{figure}
-    \centering
-    \includegraphics{gfx/ch-groundStateSymmetries/spin-2-majorana.pdf}
-    \caption[Majorana representation of spin-2 ground states]
-    {\label{fig: spin-2-Majorana}Majorana representation of spin-2 ground
-    states.
-    As in the spin-1 case, the colour of the points represent \(\cos\theta =
-    (1-|z|^2)/(1+|z|^2)\), whilst a number next to a point represents the root
-    when the polynomial \(P^{(2)}(z)\) has an \(n\)-multiple root.
-    (a): \(\text{FM}_2\) state with \(\zeta={(1, 0, 0, 0, 0)}^T\).
-    (b): FM-1 state with \(\zeta={(0, 1, 0, 0, 0)}^T\).
-    (c): UN state with \(\zeta={(0, 0, 1, 0, 0)}^T\).
-    (d): BN state with \(\zeta={(1, 0, 0, 0, 1)}^T/\sqrt{2}\).
-    (e): Three-component cyclic state with
-    \(\zeta={(1, 0, i\sqrt{2}, 0, i)}^T/2\).
-    (f): Two-component cyclic state with
-    \(\zeta={(\sqrt{1/3}, 0, 0, \sqrt{2/3}, 0)}^T\).}
-\end{figure}
+the tetrahedral group~\cite{Kobayashi2012}.
 
 \section{Topologically stable defects in spinor BECs}
 Due to their rich phase diagrams discussed in the previous sections, spinor BECs
@@ -963,8 +932,7 @@ Firstly, note that the order parameter space for the FM phase is slightly
 different from the spin-1 case in that it is now divided by a
 \({(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\) factor.
 This contribution arises from the double winding of the condensate phase seen in
-the spherical harmonic representation in
-Fig.~\ref{fig: spin-2-spherical-harmonics}a.
+the spherical harmonic representation in Fig.~\ref{fig: spin-2-FM-graph}a.
 The first homotopy group is also different, allowing now for an additional two
 classes of line defects as \(\pi_1(\mathcal{M}_\text{FM}) = \mathbb{Z}_4\), but
 the second and third homotopy groups are the same.
@@ -972,8 +940,8 @@ the second and third homotopy groups are the same.
 The UN phase has an identical order parameter space to the polar phase of a
 spin-1 BEC, except now the \({(\mathbb{Z}_2)}_{\hat{\vb{F}}}\) factor arises
 only from the condensate spin since the nematic lobes are no longer \(\pi \)
-out of phase (see Fig.~\ref{fig: spin-2-spherical-harmonics}c and
-Fig.~\ref{fig: spin-1-spherical-harmonics}b).
+out of phase (see Fig.~\ref{fig: nematic-graph}a and
+Fig.~\ref{fig: spin-1-polar-graph}b).
 In addition, the first homotopy group differs slightly as now it reads
 \(\pi_1(\mathcal{M}_\text{UN}) = \mathbb{Z} \cross
 \mathbb{Z}_2\)~\cite{Kobayashi2012}, which allows for the creation of additional
@@ -996,7 +964,7 @@ reconnection in the form of a rung vortex~\cite{Mermin1979}.
 The cyclic phase has an order parameter space of \(\mathcal{M}_\text{C} =
 \left[{\text{U}(1)}_\tau \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
 / \text{T}_{\hat{\vb{F}}, \tau}\), where \(\text{T}_{\hat{\vb{F}}, \tau}\) is
-the tetrahedral group.
+the tetrahedral group~\cite{Kobayashi2012}.
 Like the BN phase, this leads to a non-Abelian fundamental group:
 \(\pi_1(\mathcal{M}_\text{C}) = \mathbb{Z} \cross_h
 \text{T}_{\hat{\vb{F}}, \tau}\), and hence the cyclic phase also supports
