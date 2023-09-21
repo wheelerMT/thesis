@@ -486,7 +486,7 @@ In a spin-2 system, a general spin rotation is instead represented as a
     \scalemath{0.90}{\mqty(
     e^{-2i(\alpha + \gamma)}C^4 & -2e^{-i(2\alpha+\gamma)}C^3S
     & \sqrt{6}e^{-2i\alpha}C^2S^2 & -2e^{-i(2\alpha-\gamma)}CS^3
-    & e^{-2i(\alpha + \gamma)}S^4
+    & e^{-2i(\alpha - \gamma)}S^4
     \\
     2e^{-i(\alpha+2\gamma)}C^3S & e^{-i(\alpha+\gamma)}C^2(C^2-3S^2)
     & -\sqrt{\frac{3}{8}}e^{-i\alpha}\sin 2\beta
@@ -583,7 +583,15 @@ all ferromagnetic states that have \(\spinmag=2\):
 where \(\tau'=\tau-2\gamma \).
 Equivalently, the general spinor for the \(\text{FM}_1\) phase is given as
 \begin{align}
-    \zeta^{\text{FM}_1} = 
+    \zeta^{\text{FM}_1} = \sqrt{n}e^{i(\tau - \gamma)}\mqty(
+        -2e^{-2i\alpha}\cos^3\frac{\beta}{2}\sin\frac{\beta}{2} \\
+        e^{-i\alpha}\cos^2\frac{\beta}{2}\left[\cos^2\frac{\beta}{2}^2
+            -3\sin^2\frac{\beta}{2}\right] \\
+        \sqrt{\frac{3}{8}}\sin2\beta \\
+        -e^{i\alpha}\sin^2\frac{\beta}{2}\left[\sin^2\frac{\beta}{2}
+            -3\cos^2\frac{\beta}{2}\right] \\
+        2e^{2i\alpha}\cos\frac{\beta}{2}\sin^3\frac{\beta}{2}
+    ).
 \end{align}
 
 The spherical harmonic and Majorana representations of the spin-2 ferromagnetic
