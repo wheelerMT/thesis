@@ -18,8 +18,8 @@ formation of topological defects.
 The Kibble-Zurek mechanism (KZM) is a theory that describes the resulting
 dynamics and predicts the scaling properties of the excitations from the details
 of the universality class of the transition.
-It was first introduced by Kibble in the context of the topology of cosmic
-strings in the early universe~\cite{Kibble1976, Kibble1980}, before being
+It was first introduced by Kibble in the context of cosmological phase
+transitions in the early universe~\cite{Kibble1976, Kibble1980}, before being
 extended by Zurek to condensed matter systems~\cite{Zurek1985, Zurek1993,
     Zurek1996}.
 
@@ -30,6 +30,11 @@ quantum~\cite{Dziarmaga2005, Damski2005, Lamacraft2007} phase transitions.
 Whilst the theory has had great success in applications to continuous,
 second-order transitions, direct application to discontinuous phase transitions
 does not typically give an accurate description of observed scaling laws.
+This is due to the fact that at the critical point of a continuous phase
+transition the energy spectrum is gapped, in which well-defined correlation
+lengths and time scales can be derived.
+In a first-order, discontinuous phase transition, the energy spectrum at the
+critical point is gapless, and hence the traditional KZ theory breaks down.
 Recently, there has been the first experimental evidence of the existence of
 scaling laws for a first-order QPT~\cite{Qiu2020}, where standard KZ theory
 failed to predict the observed scaling.
@@ -88,7 +93,7 @@ Consider a system that undergoes a spontaneous breaking of symmetry when a
 control parameter, \( \lambda \), is ramped across a phase transition that
 occurs at the critical point, \( \lambda_c \).
 A continuous, second-order phase transition can be characterized by a divergence
-of the equilibrium correlation length
+of the equilibrium correlation length~\cite{DelCampo2014}
 \begin{equation}
     \xi(\epsilon) \sim |\epsilon|^{-\nu},
 \end{equation}
@@ -111,16 +116,15 @@ state~\cite{Zurek2005, Damski2006}
     \tau \simeq \Delta^{-1}.
 \end{equation}
 As we approach the critical point, the energy gap vanishes as
-\begin{equation}
+\begin{equation}\label{eq: delta-epsilon-relation}
     \Delta \sim |\epsilon|^{\nu z}.
 \end{equation}
 The system is initially prepared in a high-symmetry phase (\(  \epsilon > 0 \)),
 but breaks that symmetry as the critical point is crossed (\(  \epsilon < 0 \)).
 In the above equations, the exponents \(  z \) and \( \nu \) are the dynamical
 and correlation length critical exponents, respectively.
-These exponents are determined by the universality class of the phase
-transition~\cite{Sachdev2011}, and different systems belonging to the same
-universality class share the same critical exponents.
+Different systems which have the same critical exponents are said to belong
+to the same universality class~\cite{Sachdev2011,DelCampo2014}.
 
 The KZM describes the dynamics of crossing the critical point when \( \lambda \)
 is continually varied.
@@ -183,18 +187,21 @@ representation).
 Far from the critical point, the equilibrium relaxation time is small compared
 to the inverse transition rate \( |\epsilon/\dot{\epsilon}| \), meaning the
 system adiabatically follows the instantaneous ground state for \(\epsilon(t)\).
-This stage of adiabaticity lasts until the instant
+This stage of adiabaticity lasts until the relaxation time becomes comparable
+to \(|\epsilon / \dot{\epsilon}|\):
 \begin{equation}
     \tau \approx |\epsilon/\dot{\epsilon}|=\tilde{t}.
     \label{eq: freeze-out-equal}
 \end{equation}
-Solving this equation yields the freeze-out time, \( \tilde{t} \):
+Using Eqs.~\eqref{eq: delta-epsilon-relation}
+and~\eqref{eq: time-dependent-epsilon}, the above equation can be solved to
+yield the freeze-out time, \( \tilde{t} \):
 \begin{equation}
     \tilde{t} \sim \tau_Q^\frac{z\nu}{1 + z\nu}.
     \label{eq: freeze-out-scaling}
 \end{equation}
-After this point is passed, however, the relaxation time diverges and the system
-can no longer keep up with the externally imposed changes.
+After the freeze-out time is passed, however, the relaxation time diverges and
+the system can no longer keep up with the externally imposed changes.
 The system then enters the so-called impulse regime, where the dynamics are
 frozen and remains in this regime until \( -\tilde{t} \), when the relaxation
 time becomes faster than the transition rate once again.
@@ -218,17 +225,19 @@ density is given by
     N_d \simeq \hat{\xi}^{-d} \sim \tau_Q^{\frac{-d\nu}{1+z\nu}},
 \end{equation}
 where \( d \) is the number of spatial dimensions.
-This is a key result of the Kibble-Zurek mechanism and provides a
-foundation in testing the KZM in BEC systems~\cite{Damski2007, Swislocki2013,
-    Anquez2016, Saito2007, Saito2007a}.
+This key provides a foundation in testing the KZM in subsequent sections, and
+has already been successfully applied to numerous spinor BEC
+systems~\cite{Damski2007, Swislocki2013, Anquez2016, Saito2007, Saito2007a} to
+determine the validity of the KZM\@.
 
-\section{Numerical studies of the KZM across a second-order phase transition}
+\section{Numerical studies of the Kibble-Zurek mechanism across a second-order
+quantum phase transition}
 To verify the key results of the KZ theory presented in the previous section,
 we perform numerical simulations using a spin-1 BEC\@.
 As shown in Sec.~\ref{sec: ground-states-spin-1}, there are four ground state
-phases of spin-1 BECs; namely, the ferromagnetic, antiferromagnetic, polar, and
-broken-axisymmetry phases, where each ground state phase has an associated
-symmetry.
+phases of spin-1 BECs; namely, the ferromagnetic, partially-magnetised polar,
+polar, and broken-axisymmetry phases, where each ground state phase has an
+associated symmetry.
 The Kibble-Zurek mechanism can be studied in spin-1 BECs by considering how
 the change of a control parameter causes the order parameter to change from
 one ground state to another.
@@ -310,9 +319,9 @@ that growth to occur.
 The quantity that satisfies this condition in the polar to BA transition is the
 transverse magnetisation
 \begin{equation}
-    M_\perp = \int f_x^2 + f_y^2 \, dz,
+    M_\perp = \int \langle F_x^2\rangle + \langle F_y^2\rangle \, \dd z,
 \end{equation}
-where \(f_x\) and \(f_y \) are the \(x, y\) components of the condensate spin
+where \(F_x\) and \(F_y \) are the \(x, y\) components of the condensate spin
 vector, respectively.
 In the polar phase this quantity is zero, but becomes non-zero in the BA limit
 where it is \(M_\perp = (1 - Q^2/4)/L\).
@@ -359,7 +368,8 @@ We note that the choice of the 1\% threshold used here is arbitrary.
 We have tested a range of values up to a maximum of 10\%, and obtain
 quantitatively similar behaviour for all values tested.
 
-\section{Extending the KZ theory to first-order phase transitions}
+\section{Extending the Kibble-Zurek theory to first-order quantum phase
+transitions}
 The preceding sections were concerned with the KZM across second-order phase
 transitions.
 Describing the KZM across discontinuous, first-order transitions, however, has
@@ -567,8 +577,8 @@ Therefore, to predict the density of defects for the BA to FM transition, we
 need to find the appropriate form for the correlation length, \(\xi \).
 With the relevant Bogoliubov mode found, we can predict the scaling of the
 density of defects for a BA to FM phase transition.
-Since our relevant mode is gapless, it is instructive to consider a special case
-of the spectrum, given by
+Since our relevant mode is gapless, it is instructive to consider a
+generalisation of the spectrum, given by
 \begin{align}\label{eq: dispersion-relation}
     E_k^2 \sim |q(t)-q_c|^{\alpha}\epsilon_k^{\eta}+\epsilon_k^{2z}.
 \end{align}
@@ -610,9 +620,9 @@ Therefore, the freezing time can be evaluated from the expression
 \end{align}
 
 For our gapless spectrum, we work with a dispersion relation of the form given
-by Eq.~\eqref{eq: dispersion-relation-simplified}, and calculate the freezing
-time using the relation \(\omega^2 = \dot{\omega}\).
-This yields
+by Eq.~\eqref{eq: dispersion-relation-simplified}.
+Then, the adiabatic-impulse approximation states that \(E_k^2 = \dot{E}_k\),
+which leads to
 \begin{align}
     \frac{\alpha}{2\tau_Q^{\alpha/2}}|\tilde{t}|^{(\alpha/2 - 1)}
     \tilde{k}^{\eta/2} \sim \frac{|\tilde{t}|^{\alpha}}{\tau_Q^{\alpha}}
@@ -642,7 +652,7 @@ For the BA to FM transition specifically, Eq.~\eqref{eq: e_k-fz} implies that
 \(\alpha=1\), \(\eta=2\), and \(z = 2\).
 Considering a 1D system (\(d = 1\)), that leads to a scaling of the density of
 defects as
-\begin{align}
+\begin{align}\label{eq: BA-FM-defects-scaling}
     N_d \sim\tau_Q^{-1/4},
 \end{align}
 which corresponds to choosing \(z=2\) and \(\nu = 1/2\) in
@@ -653,6 +663,136 @@ in spinor BECs~\cite{Damski2007,Saito2007,Saito2007a,Saito2013,Swislocki2013}.
 These studies focused on continuous phase transitions through a QCP\@, and our
 results indicate a new scaling regime that is associated specifically with the
 DQCP of this system.
+
+\subsection{Extracting a power-law scaling near the critical point}
+Having identified the relevant mode of the transition, we now follow a procedure
+similar to Damski~\cite{Damski2007} and analytically determine the scaling
+behaviour of the system near the critical point by linearising our system of
+equations.
+To begin, we start with a wave function close to the BA state
+\begin{equation}\label{eq: spin-1-perturbed-BA-state}
+    \Psi^T = \left(\frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{1}(t),
+    \frac{\sqrt{n_0}}{2}\sqrt{2 + Q_0} + \delta \psi_0(t),
+    \frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{-1}(t)\right)e^{-i\mu t},
+\end{equation}
+where \( 0 < Q_0 < 2 \) is a constant, \(\mu \) is the
+chemical potential and \( |\delta\psi_m| \ll 1 \) are time-dependent noise
+terms.
+The noise terms must satisfy \(\int \sum_m\delta\psi_m+\delta\psi_m^* \, \dd z\)
+to ensure normalisation of the wave function.
+Additionally, they must also satisfy \(\int (\delta\psi_1 + \delta\psi_1^* 
+\delta\psi_{-1} + \delta\psi_{-1}^*) \dd z = 0\) to ensure that magnetisation
+is conserved.
+
+Recall the spin-1 GPEs are given as (see Sec.~\ref{subsec: spin-1-gpes}):
+\begin{align}\label{eq: spin-1-KZ-GPEs}
+    i\hbar\pdv{\Psi}{t} = \left[ -\frac{\hbar^2\nabla^2}{2M}
+    -p\hat{F_z} + q\hat{F}_z^2 +c_0n +c_1n\langle \hat{\vb{F}}\rangle
+    \cdot \hat{\vb{F}}\right]\Psi.
+\end{align}
+Substituting Eq.~\eqref{eq: spin-1-perturbed-BA-state} into the above equations
+and keeping terms linear in \(\delta\psi_m\) yields the following two
+equations for \(\delta\psi_{\pm 1}\) (\(p=0\))
+\begin{multline}\label{eq: dpsi1}
+    i\hbar\pdv{\delta\psi_1}{t} = \left[-\frac{\hbar^2}{2M}\pdv[2]{}{z}+q-\mu
+    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_1 \\
+    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
+        (c_0 + 3c_1)\delta\psi_0
+        + (c_0+c_1)\delta\psi_0^*
+    \right] \\
+    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{-1}
+    + (c_0+c_1)\delta\psi_1^*\right]
+    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{-1}^*,
+\end{multline}
+\begin{multline}\label{eq: dpsim1}
+    i\hbar\pdv{\delta\psi_{-1}}{t} = \left[-\frac{\hbar^2}{2M}\pdv[2]{}{z}+q-\mu
+    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_{-1} \\
+    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
+        (c_0 + 3c_1)\delta\psi_0
+        + (c_0+c_1)\delta\psi_0^*
+    \right] \\
+    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{1}
+    + (c_0+c_1)\delta\psi_{-1}^*\right]
+    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{1}^*.
+\end{multline}
+Now, subtracting Eq.~\eqref{eq: dpsim1} from Eq.~\eqref{eq: dpsi1} results in
+the partial differential equation
+\begin{align}\label{eq: G_y-unsimplified}
+    i\hbar\pdv{G_y}{t}= \left[ -\frac{\hbar^2}{2M}\pdv[2]{}{z}+q
+    -\mu+n_0(c_0+c_1)\right]G_y
+    -\frac{c_1n_0Q}{2}G_y^*,
+\end{align}
+where \(G_y = \delta\psi_1 - \delta\psi_{-1}\).
+The chemical potential of the system is calculated from the \(\psi_0\)
+component of Eq.~\eqref{eq: spin-1-KZ-GPEs} by keeping leading order terms and
+assuming a stationary state which leads to
+\(\mu=c_0n_0 + c_1n_0(2 - Q_0)/2\).
+Using this expression for the chemical potential and \(q(t) = -c_1n_0Q(t)\)
+Eq.~\eqref{eq: G_y-unsimplified} simplifies to
+\begin{align}\label{eq: G_y-simplified}
+    i\hbar\pdv{G_y}{t} = \left[ -\frac{\hbar^2}{2M}\pdv[2]{}{z}
+    -c_1n_0\left(Q-\frac{Q_0}{2}\right)\right]G_y
+    - \frac{c_1n_0Q}{2}G_y^*.
+\end{align}
+
+To proceed with our analysis, we now split \(G_y\) into real and imaginary parts
+and make use of Fourier transforms, \(a_y=\int \text{Re}(G_y)e^{ikz} dz\) and
+\(b_y=\int \text{Im}(G_y)e^{ikz} dz\) to progress our analysis.
+Substituting these expressions in Eq.~\eqref{eq: G_y-simplified} yields the
+following matrix equation
+\begin{align}\label{eq: a_y-matrix}
+    \dv{t}\mqty[a_y \\ b_y] = \mqty(0 & \frac{\hbar k^2}{2M}
+    - \frac{c_1  n_0}{2\hbar}(Q - Q_0) \\
+    \frac{c_1  n_0}{2\hbar} \left( 3Q-Q_0 \right)-\frac{\hbar k^2}{2M} & 0)
+    \mqty[a_y \\ b_y].
+ \end{align}
+To solve the above system of equations, we rewrite the equation in terms of a
+single \(\dv[2]{a_y}{t}\) and substitute the critical point value \(Q=0\) to
+obtain
+\begin{align}
+    \dv[2]{a_y}{t} = \frac{c_1n_0}{2\hbar\tau_Q}b_y
+    + \left(\frac{\hbar^2k^2}{2M} - \frac{c_1n_0Q}{2\hbar}\right)\dv{b_y}{t}.
+\end{align}
+Now, expressions for \(b_y\) and \(\dv{b_y}{t}\) can be found from
+Eq.~\eqref{eq: a_y-matrix}, which transforms the above equation to
+\begin{align}
+    \dv[2]{a_y}{t} = \frac{1}{\tau_Q\left(\frac{\hbar^2k^2}{Mc_1n_0}
+    - Q\right)}\dv{a_y}{t}
+    - \left(\frac{\hbar^2k^4}{4M^2} - \frac{k^2c_1n_0Q}{M}
+    + \frac{3c_1^2n_0^2Q^2}{4\hbar^2}\right)a_y.
+\end{align}
+Finally, to simplify the above expression, we use the spin healing length
+\(\xi_s = \hbar/\sqrt{2|c_1|n_0}\) and the spin time
+\(\tau_s=\hbar/(|c_1|n_0)\), along with the substitution \(Q=-t/\tau_Q\):
+\begin{align}
+  \dv[2]{a_y}{t} = \frac{-1}{\left(2\xi_s^2 k^2 \tau_Q- t \right)}\dv{a_y}{t}
+  -\left( \frac{\xi_s^4 k^4}{4\tau_s^2} -\frac{\xi_s^2 k^2 t}{2\tau_s^2 \tau_Q}
+  + \frac{3 t^2}{16\tau_s^2 \tau_Q^2} \right) a_y.
+\end{align}
+
+Now, to extract scaling solutions, we rescale time as \(t\rightarrow t\lambda \)
+where \(\lambda = \sqrt{\tau_s\tau_Q}\), which leads to the final differential
+equation
+\begin{align} \label{eq: eqn-scaled-lin}
+    \dv[2]{a_y}{t} = \frac{-1}{\left( 2\kappa^2 - t\right)}\dv{a_y}{t}
+    -\frac{1}{4} \left( \kappa^4 - 2\kappa^2 t + \frac{3 t^2}{4} \right)a_y,
+\end{align}
+where \(\kappa^2 = \xi_s^2 k^2 \sqrt{\tau_Q/\tau_s}\).
+This scaling ensures that the last term of the above equation is independent of
+\(\tau_Q\).
+Then, the remaining dependence on \(\tau_Q\) is eliminated if we require that
+\(\kappa \) is constant, implying that \(k \sim \tau_Q^{-1/4}\).
+Under these conditions, we have now, independent of the KZM, derived scaling
+solutions for \(k\), which are seen to be consistent with the alternatively
+derived scaling of the density of defects following the KZ theory (compare the
+above scaling for \(k\) with the density of defects given in
+Eq.~\eqref{eq: BA-FM-defects-scaling}).
+The main advantage of this approach over the KZM is in treating the
+time-dependence of the quadratic Zeeman shift directly rather than working with
+instantaneous dispersion relation as in the standard KZM\@.
+The agreement of the scaling obtained from the two methods provides further
+verification of the validity of the arguments used to extend the KZM to our
+gapless spectrum.
 
 \section{Numerical studies of the KZM across a first-order phase transition}
 \subsection{Broken-axisymmetry to ferromagnetic quench}
@@ -791,7 +931,7 @@ model~\cite{Zurek2005,Damski2005, Pellegrini2008,Divakaran2008}.
 Since we know the relevant unstable mode within our system, we can investigate
 power-law scaling near the critical point.
 To begin, we start with the fluctuation operator associated with the
-Bogoliubov spectrum \(E_{\vb{k}, fz}\) given in Eq.~\eqref{eq: a_k-fz}.
+Bogoliubov spectrum \(E_{k, fz}\) given in Eq.~\eqref{eq: a_k-fz}.
 \begin{figure}[tb]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -834,134 +974,6 @@ where an exponent of \(-1/3\) is observed.
 Our observation of a \(-1/2\) exponent signifies a deviation from
 the Kibble-Zurek theory which appears to be a consequence of the properties of
 the DQCP\@.
-
-\subsection{Extracting a power-law scaling near the critical point}
-Having identified the relevant mode of the transition, we now follow a procedure
-similar to Damski~\cite{Damski2007} and analytically determine the scaling
-behaviour of the system near the critical point by linearising our system of
-equations.
-To begin, we start with a wave function close to the BA state
-\begin{equation}\label{eq: spin-1-perturbed-BA-state}
-    \Psi^T = \left(\frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{1}(t),
-    \frac{\sqrt{n_0}}{2}\sqrt{2 + Q_0} + \delta \psi_0(t),
-    \frac{\sqrt{2n_0}}{4}\sqrt{2 - Q_0} + \delta\psi_{-1}(t)\right)e^{-i\mu t},
-\end{equation}
-where \( 0 < Q_0 < 2 \) is a constant, \(\mu \) is the
-chemical potential and \( |\delta\psi_m| \ll 1 \) are time-dependent noise
-terms.
-The noise terms must satisfy \(\int \sum_m\delta\psi_m+\delta\psi_m^* \, \dd z\)
-to ensure normalisation of the wave function.
-Additionally, they must also satisfy \(\int (\delta\psi_1 + \delta\psi_1^* 
-\delta\psi_{-1} + \delta\psi_{-1}^*) \dd z = 0\) to ensure that magnetisation
-is conserved.
-
-Recall the spin-1 GPEs are given as (see Sec.~\ref{subsec: spin-1-gpes}):
-\begin{align}\label{eq: spin-1-KZ-GPEs}
-    i\hbar\pdv{\Psi}{t} = \left[ -\frac{\hbar^2\nabla^2}{2M}
-    -p\hat{F_z} + q\hat{F}_z^2 +c_0n +c_1n\langle \hat{\vb{F}}\rangle
-    \cdot \hat{\vb{F}}\right]\Psi.
-\end{align}
-Substituting Eq.~\eqref{eq: spin-1-perturbed-BA-state} into the above equations
-and keeping terms linear in \(\delta\psi_m\) yields the following two
-equations for \(\delta\psi_{\pm 1}\) (\(p=0\))
-\begin{multline}\label{eq: dpsi1}
-    i\hbar\pdv{\delta\psi_1}{t} = \left[-\frac{\hbar^2}{2M}\pdv[2]{}{z}+q-\mu
-    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_1 \\
-    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
-        (c_0 + 3c_1)\delta\psi_0
-        + (c_0+c_1)\delta\psi_0^*
-    \right] \\
-    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{-1}
-    + (c_0+c_1)\delta\psi_1^*\right]
-    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{-1}^*,
-\end{multline}
-\begin{multline}\label{eq: dpsim1}
-    i\hbar\pdv{\delta\psi_{-1}}{t} = \left[-\frac{\hbar^2}{2M}\pdv[2]{}{z}+q-\mu
-    + \frac{n_0(10c_0+6c_1-(c_0-c_1)Q)}{8}\right]\delta\psi_{-1} \\
-    + \frac{n_0\sqrt{2(4-Q^2)}}{8}\left[
-        (c_0 + 3c_1)\delta\psi_0
-        + (c_0+c_1)\delta\psi_0^*
-    \right] \\
-    + \frac{n_0(2-Q)}{8}\left[(c_0-c_1)\delta\psi_{1}
-    + (c_0+c_1)\delta\psi_{-1}^*\right]
-    + \frac{n_0}{8}\left[(2-Q)c_0 + (2+3Q)c_1\right]\delta\psi_{1}^*.
-\end{multline}
-Now, subtracting Eq.~\eqref{eq: dpsim1} from Eq.~\eqref{eq: dpsi1} results in
-the following partial differential equation
-\begin{align}\label{eq: G_y-unsimplified}
-    i\hbar\pdv{G_y}{t}= \left[ -\frac{\hbar^2}{2M}\pdv[2]{}{z}+q
-    -\mu+n_0(c_0+c_1)\right]G_y
-    -\frac{c_1n_0Q}{2}G_y^*,
-\end{align}
-where \(G_y = \delta\psi_1 - \delta\psi_{-1}\).
-The chemical potential of the system is calculated from the \(\psi_0\)
-component of Eq.~\eqref{eq: spin-1-KZ-GPEs} by keeping leading order terms and
-assuming a stationary state which leads to
-\(\mu=c_0n_0 + c_1n_0(2 - Q_0)/2\).
-Using this expression for the chemical potential and \(q(t) = -c_1n_0Q(t)\)
-Eq.~\eqref{eq: G_y-unsimplified} simplifies to
-\begin{align}\label{eq: G_y-simplified}
-    i\hbar\pdv{G_y}{t} = \left[ -\frac{\hbar^2}{2M}\pdv[2]{}{z}
-    -c_1n_0\left(Q-\frac{Q_0}{2}\right)\right]G_y
-    - \frac{c_1n_0Q}{2}G_y^*.
-\end{align}
-
-To proceed with our analysis, we now split \(G_y\) into real and imaginary parts
-and make use of Fourier transforms, \(a_y=\int \text{Re}(G_y)e^{ikz} dz\) and
-\(b_y=\int \text{Im}(G_y)e^{ikz} dz\) to progress our analysis.
-Substituting these expressions in Eq.~\eqref{eq: G_y-simplified} yields the
-following matrix equation
-\begin{align}\label{eq: a_y-matrix}
-    \dv{t}\mqty[a_y \\ b_y] = \mqty(0 & \frac{\hbar k^2}{2M}
-    - \frac{c_1  n_0}{2\hbar}(Q - Q_0) \\
-    \frac{c_1  n_0}{2\hbar} \left( 3Q-Q_0 \right)-\frac{\hbar k^2}{2M} & 0)
-    \mqty[a_y \\ b_y].
- \end{align}
-To solve the above system of equations, we rewrite the equation in terms of a
-single \(\dv[2]{a_y}{t}\) and substitute the critical point value \(Q=0\) to
-obtain
-\begin{align}
-    \dv[2]{a_y}{t} = \frac{c_1n_0}{2\hbar\tau_Q}b_y
-    + \left(\frac{\hbar^2k^2}{2M} - \frac{c_1n_0Q}{2\hbar}\right)\dv{b_y}{t}.
-\end{align}
-Now, expressions for \(b_y\) and \(\dv{b_y}{t}\) can be found from
-Eq.~\eqref{eq: a_y-matrix}, which transforms the above equation to
-\begin{align}
-    \dv[2]{a_y}{t} = \frac{1}{\tau_Q\left(\frac{\hbar^2k^2}{Mc_1n_0}
-    - Q\right)}\dv{a_y}{t}
-    - \left(\frac{\hbar^2k^4}{4M^2} - \frac{k^2c_1n_0Q}{M}
-    + \frac{3c_1^2n_0^2Q^2}{4\hbar^2}\right)a_y.
-\end{align}
-Finally, to simplify the above expression, we use the spin healing length
-\(\xi_s = \hbar/\sqrt{2|c_1|n_0}\) and the spin time
-\(\tau_s=\hbar/(|c_1|n_0)\):
-\begin{align}
-  \dv[2]{a_y}{t} = \frac{-1}{\left(2\xi_s^2 k^2 \tau_Q- t \right)}\dv{a_y}{t}
-  -\left( \frac{\xi_s^4 k^4}{4\tau_s^2} -\frac{\xi_s^2 k^2 t}{2\tau_s^2 \tau_Q}
-  + \frac{3 t^2}{16\tau_s^2 \tau_Q^2} \right) a_y.
-\end{align}
-
-Now, to extract scaling solutions, we rescale time as \(t\rightarrow t\lambda \)
-where \(\lambda = \sqrt{\tau_s\tau_Q}\), which leads to the final differential
-equation
-\begin{align} \label{eq: eqn-scaled-lin}
-    \dv[2]{a_y}{t} = \frac{-1}{\left( 2\kappa^2 - t\right)}\dv{a_y}{t}
-    -\frac{1}{4} \left( \kappa^4 - 2\kappa^2 t + \frac{3 t^2}{4} \right)a_y,
-\end{align}
-where \(\kappa^2 = \xi_s^2 k^2 \sqrt{\tau_Q/\tau_s}\).
-This scaling ensures that the last term of the above equation is independent of
-\(\tau_Q\).
-Then, the remaining dependence on \(\tau_Q\) is eliminated if we require that
-\(\kappa \) is constant, implying that \(k \sim \tau_Q^{-1/4}\).
-Under these conditions, we expect scaling solutions to arise which are seen to
-be consistent with the derived scaling for both the correlation length and
-dynamical exponents based on the KZM\@.
-The main advantage of this approach over the KZM is in treating the
-time-dependence of the quadratic Zeeman shift directly rather than working with
-instantaneous dispersion relation as in the standard KZM\@.
-The agreement of the scaling obtained from the two methods provides further
-verification of the validity of the arguments used to extend the KZM to our
-gapless spectrum.
 
 \subsection{Crossing two phase transitions}
 To test the robustness of the observed scaling, we combine the effort of the
