@@ -157,8 +157,8 @@ representation).
         ({\x}, {\x^(-1)});
         \draw[scale=1, domain=-3.5:-0.25, smooth, variable=\x, blue] plot
         ({\x}, {abs(\x^(-1))});
-        \node at (1, -0.2) {\( \hat{t} \)};
-        \node at (-1, -0.2) {\( \hat{t} \)};
+        \node at (1, -0.2) {\( \tilde{t} \)};
+        \node at (-1, -0.2) {\( \tilde{t} \)};
         \node at (-1.2, -0.22) {$-$};
         \draw[dotted] (1, 0) -- (1, 1);
         \draw[dotted] (-1, 0) -- (-1, 1);
@@ -177,39 +177,39 @@ representation).
     As the critical point is approached, the equilibrium relaxation time
     (blue line) diverges, and the order parameter can no longer follow the
     ground state, leading to frozen dynamics in the interval
-    \( t \in [-\hat{t}, \hat{t}] \)}.\label{fig: adiabatic-impulse}
+    \( t \in [-\tilde{t}, \tilde{t}] \)}.\label{fig: adiabatic-impulse}
 \end{figure}
 
 Far from the critical point, the equilibrium relaxation time is small compared
-to the inverse transition rate \( |\epsilon/\dot{\epsilon}| \), meaning the system
-adiabatically follows the instantaneous ground state for \( \epsilon(t) \).
+to the inverse transition rate \( |\epsilon/\dot{\epsilon}| \), meaning the
+system adiabatically follows the instantaneous ground state for \(\epsilon(t)\).
 This stage of adiabaticity lasts until the instant
 \begin{equation}
-    \tau \approx |\epsilon/\dot{\epsilon}|=\hat{t}.
+    \tau \approx |\epsilon/\dot{\epsilon}|=\tilde{t}.
     \label{eq: freeze-out-equal}
 \end{equation}
-Solving this equation yields the freeze-out time, \( \hat{t} \):
+Solving this equation yields the freeze-out time, \( \tilde{t} \):
 \begin{equation}
-    \hat{t} \sim \tau_Q^\frac{z\nu}{1 + z\nu}.
+    \tilde{t} \sim \tau_Q^\frac{z\nu}{1 + z\nu}.
     \label{eq: freeze-out-scaling}
 \end{equation}
 After this point is passed, however, the relaxation time diverges and the system
 can no longer keep up with the externally imposed changes.
 The system then enters the so-called impulse regime, where the dynamics are
-frozen and remains in this regime until \( -\hat{t} \), when the relaxation
+frozen and remains in this regime until \( -\tilde{t} \), when the relaxation
 time becomes faster than the transition rate once again.
 The consequence of the impulse region, however, is that the system arrives at
-\( -\hat{t} \), in which the true ground state is in a broken-symmetry phase,
-whilst remaining in the state set at \( \hat{t} \), which corresponds to a
+\( -\tilde{t} \), in which the true ground state is in a broken-symmetry phase,
+whilst remaining in the state set at \( \tilde{t} \), which corresponds to a
 symmetric phase.
-This state at \( \hat{t} \) then becomes the initial state for the last adiabatic
-stage of evolution beginning at \( -\hat{t} \).
+This state at \( \tilde{t} \) then becomes the initial state for the last
+adiabatic stage of evolution beginning at \( -\tilde{t} \).
 At this point, the system is no longer in its current ground state and rectifies
 this by breaking the symmetry of the initial state.
 This results in the formation of distinct domains in the system whose size is
 set by the value of the equilibrium correlation length at the freeze-out time
 \begin{equation}
-    \hat{\xi}=\xi(\hat{t}) \sim \tau_Q^{\frac{\nu}{1 + z\nu}}.
+    \hat{\xi}=\xi(\tilde{t}) \sim \tau_Q^{\frac{\nu}{1 + z\nu}}.
     \label{eq: KZM-domain-size}
 \end{equation}
 If the system supports topological defects such as vortices, then the defect
@@ -244,7 +244,8 @@ derivatives of the internal energy with respect to variations in \( p \) and
 In this section, we aim to test the predictions of the Kibble-Zurek mechanism
 for a second-order quantum phase transition in a spin-1 BEC\@.
 
-\subsection{Polar to broken-axisymmetry quench}\label{sec: KZM-second-order-numerics}
+\subsection{\label{sec: KZM-second-order-numerics}Polar to broken-axisymmetry
+quench}
 Motivated by previous work~\cite{Damski2007}, we will investigate the
 Kibble-Zurek mechanism across the second-order phase transition occurring
 between the polar and broken-axisymmetry phases in a ferromagnetic spin-1 BEC\@.
@@ -266,12 +267,13 @@ We temporally vary \(Q\) according to
 \end{equation}
 where \( \tau_Q^{-1} \) is the quench rate.
 To investigate Kibble-Zurek scaling, we consider the freeze-out time,
-\( \hat{t} \), which occurs when the equilibrium relaxation time is equal to the
-rate of change of the control parameter [see Eq.~\eqref{eq: freeze-out-equal}].
+\( \tilde{t} \), which occurs when the equilibrium relaxation time is equal to
+the rate of change of the control parameter [see
+Eq.~\eqref{eq: freeze-out-equal}].
 Using the above form of the linear quench, the freeze-out time is calculated
 as~\cite{Damski2007}
 \begin{equation}
-    \hat{t} \sim \tau_Q^{1/3}.
+    \tilde{t} \sim \tau_Q^{1/3}.
 \end{equation}
 
 We now analyse the resulting dynamics when linearly decreasing \( Q \) according
@@ -330,7 +332,7 @@ where it is \(M_\perp = (1 - Q^2/4)/L\).
         \(\tau_Q=11\).
         Plotted are the numerical values (black line) and the
         analytical prediction (red line).
-        (b) The extracted value of \( \hat{t} \) versus the quench time.
+        (b) The extracted value of \( \tilde{t} \) versus the quench time.
         Overlaid is the power-law scaling \(\tau_Q^{1/3}\).}
 \end{figure}
 Fig.~\ref{subfig: magnetisation-vs-Q} shows a typical evolution of the
@@ -338,20 +340,20 @@ transverse magnetisation for \(\tau_Q = 11\).
 One sees that after the critical point is crossed at \( Q = 2 \), the transverse
 magnetisation grows in a non-trivial fashion.
 This growth starts precisely after the system exits the freeze-out stage, which
-occurs at \(t=\hat{t}\).
+occurs at \(t=\tilde{t}\).
 The magnetisation then grows rapidly, exceeding the analytical prediction at
 certain time intervals, and begins to oscillate with the amplitude of the
 oscillation decaying over time.
 Using this quantity, we can test the Kibble-Zurek prediction in
 Eq.~\eqref{eq: freeze-out-scaling}.
 
-We define \( \hat{t} \) as the instant when \(M_\perp L\) intersects 1\% of the
-maximum value given by \(M_\perp L = 1\).
-Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \hat{t} \) for
-a range of \( \tau_Q \).
+We define \( \tilde{t} \) as the instant when \(M_\perp L\) intersects 1\% of
+the maximum value given by \(M_\perp L = 1\).
+Fig~\ref{subfig: t-hat-vs-tau-q} shows the extracted value of \( \tilde{t} \)
+for a range of \( \tau_Q \).
 We see an unambiguous power-law scaling of \(\tau_Q^{1/3}\) for
 \(\tau_Q \geq 10\).
-The gradual departure from the \(\hat{t} \sim \tau_Q^{1/3}\) scaling indicates
+The gradual departure from the \(\tilde{t} \sim \tau_Q^{1/3}\) scaling indicates
 that the quench has to be sufficiently slow to capture the Kibble-Zurek scaling.
 We note that the choice of the 1\% threshold used here is arbitrary.
 We have tested a range of values up to a maximum of 10\%, and obtain
@@ -568,24 +570,25 @@ density of defects for a BA to FM phase transition.
 Since our relevant mode is gapless, it is instructive to consider a special case
 of the spectrum, given by
 \begin{align}\label{eq: dispersion-relation}
-    \omega^2 \sim |q-q_c|^{\theta^+}k^{z^+}+k^{2z}.
+    E_k^2 \sim |q(t)-q_c|^{\alpha}\epsilon_k^{\eta}+\epsilon_k^{2z}.
 \end{align}
-We focus on the (+) spectrum (i.e., approaching the critical point from the BA
-phase), since this determines the crossover from the adiabatic regime to the
+We focus on the case of approaching the critical point from the BA phase, since
+this determines the crossover from the adiabatic regime to the
 impulse regime which sets the metastable state after the DQCP is crossed.
-To be consistent with the KZM, where \(\omega \sim |q(t)-q_c|^{z}\), we make
-the ansatz \(k \sim \xi^{-1} \sim |q(t)-q_c|^{\nu}\).
+To be consistent with the KZM, where \(E_k \sim |q(t)-q_c|^{z}\), we make
+the ansatz \(k \sim \xi^{-1} \sim |q(t)-q_c|^{\nu}\), equivalent to
+\(k \sim \xi^{-1}\).
 For a scaling solution to arise that is consistent with the relaxation time,
-we require \(\omega \sim k^z\).
+we require \(E_k \sim k^z\).
 This, combined with Eq.~\eqref{eq: dispersion-relation}, leads us to the
 relation
 \begin{align}
-    \theta^+ = \nu (2z-z^+).
+    \alpha = \nu (2z-\eta).
 \end{align}
 Now, in our system, we have \(q_c = 0\) and \(q = -t/\tau_Q\) and thus
 Eq.~\eqref{eq: dispersion-relation} simplifies to
 \begin{align}\label{eq: dispersion-relation-simplified}
-    \omega^2 \sim \frac{|t|^{\theta^+}}{\tau_Q^{\theta^+}}k^{z^+}.    
+    E_k^2 \sim \frac{|t|^{\alpha}}{\tau_Q^{\alpha}}k^{\eta}.    
 \end{align}
 
 Recall now the adiabatic-impulse approximation described in
@@ -611,32 +614,32 @@ by Eq.~\eqref{eq: dispersion-relation-simplified}, and calculate the freezing
 time using the relation \(\omega^2 = \dot{\omega}\).
 This yields
 \begin{align}
-    \frac{\theta^+}{2\tau_Q^{\theta^+/2}}|\tilde{t}|^{(\theta^+/2 - 1)}
-    \tilde{k}^{z^+/2} \sim \frac{|\tilde{t}|^{\theta^+}}{\tau_Q^{\theta^+}}
-    \tilde{k}^{z^+},
+    \frac{\alpha}{2\tau_Q^{\alpha/2}}|\tilde{t}|^{(\alpha/2 - 1)}
+    \tilde{k}^{\eta/2} \sim \frac{|\tilde{t}|^{\alpha}}{\tau_Q^{\alpha}}
+    \tilde{k}^{\eta},
 \end{align}
 which then leads us directly to the freezing time
 \begin{align}\label{eq: freeze-t}   
-    |\tilde{t}| \sim \tau_Q^{\theta^+/(2+\theta^+)}
-    \tilde{k}^{-z^+/(2+\theta^+)}.
+    |\tilde{t}| \sim \tau_Q^{\alpha/(2+\alpha)}
+    \tilde{k}^{-\eta/(2+\alpha)} \sim
+    \tau_Q^{\nu z/(1+\nu z)}.
 \end{align}
 Now, to obtain the characteristic momentum scale, we substitute
 Eq.~\eqref{eq: freeze-t} back into
 Eq.~\eqref{eq: dispersion-relation-simplified}, which yields
 \begin{align}
-    \tilde{k} \sim \tau_Q^{\theta^+/(z^+-(2+\theta^+)z)}.
+    \tilde{k} \sim \tau_Q^{-\nu/(z\nu + 1)}.
 \end{align}
 The density of defects is then finally calculated as
 \begin{align}
-    N_d \sim \tilde{k}^d \sim \tau_Q^{d\theta^+/(z^+-(2+\theta^+)z)} \sim
-    \tau_Q^{-d\nu/(z\nu + 1)},
+    N_d \sim \tilde{k}^d \sim \tau_Q^{-d\nu/(z\nu + 1)},
 \end{align}
 where \(d\) is the dimensionality of the system.
 Hence, we have shown how the density of defects can be predicted for a system
 containing a gapless spectrum.
 
 For the BA to FM transition specifically, Eq.~\eqref{eq: e_k-fz} implies that
-\(\theta^+=1\), \(z^+=2\), and \(z = 2\).
+\(\alpha=1\), \(\eta=2\), and \(z = 2\).
 Considering a 1D system (\(d = 1\)), that leads to a scaling of the density of
 defects as
 \begin{align}
@@ -781,11 +784,8 @@ Similar deviation from the predicted KZM scaling has been observed in other
 works where the quantities investigated were measured far past the critical
 point~\cite{Su2013, Swislocki2013}.
 The deviation observed in our system can be attributed to a crossover into a
-regime that is described by the Landau-Zener model~\cite{Zurek2005,Damski2005,
-Pellegrini2008,Divakaran2008}.
-\textcolor{red}{This will be expanded with more detail into the
-Landau-Zener theory after I have read a few more papers and got my head around
-it \ldots}
+different regime that follows the predictions of a Landau-Zener
+model~\cite{Zurek2005,Damski2005, Pellegrini2008,Divakaran2008}.
 
 \subsection{Power-law scaling near the critical point}
 Since we know the relevant unstable mode within our system, we can investigate
