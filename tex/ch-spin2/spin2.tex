@@ -1041,17 +1041,17 @@ Euler angles in the C-FM interface are presented in Table~\ref{tab: C-FM-other}.
 Another interface containing non-zero magnetisation is that between the FM and
 BN phases, given by the following family of spinors:
 \begin{align}\label{eq: FM-BN-interpolating-spinor}
-    \zeta^\text{FM-BN} = \frac{1}{\sqrt{2}}\mqty(
-    e^{i\chi_2} \sqrt{1 + \eta} \\
+    \zeta^\text{FM-BN} = \frac{1}{2}\mqty(
+    e^{i\chi_2} \sqrt{2 + \eta} \\
     0 \\
     0 \\
     0 \\
-    e^{i\chi_{-2}} \sqrt{1 - \eta}),
+    e^{i\chi_{-2}} \sqrt{2 - \eta}),
 \end{align}
 where \(\eta \) relates to the longitudinal magnetisation as \(\eta =
-\hat{F}_z / 2\).
+\langle\hat{F}_z\rangle\).
 This state then interpolates between the BN state at \(\eta = 0\), to an FM
-state with spin pointing up (down) for \(\eta = 1 (-1)\).
+state with spin pointing up (down) for \(\eta = 2 (-2)\).
 The energy of this interpolating spinor is obtained by substituting the above
 into Eq.~\eqref{eq: energy-per-particle}, which reads
 \begin{align}\label{eq: FM-BN-energy}
@@ -1109,7 +1109,7 @@ the spinor
     \sqrt{1 - \eta}),
 \end{align}
 which connects a HQV in the BN limit to a phase vortex in the \(\text{FM}_2\)
-limit when \(\eta = 1\), or a vortex-free state when \(\eta = -1\).
+limit when \(\eta = 2\), or a vortex-free state when \(\eta = -2\).
 Choosing \(\chi_{\pm 2}\) the opposite way around would reverse this connection.
 A summary of possible vortex connections constructed using the component phase
 windings is provided in Table~\ref{tab: FM-BN-vortices}.
