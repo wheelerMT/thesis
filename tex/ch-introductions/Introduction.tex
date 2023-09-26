@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\chapter{Introduction}\label{chap: intro}
 
 
 \section{Bose-Einstein condensates}
@@ -315,76 +315,108 @@ defects within the system, leading to intriguing interface physics.
 An outline of the structure of this thesis and a description of each chapter is
 given in this section.
 The thesis is split into three main parts: Part I introduces the mathematical
-models required to understand atomic BECs, and introduces the theory around
-numerous vortices within these systems.
-Part II presents numerical work carried out to investigate both spinor and
-pseudospinor condensates.
-In particular, we cover three main areas: relaxation dynamics, the Kibble-Zurek
-mechanism, and topological interfaces.
-Finally, part III is a collection of appendices.
+models required to understand atomic BECs, and introduces the ground states,
+symmetries, and topological defects present in spin-1 and spin-2 BECs.
+Part II presents analytical and numerical work carried out to investigate
+various areas of physics in spinor and pseudospin-1/2 condensates.
+In particular, we cover three main areas: relaxation dynamics, discontinuous
+quantum phase transitions, and topological interfaces.
+Finally, part III is a collection of appendices relating to numerical methods
+or detailed derivations.
 The following publications partially feature results shown in this thesis:
 \begin{itemize}
     \item Relaxation dynamics of half-quantum vortices in a two-dimensional
           two-component Bose-Einstein condensate\\
           {\small M. T. Wheeler, H. Salman, and M.O. Borgh, EPL \textbf{135}
           30004 (2021).}
-    \item Generalised Kibble-Zurek scaling in a spinor Bose-Einstein
-          condensate\\
-          {\small M. T. Wheeler, H. Salman, and M.O. Borgh, In preparation.}
-    \item Vortex structure across topological interfaces in spin-2 Bose-Einstein
-          condensates\\
+    \item Dynamics of a Nonequilibrium  Discontinuous Quantum Phase Transition
+            in a Spinor Bose-Einstein Condensate\\
+          {\small M. T. Wheeler, H. Salman, and M.O. Borgh, Submitted to
+          Physical Review Letters.}
+    \item Topological interfaces crossed by defects and textures of continuous
+            and discrete point group symmetries in spin-2 Bose-Einstein
+            condensates\\
           {\small M. T. Wheeler, G. Baio, D. S. Hall, J. Ruostekoski, and M.O.
-          Borgh, In preparation.}
+          Borgh, Submitted to Physical Review Research.}
 \end{itemize}
 
 \subsection*{Part I --- Introduction and background}
-Chapter 1 introduces the notion of a Bose-Einstein condensate, as well as
+Chapter~\ref{chap: intro} introduces the notion of a Bose-Einstein condensate, as well as
 presenting an overview of the history of experimental techniques used to achieve
-them.
-In addition, we present a short history of topological defects within these
-systems and how they relate to other areas of physics such as quantum turbulence
-and topological interfaces.
+them, before transitioning to spinor and pseudospin-1/2 condensates and their
+respective histories.
+We also present an overview of experimental techniques used to achieved
+different types of vortices within spinor and pseudospin-1/2 condensates, and
+show how spinor BECs are ideal test beds for investigate a wide range of
+different physics.
 
-Chapter 2 introduces the mathematical models used to accurately describe atomic
-Bose-Einstein condensate systems.
-We first introduce the mean-field methodology and construct the Gross-Pitaevskii
-equation for a scalar system.
+Chapter~\ref{chap: theory} introduces the mathematical models used to accurately
+describe scalar, two-component, and spinor Bose-Einstein condensate systems.
+We start with the scalar system, presenting the Hamiltonians using a quantum
+treatment, before introducing the mean-field theory and constructing the
+Gross-Pitaevskii equation.
 We then generalise to the two-component system and discuss the miscibility
 criterion.
-From here, the main bulk of the chapter is discussion the interactions that
-arise in spinor BECs, as well as the resulting spinor Hamiltonian.
-We finally end with the construction of the spinor Gross-Pitaevskii equations
-that are used to model spinor BECs throughout the thesis.
+From here, we progress into the mathematical models of spinor BECs.
+We generally construct the interaction Hamiltonian of a spin-\(f\) system by
+linking projection operators to physical observables, and then discuss how the
+single-particle Hamiltonian differs between spinor and scalar systems.
+Finally, we introduce the mean-field equations for spinor systems, showing
+detailed derivations of their reduction to lower dimensionalities, and giving
+the equations in various dimensionless forms.
 
-Chapter 3 introduces the ground states, symmetries, and topological defects
-present within spinor BECs.
-Furthermore, we introduce different graphical representations of ground states
-within these systems.
-We finally showcase the spherical harmonic structure of some vortices within
-spin-1 and spin-2 systems.
+Chapter~\ref{chap: ground-states} discusses the ground states, symmetries, and
+topological defects present within spin-1 and spin-2 BECs.
+We first present the ground state phase diagram for both spin-1 and spin-2
+systems, before discussing each phase that arises individually.
+In each case we give two different graphical representations of each phase, and
+discuss their respective symmetries.
+We finally introduce the topologically stable defects in each phase by
+constructing the homotopy groups, before presenting a dynamical discussion of
+a select few examples.
 
 \subsection*{Part II --- Numerical studies of spinor and pseudospinor
     condensates}
-Chapter 4 investigates the relaxation dynamics of half-quantum vortices in a
-two-component (pseudospinor) BEC\@.
-We present numerical simulations, investigating in particular the decay rate of
-the half-quantum vortices as the interaction parameters of the system are
-varied.
+Chapter~\ref{chap: two-comp} investigates the relaxation dynamics of HQVs in a
+two-component BEC\@.
+We first present the two-component BEC as a pseudospin-1/2 system, and
+analytically construct the form of the HQVs.
+We then present numerical simulations, investigating both the spatial and
+temporal aspects of the relaxation dynamics.
+In particular, we focus on the decay rate of the HQVs as the ratio of the inter-
+and intra-species interactions are varied.
 
-Chapter 5 investigates the Kibble-Zurek mechanism in a spin-1 BEC\@.
-We first discuss the notion of a quantum discontinuous critical point and how it
-applies to our system and indeed confirm we are working with a first-order phase
-transition.
-We then develop theory that gives a modified prediction of the traditional
-Kibble-Zurek scaling.
+Chapter 5~\ref{chap: spin-1} investigates a discontinuous quantum phase
+transition in a spin-1 BEC\@.
+We first discuss the notion of a discontinuous quantum critical point and how it
+applies to our system, thereby confirming we are working with a first-order
+phase transition.
+We then generalise the Kibble-Zurek theory to apply to our gapless spectrum,
+and derive a modified scaling for the density of defects.
+Additionally, separate from the KZM, we linearise the resulting Gross-Pitaevskii
+equations and derive scaling behaviour near the critical point.
 Finally, numerical studies are presented that confirm our analytical
 predictions.
 
-Chapter 6 extends the work of Borgh and Ruostekoski~\cite{Borgh2012, Borgh2013,
-    Borgh2014} to spin-2 systems, and investigates a variety of topological
-interfaces that can be constructed in spin-2 BECs.
-Furthermore, we numerically investigate different vortices connecting across
-such topological interfaces.
+Chapter 6~\ref{chap: spin-2} extends the work of Borgh and
+Ruostekoski~\cite{Borgh2012, Borgh2013, Borgh2014} to spin-2 systems, and
+investigates a variety of topological interfaces that can be constructed in
+spin-2 BECs.
+In particular, four interfaces are studied: Uniaxial nematic to biaxial nematic,
+cyclic to nematic (both uniaxial nematic and biaxial nematic), cyclic to
+ferromagnetic, and finally ferromagnetic to biaxial nematic.
+We construct a variety of defects spanning the interface in each case, ranging
+from singular line defects to point defects such as monopoles.
+Finally, we present numerical work simulating the connection of a select few
+topological defects in both a uniaxial nematic to biaxial nematic interface, as
+we as a cyclic to ferromagnetic interface.
+
+Finally, Chapter~\ref{chap: conclusions} ends with the overall conclusions of
+the thesis, before presenting avenues of future work.
 
 \subsection*{Part III --- Appendices}
-\textcolor{red}{To be written, provided appendices turn out to be useful.}
+Appendix A presents certain numerical techniques used throughout the thesis.
+In particular, this includes the dimensionless form of the two-component
+Gross-Pitaevskii equations using the lattice length as our unit of length.
+Finally, Appendix B discusses the derivation of the interpolating stationary
+solutions used within Chapter~\ref{chap: spin-2}
