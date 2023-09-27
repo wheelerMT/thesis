@@ -7,7 +7,7 @@ This lays the framework for building to more complex systems.
 We then go on to discuss the two-component condensate, where additional
 interactions arise between atoms of differing components.
 Finally, we construct the framework needed to understand spinor BECs, which is
-the main basis of this thesis.
+the main focus of this thesis.
 
 \section{Mean-field description of scalar condensates}
 Consider a system of bosons which is dilute enough such that we may approximate
@@ -31,7 +31,7 @@ which describes binary collisions between bosons at positions \(\vb{r}_1\) and
 \(\vb{r}_2\) whose interactions are described by the interaction potential
 \(\mathcal{U}(\vb{r}_1, \vb{r}_2)\):
 \begin{align}
-    \hat{H}_I = \int \int \hat{\Psi}^\dagger(\vb{r}_1, t)
+    \hat{H}_I = \frac{1}{2}\int \int \hat{\Psi}^\dagger(\vb{r}_1, t)
     \hat{\Psi}^\dagger(\vb{r}_2, t)\mathcal{U}(\vb{r}_1, \vb{r}_2)
     \hat{\Psi}(\vb{r}_2, t)\hat{\Psi}(\vb{r}_1, t)
     \, \dd^3\vb{r}_1 \, \dd^3\vb{r}_2.
@@ -42,7 +42,7 @@ a contact interaction modelled by the following delta function:
 \begin{equation}
     \mathcal{U}(\vb{r}_1, \vb{r}_2) = g\delta(\vb{r}_1 - \vb{r}_2),
 \end{equation}
-where the interaction coefficient, \(g\), is coupled to the s-wave scattering
+where the interaction coefficient, \(g\), is related to the s-wave scattering
 length, \(a_s\), as
 \begin{align}\label{eq: scalar-interaction-coeff}
     g = \frac{4\pi\hbar^2a_s}{m},
@@ -53,7 +53,7 @@ for a boson with atomic mass \(m\).
 The Heisenberg picture states that the time evolution for the field operator
 \(\hat{\Psi}(\vb{r}, t)\) is given by~\cite{Pitaevskii2003}
 \begin{align}
-    i\hbar\pdv{\hat{\Psi}(\vb{r}, t)}{t} = \left[\hat{H}, \hat{\Psi}(\vb{r}, t)
+    i\hbar\pdv{\hat{\Psi}(\vb{r}, t)}{t} = \left[\hat{\Psi}(\vb{r}, t), \hat{H}
     \right],
 \end{align}
 which, using Eq.~\eqref{eq: scalar-hamiltonian}, is calculated to be
@@ -66,18 +66,18 @@ Now, since we consider a system close to absolute zero, we make the assumption
 that most atoms occupy the same quantum state, and hence we can decompose the
 field operator into a mean and fluctuation parts as~\cite{Pitaevskii2003}
 \begin{align}
-    \hat{\Psi}(\vb{r}, t) = \psi(\vb{r}, t) + \hat{\delta}(\vb{r}, t),
+    \hat{\Psi}(\vb{r}, t) = \psi(\vb{r}, t) + \delta\hat{\psi}(\vb{r}, t),
 \end{align}
-where \(\psi \equiv \langle \hat{\Psi}(\vb{r}, t)\rangle\) is a scalar field
-denoted the wave function of the condensate, which describes the
+where \(\psi \equiv \langle \hat{\Psi}(\vb{r}, t)\rangle\) is a classical scalar
+field describing the wave function of the condensate, which describes the
 spatially-coherent condensed state.
-Here, \(\hat{\delta}(\vb{r}, t)\) describes deviations from this mean and
-\(\langle \hat{\delta}(\vb{r}, t)\rangle = 0\).
+Here, \(\delta\hat{\psi}(\vb{r}, t)\) describes deviations from this mean and
+\(\langle \delta\hat{\psi}(\vb{r}, t)\rangle = 0\).
 Substituting the above form of the field operator into
 Eq.~\eqref{eq: scalar-field-operator-motion}, taking the expectation and
-ignoring terms of \(\delta^2\) or higher yields the equation of motion for the
-wave function of a Bose-Einstein condensate, the Gross-Pitaevskii equation
-(GPE):
+ignoring terms of \(\delta\hat{\psi}^2\) or higher yields the equation of motion
+for the wave function of a Bose-Einstein condensate, the Gross-Pitaevskii
+equation (GPE):
 \begin{equation}\label{eq: scalar-GPE}
     i\hbar \pdv{\psi(\vb{r}, t)}{t} = \left(-\frac{\hbar^2}{2m}\nabla^2
     + V(\vb{r}, t) +g|\psi(\vb{r}, t)|^2\right)\psi(\vb{r}, t).
@@ -87,7 +87,8 @@ temperature, where there are no contributions from thermal fluctuations and
 contributions from quantum fluctuations are negligible in comparison to the
 classical field.
 
-For \(g>0\) the interactions are repulsive and for \(g < 0\) attractive.
+For \(g>0\) the interactions are repulsive and for \(g < 0\) they are
+attractive.
 When \(g=0\) there are no interactions present and the system reduces to the
 Schr\"{o}dinger equation.
 The wave function of the system is normalised to the number of particles
@@ -164,9 +165,9 @@ the energy as the scalar case given in Eq.~\eqref{eq: scalar-energy}, i.e.,
 both components as
 \begin{equation}
     \begin{aligned}
-        E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
+        E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^4
         + V_1(\vb{r})|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] \dd^3\vb{r} \\
-          & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
+          & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^4
         + V_2(\vb{r})|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] \dd^3\vb{r} \\
           & + \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] \dd^3\vb{r}.
     \end{aligned}
@@ -207,8 +208,8 @@ The volume of condensate \(j\) is given as \(\mathcal{V}_j\) and the densities
 subsequently become \(n_j=N_j/\mathcal{V}_j\).
 Assuming that the contribution to the energy arising from the interface between
 the two condensates is negligible in comparison to the contribution from the
-bulk, Eqs.~\eqref{eq: time-indep-two-component-GPEs} become \(g_j n_j = \mu_j\)
-with the total energy
+bulk, Eqs.~\eqref{eq: time-indep-two-component-GPEs} reduce to
+\(g_j n_j = \mu_j\) with the total energy
 \begin{equation}\label{eq: immiscible-energy}
     E_\mathrm{immisc} = \frac{1}{2}\left[g_1\frac{N_1^2}{\mathcal{V}_1}
         + g_2\frac{N_2^2}{\mathcal{V}_2}\right].
@@ -273,9 +274,9 @@ along a given spin quantisation axis.
 Such a state is denoted \(\ket{f, m} \), where
 \(m \in \{-f, -f+1, \ldots, 0, \ldots, f - 1, f\} \) denotes the magnetic
 sublevel for an atom with total spin \( f\).
-A system of identical spin-\(f\) bosons with atomic mass \(M\) is described by
-the field operators \(\hat{\psi}_m(\vb{r})\) which satisfy the following
-commutation relations~\cite{Kawaguchi2012}:
+A system of identical spin-\(f\) bosons is described by the field operators
+\(\hat{\psi}_m(\vb{r})\) which satisfy the following commutation
+relations~\cite{Kawaguchi2012}:
 \begin{align}
     \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right]
     &= \delta_{mm'}\delta(\vb{r}_1 - \vb{r}_2), \\
@@ -360,15 +361,16 @@ This then reduces Eq.~\eqref{eq: spin-channel-hamiltonian-full-form} to
 \begin{align}\label{eq: spin-channel-hamiltonian}
     \hat{V}^{(\EuScript{F})} = \frac{g_\EuScript{F}}{2}\int
     \sum_{\EuScript{M}=-\EuScript{F}}^{\EuScript{F}}
-    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r})
-    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}) \,
+    \hat{A}^\dagger_{\EuScript{F}\EuScript{M}}(\vb{r}, \vb{r})
+    \hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}, \vb{r}) \,
     \dd^3\vb{r}.
 \end{align}
 From this, we can construct the full interaction Hamiltonian using
 Eq.~\eqref{eq: general-interaction-hamiltonian}.
 However, we first want to connect the projection operators
-\(\hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r})\) to physical observables of the
-system, so that we can construct the Hamiltonian in terms of these observables.
+\(\hat{A}_{\EuScript{F}\EuScript{M}}(\vb{r}, \vb{r})\) to physical observables
+of the system, so that we can construct the Hamiltonian in terms of these
+observables.
 
 \subsection{Physical observables}
 In this subsection we introduce useful quantities and operators that arise in
@@ -742,10 +744,10 @@ where
     \langle\hat{F}_{\pm}\rangle = \langle\hat{F}_x\rangle
     \pm i\langle\hat{F}_y\rangle.
 \end{align}
-These equations can be solved to reveal more on the ground states and stationary
-solutions of spinor BECs, which forms the basis of
+These equations can be solved to reveal more about the ground states and
+stationary solutions of spinor BECs, which forms the basis of
 Chapter~\ref{chap: ground-states}.
-Note that, different from two-component BECs, spinor BECs have a common chemical
+Note that, in contrast to two-component BECs, spinor BECs have a common chemical
 potential, \(\mu\), rather than different chemical potentials per component.
 This is due to the fact that spin-dependent interactions lead to exchange of
 particles between the components and hence individual component atom numbers
@@ -864,21 +866,20 @@ where \(\Psi=(\psi_1, \psi_0, \psi_{-1})\) is the three-component wave function
 and \(\vb{f}\equiv(f_x, f_y, f_z)\) are the spin-1 Pauli-type matrices defined
 in Eq.~\eqref{eq: spin-1-pauli-matrices}.
 To reduce the dimensionality, we assume the condensate has been tightly confined
-in the \(z\) direction by means of a harmonic oscillator which has trapping
+in the \(z\)-direction by means of a harmonic oscillator which has trapping
 frequencies (\(\omega_x, \omega_y, \omega_z\)) in the (\(x, y, z\)) directions,
 respectively.
-A tight confinement in the \(z\) direction is achieving by having
+A tight confinement in the \(z\) direction is achieved by having
 \(\omega_z \gg \omega_x, \omega_y\).
 In addition, we assume the trapping frequencies are sufficiently such that only
 the ground state of the condensate is occupied.
-With these assumptions, we can separate the wave function of the condensate into
-its 2D counterpart:
+With these assumptions, we can write the wave function of the condensate in a
+separable form:
 \begin{align}\label{eq: Psi-2D}
     \Psi(x, y, z, t) = \tilde{\Psi}(x, y, t)\Phi(z),
 \end{align}
 where \(\Phi(z)\) is normalised as \(\int_{-\infty}^{\infty}|\Phi(z)|^2 \, \dd z
-= 1\), and we apply the single-mode approximation (SMA) such that
-\(\zeta(x, y, t)\) has no \(z\)-dependence.
+= 1\).
 
 Substituting Eq.~\eqref{eq: Psi-2D} into Eq.~\eqref{eq: spin-1-GPEs-matrix} we
 obtain
@@ -929,7 +930,7 @@ This then leads to the integral
 \begin{align}
     \int_{-\infty}^{\infty}|\Phi(z)|^4 \dd z = \sqrt{\frac{\beta}{2\pi}}.
 \end{align}
-We can then appropriately rescale the interaction strengths into their 2D
+We can then appropriately rescale the interaction strengths to obtain their 2D
 counterparts:
 \begin{align}
     c_0^\text{2D} = c_0\sqrt{\frac{\beta}{2\pi}}, \qquad
@@ -954,9 +955,9 @@ This time, we separate the wave function according to
 \begin{align}
     \Psi(x, y, z, t) = \tilde{\Psi}(z, t)\Phi(x, y),
 \end{align}
-once again assuming \(\Phi(x, y)\) to be normalised as \(\int_{-\infty}^{\infty}
-\int_{-\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y = 1\) and using the SMA such
-that \(\zeta(z, t)\) only has a \(z\) dependence.
+and once again assuming \(\Phi(x, y)\) to be normalised as
+\(\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} |\Phi(x, y)|^2 \dd x \dd y
+= 1\).
 We substitute the above expression into the GPEs in
 Eq.~\eqref{eq: spin-1-GPEs-matrix} and find
 \begin{equation}
@@ -970,7 +971,7 @@ Eq.~\eqref{eq: spin-1-GPEs-matrix} and find
         - p\Phi f_z + q\Phi f_z^2 \vphantom{\int_1^2}\right]\tilde{\Psi}\Phi.
 \end{split}
 \end{equation}
-Following the procedure before, we multiply from the left by \(\Phi^*\)
+Following a similar procedure to before, we multiply from the left by \(\Phi^*\)
 and integrate over \(x\) and \(y\) which yields
 \begin{equation}
 \begin{split}
@@ -1042,11 +1043,11 @@ numerical computation become normalised on the scale of unity, which,
 when compared to values in the dimensional equation such as \(\hbar =
 1.054\times 10^{-34}\), can reduce numerical errors that arise due to the
 floating point representation used by computers.
-The process of making the GPEs dimensionless can be done in different ways,
-where the scaling parameters chosen typically depend on whether the system is
-trapped or not.
+The process of making the GPEs dimensionless can be carried out in different
+ways, where the scaling parameters chosen typically depend on whether the system
+is trapped or not.
 Here, we derive the dimensionless 3D GPEs for both a homogeneous spin-1 BEC and
-a trapped spin-2 BEC, which will aid the analysis in subsequent chapters.
+a trapped spin-2 BEC, which will aid in the analysis of subsequent chapters.
 
 \subsection{Homogeneous spin-1 BEC}
 Consider a homogeneous system in the absence of a trapping potential
@@ -1107,7 +1108,7 @@ Then, time is measured in units of \(\omega^{-1}\) and energy in
 \(\hbar\omega \), which leads to the rescaling of the following units:
 \(\vb{r}\rightarrow \ell\tilde{\vb{r}},\ t \rightarrow \omega\tilde{t}\).
 To construct the dimensionless wave function, it is conventional to define the
-dimensionless wave function as being normalised to unit
+dimensionless wave function as being normalised to unity
 \(\int_{-\infty}^\infty |\tilde{\Psi}|^2\dd^3\tilde{\vb{r}} = 1\).
 Then, recalling that the dimensional wave function is normalised to the number
 of atoms \(\int_{-\infty}^\infty |{\Psi}|^2\dd^3{\vb{r}} = N\), and that

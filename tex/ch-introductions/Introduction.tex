@@ -10,7 +10,7 @@ Einstein firstly helped Bose publish his work, before later going on to
 generalise the theory by applying it to a system of \(N\)-interacting
 bosons~\cite{Einstein1925}.
 This then led to the Bose-Einstein distribution, which describes the
-statistics of bosons over single-particle energy states:
+statistical distribution of bosons over single-particle energy states:
 \begin{equation}\label{eq: Bose-Einstein-distribution}
     f(\epsilon_i) = \frac{1}{e^{(\epsilon_i-\mu)/k_B T} - 1},
 \end{equation}
@@ -30,8 +30,8 @@ where \(N_i\) gives the mean occupation of level \(i\) and \(g(\epsilon_i)\)
 gives the degeneracy of level \(i\) (i.e., the number of distinct states with
 energy level \(\epsilon_i\)).
 
-As \(T \rightarrow 0\), Eq.~\eqref{eq: Bose-Einstein-distribution} diverges,
-which implies that the total excited state capacity has to decrease to keep
+As \(T \rightarrow 0\), Eq.~\eqref{eq: Bose-Einstein-distribution} diverges.
+This implies that the total excited states must decrease in order to keep
 the number of particles fixed.
 At the precise point where the total excited states cannot accommodate the total
 number of particles, Bose-Einstein condensation occurs.
@@ -45,8 +45,8 @@ Let us consider a system of non-interacting bosons at thermal equilibrium at
 temperature \(T\).
 According to de Broglie, particles behave like waves and as such have an
 associated wavelength termed the de Broglie wavelength.
-This wavelength characterises the length scale of the particles localised
-wave packet, and is conventionally written as
+This wavelength characterises the length scale of the localised wave packet of
+the particles, and is conventionally written as
 \begin{equation}\label{eq: de-Broglie-wavelength}
     \lambda_\text{dB} = \frac{h}{\sqrt{2\pi mk_B T}},
 \end{equation}
@@ -58,16 +58,15 @@ In this limit, the system exhibits classical, particle-like behaviour and the
 particles closely follow the Boltzmann distribution.
 Conversely, as the temperature decreases, the de Broglie wavelength associated
 with each particle grows.
-At some critical temperature, \(T_c\), the wavelengths of each particle become
+At some critical temperature, \(T_c\), the wavelength of each particle becomes
 comparable to the average inter-particle spacing and as such individual
 particles become indistinguishable.
 At this point the system exhibits quantum behaviour, and the particles form a
 degenerate gas.
-
 Assuming a uniform, three-dimensional system with volume \(\mathcal{V}\) and
-number density \(N/\mathcal{V}\), the Bose-Einstein transition occurs when
-\(n\lambda_{\text{dB}}^3 \leq \zeta(3/2)\)~\cite{Pethick2008}, where
-\(\zeta \) is the Riemann zeta function.
+number density \(N/\mathcal{V}\), the Bose-Einstein transition for an ideal
+gas occurs when \(n\lambda_{\text{dB}}^3 \leq \zeta(3/2)\)~\cite{Pethick2008},
+where \(\zeta \) is the Riemann zeta function.
 Substituting in Eq.~\eqref{eq: de-Broglie-wavelength}, we find the critical
 temperature for Bose-Einstein condensation:
 \begin{equation}
@@ -83,7 +82,7 @@ To prevent this, it is necessary to reduce the atomic density of the gas such
 that elastic, binary collisions dominate.
 Typical required densities for this to hold are around \(n \sim 10^{-14}
 \text{cm}^3\).
-Using the estimate for the critical temperature derived above, one can then
+Using the expression for the critical temperature quoted above, one can then
 estimate that Bose-Einstein condensation would occur at \(T_c \sim 10^{-6}\)K
 for such a system.
 
@@ -102,15 +101,14 @@ computing~\cite{Byrnes2012}.
 
 \subsection{Spin degree of freedom: Spinor Bose-Einstein condensates}
 In experiments, a consequence of strong magnetic trapping of the atoms is the
-``freezing'' of the atoms spin, where such condensates are referred to as
+``freezing'' of the atomic spin, where such condensates are referred to as
 scalar (or spinless).
-However, atomic spin, usually denoted as \(f\), need not be constrained, and
-can instead become a degree of freedom within the system.
-Experimentally, this is typically achieved through the use of optical trapping
-potentials, which utilise the AC-Stark shift of atom to form a conservative
-potential that traps all the Zeeman sublevels equally.
+An alternative method of trapping condensates is through the use of optical
+trapping potentials, which utilise the AC-Stark shift of atom to form a
+conservative potential that traps all the Zeeman sublevels equally.
 In this case, atoms can Bose-condense into each of the available component spin
-states, \(m_F\), producing a multi-component condensate.
+states, \(m_F\), producing a multi-component condensate, and hence the atomic
+spin of the is no longer frozen out.
 Such a condensate is called a spinor Bose-Einstein condensate, and forms the
 main interest of this thesis.
 
@@ -184,12 +182,12 @@ Due to their accessibility, quantum turbulence in atomic BECs has attracted
 considerable theoretical~\cite{Kobayashi2007,Numasato2010, Reeves2013,
 Billam2014,Simula2014,Baggaley2018} and experimental~\cite{Henn2009,Kwon2014,
 Seo2017,Navon2019,Gauthier2019,Johnstone2019} attention.
-Due to their richer family of topological defects, spinor and pseudospin-1/2
-systems present a new avenue for studying the properties of quantum turbulence
+The rich family of topological defects in spinor and pseudospin-1/2
+systems presents a new avenue for studying the properties of quantum turbulence
 and nonequilibrium dynamics~\cite{Salman2009, Schmied2019, Karl2013, Prufer2018,
 Hofmann2014}.
 In two-component condensates, when atomic mass and mean density of the
-components are equal, vortices may arise which are characterise by a phase
+components are equal, vortices may arise which are characterised by a phase
 winding in only one of the components, leading to what are known as half-quantum
 vortices (HQVs) due to their similarities with vortices carrying half a quantum
 of superfluid circulation in both \(^3\)He~\cite{Autti2016} and
@@ -251,8 +249,8 @@ applied magnetic fields, the system can be ramped across a
 quantum critical point~\cite{Sachdev2011} and undergo a quantum phase
 transition.
 Such a transition is defined as continuous (discontinuous) depending on whether
-the derivative of the system energy with respect to the changing external
-parameter is also continuous (discontinuous).
+the derivative of the internal energy of the system with respect to the changing
+external parameter is also continuous (discontinuous).
 Spinor BECs posses a number of both continuous and discontinuous quantum
 critical points between their ground state phases, making them an ideal test bed
 for studying both types of quantum phase transitions.
@@ -301,7 +299,7 @@ may even exist together with monopoles.
 Interfaces may also form within vortex cores, where the bulk order parameter
 outside the core continuously transforms into a different symmetry within
 the core.
-Such interfaces have already been experimental created in
+Such interfaces have already been created experimental in
 spin-1~\cite{Weiss2019,Xiao2021} and spin-2~\cite{Xiao2022} BECs.
 Their even richer phase diagram and family of defects implies that spin-2
 condensates offer an even greater avenue of study for topological interface
