@@ -17,8 +17,8 @@ In particular, we first introduce the homotopy theory used to describe the
 types of stable defects allowed in each phase.
 From here we construct the wave functions of some illustrative examples of
 vortices arising in both spin-1 and spin-2 condensates, and,
-using the spherical harmonic representation of the order parameter, we are able
-to visualise each vortex.
+using the spherical harmonic representation of the order parameter, visualise
+the properties of each vortex.
 There are numerous references (e.g., see~\cite{Ciobanu2000, Zhang2003,
 Kawaguchi2012,Stamper-Kurn2013}) that already provide most of these results,
 but we reproduce them here to provide reference for subsequent chapters.
@@ -51,9 +51,9 @@ spherical harmonics for a spin-\(f\) state.
 The symmetry can be visualised with a surface plot of \(|Z(\hat{s})|^2\),
 where the surface colour is represented by the argument of \(Z(\hat{s})\).
 
-The orientation of the spherical harmonics corresponds to the condensate spin,
-and so as the spin vector rotates, the orientation of spherical harmonics
-rotates to match.
+As we shall see, the orientation of the spherical harmonics corresponds to the
+condensate spin, and so as the spin vector rotates, the orientation of spherical
+harmonics rotates to match.
 In addition, the colour of the spherical harmonics corresponds to the global
 phase, \( \tau \).
 Therefore, the spherical harmonics give an accurate description of the
@@ -92,8 +92,8 @@ The points on the sphere are numerically calculated as the \(2f\) roots
 \end{equation}
 where each root represents a stereographic mapping
 \(z_j=\tan(\theta/2)e^{i\phi}\) of the spherical coordinates \((\theta, \phi)\).
-The disadvantage of this representation is that one is not able to see the
-condensate phase.
+The disadvantage of this representation, however, is that one is not able to
+visualise the condensate phase.
 The individual polynomials for both spin-1 and spin-2 systems are listed below.
 For the spin-1 system, we calculate the \(2f=2\) roots of the polynomial
 \begin{equation}
@@ -118,7 +118,7 @@ Here, \(\spinmag = \sqrt{|\langle\hat{F}_x\rangle|^2
 + |\langle\hat{F}_y\rangle|^2 + |\langle\hat{F}_z\rangle|^2}\) is the
 magnitude of the spin expectation, where the spin vectors
 \(\langle\hat{F}_\nu\rangle \) for \(\nu = (x, y, z)\) are defined in
-Eq.~\eqref{eq: spin-1-spin-vectors}.
+Eq.~\eqref{eq: spin-vector-components}.
 To simplify our analysis we assume a uniform ground state where the condensate
 density remains fixed, and so only the spin term remains relevant for
 determining ground states.
@@ -174,8 +174,8 @@ Substitution of the above spinor into the expression for the condensate spin
 indeed reveals that \(\spinmag=1\).
 Note that \(\zeta^\text{FM}={(0, 0, 1)}^T\) is an equally valid representative
 spinor.
-However, in this case, the magnetisation now becomes negative (see
-Eq.~\eqref{eq: magnetisation-formula}).
+However, in this case, the magnetisation now becomes negative [see
+Eq.~\eqref{eq: magnetisation-formula}].
 The general ferromagnetic wave function is constructed by applying the
 spin rotation in Eq.~\eqref{eq: spin1-rotation-matrix}, coupled with a
 condensate phase, to the representative spinor as
@@ -201,9 +201,9 @@ ferromagnetic ground states are shown in Fig.~\ref{fig: spin-1-FM-graph}.
     state]{\label{fig: spin-1-FM-graph}Graphical representation of the spin-1
     ferromagnetic phase, with the representative spinor given by
     Eq.~\eqref{eq: spin-1-FM-rep-spinor}.
-    (a) Spherical harmonic representation, where the black dashed arrow
+    (a): Spherical harmonic representation, where the black dashed arrow
     represents the direction of the condensate magnetisation.
-    (b) Majorana representation, where the colour of the points represent
+    (b): Majorana representation, where the colour of the points represent
     \(\cos\theta = (1-|z|^2)/(1+|z|^2)\) and a number next to a point represents
     the root when the polynomial \(P^{(1)}(z)\) has an \(n\)-multiple root.}
 \end{figure}
@@ -216,8 +216,8 @@ the full 3D rotation group, where \(\tau\) and \(\hat{\vb{F}}\) denote
 contributions to the symmetry from the global phase and spin, respectively.
 
 \subsection{Polar phase}
-Now consider the case of \(c_1 > 0\), typically referred to as polar
-interactions.
+Now consider the case of \(c_1 > 0\), typically referred to as polar (or
+antiferromagnetic) interactions.
 Then, Eq.~\eqref{eq: spin-1-int-energy} becomes minimised by having the spin
 magnitude vanish \(\spinmag=0\).
 For this case, the ground state is called polar, with a representative
@@ -236,8 +236,8 @@ Similar to the FM case, a general polar wave function is constructed as
     ).
 \end{equation}
 It is also often useful to characterise the polar state using the condensate
-phase and an unoriented unit vector, \(\hat{\vb{d}}\), referred to as the
-nematic director~\cite{Ruostekoski2003}.
+phase and an unoriented unit vector, \(\hat{\vb{d}} \equiv (d_x, d_y, d_z)\),
+referred to as the nematic director~\cite{Ruostekoski2003}.
 A wave function in this representation is given as
 \begin{align}
     \psi^\mathrm{P} = \frac{\sqrt{n}e^{i\tau}}{\sqrt{2}}
@@ -291,7 +291,7 @@ It can be seen that the order parameter will remain invariant under a change of
 \zeta\left(-\hat{\vb{d}}, \tau + \pi\right)\).
 The corresponding order parameter space is given as \(\mathcal{M} =
 \left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right] /
-{({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \).
+{({\mathbb{Z}}_2)}_{\hat{\vb{F}}, \tau} \)~\cite{Kawaguchi2012}.
 Note that the \(\mathbb{Z}_2\) factor in the order parameter space arises from
 the fact that the polar order parameter described in
 Eq.~\eqref{eq: polar-representative-spinor} remains invariant under the
@@ -466,7 +466,8 @@ arises due to the linear Zeeman shift, \(p\).
 \section{Ground states of spin-2 BECs}\label{sec: ground-states-spin-2}
 To find the ground states of a spin-2 system we follow a similar procedure to
 the spin-1 case.
-The interacting part of the spin-2 Hamiltonian reads
+The interacting part of the spin-2 Hamiltonian reads (see
+Sec.~\ref{subsec: spinor-interaction-hamiltonian})
 \begin{align}
     E_\mathrm{int} = \frac{1}{2}\int c_0n^2 + c_1n^2\spinmag^2+c_2n^2|A_{00}|^2
     \dd^3\vb{r}.
@@ -475,8 +476,9 @@ As before, we assume a uniform ground state so that the density remains fixed.
 Therefore, different ground states arise from the competition between the
 spin-dependent, \(c_1\), and singlet-dependent, \(c_2\), interaction strengths.
 The magnitude of the spin expectation is now defined in terms of the spin-2
-spin vectors given in Eq.~\eqref{eq: spin-2-spin-vectors}, and the spin-singlet
-pair amplitude, \(A_{00}\), is given in Eq.~\eqref{eq: spin-singlet-duo}.
+spin vectors given in Eqs.~\eqref{eq: spin-2-spin-vectors}
+and~\eqref{eq: spin-2-fz}, and the spin-singlet pair amplitude, \(A_{00}\), is
+given in Eq.~\eqref{eq: spin-singlet-duo}.
 
 As in the spin-1 case, the energy of a given spinor in the absence of a magnetic
 field is degenerate following the application of a global \(U(1)\) phase and an
@@ -551,8 +553,8 @@ leads to a phase boundary at \(c_2n=20c_1n\) (see below).
 
 \subsection{Ferromagnetic phase}
 If we first consider \(c_1 < 0\) and \(c_2 > 0\), then the energy functional is
-minimised when  the spin density is maximised \(\spinmag=2\)
-and the singlet-duo amplitude is minimised \(|A_{00}|=0\).
+minimised when the spin density is maximised, \(\spinmag=2\),
+and the singlet-duo amplitude is minimised, \(|A_{00}|=0\).
 This state is denoted as the spin-2 ferromagnetic phase, where \(\spinmag \) is
 now \(\spinmag=2\) for this ground state, as opposed to \(\spinmag=1\) in the
 spin-1 system.
@@ -560,8 +562,9 @@ Note that there exists a ferromagnetic state in a spin-2 BEC with
 \(\spinmag=1\), but this state is not the ground state since the \(\spinmag=2\)
 state has lower energy.
 To avoid confusion, we refer to the ferromagnetic state with \(\spinmag=2\) as
-the \(\text{FM}_2\) state, and the state with \(\spinmag=1\) as the FM-1 state.
-It should be noted, however, that the FM-1 state can remain stable in
+the \(\text{FM}_2\) state, and the state with \(\spinmag=1\) as the
+\(\text{FM}_1\) state.
+It should be noted, however, that the \(\text{FM}_1\) state can remain stable in
 certain situations, such as in the cores of vortices (see
 Chapter~\ref{chap: spin-2}).
 The representative spinors for the spin-2 ferromagnetic states have the form
@@ -569,20 +572,19 @@ The representative spinors for the spin-2 ferromagnetic states have the form
     \zeta^{\text{FM}_2} = \mqty(1 \\ 0 \\ 0 \\ 0 \\ 0), \qquad
     \zeta^{\text{FM}_1} = \mqty(0 \\ 1 \\ 0 \\ 0 \\ 0).
 \end{equation}
-Following the same procedure as the spin-1 case and applying a general spin
+Following the same procedure as the spin-1 case, applying a general spin
 rotation \(U(\alpha, \beta, \gamma)\) with a global phase \(\tau \) and
-condensate density \(n\) yields the general \(\text{FM}_2\) wave function which describes
-all ferromagnetic states that have \(\spinmag=2\):
+condensate density \(n\) yields the general \(\text{FM}_2\) wave function which
+describes all ferromagnetic states that have \(\spinmag=2\) in a spin-2 system:
 \begin{equation}\label{eq: FM-2-representative-spinor}
-    \psi^{\text{FM}_2} = \sqrt{n}e^{i\tau'}\mqty(
+    \psi^{\text{FM}_2} = \sqrt{n}e^{i(\tau-2\gamma)}\mqty(
     e^{-2i\alpha} \cos^4\frac{\beta}{2} \\
     2e^{-i\alpha}\cos^3\frac{\beta}{2}\sin \frac{\beta}{2} \\
     \sqrt{6} \cos^2\frac{\beta}{2} \sin^2\frac{\beta}{2} \\
     2e^{i\alpha}\cos\frac{\beta}{2} \sin^3\frac{\beta}{2} \\
     e^{2i\alpha} \sin^4\frac{\beta}{2}
-    ),
+    ).
 \end{equation}
-where \(\tau'=\tau-2\gamma \).
 Equivalently, the general spinor for the \(\text{FM}_1\) phase is given as
 \begin{align}
     \zeta^{\text{FM}_1} = \sqrt{n}e^{i(\tau - \gamma)}\mqty(
@@ -596,8 +598,8 @@ Equivalently, the general spinor for the \(\text{FM}_1\) phase is given as
     ).
 \end{align}
 
-The spherical harmonic and Majorana representations of the spin-2 ferromagnetic
-ground states are given in Fig.~\ref{fig: spin-2-FM-graph}.
+Fig.~\ref{fig: spin-2-FM-graph} shows the spherical harmonic and Majorana
+representations of the spin-2 ferromagnetic ground states.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]
@@ -611,13 +613,14 @@ ground states are given in Fig.~\ref{fig: spin-2-FM-graph}.
     (c) and (d): Equivalent Majorana representations.}
 \end{figure}
 It is clear from Figs~\ref{fig: spin-2-FM-graph}a, b that the ferromagnetic
-order parameters have the same \(SO(2)\) symmetry about the direction of the
-magnetisation as in the spin-1 case.
+order parameters have the same \(\text{SO}(2)\) symmetry about the direction of
+the magnetisation as in the spin-1 case.
 However, the difference between the \(\text{FM}_2\) phase of the spin-2 system
 and the FM phase of the spin-1 system is apparent in the phase: the
 \(\text{FM}_2\) state winds by \(4\pi \) about the spherical harmonic as opposed
 to \(2\pi \) (see Fig.~\ref{fig: spin-1-FM-graph}).
-Therefore, the order parameter space of the \(\text{FM}_2\) phase is given as
+Therefore, the order parameter space of the \(\text{FM}_2\) phase is  slightly
+different, and given as
 \(\mathcal{M}_{\text{FM}_2} = {\text{SO}(3)}_{\hat{\vb{F}}, \tau} /
 {(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\).
 The \({(\mathbb{Z}_2)}_{\hat{\vb{F}}, \tau}\) factor arises from the double
@@ -625,22 +628,24 @@ winding of the condensate phase seen above.
 
 \subsection{Nematic phases}
 Instead, let us now consider the case of \(c_1 > 0\) and \(c_2 < 0\).
-We see that the energy functional is minimised when the spin is minimised
-\(\spinmag = 0\) but the singlet-duo amplitude is maximised
+We see that the energy functional is minimised when the spin is minimised,
+\(\spinmag = 0\), but the singlet-duo amplitude is maximised,
 \(|A_{00}|^2 = 1/5\).
 Such a state is called nematic, and takes two forms: the uniaxial nematic (UN)
-or biaxial nematic (BN).
+or biaxial nematic (BN), depending on the sign of the quadratic Zeeman shift,
+\(q\).
 A representative spinor for the UN state, where the nematic director
 \(\hat{\vb{d}}\) is aligned along the \(z\)-axis, is given as
 \begin{align}\label{eq: UN-spinor}
-    \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0).
+    \zeta^\mathrm{UN} = \mqty(0 \\ 0 \\ 1 \\ 0 \\ 0),
 \end{align}
-The representative spinor for the BN state reads
+and a representative spinor for the BN state reads
 \begin{align}\label{eq: BN-spinor}
     \zeta^\mathrm{BN} &= \frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\0 \\ 0 \\ 1).
 \end{align}
-The general wave function for the UN state is
-\begin{equation}\label{eq: UN-representative-spinor}
+Applying a general spin rotation and condensate phase leads to the general wave
+functions for the UN and BN states, respectively, as
+\begin{align}\label{eq: UN-representative-spinor}
     \psi^\mathrm{UN} = \frac{\sqrt{6n}}{4}e^{i\tau}\mqty(
     e^{-2i\alpha} \sin^2\beta \\
     -2e^{-i\alpha} \sin\beta \cos\beta \\
@@ -648,9 +653,8 @@ The general wave function for the UN state is
     2e^{i\alpha} \sin\beta \cos\beta \\
     e^{2i\alpha} \sin^2\beta
     ),
-\end{equation}
-and for the BN
-\begin{equation}\label{eq: BN-representative-spinor}
+\end{align}
+\begin{align}\label{eq: BN-representative-spinor}
     \psi^\mathrm{BN} = \sqrt{\frac{n}{2}}e^{i\tau} \mqty(
     e^{-2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
         - i\cos\beta\sin 2\gamma\right] \\
@@ -660,7 +664,7 @@ and for the BN
     e^{2i\alpha}\left[\left(1 - \frac{1}{2}\sin^2\beta\right)\cos 2\gamma
         + i\cos\beta\sin 2\gamma\right]
     ).
-\end{equation}
+\end{align}
 In the absence of a magnetic field, these two states are degenerate.
 However, a quadratic Zeeman shift, \(q\), can be used to manipulate the system
 into choosing one or the other, since the energies of each ground state now
@@ -687,11 +691,11 @@ plotted in Fig.~\ref{fig: nematic-graph}.
 The UN phase is seen to differ slightly from the polar phase of spin-1 (see
 Fig.~\ref{fig: spin-1-polar-graph}a) in that the nematic lobes have the
 same phase.
-This implies that a \(\pi \) spin rotation about any axis in the \(xy\)-plane
-leaves the order parameter unchanged, and no appropriate transformation of the
-condensate phase has to occur.
-In addition, like the ferromagnetic states, this order parameter also has an
-\(SO(2)\) symmetry about the nematic director.
+This implies that a \(\pi \) spin rotation about the \(C_2\) axis leaves the
+order parameter unchanged, and no appropriate transformation of the condensate
+phase has to occur.
+In addition, this order parameter also has an \(SO(2)\) symmetry about the
+nematic director.
 The order parameter space for this phase is then calculated as
 \(\left[S^2_{\hat{\vb{F}}} \cross {U(1)}_\tau\right]
 / {({\mathbb{Z}}_2)}_{\hat{\vb{F}}} \).
@@ -699,8 +703,8 @@ This is identical to the polar phase of the spin-1 BEC, except now the
 \({(\mathbb{Z}_2)}_{\hat{\vb{F}}}\) arises only from the condensate spin due to
 the nematic lobes having the same phase.
 The BN phase, shown in Fig.~\ref{fig: nematic-graph}b, breaks the
-\(SO(2)\) symmetry due to the perpendicular nematic lobes, which have a \(\pi \)
-phase difference.
+\(\text{SO}(2)\) symmetry due to the perpendicular nematic lobes, which have a
+\(\pi \) phase difference.
 The symmetry of the order parameter is preserved under \(\pi/4\) rotations
 about the \(C_4\) axis and \(\pi\) rotations about both the \(C_2\) and \(C_2'\)
 axes.
@@ -770,17 +774,17 @@ cyclic state are plotted in Fig.~\ref{fig: cyclic-graph}.
     (c) and (d): Equivalent Majorana representations.}
 \end{figure}
 The cyclic order parameter has the symmetry of a tetrahedron, where each nematic
-lobe has a two-fold symmetry about the \(C_2\) axis.
+lobe has a two-fold symmetry about each \(C_2\) axis.
 Furthermore, the order parameter has a three-fold symmetry about the \(C_3\)
-axis.
+axis, of which \(2\pi/3\) rotations about this axis preserve the symmetry of the
+order parameter.
 In Fig.~\ref{fig: cyclic-graph}a, this axis is the \((1, 1, 1)\)-axis, whereas
-in Fig.~\ref{fig: cyclic-graph}b it is aligned along the \(z\)-axis.
-Rotations of \(2\pi/3\) about this axis preserve the symmetry of the order
-parameter.
+in Fig.~\ref{fig: cyclic-graph}b the three-fold axis of symmetry is the
+\(z\)-axis.
 The order parameter space of the cyclic phase can be written as
 \(\left[{\text{U}(1)}_\tau \cross {\text{SO}(3)}_{\hat{\vb{F}}}\right]
-/ \text{T}_{\hat{\vb{F}}, \tau}\), where \(\text{T}_{\hat{\vb{F}}, \tau}\) is
-the tetrahedral group~\cite{Kobayashi2012}.
+/ \text{T}_{\hat{\vb{F}}, \tau}\)~\cite{Kawaguchi2012}, where
+\(\text{T}_{\hat{\vb{F}}, \tau}\) is the tetrahedral group~\cite{Kobayashi2012}.
 
 \section{Topologically stable defects in spinor BECs}
 Due to their rich phase diagrams discussed in the previous sections, spinor BECs
@@ -809,8 +813,8 @@ To calculate whether a given defect is stable in a particular system, one needs
 to first find the relevant order parameter space, \(\mathcal{M}\), that
 describes the symmetries associated with the order parameter of that system.
 Then, calculating a given homotopy group, \(\pi_n(\mathcal{M})\), states whether
-the topological defect described by \(\pi_n\) is stable in that order parameter
-space.
+the types of topological defects described by \(\pi_n\) are stable in that order
+parameter space.
 For example, given an order parameter space \(\mathcal{M}\), one can calculate
 whether point defects (\(n=2\)) are stable within the system by seeing if
 \(\pi_2(\mathcal{M}) \neq 0\).
@@ -887,10 +891,11 @@ The FM phase, described generally by Eq.~\eqref{eq: FM-representative-spinor},
 has an order parameter space consisting of the full 3D rotation group:
 \(\mathcal{M}_\text{FM} = {\text{SO}(3)}_{\hat{\vb{F}}, \tau}\).
 This leads to a first homotopy group of \(\pi_1(\mathcal{M}_\text{FM})
-= {\mathbb{Z}}_2\), which states that vortices are classified by one of two
-classes in this phase.
-One class represents singular vortices, the other nonsingular (see
-Sec.~\ref{sec: vortices-spin-1}).
+= {\mathbb{Z}}_2\), which states that vortices are classified one of two ways in
+this phase.
+One class represents singular vortices and the other nonsingular, where the
+vortex is classified by a fountain-like texture of the condensate spin vector
+(see Sec.~\ref{sec: vortices-spin-1}).
 Additionally, unlike the polar phase, the FM phase does not support stable point
 defects since \(\pi_2(\mathcal{M}_\text{FM}) = 0\).
 
@@ -962,12 +967,13 @@ mass circulation, but instead only carry a circulation of the condensate spin
 The BN phase has an order parameter space of \(\left[{\text{U}(1)}_\tau \cross
 {\text{SO}(3)}_{\hat{\vb{F}}}\right] / {(\text{D}_4)}_{\hat{\vb{F}}, \tau}\),
 where \(\text{D}_4\) is the fourth dihedral group~\cite{Kobayashi2012}.
-This interestingly leads to a first homotopy group that is non-Abelian:
+This leads to a first homotopy group that is non-Abelian:
 \(\pi_1(\mathcal{M}_\text{BN})\mathbb{Z} \cross_h
-{(\text{D}^\ast_4)}_{\hat{\vb{F}}}\), where elements of that group do not
-commute~\cite{Mermin1979}.
-This then implies that the BN phase can host non-Abelian vortices, i.e.,
-vortices whose topological charges do not commute.
+{(\text{D}^\ast_4)}_{\hat{\vb{F}}}\), where \(\cross_h\) is the \(h\)-product
+(see~\cite{Kobayashi2012} for details).
+A non-Abelian group, by definition, has members which do not
+commute~\cite{Mermin1979}, which implies that the BN phase can host non-Abelian
+vortices, i.e., vortices whose topological charges do not commute.
 A reconnection between two non-Abelian vortices leaves a trace of the
 reconnection in the form of a rung vortex~\cite{Mermin1979}.
 
@@ -1113,7 +1119,7 @@ It immediately follows that the mass circulation is calculated as
     \oint_C \vb{v}_s \cdot \dd \vb{\ell} = \frac{\kappa}{2},
 \end{align}
 showing that the unit of circulation is quantised in units of \(\kappa / 2\) for
-this system.
+this system, and hence the name HQV\@.
 
 For the case of the ferromagnetic phase, recall that the first homotopy group is
 calculated as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM})
@@ -1121,7 +1127,7 @@ calculated as~\cite{Kawaguchi2012} \(\pi_1(\mathcal{M}_\text{FM})
 singular and nonsingular.
 The singular vortex configuration can be constructed from
 Eq.~\eqref{eq: FM-representative-spinor} using the choice \(\tau'=0\) along with
-\(\alpha = \varphi \), which leads to the spinor
+\(\alpha = \varphi \), which leads to the wave function
 \begin{align}
     \psi^\text{FM}_\text{pcv} =
     \sqrt{n}\mqty(
@@ -1134,9 +1140,9 @@ In this configuration, the single-valuedness condition could be satisfied by
 having the condensate density vanish along the vortex core.
 However, in spinor BECs, we typically have \(c_0 \gg |c_1|\), which implies
 that it is more energetically favourable to vary the condensate spin instead.
-Therefore, the condensate can instead choose to lift atoms out of the FM state
-and into the polar state (i.e., occupy the \(m=0\) component) within the vortex
-core.
+Therefore, the condensate can instead choose to lift atoms out of the
+ferromagnetic state and into the polar state (i.e., occupy the \(m=0\)
+component) within the vortex core.
 For this reason, such a vortex is referred to as a polar-core
 vortex~\cite{Kawaguchi2012}.
 
@@ -1223,8 +1229,9 @@ Fig.~\ref{fig: SV-HQV}a.
     coupled to a \(\pi / 2\) spin rotation.}
 \end{figure}
 Indeed, we see that as the core of the vortex is traversed, the spin vector
-winds by \(\pi \) about the axis perpendicular to the nematic director,
-\(\hat{\vb{d}}\), but the condensate phase remains unchanged.
+winds by \(\pi \) about the axis perpendicular to the nematic director
+(see Fig.~\ref{fig: nematic-graph}a), but the condensate phase remains
+unchanged.
 
 Recall that the first homotopy group of the BN phase
 (\(\pi_1(\mathcal{M}_\text{BN})=\mathbb{Z} \cross_h
@@ -1251,8 +1258,8 @@ Fig.~\ref{fig: SV-HQV}b.
 It is clear this vortex has the typical \(\pi \) phase winding about the vortex
 core associated with HQVs, which is also coupled to a \(\pi / 2\) spin rotation.
 When a vortex consists of a \(2\pi w\) winding of the condensate phase coupled
-to a \(2\pi \sigma\) winding about some axis of symmetry, the vortex charge can
-be described as (\(w, \sigma\)).
+to a \(2\pi \sigma\) winding of the spin vector about some axis of symmetry,
+the vortex charge can be described as (\(w, \sigma\)).
 The particular case of the vortex shown in Fig.~\ref{fig: SV-HQV}b is classed as
 a \((1/2, 1/4)\) vortex, where the \(1/2\) and \(1/4\) denote the phase and spin
 windings, respectively.
@@ -1274,10 +1281,15 @@ is constructed from the choice \(\tau = -\alpha = \varphi/3 \) with
 The result is a phase winding in the \(\psi_2\) and \(\psi_{-1}\) components
 for the one-third and two-third vortices, respectively:
 \begin{equation}
-    \psi^\text{C}_{1/3} = \sqrt{\frac{n}{3}}\mqty(e^{i\varphi} \\ 0 \\ 0 \\
-    \sqrt{2}\\0),
+    \psi^\text{C}_{\frac{1}{3}} = \sqrt{\frac{n}{3}}\mqty(
+        e^{i\varphi} \\
+        0 \\
+        0 \\
+        \sqrt{2} \\
+        0
+    ),
     \qquad
-    \psi^\text{C}_{2/3} = \sqrt{\frac{n}{3}}\mqty(1 \\ 0 \\ 0 \\
+    \psi^\text{C}_{\frac{2}{3}} = \sqrt{\frac{n}{3}}\mqty(1 \\ 0 \\ 0 \\
     \sqrt{2}e^{i\varphi}\\0).
 \end{equation}
 Spherical harmonic representations are plotted in
