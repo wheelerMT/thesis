@@ -310,7 +310,8 @@ Note that these choice of parameters give a condensate close to that of
 \(^{87}\)Rb, in which \(c_0/c_1 \approx -111\) (see
 Sec.~\ref{subsec: experimental-params}).
 We start with the initial state in Eq.~\eqref{eq: peturbed-polar-initi-state}
-and integrate the spin-1 Gross-Pitaevskii equations~\cite{Symes2016}.
+and integrate the spin-1 Gross-Pitaevskii equations using a symplectic
+integrator~\cite{Symes2016}.
 
 \subsection{Evolution of the transverse magnetisation}
 To determine the freeze-out time within our system, we need to find a quantity
@@ -320,15 +321,16 @@ that growth to occur.
 The quantity that satisfies this condition in the polar to BA transition is the
 transverse magnetisation
 \begin{equation}
-    M_\perp = \int \langle F_x^2\rangle + \langle F_y^2\rangle \, \dd z,
+    M_\perp = \int \langle\hat{F}_x^2\rangle + |\langle\hat{F}_y^2\rangle|
+    \, \dd z,
 \end{equation}
-where \(F_x\) and \(F_y \) are the \(x, y\) components of the condensate spin
-vector, respectively.
+where \(\hat{F}_x\) and \(\hat{F}_y \) are the \(x, y\) components of the
+condensate spin vector, respectively.
 In the polar phase this quantity is zero, but becomes non-zero in the BA limit
 where it is \(M_\perp = (1 - Q^2/4)/L\).
 \begin{figure}
     \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \includegraphics[width=\textwidth]{gfx/ch-spin1/magnetisation_vs_Q.pdf}
         \caption{\label{subfig: magnetisation-vs-Q}}
     \end{subfigure}
@@ -387,12 +389,11 @@ point is passed.
 Despite this, the transition can still be characterised by a divergent length
 scale, and hence, critical exponents can be derived.
 Suzuki \textit{et al.}~\cite{Suzuki2015} aimed to extend the notion of a DCP to
-a DQCP\@.
-
+a DQCP\@, of which we will summarise here.
 Let us consider a system that contains a critical point at
 \( q = q_c \), where \( q \) is a tunable parameter and contains
 the presence of a symmetry-breaking field, \( p \).
-For one to have a DQCP five conditions need to be satisfied~\cite{Suzuki2015}.
+For one to have a DQCP five conditions need to be satisfied.
 Firstly, the energy density \( \epsilon(q, p) \) must be a continuous
 function of \( q \) and \( p \) across the critical point
 \begin{equation}
@@ -403,7 +404,7 @@ The derivative of this energy density, however, is discontinuous
 \begin{equation}
     \pdv{\epsilon(q_c + 0, 0)}{q} \neq \pdv{\epsilon(q_c - 0, 0)}{q}.
 \end{equation}
-The order parameter \( m(q, p) \), where \( m=-\pdv{\epsilon(q, p)}{p} \)
+The order parameter \( m(q, p) \), where \( m=-\pdv{\epsilon(q, p)}{p} \),
 has a discontinuous jump as a function of \( q \) as the critical point is
 passed
 \begin{equation}
@@ -421,7 +422,8 @@ Finally, we require that the derivative of the energy density be bounded as
 \end{equation}
 These five conditions encapsulate a DQCP\@.
 
-\subsection{BA to FM transition as a DQCP}
+\subsection{The Broken-axisymmetry to ferromagnetic transition as a
+discontinuous quantum critical point}
 Let us now consider a specific example.
 We are interested in the phase transition that occurs between the
 broken-axisymmetry (BA) and ferromagnetic (FM) phases.
@@ -453,7 +455,7 @@ The relevant order parameters for this transition are given by
     \qquad
     m_{\mathrm{FM}_{\pm}} = \pm 1,
 \end{equation}
-which is precisely the local magnetisation, \(F_z = |\psi_1|^2
+which is precisely the local magnetisation, \(\hat{F}_z = |\psi_1|^2
 - |\psi_{-1}|^2\), in both phases (see Sec.~\ref{sec: ground-states-spin-1}).
 Again, one sees that at the critical point and for \( p=0 \) the order parameter
 becomes zero in the BA phase whilst becoming non-zero in the FM phase.
@@ -464,7 +466,8 @@ specified in Eqs.~\eqref{eq: continuous-energy-cond}
 -\eqref{eq: bounded-energy-derivative-cond}
 and therefore is a DQCP\@.
 
-\subsection{Determining the relevant Bogoliubov mode}\label{subsec: bogoliubov-modes}
+\subsection{\label{subsec: bogoliubov-modes}Determining the relevant Bogoliubov
+mode}
 In order to determine the relevant energy spectrum for our system, we consider
 the Bogoliubov modes of the BA phase of a spin-1 BEC, which we derive explicitly
 from the relevant Bogoliubov transformations.
@@ -474,7 +477,8 @@ The broken-axisymmetry phase can be parameterised as~\cite{Uchino2010}
     \frac{\sin\theta}{\sqrt{2}}\right),
 \end{align}
 where \(\sin\theta = \sqrt{1/2+q/(4nc_1)}\).
-The fluctuation operators for this state are then defined as~\cite{Uchino2010}:
+Then, the fluctuation operators for this state are then defined
+as~\cite{Uchino2010}:
 \begin{align}
     \hat{a}_{\vb{k}, d} &= \frac{\sin\theta}{\sqrt{2}}(\hat{a}_{\vb{k}, 1}
     + \hat{a}_{\vb{k}, -1}) + \cos\theta \hat{a}_{\vb{k}, 0}, \\
@@ -687,7 +691,7 @@ is conserved.
 Recall the spin-1 GPEs are given as (see Sec.~\ref{subsec: spin-1-gpes}):
 \begin{align}\label{eq: spin-1-KZ-GPEs}
     i\hbar\pdv{\Psi}{t} = \left[ -\frac{\hbar^2\nabla^2}{2M}
-    -p\hat{F_z} + q\hat{F}_z^2 +c_0n +c_1n\langle \hat{\vb{F}}\rangle
+    -pf_z + qf_z^2 +c_0n +c_1n\langle \hat{\vb{F}}\rangle
     \cdot \hat{\vb{F}}\right]\Psi.
 \end{align}
 Substituting Eq.~\eqref{eq: spin-1-perturbed-BA-state} into the above equations
@@ -816,7 +820,8 @@ We perturb the initial BA state by adding small noise, \(\delta_m\), to each
 component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
 parts of \(\delta_m\) for each grid point using the probability distribution
 \(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\), choosing
-\(\sigma=10^{-4}\) so that we start close to the BA ground state.
+\(\sigma=10^{-4}\) so that we start close to the BA ground state, and integrate
+the spin-1 GPEs using a symplectic integrator~\cite{Symes2016}.
 
 \subsection{Phase boundaries in the ferromagnetic phase}
 As the system is quenched across the critical point at \( Q = 0 \), the ground

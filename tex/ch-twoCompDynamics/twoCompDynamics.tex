@@ -21,30 +21,33 @@ In contrast to the scalar superfluids, multi-component and spinor BECs are
 described by multi-component order parameters and allow for a wider range of
 topological defects, which give rise to novel dynamics~\cite{Kasamatsu2016,
     Weiss2019,Kobayashi2009,Kasamatsu2005}.
-Consequently, there has been increasing interest in the properties of QT and
-non-equilibrium dynamics in such
-systems~\cite{Salman2009, Schmied2019, Karl2013, Prufer2018, Hofmann2014}.
+Consequently, there has been increasing interest in the properties of quantum
+turbulence and non-equilibrium dynamics in such systems~\cite{Salman2009,
+Schmied2019, Karl2013, Prufer2018, Hofmann2014}.
 The simplest non-scalar topological excitation appears in a two-component BEC,
 described by two complex fields, as the appearance of a phase singularity in
 only one component.
 When the atomic mass and mean density of the components are equal, such vortices
-are often referred to as half-quantum vortices (HQVs), due to their similarities
+are often referred to as HQVs, due to their similarities
 with vortices carrying half a quantum of superfluid circulation in superfluid
 \(^3\)He~\cite{Autti2016} and spin-1 BECs~\cite{Leonhardt2000,Seo2015}.
 These vortices are sometimes also referred to as coreless vortices in a
-pseudospin-1/2 system, but note that the vortex is still singular, different
+pseudospin-1/2 system, but note that the vortex is still singular when the
+order parameter space is \(\text{U}(1) \cross \text{U}(1)\) (which is the case
+in two-component systems, see below), different
 from, e.g., the coreless vortices that arise in the spin-2 ferromagnetic
 phases (see Sec.~\ref{sec: vortices-spin-2}).
 Throughout this thesis we shall prefer the HQV terminology when discussing
 this class of vortex in a pseudospin-1/2 system.
 
-The study of QT in BECs can be separated into two distinct categories.
+The study of quantum turbulence in BECs can be separated into two distinct
+categories.
 Firstly, there is forced turbulence, where a statistically stationary state is
 established.
 Secondly, there is decaying turbulence, where a non-equilibrium initial
 condition, typically involving vortices, relaxes towards equilibrium.
-In this chapter, we investigate the relaxation dynamics of half-quantum vortices
-(HQVs) in a two-dimensional, two-component condensate.
+In this chapter, we focus on the latter case, and investigate the relaxation
+dynamics of HQVs in a two-dimensional, two-component condensate.
 Our interest is in studying the scaling laws that govern the decay rate of the
 vortices, and consequently the growth of the length scales associated with
 domains in the system, whilst varying the ratio of inter- to intra-species
@@ -69,8 +72,9 @@ in~\cite{Schole2012, Nowak2012, Karl2017}.
 Finally, we discuss how our observations of anomalous vortex decay can be
 explained by relating to previous work~\cite{Eto2011, Kasamatsu2016}.
 
-\section{The two-component BEC as a pseudospin-1/2 system}
-\subsection{Mapping of a spin-1 BEC to a two-component system}
+\section{The two-component Bose-Einstein condensate as a pseudospin-1/2 system}
+\subsection{Mapping of a spin-1 Bose-Einstein condensate to a two-component
+system}
 In order to treat the two-component BEC as a pseudospin-1/2 system, we discuss
 how a spin-1 condensate can be directly mapped to a two-component configuration
 for particular ground states.
@@ -79,9 +83,9 @@ with polar interactions \((c_1 > 0)\) supports a polar ground state with
 \(\spinmag=0\).
 This state can be categorized in two different ways depending on the sign of the
 quadratic Zeeman shift, \(q\).
-The first occurs when \(q > 0\), in which case the nematic director,
-\(\hat{\vb{d}}\), is aligned along the spin quantisation axis (which we take to
-be \(z\) without loss of generality), and has a representative spinor of the
+The first occurs when \(q > 0\), in which case the nematic director, is aligned
+along the spin quantisation axis (which we take to be the \(z\)-axis without
+loss of generality), and has a representative spinor of the
 form in Eq.~\eqref{eq: EAP-spinor} called the EAP phase.
 The second case has \(q > 0\), in which the nematic director is perpendicular to
 the spin quantisation axis, with a representative spinor of the form in
@@ -92,7 +96,8 @@ assuming that scattering into and out of the \(\zeta_0\) component can be
 neglected.
 
 To begin the mapping procedure, recall the spin-1 GPEs listed in
-Eq.~\eqref{eq: spin-1-GPEs}.
+Eq.~\eqref{eq: spin-1-GPEs}, in which the time-independent GPEs can be found
+using the substitution \(\psi_m = \psi_m(\vb{r})e^{-i\mu t/\hbar}\).
 Since we're considering the EPP phase, we construct the time-independent
 GPEs for the spin-1 system with a wave function that assumes an empty middle
 component:
@@ -107,8 +112,7 @@ component:
     \end{aligned}
     \label{eq:EPP-time-independent-GPEs}
 \end{equation}
-where \( \mu \) is the chemical potential of the system, and we have taken
-\( p=0 \).
+where we have taken \( p=0 \).
 Now, one can compare the above spin-1 GPEs to the equivalent two-component
 time-dependent GPEs, given here as (see Sec.~\ref{sec: two-comp-theory})
 \begin{equation}
@@ -237,10 +241,9 @@ One key difference arises in the quantisation of circulation.
 Using Eq.~\eqref{eq: two-comp-velocity}, the mass circulation along a closed
 contour \(C\) about the vortex can be calculated as
 \begin{equation}
-    \oint_C\vb{v}\cdot d\vb{\ell} = 2\pi q\kappa,
+    \oint_C\vb{v}\cdot d\vb{\ell} = \kappa,
 \end{equation}
-where \( q \) denotes the charge of the vortex and \(\kappa=h/m\) is the
-quantum of circulation.
+where \(\kappa=h/m\) is the quantum of circulation.
 This shows that, despite being classed as a HQV, the circulation of such a
 vortex is still quantised in the typical units of \(\kappa \), similar to
 \(\text{U}(1)\) vortices in scalar condensates.
@@ -326,8 +329,9 @@ To generate a random distribution of vortices, we displace each position by some
 small amount \((x_i, y_i) \rightarrow (x_i + \delta x_i, y_i + \delta y_i)\),
 where \(\delta x_i, \delta y_i\) are random number drawn from a uniform
 distribution and \(|\delta x_i|, |\delta y_i| < 3\xi_d\).
-The phase of each component is then constructed to contain a \( 2\pi \) about
-each vortex position using the method described in~\cite{Billam2014}.
+The phase of each component is then constructed to contain a \( 2\pi \) phase
+winding about each vortex position using the method described
+in~\cite{Billam2014}.
 To ensure that the overall circulation is zero, each position alternates the
 winding of the phase, leading to an equal number of HQVs with positive and
 negative charge.
@@ -372,8 +376,8 @@ systems.
     \includegraphics[width=\textwidth]{gfx/ch-twoCompDynamics/densVort.pdf}
     \caption[Density and pseudo-vorticity of a system during relaxation dynamics
     for various ratios of inter- to intra-species interaction.]
-    {\label{fig:density-pseudo-vort}Density (a) --- (c) and pseudo-vorticity
-        (d) --- (f) of the \(\psi_1 \) component in a
+    {\label{fig:density-pseudo-vort}Density (a) {--} (c) and pseudo-vorticity
+        (d) {--} (f) of the \(\psi_1 \) component in a
         \(256\xi_d \times 256\xi_d\) subregion at a time
         \(t/\tau=2.5\times 10^4\xi_d^2\) for \(\gamma=0.1\) (left),
         \(\gamma=0.6\) (middle), and \(\gamma=0.8\) (right).
@@ -793,9 +797,7 @@ For weaker \(\gamma \), the two vortices move in parallel, similar to
 the behaviour observed for dipoles consisting of scalar \(\mathrm{U}(1)\)
 vortices.
 The strength of \(\gamma \) also determines the rate at which the vortices
-annihilate, as seen by the largest \(\gamma \) tested, which shows the
-annihilation happening over a shorter length scale (see Fig. 11 of
-Ref.~\cite{Kasamatsu2016}).
+annihilate (see Fig. 11 of Ref.~\cite{Kasamatsu2016}).
 
 \section{Conclusions}
 In this chapter we have investigated the relaxation dynamics of HQVs in a

@@ -209,10 +209,10 @@ are defined in Eq.~\eqref{eq: single-particle-Hamiltonian} and
 Eq.~\eqref{eq: spin-2-interaction-hamiltonian}, respectively.
 The energy of the interpolating spinor given in
 Eq.~\eqref{eq: UN-BN-interpolating-spinor} reads
-\(E^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\)
+\(E^\text{UN-BN} = \frac{c_2n}{10} + 2q(1 - \eta)\).
 Comparing this energy with that of the UN phase
-\(E^\text{UN} = c_2n/10\) and the BN phase
-\(E^\text{BN} = c_2n/10 + 4q\) reveals that the ground state is UN for
+(\(E^\text{UN} = c_2n/10\)) and the BN phase
+(\(E^\text{BN} = c_2n/10 + 4q\)) reveals that the ground state is UN for
 \(q \geq 0\) and BN for \(q \leq 0\).
 Therefore, the UN-BN interface can be stabilised through careful choice of
 a longitudinal quadratic Zeeman shift \(q(z)\) such that \(q(z)\) changes
@@ -243,7 +243,7 @@ we get
 where \(\chi = \chi_2 + \chi_{-2} - 2\chi_0\) is the relative phase difference
 between the components.
 We plot both the singlet-duo and -trio amplitudes in
-Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
+Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \chi)\).
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{gfx/ch-spin2/a20-a30-varying.png}
@@ -260,7 +260,7 @@ Upon investigation, we see interesting behaviour arise in both quantities.
 In particular, we see that this spinor can interpolate between the different
 phases of UN, BN and cyclic depending on both \(\eta \) and the relative phase
 difference \(\chi \).
-For example, if one were to maintain \(\theta=0\) and interpolate \(\eta \),
+For example, if one were to maintain \(\chi=0\) and interpolate \(\eta \),
 then there would be multiple transitions between the UN (\(|A_{00}|^2 = 1\)) and
 BN (\(|A_{00}|^2 = 0\)) phases.
 In addition, maintaining a relative phase difference of \(\chi=\pi \), the
@@ -493,7 +493,7 @@ UN limit which smoothly connects to a singular spin vortex in the BN limit.
 
 Since \(\pi_2(\mathcal{M}_\text{UN}) \neq 0\) (see
 Sec.~\ref{subsec: spin-2-homotopy}), an interesting example can be
-constructed by thinking about a monopole placed in one the UN side of the
+constructed by thinking about a monopole placed in the UN side of the
 interface.
 In such an interface, a monopole may form at the termination point of a singular
 line vortex.
@@ -516,17 +516,17 @@ where the UN and BN single phase limits are given, respectively, as
     \zeta^\text{UN}_\text{mp} &= \sqrt{\frac{3}{8}}
     \mqty(
         e^{-2i\varphi}\sin^2\theta \\
-        e^{-i\varphi}\sin 2 \theta \\
+        -e^{-i\varphi}\sin 2 \theta \\
         \frac{1}{\sqrt{6}}\left(1+3\cos 2\theta\right) \\
-        -e^{i\varphi} \sin 2 \theta \\
+        e^{i\varphi} \sin 2 \theta \\
         e^{2i\varphi}\sin^2\theta
     ), \\
     \zeta^\text{BN}_\text{sv} &= \frac{1}{\sqrt{8}}
     \mqty(
         e^{-2i\varphi}\left(\cos^2\theta + 1\right) \\
-        - e^{-i\varphi}\sin 2 \theta \\
+        e^{-i\varphi}\sin 2 \theta \\
         \sqrt{6}\sin^2\theta \\
-        e^{i\varphi}\sin 2 \theta \\
+        -e^{i\varphi}\sin 2 \theta \\
         e^{2i\varphi}\left(\cos^2\theta + 1\right)          
     ).
 \end{align}
@@ -547,9 +547,9 @@ interface is given in Table~\ref{tab: UN-BN-nonsingular}.
         Spin half-quantum vortex & Spin half-quantum vortex & 1 & 0
             & \(\pi/2\) \\
         Nonsingular spin vortex & Spin vortex & 1 & 0
-            & \(\beta\) \\
+            & \(\beta(\rho)\) \\
         Monopole & Spin vortex & 1  & 0 & \(\theta \) \\
-        Spin vortex & Monopole & 1 & -1 & \(\beta\) \\ 
+        Spin vortex & Monopole & 1 & -1 & \(\theta\) \\ 
         \bottomrule
     \end{tabular}
     \caption[Examples of monopole and nonsingular vortex connections across a
@@ -737,7 +737,7 @@ These defects are summarised in Table~\ref{tab: C-N-other}.
         Spin vortex & Spin vortex & \(\alpha=\pi/4\)
             & \(\gamma=-\alpha\) & \(k\varphi\) \\
         Spin vortex & Nonsingular spin vortex & 1 & 0
-            & \(\beta\) \\
+            & \(\beta(\rho)\) \\
         Spin vortex & Monopole & 1 & 0 & \(\theta\) \\
         \bottomrule
     \end{tabular}
@@ -966,10 +966,10 @@ see the characteristic fountain-like texture emerge.
     {\label{fig: C-FM-coreless-initial-states}Spherical harmonic
     representation of the nonsingular vortices constructed in
     Eq.~\eqref{eq: C-FM-coreless-general}.
-    (a) Nonsingular vortex in the \(\text{FM}_2^+\) limit given by
+    (a): Nonsingular vortex in the \(\text{FM}_2^+\) limit given by
     Eq.~\eqref{eq: FM-2-coreless} with the choice \(\tau - 2\gamma = 2\alpha
     = 2\varphi \).
-    (b) Nonsingular vortex in the \(\text{FM}_1^-\) limit given by
+    (b): Nonsingular vortex in the \(\text{FM}_1^-\) limit given by
     Eq.~\eqref{eq: FM-1-coreless} with the choice \(\tau + \gamma = \alpha
     = \varphi \).}
 \end{figure}
@@ -1661,7 +1661,7 @@ complex splitting process, shown in Fig.~\ref{fig: C-FM-coreless-FM}.
         The initial state on this side of the interface is given explicitly in
         Eq.~\eqref{eq: FM-2-coreless} with Euler angles given in
         Eq.~\eqref{eq: coreless-euler-limits-FM-2}.
-        (a) Transverse cut of \(\spinmag \) at \(z/\ell \approx 3\) after
+        (a): Transverse cut of \(\spinmag \) at \(z/\ell \approx 3\) after
         complex-time evolution at \(\tilde{t} = 1.5\).
         The singular vortex structures can be seen from the
         \(\spinmag \approx 1\) cores.
