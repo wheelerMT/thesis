@@ -31,7 +31,7 @@ ax.errorbar(
     ecolor="k",
     fmt="none",
 )
-ax.loglog(quenches, Q_a, "ko")
+ax.loglog(quenches, Q_a, "ko", markerfacecolor='None')
 ax.loglog(
     quenches[:-1],
     1.2e1 * np.array(quenches[:-1]) ** (-1 / 2),
