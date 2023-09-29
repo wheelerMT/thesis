@@ -1,71 +1,86 @@
 \chapter{Derivation of stationary solutions in a spin-2 Bose-Einstein
   condensate}\label{appendix: stationary}
-
-Stationary solutions of the spin-2 GPEs are obtained by substituting
-\(\psi_m = \sqrt{n}\zeta_m e^{-i\mu t/\hbar}\) into
+\section{Time-independent spin-2 Gross-Pitaevskii equations}
+Here we derive stationary solutions to the spin-2 GPEs that provide the
+interpolating spinor wave functions that are used throughout
+Chapter~\ref{chap: spin-2}.
+Firstly, recall that the stationary solutions of the spin-2 GPEs are obtained by
+substituting \(\psi_m = \sqrt{n}\zeta_m e^{-i\mu t/\hbar}\) into
 Eqs.~\eqref{eq: spin-2-GPEs-pm2}-\eqref{eq: spin-2-GPEs-0}.
-Assuming a uniform system (\(V(\vb{r}) = 0\)), this results in
+Assuming a uniform system with \(V(\vb{r}) = 0\), this results in
 \begin{align}
-    \mu\zeta_2    & = \left(-2p + 4q + c_0n +2c_1nf_z\right)\zeta_2
-    + c_1nf_-\zeta_1 + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},            \\
-    \mu\zeta_1    & = \left(-p + q + c_0n +c_1nf_z\right)\zeta_1
-    + c_1\left(\frac{\sqrt{6}}{2}nf_-\zeta_0 +nf_+\zeta_2\right)
-    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},                             \\
-    \mu\zeta_0    & = c_0n\zeta_0 + \frac{\sqrt{6}}{2}c_1\left(nf_+\zeta_1
-    + nf_-\zeta_{-1}\right) + \frac{c_2}{\sqrt{5}}na_{00}\zeta_0^*,        \\
-    \mu\zeta_{-1} & = \left(p + q + c_0n - c_1nf_z\right)\zeta_{-1}
-    + c_1\left(\frac{\sqrt{6}}{2}nf_+\zeta_0 +nf_-\zeta_{-2}\right)
-    - \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{1},                              \\
-    \mu\zeta_{-2} & = \left(2p + 4q + c_0n - 2c_1nf_z\right)\zeta_{-2}
-    + c_1nf_+\zeta_{-1} + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{2}.
+    \mu\zeta_2 & = \left(-2p + 4q + c_0n
+    + 2c_1n\langle\hat{F}_z\rangle\right)\zeta_2
+    + c_1n\langle\hat{F}_-\rangle\zeta_1
+    + \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{-2}, \\
+    \mu\zeta_1 & = \left(-p + q + c_0n
+    + c_1n\langle\hat{F}_z\rangle\right)\zeta_1
+    + c_1\left(\frac{\sqrt{6}}{2}n\langle\hat{F}_-\rangle\zeta_0
+    +n\langle\hat{F}_+\rangle\zeta_2\right)
+    - \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{-1}, \\
+    \mu\zeta_0 & = c_0n\zeta_0 + \frac{\sqrt{6}}{2}c_1\left(
+        n\langle\hat{F}_+\rangle\zeta_1 + n\langle\hat{F}_-\rangle\zeta_{-1}
+    \right) + \frac{c_2}{\sqrt{5}}nA_{00}\zeta_0^*,        \\
+    \mu\zeta_{-1} & = \left(p + q + c_0n
+    - c_1n\langle\hat{F}_z\rangle\right)\zeta_{-1}
+    + c_1\left(\frac{\sqrt{6}}{2}n\langle\hat{F}_+\rangle\zeta_0
+    +n\langle\hat{F}_-\rangle\zeta_{-2}\right)
+    - \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{1}, \\
+    \mu\zeta_{-2} & = \left(2p + 4q + c_0n
+    - 2c_1n\langle\hat{F}_z\rangle\right)\zeta_{-2}
+    + c_1n\langle\hat{F}_+\rangle\zeta_{-1}
+    + \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{2}.
 \end{align}
-
-We can choose the overall phase such that \(\zeta_0\) is real.
-In addition, since the system is assumed to be symmetric about the \(z\)-axis,
-we can let \(f_y=0\) without loss of generality.
-\textcolor{red}{Need to convince myself on this last assumption.}
-We consider the specific case where the transverse magnetisation is zero
-\(f_{\pm} = 0\), which is valid for \(q < 0\).
+Follow the literature of Ref.~\cite{Kawaguchi2012}, we make the following
+assumptions.
+We can choose the overall phase such that \(\zeta_0\) is real and, since the
+system has \(\text{SO}(2)\) symmetry about the direction of the applied magnetic
+field (which we take to be the \(z\)-axis), we choose the coordinate system such
+that \(\langle\hat{F}_y\rangle=0\) without loss of generality, implying
+\(\langle\hat{F}_+\rangle = \langle\hat{F}_-\rangle\).
+In addition, to simplify further, we consider the specific case where the
+transverse magnetisation is zero \(\langle\hat{F}_{\pm}\rangle = 0\) which is
+valid in a system where \(q < 0\) such that the system favours atoms in the
+outer components [see Eq.~\eqref{eq: spin-2-spin-vectors}].
 Assuming the above, the stationary equations can be transformed into the
 following simplified set of equations:
 \begin{align}
-    0 & = (-2p + 4q + c_0n + 2c_1nf_z - \mu)\zeta_2
-    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-2},
+    0 & = (-2p + 4q + c_0n + 2c_1n\langle\hat{F}_z\rangle - \mu)\zeta_2
+    + \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{-2},
     \label{eq: spin-2-stationary-zeta2}                                 \\
-    0 & = (2p + 4q + c_0n - 2c_1nf_z - \mu)\zeta_{-2}
-    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_{2},
+    0 & = (2p + 4q + c_0n - 2c_1n\langle\hat{F}_z\rangle - \mu)\zeta_{-2}
+    + \frac{c_2}{\sqrt{5}}nA^*_{00}\zeta_{2},
     \label{eq: spin-2-stationary-zetam2}                                \\
-    0 & = (-p + q + c_0n + c_1nf_z - \mu)\zeta_1
-    + \frac{c_2}{\sqrt{5}}na_{00}\zeta^*_{-1},
+    0 & = (-p + q + c_0n + c_1n\langle\hat{F}_z\rangle - \mu)\zeta_1
+    + \frac{c_2}{\sqrt{5}}nA_{00}\zeta^*_{-1},
     \label{eq: spin-2-stationary-zeta1}                                 \\
-    0 & = (p + q + c_0n - c_1nf_z - \mu)\zeta_{-1}
-    + \frac{c_2}{\sqrt{5}}na^*_{00}\zeta_1,
+    0 & = (p + q + c_0n - c_1n\langle\hat{F}_z\rangle - \mu)\zeta_{-1}
+    + \frac{c_2}{\sqrt{5}}nA^*_{00}\zeta_1,
     \label{eq: spin-2-stationary-zetam1}                                \\
-    0 & = \left(c_0n + \frac{c_2}{\sqrt{5}}na_{00} - \mu\right)\zeta_0.
+    0 & = \left(c_0n + \frac{c_2}{\sqrt{5}}nA_{00} - \mu\right)\zeta_0.
     \label{eq: spin-2-stationary-zeta0}
 \end{align}
-
 Noting that the above equations are decoupled in three parts, we can construct
 the following matrix equations relating to
 Eqs.~\eqref{eq: spin-2-stationary-zeta2}-\eqref{eq: spin-2-stationary-zetam2}
 and Eqs.~\eqref{eq: spin-2-stationary-zeta1}
 -~\eqref{eq: spin-2-stationary-zetam1}, respectively, as
 \begin{align}
-    \mqty(4q + 2\beta -\tilde{\mu} & \tilde{\alpha}                    \\
+    \mqty(4q + 2\tilde{\beta} -\tilde{\mu} & \tilde{\alpha} \\
     \tilde{\alpha}^*               & 4q - 2\tilde{\beta} -\tilde{\mu})
     \mqty(\zeta_2                                                      \\
     \zeta_{-2}^*)                  & = 0, \label{eq: zeta-pm2-matrix}  \\
-    \mqty(q + \beta -\tilde{\mu}   & -\tilde{\alpha}                   \\
+    \mqty(q + \tilde{\beta} -\tilde{\mu}   & -\tilde{\alpha} \\
     -\tilde{\alpha}^*              & q - \tilde{\beta} -\tilde{\mu})
     \mqty(\zeta_1                                                      \\
     \zeta_{-1}^*)                  & = 0, \label{eq: zeta-pm1-matrix}
 \end{align}
 with Eq.~\eqref{eq: spin-2-stationary-zeta0} being recast as
 \begin{equation}\label{eq: spin-2-stationary-zeta0-recast}
-    (\alpha - \tilde{\mu})\zeta_0 = 0.
+    (\tilde{\alpha} - \tilde{\mu})\zeta_0 = 0,
 \end{equation}
-Here, \(\tilde{\mu} = \mu - c_0n\), \(\tilde{\alpha} = c_2na_{20}/\sqrt{5}\) and
-\(\tilde{\beta} = c_1nf_z - p\).
+where \(\tilde{\mu} = \mu - c_0n\), \(\tilde{\alpha} = c_2nA_{00}/\sqrt{5}\) and
+\(\tilde{\beta} = c_1n\langle\hat{F}_z\rangle - p\).
 The stationary solutions are then classified according to the determinant of
 the coefficient matrices of the above equations.
 Explicitly, these are
@@ -78,3 +93,202 @@ Explicitly, these are
 From these determinants and Eq.~\eqref{eq: spin-2-stationary-zeta0-recast},
 we can derive stationary solutions that interpolate between different ground
 states of the spin-2 system.
+
+\subsection{Uniaxial nematic, biaxial nematic, and cyclic limits}
+First consider the case \(D_1 \neq 0\) and \(D_2 = 0\).
+Then, Eq.~\eqref{eq: zeta-pm1-matrix} and \(D_1 \neq 0\) implies that
+\(\zeta_1=\zeta_{-1}=0\).
+Here, consider the case that \(\tilde{\mu} = \tilde{\alpha}\).
+Then all three of the \(\zeta_{\pm 2}, \zeta_0\) components can be non-zero.
+From the definition of the longitudinal magnetisation given in
+Eq.~\eqref{eq: spin-2-spin-vectors}, we have
+\begin{align}
+    |\zeta_2| = \sqrt{|\zeta_{-2}|^2 + \frac{\langle\hat{F}_z\rangle}{2}}.
+\end{align}
+The normalisation condition states \(|\zeta_2|^2 + |\zeta_0|^2 +
+|\zeta_{-2}|^2=1\), which leads to
+\begin{align}
+    |\zeta_{-2}| &= \sqrt{\frac{1 - \zeta_0^2 -\langle\hat{F}_z\rangle/2}{2}},\\
+    |\zeta_2| &= \sqrt{\frac{1 - \zeta_0^2 + \langle\hat{F}_z\rangle/2}{2}}.
+\end{align}
+Thus, the total spinor now reads
+\begin{align}\label{eq: intermediate-UN-BN}
+    \zeta = \mqty(
+        e^{i\chi_2}\sqrt{\frac{1 - \zeta_0^2 + \langle\hat{F}_z\rangle/2}{2}} \\
+        0 \\
+        \zeta_0 \\
+        0 \\
+        e^{-i\chi_{-2}}\sqrt{\frac{1 -\zeta_0^2 - \langle\hat{F}_z\rangle/2}{2}}
+    ).
+\end{align}
+The substitution of the above spinor into Eq.~\eqref{eq: zeta-pm2-matrix} leads
+to the relations \(\tilde{\mu} = 2q-\tilde{\beta}^2/(2q)\) and
+\(\langle\hat{F}_z\rangle = (\tilde{\beta} + p)/(c_1n)\), where
+\(\tilde{\beta}\) can be calculated from the following
+equation~\cite{Kawaguchi2012}:
+\begin{align}
+    \tilde{\beta}^3 +p\tilde{\beta}^2 + 4q[q + 2c_1n(1-\zeta_0^2)]\tilde{\beta}
+    + 4pq^2 = 0.
+\end{align}
+
+Let us consider the case \(p=0\), then the above equation transforms to
+\begin{align}
+    \tilde{\beta}^2 = -4q\left[q + 2c_1n(1-\zeta_0^2)\right].
+\end{align}
+Then, since the left-hand side is positive, we derive the condition
+\(|q| > |2c_1n(1-\zeta_0^2)|\).
+Under this condition \(\tilde{\beta}\) is determined to be
+\(\tilde{\beta}=0\)~\cite{Kawaguchi2012}, and hence \(\langle\hat{F}_z\rangle
+=0\).
+To determine \(\zeta_0\) we minimise the energy per
+particle~\cite{Kawaguchi2012}
+\begin{align}
+    \epsilon = \sum_{m=-2}^{2}(-pm+qm^2)|\zeta_m|^2 + \frac{1}{2}c_0n
+    + \frac{1}{2}c_1n\spinmag^2 + \frac{1}{2}c_2n|A_{00}|^2.
+\end{align}
+Substituting Eq.~\eqref{eq: intermediate-UN-BN} and
+\(\langle\hat{F}_z\rangle=0\) into the above expression yields
+\begin{align}
+    \epsilon = 4q(1-\zeta_0^2) + \frac{1}{2}c_0n + \frac{c_2n}{10}\left|
+        e^{i(\chi_2+\chi_{-2})}(1-\zeta_0^2) + \zeta_0^2
+    \right|^2.
+\end{align}
+Note that since
+\begin{align}
+    \tilde{\alpha}=\tilde{\mu}=\frac{c_2n}{5}\left(
+        e^{i(\chi_2+\chi_{-2})}\sqrt{(1-\zeta_0^2)
+        -\frac{\langle\hat{F}_z\rangle}{4}}
+        + \zeta_0^2\right),
+\end{align}
+which must be real, we require \(\chi_2 + \chi_{-2} = 0\) or \(\pi\).
+If \(c_2 < 0\), then the energy is minimised by \(\chi_2+\chi_{-2}=\pi\), which
+leads to the expression for \(\zeta_0\):
+\begin{align}
+    \zeta_0 = \sqrt{\frac{1 + 10q/(c_2n)}{2}}.    
+\end{align}
+Substituting \(\zeta_0\) back into Eq.~\eqref{eq: intermediate-UN-BN} leads to
+the final interpolating spinor
+\begin{align}
+    \zeta^\text{C-N} = \mqty(
+        ie^{i\chi}\frac{\sqrt{1 - 10q/(c_2n)}}{2} \\
+        0 \\
+        \sqrt{\frac{1 + 10q/(c_2n)}{2}} \\
+        0 \\
+        ie^{-i\chi}\frac{\sqrt{1 - 10q/(c_2n)}}{2}
+    ),
+\end{align}
+where we have chosen \(\chi_{\pm 2} = \pi/2 + \chi\) to satisfy
+\(\chi_2+\chi_{-2} = \pi\) and \(\chi\) is an arbitrary phase.
+This solution continuously becomes the three-component cyclic state when
+\(q = 0\), and the BN (UN) when \(q = -c_2n/10\) (\(q = c_2n/10\)).
+
+Alternatively, when \(c_2 < 0\) the energy is minimised by having \(\chi_2
++ \chi_{-2} = 0\), which instead leads to the interpolating spinor
+\begin{align}
+    \zeta^\text{UN-BN} = \mqty(
+        e^{i\chi}\frac{\sqrt{1 - 10q/(c_2n)}}{2} \\
+        0 \\
+        \sqrt{\frac{1 + 10q/(c_2n)}{2}} \\
+        0 \\
+        e^{-i\chi}\frac{\sqrt{1 - 10q/(c_2n)}}{2}
+    ),
+\end{align}
+which now interpolates between the UN phase at \(q = |c_2|n/10\) and the BN
+phase at \(q = -|c_2|n/10\).
+
+\subsection{Cyclic to ferromagnetic}
+Consider the case that \(D_2=D_1=0\).
+Then, we have the following system of equations for the determinants
+\begin{align}
+    0 &= {(4q - \tilde{\mu})}^2 - 4\tilde{\beta}^2-|\tilde{\alpha}|^2, \\
+    0 &= {(q - \tilde{\mu})}^2 - \tilde{\beta}^2 - |\tilde{\alpha}|^2,
+\end{align}
+which can be solved to find \(\tilde{\mu}\):
+\begin{align}\label{eq: mu-C-FM}
+    \tilde{\mu} = \frac{5q^2-\tilde{\beta}^2}{2q}.
+\end{align}
+Then, for the case that \(\tilde{\mu} \neq \tilde{\alpha}\) and \(q \neq 0\),
+Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies \(\zeta_0=0\).
+Now, since we assumed zero transverse magnetisation,
+Eq.~\eqref{eq: spin-2-spin-vectors} leads to
+\begin{align}
+    2c_1n(\zeta_2^*\zeta_1 + \zeta_{-1}^*\zeta_{-2}) = 0.
+\end{align}
+We can use the matrix Eqs~\eqref{eq: zeta-pm2-matrix}
+and~\eqref{eq: zeta-pm1-matrix} to find expressions for \(\zeta_{-1}^*\) and
+\(\zeta_{-2}\) or \(\zeta_{2}^*\) and \(\zeta_{1}\) which when substituted into
+the above equation leads, respectively,
+to the following equations
+\begin{align}
+    2c_1n\zeta_2^*\zeta_1\left(
+        1 - \frac{\tilde{\beta} + 3q}{\tilde{\beta} - 3q}
+    \right) &= 0, \\
+    2c_1n\zeta_{-1}^*\zeta_{-2}\left(
+        1 - \frac{\tilde{\beta} - 3q}{\tilde{\beta} + 3q}
+    \right) &= 0, 
+\end{align}
+where we have substituted \(\tilde{\mu}\) according to Eq.~\eqref{eq: mu-C-FM}.
+This implies that, generally, \(\zeta_2^*\zeta_1 = \zeta_{-1}^*\zeta_{-2} = 0\).
+To be consistent with Eqs.~\eqref{eq: zeta-pm2-matrix}
+and~\eqref{eq: zeta-pm1-matrix} either \(\zeta_1=\zeta_{-2}=0\) or
+\(\zeta_2=\zeta_{-1} = 0\).
+Here we focus on the former case, since it relates to our discussion in
+Sec.~\ref{sec: spin-2-C-FM}.
+The longitudinal magnetisation in Eq.~\eqref{eq: spin-2-spin-vectors} implies we
+now have
+\begin{align}
+    |\zeta_2| = \sqrt{\frac{\langle\hat{F}_z\rangle + |\zeta_{-1}|^2}{2}}.    
+\end{align}
+Then, using the normalisation condition \(|\zeta_{2}|^2 + |\zeta_{-1}|^2 = 1\)
+leads to
+\begin{align}
+    |\zeta_{-1}| &= \sqrt{\frac{2 - \langle\hat{F}_z\rangle}{3}}, \\
+    |\zeta_2| &= \sqrt{\frac{1 + \langle\hat{F}_z\rangle}{3}},
+\end{align}
+and thus the final interpolating spinor now reads
+\begin{align}
+    \zeta^\text{C-FM} = \frac{1}{\sqrt{3}}\mqty(
+        e^{i\chi_2}\sqrt{1 + \langle\hat{F}_z\rangle} \\
+        0 \\
+        0 \\
+        e^{i\chi_{-1}}\sqrt{2 - \langle\hat{F}_z\rangle} \\
+        0
+    ).
+\end{align}
+Substituting this back into Eqs.~\eqref{eq: zeta-pm2-matrix}
+and~\eqref{eq: zeta-pm1-matrix} leads to \(\langle\hat{F}_z\rangle =
+(p - q)/(c_1n)\).
+This state now continuously becomes the two-component cyclic state at
+\(\langle\hat{F}_z\rangle = 0\) and the \(\text{FM}_2^+\) state at
+\(\langle\hat{F}_z\rangle = 2\).
+
+\subsection{Ferromagnetic to biaxial nematic}
+Consider the case \(D_2 \neq 0\) and \(D_1 = 0\).
+Then, \(D_2 \neq 0\) implies that \(\zeta_2=\zeta_{-2}=0\).
+Consider also the case that \(\tilde{\mu} \neq \tilde{\alpha}\), then
+Eq.~\eqref{eq: spin-2-stationary-zeta0-recast} implies that \(\zeta_0=0\).
+Now, from the definition of the longitudinal magnetisation given in
+Eq.~\eqref{eq: spin-2-spin-vectors}, we have
+\begin{align}
+    |\zeta_2| = \sqrt{|\zeta_{-2}|^2 + \frac{\langle\hat{F}_z\rangle}{2}}.
+\end{align}
+Using the normalisation condition \(|\zeta_2|^2 + |\zeta_{-2}|^2 = 1\) then
+leads to
+\begin{align}
+    |\zeta_{-2}| &= \sqrt{\frac{1 - \langle\hat{F}_z\rangle / 2}{2}}, \\
+    |\zeta_2| &= \sqrt{\frac{1 + \langle\hat{F}_z\rangle / 2}{2}}.
+\end{align}
+Thus, the final interpolating spinor now reads
+\begin{align}
+    \zeta^\text{FM-BN} = \mqty(
+        e^{i\chi_2}\sqrt{\frac{1 + \langle\hat{F}_z\rangle / 2}{2}} \\
+        0 \\
+        0 \\
+        0 \\
+        e^{i\chi_{-2}}\sqrt{\frac{1 - \langle\hat{F}_z\rangle / 2}{2}}
+    ).
+\end{align}
+Substituting the above spinor into Eq.~\eqref{eq: zeta-pm2-matrix} and using
+\(D_2 = 0\) leads to \(\langle \hat{F}_z \rangle = p / [(c_1-c_2/20)n]\).
+Note that the above spinor becomes the BN phase at \(p=0\) and
+\(\text{FM}_2^\pm\) for \(p = \pm(2c_1-c_2/10)n\).
