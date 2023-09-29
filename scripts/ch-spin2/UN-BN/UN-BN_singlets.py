@@ -37,7 +37,7 @@ a20_cbar = fig.colorbar(
 )
 a20_cbar.set_ticks([0, 0.2])
 a20_cbar.set_ticklabels([r"$0$", r"$0.2$"])
-a20_cbar.set_label(r"$|A_{20}|^2$", labelpad=-23)
+a20_cbar.set_label(r"$|A_{00}|^2$", labelpad=-23)
 
 a30_cbar = fig.colorbar(
     a30_plot, ax=ax[1], orientation="vertical", fraction=0.047, pad=0.02

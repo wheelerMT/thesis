@@ -222,7 +222,7 @@ A consequence of a spatially-dependent \(\eta \) is revealed from the spin
 singlet-duo and -trio amplitudes, given in terms of the spinor \(\zeta\),
 respectively, as
 \begin{gather}\label{eq: a20definition}
-    |A_{20}|^2 = \frac{1}{5}\left|2\zeta_2\zeta_{-2}-2\zeta_1\zeta_{-1}
+    |A_{00}|^2 = \frac{1}{5}\left|2\zeta_2\zeta_{-2}-2\zeta_1\zeta_{-1}
     + \zeta_0^2\right|^2, \\
     |A_{30}|^2 = \left|\frac{3\sqrt{6}}{2}\left(\zeta_1^2\zeta_{-2}
     + \zeta_{-1}^2\zeta_2\right)
@@ -233,7 +233,7 @@ Upon substitution of Eq.~\eqref{eq: UN-BN-interpolating-spinor} into the above,
 we get
 \begin{equation}
     \begin{aligned}
-        |A_{20}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\chi
+        |A_{00}|^2 & = \frac{1}{10} \left[(\eta^2-1)\cos\chi
         + \eta^2 + 1\right],                                          \\
         |A_{30}|^2 & = \frac{1+\eta}{4} \left[3\left(\eta ^2-1\right)
             \cos\chi
@@ -247,8 +247,8 @@ Fig.~\ref{fig: UN-BN-duo-trio} in a parameter space of \((\eta, \theta)\).
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{gfx/ch-spin2/a20-a30-varying.png}
-    \caption[Spin-singlet duo and trio amplitudes in a parameter space of
-        \(\chi \) and \(\eta \)]
+    \caption[Spin-singlet duo and trio amplitudes for a UN-BN interface in a
+    parameter space of \(\chi \) and \(\eta \)]
     {\label{fig: UN-BN-duo-trio} Spin singlet-duo (left) and -trio
         (right) amplitudes for the interpolating spinor in
         Eq.~\eqref{eq: UN-BN-interpolating-spinor}.
@@ -261,8 +261,8 @@ In particular, we see that this spinor can interpolate between the different
 phases of UN, BN and cyclic depending on both \(\eta \) and the relative phase
 difference \(\chi \).
 For example, if one were to maintain \(\theta=0\) and interpolate \(\eta \),
-then there would be multiple transitions between the UN (\(|A_{20}|^2 = 1\)) and
-BN (\(|A_{20}|^2 = 0\)) phases.
+then there would be multiple transitions between the UN (\(|A_{00}|^2 = 1\)) and
+BN (\(|A_{00}|^2 = 0\)) phases.
 In addition, maintaining a relative phase difference of \(\chi=\pi \), the
 singlet-trio amplitude reveals that a cyclic phase is present when
 \(-0.5 \lesssim \eta \lesssim 0.5\).
@@ -369,7 +369,7 @@ results in
     ).
 \end{align}
 The result of the spin rotation means that in the UN (\(\eta = 1\)) and
-BN (\(\eta = -1\)) limits we now have a three-component spinor given,
+BN (\(\eta = -1\)) limits we now have three-component spinors given,
 respectively, as
 \begin{align}
     \zeta^\text{UN}_\text{sv} = \mqty(
@@ -474,17 +474,17 @@ where the UN and BN single phase limits are given, respectively, as
     \zeta^\text{UN}_\text{nsv} &= \sqrt{\frac{3}{8}}
     \mqty(
         e^{-2i\varphi}\sin^2\beta(\rho) \\
-        e^{-i\varphi}\sin 2 \beta(\rho) \\
+        -e^{-i\varphi}\sin 2 \beta(\rho) \\
         \frac{1}{\sqrt{6}}\left[1+3\cos 2\beta(\rho)\right] \\
-        -e^{i\varphi} \sin 2 \beta(\rho) \\
+        e^{i\varphi} \sin 2 \beta(\rho) \\
         e^{2i\varphi}\sin^2\beta(\rho)
     ), \\
     \zeta^\text{BN}_\text{sv} &= \frac{1}{\sqrt{8}} \label{eq: BN-general}
     \mqty(
         e^{-2i\varphi}\left(\cos^2\beta(\rho) + 1\right) \\
-        - e^{-i\varphi}\sin 2 \beta(\rho) \\
+        e^{-i\varphi}\sin 2 \beta(\rho) \\
         \sqrt{6}\sin^2\beta(\rho) \\
-        e^{i\varphi}\sin 2 \beta(\rho) \\
+        -e^{i\varphi}\sin 2 \beta(\rho) \\
         e^{2i\varphi}\left(\cos^2\beta(\rho) + 1\right)          
     ).
 \end{align}
@@ -676,7 +676,8 @@ A spin rotation around this particular axis can be achieved by using the
 following spin rotation, given here in axis-angle representation:
 \begin{align}
     U(C_2', \delta) = \exp\left\{
-        -i\frac{\hat{F}_x + \hat{F}_y}{\sqrt{2}}\delta
+        -i\frac{\langle\hat{F}_x\rangle + \langle\hat{F}_y\rangle}
+        {\sqrt{2}}\delta
     \right\},
 \end{align}
 where \(C_2'\) represents the axis being rotated about and \(\delta\) represents
@@ -695,11 +696,11 @@ where the spinors in the UN and BN limits are given as
 \begin{gather}
     \zeta^\mathrm{UN}_\mathrm{sv} = \sqrt{\frac{3}{8}}
     \mqty(
-    \sin^2 \varphi \\
-    e^{\frac{i\pi }{4}} \sin 2\varphi \\
-    \frac{i}{\sqrt{6}}\left(1 + 3\cos 2\varphi \right)\\
-    e^{-\frac{i \pi }{4}} \sin2 \varphi \\
-    -\sin^2 \varphi
+    -i\sin^2 \varphi \\
+    -e^{-\frac{i\pi }{4}} i\sin 2\varphi \\
+    \frac{1}{\sqrt{6}}\left(1 + 3\cos 2\varphi \right)\\
+    e^{\frac{i \pi }{4}} \sin2 \varphi \\
+    i\sin^2 \varphi
     ), \\
     \zeta^\mathrm{BN}_\mathrm{sv} = \frac{1}{\sqrt{2}}
     \mqty(

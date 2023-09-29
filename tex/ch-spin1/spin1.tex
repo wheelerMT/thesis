@@ -336,8 +336,7 @@ where it is \(M_\perp = (1 - Q^2/4)/L\).
         \includegraphics[width=\textwidth]{gfx/ch-spin1/t-hat_vs_tau_q.pdf}
         \caption{\label{subfig: t-hat-vs-tau-q}}
     \end{subfigure}
-    \caption[Transverse magnetisation for as a function of quench parameter,
-        \(Q\)]
+    \caption[Transverse magnetisation for as a function of the quench parameter]
     {(a) The transverse magnetisation as a function of \( Q(t) \) for
         \(\tau_Q=11\).
         Plotted are the numerical values (black line) and the
@@ -544,7 +543,7 @@ Fig.~\ref{fig: dens-spin-energies}).
     \centering
     \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/bogoliubov_energies.pdf}
     \caption[Real and imaginary parts of the Bogoliubov energies for the
-        broken-axisymmetry phase of a spin-1 BEC]
+        broken-axisymmetry phase of a spin-1 Bose-Einstein condensate]
     {\label{fig: dens-spin-energies}Imaginary parts of the energies defined in
     Eq.~\eqref{eq: e_k-fz} and Eq.~\eqref{eq: e_k-pm} in a parameter space of
     mode \(k\) and \( Q=q/|c_1|n \).
@@ -833,7 +832,9 @@ the critical point is passed?
 \begin{figure}[tb]
     \centering
     \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_all_densities.pdf}
-    \caption[Component densities of the system as a function of time]
+    \caption[Component densities of a system as a function of time that has
+    undergone a transition between the broken-axisymmetry and ferromagnetic
+    phases of a spin-1 BEC]
     {\label{fig: BA-FM-densities}
     Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
         \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
@@ -871,7 +872,7 @@ grow as the quench rate decreases.
         \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_domain_onset.png}
         \caption{\label{fig: BA-FM-domain-onset}}
     \end{subfigure}
-    \caption[Density profile across an average FM domain]
+    \caption[Density profile across an average ferromagnetic domain]
     {(a): Density profile of the \(\psi_1\) component across an average
         domain in a simulation with \(\tau_Q=5000\tau \) (black line) and
         \(\tau_q=500\) (gold line).
@@ -903,16 +904,18 @@ number of domains, \(N_d\).
 We calculate this quantity at the end of each simulation to ensure that the
 domains are frozen and avoid the early-time coarsening taking place which could
 affect the total number of domains present.
-\begin{figure}[htb!]
+\begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/FM_domains_scaling.pdf}
-    \caption[Total ferromagnetic domains in the system versus the quench rate
-        \(\tau_Q\)]
-    {The number of ferromagnetic domains as a function of the
-        quench time. Each point represents 50 simulations and the
-        error bar gives one standard deviation. Overlaid are the scaling lines
-        \(\tau_Q^{-1/3}\) (black dashed line) and \(\tau_Q^{-1/5}\)
-        (red dotted line).\label{fig: FM-domains-scaling}}
+    \caption[Total ferromagnetic domains as a function of the quench rate after
+    a transition to the ferromagnetic phase]
+    {\label{fig: FM-domains-scaling}The number of ferromagnetic domains as a
+    function of the quench time.
+    Each point represents 50 simulations and the error bar gives one standard
+    deviation.
+    Overlaid is the scaling line \(\tau_Q^{-1/4}\) (black dashed line), which
+    confirms the prediction in Eq.~\eqref{eq: BA-FM-defects-scaling} for
+    \(\tau_Q \lesssim 10^3\).}
 \end{figure}
 In Fig.~\ref{fig: FM-domains-scaling} we plot the total number of domains
 as a function of the quench time, where each point represents fifty ensemble
@@ -934,7 +937,7 @@ Since we know the relevant unstable mode within our system, we can investigate
 power-law scaling near the critical point.
 To begin, we start with the fluctuation operator associated with the
 Bogoliubov spectrum \(E_{k, fz}\) given in Eq.~\eqref{eq: a_k-fz}.
-\begin{figure}[tb]
+\begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]
@@ -945,12 +948,12 @@ Bogoliubov spectrum \(E_{k, fz}\) given in Eq.~\eqref{eq: a_k-fz}.
         \includegraphics[width=\textwidth]{gfx/ch-spin1/BA-FM_Qa_scaling.pdf}
         \caption{\label{fig: Q_a-scaling}}
     \end{subfigure}
-    \caption[Growth of the fluctuation operator]
-    {(a): The modulus of the fluctuation operator in
-        Eq.~\eqref{eq: a_k-fz} for \(k=1\) and
-        \(\tau_Q=5000\).
-        The plot shown is obtained by averaging over all runs in the ensemble.
-        (b): The critical value \(Q_a\) as a function of the quench time.
+    \caption[Growth of the fluctuation operator, \(\hat{a}_{k, f_z}\),
+    immediately after the transition point is crossed]
+    {(a): The modulus of the fluctuation operator in Eq.~\eqref{eq: a_k-fz} for
+    \(k=1\) and \(\tau_Q=5000\).
+    The plot shown is obtained by averaging over all runs in the ensemble.
+    (b): The critical value \(|Q_a|\) as a function of the quench time.
     }
 \end{figure}
 Fig.~\ref{fig: fluctuation-diff} shows the above quantity for a quench time
@@ -967,8 +970,8 @@ For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
 \(\tilde{t}=598\tau \).
 Using this time, we can extract the critical value of \( q \) that this growth
 occurs at, \(Q(\tilde{t}) = Q_a\).
-Fig.~\ref{fig: Q_a-scaling} shows \(Q_a\) as a function of the quench time.
-We see a clear power-law scaling of \(Q_a \propto \tau_Q^{-\frac{1}{2}}\) for
+Fig.~\ref{fig: Q_a-scaling} shows \(|Q_a|\) as a function of the quench time.
+We see a clear power-law scaling of \(Q_a \sim \tau_Q^{-\frac{1}{2}}\) for
 all values of \( \tau_Q \) tested.
 This exponent differs from observed results in previous works investigating
 second-order phase transitions~\cite{Damski2007, Anquez2016, Swislocki2013}
@@ -992,7 +995,9 @@ Our numerical set up is exactly the same as the previous section.
 \begin{figure}
     \centering
     \includegraphics[width=0.75\textwidth]{gfx/ch-spin1/polar-BA-FM_domains.pdf}
-    \caption{\label{fig: polar-ba-fm-defects}Number of ferromagnetic domains as
+    \caption[Total number of ferromagnetic domains as a function of the quench
+    rate after the system has crossed two phase transitions]
+    {\label{fig: polar-ba-fm-defects}Number of ferromagnetic domains as
     a function of the quench time, \(\tau_Q\), after the system has crossed two
     phase transitions.
     Each point is averaged over 5 runs, with the error bars giving \(\pm 1\)
