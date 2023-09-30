@@ -100,7 +100,7 @@ of the equilibrium correlation length~\cite{DelCampo2014}
 \end{equation}
 and an equilibrium relaxation time
 \begin{equation}
-    \tau(\epsilon) \sim \xi^z \sim |\epsilon|^{-\nu z},
+    \tau_s(\epsilon) \sim \xi^z \sim |\epsilon|^{-\nu z},
     \label{eq: equil-relax-time}
 \end{equation}
 where
@@ -108,13 +108,13 @@ where
     \epsilon = \frac{\lambda - \lambda_c}{\lambda_c}
 \end{equation}
 is the dimensionless distance from the critical point.
-The equilibrium relaxation time \( \tau \) describes the time it takes for the
+The equilibrium relaxation time \( \tau_s \) describes the time it takes for the
 system to react to an external change of a parameter.
 In a quantum phase transition, the relaxation time is set by the inverse of an
 energy gap \( \Delta \) between the ground state and the first excited
 state~\cite{Zurek2005, Damski2006}
 \begin{equation}
-    \tau \simeq \Delta^{-1}.
+    \tau_s \simeq \Delta^{-1}.
 \end{equation}
 As we approach the critical point, the energy gap vanishes as
 \begin{equation}\label{eq: delta-epsilon-relation}
@@ -155,7 +155,7 @@ representation).
         \filldraw[color=blue!60, fill=blue!5, rounded corners] (-1.3, -0.5)
         rectangle (1.3, 4.8);
         \draw[->] (-4, 0) -- (4, 0) node[right] {\( t \)};
-        \draw[->] (0, 0) -- (0, 4) node[above] {$\tau$};
+        \draw[->] (0, 0) -- (0, 4) node[above] {$\tau_s$};
         \draw[scale=1, domain=-3:3, dashed, variable=\x, red] plot
         ({\x}, {abs(\x)});
         \draw[scale=1, domain=0.25:3.5, smooth, variable=\x, blue] plot
@@ -191,7 +191,7 @@ system adiabatically follows the instantaneous ground state for \(\epsilon(t)\).
 This stage of adiabaticity lasts until the relaxation time becomes comparable
 to \(|\epsilon / \dot{\epsilon}|\):
 \begin{equation}
-    \tau \approx |\epsilon/\dot{\epsilon}|=\tilde{t}.
+    \tau_s \approx |\epsilon/\dot{\epsilon}|=\tilde{t}.
     \label{eq: freeze-out-equal}
 \end{equation}
 Using Eqs.~\eqref{eq: delta-epsilon-relation}
@@ -607,7 +607,7 @@ Eq.~\eqref{eq: dispersion-relation} simplifies to
 
 Recall now the adiabatic-impulse approximation described in
 Sec.~\ref{sec: the-KZM}, with an energy gap given by \(\Delta(t)\).
-In this case, the relaxation time scales as \(\tau \sim 1/\Delta \), which
+In this case, the relaxation time scales as \(\tau_s \sim 1/\Delta \), which
 implies that far from the critical point the relaxation time is small, and the
 system adiabatically follows the instantaneous ground state.
 However, as the critical point is approached \(\Delta \rightarrow 0\), and the
@@ -814,14 +814,22 @@ system.
 The BA wave function is the ground state for \(c_1 < 0\) and \(0 < Q < 2\).
 There exists a critical point at \( Q = 0 \) where the ground state changes from
 the BA phase to the ferromagnetic phase.
-We perform 1D simulations on a grid of \(N_x = 16384\) grid points with a grid
-spacing of \(\Delta_x = 0.125\).
-We perturb the initial BA state by adding small noise, \(\delta_m\), to each
-component where \(|\delta_m| \ll 1\), and we generate the real and imaginary
-parts of \(\delta_m\) for each grid point using the probability distribution
-\(p(x) = e^{-x^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\), choosing
-\(\sigma=10^{-4}\) so that we start close to the BA ground state, and integrate
-the spin-1 GPEs using a symplectic integrator~\cite{Symes2016}.
+To check our predictions of the previous section we perform mean-field numerical
+simulations of this quench by integrating the spin-1 GPEs using a symplectic
+integrator~\cite{Symes2016}.
+We measure length and time in units of the spin healing length
+\(\xi_s=\hbar/\sqrt{2M|c_1|n_0}\) and the spin time \(\tau_s =\hbar/2|c_1|n_0\),
+respectively.
+Our simulations are performed on a 1D grid of \(N_z = 16384\) grid points with a
+grid spacing of \(\Delta_z = 0.125\xi_s\), and we consider a ring-shaped
+geometry by assuming periodic boundary conditions and \(V(z) = 0\).
+We follow the same methodology as in the continuous QPT discussed in
+Sec.~\ref{sec: KZM-second-order-numerics} and perturb the initial BA state by
+adding small noise, \(\delta_m\), to each component where \(|\delta_m| \ll 1\).
+Then, we generate the real and imaginary parts of \(\delta_m\) for each grid
+point using the probability distribution
+\(p(z) = e^{-z^2/2\sigma^2}{(\sqrt{2\pi}\sigma)}^{-1}\), choosing
+\(\sigma=10^{-4}\) so that we start close to the BA ground state.
 
 \subsection{Phase boundaries in the ferromagnetic phase}
 As the system is quenched across the critical point at \( Q = 0 \), the ground
@@ -844,18 +852,18 @@ the critical point is passed?
     Plots of \(|\psi_1|^2\) (top) \(|\psi_0|^2\) (middle) and
         \(|\psi_{-1}|^2\) (bottom) as a function of time for a \(256\xi_s\)
         spatial subregion of the condensate for
-        \( \tau_Q=1000\tau \).
-        After the critical point is passed (\(t/\tau=0\)), FM domains form in
+        \( \tau_Q=1000\tau_s \).
+        After the critical point is passed (\(t/\tau_s=0\)), FM domains form in
         the \(\psi_{\pm 1}\) components, indicated by the bright density peaks.
         The location of a bright density peak in one component matches with a
         density minimum in the other component, showcasing the opposite
         spin-projection.}
 \end{figure}
 Fig.~\ref{fig: BA-FM-densities} shows the full evolution of the density of each
-component for a quench time \( \tau_Q=1000\tau \).
+component for a quench time \( \tau_Q=1000\tau_s \).
 As the Zeeman shift is quenched, we see the density of the \(\psi_0\) component
 linearly decrease as the \(\psi_{\pm 1}\) components increase.
-After the critical point at \(t/\tau=0\) is passed, there is a freeze-out time
+After the critical point at \(t/\tau_s=0\) is passed, there is a freeze-out time
 (see Sec.~\ref{sec: the-KZM}) before the system crosses into the ferromagnetic
 phase.
 During this new phase, we see the formation of ferromagnetic domain walls
@@ -879,13 +887,13 @@ grow as the quench rate decreases.
     \end{subfigure}
     \caption[Density profile across an average ferromagnetic domain]
     {(a): Density profile of the \(\psi_1\) component across an average
-        domain in a simulation with \(\tau_Q=5000\tau \) (black line) and
-        \(\tau_q=500\) (gold line).
+        domain in a simulation with \(\tau_Q=5000\tau_s \) (black line) and
+        \(\tau_Q=500\tau_s\) (gold line).
         Domain size appear proportional to the quench time \(\tau_Q\), with
         slower quenches having large domains, which supports the KZ theory
         (see Eq.~\eqref{eq: KZM-domain-size}).
         (b): Time evolution of \( |\psi_1|^2\) for a \(256\xi_s\) spatial
-        subregion for \( \tau_Q=500\tau \) (top) and \(\tau_Q=1000\tau \)
+        subregion for \( \tau_Q=500\tau_s \) (top) and \(\tau_Q=1000\tau_s \)
         (bottom) showcasing the difference in the time it takes for domain
         formation to occur, which faster quenches leading to an earlier onset
         of domain formation when compared with slower quenches.}
@@ -974,7 +982,7 @@ Motivated by previous work~\cite{Damski2007, Qiu2020}, we define a time,
 exceeds 1\% of its maximum value: \(|\hat{a}_{k, {f_z}}(\tilde{t})| =
 0.01\times \max|\hat{a}_{k, {f_z}}(t)|\).
 For the system in Fig.~\ref{fig: fluctuation-diff}, we obtain
-\(\tilde{t}=598\tau \).
+\(\tilde{t}=598\tau_s \).
 Using this time, we can extract the critical value of \( q \) that this growth
 occurs at, \(Q(\tilde{t}) = Q_a\).
 Fig.~\ref{fig: Q_a-scaling} shows \(|Q_a|\) as a function of the quench time.

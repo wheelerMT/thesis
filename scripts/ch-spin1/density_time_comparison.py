@@ -32,7 +32,7 @@ ax[0].set_xticks([])
 ax[1].set_xlim(0, time_500.max())
 for axis in ax:
     axis.set_ylabel(r"$x/\xi_s$", labelpad=-25)
-ax[1].set_xlabel(r"$t/\tau$")
+ax[1].set_xlabel(r"$t/\tau_s$")
 plot = ax[0].pcolormesh(
     time_500, x[::2], spacetime_plus_500[::2, :], vmin=0, vmax=1
 )

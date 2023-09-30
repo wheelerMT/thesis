@@ -33,7 +33,7 @@ ax[0].set_xticks([])
 ax[1].set_xticks([])
 for axis in ax:
     axis.set_ylabel(r"$x/\xi_s$", labelpad=-10)
-ax[2].set_xlabel(r'$t/\tau$')
+ax[2].set_xlabel(r'$t/\tau_s$')
 
 plot = ax[0].imshow(spacetime_plus, extent=extent, vmin=0, vmax=1, aspect='auto')
 ax[1].imshow(spacetime_0, extent=extent, vmin=0, vmax=1, aspect='auto')
