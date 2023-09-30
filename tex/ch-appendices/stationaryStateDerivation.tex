@@ -119,7 +119,7 @@ Thus, the total spinor now reads
         0 \\
         \zeta_0 \\
         0 \\
-        e^{-i\chi_{-2}}\sqrt{\frac{1 -\zeta_0^2 - \langle\hat{F}_z\rangle/2}{2}}
+        e^{i\chi_{-2}}\sqrt{\frac{1 -\zeta_0^2 - \langle\hat{F}_z\rangle/2}{2}}
     ).
 \end{align}
 The substitution of the above spinor into Eq.~\eqref{eq: zeta-pm2-matrix} leads
@@ -149,7 +149,7 @@ particle~\cite{Kawaguchi2012}
 \end{align}
 Substituting Eq.~\eqref{eq: intermediate-UN-BN} and
 \(\langle\hat{F}_z\rangle=0\) into the above expression yields
-\begin{align}
+\begin{align}\label{eq: energy-UN-BN}
     \epsilon = 4q(1-\zeta_0^2) + \frac{1}{2}c_0n + \frac{c_2n}{10}\left|
         e^{i(\chi_2+\chi_{-2})}(1-\zeta_0^2) + \zeta_0^2
     \right|^2.
@@ -162,8 +162,9 @@ Note that since
         + \zeta_0^2\right),
 \end{align}
 which must be real, we require \(\chi_2 + \chi_{-2} = 0\) or \(\pi\).
-If \(c_2 < 0\), then the energy is minimised by \(\chi_2+\chi_{-2}=\pi\), which
-leads to the expression for \(\zeta_0\):
+If \(c_2 < 0\), then the energy is minimised by \(\chi_2+\chi_{-2}=\pi\).
+Taking the derivative of Eq.~\eqref{eq: energy-UN-BN} with respect to
+\(\zeta_0\) and setting equal to zero leads to the expression for \(\zeta_0\):
 \begin{align}
     \zeta_0 = \sqrt{\frac{1 + 10q/(c_2n)}{2}}.    
 \end{align}
