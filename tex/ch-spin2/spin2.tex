@@ -392,7 +392,7 @@ The charge of such a vortex can be described as (\(w, \sigma\)), where
 \(2\pi\sigma\) denotes the winding of the spin about some axis of symmetry.
 A \((1/2, 1/4)\) HQV in the BN phase can be constructed from
 Eq.~\eqref{eq: UN-BN-interpolating-spinor} using the choice \(\chi_2=\chi_0=0\)
-and \(\chi_2=\varphi\), which connects it to a vortex-free state in the UN
+and \(\chi_{-2}=\varphi\), which connects it to a vortex-free state in the UN
 limit.
 Such an interpolating spinor reads
 \begin{align}
@@ -601,10 +601,6 @@ Since the interpolating spinor \(\zeta^\text{C-N}\) is a function of \(q\) only,
 the stability of the interface is guaranteed since \(E^\text{C-N} =
 2q-10q^2/c_2 \leq E^\text{C}, E^\text{UN},
 E^\text{BN}\) for \(|q| < c_2n/10\).
-Here, for simplicity, we focus on an interface between the cyclic and BN phases
-which is achieved from a longitudinally-dependent quadratic Zeeman shift
-\(q(z)\) which varies from \(q = 0\) at the cyclic phase to \(q = -c_2n/10\)
-at the BN side.
 
 \subsubsection{Connections involving phase and spin vortices}
 Firstly, one can construct the same phase vortex and spin vortex connections
@@ -772,19 +768,20 @@ and FM phases, given by the following family of spinors:
         0
     ),
 \end{align}
-where \(\eta \) now becomes the longitudinal magnetisation, \(\hat{F}_z\).
-At zero magnetisation, \(\hat{F}_z = 0\), equivalent to setting \(\eta=0\), this
-solution becomes the two-component cyclic state given in
+where \(\eta \) now becomes the longitudinal magnetisation,
+\(\langle\hat{F}_z\rangle\).
+At zero magnetisation, \(\langle\hat{F}_z\rangle = 0\), equivalent to setting
+\(\eta=0\), this solution becomes the two-component cyclic state given in
 Eq.~\eqref{eq: C-2-spinor} which naturally has no magnetisation.
 Then, since this is a spin-2 system, the condensate spin is free to vary between
-\(\hat{F}_z = 0\) and \(\hat{F}_z = 2\).
+\(\langle\hat{F}_z\rangle = 0\) and \(\langle\hat{F}_z\rangle = 2\).
 Recall from Chapter~\ref{chap: ground-states} that the spin-2 system supports
 two FM ground states, one with \(\spinmag = 1\), which we denote
 \(\text{FM}_1^\pm\), and another with \(\spinmag = 2\), which we denote
 \(\text{FM}_2^\pm\).
 Here, the + (-) represents the FM state with spin pointing up (down).
 Therefore, this spinor can interpolate between the cyclic and both FM phases,
-depending on the value of the condensate spin, \(\hat{F}_z\).
+depending on the value of the condensate spin, \(\langle\hat{F}_z\rangle\).
 
 The uniform mean-field energy of the above spinor reads
 \begin{equation}
@@ -794,7 +791,7 @@ which becomes minimised upon the choice \(\eta = (p-q)/c_1n\) for \(c_1 > 0\)
 and fixed \(p, q\).
 The interface is expected to be stable within the range
 \(-c_1n \leq p \leq 2c_1n\) since \(E^\text{C-FM} \leq
-E^\text{C}=0, E^{f_z=1} = c_1n/2 + p\).
+E^\text{C}=0, E^{\text{FM}_1} = c_1n/2 + p\).
 Therefore, assuming, e.g., \(q=0\), we can stabilise the interface by an
 appropriate choice of a longitudinally-dependent linear Zeeman shift \(p(z)\),
 where \(p(z) = 0\) represents the cyclic phase, whilst \(p(z) = -c_1n\) and
@@ -1067,7 +1064,7 @@ E^{\text{FM}_2}\) for \(|p| < (2c_1-c_2/10)n\).
 Thus, as in the previous FM interface, we can stabilise the interface by relying
 on a longitudinal dependence of the linear Zeeman shift, \(p(z)\).
 One can see that at \(p = \pm 2(c_1-c_2/20)n\) the above solution becomes
-the FM state with spin \(\eta = \pm 2\).
+the FM state with spin \(\langle\hat{F}_z\rangle = \pm 2\).
 Alternatively, the solution becomes the BN state precisely when \(p=0\), and
 hence has zero magnetisation.
 Therefore, this spinor provides an interpolating solution between the

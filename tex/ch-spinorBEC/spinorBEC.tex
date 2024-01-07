@@ -132,7 +132,7 @@ trapping potential.
 The interaction terms are a generalised from of
 Eq.~\eqref{eq: scalar-interaction-coeff}, given explicitly as
 \begin{equation}
-    g_j = \frac{4\pi \hbar^2a_j}{2m_j}, \qquad
+    g_j = \frac{4\pi \hbar^2a_j}{m_j}, \qquad
     g_{12} = g_{21} = \frac{2\pi\hbar^2(m_1+m_2)a_{12}}{m_1m_2},
 \end{equation}
 which describe the intraspecies and interspecies interaction strengths,
@@ -165,10 +165,10 @@ the energy as the scalar case given in Eq.~\eqref{eq: scalar-energy}, i.e.,
 both components as
 \begin{equation}
     \begin{aligned}
-        E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^4
-        + V_1(\vb{r})|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^2 \right] \dd^3\vb{r} \\
-          & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^4
-        + V_2(\vb{r})|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^2 \right] \dd^3\vb{r} \\
+        E & = \int \left[\frac{\hbar^2}{2m_1}|\nabla\psi_1|^2
+        + V_1(\vb{r})|\psi_1|^2 + \frac{g_1}{2}|\psi_1|^4 \right] \dd^3\vb{r} \\
+          & + \int \left[\frac{\hbar^2}{2m_2}|\nabla\psi_2|^2
+        + V_2(\vb{r})|\psi_2|^2 + \frac{g_2}{2}|\psi_2|^4 \right] \dd^3\vb{r} \\
           & + \int \left[g_{12}|\psi_1|^2|\psi_2|^2\right] \dd^3\vb{r}.
     \end{aligned}
 \end{equation}
@@ -280,8 +280,10 @@ relations~\cite{Kawaguchi2012}:
 \begin{align}
     \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right]
     &= \delta_{mm'}\delta(\vb{r}_1 - \vb{r}_2), \\
-    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right] &=
-    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)\right] = 0.
+    \left[\hat{\psi}_m(\vb{r}_1), \hat{\psi}_{m'}(\vb{r}_2)\right] &=
+    \left[
+        \hat{\psi}^\dagger_m(\vb{r}_1), \hat{\psi}^\dagger_{m'}(\vb{r}_2)
+    \right] = 0.
 \end{align}
 To construct the relevant spinor Hamiltonians we follow the methodology in
 Refs~\cite{Ho1998,Ohmi1998,Kawaguchi2012,Stamper-Kurn2013,Symes2019} and make
@@ -549,7 +551,7 @@ where
     c_0 &= \frac{1}{3}\left(g_0 + 2g_2\right), \\
     c_1 &= \frac{1}{3}\left(g_2 - g_0\right).
 \end{align}
-Here, \(c_0\) gives the density (spin-independent) interaction strength and
+Here, \(c_0\) gives the density, or spin-independent, interaction strength and
 \(c_1\) gives the spin-dependent interaction strength.
 As we shall see in Chapter~\ref{chap: ground-states}, the sign of the
 spin-indepndent interaction strength, \(c_1\), determines the relevant ground
@@ -576,7 +578,7 @@ Using Eq.~\eqref{eq: spin-channel-hamiltonian} the above becomes
         \hat{A}^\dagger_{4\EuScript{M}}(\vb{r})\hat{A}_{4\EuScript{M}}(\vb{r})
         \, \dd^3\vb{r}.
 \end{align}
-Substituting \(f=2\) and \(k=1,2,3\) in Eq.~\eqref{eq: physical-observable}
+Substituting \(f=2\) and \(k=0,1,2\) in Eq.~\eqref{eq: physical-observable}
 and solving the resulting equations for the projection operators gives the
 following relations
 \begin{align}
@@ -615,7 +617,7 @@ Generally, the spin-\(f\) interaction Hamiltonian has \(f + 1\) non-linear
 interaction terms to account for the \(f + 1\) spin-channels.
 The process to construct higher spin interaction Hamiltonians is the same as for
 the spin-1 and spin-2 cases, making use of Eq.~\eqref{eq: physical-observable}.
-For example, for a spin-3 system, we substitute \(f=3\) and \(k=1,2,3,4\) into
+For example, for a spin-3 system, we substitute \(f=3\) and \(k=0,1,2,3\) into
 Eq.~\eqref{eq: physical-observable} and follow the same methodology as before.
 
 \subsection{Single-particle Hamiltonian}\label{subsec: single-particle}
