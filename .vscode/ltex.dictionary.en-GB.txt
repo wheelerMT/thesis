@@ -76,3 +76,7 @@ QPTs
 Hayder
 UEA
 DQCP
+Symes
+Blanes
+PyGPE
+CUDA-accelerated

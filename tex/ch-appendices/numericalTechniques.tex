@@ -50,3 +50,50 @@ simplify to (dropping the tildes for notational convenience)
     {\psi}_2,
 \end{align}
 where \(\gamma = g_{12}/g\) is the ratio of inter- to intra-species interaction.
+
+\section{\label{sec: symplectic-integrators}Symplectic integrators for spinor
+Bose-Einstein condensates}
+The numerics of Chapters~\ref{chap: spin-1} and~\ref{chap: spin-2} are based on
+second-order symplectic integrators: a type of numerical scheme for Hamiltonian
+systems.
+In particular, we make use of the work of Symes \textit{et al.} for both our
+spin-1~\cite{Symes2016} and spin-2~\cite{Symes2017a} systems.
+Symplectic integration schemes provide highly accurate solutions for Hamiltonian
+systems over extended periods of time, making them ideal for studying the
+long-time dynamics in Chapter~\ref{chap: spin-1}.
+In addition, the second-order numerical schemes devised by Symes \textit{et al.}
+have been shown to be both simpler and more efficient than other second-order
+composition methods~\cite{Wang2007}, which is critical for compute-heavy 3D
+simulations as in Chapter~\ref{chap: spin-2}.
+
+The spinor symplectic integration schemes work by splitting the spinor GPEs into
+two subsystems.
+The first is a single-particle-like subsystem, which includes the kinetic energy
+and the Zeeman terms of the Hamiltonian, which is solved exactly in Fourier
+Space.
+The second system comprises the non-linear subsystem, which includes the
+remaining non-linear terms in the spinor GPEs.
+Due to the nature of the splitting, this remaining subsystem becomes exactly
+solvable in position space.
+Note that the Zeeman terms are assumed to be spatially-uniform (a good
+approximation in experiments), which allows them to be included in the
+single-particle-like subsystem.
+However, if the Zeeman shifts are not spatially-uniform they must instead be
+included with the non-linear subsystem, which still leads to analytical
+solutions in the form of Jacobi elliptic functions (see
+Refs.~\cite{Symes2016, Symes2017a} for details).
+Finally, though not used in this thesis, the two-way splitting implies that
+the scheme can be extended using the composition method of Blanes and
+Moan~\cite{Blanes2002} to fourth-order, should a higher-order symplectic scheme
+be required.
+
+The numerical methods throughout this thesis have been implemented using the
+personally-developed Python package
+\href{https://github.com/wheelerMT/pygpe}{
+    \textit{PyGPE}
+}~\cite{Wheeler_PyGPE_2024}: a CUDA-accelerated library for numerically solving
+the GPEs for scalar, two-component, spin-1, and spin-2 BEC systems.
+It supports 1D, 2D, and 3D grid lattices, as well as possessing the ability to
+run on both CPUs or Nvidia-native GPUs.
+In addition, it provides tools for data handling, as well as a suite of
+diagnostics functions useful for handling data from BEC simulations.
